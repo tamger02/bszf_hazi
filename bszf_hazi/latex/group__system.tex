@@ -1,0 +1,410 @@
+\doxysection{SYSTEM -\/ System Utils}
+\hypertarget{group__system}{}\label{group__system}\index{SYSTEM -\/ System Utils@{SYSTEM -\/ System Utils}}
+
+
+System API.  
+
+
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_s_y_s_t_e_m___chip_revision___type_def}{SYSTEM\+\_\+\+Chip\+Revision\+\_\+\+Type\+Def}}
+\item 
+struct \mbox{\hyperlink{struct_s_y_s_t_e_m___cal_addr_val___type_def}{SYSTEM\+\_\+\+Cal\+Addr\+Val\+\_\+\+Type\+Def}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group__system_ga45f33557f44ae73db1c70765a2a29e5a}{SYSTEM\+\_\+\+Part\+Family\+\_\+\+Type\+Def}} \{ \mbox{\hyperlink{group__system_gga45f33557f44ae73db1c70765a2a29e5aa0b598eb0a295177ef566285afaf9e660}{system\+Part\+Family\+Unknown}} = 0x\+FF
+ \}
+\item 
+enum \mbox{\hyperlink{group__system_ga104b8e8ea23f91db40d758e3dccf4e5b}{SYSTEM\+\_\+\+Security\+Capability\+\_\+\+Type\+Def}} \{ \newline
+\mbox{\hyperlink{group__system_gga104b8e8ea23f91db40d758e3dccf4e5ba3267c23942649922bf58a19a54e3fd8d}{security\+Capability\+Unknown}}
+, \mbox{\hyperlink{group__system_gga104b8e8ea23f91db40d758e3dccf4e5baa5f8b136b8af1834b39471b411dc6b81}{security\+Capability\+NA}}
+, \mbox{\hyperlink{group__system_gga104b8e8ea23f91db40d758e3dccf4e5ba917fa9aafb9a4d08e4a6c04d939f1afc}{security\+Capability\+Basic}}
+, \mbox{\hyperlink{group__system_gga104b8e8ea23f91db40d758e3dccf4e5ba2f64e0b84851f37a49a67716214a3e2b}{security\+Capability\+RoT}}
+, \newline
+\mbox{\hyperlink{group__system_gga104b8e8ea23f91db40d758e3dccf4e5bad897df226131c5aafb7a98f41c6c3af4}{security\+Capability\+SE}}
+, \mbox{\hyperlink{group__system_gga104b8e8ea23f91db40d758e3dccf4e5ba1a3bcae4a1a008ec11598d0682459b94}{security\+Capability\+Vault}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__system_ga6470ed38937ffd0b8b509334c5add7dd}{SYSTEM\+\_\+\+Chip\+Revision\+Get}} (\mbox{\hyperlink{struct_s_y_s_t_e_m___chip_revision___type_def}{SYSTEM\+\_\+\+Chip\+Revision\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}rev)
+\begin{DoxyCompactList}\small\item\em Get a chip major/minor revision. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__system_ga45f33557f44ae73db1c70765a2a29e5a}{SYSTEM\+\_\+\+Part\+Family\+\_\+\+Type\+Def}} \mbox{\hyperlink{group__system_ga258aab8464fec8311170f8812eb7f497}{SYSTEM\+\_\+\+Get\+Family}} (void)
+\begin{DoxyCompactList}\small\item\em Get the MCU family identifier. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__system_ga84a2becba34bea4a4d718d4dfe14c4db}{SYSTEM\+\_\+\+Get\+Calibration\+Value}} (volatile uint32\+\_\+t \texorpdfstring{$\ast$}{*}reg\+Address)
+\begin{DoxyCompactList}\small\item\em Get a factory calibration value for a given peripheral register. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__system_ga104b8e8ea23f91db40d758e3dccf4e5b}{SYSTEM\+\_\+\+Security\+Capability\+\_\+\+Type\+Def}} \mbox{\hyperlink{group__system_ga17224bf145ca21b45dee6273943acca2}{SYSTEM\+\_\+\+Get\+Security\+Capability}} (void)
+\begin{DoxyCompactList}\small\item\em Get family security capability. \end{DoxyCompactList}\item 
+uint64\+\_\+t \mbox{\hyperlink{group__system_ga143c106363ed3963dfd7f648b7c60cb3}{SYSTEM\+\_\+\+Get\+Unique}} (void)
+\begin{DoxyCompactList}\small\item\em Get the unique number for this device. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group__system_gadf5314727789c23ad2929e4506876039}{SYSTEM\+\_\+\+Get\+Prod\+Rev}} (void)
+\begin{DoxyCompactList}\small\item\em Get the production revision for this part. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group__system_ga793355af9010592b53ed52c110b4a222}{SYSTEM\+\_\+\+Get\+SRAMBase\+Address}} (void)
+\begin{DoxyCompactList}\small\item\em Get the SRAM Base Address. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{group__system_gaf5e594fe005226b5be88ee1027e00fb7}{SYSTEM\+\_\+\+Get\+SRAMSize}} (void)
+\begin{DoxyCompactList}\small\item\em Get the SRAM size (in KB). \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{group__system_gac19a5c5e3f587d4cc8f1822b556de303}{SYSTEM\+\_\+\+Get\+Flash\+Size}} (void)
+\begin{DoxyCompactList}\small\item\em Get the flash size (in KB). \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group__system_gae835d06fb9b86a8ca96b3df30146ae50}{SYSTEM\+\_\+\+Get\+Flash\+Page\+Size}} (void)
+\begin{DoxyCompactList}\small\item\em Get the flash page size in bytes. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{group__system_gafb2c54d8a953179d3aaaace61f9b6dcb}{SYSTEM\+\_\+\+Get\+Part\+Number}} (void)
+\begin{DoxyCompactList}\small\item\em Get the MCU part number. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group__system_gaf1a78f148b9793069d0ee05c8dbd86b0}{SYSTEM\+\_\+\+Get\+Calibration\+Temperature}} (void)
+\begin{DoxyCompactList}\small\item\em Get the calibration temperature (in degrees Celsius). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__system_gaaa04fc75e41d746fb2de491ccaaae7c0}{sl\+\_\+system\+\_\+init}} (void)
+\item 
+void \mbox{\hyperlink{group__system_ga1ac5560e54caeea2079491767725b9ab}{sl\+\_\+system\+\_\+process\+\_\+action}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+System API. 
+
+System Initialization and Action Processing.
+
+This module contains functions to read information such as RAM and Flash size, device unique ID, chip revision, family, and part number from DEVINFO and SCB blocks. Functions to configure and read status from FPU are available for compatible devices.\hypertarget{group__system_autotoc_md136}{}\doxysubsubsubsection{\texorpdfstring{System Init}{System Init}}\label{group__system_autotoc_md136}
+System Init provides a function for initializing the system and the products\+:
+
+
+\begin{DoxyItemize}
+\item \doxylink{group__system_gaaa04fc75e41d746fb2de491ccaaae7c0}{sl\+\_\+system\+\_\+init()}.
+\end{DoxyItemize}
+
+This function calls a set of functions that are automatically generated and located in {\ttfamily autogen/sl\+\_\+event\+\_\+handler.\+c}. Handlers can be registered for the following events using the Event Handler API provided by the Event Handler component\+:
+
+
+\begin{DoxyItemize}
+\item platform\+\_\+init -\/\texorpdfstring{$>$}{>} sl\+\_\+platform\+\_\+init()
+\item driver\+\_\+init -\/\texorpdfstring{$>$}{>} sl\+\_\+driver\+\_\+init()
+\item service\+\_\+init -\/\texorpdfstring{$>$}{>} sl\+\_\+service\+\_\+init()
+\item stack\+\_\+init -\/\texorpdfstring{$>$}{>} sl\+\_\+stack\+\_\+init()
+\item internal\+\_\+app\+\_\+init -\/\texorpdfstring{$>$}{>} sl\+\_\+internal\+\_\+app\+\_\+init()
+\end{DoxyItemize}
+
+These events are fired in the order listed above when {\ttfamily \doxylink{group__system_gaaa04fc75e41d746fb2de491ccaaae7c0}{sl\+\_\+system\+\_\+init()}} is called.\hypertarget{group__system_autotoc_md137}{}\doxysubsubsubsection{\texorpdfstring{System Kernel}{System Kernel}}\label{group__system_autotoc_md137}
+System Kernel component provides a function for starting the kernel\+:
+
+
+\begin{DoxyItemize}
+\item sl\+\_\+system\+\_\+kernel\+\_\+start().
+\end{DoxyItemize}
+
+This function calls a functions that is automatically generated and located in {\ttfamily \$autogen/sl\+\_\+event\+\_\+handler.\+c}. Handlers can be registered for the following events using the Event Handler API provided by the Event Handler component\+:
+
+
+\begin{DoxyItemize}
+\item kernel\+\_\+start -\/\texorpdfstring{$>$}{>} sl\+\_\+kernel\+\_\+start()
+\end{DoxyItemize}
+
+The event is fired when {\ttfamily sl\+\_\+system\+\_\+kernel\+\_\+start()} is called.\hypertarget{group__system_autotoc_md138}{}\doxysubsubsubsection{\texorpdfstring{System Process Action}{System Process Action}}\label{group__system_autotoc_md138}
+System Process Action component provides a function for running the products from a super loop\+:
+
+
+\begin{DoxyItemize}
+\item \doxylink{group__system_ga1ac5560e54caeea2079491767725b9ab}{sl\+\_\+system\+\_\+process\+\_\+action()}.
+\end{DoxyItemize}
+
+This function calls a set of functions that are automatically generated and located in {\ttfamily \$autogen/sl\+\_\+event\+\_\+handler.\+c}. Handlers can be registered for the following events using the Event Handler API provided by the Event Handler component\+:
+
+
+\begin{DoxyItemize}
+\item platform\+\_\+process\+\_\+action -\/\texorpdfstring{$>$}{>} sl\+\_\+platform\+\_\+process\+\_\+action()
+\item service\+\_\+process\+\_\+action -\/\texorpdfstring{$>$}{>} sl\+\_\+service\+\_\+process\+\_\+action()
+\item stack\+\_\+process\+\_\+action -\/\texorpdfstring{$>$}{>} sl\+\_\+stack\+\_\+process\+\_\+action()
+\item internal\+\_\+app\+\_\+process\+\_\+action -\/\texorpdfstring{$>$}{>} sl\+\_\+internal\+\_\+process\+\_\+action()
+\end{DoxyItemize}
+
+These events are fired in the order listed above when {\ttfamily \doxylink{group__system_ga1ac5560e54caeea2079491767725b9ab}{sl\+\_\+system\+\_\+process\+\_\+action()}} is called.
+
+Usage example\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#if defined(SL\_COMPONENT\_CATALOG\_PRESENT)}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}sl\_component\_catalog.h"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{sl__system__init_8h}{sl\_system\_init.h}}"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}sl\_power\_manager.h"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{app_8h}{app.h}}"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#if\ defined(SL\_CATALOG\_KERNEL\_PRESENT)}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}sl\_system\_kernel.h"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{sl__system__process__action_8h}{sl\_system\_process\_action.h}}"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ main(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \textcolor{comment}{//\ Initialize\ Silicon\ Labs\ device,\ system,\ service(s)\ and\ protocol\ stack(s).}}
+\DoxyCodeLine{\ \ \textcolor{comment}{//\ Note\ that\ if\ the\ kernel\ is\ present,\ processing\ task(s)\ will\ be\ created\ by}}
+\DoxyCodeLine{\ \ \textcolor{comment}{//\ this\ call.}}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{group__system_gaaa04fc75e41d746fb2de491ccaaae7c0}{sl\_system\_init}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{comment}{//\ Initialize\ the\ application.}}
+\DoxyCodeLine{\ \ app\_init();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#if\ defined(SL\_CATALOG\_KERNEL\_PRESENT)}}
+\DoxyCodeLine{\ \ \textcolor{comment}{//\ Start\ the\ kernel.\ Task(s)\ created\ in\ app\_init()\ will\ start\ running.}}
+\DoxyCodeLine{\ \ sl\_system\_kernel\_start();}
+\DoxyCodeLine{\textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{do}\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Do\ not\ remove\ this\ call:\ Silicon\ Labs\ components\ process\ action\ routine}}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ must\ be\ called\ from\ the\ super\ loop.}}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{group__system_ga1ac5560e54caeea2079491767725b9ab}{sl\_system\_process\_action}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Application\ process.}}
+\DoxyCodeLine{\ \ \ \ app\_process\_action();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{comment}{//\ Let\ the\ CPU\ go\ to\ sleep\ if\ the\ system\ allow\ it.}}
+\DoxyCodeLine{\ \ \ \ sl\_power\_manager\_sleep();}
+\DoxyCodeLine{\ \ \}\ \textcolor{keywordflow}{while}\ (1);}
+\DoxyCodeLine{\textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SL\_CATALOG\_KERNEL\_PRESENT}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\Hypertarget{group__system_ga45f33557f44ae73db1c70765a2a29e5a}\index{SYSTEM -\/ System Utils@{SYSTEM -\/ System Utils}!SYSTEM\_PartFamily\_TypeDef@{SYSTEM\_PartFamily\_TypeDef}}
+\index{SYSTEM\_PartFamily\_TypeDef@{SYSTEM\_PartFamily\_TypeDef}!SYSTEM -\/ System Utils@{SYSTEM -\/ System Utils}}
+\doxysubsubsection{\texorpdfstring{SYSTEM\_PartFamily\_TypeDef}{SYSTEM\_PartFamily\_TypeDef}}
+{\footnotesize\ttfamily \label{group__system_ga45f33557f44ae73db1c70765a2a29e5a} 
+enum \mbox{\hyperlink{group__system_ga45f33557f44ae73db1c70765a2a29e5a}{SYSTEM\+\_\+\+Part\+Family\+\_\+\+Type\+Def}}}
+
+Family identifiers. \begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{systemPartFamilyUnknown@{systemPartFamilyUnknown}!SYSTEM -\/ System Utils@{SYSTEM -\/ System Utils}}\index{SYSTEM -\/ System Utils@{SYSTEM -\/ System Utils}!systemPartFamilyUnknown@{systemPartFamilyUnknown}}}\Hypertarget{group__system_gga45f33557f44ae73db1c70765a2a29e5aa0b598eb0a295177ef566285afaf9e660}\label{group__system_ga45f33557f44ae73db1c70765a2a29e5a} 
+system\+Part\+Family\+Unknown&Unknown Device Family. Family ID is missing on unprogrammed parts. \\
+\hline
+
+\end{DoxyEnumFields}
+\Hypertarget{group__system_ga104b8e8ea23f91db40d758e3dccf4e5b}\index{SYSTEM -\/ System Utils@{SYSTEM -\/ System Utils}!SYSTEM\_SecurityCapability\_TypeDef@{SYSTEM\_SecurityCapability\_TypeDef}}
+\index{SYSTEM\_SecurityCapability\_TypeDef@{SYSTEM\_SecurityCapability\_TypeDef}!SYSTEM -\/ System Utils@{SYSTEM -\/ System Utils}}
+\doxysubsubsection{\texorpdfstring{SYSTEM\_SecurityCapability\_TypeDef}{SYSTEM\_SecurityCapability\_TypeDef}}
+{\footnotesize\ttfamily \label{group__system_ga104b8e8ea23f91db40d758e3dccf4e5b} 
+enum \mbox{\hyperlink{group__system_ga104b8e8ea23f91db40d758e3dccf4e5b}{SYSTEM\+\_\+\+Security\+Capability\+\_\+\+Type\+Def}}}
+
+Family security capability. \begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{securityCapabilityUnknown@{securityCapabilityUnknown}!SYSTEM -\/ System Utils@{SYSTEM -\/ System Utils}}\index{SYSTEM -\/ System Utils@{SYSTEM -\/ System Utils}!securityCapabilityUnknown@{securityCapabilityUnknown}}}\Hypertarget{group__system_gga104b8e8ea23f91db40d758e3dccf4e5ba3267c23942649922bf58a19a54e3fd8d}\label{group__system_ga104b8e8ea23f91db40d758e3dccf4e5b} 
+security\+Capability\+Unknown&Unknown security capability. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{securityCapabilityNA@{securityCapabilityNA}!SYSTEM -\/ System Utils@{SYSTEM -\/ System Utils}}\index{SYSTEM -\/ System Utils@{SYSTEM -\/ System Utils}!securityCapabilityNA@{securityCapabilityNA}}}\Hypertarget{group__system_gga104b8e8ea23f91db40d758e3dccf4e5baa5f8b136b8af1834b39471b411dc6b81}\label{group__system_ga104b8e8ea23f91db40d758e3dccf4e5b} 
+security\+Capability\+NA&Security capability not applicable. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{securityCapabilityBasic@{securityCapabilityBasic}!SYSTEM -\/ System Utils@{SYSTEM -\/ System Utils}}\index{SYSTEM -\/ System Utils@{SYSTEM -\/ System Utils}!securityCapabilityBasic@{securityCapabilityBasic}}}\Hypertarget{group__system_gga104b8e8ea23f91db40d758e3dccf4e5ba917fa9aafb9a4d08e4a6c04d939f1afc}\label{group__system_ga104b8e8ea23f91db40d758e3dccf4e5b} 
+security\+Capability\+Basic&Basic security capability. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{securityCapabilityRoT@{securityCapabilityRoT}!SYSTEM -\/ System Utils@{SYSTEM -\/ System Utils}}\index{SYSTEM -\/ System Utils@{SYSTEM -\/ System Utils}!securityCapabilityRoT@{securityCapabilityRoT}}}\Hypertarget{group__system_gga104b8e8ea23f91db40d758e3dccf4e5ba2f64e0b84851f37a49a67716214a3e2b}\label{group__system_ga104b8e8ea23f91db40d758e3dccf4e5b} 
+security\+Capability\+RoT&Root of Trust security capability. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{securityCapabilitySE@{securityCapabilitySE}!SYSTEM -\/ System Utils@{SYSTEM -\/ System Utils}}\index{SYSTEM -\/ System Utils@{SYSTEM -\/ System Utils}!securityCapabilitySE@{securityCapabilitySE}}}\Hypertarget{group__system_gga104b8e8ea23f91db40d758e3dccf4e5bad897df226131c5aafb7a98f41c6c3af4}\label{group__system_ga104b8e8ea23f91db40d758e3dccf4e5b} 
+security\+Capability\+SE&Secure Element security capability. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{securityCapabilityVault@{securityCapabilityVault}!SYSTEM -\/ System Utils@{SYSTEM -\/ System Utils}}\index{SYSTEM -\/ System Utils@{SYSTEM -\/ System Utils}!securityCapabilityVault@{securityCapabilityVault}}}\Hypertarget{group__system_gga104b8e8ea23f91db40d758e3dccf4e5ba1a3bcae4a1a008ec11598d0682459b94}\label{group__system_ga104b8e8ea23f91db40d758e3dccf4e5b} 
+security\+Capability\+Vault&Secure Vault security capability. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{group__system_gaaa04fc75e41d746fb2de491ccaaae7c0}\index{SYSTEM -\/ System Utils@{SYSTEM -\/ System Utils}!sl\_system\_init@{sl\_system\_init}}
+\index{sl\_system\_init@{sl\_system\_init}!SYSTEM -\/ System Utils@{SYSTEM -\/ System Utils}}
+\doxysubsubsection{\texorpdfstring{sl\_system\_init()}{sl\_system\_init()}}
+{\footnotesize\ttfamily \label{group__system_gaaa04fc75e41d746fb2de491ccaaae7c0} 
+void sl\+\_\+system\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+Initialize Silicon Labs products \Hypertarget{group__system_ga1ac5560e54caeea2079491767725b9ab}\index{SYSTEM -\/ System Utils@{SYSTEM -\/ System Utils}!sl\_system\_process\_action@{sl\_system\_process\_action}}
+\index{sl\_system\_process\_action@{sl\_system\_process\_action}!SYSTEM -\/ System Utils@{SYSTEM -\/ System Utils}}
+\doxysubsubsection{\texorpdfstring{sl\_system\_process\_action()}{sl\_system\_process\_action()}}
+{\footnotesize\ttfamily \label{group__system_ga1ac5560e54caeea2079491767725b9ab} 
+void sl\+\_\+system\+\_\+process\+\_\+action (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+System processing action \Hypertarget{group__system_ga6470ed38937ffd0b8b509334c5add7dd}\index{SYSTEM -\/ System Utils@{SYSTEM -\/ System Utils}!SYSTEM\_ChipRevisionGet@{SYSTEM\_ChipRevisionGet}}
+\index{SYSTEM\_ChipRevisionGet@{SYSTEM\_ChipRevisionGet}!SYSTEM -\/ System Utils@{SYSTEM -\/ System Utils}}
+\doxysubsubsection{\texorpdfstring{SYSTEM\_ChipRevisionGet()}{SYSTEM\_ChipRevisionGet()}}
+{\footnotesize\ttfamily \label{group__system_ga6470ed38937ffd0b8b509334c5add7dd} 
+void SYSTEM\+\_\+\+Chip\+Revision\+Get (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_s_y_s_t_e_m___chip_revision___type_def}{SYSTEM\+\_\+\+Chip\+Revision\+\_\+\+Type\+Def}} \texorpdfstring{$\ast$}{*}}]{rev}{}\end{DoxyParamCaption})}
+
+
+
+Get a chip major/minor revision. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em rev} & A location to place the chip revision information. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group__system_gaf1a78f148b9793069d0ee05c8dbd86b0}\index{SYSTEM -\/ System Utils@{SYSTEM -\/ System Utils}!SYSTEM\_GetCalibrationTemperature@{SYSTEM\_GetCalibrationTemperature}}
+\index{SYSTEM\_GetCalibrationTemperature@{SYSTEM\_GetCalibrationTemperature}!SYSTEM -\/ System Utils@{SYSTEM -\/ System Utils}}
+\doxysubsubsection{\texorpdfstring{SYSTEM\_GetCalibrationTemperature()}{SYSTEM\_GetCalibrationTemperature()}}
+{\footnotesize\ttfamily \label{group__system_gaf1a78f148b9793069d0ee05c8dbd86b0} 
+uint8\+\_\+t SYSTEM\+\_\+\+Get\+Calibration\+Temperature (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Get the calibration temperature (in degrees Celsius). 
+
+\begin{DoxyReturn}{Returns}
+Calibration temperature in Celsius. 
+\end{DoxyReturn}
+\Hypertarget{group__system_ga84a2becba34bea4a4d718d4dfe14c4db}\index{SYSTEM -\/ System Utils@{SYSTEM -\/ System Utils}!SYSTEM\_GetCalibrationValue@{SYSTEM\_GetCalibrationValue}}
+\index{SYSTEM\_GetCalibrationValue@{SYSTEM\_GetCalibrationValue}!SYSTEM -\/ System Utils@{SYSTEM -\/ System Utils}}
+\doxysubsubsection{\texorpdfstring{SYSTEM\_GetCalibrationValue()}{SYSTEM\_GetCalibrationValue()}}
+{\footnotesize\ttfamily \label{group__system_ga84a2becba34bea4a4d718d4dfe14c4db} 
+bool SYSTEM\+\_\+\+Get\+Calibration\+Value (\begin{DoxyParamCaption}\item[{volatile uint32\+\_\+t \texorpdfstring{$\ast$}{*}}]{reg\+Address}{}\end{DoxyParamCaption})}
+
+
+
+Get a factory calibration value for a given peripheral register. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em reg\+Address} & The peripheral calibration register address to get a calibration value for. If the calibration value is found, this register is updated with the calibration value.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if a calibration value exists, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{group__system_ga258aab8464fec8311170f8812eb7f497}\index{SYSTEM -\/ System Utils@{SYSTEM -\/ System Utils}!SYSTEM\_GetFamily@{SYSTEM\_GetFamily}}
+\index{SYSTEM\_GetFamily@{SYSTEM\_GetFamily}!SYSTEM -\/ System Utils@{SYSTEM -\/ System Utils}}
+\doxysubsubsection{\texorpdfstring{SYSTEM\_GetFamily()}{SYSTEM\_GetFamily()}}
+{\footnotesize\ttfamily \label{group__system_ga258aab8464fec8311170f8812eb7f497} 
+\mbox{\hyperlink{group__system_ga45f33557f44ae73db1c70765a2a29e5a}{SYSTEM\+\_\+\+Part\+Family\+\_\+\+Type\+Def}} SYSTEM\+\_\+\+Get\+Family (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Get the MCU family identifier. 
+
+\begin{DoxyNote}{Note}
+This function retrieves family ID by reading the chip\textquotesingle{}s device info structure in flash memory. Users can retrieve family ID directly by reading DEVINFO-\/\texorpdfstring{$>$}{>}PART item and decode with mask and shift \#defines defined in \texorpdfstring{$<$}{<}part\+\_\+family\texorpdfstring{$>$}{>}\+\_\+devinfo.\+h (refer to code below for details).
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Family identifier of MCU. 
+\end{DoxyReturn}
+\Hypertarget{group__system_gae835d06fb9b86a8ca96b3df30146ae50}\index{SYSTEM -\/ System Utils@{SYSTEM -\/ System Utils}!SYSTEM\_GetFlashPageSize@{SYSTEM\_GetFlashPageSize}}
+\index{SYSTEM\_GetFlashPageSize@{SYSTEM\_GetFlashPageSize}!SYSTEM -\/ System Utils@{SYSTEM -\/ System Utils}}
+\doxysubsubsection{\texorpdfstring{SYSTEM\_GetFlashPageSize()}{SYSTEM\_GetFlashPageSize()}}
+{\footnotesize\ttfamily \label{group__system_gae835d06fb9b86a8ca96b3df30146ae50} 
+uint32\+\_\+t SYSTEM\+\_\+\+Get\+Flash\+Page\+Size (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Get the flash page size in bytes. 
+
+\begin{DoxyNote}{Note}
+This function retrieves flash page size by reading the chip device info structure. If your binary is made for one specific device only, use FLASH\+\_\+\+PAGE\+\_\+\+SIZE instead.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Page size of internal flash in bytes. 
+\end{DoxyReturn}
+\Hypertarget{group__system_gac19a5c5e3f587d4cc8f1822b556de303}\index{SYSTEM -\/ System Utils@{SYSTEM -\/ System Utils}!SYSTEM\_GetFlashSize@{SYSTEM\_GetFlashSize}}
+\index{SYSTEM\_GetFlashSize@{SYSTEM\_GetFlashSize}!SYSTEM -\/ System Utils@{SYSTEM -\/ System Utils}}
+\doxysubsubsection{\texorpdfstring{SYSTEM\_GetFlashSize()}{SYSTEM\_GetFlashSize()}}
+{\footnotesize\ttfamily \label{group__system_gac19a5c5e3f587d4cc8f1822b556de303} 
+uint16\+\_\+t SYSTEM\+\_\+\+Get\+Flash\+Size (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Get the flash size (in KB). 
+
+\begin{DoxyNote}{Note}
+This function retrieves flash size by reading the chip device info structure. If your binary is made for one specific device only, use FLASH\+\_\+\+SIZE instead.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Size of internal flash (in KB). 
+\end{DoxyReturn}
+\Hypertarget{group__system_gafb2c54d8a953179d3aaaace61f9b6dcb}\index{SYSTEM -\/ System Utils@{SYSTEM -\/ System Utils}!SYSTEM\_GetPartNumber@{SYSTEM\_GetPartNumber}}
+\index{SYSTEM\_GetPartNumber@{SYSTEM\_GetPartNumber}!SYSTEM -\/ System Utils@{SYSTEM -\/ System Utils}}
+\doxysubsubsection{\texorpdfstring{SYSTEM\_GetPartNumber()}{SYSTEM\_GetPartNumber()}}
+{\footnotesize\ttfamily \label{group__system_gafb2c54d8a953179d3aaaace61f9b6dcb} 
+uint16\+\_\+t SYSTEM\+\_\+\+Get\+Part\+Number (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Get the MCU part number. 
+
+\begin{DoxyReturn}{Returns}
+The part number of MCU. 
+\end{DoxyReturn}
+\Hypertarget{group__system_gadf5314727789c23ad2929e4506876039}\index{SYSTEM -\/ System Utils@{SYSTEM -\/ System Utils}!SYSTEM\_GetProdRev@{SYSTEM\_GetProdRev}}
+\index{SYSTEM\_GetProdRev@{SYSTEM\_GetProdRev}!SYSTEM -\/ System Utils@{SYSTEM -\/ System Utils}}
+\doxysubsubsection{\texorpdfstring{SYSTEM\_GetProdRev()}{SYSTEM\_GetProdRev()}}
+{\footnotesize\ttfamily \label{group__system_gadf5314727789c23ad2929e4506876039} 
+uint8\+\_\+t SYSTEM\+\_\+\+Get\+Prod\+Rev (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Get the production revision for this part. 
+
+\begin{DoxyReturn}{Returns}
+Production revision for this part. 
+\end{DoxyReturn}
+\Hypertarget{group__system_ga17224bf145ca21b45dee6273943acca2}\index{SYSTEM -\/ System Utils@{SYSTEM -\/ System Utils}!SYSTEM\_GetSecurityCapability@{SYSTEM\_GetSecurityCapability}}
+\index{SYSTEM\_GetSecurityCapability@{SYSTEM\_GetSecurityCapability}!SYSTEM -\/ System Utils@{SYSTEM -\/ System Utils}}
+\doxysubsubsection{\texorpdfstring{SYSTEM\_GetSecurityCapability()}{SYSTEM\_GetSecurityCapability()}}
+{\footnotesize\ttfamily \label{group__system_ga17224bf145ca21b45dee6273943acca2} 
+\mbox{\hyperlink{group__system_ga104b8e8ea23f91db40d758e3dccf4e5b}{SYSTEM\+\_\+\+Security\+Capability\+\_\+\+Type\+Def}} SYSTEM\+\_\+\+Get\+Security\+Capability (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Get family security capability. 
+
+\begin{DoxyNote}{Note}
+This function retrieves the family security capability based on the device number. The device number is one letter and 3 digits\+: DEVICENUMBER = (alpha-\/\textquotesingle{}A\textquotesingle{})\texorpdfstring{$\ast$}{*}1000 + numeric. i.\+e. 0d = "{}\+A000"{}; 1123d = "{}\+B123"{}. The security capabilities are represented by \doxylink{group__system_ga104b8e8ea23f91db40d758e3dccf4e5b}{SYSTEM\+\_\+\+Security\+Capability\+\_\+\+Type\+Def}.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Security capability of MCU. 
+\end{DoxyReturn}
+\Hypertarget{group__system_ga793355af9010592b53ed52c110b4a222}\index{SYSTEM -\/ System Utils@{SYSTEM -\/ System Utils}!SYSTEM\_GetSRAMBaseAddress@{SYSTEM\_GetSRAMBaseAddress}}
+\index{SYSTEM\_GetSRAMBaseAddress@{SYSTEM\_GetSRAMBaseAddress}!SYSTEM -\/ System Utils@{SYSTEM -\/ System Utils}}
+\doxysubsubsection{\texorpdfstring{SYSTEM\_GetSRAMBaseAddress()}{SYSTEM\_GetSRAMBaseAddress()}}
+{\footnotesize\ttfamily \label{group__system_ga793355af9010592b53ed52c110b4a222} 
+uint32\+\_\+t SYSTEM\+\_\+\+Get\+SRAMBase\+Address (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Get the SRAM Base Address. 
+
+\begin{DoxyNote}{Note}
+This function is used to retrieve the base address of the SRAM.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Base address SRAM (32-\/bit unsigned integer). 
+\end{DoxyReturn}
+\Hypertarget{group__system_gaf5e594fe005226b5be88ee1027e00fb7}\index{SYSTEM -\/ System Utils@{SYSTEM -\/ System Utils}!SYSTEM\_GetSRAMSize@{SYSTEM\_GetSRAMSize}}
+\index{SYSTEM\_GetSRAMSize@{SYSTEM\_GetSRAMSize}!SYSTEM -\/ System Utils@{SYSTEM -\/ System Utils}}
+\doxysubsubsection{\texorpdfstring{SYSTEM\_GetSRAMSize()}{SYSTEM\_GetSRAMSize()}}
+{\footnotesize\ttfamily \label{group__system_gaf5e594fe005226b5be88ee1027e00fb7} 
+uint16\+\_\+t SYSTEM\+\_\+\+Get\+SRAMSize (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Get the SRAM size (in KB). 
+
+\begin{DoxyNote}{Note}
+This function retrieves SRAM size by reading the chip device info structure. If your binary is made for one specific device only, use SRAM\+\_\+\+SIZE instead.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Size of internal SRAM (in KB). 
+\end{DoxyReturn}
+\Hypertarget{group__system_ga143c106363ed3963dfd7f648b7c60cb3}\index{SYSTEM -\/ System Utils@{SYSTEM -\/ System Utils}!SYSTEM\_GetUnique@{SYSTEM\_GetUnique}}
+\index{SYSTEM\_GetUnique@{SYSTEM\_GetUnique}!SYSTEM -\/ System Utils@{SYSTEM -\/ System Utils}}
+\doxysubsubsection{\texorpdfstring{SYSTEM\_GetUnique()}{SYSTEM\_GetUnique()}}
+{\footnotesize\ttfamily \label{group__system_ga143c106363ed3963dfd7f648b7c60cb3} 
+uint64\+\_\+t SYSTEM\+\_\+\+Get\+Unique (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Get the unique number for this device. 
+
+\begin{DoxyReturn}{Returns}
+Unique number for this device. 
+\end{DoxyReturn}

@@ -1,0 +1,34 @@
+\doxysection{sl\+\_\+memory\+\_\+config.\+h}
+\hypertarget{sl__memory__config_8h_source}{}\label{sl__memory__config_8h_source}\index{config/sl\_memory\_config.h@{config/sl\_memory\_config.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SL\_MEMORY\_CONFIG\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SL\_MEMORY\_CONFIG\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ <<<\ Use\ Configuration\ Wizard\ in\ Context\ Menu\ >>>}}
+\DoxyCodeLine{00005\ \textcolor{comment}{//\ <h>\ Memory\ configuration}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ <o\ SL\_STACK\_SIZE>\ Stack\ size\ for\ the\ application.}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//\ <i>\ Default:\ 4096}}
+\DoxyCodeLine{00009\ \textcolor{comment}{//\ <i>\ The\ stack\ size\ configured\ here\ will\ be\ used\ by\ the\ stack\ that\ the}}
+\DoxyCodeLine{00010\ \textcolor{comment}{//\ <i>\ application\ uses\ when\ coming\ out\ of\ a\ reset.}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifndef\ SL\_STACK\_SIZE}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\ \ \#define\ SL\_STACK\_SIZE\ \ 4096}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{comment}{//\ <o\ SL\_HEAP\_SIZE>\ Minimum\ heap\ size\ for\ the\ application.}}
+\DoxyCodeLine{00016\ \textcolor{comment}{//\ <i>\ Default:\ 2048}}
+\DoxyCodeLine{00017\ \textcolor{comment}{//\ <i>\ Note\ that\ this\ value\ will\ configure\ the\ c\ heap\ which\ is\ normally\ used\ by}}
+\DoxyCodeLine{00018\ \textcolor{comment}{//\ <i>\ malloc()\ and\ free()\ from\ the\ c\ library.\ The\ value\ defines\ a\ minimum\ heap}}
+\DoxyCodeLine{00019\ \textcolor{comment}{//\ <i>\ size\ that\ is\ guaranteed\ to\ be\ available.\ The\ available\ heap\ may\ be\ larger}}
+\DoxyCodeLine{00020\ \textcolor{comment}{//\ <i>\ to\ make\ use\ of\ any\ memory\ that\ would\ otherwise\ remain\ unused.}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#ifndef\ SL\_HEAP\_SIZE}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\ \ \#define\ SL\_HEAP\_SIZE\ \ \ 2048}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \textcolor{comment}{//\ </h>}}
+\DoxyCodeLine{00026\ \textcolor{comment}{//\ <<<\ end\ of\ configuration\ section\ >>>}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,123 @@
+\doxysection{sli\+\_\+sleeptimer\+\_\+hal.\+h}
+\hypertarget{sli__sleeptimer__hal_8h_source}{}\label{sli__sleeptimer__hal_8h_source}\index{gecko\_sdk\_4.4.4/platform/service/sleeptimer/src/sli\_sleeptimer\_hal.h@{gecko\_sdk\_4.4.4/platform/service/sleeptimer/src/sli\_sleeptimer\_hal.h}}
+\mbox{\hyperlink{sli__sleeptimer__hal_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#ifndef\ SL\_SLEEPTIMER\_HAL\_H}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ SL\_SLEEPTIMER\_HAL\_H}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ <stddef.h>}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{em__device_8h}{em\_device.h}}"{}}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{sli__sleeptimer_8h}{sli\_sleeptimer.h}}"{}}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00041\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{00045\ \textcolor{comment}{\ *\ Hardware\ Abstraction\ Layer\ of\ the\ sleep\ timer\ init.}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00047\ \textcolor{keywordtype}{void}\ sleeptimer\_hal\_init\_timer(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ *\ Hardware\ Abstraction\ Layer\ to\ get\ the\ current\ timer\ count.}}
+\DoxyCodeLine{00051\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00052\ \textcolor{comment}{\ *\ @return\ Value\ in\ ticks\ of\ the\ timer\ counter.}}
+\DoxyCodeLine{00053\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00054\ uint32\_t\ sleeptimer\_hal\_get\_counter(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{00057\ \textcolor{comment}{\ *\ Hardware\ Abstraction\ Layer\ to\ get\ a\ timer\ comparator\ value.}}
+\DoxyCodeLine{00058\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00059\ \textcolor{comment}{\ *\ @return\ Value\ in\ ticks\ of\ the\ timer\ comparator.}}
+\DoxyCodeLine{00060\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00061\ uint32\_t\ sleeptimer\_hal\_get\_compare(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{00064\ \textcolor{comment}{\ *\ Hardware\ Abstraction\ Layer\ to\ set\ a\ timer\ comparator\ value.}}
+\DoxyCodeLine{00065\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00066\ \textcolor{comment}{\ *\ @param\ value\ Number\ of\ ticks\ to\ set.}}
+\DoxyCodeLine{00067\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00068\ \textcolor{keywordtype}{void}\ sleeptimer\_hal\_set\_compare(uint32\_t\ value);}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{00071\ \textcolor{comment}{\ *\ Hardware\ Abstraction\ Layer\ to\ set\ a\ comparator\ value\ to\ trigger\ a}}
+\DoxyCodeLine{00072\ \textcolor{comment}{\ *\ peripheral\ request\ signal\ to\ initialize.}}
+\DoxyCodeLine{00073\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00074\ \textcolor{comment}{\ *\ @param\ value\ Number\ of\ ticks\ to\ set.}}
+\DoxyCodeLine{00075\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00076\ \textcolor{keywordtype}{void}\ sleeptimer\_hal\_set\_compare\_prs\_hfxo\_startup(int32\_t\ value);}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00078\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{00079\ \textcolor{comment}{\ *\ Hardware\ Abstraction\ Layer\ to\ get\ the\ timer\ frequency.}}
+\DoxyCodeLine{00080\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00081\ uint32\_t\ sleeptimer\_hal\_get\_timer\_frequency(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{00084\ \textcolor{comment}{\ *\ Hardware\ Abstraction\ Layer\ to\ enable\ timer\ interrupts.}}
+\DoxyCodeLine{00085\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00086\ \textcolor{comment}{\ *\ @param\ local\_flag\ Internal\ interrupt\ flag.}}
+\DoxyCodeLine{00087\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00088\ \textcolor{keywordtype}{void}\ sleeptimer\_hal\_enable\_int(uint8\_t\ local\_flag);}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00090\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{00091\ \textcolor{comment}{\ *\ Hardware\ Abstraction\ Layer\ to\ disable\ timer\ interrupts.}}
+\DoxyCodeLine{00092\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00093\ \textcolor{comment}{\ *\ @param\ local\_flag\ Internal\ interrupt\ flag.}}
+\DoxyCodeLine{00094\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00095\ \textcolor{keywordtype}{void}\ sleeptimer\_hal\_disable\_int(uint8\_t\ local\_flag);}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{00098\ \textcolor{comment}{\ *\ Hardware\ Abstraction\ Layer\ to\ set\ timer\ interrupts.}}
+\DoxyCodeLine{00099\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00100\ \textcolor{comment}{\ *\ @param\ local\_flag\ Internal\ interrupt\ flag.}}
+\DoxyCodeLine{00101\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00102\ \textcolor{keywordtype}{void}\ sleeptimer\_hal\_set\_int(uint8\_t\ local\_flag);}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{00105\ \textcolor{comment}{\ *\ Hardware\ Abstraction\ Layer\ to\ get\ the\ sleeptimer's\ clock\ accuracy.}}
+\DoxyCodeLine{00106\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00107\ \textcolor{comment}{\ *\ @return\ Clock\ accuracy\ in\ PPM.}}
+\DoxyCodeLine{00108\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00109\ uint16\_t\ sleeptimer\_hal\_get\_clock\_accuracy(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{00112\ \textcolor{comment}{\ *\ Hardware\ Abstraction\ Layer\ to\ get\ the\ capture\ channel\ value.}}
+\DoxyCodeLine{00113\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00114\ \textcolor{comment}{\ *\ @note\ Not\ supported\ by\ all\ peripherals\ Sleeptimer\ can\ use.}}
+\DoxyCodeLine{00115\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00116\ \textcolor{comment}{\ *\ @return\ Capture\ value.}}
+\DoxyCodeLine{00117\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00118\ uint32\_t\ sleeptimer\_hal\_get\_capture(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00119\ }
+\DoxyCodeLine{00120\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{00121\ \textcolor{comment}{\ *\ Hardware\ Abstraction\ Layer\ to\ reset\ PRS\ signal\ triggered\ by\ the\ associated}}
+\DoxyCodeLine{00122\ \textcolor{comment}{\ *\ peripheral.}}
+\DoxyCodeLine{00123\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00124\ \textcolor{comment}{\ *\ @note\ Not\ supported\ by\ all\ peripherals\ Sleeptimer\ can\ use.}}
+\DoxyCodeLine{00125\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00126\ \textcolor{keywordtype}{void}\ sleeptimer\_hal\_reset\_prs\_signal(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{00129\ \textcolor{comment}{\ *\ Hardware\ Abstraction\ Layer\ to\ disable\ PRS\ compare\ and\ capture\ channel.}}
+\DoxyCodeLine{00130\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00131\ \textcolor{comment}{\ *\ @note\ Not\ supported\ by\ all\ peripherals\ Sleeptimer\ can\ use.}}
+\DoxyCodeLine{00132\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00133\ \textcolor{keywordtype}{void}\ sleeptimer\_hal\_disable\_prs\_compare\_and\_capture\_channel(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{00136\ \textcolor{comment}{\ *\ Process\ the\ timer\ interrupt.}}
+\DoxyCodeLine{00137\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00138\ \textcolor{comment}{\ *\ @param\ flags\ Internal\ interrupt\ flag.}}
+\DoxyCodeLine{00139\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00140\ \textcolor{keywordtype}{void}\ process\_timer\_irq(uint8\_t\ local\_flag);}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00142\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00143\ \}}
+\DoxyCodeLine{00144\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ SL\_SLEEPTIMER\_HAL\_H\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

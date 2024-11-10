@@ -1,0 +1,98 @@
+\doxysection{efm32gg\+\_\+wdog.\+h}
+\hypertarget{efm32gg__wdog_8h_source}{}\label{efm32gg__wdog_8h_source}\index{gecko\_sdk\_4.4.4/platform/Device/SiliconLabs/EFM32GG/Include/efm32gg\_wdog.h@{gecko\_sdk\_4.4.4/platform/Device/SiliconLabs/EFM32GG/Include/efm32gg\_wdog.h}}
+\mbox{\hyperlink{efm32gg__wdog_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#if\ defined(\_\_ICCARM\_\_)}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#pragma\ system\_include\ \ \ \ \ \ \ }\textcolor{comment}{/*\ Treat\ file\ as\ system\ include\ file.\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#elif\ defined(\_\_ARMCC\_VERSION)\ \&\&\ (\_\_ARMCC\_VERSION\ >=\ 6010050)}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#pragma\ clang\ system\_header\ \ }\textcolor{comment}{/*\ Treat\ file\ as\ system\ include\ file.\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00041\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00046\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00047\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_w_d_o_g___type_def_a0a7204acb2a38120127f305281a93711}{CTRL}};\ \ \ \ \ }
+\DoxyCodeLine{00048\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_w_d_o_g___type_def_a27ba6bb2942bef3ecd8bc1639fcebf27}{CMD}};\ \ \ \ \ \ }
+\DoxyCodeLine{00050\ \ \ \_\_IM\ uint32\_t\ \ \mbox{\hyperlink{struct_w_d_o_g___type_def_af9cef8bfaffd520d55d96332047e8d1c}{SYNCBUSY}};\ }
+\DoxyCodeLine{00051\ \}\ \mbox{\hyperlink{struct_w_d_o_g___type_def}{WDOG\_TypeDef}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00053\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00058\ \textcolor{comment}{/*\ Bit\ fields\ for\ WDOG\ CTRL\ */}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#define\ \_WDOG\_CTRL\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ 0x00000F00UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#define\ \_WDOG\_CTRL\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00003F7FUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#define\ WDOG\_CTRL\_EN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#define\ \_WDOG\_CTRL\_EN\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#define\ \_WDOG\_CTRL\_EN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#define\ \_WDOG\_CTRL\_EN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#define\ WDOG\_CTRL\_EN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ (\_WDOG\_CTRL\_EN\_DEFAULT\ <<\ 0)\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#define\ WDOG\_CTRL\_DEBUGRUN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#define\ \_WDOG\_CTRL\_DEBUGRUN\_SHIFT\ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#define\ \_WDOG\_CTRL\_DEBUGRUN\_MASK\ \ \ \ \ \ \ \ \ 0x2UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#define\ \_WDOG\_CTRL\_DEBUGRUN\_DEFAULT\ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#define\ WDOG\_CTRL\_DEBUGRUN\_DEFAULT\ \ \ \ \ \ \ (\_WDOG\_CTRL\_DEBUGRUN\_DEFAULT\ <<\ 1)\ \ \ }}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#define\ WDOG\_CTRL\_EM2RUN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 2)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#define\ \_WDOG\_CTRL\_EM2RUN\_SHIFT\ \ \ \ \ \ \ \ \ \ 2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#define\ \_WDOG\_CTRL\_EM2RUN\_MASK\ \ \ \ \ \ \ \ \ \ \ 0x4UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#define\ \_WDOG\_CTRL\_EM2RUN\_DEFAULT\ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#define\ WDOG\_CTRL\_EM2RUN\_DEFAULT\ \ \ \ \ \ \ \ \ (\_WDOG\_CTRL\_EM2RUN\_DEFAULT\ <<\ 2)\ \ \ \ \ }}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#define\ WDOG\_CTRL\_EM3RUN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 3)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#define\ \_WDOG\_CTRL\_EM3RUN\_SHIFT\ \ \ \ \ \ \ \ \ \ 3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#define\ \_WDOG\_CTRL\_EM3RUN\_MASK\ \ \ \ \ \ \ \ \ \ \ 0x8UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#define\ \_WDOG\_CTRL\_EM3RUN\_DEFAULT\ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#define\ WDOG\_CTRL\_EM3RUN\_DEFAULT\ \ \ \ \ \ \ \ \ (\_WDOG\_CTRL\_EM3RUN\_DEFAULT\ <<\ 3)\ \ \ \ \ }}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#define\ WDOG\_CTRL\_LOCK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 4)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#define\ \_WDOG\_CTRL\_LOCK\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ 4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#define\ \_WDOG\_CTRL\_LOCK\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ 0x10UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#define\ \_WDOG\_CTRL\_LOCK\_DEFAULT\ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#define\ WDOG\_CTRL\_LOCK\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ (\_WDOG\_CTRL\_LOCK\_DEFAULT\ <<\ 4)\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#define\ WDOG\_CTRL\_EM4BLOCK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 5)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#define\ \_WDOG\_CTRL\_EM4BLOCK\_SHIFT\ \ \ \ \ \ \ \ 5\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#define\ \_WDOG\_CTRL\_EM4BLOCK\_MASK\ \ \ \ \ \ \ \ \ 0x20UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#define\ \_WDOG\_CTRL\_EM4BLOCK\_DEFAULT\ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#define\ WDOG\_CTRL\_EM4BLOCK\_DEFAULT\ \ \ \ \ \ \ (\_WDOG\_CTRL\_EM4BLOCK\_DEFAULT\ <<\ 5)\ \ \ }}
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#define\ WDOG\_CTRL\_SWOSCBLOCK\ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 6)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#define\ \_WDOG\_CTRL\_SWOSCBLOCK\_SHIFT\ \ \ \ \ \ 6\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#define\ \_WDOG\_CTRL\_SWOSCBLOCK\_MASK\ \ \ \ \ \ \ 0x40UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\#define\ \_WDOG\_CTRL\_SWOSCBLOCK\_DEFAULT\ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#define\ WDOG\_CTRL\_SWOSCBLOCK\_DEFAULT\ \ \ \ \ (\_WDOG\_CTRL\_SWOSCBLOCK\_DEFAULT\ <<\ 6)\ }}
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\#define\ \_WDOG\_CTRL\_PERSEL\_SHIFT\ \ \ \ \ \ \ \ \ \ 8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\#define\ \_WDOG\_CTRL\_PERSEL\_MASK\ \ \ \ \ \ \ \ \ \ \ 0xF00UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\#define\ \_WDOG\_CTRL\_PERSEL\_DEFAULT\ \ \ \ \ \ \ \ 0x0000000FUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#define\ WDOG\_CTRL\_PERSEL\_DEFAULT\ \ \ \ \ \ \ \ \ (\_WDOG\_CTRL\_PERSEL\_DEFAULT\ <<\ 8)\ \ \ \ \ }}
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#define\ \_WDOG\_CTRL\_CLKSEL\_SHIFT\ \ \ \ \ \ \ \ \ \ 12\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#define\ \_WDOG\_CTRL\_CLKSEL\_MASK\ \ \ \ \ \ \ \ \ \ \ 0x3000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#define\ \_WDOG\_CTRL\_CLKSEL\_DEFAULT\ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00103\ \textcolor{preprocessor}{\#define\ \_WDOG\_CTRL\_CLKSEL\_ULFRCO\ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#define\ \_WDOG\_CTRL\_CLKSEL\_LFRCO\ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#define\ \_WDOG\_CTRL\_CLKSEL\_LFXO\ \ \ \ \ \ \ \ \ \ \ 0x00000002UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\#define\ WDOG\_CTRL\_CLKSEL\_DEFAULT\ \ \ \ \ \ \ \ \ (\_WDOG\_CTRL\_CLKSEL\_DEFAULT\ <<\ 12)\ \ \ \ }}
+\DoxyCodeLine{00107\ \textcolor{preprocessor}{\#define\ WDOG\_CTRL\_CLKSEL\_ULFRCO\ \ \ \ \ \ \ \ \ \ (\_WDOG\_CTRL\_CLKSEL\_ULFRCO\ <<\ 12)\ \ \ \ \ }}
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\#define\ WDOG\_CTRL\_CLKSEL\_LFRCO\ \ \ \ \ \ \ \ \ \ \ (\_WDOG\_CTRL\_CLKSEL\_LFRCO\ <<\ 12)\ \ \ \ \ \ }}
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\#define\ WDOG\_CTRL\_CLKSEL\_LFXO\ \ \ \ \ \ \ \ \ \ \ \ (\_WDOG\_CTRL\_CLKSEL\_LFXO\ <<\ 12)\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00111\ \textcolor{comment}{/*\ Bit\ fields\ for\ WDOG\ CMD\ */}}
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#define\ \_WDOG\_CMD\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#define\ \_WDOG\_CMD\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#define\ WDOG\_CMD\_CLEAR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\#define\ \_WDOG\_CMD\_CLEAR\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#define\ \_WDOG\_CMD\_CLEAR\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00117\ \textcolor{preprocessor}{\#define\ \_WDOG\_CMD\_CLEAR\_DEFAULT\ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00118\ \textcolor{preprocessor}{\#define\ \_WDOG\_CMD\_CLEAR\_UNCHANGED\ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00119\ \textcolor{preprocessor}{\#define\ \_WDOG\_CMD\_CLEAR\_CLEARED\ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00120\ \textcolor{preprocessor}{\#define\ WDOG\_CMD\_CLEAR\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ (\_WDOG\_CMD\_CLEAR\_DEFAULT\ <<\ 0)\ \ \ }}
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\#define\ WDOG\_CMD\_CLEAR\_UNCHANGED\ \ \ \ \ \ \ \ \ (\_WDOG\_CMD\_CLEAR\_UNCHANGED\ <<\ 0)\ }}
+\DoxyCodeLine{00122\ \textcolor{preprocessor}{\#define\ WDOG\_CMD\_CLEAR\_CLEARED\ \ \ \ \ \ \ \ \ \ \ (\_WDOG\_CMD\_CLEAR\_CLEARED\ <<\ 0)\ \ \ }}
+\DoxyCodeLine{00124\ \textcolor{comment}{/*\ Bit\ fields\ for\ WDOG\ SYNCBUSY\ */}}
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\#define\ \_WDOG\_SYNCBUSY\_RESETVALUE\ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00126\ \textcolor{preprocessor}{\#define\ \_WDOG\_SYNCBUSY\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000003UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\#define\ WDOG\_SYNCBUSY\_CTRL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\#define\ \_WDOG\_SYNCBUSY\_CTRL\_SHIFT\ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{\#define\ \_WDOG\_SYNCBUSY\_CTRL\_MASK\ \ \ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00130\ \textcolor{preprocessor}{\#define\ \_WDOG\_SYNCBUSY\_CTRL\_DEFAULT\ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00131\ \textcolor{preprocessor}{\#define\ WDOG\_SYNCBUSY\_CTRL\_DEFAULT\ \ \ \ \ \ \ (\_WDOG\_SYNCBUSY\_CTRL\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00132\ \textcolor{preprocessor}{\#define\ WDOG\_SYNCBUSY\_CMD\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00133\ \textcolor{preprocessor}{\#define\ \_WDOG\_SYNCBUSY\_CMD\_SHIFT\ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00134\ \textcolor{preprocessor}{\#define\ \_WDOG\_SYNCBUSY\_CMD\_MASK\ \ \ \ \ \ \ \ \ \ 0x2UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00135\ \textcolor{preprocessor}{\#define\ \_WDOG\_SYNCBUSY\_CMD\_DEFAULT\ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00136\ \textcolor{preprocessor}{\#define\ WDOG\_SYNCBUSY\_CMD\_DEFAULT\ \ \ \ \ \ \ \ (\_WDOG\_SYNCBUSY\_CMD\_DEFAULT\ <<\ 1)\ \ }}
+
+\end{DoxyCode}

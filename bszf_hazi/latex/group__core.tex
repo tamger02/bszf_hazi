@@ -1,0 +1,909 @@
+\doxysection{CORE -\/ Core Interrupt}
+\hypertarget{group__core}{}\label{group__core}\index{CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}}
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_c_o_r_e__nvic_mask__t}{CORE\+\_\+nvic\+Mask\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__core_ga507bd4d5cc348a56722265d6b45994f2}{CORE\+\_\+\+NVIC\+\_\+\+REG\+\_\+\+WORDS}}~((\mbox{\hyperlink{group___e_f_m32_g_g990_f1024___part_ga1f5541236b626715663b8cc3ec32e50d}{EXT\+\_\+\+IRQ\+\_\+\+COUNT}} + 31) / 32)
+\item 
+\#define \mbox{\hyperlink{group__core_ga7e6140d4c99fe9fb63c6575e063d8e52}{CORE\+\_\+\+DEFAULT\+\_\+\+VECTOR\+\_\+\+TABLE\+\_\+\+ENTRIES}}~(\mbox{\hyperlink{group___e_f_m32_g_g990_f1024___part_ga1f5541236b626715663b8cc3ec32e50d}{EXT\+\_\+\+IRQ\+\_\+\+COUNT}} + 16)
+\item 
+\#define \mbox{\hyperlink{group__core_ga3a3362b0f3a8415dcae958dfda16b8e2}{CORE\+\_\+\+ATOMIC\+\_\+\+METHOD}}~\mbox{\hyperlink{group__core_gaeba348aed5c4f0007a030f1c8820ee60}{CORE\+\_\+\+ATOMIC\+\_\+\+METHOD\+\_\+\+PRIMASK}}
+\item 
+\#define \mbox{\hyperlink{group__core_ga48fa5531aa876b474dcb262d883a49fb}{CORE\+\_\+\+DECLARE\+\_\+\+NVIC\+\_\+\+STATE}}~\mbox{\hyperlink{struct_c_o_r_e__nvic_mask__t}{CORE\+\_\+nvic\+Mask\+\_\+t}} nvic\+State
+\item 
+\#define \mbox{\hyperlink{group__core_gabf5d86fd0839a5d2d5e663540e0e8910}{CORE\+\_\+\+DECLARE\+\_\+\+NVIC\+\_\+\+MASK}}(x)
+\item 
+\#define \mbox{\hyperlink{group__core_ga116f3ebd47a391ed8f3eeccdc7b644bc}{CORE\+\_\+\+DECLARE\+\_\+\+NVIC\+\_\+\+ZEROMASK}}(x)
+\item 
+\#define \mbox{\hyperlink{group__core_ga352f474d43218c41285a671e8664b6a7}{CORE\+\_\+\+NVIC\+\_\+\+DISABLE}}(mask)
+\item 
+\#define \mbox{\hyperlink{group__core_ga98ba92d6787a8f8b36d91954354e887f}{CORE\+\_\+\+NVIC\+\_\+\+ENABLE}}(mask)
+\item 
+\#define \mbox{\hyperlink{group__core_ga8d8bb1ba3793bf2a876db528ce4fa38c}{CORE\+\_\+\+NVIC\+\_\+\+SECTION}}(mask,  yourcode)
+\item 
+\#define \mbox{\hyperlink{group__core_gaed344c90cda4ba26bc1753621404ef3f}{CORE\+\_\+\+ENTER\+\_\+\+NVIC}}(disable)
+\item 
+\#define \mbox{\hyperlink{group__core_ga65a6e410088e47a9da533583371ac598}{CORE\+\_\+\+EXIT\+\_\+\+NVIC}}()
+\item 
+\#define \mbox{\hyperlink{group__core_ga74cf9d908f5d967239a33467c40a7a14}{CORE\+\_\+\+YIELD\+\_\+\+NVIC}}(enable)
+\item 
+\#define \mbox{\hyperlink{group__core_gaeba348aed5c4f0007a030f1c8820ee60}{CORE\+\_\+\+ATOMIC\+\_\+\+METHOD\+\_\+\+PRIMASK}}~0
+\item 
+\#define \mbox{\hyperlink{group__core_gac18143c65838eabfc2388d2344dc429d}{CORE\+\_\+\+ATOMIC\+\_\+\+METHOD\+\_\+\+BASEPRI}}~1
+\item 
+\#define \mbox{\hyperlink{group__core_gadf7237e6f40425caeb2ac56efb97b43b}{CORE\+\_\+\+ATOMIC\+\_\+\+BASE\+\_\+\+PRIORITY\+\_\+\+LEVEL}}~3
+\item 
+\#define \mbox{\hyperlink{group__core_ga770acbc9bf18f2204fd1d81c65bcad07}{CORE\+\_\+\+DECLARE\+\_\+\+IRQ\+\_\+\+STATE}}~\mbox{\hyperlink{group__core_ga4b715be4b95b8b0ac6c7b188f517177b}{CORE\+\_\+irq\+State\+\_\+t}} irq\+State
+\item 
+\#define \mbox{\hyperlink{group__core_gafb3c7fbc4fd8df38110da033d99d9193}{CORE\+\_\+\+CRITICAL\+\_\+\+IRQ\+\_\+\+DISABLE}}()
+\item 
+\#define \mbox{\hyperlink{group__core_ga2d0a41dba824d038ae5c6dd71135f6c9}{CORE\+\_\+\+CRITICAL\+\_\+\+IRQ\+\_\+\+ENABLE}}()
+\item 
+\#define \mbox{\hyperlink{group__core_gad817d908619afc82a790744650da0e28}{CORE\+\_\+\+CRITICAL\+\_\+\+SECTION}}(yourcode)
+\item 
+\#define \mbox{\hyperlink{group__core_gabb488bf5398a45fb21d1388da085dead}{CORE\+\_\+\+ENTER\+\_\+\+CRITICAL}}()
+\item 
+\#define \mbox{\hyperlink{group__core_gaae5e49de8ff7edcc91752b613b64442e}{CORE\+\_\+\+EXIT\+\_\+\+CRITICAL}}()
+\item 
+\#define \mbox{\hyperlink{group__core_ga4f2ac37e1da452d00be7438787cf14a2}{CORE\+\_\+\+YIELD\+\_\+\+CRITICAL}}()
+\item 
+\#define \mbox{\hyperlink{group__core_gaca300955d4af80586f7ed4afc38b50ec}{CORE\+\_\+\+ATOMIC\+\_\+\+IRQ\+\_\+\+DISABLE}}()
+\item 
+\#define \mbox{\hyperlink{group__core_ga8ddac56edd47d007803cea8f762aa62c}{CORE\+\_\+\+ATOMIC\+\_\+\+IRQ\+\_\+\+ENABLE}}()
+\item 
+\#define \mbox{\hyperlink{group__core_ga3b0354ed174362818a7e22916917d43a}{CORE\+\_\+\+ATOMIC\+\_\+\+SECTION}}(yourcode)
+\item 
+\#define \mbox{\hyperlink{group__core_ga3fd462e452e25b08b0c4277997ca7900}{CORE\+\_\+\+ENTER\+\_\+\+ATOMIC}}()
+\item 
+\#define \mbox{\hyperlink{group__core_ga3190046f0bfe04980d45e624652f6c08}{CORE\+\_\+\+EXIT\+\_\+\+ATOMIC}}()
+\item 
+\#define \mbox{\hyperlink{group__core_ga323985957b31de45c10204b7cdb4177c}{CORE\+\_\+\+YIELD\+\_\+\+ATOMIC}}()
+\item 
+\#define \mbox{\hyperlink{group__core_gac32388547f0e6aa9de794933e1758f8c}{CORE\+\_\+\+IRQ\+\_\+\+DISABLED}}()
+\item 
+\#define \mbox{\hyperlink{group__core_gaa872b83f2d7d023e657831913024dff5}{CORE\+\_\+\+IN\+\_\+\+IRQ\+\_\+\+CONTEXT}}()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef uint32\+\_\+t \mbox{\hyperlink{group__core_ga4b715be4b95b8b0ac6c7b188f517177b}{CORE\+\_\+irq\+State\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{group__core_gafbb1265e4740eb07f50b8207c72e94f8}{CORE\+\_\+\+Irq\+Is\+Blocked}} (\mbox{\hyperlink{group___e_f_m32_g_g990_f1024_ga4a0206df9604302e0741c1aa4ca1ded3}{IRQn\+\_\+\+Type}} irqN)
+\begin{DoxyCompactList}\small\item\em Check if a specific interrupt is disabled or blocked. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__core_gaaa32f111ee6cdd5e854b489a04a79b68}{CORE\+\_\+\+Get\+Nvic\+Enabled\+Mask}} (\mbox{\hyperlink{struct_c_o_r_e__nvic_mask__t}{CORE\+\_\+nvic\+Mask\+\_\+t}} \texorpdfstring{$\ast$}{*}mask)
+\begin{DoxyCompactList}\small\item\em Get the current NVIC enable mask state. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__core_gaadb9b9a49a92a6857c600cffb4a8b384}{CORE\+\_\+\+Get\+Nvic\+Mask\+Disable\+State}} (const \mbox{\hyperlink{struct_c_o_r_e__nvic_mask__t}{CORE\+\_\+nvic\+Mask\+\_\+t}} \texorpdfstring{$\ast$}{*}mask)
+\begin{DoxyCompactList}\small\item\em Get NVIC disable state for a given mask. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__core_ga510268c9357cb2cffddd9dd75ddf7fab}{CORE\+\_\+\+Enter\+Nvic\+Mask}} (\mbox{\hyperlink{struct_c_o_r_e__nvic_mask__t}{CORE\+\_\+nvic\+Mask\+\_\+t}} \texorpdfstring{$\ast$}{*}nvic\+State, const \mbox{\hyperlink{struct_c_o_r_e__nvic_mask__t}{CORE\+\_\+nvic\+Mask\+\_\+t}} \texorpdfstring{$\ast$}{*}disable)
+\begin{DoxyCompactList}\small\item\em Enter a NVIC mask section. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__core_ga818266df617b6e900b124d30f4cf7db4}{CORE\+\_\+\+Nvic\+Disable\+Mask}} (const \mbox{\hyperlink{struct_c_o_r_e__nvic_mask__t}{CORE\+\_\+nvic\+Mask\+\_\+t}} \texorpdfstring{$\ast$}{*}disable)
+\begin{DoxyCompactList}\small\item\em Disable NVIC interrupts. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__core_gafd594b0671e10977a3655f289439af09}{CORE\+\_\+\+Nvic\+Enable\+Mask}} (const \mbox{\hyperlink{struct_c_o_r_e__nvic_mask__t}{CORE\+\_\+nvic\+Mask\+\_\+t}} \texorpdfstring{$\ast$}{*}enable)
+\begin{DoxyCompactList}\small\item\em Set current NVIC interrupt enable mask. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__core_ga3c84177a6c8922b997d9a0bb94ec0ff9}{CORE\+\_\+\+Yield\+Nvic\+Mask}} (const \mbox{\hyperlink{struct_c_o_r_e__nvic_mask__t}{CORE\+\_\+nvic\+Mask\+\_\+t}} \texorpdfstring{$\ast$}{*}enable)
+\begin{DoxyCompactList}\small\item\em Brief NVIC interrupt enable/disable sequence to allow handling of pending interrupts. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__core_ga74cc1f2c3a9c786f1108eba8305b4a02}{CORE\+\_\+\+Nvic\+Mask\+Set\+IRQ}} (\mbox{\hyperlink{group___e_f_m32_g_g990_f1024_ga4a0206df9604302e0741c1aa4ca1ded3}{IRQn\+\_\+\+Type}} irqN, \mbox{\hyperlink{struct_c_o_r_e__nvic_mask__t}{CORE\+\_\+nvic\+Mask\+\_\+t}} \texorpdfstring{$\ast$}{*}mask)
+\begin{DoxyCompactList}\small\item\em Utility function to set an IRQn bit in a NVIC enable/disable mask. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__core_ga9cf82cce035328e4558db771ecfe8720}{CORE\+\_\+\+Nvic\+Mask\+Clear\+IRQ}} (\mbox{\hyperlink{group___e_f_m32_g_g990_f1024_ga4a0206df9604302e0741c1aa4ca1ded3}{IRQn\+\_\+\+Type}} irqN, \mbox{\hyperlink{struct_c_o_r_e__nvic_mask__t}{CORE\+\_\+nvic\+Mask\+\_\+t}} \texorpdfstring{$\ast$}{*}mask)
+\begin{DoxyCompactList}\small\item\em Utility function to clear an IRQn bit in a NVIC enable/disable mask. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__core_ga788fc3ea8bf0a931e5b3c9266a543c25}{CORE\+\_\+\+Nvic\+IRQDisabled}} (\mbox{\hyperlink{group___e_f_m32_g_g990_f1024_ga4a0206df9604302e0741c1aa4ca1ded3}{IRQn\+\_\+\+Type}} irqN)
+\begin{DoxyCompactList}\small\item\em Check if an NVIC interrupt is disabled. \end{DoxyCompactList}\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__core_ga68c6a016bb6c8b59618aa256a718e8f0}{CORE\+\_\+\+Get\+Nvic\+Ram\+Table\+Handler}} (\mbox{\hyperlink{group___e_f_m32_g_g990_f1024_ga4a0206df9604302e0741c1aa4ca1ded3}{IRQn\+\_\+\+Type}} irqN)
+\begin{DoxyCompactList}\small\item\em Utility function to get the handler for a specific interrupt. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__core_gaff18df16b51922db178fed08846f2814}{CORE\+\_\+\+Set\+Nvic\+Ram\+Table\+Handler}} (\mbox{\hyperlink{group___e_f_m32_g_g990_f1024_ga4a0206df9604302e0741c1aa4ca1ded3}{IRQn\+\_\+\+Type}} irqN, void \texorpdfstring{$\ast$}{*}handler)
+\begin{DoxyCompactList}\small\item\em Utility function to set the handler for a specific interrupt. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__core_gaea8eb75f2f2a86503a47bf96c76ae332}{CORE\+\_\+\+Init\+Nvic\+Vector\+Table}} (uint32\+\_\+t \texorpdfstring{$\ast$}{*}source\+Table, uint32\+\_\+t source\+Size, uint32\+\_\+t \texorpdfstring{$\ast$}{*}target\+Table, uint32\+\_\+t target\+Size, void \texorpdfstring{$\ast$}{*}default\+Handler, bool overwrite\+Active)
+\begin{DoxyCompactList}\small\item\em Initialize an interrupt vector table by copying table entries from a source to a target table. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__core_gaf384443e32a4071dadbb233b4393da6e}{CORE\+\_\+\+Critical\+Disable\+Irq}} (void)
+\begin{DoxyCompactList}\small\item\em Disable interrupts. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__core_ga078f6bb5611b651ac8858a591709e902}{CORE\+\_\+\+Critical\+Enable\+Irq}} (void)
+\begin{DoxyCompactList}\small\item\em Enable interrupts. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__core_ga9f608029001648939e15102bba7f7a9f}{CORE\+\_\+\+Exit\+Critical}} (\mbox{\hyperlink{group__core_ga4b715be4b95b8b0ac6c7b188f517177b}{CORE\+\_\+irq\+State\+\_\+t}} irq\+State)
+\begin{DoxyCompactList}\small\item\em Exit a CRITICAL section. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__core_gaee798e8544d1b6600f1be7bbab08edd6}{CORE\+\_\+\+Yield\+Critical}} (void)
+\begin{DoxyCompactList}\small\item\em Brief interrupt enable/disable sequence to allow handling of pending interrupts. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__core_ga4b715be4b95b8b0ac6c7b188f517177b}{CORE\+\_\+irq\+State\+\_\+t}} \mbox{\hyperlink{group__core_gaad120bd5b22253eab8b42bca9c551cad}{CORE\+\_\+\+Enter\+Critical}} (void)
+\begin{DoxyCompactList}\small\item\em Enter a CRITICAL section. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__core_ga7ccdad7ebed113fe7340844fb2be3754}{CORE\+\_\+\+Atomic\+Disable\+Irq}} (void)
+\begin{DoxyCompactList}\small\item\em Disable interrupts. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__core_ga361a96a6ad2569718a8252c59f12c4d4}{CORE\+\_\+\+Atomic\+Enable\+Irq}} (void)
+\begin{DoxyCompactList}\small\item\em Enable interrupts. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__core_gadfb8f7b1d6d20ef12400accff1020b7d}{CORE\+\_\+\+Exit\+Atomic}} (\mbox{\hyperlink{group__core_ga4b715be4b95b8b0ac6c7b188f517177b}{CORE\+\_\+irq\+State\+\_\+t}} irq\+State)
+\begin{DoxyCompactList}\small\item\em Exit an ATOMIC section. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__core_gae9ee2196a41f59f38a822fad70878a84}{CORE\+\_\+\+Yield\+Atomic}} (void)
+\begin{DoxyCompactList}\small\item\em Brief interrupt enable/disable sequence to allow handling of pending interrupts. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__core_ga4b715be4b95b8b0ac6c7b188f517177b}{CORE\+\_\+irq\+State\+\_\+t}} \mbox{\hyperlink{group__core_gad1a6366f682c89e79ec6d9eb306db29e}{CORE\+\_\+\+Enter\+Atomic}} (void)
+\begin{DoxyCompactList}\small\item\em Enter an ATOMIC section. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__core_gad34f8d99ce6fde2253aef9729d7467bc}{CORE\+\_\+\+In\+Irq\+Context}} (void)
+\begin{DoxyCompactList}\small\item\em Check whether the current CPU operation mode is handler mode. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__core_gae46de7cf4cbba4462fafd19d94ba0b09}{CORE\+\_\+\+Irq\+Is\+Disabled}} (void)
+\begin{DoxyCompactList}\small\item\em Check if interrupts are disabled. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{group__core_gadf7237e6f40425caeb2ac56efb97b43b}\index{CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}!CORE\_ATOMIC\_BASE\_PRIORITY\_LEVEL@{CORE\_ATOMIC\_BASE\_PRIORITY\_LEVEL}}
+\index{CORE\_ATOMIC\_BASE\_PRIORITY\_LEVEL@{CORE\_ATOMIC\_BASE\_PRIORITY\_LEVEL}!CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}}
+\doxysubsubsection{\texorpdfstring{CORE\_ATOMIC\_BASE\_PRIORITY\_LEVEL}{CORE\_ATOMIC\_BASE\_PRIORITY\_LEVEL}}
+{\footnotesize\ttfamily \label{group__core_gadf7237e6f40425caeb2ac56efb97b43b} 
+\#define CORE\+\_\+\+ATOMIC\+\_\+\+BASE\+\_\+\+PRIORITY\+\_\+\+LEVEL~3}
+
+The interrupt priority level disabled within ATOMIC regions. Interrupts with priority level equal to or lower than this definition will be disabled within ATOMIC regions. \Hypertarget{group__core_gaca300955d4af80586f7ed4afc38b50ec}\index{CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}!CORE\_ATOMIC\_IRQ\_DISABLE@{CORE\_ATOMIC\_IRQ\_DISABLE}}
+\index{CORE\_ATOMIC\_IRQ\_DISABLE@{CORE\_ATOMIC\_IRQ\_DISABLE}!CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}}
+\doxysubsubsection{\texorpdfstring{CORE\_ATOMIC\_IRQ\_DISABLE}{CORE\_ATOMIC\_IRQ\_DISABLE}}
+{\footnotesize\ttfamily \label{group__core_gaca300955d4af80586f7ed4afc38b50ec} 
+\#define CORE\+\_\+\+ATOMIC\+\_\+\+IRQ\+\_\+\+DISABLE(\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{group__core_ga7ccdad7ebed113fe7340844fb2be3754}{CORE\_AtomicDisableIrq}}()}
+
+\end{DoxyCode}
+ATOMIC style interrupt disable. \Hypertarget{group__core_ga8ddac56edd47d007803cea8f762aa62c}\index{CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}!CORE\_ATOMIC\_IRQ\_ENABLE@{CORE\_ATOMIC\_IRQ\_ENABLE}}
+\index{CORE\_ATOMIC\_IRQ\_ENABLE@{CORE\_ATOMIC\_IRQ\_ENABLE}!CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}}
+\doxysubsubsection{\texorpdfstring{CORE\_ATOMIC\_IRQ\_ENABLE}{CORE\_ATOMIC\_IRQ\_ENABLE}}
+{\footnotesize\ttfamily \label{group__core_ga8ddac56edd47d007803cea8f762aa62c} 
+\#define CORE\+\_\+\+ATOMIC\+\_\+\+IRQ\+\_\+\+ENABLE(\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{group__core_ga361a96a6ad2569718a8252c59f12c4d4}{CORE\_AtomicEnableIrq}}()}
+
+\end{DoxyCode}
+ATOMIC style interrupt enable. \Hypertarget{group__core_ga3a3362b0f3a8415dcae958dfda16b8e2}\index{CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}!CORE\_ATOMIC\_METHOD@{CORE\_ATOMIC\_METHOD}}
+\index{CORE\_ATOMIC\_METHOD@{CORE\_ATOMIC\_METHOD}!CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}}
+\doxysubsubsection{\texorpdfstring{CORE\_ATOMIC\_METHOD}{CORE\_ATOMIC\_METHOD}}
+{\footnotesize\ttfamily \label{group__core_ga3a3362b0f3a8415dcae958dfda16b8e2} 
+\#define CORE\+\_\+\+ATOMIC\+\_\+\+METHOD~\mbox{\hyperlink{group__core_gaeba348aed5c4f0007a030f1c8820ee60}{CORE\+\_\+\+ATOMIC\+\_\+\+METHOD\+\_\+\+PRIMASK}}}
+
+Specify which method to use when implementing ATOMIC sections. You can select between BASEPRI or PRIMASK method. \begin{DoxyNote}{Note}
+On Cortex-\/\+M0+ devices only PRIMASK can be used. 
+\end{DoxyNote}
+\Hypertarget{group__core_gac18143c65838eabfc2388d2344dc429d}\index{CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}!CORE\_ATOMIC\_METHOD\_BASEPRI@{CORE\_ATOMIC\_METHOD\_BASEPRI}}
+\index{CORE\_ATOMIC\_METHOD\_BASEPRI@{CORE\_ATOMIC\_METHOD\_BASEPRI}!CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}}
+\doxysubsubsection{\texorpdfstring{CORE\_ATOMIC\_METHOD\_BASEPRI}{CORE\_ATOMIC\_METHOD\_BASEPRI}}
+{\footnotesize\ttfamily \label{group__core_gac18143c65838eabfc2388d2344dc429d} 
+\#define CORE\+\_\+\+ATOMIC\+\_\+\+METHOD\+\_\+\+BASEPRI~1}
+
+Use BASEPRI register to disable interrupts in ATOMIC sections. \Hypertarget{group__core_gaeba348aed5c4f0007a030f1c8820ee60}\index{CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}!CORE\_ATOMIC\_METHOD\_PRIMASK@{CORE\_ATOMIC\_METHOD\_PRIMASK}}
+\index{CORE\_ATOMIC\_METHOD\_PRIMASK@{CORE\_ATOMIC\_METHOD\_PRIMASK}!CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}}
+\doxysubsubsection{\texorpdfstring{CORE\_ATOMIC\_METHOD\_PRIMASK}{CORE\_ATOMIC\_METHOD\_PRIMASK}}
+{\footnotesize\ttfamily \label{group__core_gaeba348aed5c4f0007a030f1c8820ee60} 
+\#define CORE\+\_\+\+ATOMIC\+\_\+\+METHOD\+\_\+\+PRIMASK~0}
+
+Use PRIMASK register to disable interrupts in ATOMIC sections. \Hypertarget{group__core_ga3b0354ed174362818a7e22916917d43a}\index{CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}!CORE\_ATOMIC\_SECTION@{CORE\_ATOMIC\_SECTION}}
+\index{CORE\_ATOMIC\_SECTION@{CORE\_ATOMIC\_SECTION}!CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}}
+\doxysubsubsection{\texorpdfstring{CORE\_ATOMIC\_SECTION}{CORE\_ATOMIC\_SECTION}}
+{\footnotesize\ttfamily \label{group__core_ga3b0354ed174362818a7e22916917d43a} 
+\#define CORE\+\_\+\+ATOMIC\+\_\+\+SECTION(\begin{DoxyParamCaption}\item[{}]{yourcode}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{group__core_ga770acbc9bf18f2204fd1d81c65bcad07}{CORE\_DECLARE\_IRQ\_STATE}};\ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ CORE\_ENTER\_ATOMIC();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ yourcode\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ CORE\_EXIT\_ATOMIC();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \}}
+
+\end{DoxyCode}
+Convenience macro for implementing an ATOMIC section. \Hypertarget{group__core_gafb3c7fbc4fd8df38110da033d99d9193}\index{CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}!CORE\_CRITICAL\_IRQ\_DISABLE@{CORE\_CRITICAL\_IRQ\_DISABLE}}
+\index{CORE\_CRITICAL\_IRQ\_DISABLE@{CORE\_CRITICAL\_IRQ\_DISABLE}!CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}}
+\doxysubsubsection{\texorpdfstring{CORE\_CRITICAL\_IRQ\_DISABLE}{CORE\_CRITICAL\_IRQ\_DISABLE}}
+{\footnotesize\ttfamily \label{group__core_gafb3c7fbc4fd8df38110da033d99d9193} 
+\#define CORE\+\_\+\+CRITICAL\+\_\+\+IRQ\+\_\+\+DISABLE(\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{group__core_gaf384443e32a4071dadbb233b4393da6e}{CORE\_CriticalDisableIrq}}()}
+
+\end{DoxyCode}
+CRITICAL style interrupt disable. \Hypertarget{group__core_ga2d0a41dba824d038ae5c6dd71135f6c9}\index{CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}!CORE\_CRITICAL\_IRQ\_ENABLE@{CORE\_CRITICAL\_IRQ\_ENABLE}}
+\index{CORE\_CRITICAL\_IRQ\_ENABLE@{CORE\_CRITICAL\_IRQ\_ENABLE}!CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}}
+\doxysubsubsection{\texorpdfstring{CORE\_CRITICAL\_IRQ\_ENABLE}{CORE\_CRITICAL\_IRQ\_ENABLE}}
+{\footnotesize\ttfamily \label{group__core_ga2d0a41dba824d038ae5c6dd71135f6c9} 
+\#define CORE\+\_\+\+CRITICAL\+\_\+\+IRQ\+\_\+\+ENABLE(\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{group__core_ga078f6bb5611b651ac8858a591709e902}{CORE\_CriticalEnableIrq}}()}
+
+\end{DoxyCode}
+CRITICAL style interrupt enable. \Hypertarget{group__core_gad817d908619afc82a790744650da0e28}\index{CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}!CORE\_CRITICAL\_SECTION@{CORE\_CRITICAL\_SECTION}}
+\index{CORE\_CRITICAL\_SECTION@{CORE\_CRITICAL\_SECTION}!CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}}
+\doxysubsubsection{\texorpdfstring{CORE\_CRITICAL\_SECTION}{CORE\_CRITICAL\_SECTION}}
+{\footnotesize\ttfamily \label{group__core_gad817d908619afc82a790744650da0e28} 
+\#define CORE\+\_\+\+CRITICAL\+\_\+\+SECTION(\begin{DoxyParamCaption}\item[{}]{yourcode}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{group__core_ga770acbc9bf18f2204fd1d81c65bcad07}{CORE\_DECLARE\_IRQ\_STATE}};\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ CORE\_ENTER\_CRITICAL();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ yourcode\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ CORE\_EXIT\_CRITICAL();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \}}
+
+\end{DoxyCode}
+Convenience macro for implementing a CRITICAL section. \Hypertarget{group__core_ga770acbc9bf18f2204fd1d81c65bcad07}\index{CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}!CORE\_DECLARE\_IRQ\_STATE@{CORE\_DECLARE\_IRQ\_STATE}}
+\index{CORE\_DECLARE\_IRQ\_STATE@{CORE\_DECLARE\_IRQ\_STATE}!CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}}
+\doxysubsubsection{\texorpdfstring{CORE\_DECLARE\_IRQ\_STATE}{CORE\_DECLARE\_IRQ\_STATE}}
+{\footnotesize\ttfamily \label{group__core_ga770acbc9bf18f2204fd1d81c65bcad07} 
+\#define CORE\+\_\+\+DECLARE\+\_\+\+IRQ\+\_\+\+STATE~\mbox{\hyperlink{group__core_ga4b715be4b95b8b0ac6c7b188f517177b}{CORE\+\_\+irq\+State\+\_\+t}} irq\+State}
+
+Allocate storage for PRIMASK or BASEPRI value for use by CORE\+\_\+\+ENTER/\+EXIT\+\_\+\+ATOMIC() and CORE\+\_\+\+ENTER/\+EXIT\+\_\+\+CRITICAL() macros. \Hypertarget{group__core_gabf5d86fd0839a5d2d5e663540e0e8910}\index{CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}!CORE\_DECLARE\_NVIC\_MASK@{CORE\_DECLARE\_NVIC\_MASK}}
+\index{CORE\_DECLARE\_NVIC\_MASK@{CORE\_DECLARE\_NVIC\_MASK}!CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}}
+\doxysubsubsection{\texorpdfstring{CORE\_DECLARE\_NVIC\_MASK}{CORE\_DECLARE\_NVIC\_MASK}}
+{\footnotesize\ttfamily \label{group__core_gabf5d86fd0839a5d2d5e663540e0e8910} 
+\#define CORE\+\_\+\+DECLARE\+\_\+\+NVIC\+\_\+\+MASK(\begin{DoxyParamCaption}\item[{}]{x}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{struct_c_o_r_e__nvic_mask__t}{CORE\_nvicMask\_t}}\ x}
+
+\end{DoxyCode}
+Allocate storage for NVIC interrupt masks. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em x} & The storage variable name to use. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group__core_ga48fa5531aa876b474dcb262d883a49fb}\index{CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}!CORE\_DECLARE\_NVIC\_STATE@{CORE\_DECLARE\_NVIC\_STATE}}
+\index{CORE\_DECLARE\_NVIC\_STATE@{CORE\_DECLARE\_NVIC\_STATE}!CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}}
+\doxysubsubsection{\texorpdfstring{CORE\_DECLARE\_NVIC\_STATE}{CORE\_DECLARE\_NVIC\_STATE}}
+{\footnotesize\ttfamily \label{group__core_ga48fa5531aa876b474dcb262d883a49fb} 
+\#define CORE\+\_\+\+DECLARE\+\_\+\+NVIC\+\_\+\+STATE~\mbox{\hyperlink{struct_c_o_r_e__nvic_mask__t}{CORE\+\_\+nvic\+Mask\+\_\+t}} nvic\+State}
+
+Allocate storage for NVIC interrupt masks for use by CORE\+\_\+\+ENTER/\+EXIT\+\_\+\+NVIC() macros. \Hypertarget{group__core_ga116f3ebd47a391ed8f3eeccdc7b644bc}\index{CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}!CORE\_DECLARE\_NVIC\_ZEROMASK@{CORE\_DECLARE\_NVIC\_ZEROMASK}}
+\index{CORE\_DECLARE\_NVIC\_ZEROMASK@{CORE\_DECLARE\_NVIC\_ZEROMASK}!CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}}
+\doxysubsubsection{\texorpdfstring{CORE\_DECLARE\_NVIC\_ZEROMASK}{CORE\_DECLARE\_NVIC\_ZEROMASK}}
+{\footnotesize\ttfamily \label{group__core_ga116f3ebd47a391ed8f3eeccdc7b644bc} 
+\#define CORE\+\_\+\+DECLARE\+\_\+\+NVIC\+\_\+\+ZEROMASK(\begin{DoxyParamCaption}\item[{}]{x}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{struct_c_o_r_e__nvic_mask__t}{CORE\_nvicMask\_t}}\ x\ =\ \{\ \{\ 0\ \}\ \}}
+
+\end{DoxyCode}
+Allocate storage for and zero initialize NVIC interrupt mask. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em x} & The storage variable name to use. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group__core_ga7e6140d4c99fe9fb63c6575e063d8e52}\index{CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}!CORE\_DEFAULT\_VECTOR\_TABLE\_ENTRIES@{CORE\_DEFAULT\_VECTOR\_TABLE\_ENTRIES}}
+\index{CORE\_DEFAULT\_VECTOR\_TABLE\_ENTRIES@{CORE\_DEFAULT\_VECTOR\_TABLE\_ENTRIES}!CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}}
+\doxysubsubsection{\texorpdfstring{CORE\_DEFAULT\_VECTOR\_TABLE\_ENTRIES}{CORE\_DEFAULT\_VECTOR\_TABLE\_ENTRIES}}
+{\footnotesize\ttfamily \label{group__core_ga7e6140d4c99fe9fb63c6575e063d8e52} 
+\#define CORE\+\_\+\+DEFAULT\+\_\+\+VECTOR\+\_\+\+TABLE\+\_\+\+ENTRIES~(\mbox{\hyperlink{group___e_f_m32_g_g990_f1024___part_ga1f5541236b626715663b8cc3ec32e50d}{EXT\+\_\+\+IRQ\+\_\+\+COUNT}} + 16)}
+
+Number of entries in a default interrupt vector table. \Hypertarget{group__core_ga3fd462e452e25b08b0c4277997ca7900}\index{CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}!CORE\_ENTER\_ATOMIC@{CORE\_ENTER\_ATOMIC}}
+\index{CORE\_ENTER\_ATOMIC@{CORE\_ENTER\_ATOMIC}!CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}}
+\doxysubsubsection{\texorpdfstring{CORE\_ENTER\_ATOMIC}{CORE\_ENTER\_ATOMIC}}
+{\footnotesize\ttfamily \label{group__core_ga3fd462e452e25b08b0c4277997ca7900} 
+\#define CORE\+\_\+\+ENTER\+\_\+\+ATOMIC(\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{irqState\ =\ \mbox{\hyperlink{group__core_gad1a6366f682c89e79ec6d9eb306db29e}{CORE\_EnterAtomic}}()}
+
+\end{DoxyCode}
+Enter ATOMIC section. Assumes that a \doxylink{group__core_ga770acbc9bf18f2204fd1d81c65bcad07}{CORE\+\_\+\+DECLARE\+\_\+\+IRQ\+\_\+\+STATE} exist in scope. \Hypertarget{group__core_gabb488bf5398a45fb21d1388da085dead}\index{CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}!CORE\_ENTER\_CRITICAL@{CORE\_ENTER\_CRITICAL}}
+\index{CORE\_ENTER\_CRITICAL@{CORE\_ENTER\_CRITICAL}!CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}}
+\doxysubsubsection{\texorpdfstring{CORE\_ENTER\_CRITICAL}{CORE\_ENTER\_CRITICAL}}
+{\footnotesize\ttfamily \label{group__core_gabb488bf5398a45fb21d1388da085dead} 
+\#define CORE\+\_\+\+ENTER\+\_\+\+CRITICAL(\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{irqState\ =\ \mbox{\hyperlink{group__core_gaad120bd5b22253eab8b42bca9c551cad}{CORE\_EnterCritical}}()}
+
+\end{DoxyCode}
+Enter CRITICAL section. Assumes that a \doxylink{group__core_ga770acbc9bf18f2204fd1d81c65bcad07}{CORE\+\_\+\+DECLARE\+\_\+\+IRQ\+\_\+\+STATE} exist in scope. \Hypertarget{group__core_gaed344c90cda4ba26bc1753621404ef3f}\index{CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}!CORE\_ENTER\_NVIC@{CORE\_ENTER\_NVIC}}
+\index{CORE\_ENTER\_NVIC@{CORE\_ENTER\_NVIC}!CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}}
+\doxysubsubsection{\texorpdfstring{CORE\_ENTER\_NVIC}{CORE\_ENTER\_NVIC}}
+{\footnotesize\ttfamily \label{group__core_gaed344c90cda4ba26bc1753621404ef3f} 
+\#define CORE\+\_\+\+ENTER\+\_\+\+NVIC(\begin{DoxyParamCaption}\item[{}]{disable}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{group__core_ga510268c9357cb2cffddd9dd75ddf7fab}{CORE\_EnterNvicMask}}(\&nvicState,\ disable)}
+
+\end{DoxyCode}
+Enter NVIC mask section. Assumes that a \doxylink{group__core_ga48fa5531aa876b474dcb262d883a49fb}{CORE\+\_\+\+DECLARE\+\_\+\+NVIC\+\_\+\+STATE} exist in scope. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em disable} & Mask specifying which NVIC interrupts to disable within the section. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group__core_ga3190046f0bfe04980d45e624652f6c08}\index{CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}!CORE\_EXIT\_ATOMIC@{CORE\_EXIT\_ATOMIC}}
+\index{CORE\_EXIT\_ATOMIC@{CORE\_EXIT\_ATOMIC}!CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}}
+\doxysubsubsection{\texorpdfstring{CORE\_EXIT\_ATOMIC}{CORE\_EXIT\_ATOMIC}}
+{\footnotesize\ttfamily \label{group__core_ga3190046f0bfe04980d45e624652f6c08} 
+\#define CORE\+\_\+\+EXIT\+\_\+\+ATOMIC(\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{group__core_gadfb8f7b1d6d20ef12400accff1020b7d}{CORE\_ExitAtomic}}(irqState)}
+
+\end{DoxyCode}
+Exit ATOMIC section. Assumes that a \doxylink{group__core_ga770acbc9bf18f2204fd1d81c65bcad07}{CORE\+\_\+\+DECLARE\+\_\+\+IRQ\+\_\+\+STATE} exist in scope. \Hypertarget{group__core_gaae5e49de8ff7edcc91752b613b64442e}\index{CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}!CORE\_EXIT\_CRITICAL@{CORE\_EXIT\_CRITICAL}}
+\index{CORE\_EXIT\_CRITICAL@{CORE\_EXIT\_CRITICAL}!CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}}
+\doxysubsubsection{\texorpdfstring{CORE\_EXIT\_CRITICAL}{CORE\_EXIT\_CRITICAL}}
+{\footnotesize\ttfamily \label{group__core_gaae5e49de8ff7edcc91752b613b64442e} 
+\#define CORE\+\_\+\+EXIT\+\_\+\+CRITICAL(\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{group__core_ga9f608029001648939e15102bba7f7a9f}{CORE\_ExitCritical}}(irqState)}
+
+\end{DoxyCode}
+Exit CRITICAL section. Assumes that a \doxylink{group__core_ga770acbc9bf18f2204fd1d81c65bcad07}{CORE\+\_\+\+DECLARE\+\_\+\+IRQ\+\_\+\+STATE} exist in scope. \Hypertarget{group__core_ga65a6e410088e47a9da533583371ac598}\index{CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}!CORE\_EXIT\_NVIC@{CORE\_EXIT\_NVIC}}
+\index{CORE\_EXIT\_NVIC@{CORE\_EXIT\_NVIC}!CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}}
+\doxysubsubsection{\texorpdfstring{CORE\_EXIT\_NVIC}{CORE\_EXIT\_NVIC}}
+{\footnotesize\ttfamily \label{group__core_ga65a6e410088e47a9da533583371ac598} 
+\#define CORE\+\_\+\+EXIT\+\_\+\+NVIC(\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{group__core_gafd594b0671e10977a3655f289439af09}{CORE\_NvicEnableMask}}(\&nvicState)}
+
+\end{DoxyCode}
+Exit NVIC mask section. Assumes that a \doxylink{group__core_ga48fa5531aa876b474dcb262d883a49fb}{CORE\+\_\+\+DECLARE\+\_\+\+NVIC\+\_\+\+STATE} exist in scope. \Hypertarget{group__core_gaa872b83f2d7d023e657831913024dff5}\index{CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}!CORE\_IN\_IRQ\_CONTEXT@{CORE\_IN\_IRQ\_CONTEXT}}
+\index{CORE\_IN\_IRQ\_CONTEXT@{CORE\_IN\_IRQ\_CONTEXT}!CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}}
+\doxysubsubsection{\texorpdfstring{CORE\_IN\_IRQ\_CONTEXT}{CORE\_IN\_IRQ\_CONTEXT}}
+{\footnotesize\ttfamily \label{group__core_gaa872b83f2d7d023e657831913024dff5} 
+\#define CORE\+\_\+\+IN\+\_\+\+IRQ\+\_\+\+CONTEXT(\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{group__core_gad34f8d99ce6fde2253aef9729d7467bc}{CORE\_InIrqContext}}()}
+
+\end{DoxyCode}
+Check if inside an IRQ handler. \Hypertarget{group__core_gac32388547f0e6aa9de794933e1758f8c}\index{CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}!CORE\_IRQ\_DISABLED@{CORE\_IRQ\_DISABLED}}
+\index{CORE\_IRQ\_DISABLED@{CORE\_IRQ\_DISABLED}!CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}}
+\doxysubsubsection{\texorpdfstring{CORE\_IRQ\_DISABLED}{CORE\_IRQ\_DISABLED}}
+{\footnotesize\ttfamily \label{group__core_gac32388547f0e6aa9de794933e1758f8c} 
+\#define CORE\+\_\+\+IRQ\+\_\+\+DISABLED(\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{group__core_gae46de7cf4cbba4462fafd19d94ba0b09}{CORE\_IrqIsDisabled}}()}
+
+\end{DoxyCode}
+Check if IRQ is disabled. \Hypertarget{group__core_ga352f474d43218c41285a671e8664b6a7}\index{CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}!CORE\_NVIC\_DISABLE@{CORE\_NVIC\_DISABLE}}
+\index{CORE\_NVIC\_DISABLE@{CORE\_NVIC\_DISABLE}!CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}}
+\doxysubsubsection{\texorpdfstring{CORE\_NVIC\_DISABLE}{CORE\_NVIC\_DISABLE}}
+{\footnotesize\ttfamily \label{group__core_ga352f474d43218c41285a671e8664b6a7} 
+\#define CORE\+\_\+\+NVIC\+\_\+\+DISABLE(\begin{DoxyParamCaption}\item[{}]{mask}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{group__core_ga818266df617b6e900b124d30f4cf7db4}{CORE\_NvicDisableMask}}(mask)}
+
+\end{DoxyCode}
+NVIC mask style interrupt disable. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em mask} & Mask specifying which NVIC interrupts to disable. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group__core_ga98ba92d6787a8f8b36d91954354e887f}\index{CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}!CORE\_NVIC\_ENABLE@{CORE\_NVIC\_ENABLE}}
+\index{CORE\_NVIC\_ENABLE@{CORE\_NVIC\_ENABLE}!CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}}
+\doxysubsubsection{\texorpdfstring{CORE\_NVIC\_ENABLE}{CORE\_NVIC\_ENABLE}}
+{\footnotesize\ttfamily \label{group__core_ga98ba92d6787a8f8b36d91954354e887f} 
+\#define CORE\+\_\+\+NVIC\+\_\+\+ENABLE(\begin{DoxyParamCaption}\item[{}]{mask}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{group__core_gafd594b0671e10977a3655f289439af09}{CORE\_NvicEnableMask}}(mask)}
+
+\end{DoxyCode}
+NVIC mask style interrupt enable. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em mask} & Mask specifying which NVIC interrupts to enable. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group__core_ga507bd4d5cc348a56722265d6b45994f2}\index{CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}!CORE\_NVIC\_REG\_WORDS@{CORE\_NVIC\_REG\_WORDS}}
+\index{CORE\_NVIC\_REG\_WORDS@{CORE\_NVIC\_REG\_WORDS}!CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}}
+\doxysubsubsection{\texorpdfstring{CORE\_NVIC\_REG\_WORDS}{CORE\_NVIC\_REG\_WORDS}}
+{\footnotesize\ttfamily \label{group__core_ga507bd4d5cc348a56722265d6b45994f2} 
+\#define CORE\+\_\+\+NVIC\+\_\+\+REG\+\_\+\+WORDS~((\mbox{\hyperlink{group___e_f_m32_g_g990_f1024___part_ga1f5541236b626715663b8cc3ec32e50d}{EXT\+\_\+\+IRQ\+\_\+\+COUNT}} + 31) / 32)}
+
+Number of words in a NVIC mask set. \Hypertarget{group__core_ga8d8bb1ba3793bf2a876db528ce4fa38c}\index{CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}!CORE\_NVIC\_SECTION@{CORE\_NVIC\_SECTION}}
+\index{CORE\_NVIC\_SECTION@{CORE\_NVIC\_SECTION}!CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}}
+\doxysubsubsection{\texorpdfstring{CORE\_NVIC\_SECTION}{CORE\_NVIC\_SECTION}}
+{\footnotesize\ttfamily \label{group__core_ga8d8bb1ba3793bf2a876db528ce4fa38c} 
+\#define CORE\+\_\+\+NVIC\+\_\+\+SECTION(\begin{DoxyParamCaption}\item[{}]{mask}{, }\item[{}]{yourcode}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{group__core_ga48fa5531aa876b474dcb262d883a49fb}{CORE\_DECLARE\_NVIC\_STATE}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ CORE\_ENTER\_NVIC(mask);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ yourcode\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ CORE\_EXIT\_NVIC();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \}}
+
+\end{DoxyCode}
+Convenience macro for implementing a NVIC mask section. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em mask} & Mask specifying which NVIC interrupts to disable within the section. \\
+\hline
+\mbox{\texttt{ in}}  & {\em yourcode} & The code for the section. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group__core_ga323985957b31de45c10204b7cdb4177c}\index{CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}!CORE\_YIELD\_ATOMIC@{CORE\_YIELD\_ATOMIC}}
+\index{CORE\_YIELD\_ATOMIC@{CORE\_YIELD\_ATOMIC}!CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}}
+\doxysubsubsection{\texorpdfstring{CORE\_YIELD\_ATOMIC}{CORE\_YIELD\_ATOMIC}}
+{\footnotesize\ttfamily \label{group__core_ga323985957b31de45c10204b7cdb4177c} 
+\#define CORE\+\_\+\+YIELD\+\_\+\+ATOMIC(\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{group__core_gae9ee2196a41f59f38a822fad70878a84}{CORE\_YieldAtomic}}()}
+
+\end{DoxyCode}
+ATOMIC style yield. \Hypertarget{group__core_ga4f2ac37e1da452d00be7438787cf14a2}\index{CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}!CORE\_YIELD\_CRITICAL@{CORE\_YIELD\_CRITICAL}}
+\index{CORE\_YIELD\_CRITICAL@{CORE\_YIELD\_CRITICAL}!CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}}
+\doxysubsubsection{\texorpdfstring{CORE\_YIELD\_CRITICAL}{CORE\_YIELD\_CRITICAL}}
+{\footnotesize\ttfamily \label{group__core_ga4f2ac37e1da452d00be7438787cf14a2} 
+\#define CORE\+\_\+\+YIELD\+\_\+\+CRITICAL(\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{group__core_gaee798e8544d1b6600f1be7bbab08edd6}{CORE\_YieldCritical}}()}
+
+\end{DoxyCode}
+CRITICAL style yield. \Hypertarget{group__core_ga74cf9d908f5d967239a33467c40a7a14}\index{CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}!CORE\_YIELD\_NVIC@{CORE\_YIELD\_NVIC}}
+\index{CORE\_YIELD\_NVIC@{CORE\_YIELD\_NVIC}!CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}}
+\doxysubsubsection{\texorpdfstring{CORE\_YIELD\_NVIC}{CORE\_YIELD\_NVIC}}
+{\footnotesize\ttfamily \label{group__core_ga74cf9d908f5d967239a33467c40a7a14} 
+\#define CORE\+\_\+\+YIELD\+\_\+\+NVIC(\begin{DoxyParamCaption}\item[{}]{enable}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{group__core_ga3c84177a6c8922b997d9a0bb94ec0ff9}{CORE\_YieldNvicMask}}(enable)}
+
+\end{DoxyCode}
+NVIC maks style yield. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em enable} & Mask specifying which NVIC interrupts to briefly enable. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{group__core_ga4b715be4b95b8b0ac6c7b188f517177b}\index{CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}!CORE\_irqState\_t@{CORE\_irqState\_t}}
+\index{CORE\_irqState\_t@{CORE\_irqState\_t}!CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}}
+\doxysubsubsection{\texorpdfstring{CORE\_irqState\_t}{CORE\_irqState\_t}}
+{\footnotesize\ttfamily \label{group__core_ga4b715be4b95b8b0ac6c7b188f517177b} 
+typedef uint32\+\_\+t \mbox{\hyperlink{group__core_ga4b715be4b95b8b0ac6c7b188f517177b}{CORE\+\_\+irq\+State\+\_\+t}}}
+
+Storage for PRIMASK or BASEPRI value. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{group__core_ga7ccdad7ebed113fe7340844fb2be3754}\index{CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}!CORE\_AtomicDisableIrq@{CORE\_AtomicDisableIrq}}
+\index{CORE\_AtomicDisableIrq@{CORE\_AtomicDisableIrq}!CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}}
+\doxysubsubsection{\texorpdfstring{CORE\_AtomicDisableIrq()}{CORE\_AtomicDisableIrq()}}
+{\footnotesize\ttfamily \label{group__core_ga7ccdad7ebed113fe7340844fb2be3754} 
+void CORE\+\_\+\+Atomic\+Disable\+Irq (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Disable interrupts. 
+
+Disable interrupts with a priority lower or equal to \doxylink{group__core_gadf7237e6f40425caeb2ac56efb97b43b}{CORE\+\_\+\+ATOMIC\+\_\+\+BASE\+\_\+\+PRIORITY\+\_\+\+LEVEL}. Sets core BASEPRI register to CORE\+\_\+\+ATOMIC\+\_\+\+BASE\+\_\+\+PRIORITY\+\_\+\+LEVEL.
+
+\begin{DoxyNote}{Note}
+If \doxylink{group__core_ga3a3362b0f3a8415dcae958dfda16b8e2}{CORE\+\_\+\+ATOMIC\+\_\+\+METHOD} is \doxylink{group__core_gaeba348aed5c4f0007a030f1c8820ee60}{CORE\+\_\+\+ATOMIC\+\_\+\+METHOD\+\_\+\+PRIMASK}, this function is identical to \doxylink{group__core_gaf384443e32a4071dadbb233b4393da6e}{CORE\+\_\+\+Critical\+Disable\+Irq()}. 
+\end{DoxyNote}
+\Hypertarget{group__core_ga361a96a6ad2569718a8252c59f12c4d4}\index{CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}!CORE\_AtomicEnableIrq@{CORE\_AtomicEnableIrq}}
+\index{CORE\_AtomicEnableIrq@{CORE\_AtomicEnableIrq}!CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}}
+\doxysubsubsection{\texorpdfstring{CORE\_AtomicEnableIrq()}{CORE\_AtomicEnableIrq()}}
+{\footnotesize\ttfamily \label{group__core_ga361a96a6ad2569718a8252c59f12c4d4} 
+void CORE\+\_\+\+Atomic\+Enable\+Irq (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Enable interrupts. 
+
+Enable interrupts by setting core BASEPRI register to 0.
+
+\begin{DoxyNote}{Note}
+If \doxylink{group__core_ga3a3362b0f3a8415dcae958dfda16b8e2}{CORE\+\_\+\+ATOMIC\+\_\+\+METHOD} is \doxylink{group__core_gac18143c65838eabfc2388d2344dc429d}{CORE\+\_\+\+ATOMIC\+\_\+\+METHOD\+\_\+\+BASEPRI} and PRIMASK is set (CPU is inside a CRITICAL section), interrupts will still be disabled after calling this function.
+
+If \doxylink{group__core_ga3a3362b0f3a8415dcae958dfda16b8e2}{CORE\+\_\+\+ATOMIC\+\_\+\+METHOD} is \doxylink{group__core_gaeba348aed5c4f0007a030f1c8820ee60}{CORE\+\_\+\+ATOMIC\+\_\+\+METHOD\+\_\+\+PRIMASK}, this function is identical to \doxylink{group__core_ga078f6bb5611b651ac8858a591709e902}{CORE\+\_\+\+Critical\+Enable\+Irq()}. 
+\end{DoxyNote}
+\Hypertarget{group__core_gaf384443e32a4071dadbb233b4393da6e}\index{CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}!CORE\_CriticalDisableIrq@{CORE\_CriticalDisableIrq}}
+\index{CORE\_CriticalDisableIrq@{CORE\_CriticalDisableIrq}!CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}}
+\doxysubsubsection{\texorpdfstring{CORE\_CriticalDisableIrq()}{CORE\_CriticalDisableIrq()}}
+{\footnotesize\ttfamily \label{group__core_gaf384443e32a4071dadbb233b4393da6e} 
+void CORE\+\_\+\+Critical\+Disable\+Irq (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Disable interrupts. 
+
+Disable all interrupts by setting PRIMASK. (Fault exception handlers will still be enabled). \Hypertarget{group__core_ga078f6bb5611b651ac8858a591709e902}\index{CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}!CORE\_CriticalEnableIrq@{CORE\_CriticalEnableIrq}}
+\index{CORE\_CriticalEnableIrq@{CORE\_CriticalEnableIrq}!CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}}
+\doxysubsubsection{\texorpdfstring{CORE\_CriticalEnableIrq()}{CORE\_CriticalEnableIrq()}}
+{\footnotesize\ttfamily \label{group__core_ga078f6bb5611b651ac8858a591709e902} 
+void CORE\+\_\+\+Critical\+Enable\+Irq (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Enable interrupts. 
+
+Enable interrupts by clearing PRIMASK. \Hypertarget{group__core_gad1a6366f682c89e79ec6d9eb306db29e}\index{CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}!CORE\_EnterAtomic@{CORE\_EnterAtomic}}
+\index{CORE\_EnterAtomic@{CORE\_EnterAtomic}!CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}}
+\doxysubsubsection{\texorpdfstring{CORE\_EnterAtomic()}{CORE\_EnterAtomic()}}
+{\footnotesize\ttfamily \label{group__core_gad1a6366f682c89e79ec6d9eb306db29e} 
+\mbox{\hyperlink{group__core_ga4b715be4b95b8b0ac6c7b188f517177b}{CORE\+\_\+irq\+State\+\_\+t}} CORE\+\_\+\+Enter\+Atomic (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Enter an ATOMIC section. 
+
+When an ATOMIC section is entered, interrupts with priority lower or equal to \doxylink{group__core_gadf7237e6f40425caeb2ac56efb97b43b}{CORE\+\_\+\+ATOMIC\+\_\+\+BASE\+\_\+\+PRIORITY\+\_\+\+LEVEL} are disabled.
+
+\begin{DoxyNote}{Note}
+If \doxylink{group__core_ga3a3362b0f3a8415dcae958dfda16b8e2}{CORE\+\_\+\+ATOMIC\+\_\+\+METHOD} is \doxylink{group__core_gaeba348aed5c4f0007a030f1c8820ee60}{CORE\+\_\+\+ATOMIC\+\_\+\+METHOD\+\_\+\+PRIMASK}, this function is identical to \doxylink{group__core_gaad120bd5b22253eab8b42bca9c551cad}{CORE\+\_\+\+Enter\+Critical()}.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+The value of BASEPRI register prior to ATOMIC section entry. 
+\end{DoxyReturn}
+\Hypertarget{group__core_gaad120bd5b22253eab8b42bca9c551cad}\index{CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}!CORE\_EnterCritical@{CORE\_EnterCritical}}
+\index{CORE\_EnterCritical@{CORE\_EnterCritical}!CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}}
+\doxysubsubsection{\texorpdfstring{CORE\_EnterCritical()}{CORE\_EnterCritical()}}
+{\footnotesize\ttfamily \label{group__core_gaad120bd5b22253eab8b42bca9c551cad} 
+\mbox{\hyperlink{group__core_ga4b715be4b95b8b0ac6c7b188f517177b}{CORE\+\_\+irq\+State\+\_\+t}} CORE\+\_\+\+Enter\+Critical (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Enter a CRITICAL section. 
+
+When a CRITICAL section is entered, all interrupts (except fault handlers) are disabled.
+
+\begin{DoxyReturn}{Returns}
+The value of PRIMASK register prior to the CRITICAL section entry. 
+\end{DoxyReturn}
+\Hypertarget{group__core_ga510268c9357cb2cffddd9dd75ddf7fab}\index{CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}!CORE\_EnterNvicMask@{CORE\_EnterNvicMask}}
+\index{CORE\_EnterNvicMask@{CORE\_EnterNvicMask}!CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}}
+\doxysubsubsection{\texorpdfstring{CORE\_EnterNvicMask()}{CORE\_EnterNvicMask()}}
+{\footnotesize\ttfamily \label{group__core_ga510268c9357cb2cffddd9dd75ddf7fab} 
+void CORE\+\_\+\+Enter\+Nvic\+Mask (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_c_o_r_e__nvic_mask__t}{CORE\+\_\+nvic\+Mask\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{nvic\+State}{, }\item[{const \mbox{\hyperlink{struct_c_o_r_e__nvic_mask__t}{CORE\+\_\+nvic\+Mask\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{disable}{}\end{DoxyParamCaption})}
+
+
+
+Enter a NVIC mask section. 
+
+When a NVIC mask section is entered, specified NVIC interrupts are disabled.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em nvic\+State} & Return NVIC interrupts enable mask prior to section entry.\\
+\hline
+\mbox{\texttt{ in}}  & {\em disable} & A mask specifying which NVIC interrupts to disable within the section. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group__core_gadfb8f7b1d6d20ef12400accff1020b7d}\index{CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}!CORE\_ExitAtomic@{CORE\_ExitAtomic}}
+\index{CORE\_ExitAtomic@{CORE\_ExitAtomic}!CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}}
+\doxysubsubsection{\texorpdfstring{CORE\_ExitAtomic()}{CORE\_ExitAtomic()}}
+{\footnotesize\ttfamily \label{group__core_gadfb8f7b1d6d20ef12400accff1020b7d} 
+void CORE\+\_\+\+Exit\+Atomic (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__core_ga4b715be4b95b8b0ac6c7b188f517177b}{CORE\+\_\+irq\+State\+\_\+t}}}]{irq\+State}{}\end{DoxyParamCaption})}
+
+
+
+Exit an ATOMIC section. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em irq\+State} & The interrupt priority blocking level to restore to BASEPRI when exiting the ATOMIC section. This value is usually the one returned by a prior call to \doxylink{group__core_gad1a6366f682c89e79ec6d9eb306db29e}{CORE\+\_\+\+Enter\+Atomic()}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+If \doxylink{group__core_ga3a3362b0f3a8415dcae958dfda16b8e2}{CORE\+\_\+\+ATOMIC\+\_\+\+METHOD} is set to \doxylink{group__core_gaeba348aed5c4f0007a030f1c8820ee60}{CORE\+\_\+\+ATOMIC\+\_\+\+METHOD\+\_\+\+PRIMASK}, this function is identical to \doxylink{group__core_ga9f608029001648939e15102bba7f7a9f}{CORE\+\_\+\+Exit\+Critical()}. 
+\end{DoxyNote}
+\Hypertarget{group__core_ga9f608029001648939e15102bba7f7a9f}\index{CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}!CORE\_ExitCritical@{CORE\_ExitCritical}}
+\index{CORE\_ExitCritical@{CORE\_ExitCritical}!CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}}
+\doxysubsubsection{\texorpdfstring{CORE\_ExitCritical()}{CORE\_ExitCritical()}}
+{\footnotesize\ttfamily \label{group__core_ga9f608029001648939e15102bba7f7a9f} 
+void CORE\+\_\+\+Exit\+Critical (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__core_ga4b715be4b95b8b0ac6c7b188f517177b}{CORE\+\_\+irq\+State\+\_\+t}}}]{irq\+State}{}\end{DoxyParamCaption})}
+
+
+
+Exit a CRITICAL section. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em irq\+State} & The interrupt priority blocking level to restore to PRIMASK when exiting the CRITICAL section. This value is usually the one returned by a prior call to \doxylink{group__core_gaad120bd5b22253eab8b42bca9c551cad}{CORE\+\_\+\+Enter\+Critical()}. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group__core_gaaa32f111ee6cdd5e854b489a04a79b68}\index{CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}!CORE\_GetNvicEnabledMask@{CORE\_GetNvicEnabledMask}}
+\index{CORE\_GetNvicEnabledMask@{CORE\_GetNvicEnabledMask}!CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}}
+\doxysubsubsection{\texorpdfstring{CORE\_GetNvicEnabledMask()}{CORE\_GetNvicEnabledMask()}}
+{\footnotesize\ttfamily \label{group__core_gaaa32f111ee6cdd5e854b489a04a79b68} 
+void CORE\+\_\+\+Get\+Nvic\+Enabled\+Mask (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_c_o_r_e__nvic_mask__t}{CORE\+\_\+nvic\+Mask\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{mask}{}\end{DoxyParamCaption})}
+
+
+
+Get the current NVIC enable mask state. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em mask} & The current NVIC enable mask. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group__core_gaadb9b9a49a92a6857c600cffb4a8b384}\index{CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}!CORE\_GetNvicMaskDisableState@{CORE\_GetNvicMaskDisableState}}
+\index{CORE\_GetNvicMaskDisableState@{CORE\_GetNvicMaskDisableState}!CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}}
+\doxysubsubsection{\texorpdfstring{CORE\_GetNvicMaskDisableState()}{CORE\_GetNvicMaskDisableState()}}
+{\footnotesize\ttfamily \label{group__core_gaadb9b9a49a92a6857c600cffb4a8b384} 
+bool CORE\+\_\+\+Get\+Nvic\+Mask\+Disable\+State (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_c_o_r_e__nvic_mask__t}{CORE\+\_\+nvic\+Mask\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{mask}{}\end{DoxyParamCaption})}
+
+
+
+Get NVIC disable state for a given mask. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em mask} & An NVIC mask to check.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if all NVIC interrupt mask bits are clear. 
+\end{DoxyReturn}
+\Hypertarget{group__core_ga68c6a016bb6c8b59618aa256a718e8f0}\index{CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}!CORE\_GetNvicRamTableHandler@{CORE\_GetNvicRamTableHandler}}
+\index{CORE\_GetNvicRamTableHandler@{CORE\_GetNvicRamTableHandler}!CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}}
+\doxysubsubsection{\texorpdfstring{CORE\_GetNvicRamTableHandler()}{CORE\_GetNvicRamTableHandler()}}
+{\footnotesize\ttfamily \label{group__core_ga68c6a016bb6c8b59618aa256a718e8f0} 
+void \texorpdfstring{$\ast$}{*} CORE\+\_\+\+Get\+Nvic\+Ram\+Table\+Handler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___e_f_m32_g_g990_f1024_ga4a0206df9604302e0741c1aa4ca1ded3}{IRQn\+\_\+\+Type}}}]{irqN}{}\end{DoxyParamCaption})}
+
+
+
+Utility function to get the handler for a specific interrupt. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em irqN} & The IRQn\+\_\+\+Type enumerator for the interrupt.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The handler address.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Uses the interrupt vector table defined by the current VTOR register value. 
+\end{DoxyNote}
+\Hypertarget{group__core_gad34f8d99ce6fde2253aef9729d7467bc}\index{CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}!CORE\_InIrqContext@{CORE\_InIrqContext}}
+\index{CORE\_InIrqContext@{CORE\_InIrqContext}!CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}}
+\doxysubsubsection{\texorpdfstring{CORE\_InIrqContext()}{CORE\_InIrqContext()}}
+{\footnotesize\ttfamily \label{group__core_gad34f8d99ce6fde2253aef9729d7467bc} 
+bool CORE\+\_\+\+In\+Irq\+Context (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Check whether the current CPU operation mode is handler mode. 
+
+\begin{DoxyReturn}{Returns}
+True if the CPU is in handler mode (currently executing an interrupt handler). ~\newline
+ False if the CPU is in thread mode. 
+\end{DoxyReturn}
+\Hypertarget{group__core_gaea8eb75f2f2a86503a47bf96c76ae332}\index{CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}!CORE\_InitNvicVectorTable@{CORE\_InitNvicVectorTable}}
+\index{CORE\_InitNvicVectorTable@{CORE\_InitNvicVectorTable}!CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}}
+\doxysubsubsection{\texorpdfstring{CORE\_InitNvicVectorTable()}{CORE\_InitNvicVectorTable()}}
+{\footnotesize\ttfamily \label{group__core_gaea8eb75f2f2a86503a47bf96c76ae332} 
+void CORE\+\_\+\+Init\+Nvic\+Vector\+Table (\begin{DoxyParamCaption}\item[{uint32\+\_\+t \texorpdfstring{$\ast$}{*}}]{source\+Table}{, }\item[{uint32\+\_\+t}]{source\+Size}{, }\item[{uint32\+\_\+t \texorpdfstring{$\ast$}{*}}]{target\+Table}{, }\item[{uint32\+\_\+t}]{target\+Size}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{default\+Handler}{, }\item[{bool}]{overwrite\+Active}{}\end{DoxyParamCaption})}
+
+
+
+Initialize an interrupt vector table by copying table entries from a source to a target table. 
+
+\begin{DoxyNote}{Note}
+This function will set a new VTOR register value.
+\end{DoxyNote}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em source\+Table} & The address of the source vector table.\\
+\hline
+\mbox{\texttt{ in}}  & {\em source\+Size} & A number of entries in the source vector table.\\
+\hline
+\mbox{\texttt{ in}}  & {\em target\+Table} & The address of the target (new) vector table.\\
+\hline
+\mbox{\texttt{ in}}  & {\em target\+Size} & A number of entries in the target vector table.\\
+\hline
+\mbox{\texttt{ in}}  & {\em default\+Handler} & An address of the interrupt handler used for target entries for which where there is no corresponding source entry (i.\+e., the target table is larger than the source table).\\
+\hline
+\mbox{\texttt{ in}}  & {\em overwrite\+Active} & When true, a target table entry is always overwritten with the corresponding source entry. If false, a target table entry is only overwritten if it is zero. This makes it possible for an application to partly initialize a target table before passing it to this function. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group__core_gafbb1265e4740eb07f50b8207c72e94f8}\index{CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}!CORE\_IrqIsBlocked@{CORE\_IrqIsBlocked}}
+\index{CORE\_IrqIsBlocked@{CORE\_IrqIsBlocked}!CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}}
+\doxysubsubsection{\texorpdfstring{CORE\_IrqIsBlocked()}{CORE\_IrqIsBlocked()}}
+{\footnotesize\ttfamily \label{group__core_gafbb1265e4740eb07f50b8207c72e94f8} 
+bool CORE\+\_\+\+Irq\+Is\+Blocked (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___e_f_m32_g_g990_f1024_ga4a0206df9604302e0741c1aa4ca1ded3}{IRQn\+\_\+\+Type}}}]{irqN}{}\end{DoxyParamCaption})}
+
+
+
+Check if a specific interrupt is disabled or blocked. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em irqN} & The IRQn\+\_\+\+Type enumerator for the interrupt to check.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the interrupt is disabled or blocked. 
+\end{DoxyReturn}
+\Hypertarget{group__core_gae46de7cf4cbba4462fafd19d94ba0b09}\index{CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}!CORE\_IrqIsDisabled@{CORE\_IrqIsDisabled}}
+\index{CORE\_IrqIsDisabled@{CORE\_IrqIsDisabled}!CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}}
+\doxysubsubsection{\texorpdfstring{CORE\_IrqIsDisabled()}{CORE\_IrqIsDisabled()}}
+{\footnotesize\ttfamily \label{group__core_gae46de7cf4cbba4462fafd19d94ba0b09} 
+bool CORE\+\_\+\+Irq\+Is\+Disabled (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Check if interrupts are disabled. 
+
+\begin{DoxyReturn}{Returns}
+True if interrupts are disabled. 
+\end{DoxyReturn}
+\Hypertarget{group__core_ga818266df617b6e900b124d30f4cf7db4}\index{CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}!CORE\_NvicDisableMask@{CORE\_NvicDisableMask}}
+\index{CORE\_NvicDisableMask@{CORE\_NvicDisableMask}!CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}}
+\doxysubsubsection{\texorpdfstring{CORE\_NvicDisableMask()}{CORE\_NvicDisableMask()}}
+{\footnotesize\ttfamily \label{group__core_ga818266df617b6e900b124d30f4cf7db4} 
+void CORE\+\_\+\+Nvic\+Disable\+Mask (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_c_o_r_e__nvic_mask__t}{CORE\+\_\+nvic\+Mask\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{disable}{}\end{DoxyParamCaption})}
+
+
+
+Disable NVIC interrupts. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em disable} & A mask specifying which NVIC interrupts to disable. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group__core_gafd594b0671e10977a3655f289439af09}\index{CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}!CORE\_NvicEnableMask@{CORE\_NvicEnableMask}}
+\index{CORE\_NvicEnableMask@{CORE\_NvicEnableMask}!CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}}
+\doxysubsubsection{\texorpdfstring{CORE\_NvicEnableMask()}{CORE\_NvicEnableMask()}}
+{\footnotesize\ttfamily \label{group__core_gafd594b0671e10977a3655f289439af09} 
+void CORE\+\_\+\+Nvic\+Enable\+Mask (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_c_o_r_e__nvic_mask__t}{CORE\+\_\+nvic\+Mask\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{enable}{}\end{DoxyParamCaption})}
+
+
+
+Set current NVIC interrupt enable mask. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ out}}  & {\em enable} & A mask specifying which NVIC interrupts are currently enabled. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group__core_ga788fc3ea8bf0a931e5b3c9266a543c25}\index{CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}!CORE\_NvicIRQDisabled@{CORE\_NvicIRQDisabled}}
+\index{CORE\_NvicIRQDisabled@{CORE\_NvicIRQDisabled}!CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}}
+\doxysubsubsection{\texorpdfstring{CORE\_NvicIRQDisabled()}{CORE\_NvicIRQDisabled()}}
+{\footnotesize\ttfamily \label{group__core_ga788fc3ea8bf0a931e5b3c9266a543c25} 
+bool CORE\+\_\+\+Nvic\+IRQDisabled (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___e_f_m32_g_g990_f1024_ga4a0206df9604302e0741c1aa4ca1ded3}{IRQn\+\_\+\+Type}}}]{irqN}{}\end{DoxyParamCaption})}
+
+
+
+Check if an NVIC interrupt is disabled. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em irqN} & The IRQn\+\_\+\+Type enumerator for the interrupt to check.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the interrupt is disabled. 
+\end{DoxyReturn}
+\Hypertarget{group__core_ga9cf82cce035328e4558db771ecfe8720}\index{CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}!CORE\_NvicMaskClearIRQ@{CORE\_NvicMaskClearIRQ}}
+\index{CORE\_NvicMaskClearIRQ@{CORE\_NvicMaskClearIRQ}!CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}}
+\doxysubsubsection{\texorpdfstring{CORE\_NvicMaskClearIRQ()}{CORE\_NvicMaskClearIRQ()}}
+{\footnotesize\ttfamily \label{group__core_ga9cf82cce035328e4558db771ecfe8720} 
+void CORE\+\_\+\+Nvic\+Mask\+Clear\+IRQ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___e_f_m32_g_g990_f1024_ga4a0206df9604302e0741c1aa4ca1ded3}{IRQn\+\_\+\+Type}}}]{irqN}{, }\item[{\mbox{\hyperlink{struct_c_o_r_e__nvic_mask__t}{CORE\+\_\+nvic\+Mask\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{mask}{}\end{DoxyParamCaption})}
+
+
+
+Utility function to clear an IRQn bit in a NVIC enable/disable mask. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em irqN} & The IRQn\+\_\+\+Type enumerator for the interrupt.\\
+\hline
+\mbox{\texttt{ in,out}}  & {\em mask} & The mask to clear the interrupt bit in. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group__core_ga74cc1f2c3a9c786f1108eba8305b4a02}\index{CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}!CORE\_NvicMaskSetIRQ@{CORE\_NvicMaskSetIRQ}}
+\index{CORE\_NvicMaskSetIRQ@{CORE\_NvicMaskSetIRQ}!CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}}
+\doxysubsubsection{\texorpdfstring{CORE\_NvicMaskSetIRQ()}{CORE\_NvicMaskSetIRQ()}}
+{\footnotesize\ttfamily \label{group__core_ga74cc1f2c3a9c786f1108eba8305b4a02} 
+void CORE\+\_\+\+Nvic\+Mask\+Set\+IRQ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___e_f_m32_g_g990_f1024_ga4a0206df9604302e0741c1aa4ca1ded3}{IRQn\+\_\+\+Type}}}]{irqN}{, }\item[{\mbox{\hyperlink{struct_c_o_r_e__nvic_mask__t}{CORE\+\_\+nvic\+Mask\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{mask}{}\end{DoxyParamCaption})}
+
+
+
+Utility function to set an IRQn bit in a NVIC enable/disable mask. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em irqN} & The IRQn\+\_\+\+Type enumerator for the interrupt.\\
+\hline
+\mbox{\texttt{ in,out}}  & {\em mask} & The mask to set the interrupt bit in. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group__core_gaff18df16b51922db178fed08846f2814}\index{CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}!CORE\_SetNvicRamTableHandler@{CORE\_SetNvicRamTableHandler}}
+\index{CORE\_SetNvicRamTableHandler@{CORE\_SetNvicRamTableHandler}!CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}}
+\doxysubsubsection{\texorpdfstring{CORE\_SetNvicRamTableHandler()}{CORE\_SetNvicRamTableHandler()}}
+{\footnotesize\ttfamily \label{group__core_gaff18df16b51922db178fed08846f2814} 
+void CORE\+\_\+\+Set\+Nvic\+Ram\+Table\+Handler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group___e_f_m32_g_g990_f1024_ga4a0206df9604302e0741c1aa4ca1ded3}{IRQn\+\_\+\+Type}}}]{irqN}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{handler}{}\end{DoxyParamCaption})}
+
+
+
+Utility function to set the handler for a specific interrupt. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em irqN} & The IRQn\+\_\+\+Type enumerator for the interrupt.\\
+\hline
+\mbox{\texttt{ in}}  & {\em handler} & The handler address.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Uses the interrupt vector table defined by the current VTOR register value. 
+\end{DoxyNote}
+\Hypertarget{group__core_gae9ee2196a41f59f38a822fad70878a84}\index{CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}!CORE\_YieldAtomic@{CORE\_YieldAtomic}}
+\index{CORE\_YieldAtomic@{CORE\_YieldAtomic}!CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}}
+\doxysubsubsection{\texorpdfstring{CORE\_YieldAtomic()}{CORE\_YieldAtomic()}}
+{\footnotesize\ttfamily \label{group__core_gae9ee2196a41f59f38a822fad70878a84} 
+void CORE\+\_\+\+Yield\+Atomic (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Brief interrupt enable/disable sequence to allow handling of pending interrupts. 
+
+\begin{DoxyNote}{Note}
+Usully used within an ATOMIC section.
+
+If \doxylink{group__core_ga3a3362b0f3a8415dcae958dfda16b8e2}{CORE\+\_\+\+ATOMIC\+\_\+\+METHOD} is \doxylink{group__core_gaeba348aed5c4f0007a030f1c8820ee60}{CORE\+\_\+\+ATOMIC\+\_\+\+METHOD\+\_\+\+PRIMASK}, this function is identical to \doxylink{group__core_gaee798e8544d1b6600f1be7bbab08edd6}{CORE\+\_\+\+Yield\+Critical()}. 
+\end{DoxyNote}
+\Hypertarget{group__core_gaee798e8544d1b6600f1be7bbab08edd6}\index{CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}!CORE\_YieldCritical@{CORE\_YieldCritical}}
+\index{CORE\_YieldCritical@{CORE\_YieldCritical}!CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}}
+\doxysubsubsection{\texorpdfstring{CORE\_YieldCritical()}{CORE\_YieldCritical()}}
+{\footnotesize\ttfamily \label{group__core_gaee798e8544d1b6600f1be7bbab08edd6} 
+void CORE\+\_\+\+Yield\+Critical (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Brief interrupt enable/disable sequence to allow handling of pending interrupts. 
+
+\begin{DoxyNote}{Note}
+Usually used within a CRITICAL section. 
+\end{DoxyNote}
+\Hypertarget{group__core_ga3c84177a6c8922b997d9a0bb94ec0ff9}\index{CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}!CORE\_YieldNvicMask@{CORE\_YieldNvicMask}}
+\index{CORE\_YieldNvicMask@{CORE\_YieldNvicMask}!CORE -\/ Core Interrupt@{CORE -\/ Core Interrupt}}
+\doxysubsubsection{\texorpdfstring{CORE\_YieldNvicMask()}{CORE\_YieldNvicMask()}}
+{\footnotesize\ttfamily \label{group__core_ga3c84177a6c8922b997d9a0bb94ec0ff9} 
+void CORE\+\_\+\+Yield\+Nvic\+Mask (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_c_o_r_e__nvic_mask__t}{CORE\+\_\+nvic\+Mask\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{enable}{}\end{DoxyParamCaption})}
+
+
+
+Brief NVIC interrupt enable/disable sequence to allow handling of pending interrupts. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em enable} & A mask specifying which NVIC interrupts to briefly enable.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Usually used within an NVIC mask section. 
+\end{DoxyNote}

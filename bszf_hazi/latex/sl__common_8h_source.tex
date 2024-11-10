@@ -1,0 +1,229 @@
+\doxysection{sl\+\_\+common.\+h}
+\hypertarget{sl__common_8h_source}{}\label{sl__common_8h_source}\index{gecko\_sdk\_4.4.4/platform/common/inc/sl\_common.h@{gecko\_sdk\_4.4.4/platform/common/inc/sl\_common.h}}
+\mbox{\hyperlink{sl__common_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#ifndef\ SL\_COMMON\_H}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ SL\_COMMON\_H}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{sl__assert_8h}{sl\_assert.h}}"{}}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00039\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#if\ !defined(\_\_STATIC\_INLINE)}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#if\ !defined(\_\_unix\_\_)\ \&\&\ defined(\_\_arm\_\_)}}
+\DoxyCodeLine{00044\ \textcolor{comment}{/*\ Compiler\ agnostic\ definitions\ */}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{cmsis__compiler_8h}{cmsis\_compiler.h}}"{}}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#elif\ defined(\_\_STDC\_VERSION\_\_)\ \&\&\ (\_\_STDC\_VERSION\_\_\ >=\ 199901L)}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ \_\_STATIC\_INLINE\ static\ inline}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#warning\ Please\ provide\ a\ macro\ for\ your\ compiler\ and\ architecture}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ \_\_STATIC\_INLINE\ static}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#define\ SL\_CONCAT\_PASTER\_2(first,\ second)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ first\ \#\#\ \ second\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#define\ SL\_CONCAT\_PASTER\_3(first,\ second,\ third)\ \ \ \ \ \ \ \ \ \ first\ \#\#\ \ second\ \#\#\ third\ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#define\ SL\_CONCAT\_PASTER\_4(first,\ second,\ third,\ fourth)\ \ first\ \#\#\ \ second\ \#\#\ third\ \#\#\ fourth\ \ \ }}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#define\ SL\_CEILING(n,\ i)\ \ \ ((((n)\ +\ (i)\ -\/\ 1U)\ /\ (i))\ *\ (i))}}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#define\ SL\_FLOOR(n,\ i)\ ((n\ /\ i)\ *\ i)}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#define\ STRINGIZE(X)\ \#X}}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#if\ !defined(\_\_GNUC\_\_)}}
+\DoxyCodeLine{00090\ \textcolor{comment}{/*\ Not\ GCC\ compilers\ */}}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#define\ SL\_MIN(a,\ b)\ ((a)\ <\ (b)\ ?\ (a)\ :\ (b))}}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\#define\ SL\_MAX(a,\ b)\ ((a)\ >\ (b)\ ?\ (a)\ :\ (b))}}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#define\ SL\_PACK\_START(X)\ \_Pragma(STRINGIZE(pack(X)))}}
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#define\ SL\_PACK\_END()\ \ \ \ \_Pragma("{}pack()"{})}}
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#define\ SL\_ATTRIBUTE\_PACKED}}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \textcolor{preprocessor}{\#if\ defined(\_\_CC\_ARM)}}
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#define\ SL\_ALIGN(X)\ \_\_align(X)}}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\#define\ SL\_WEAK\ \_\_attribute\_\_\ ((weak))}}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\#define\ SL\_NORETURN\ \_\_attribute\_\_\ ((noreturn))}}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#define\ SL\_ATTRIBUTE\_SECTION(X)\ \_\_attribute\_\_\ ((section(X)))}}
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00116\ }
+\DoxyCodeLine{00117\ \textcolor{preprocessor}{\#if\ defined(\_\_ICCARM\_\_)}}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \textcolor{preprocessor}{\#if\ (\_\_VER\_\_\ >=\ 8000000)}}
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\#define\ \_STD\_BEGIN}}
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\#define\ \_STD\_END}}
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\#define\ SL\_ALIGN(X)\ \_Pragma(STRINGIZE(data\_alignment\ =\ X))}}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00130\ \textcolor{preprocessor}{\#define\ SL\_WEAK\ \_\_weak}}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00133\ \textcolor{preprocessor}{\#define\ SL\_NORETURN\ \_\_noreturn}}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \textcolor{comment}{/*\ *INDENT-\/OFF*\ */}}
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\#define\ SL\_ATTRIBUTE\_SECTION(X)\ @\ X}}
+\DoxyCodeLine{00138\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00139\ \textcolor{comment}{/*\ *INDENT-\/ON*\ */}}
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \textcolor{preprocessor}{\#define\ SL\_ATTRIBUTE\_ALIGN(X)}}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00145\ \textcolor{preprocessor}{\#define\ SL\_FALLTHROUGH}}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00148\ \textcolor{preprocessor}{\#define\ SL\_IGNORE\_TYPE\_LIMIT\_BEGIN}}
+\DoxyCodeLine{00149\ \textcolor{preprocessor}{\#define\ SL\_IGNORE\_TYPE\_LIMIT\_END}}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00151\ \textcolor{preprocessor}{\#else\ }\textcolor{comment}{//\ !defined(\_\_GNUC\_\_)}}
+\DoxyCodeLine{00152\ \textcolor{comment}{/*\ GCC\ compilers\ */}}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00155\ \textcolor{preprocessor}{\#define\ SL\_MIN(a,\ b)\ \_\_extension\_\_(\{\ \_\_typeof\_\_(a)\_a\ =\ (a);\ \_\_typeof\_\_(b)\_b\ =\ (b);\ \_a\ <\ \_b\ ?\ \_a\ :\ \_b;\ \})}}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00158\ \textcolor{preprocessor}{\#define\ SL\_MAX(a,\ b)\ \_\_extension\_\_(\{\ \_\_typeof\_\_(a)\_a\ =\ (a);\ \_\_typeof\_\_(b)\_b\ =\ (b);\ \_a\ >\ \_b\ ?\ \_a\ :\ \_b;\ \})}}
+\DoxyCodeLine{00159\ }
+\DoxyCodeLine{00161\ \textcolor{preprocessor}{\#define\ SL\_ATTRIBUTE\_PACKED\ \_\_attribute\_\_\ ((packed))}}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00168\ \textcolor{preprocessor}{\#define\ SL\_PACK\_START(x)}}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00175\ \textcolor{preprocessor}{\#define\ SL\_PACK\_END()}}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00178\ \textcolor{preprocessor}{\#define\ SL\_ATTRIBUTE\_ALIGN(X)\ \_\_attribute\_\_\ ((aligned(X)))}}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00186\ \textcolor{preprocessor}{\#define\ SL\_ALIGN(X)}}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00189\ \textcolor{preprocessor}{\#define\ SL\_WEAK\ \_\_attribute\_\_\ ((weak))}}
+\DoxyCodeLine{00190\ }
+\DoxyCodeLine{00192\ \textcolor{preprocessor}{\#define\ SL\_NORETURN\ \_\_attribute\_\_\ ((noreturn))}}
+\DoxyCodeLine{00193\ }
+\DoxyCodeLine{00198\ \textcolor{preprocessor}{\#define\ SL\_ATTRIBUTE\_SECTION(X)\ \_\_attribute\_\_\ ((section(X)))}}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00202\ \textcolor{preprocessor}{\#if\ \_\_GNUC\_\_\ >=\ 7}}
+\DoxyCodeLine{00203\ \textcolor{preprocessor}{\ \ \#define\ SL\_FALLTHROUGH\ \_\_attribute\_\_\ ((fallthrough));}}
+\DoxyCodeLine{00204\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00205\ \textcolor{preprocessor}{\ \ \#define\ SL\_FALLTHROUGH}}
+\DoxyCodeLine{00206\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00209\ \textcolor{preprocessor}{\#if\ \_\_GNUC\_\_\ >\ 4\ ||\ (\_\_GNUC\_\_\ ==\ 4\ \&\&\ \_\_GNUC\_MINOR\_\_\ >=\ 6)}}
+\DoxyCodeLine{00210\ \textcolor{preprocessor}{\ \ \#define\ SL\_IGNORE\_TYPE\_LIMIT\_BEGIN\ \(\backslash\)}}
+\DoxyCodeLine{00211\ \textcolor{preprocessor}{\ \ \_Pragma("{}GCC\ diagnostic\ push"{})\ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00212\ \textcolor{preprocessor}{\ \ \_Pragma("{}GCC\ diagnostic\ ignored\ \(\backslash\)"{}-\/Wtype-\/limits\(\backslash\)"{}"{})}}
+\DoxyCodeLine{00213\ \textcolor{preprocessor}{\ \ \#define\ SL\_IGNORE\_TYPE\_LIMIT\_END\ \(\backslash\)}}
+\DoxyCodeLine{00214\ \textcolor{preprocessor}{\ \ \_Pragma("{}GCC\ diagnostic\ pop"{})}}
+\DoxyCodeLine{00215\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00216\ \textcolor{preprocessor}{\ \ \#define\ SL\_IGNORE\_TYPE\_LIMIT\_BEGIN}}
+\DoxyCodeLine{00217\ \textcolor{preprocessor}{\ \ \#define\ SL\_IGNORE\_TYPE\_LIMIT\_END\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00218\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00219\ }
+\DoxyCodeLine{00220\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ !defined(\_\_GNUC\_\_)}}
+\DoxyCodeLine{00221\ }
+\DoxyCodeLine{00234\ \textcolor{preprocessor}{\#ifdef\ SL\_SUPPRESS\_DEPRECATION\_WARNINGS\_SDK\_3\_0}}
+\DoxyCodeLine{00235\ \textcolor{preprocessor}{\#define\ SL\_DEPRECATED\_API\_SDK\_3\_0}}
+\DoxyCodeLine{00236\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00237\ \textcolor{preprocessor}{\#define\ SL\_DEPRECATED\_API\_SDK\_3\_0\ \_\_attribute\_\_\ ((deprecated))}}
+\DoxyCodeLine{00238\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00239\ }
+\DoxyCodeLine{00240\ \textcolor{preprocessor}{\#ifdef\ SL\_SUPPRESS\_DEPRECATION\_WARNINGS\_SDK\_3\_2}}
+\DoxyCodeLine{00241\ \textcolor{preprocessor}{\#define\ SL\_DEPRECATED\_API\_SDK\_3\_2}}
+\DoxyCodeLine{00242\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00243\ \textcolor{preprocessor}{\#define\ SL\_DEPRECATED\_API\_SDK\_3\_2\ \_\_attribute\_\_\ ((deprecated))}}
+\DoxyCodeLine{00244\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00245\ }
+\DoxyCodeLine{00246\ \textcolor{preprocessor}{\#ifdef\ SL\_SUPPRESS\_DEPRECATION\_WARNINGS\_SDK\_3\_3}}
+\DoxyCodeLine{00247\ \textcolor{preprocessor}{\#define\ SL\_DEPRECATED\_API\_SDK\_3\_3}}
+\DoxyCodeLine{00248\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00249\ \textcolor{preprocessor}{\#define\ SL\_DEPRECATED\_API\_SDK\_3\_3\ \_\_attribute\_\_\ ((deprecated))}}
+\DoxyCodeLine{00250\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00251\ }
+\DoxyCodeLine{00252\ \textcolor{preprocessor}{\#ifdef\ SL\_SUPPRESS\_DEPRECATION\_WARNINGS\_SDK\_4\_1}}
+\DoxyCodeLine{00253\ \textcolor{preprocessor}{\#define\ SL\_DEPRECATED\_API\_SDK\_4\_1}}
+\DoxyCodeLine{00254\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00255\ \textcolor{preprocessor}{\#define\ SL\_DEPRECATED\_API\_SDK\_4\_1\ \_\_attribute\_\_\ ((deprecated))}}
+\DoxyCodeLine{00256\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00257\ }
+\DoxyCodeLine{00258\ \textcolor{preprocessor}{\#ifdef\ SL\_SUPPRESS\_DEPRECATION\_WARNINGS\_SDK\_4\_2}}
+\DoxyCodeLine{00259\ \textcolor{preprocessor}{\#define\ SL\_DEPRECATED\_API\_SDK\_4\_2}}
+\DoxyCodeLine{00260\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00261\ \textcolor{preprocessor}{\#define\ SL\_DEPRECATED\_API\_SDK\_4\_2\ \_\_attribute\_\_\ ((deprecated))}}
+\DoxyCodeLine{00262\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00263\ }
+\DoxyCodeLine{00264\ \textcolor{preprocessor}{\#ifdef\ SL\_SUPPRESS\_DEPRECATION\_WARNINGS\_SDK\_4\_4}}
+\DoxyCodeLine{00265\ \textcolor{preprocessor}{\#define\ SL\_DEPRECATED\_API\_SDK\_4\_4}}
+\DoxyCodeLine{00266\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00267\ \textcolor{preprocessor}{\#define\ SL\_DEPRECATED\_API\_SDK\_4\_4\ \_\_attribute\_\_\ ((deprecated))}}
+\DoxyCodeLine{00268\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00271\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00281\ \_\_STATIC\_INLINE\ uint32\_t\ \mbox{\hyperlink{group__common_ga8df7f6d52e31dad26a89799b7e63adb0}{SL\_CTZ}}(uint32\_t\ value)}
+\DoxyCodeLine{00282\ \{}
+\DoxyCodeLine{00283\ \textcolor{preprocessor}{\#if\ defined(\_\_CORTEX\_M)\ \&\&\ (\_\_CORTEX\_M\ >=\ 3U)}}
+\DoxyCodeLine{00284\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_gaf32ee2525f946bce31504904f3ef8243}{\_\_CLZ}}(\mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_gaf944a7b7d8fd70164cca27669316bcf7}{\_\_RBIT}}(value));}
+\DoxyCodeLine{00285\ }
+\DoxyCodeLine{00286\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00287\ \ \ uint32\_t\ zeros;}
+\DoxyCodeLine{00288\ \ \ \textcolor{keywordflow}{for}\ (zeros\ =\ 0;\ (zeros\ <\ 32)\ \&\&\ ((value\ \&\ 0x1)\ ==\ 0);\ zeros++,\ value\ >>=\ 1)\ \{}
+\DoxyCodeLine{00289\ \ \ \ \ ;}
+\DoxyCodeLine{00290\ \ \ \}}
+\DoxyCodeLine{00291\ \ \ \textcolor{keywordflow}{return}\ zeros;}
+\DoxyCodeLine{00292\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00293\ \}}
+\DoxyCodeLine{00294\ }
+\DoxyCodeLine{00296\ \textcolor{comment}{/*\ Deprecated\ function.\ New\ code\ should\ use\ @ref\ SL\_CTZ.\ */}}
+\DoxyCodeLine{00297\ \_\_STATIC\_INLINE\ uint32\_t\ EFM32\_CTZ(uint32\_t\ value)}
+\DoxyCodeLine{00298\ \{}
+\DoxyCodeLine{00299\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{group__common_ga8df7f6d52e31dad26a89799b7e63adb0}{SL\_CTZ}}(value);}
+\DoxyCodeLine{00300\ \}}
+\DoxyCodeLine{00303\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00313\ \_\_STATIC\_INLINE\ uint32\_t\ \mbox{\hyperlink{group__common_ga93ac5a2f476ab7721810be4350aeb740}{SL\_RBIT}}(uint32\_t\ value)}
+\DoxyCodeLine{00314\ \{}
+\DoxyCodeLine{00315\ \ \ uint32\_t\ result;}
+\DoxyCodeLine{00316\ }
+\DoxyCodeLine{00317\ \textcolor{preprocessor}{\#if\ defined(\_\_CORTEX\_M)\ \&\&\ (\_\_CORTEX\_M\ >=\ 0x03U)}}
+\DoxyCodeLine{00318\ \ \ result\ =\ \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_gaf944a7b7d8fd70164cca27669316bcf7}{\_\_RBIT}}(value);}
+\DoxyCodeLine{00319\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00320\ \ \ int32\_t\ s\ =\ 4\ *\ 8\ -\/\ 1;}
+\DoxyCodeLine{00321\ }
+\DoxyCodeLine{00322\ \ \ result\ =\ value;}
+\DoxyCodeLine{00323\ \ \ \textcolor{keywordflow}{for}\ (value\ >>=\ 1U;\ value\ !=\ 0U;\ value\ >>=\ 1U)\ \{}
+\DoxyCodeLine{00324\ \ \ \ \ result\ <<=\ 1U;}
+\DoxyCodeLine{00325\ \ \ \ \ result\ |=\ value\ \&\ 1U;}
+\DoxyCodeLine{00326\ \ \ \ \ s-\/-\/;}
+\DoxyCodeLine{00327\ \ \ \}}
+\DoxyCodeLine{00328\ \ \ result\ <<=\ s;}
+\DoxyCodeLine{00329\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00330\ \ \ \textcolor{keywordflow}{return}\ result;}
+\DoxyCodeLine{00331\ \}}
+\DoxyCodeLine{00332\ }
+\DoxyCodeLine{00333\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00343\ \_\_STATIC\_INLINE\ uint16\_t\ \mbox{\hyperlink{group__common_gac92b5a0f5d1abdb23073959e0fe9b5fe}{SL\_RBIT16}}(uint16\_t\ value)}
+\DoxyCodeLine{00344\ \{}
+\DoxyCodeLine{00345\ \ \ \textcolor{keywordflow}{return}\ (uint16\_t)(\mbox{\hyperlink{group__common_ga93ac5a2f476ab7721810be4350aeb740}{SL\_RBIT}}(value)\ >>\ 16);}
+\DoxyCodeLine{00346\ \}}
+\DoxyCodeLine{00347\ }
+\DoxyCodeLine{00348\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00358\ \_\_STATIC\_INLINE\ uint8\_t\ \mbox{\hyperlink{group__common_gab00dbbbdb08642b7f0cae56dfd5c011d}{SL\_RBIT8}}(uint8\_t\ value)}
+\DoxyCodeLine{00359\ \{}
+\DoxyCodeLine{00360\ \ \ \textcolor{keywordflow}{return}\ (uint8\_t)(\mbox{\hyperlink{group__common_ga93ac5a2f476ab7721810be4350aeb740}{SL\_RBIT}}(value)\ >>\ 24);}
+\DoxyCodeLine{00361\ \}}
+\DoxyCodeLine{00362\ }
+\DoxyCodeLine{00363\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00373\ \_\_STATIC\_INLINE\ uint32\_t\ \mbox{\hyperlink{group__common_gac8901696e7918f464da8f761abe3069a}{SL\_Log2ToDiv}}(uint32\_t\ log2)}
+\DoxyCodeLine{00374\ \{}
+\DoxyCodeLine{00375\ \ \ \mbox{\hyperlink{sl__assert_8h_a4c13f77871c72eef527f492ed16e38b4}{EFM\_ASSERT}}(log2\ <\ 32U);}
+\DoxyCodeLine{00376\ \ \ \textcolor{keywordflow}{return}\ 1UL\ <<\ log2;}
+\DoxyCodeLine{00377\ \}}
+\DoxyCodeLine{00378\ }
+\DoxyCodeLine{00381\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00382\ \}}
+\DoxyCodeLine{00383\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00384\ }
+\DoxyCodeLine{00385\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ SL\_COMMON\_H\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

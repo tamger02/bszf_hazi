@@ -1,0 +1,67 @@
+\doxysection{Linker}
+\hypertarget{group__linker}{}\label{group__linker}\index{Linker@{Linker}}
+
+
+Functions to extract locations of linker sections.  
+
+
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structsl__memory__region__t}{sl\+\_\+memory\+\_\+region\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct sl\+\_\+memory\+\_\+region\+\_\+t \mbox{\hyperlink{group__linker_ga52bbe36f49296b11bb921855822816bf}{sl\+\_\+memory\+\_\+region\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structsl__memory__region__t}{sl\+\_\+memory\+\_\+region\+\_\+t}} \mbox{\hyperlink{group__linker_gaf2c49072f732b0a0b7af983087e83fc6}{sl\+\_\+memory\+\_\+get\+\_\+stack\+\_\+region}} (void)
+\begin{DoxyCompactList}\small\item\em Get size and location of the stack. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structsl__memory__region__t}{sl\+\_\+memory\+\_\+region\+\_\+t}} \mbox{\hyperlink{group__linker_ga41637fb1321caed0a07624fdefa8bdf2}{sl\+\_\+memory\+\_\+get\+\_\+heap\+\_\+region}} (void)
+\begin{DoxyCompactList}\small\item\em Get size and location of the heap. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Functions to extract locations of linker sections. 
+
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{group__linker_ga52bbe36f49296b11bb921855822816bf}\index{Linker@{Linker}!sl\_memory\_region\_t@{sl\_memory\_region\_t}}
+\index{sl\_memory\_region\_t@{sl\_memory\_region\_t}!Linker@{Linker}}
+\doxysubsubsection{\texorpdfstring{sl\_memory\_region\_t}{sl\_memory\_region\_t}}
+{\footnotesize\ttfamily \label{group__linker_ga52bbe36f49296b11bb921855822816bf} 
+typedef struct sl\+\_\+memory\+\_\+region\+\_\+t sl\+\_\+memory\+\_\+region\+\_\+t}
+
+Memory region structure. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{group__linker_ga41637fb1321caed0a07624fdefa8bdf2}\index{Linker@{Linker}!sl\_memory\_get\_heap\_region@{sl\_memory\_get\_heap\_region}}
+\index{sl\_memory\_get\_heap\_region@{sl\_memory\_get\_heap\_region}!Linker@{Linker}}
+\doxysubsubsection{\texorpdfstring{sl\_memory\_get\_heap\_region()}{sl\_memory\_get\_heap\_region()}}
+{\footnotesize\ttfamily \label{group__linker_ga41637fb1321caed0a07624fdefa8bdf2} 
+\mbox{\hyperlink{structsl__memory__region__t}{sl\+\_\+memory\+\_\+region\+\_\+t}} sl\+\_\+memory\+\_\+get\+\_\+heap\+\_\+region (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Get size and location of the heap. 
+
+\begin{DoxyReturn}{Returns}
+description of the region reserved for the c heap. 
+\end{DoxyReturn}
+\Hypertarget{group__linker_gaf2c49072f732b0a0b7af983087e83fc6}\index{Linker@{Linker}!sl\_memory\_get\_stack\_region@{sl\_memory\_get\_stack\_region}}
+\index{sl\_memory\_get\_stack\_region@{sl\_memory\_get\_stack\_region}!Linker@{Linker}}
+\doxysubsubsection{\texorpdfstring{sl\_memory\_get\_stack\_region()}{sl\_memory\_get\_stack\_region()}}
+{\footnotesize\ttfamily \label{group__linker_gaf2c49072f732b0a0b7af983087e83fc6} 
+\mbox{\hyperlink{structsl__memory__region__t}{sl\+\_\+memory\+\_\+region\+\_\+t}} sl\+\_\+memory\+\_\+get\+\_\+stack\+\_\+region (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Get size and location of the stack. 
+
+\begin{DoxyReturn}{Returns}
+description of the region reserved for the c stack. 
+\end{DoxyReturn}

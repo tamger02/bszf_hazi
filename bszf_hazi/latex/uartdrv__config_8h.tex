@@ -1,0 +1,46 @@
+\doxysection{config/uartdrv\+\_\+config.h File Reference}
+\hypertarget{uartdrv__config_8h}{}\label{uartdrv__config_8h}\index{config/uartdrv\_config.h@{config/uartdrv\_config.h}}
+
+
+UARTDRV configuration file.  
+
+
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__uartdrv_gabe460e78b696ee85a78db220e5f6ec89}{EMDRV\+\_\+\+UARTDRV\+\_\+\+MAX\+\_\+\+CONCURRENT\+\_\+\+RX\+\_\+\+BUFS}}~6
+\item 
+\#define \mbox{\hyperlink{group__uartdrv_ga1a5792abd05dc9ec1eb1c2fa0e9b9d6a}{EMDRV\+\_\+\+UARTDRV\+\_\+\+MAX\+\_\+\+CONCURRENT\+\_\+\+TX\+\_\+\+BUFS}}~6
+\item 
+\#define {\bfseries EMDRV\+\_\+\+UARTDRV\+\_\+\+FLOW\+\_\+\+CONTROL\+\_\+\+ENABLE}~1
+\begin{DoxyCompactList}\small\item\em Set to 1 to include flow control support. \end{DoxyCompactList}\item 
+\#define {\bfseries EMDRV\+\_\+\+UARTDRV\+\_\+\+MAX\+\_\+\+DRIVER\+\_\+\+INSTANCES}~4
+\begin{DoxyCompactList}\small\item\em Maximum number of driver instances. \end{DoxyCompactList}\item 
+\#define {\bfseries UARTDRV\+\_\+\+FC\+\_\+\+SW\+\_\+\+XON}~0x11
+\begin{DoxyCompactList}\small\item\em UART software flow control code\+: request peer to start TX. \end{DoxyCompactList}\item 
+\#define {\bfseries UARTDRV\+\_\+\+FC\+\_\+\+SW\+\_\+\+XOFF}~0x13
+\begin{DoxyCompactList}\small\item\em UART software flow control code\+: request peer to stop TX. \end{DoxyCompactList}\item 
+\#define {\bfseries UARTDRV\+\_\+\+RESTRICT\+\_\+\+ENERGY\+\_\+\+MODE\+\_\+\+TO\+\_\+\+ALLOW\+\_\+\+RECEPTION}~1
+\begin{DoxyCompactList}\small\item\em UART enable reception when sleeping. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+UARTDRV configuration file. 
+
+\hypertarget{uartdrv__config_8h_autotoc_md12}{}\doxysubsection{\texorpdfstring{License}{License}}\label{uartdrv__config_8h_autotoc_md12}
+{\bfseries{Copyright 2018 Silicon Laboratories Inc. www.\+silabs.\+com}}
+
+SPDX-\/\+License-\/\+Identifier\+: Zlib
+
+The licensor of this software is Silicon Laboratories Inc.
+
+This software is provided \textquotesingle{}as-\/is\textquotesingle{}, without any express or implied warranty. In no event will the authors be held liable for any damages arising from the use of this software.
+
+Permission is granted to anyone to use this software for any purpose, including commercial applications, and to alter it and redistribute it freely, subject to the following restrictions\+:
+
+
+\begin{DoxyEnumerate}
+\item The origin of this software must not be misrepresented; you must not claim that you wrote the original software. If you use this software in a product, an acknowledgment in the product documentation would be appreciated but is not required.
+\item Altered source versions must be plainly marked as such, and must not be misrepresented as being the original software.
+\item This notice may not be removed or altered from any source distribution. 
+\end{DoxyEnumerate}

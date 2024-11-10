@@ -1,0 +1,945 @@
+\doxysection{gecko\+\_\+sdk\+\_\+4.4.4/platform/\+Device/\+Silicon\+Labs/\+EFM32\+GG/\+Include/efm32gg\+\_\+lcd.h File Reference}
+\hypertarget{efm32gg__lcd_8h}{}\label{efm32gg__lcd_8h}\index{gecko\_sdk\_4.4.4/platform/Device/SiliconLabs/EFM32GG/Include/efm32gg\_lcd.h@{gecko\_sdk\_4.4.4/platform/Device/SiliconLabs/EFM32GG/Include/efm32gg\_lcd.h}}
+
+
+EFM32\+GG\+\_\+\+LCD register and bit field definitions.  
+
+
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_l_c_d___type_def}{LCD\+\_\+\+Type\+Def}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga938d5999f32e51561fdc57e768cac002}{\+\_\+\+LCD\+\_\+\+CTRL\+\_\+\+RESETVALUE}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gabe19547b451e62f6b3dcb7af8f2d552a}{\+\_\+\+LCD\+\_\+\+CTRL\+\_\+\+MASK}}~0x00800007\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga0bc84f1368274ab6c2f77beb1fb9984b}{LCD\+\_\+\+CTRL\+\_\+\+EN}}~(0x1\+UL $<$$<$ 0)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga2003479a89a4fffc7ac44ad5a0ad15a5}{\+\_\+\+LCD\+\_\+\+CTRL\+\_\+\+EN\+\_\+\+SHIFT}}~0
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gadac1f8f2151b71f4f71d37c0f6d25007}{\+\_\+\+LCD\+\_\+\+CTRL\+\_\+\+EN\+\_\+\+MASK}}~0x1\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gad3b28786f4b56ae9f80237754924505b}{\+\_\+\+LCD\+\_\+\+CTRL\+\_\+\+EN\+\_\+\+DEFAULT}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga06a6f7d7f73a231c8881d7931de6eec8}{LCD\+\_\+\+CTRL\+\_\+\+EN\+\_\+\+DEFAULT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gad3b28786f4b56ae9f80237754924505b}{\+\_\+\+LCD\+\_\+\+CTRL\+\_\+\+EN\+\_\+\+DEFAULT}} $<$$<$ 0)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga7185486a32c8c76c686b1707c473b370}{\+\_\+\+LCD\+\_\+\+CTRL\+\_\+\+UDCTRL\+\_\+\+SHIFT}}~1
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga20d26e6d1fa17c5a68db7a055543d661}{\+\_\+\+LCD\+\_\+\+CTRL\+\_\+\+UDCTRL\+\_\+\+MASK}}~0x6\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga89c18687394aae1f37b88b616546a63e}{\+\_\+\+LCD\+\_\+\+CTRL\+\_\+\+UDCTRL\+\_\+\+DEFAULT}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga2d90ac27653a69931a5f0e3dd219bdf2}{\+\_\+\+LCD\+\_\+\+CTRL\+\_\+\+UDCTRL\+\_\+\+REGULAR}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga1e2b7cde38593045e21253bf9c86496a}{\+\_\+\+LCD\+\_\+\+CTRL\+\_\+\+UDCTRL\+\_\+\+FCEVENT}}~0x00000001\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gad3d8b3aaf7a10f6e2f96a336a661a264}{\+\_\+\+LCD\+\_\+\+CTRL\+\_\+\+UDCTRL\+\_\+\+FRAMESTART}}~0x00000002\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gacedb10fb77a39deb6d3cae0746859e31}{LCD\+\_\+\+CTRL\+\_\+\+UDCTRL\+\_\+\+DEFAULT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga89c18687394aae1f37b88b616546a63e}{\+\_\+\+LCD\+\_\+\+CTRL\+\_\+\+UDCTRL\+\_\+\+DEFAULT}} $<$$<$ 1)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga073bbc6cb5098a15bb8cbede6e7f82cd}{LCD\+\_\+\+CTRL\+\_\+\+UDCTRL\+\_\+\+REGULAR}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga2d90ac27653a69931a5f0e3dd219bdf2}{\+\_\+\+LCD\+\_\+\+CTRL\+\_\+\+UDCTRL\+\_\+\+REGULAR}} $<$$<$ 1)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga0a290a7030ea3937addb47ff39b4d988}{LCD\+\_\+\+CTRL\+\_\+\+UDCTRL\+\_\+\+FCEVENT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga1e2b7cde38593045e21253bf9c86496a}{\+\_\+\+LCD\+\_\+\+CTRL\+\_\+\+UDCTRL\+\_\+\+FCEVENT}} $<$$<$ 1)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga59509398ebc6abe189a47cf618173e94}{LCD\+\_\+\+CTRL\+\_\+\+UDCTRL\+\_\+\+FRAMESTART}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gad3d8b3aaf7a10f6e2f96a336a661a264}{\+\_\+\+LCD\+\_\+\+CTRL\+\_\+\+UDCTRL\+\_\+\+FRAMESTART}} $<$$<$ 1)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga776ca4c36968d1376df2ff61a9a6b09c}{LCD\+\_\+\+CTRL\+\_\+\+DSC}}~(0x1\+UL $<$$<$ 23)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gac015bec559644c17d9f5f6d67bbe2a0a}{\+\_\+\+LCD\+\_\+\+CTRL\+\_\+\+DSC\+\_\+\+SHIFT}}~23
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gafb1331c4ca6cf5e2f524c8eed6d80442}{\+\_\+\+LCD\+\_\+\+CTRL\+\_\+\+DSC\+\_\+\+MASK}}~0x800000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga69a3d0a7a4bc6a926e340948bbc90bff}{\+\_\+\+LCD\+\_\+\+CTRL\+\_\+\+DSC\+\_\+\+DEFAULT}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gae3720386541b5643df8fc7254747baab}{LCD\+\_\+\+CTRL\+\_\+\+DSC\+\_\+\+DEFAULT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga69a3d0a7a4bc6a926e340948bbc90bff}{\+\_\+\+LCD\+\_\+\+CTRL\+\_\+\+DSC\+\_\+\+DEFAULT}} $<$$<$ 23)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaa36b05e253a0f44e1dd19c6e1f2d6e31}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+RESETVALUE}}~0x000\+C1\+F00\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga2485877746ccbb24352e6fdedd86bdf4}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+MASK}}~0x005\+D9\+F1\+FUL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gada2383759a4a5c8894ab161c5f28c9ae}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+MUX\+\_\+\+SHIFT}}~0
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gadf5f745be01fb57667dd873cb77ba9b8}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+MUX\+\_\+\+MASK}}~0x3\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gad618c759f16d1c4e204805466e5c4dc2}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+MUX\+\_\+\+DEFAULT}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga9705087da734e5f8b639f7429b9cfdb0}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+MUX\+\_\+\+STATIC}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga937ae16c9488599b5ce296d9b6c4e553}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+MUX\+\_\+\+DUPLEX}}~0x00000001\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga44a065b13bbac03e7aebeffaa0f7395c}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+MUX\+\_\+\+TRIPLEX}}~0x00000002\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga3bbf1d0e22f4e22f20b28a96274068c6}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+MUX\+\_\+\+QUADRUPLEX}}~0x00000003\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga9670c657d8c6bede31426917e9310a4a}{LCD\+\_\+\+DISPCTRL\+\_\+\+MUX\+\_\+\+DEFAULT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gad618c759f16d1c4e204805466e5c4dc2}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+MUX\+\_\+\+DEFAULT}} $<$$<$ 0)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaee8c2c62c4a46003335a6c17c087629c}{LCD\+\_\+\+DISPCTRL\+\_\+\+MUX\+\_\+\+STATIC}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga9705087da734e5f8b639f7429b9cfdb0}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+MUX\+\_\+\+STATIC}} $<$$<$ 0)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gab5645858938d8d3ec0587d26a7cd07a8}{LCD\+\_\+\+DISPCTRL\+\_\+\+MUX\+\_\+\+DUPLEX}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga937ae16c9488599b5ce296d9b6c4e553}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+MUX\+\_\+\+DUPLEX}} $<$$<$ 0)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga92c09f088c2820611c5b25e3910315f8}{LCD\+\_\+\+DISPCTRL\+\_\+\+MUX\+\_\+\+TRIPLEX}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga44a065b13bbac03e7aebeffaa0f7395c}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+MUX\+\_\+\+TRIPLEX}} $<$$<$ 0)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga0d3c1d7bde5a207ffb0608076210e15e}{LCD\+\_\+\+DISPCTRL\+\_\+\+MUX\+\_\+\+QUADRUPLEX}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga3bbf1d0e22f4e22f20b28a96274068c6}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+MUX\+\_\+\+QUADRUPLEX}} $<$$<$ 0)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga87bd754a1975178077ac4e959c669b1f}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+BIAS\+\_\+\+SHIFT}}~2
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gae1c26476d08f4e3e59f0509da9766663}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+BIAS\+\_\+\+MASK}}~0x\+CUL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga6d6bb7e5d25411cad8ebd807229ea4f5}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+BIAS\+\_\+\+DEFAULT}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga121d6dfe3167a76b847c3da92a2b52ba}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+BIAS\+\_\+\+STATIC}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga9b534ff8c9772a92e332c87c224e33ec}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+BIAS\+\_\+\+ONEHALF}}~0x00000001\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga840b522d620268bffef2530c2e787741}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+BIAS\+\_\+\+ONETHIRD}}~0x00000002\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaf615a106b5a20950858fc507cddf9285}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+BIAS\+\_\+\+ONEFOURTH}}~0x00000003\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga0326c8dd44953548da0465cc1059c659}{LCD\+\_\+\+DISPCTRL\+\_\+\+BIAS\+\_\+\+DEFAULT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga6d6bb7e5d25411cad8ebd807229ea4f5}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+BIAS\+\_\+\+DEFAULT}} $<$$<$ 2)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga588959516d2fb24b12184f4869419e5c}{LCD\+\_\+\+DISPCTRL\+\_\+\+BIAS\+\_\+\+STATIC}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga121d6dfe3167a76b847c3da92a2b52ba}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+BIAS\+\_\+\+STATIC}} $<$$<$ 2)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga3acf7a4dff9a95a529d1113b13a3cc8b}{LCD\+\_\+\+DISPCTRL\+\_\+\+BIAS\+\_\+\+ONEHALF}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga9b534ff8c9772a92e332c87c224e33ec}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+BIAS\+\_\+\+ONEHALF}} $<$$<$ 2)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga3fdaa9d9b9eeabe2f8869189b5c43c81}{LCD\+\_\+\+DISPCTRL\+\_\+\+BIAS\+\_\+\+ONETHIRD}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga840b522d620268bffef2530c2e787741}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+BIAS\+\_\+\+ONETHIRD}} $<$$<$ 2)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga99e952b2a1366858364bca7366c18121}{LCD\+\_\+\+DISPCTRL\+\_\+\+BIAS\+\_\+\+ONEFOURTH}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaf615a106b5a20950858fc507cddf9285}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+BIAS\+\_\+\+ONEFOURTH}} $<$$<$ 2)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gae7eba9330c83e21c94cd0f3f5dfdb631}{LCD\+\_\+\+DISPCTRL\+\_\+\+WAVE}}~(0x1\+UL $<$$<$ 4)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga526afcd7589515103502af47aacb3dd7}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+WAVE\+\_\+\+SHIFT}}~4
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga5bb602e2388983338186bcf628017cad}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+WAVE\+\_\+\+MASK}}~0x10\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga49226125557034a8965c7f26e3f566b8}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+WAVE\+\_\+\+DEFAULT}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaf6f1f9141aa971838617f2cc5f5a1aca}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+WAVE\+\_\+\+LOWPOWER}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gae42af54ba94ae7d26dc4e2c83019a0c3}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+WAVE\+\_\+\+NORMAL}}~0x00000001\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gafa5848f6199678c14d7fc934ab6e1291}{LCD\+\_\+\+DISPCTRL\+\_\+\+WAVE\+\_\+\+DEFAULT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga49226125557034a8965c7f26e3f566b8}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+WAVE\+\_\+\+DEFAULT}} $<$$<$ 4)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga35bd071eb1a97ab8800030b5ddcc7312}{LCD\+\_\+\+DISPCTRL\+\_\+\+WAVE\+\_\+\+LOWPOWER}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaf6f1f9141aa971838617f2cc5f5a1aca}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+WAVE\+\_\+\+LOWPOWER}} $<$$<$ 4)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga62d049a4b7253c3cf20824f32f9e7318}{LCD\+\_\+\+DISPCTRL\+\_\+\+WAVE\+\_\+\+NORMAL}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gae42af54ba94ae7d26dc4e2c83019a0c3}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+WAVE\+\_\+\+NORMAL}} $<$$<$ 4)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga6ba20a816c434792b302888cb0e05fc9}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+CONLEV\+\_\+\+SHIFT}}~8
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga1e1711330d28c90f303cda9cf26f8ef1}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+CONLEV\+\_\+\+MASK}}~0x1\+F00\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga99e48d2b5ee0ddeb2f1005833a3ce6df}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+CONLEV\+\_\+\+MIN}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga5cf523a0d31a6535899418d47f5cc122}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+CONLEV\+\_\+\+DEFAULT}}~0x0000001\+FUL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga83a7f5ebb9db9dc30afd4f88248bf3c3}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+CONLEV\+\_\+\+MAX}}~0x0000001\+FUL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga0fc1e02a3c7c0e092402bdffda8fc1af}{LCD\+\_\+\+DISPCTRL\+\_\+\+CONLEV\+\_\+\+MIN}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga99e48d2b5ee0ddeb2f1005833a3ce6df}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+CONLEV\+\_\+\+MIN}} $<$$<$ 8)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gab07e61d22cfaa10cf49dbafaa1a407ba}{LCD\+\_\+\+DISPCTRL\+\_\+\+CONLEV\+\_\+\+DEFAULT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga5cf523a0d31a6535899418d47f5cc122}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+CONLEV\+\_\+\+DEFAULT}} $<$$<$ 8)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaec79b1a27d541425e7e00a40bf04ea00}{LCD\+\_\+\+DISPCTRL\+\_\+\+CONLEV\+\_\+\+MAX}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga83a7f5ebb9db9dc30afd4f88248bf3c3}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+CONLEV\+\_\+\+MAX}} $<$$<$ 8)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga47c20ac2a792d5af01db3ad3a9472789}{LCD\+\_\+\+DISPCTRL\+\_\+\+CONCONF}}~(0x1\+UL $<$$<$ 15)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga44baceb5e0e68371fb3014fea4d1a032}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+CONCONF\+\_\+\+SHIFT}}~15
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gacfc4fce5b4185483f126e9bd696e6407}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+CONCONF\+\_\+\+MASK}}~0x8000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga686b580e1a5db0ca44f2f1a914c10aaf}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+CONCONF\+\_\+\+DEFAULT}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gae02e0d25d2640ba78c51c4d9e6d7d67e}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+CONCONF\+\_\+\+VLCD}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gabae7e44018bcf9ac0279a40a4be1ba0f}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+CONCONF\+\_\+\+GND}}~0x00000001\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga4db2a620319bfbf30e512a9a22f2a76e}{LCD\+\_\+\+DISPCTRL\+\_\+\+CONCONF\+\_\+\+DEFAULT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga686b580e1a5db0ca44f2f1a914c10aaf}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+CONCONF\+\_\+\+DEFAULT}} $<$$<$ 15)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga9c8b8a433f23583f84ab7d72a4d79503}{LCD\+\_\+\+DISPCTRL\+\_\+\+CONCONF\+\_\+\+VLCD}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gae02e0d25d2640ba78c51c4d9e6d7d67e}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+CONCONF\+\_\+\+VLCD}} $<$$<$ 15)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga2a082e775dc696844546549169a00d61}{LCD\+\_\+\+DISPCTRL\+\_\+\+CONCONF\+\_\+\+GND}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gabae7e44018bcf9ac0279a40a4be1ba0f}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+CONCONF\+\_\+\+GND}} $<$$<$ 15)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga8738f93e820672f0ea284015e5bced23}{LCD\+\_\+\+DISPCTRL\+\_\+\+VLCDSEL}}~(0x1\+UL $<$$<$ 16)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaa7dbf43d0c9d9b3d8325d2dc5a88200e}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+VLCDSEL\+\_\+\+SHIFT}}~16
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gad4880e5c9cc649af9180ecf53042580d}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+VLCDSEL\+\_\+\+MASK}}~0x10000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga623967c9d034e18dcb88be747926de39}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+VLCDSEL\+\_\+\+DEFAULT}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga5d1717a8b28335360d5e5b325d01474d}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+VLCDSEL\+\_\+\+VDD}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaffb81fc90ba1eb0abca92f2b088ed06c}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+VLCDSEL\+\_\+\+VEXTBOOST}}~0x00000001\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga0f32fd12526505516a7090131b010d59}{LCD\+\_\+\+DISPCTRL\+\_\+\+VLCDSEL\+\_\+\+DEFAULT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga623967c9d034e18dcb88be747926de39}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+VLCDSEL\+\_\+\+DEFAULT}} $<$$<$ 16)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gad1fa9d75fab334c26709667ba912498c}{LCD\+\_\+\+DISPCTRL\+\_\+\+VLCDSEL\+\_\+\+VDD}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga5d1717a8b28335360d5e5b325d01474d}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+VLCDSEL\+\_\+\+VDD}} $<$$<$ 16)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga716e9c89ef8635cd20533751e4edfbb6}{LCD\+\_\+\+DISPCTRL\+\_\+\+VLCDSEL\+\_\+\+VEXTBOOST}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaffb81fc90ba1eb0abca92f2b088ed06c}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+VLCDSEL\+\_\+\+VEXTBOOST}} $<$$<$ 16)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga4df047f954ad3805d2ce8f0615bc81fb}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+VBLEV\+\_\+\+SHIFT}}~18
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gae4f8802d5c15d5fc1d91d6c34be8887d}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+VBLEV\+\_\+\+MASK}}~0x1\+C0000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga130993101843e9b56bbdf195d60e2792}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+VBLEV\+\_\+\+LEVEL0}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga4820f6744ff71efeacbc516200dd33c0}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+VBLEV\+\_\+\+LEVEL1}}~0x00000001\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga72b6a2d543b8ad740fc03ff43e7ef290}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+VBLEV\+\_\+\+LEVEL2}}~0x00000002\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga0ed576bc8a8e7dc14a6c8c8e20b7653a}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+VBLEV\+\_\+\+DEFAULT}}~0x00000003\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gad4a8c3551944177fc4d05b8dd0bff0a1}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+VBLEV\+\_\+\+LEVEL3}}~0x00000003\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga2309650a79969eae0cec888060d8d144}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+VBLEV\+\_\+\+LEVEL4}}~0x00000004\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gadcd94226a99bf3a84011636f13a3689a}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+VBLEV\+\_\+\+LEVEL5}}~0x00000005\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaea74117b20c36d3e83a515c847019fcb}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+VBLEV\+\_\+\+LEVEL6}}~0x00000006\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gabb60b5ee7c09630ad11ea9431557e05c}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+VBLEV\+\_\+\+LEVEL7}}~0x00000007\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaffd547b2a5bfee5ede9cd35a44b2cc4f}{LCD\+\_\+\+DISPCTRL\+\_\+\+VBLEV\+\_\+\+LEVEL0}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga130993101843e9b56bbdf195d60e2792}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+VBLEV\+\_\+\+LEVEL0}} $<$$<$ 18)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga09ad8846de68e2d35119ffd4bae0cb4b}{LCD\+\_\+\+DISPCTRL\+\_\+\+VBLEV\+\_\+\+LEVEL1}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga4820f6744ff71efeacbc516200dd33c0}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+VBLEV\+\_\+\+LEVEL1}} $<$$<$ 18)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga711747230c0fda357655f6ed5abd8abe}{LCD\+\_\+\+DISPCTRL\+\_\+\+VBLEV\+\_\+\+LEVEL2}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga72b6a2d543b8ad740fc03ff43e7ef290}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+VBLEV\+\_\+\+LEVEL2}} $<$$<$ 18)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga376da6a7df069178de427c714602fa07}{LCD\+\_\+\+DISPCTRL\+\_\+\+VBLEV\+\_\+\+DEFAULT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga0ed576bc8a8e7dc14a6c8c8e20b7653a}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+VBLEV\+\_\+\+DEFAULT}} $<$$<$ 18)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga71685f3046372118bd7f7ecfc9dcc01f}{LCD\+\_\+\+DISPCTRL\+\_\+\+VBLEV\+\_\+\+LEVEL3}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gad4a8c3551944177fc4d05b8dd0bff0a1}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+VBLEV\+\_\+\+LEVEL3}} $<$$<$ 18)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gadbf686646d8f114d07a19a32d8a49a4f}{LCD\+\_\+\+DISPCTRL\+\_\+\+VBLEV\+\_\+\+LEVEL4}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga2309650a79969eae0cec888060d8d144}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+VBLEV\+\_\+\+LEVEL4}} $<$$<$ 18)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga3ab0ad9cabb0a28ccb53730abd2ac06c}{LCD\+\_\+\+DISPCTRL\+\_\+\+VBLEV\+\_\+\+LEVEL5}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gadcd94226a99bf3a84011636f13a3689a}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+VBLEV\+\_\+\+LEVEL5}} $<$$<$ 18)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga048ccca5d4d378ee35bc5b6a25a57b84}{LCD\+\_\+\+DISPCTRL\+\_\+\+VBLEV\+\_\+\+LEVEL6}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaea74117b20c36d3e83a515c847019fcb}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+VBLEV\+\_\+\+LEVEL6}} $<$$<$ 18)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gade7c93a90443cd948ed6441217edcf5c}{LCD\+\_\+\+DISPCTRL\+\_\+\+VBLEV\+\_\+\+LEVEL7}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gabb60b5ee7c09630ad11ea9431557e05c}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+VBLEV\+\_\+\+LEVEL7}} $<$$<$ 18)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaf5394f2501abcdfceda3492086492c7f}{LCD\+\_\+\+DISPCTRL\+\_\+\+MUXE}}~(0x1\+UL $<$$<$ 22)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gad9fdf4ff9df625a9d5e1d3a161e93989}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+MUXE\+\_\+\+SHIFT}}~22
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaabd11d816f4483d980029fd1aada3dca}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+MUXE\+\_\+\+MASK}}~0x400000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga62e84d42c4dbb1eb3226e047da6e9358}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+MUXE\+\_\+\+DEFAULT}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaf204534aaad5deb40f861fa8f1a4d2d1}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+MUXE\+\_\+\+MUX}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gada4b39b3361280a8c3c5fa50f65ddf8b}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+MUXE\+\_\+\+MUXE}}~0x00000001\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gadd3e0a7deb0e8313f00608b1045b9efd}{LCD\+\_\+\+DISPCTRL\+\_\+\+MUXE\+\_\+\+DEFAULT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga62e84d42c4dbb1eb3226e047da6e9358}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+MUXE\+\_\+\+DEFAULT}} $<$$<$ 22)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga2cd9ef792e48fbb0fce580756c0b7fc3}{LCD\+\_\+\+DISPCTRL\+\_\+\+MUXE\+\_\+\+MUX}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaf204534aaad5deb40f861fa8f1a4d2d1}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+MUXE\+\_\+\+MUX}} $<$$<$ 22)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaf15365eac026ab7904cb9be8768e7010}{LCD\+\_\+\+DISPCTRL\+\_\+\+MUXE\+\_\+\+MUXE}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gada4b39b3361280a8c3c5fa50f65ddf8b}{\+\_\+\+LCD\+\_\+\+DISPCTRL\+\_\+\+MUXE\+\_\+\+MUXE}} $<$$<$ 22)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaee316f18a6a332213735d37a61180079}{\+\_\+\+LCD\+\_\+\+SEGEN\+\_\+\+RESETVALUE}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaf628f8c5fd0aa464cb776761e7b218e2}{\+\_\+\+LCD\+\_\+\+SEGEN\+\_\+\+MASK}}~0x000003\+FFUL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga8391e574d603a7ace369114d84d65000}{\+\_\+\+LCD\+\_\+\+SEGEN\+\_\+\+SEGEN\+\_\+\+SHIFT}}~0
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gae119ab81ac19c67e235d85d4358e2107}{\+\_\+\+LCD\+\_\+\+SEGEN\+\_\+\+SEGEN\+\_\+\+MASK}}~0x3\+FFUL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga0596f664c000277855b41fc9068ad9a7}{\+\_\+\+LCD\+\_\+\+SEGEN\+\_\+\+SEGEN\+\_\+\+DEFAULT}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga7d1159bcf7807115e3e40554893a6f24}{LCD\+\_\+\+SEGEN\+\_\+\+SEGEN\+\_\+\+DEFAULT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga0596f664c000277855b41fc9068ad9a7}{\+\_\+\+LCD\+\_\+\+SEGEN\+\_\+\+SEGEN\+\_\+\+DEFAULT}} $<$$<$ 0)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga79de1aff75ae6820df8020ff7ffcdd91}{\+\_\+\+LCD\+\_\+\+BACTRL\+\_\+\+RESETVALUE}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga70e2588418cbaa3e356f2ad688959798}{\+\_\+\+LCD\+\_\+\+BACTRL\+\_\+\+MASK}}~0x10\+FF01\+FFUL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga139ea4c8fe6eab392705d8be2b3c1f2e}{LCD\+\_\+\+BACTRL\+\_\+\+BLINKEN}}~(0x1\+UL $<$$<$ 0)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gae76a1d619fb7c6213bdd79764665fbfa}{\+\_\+\+LCD\+\_\+\+BACTRL\+\_\+\+BLINKEN\+\_\+\+SHIFT}}~0
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga5374e5f3fbd4261b9f3eeaacdd27c1fa}{\+\_\+\+LCD\+\_\+\+BACTRL\+\_\+\+BLINKEN\+\_\+\+MASK}}~0x1\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga5b8ac5d7f697654a6a232ca7105f184a}{\+\_\+\+LCD\+\_\+\+BACTRL\+\_\+\+BLINKEN\+\_\+\+DEFAULT}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gac8976ed1f42172492072aa6b844e81a7}{LCD\+\_\+\+BACTRL\+\_\+\+BLINKEN\+\_\+\+DEFAULT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga5b8ac5d7f697654a6a232ca7105f184a}{\+\_\+\+LCD\+\_\+\+BACTRL\+\_\+\+BLINKEN\+\_\+\+DEFAULT}} $<$$<$ 0)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga05345fc2345397479044ba69e23282bd}{LCD\+\_\+\+BACTRL\+\_\+\+BLANK}}~(0x1\+UL $<$$<$ 1)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gad43b77bc338bdbeae83a795b7a50f332}{\+\_\+\+LCD\+\_\+\+BACTRL\+\_\+\+BLANK\+\_\+\+SHIFT}}~1
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga3cf0b4eea37e664070045ae2f3451b7d}{\+\_\+\+LCD\+\_\+\+BACTRL\+\_\+\+BLANK\+\_\+\+MASK}}~0x2\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga443a7973f314d4dcab7028e8f2b9b242}{\+\_\+\+LCD\+\_\+\+BACTRL\+\_\+\+BLANK\+\_\+\+DEFAULT}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gab3a5ae83ed673cc401da314b9278055c}{LCD\+\_\+\+BACTRL\+\_\+\+BLANK\+\_\+\+DEFAULT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga443a7973f314d4dcab7028e8f2b9b242}{\+\_\+\+LCD\+\_\+\+BACTRL\+\_\+\+BLANK\+\_\+\+DEFAULT}} $<$$<$ 1)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gad8d3b962d8106bffcc00be3bc6740fbf}{LCD\+\_\+\+BACTRL\+\_\+\+AEN}}~(0x1\+UL $<$$<$ 2)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga792a069af34e3d5ef097999ab8e4c3c9}{\+\_\+\+LCD\+\_\+\+BACTRL\+\_\+\+AEN\+\_\+\+SHIFT}}~2
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga507c495ca5ab90e1f7f0e54e24ab343e}{\+\_\+\+LCD\+\_\+\+BACTRL\+\_\+\+AEN\+\_\+\+MASK}}~0x4\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga295e5623810666824dac03758bf39e1b}{\+\_\+\+LCD\+\_\+\+BACTRL\+\_\+\+AEN\+\_\+\+DEFAULT}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga40d10a329c1ea4726ff6bef8f35c3271}{LCD\+\_\+\+BACTRL\+\_\+\+AEN\+\_\+\+DEFAULT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga295e5623810666824dac03758bf39e1b}{\+\_\+\+LCD\+\_\+\+BACTRL\+\_\+\+AEN\+\_\+\+DEFAULT}} $<$$<$ 2)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga886c11a8b1e50e03d4bd61fd2e66a1ef}{\+\_\+\+LCD\+\_\+\+BACTRL\+\_\+\+AREGASC\+\_\+\+SHIFT}}~3
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga30b0cfb3033b13ea54728e97e4a18dbd}{\+\_\+\+LCD\+\_\+\+BACTRL\+\_\+\+AREGASC\+\_\+\+MASK}}~0x18\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga1ae4f18ce9519b4ada211e809d24d275}{\+\_\+\+LCD\+\_\+\+BACTRL\+\_\+\+AREGASC\+\_\+\+DEFAULT}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga3a5053148a3a32119bdf08e7f2933d34}{\+\_\+\+LCD\+\_\+\+BACTRL\+\_\+\+AREGASC\+\_\+\+NOSHIFT}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga0a5a90f5e56614d367189da35590494e}{\+\_\+\+LCD\+\_\+\+BACTRL\+\_\+\+AREGASC\+\_\+\+SHIFTLEFT}}~0x00000001\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga05246ec575151d2776d3663e94e934ea}{\+\_\+\+LCD\+\_\+\+BACTRL\+\_\+\+AREGASC\+\_\+\+SHIFTRIGHT}}~0x00000002\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga3c107bc81ae42982313cba61e28f224b}{LCD\+\_\+\+BACTRL\+\_\+\+AREGASC\+\_\+\+DEFAULT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga1ae4f18ce9519b4ada211e809d24d275}{\+\_\+\+LCD\+\_\+\+BACTRL\+\_\+\+AREGASC\+\_\+\+DEFAULT}} $<$$<$ 3)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga299430ad1fe4833422ac11409f339d5d}{LCD\+\_\+\+BACTRL\+\_\+\+AREGASC\+\_\+\+NOSHIFT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga3a5053148a3a32119bdf08e7f2933d34}{\+\_\+\+LCD\+\_\+\+BACTRL\+\_\+\+AREGASC\+\_\+\+NOSHIFT}} $<$$<$ 3)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gad3128edefd76d48ba9625876598dfbdb}{LCD\+\_\+\+BACTRL\+\_\+\+AREGASC\+\_\+\+SHIFTLEFT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga0a5a90f5e56614d367189da35590494e}{\+\_\+\+LCD\+\_\+\+BACTRL\+\_\+\+AREGASC\+\_\+\+SHIFTLEFT}} $<$$<$ 3)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga22f3e1cefd9b5911e812d61047b4c5f6}{LCD\+\_\+\+BACTRL\+\_\+\+AREGASC\+\_\+\+SHIFTRIGHT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga05246ec575151d2776d3663e94e934ea}{\+\_\+\+LCD\+\_\+\+BACTRL\+\_\+\+AREGASC\+\_\+\+SHIFTRIGHT}} $<$$<$ 3)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga89034438a8f8967a50379f811a732ae4}{\+\_\+\+LCD\+\_\+\+BACTRL\+\_\+\+AREGBSC\+\_\+\+SHIFT}}~5
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gab3d9d199082d0ae1d510ad45eda30bbe}{\+\_\+\+LCD\+\_\+\+BACTRL\+\_\+\+AREGBSC\+\_\+\+MASK}}~0x60\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga0ba8bd6fbef92b18d99e6d8a37dd57d0}{\+\_\+\+LCD\+\_\+\+BACTRL\+\_\+\+AREGBSC\+\_\+\+DEFAULT}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga2b1cda592f5a2a6a35142536599773ce}{\+\_\+\+LCD\+\_\+\+BACTRL\+\_\+\+AREGBSC\+\_\+\+NOSHIFT}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gafa4b21c6ef65f1ceb3dde14e139d85ec}{\+\_\+\+LCD\+\_\+\+BACTRL\+\_\+\+AREGBSC\+\_\+\+SHIFTLEFT}}~0x00000001\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gac74bc0ce64c27222764d9fbf1173f87e}{\+\_\+\+LCD\+\_\+\+BACTRL\+\_\+\+AREGBSC\+\_\+\+SHIFTRIGHT}}~0x00000002\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gad14f04e07d6ae9af76e03d0265db2d0a}{LCD\+\_\+\+BACTRL\+\_\+\+AREGBSC\+\_\+\+DEFAULT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga0ba8bd6fbef92b18d99e6d8a37dd57d0}{\+\_\+\+LCD\+\_\+\+BACTRL\+\_\+\+AREGBSC\+\_\+\+DEFAULT}} $<$$<$ 5)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga5e5695f76eaf9fe4c204a6c2a100ca96}{LCD\+\_\+\+BACTRL\+\_\+\+AREGBSC\+\_\+\+NOSHIFT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga2b1cda592f5a2a6a35142536599773ce}{\+\_\+\+LCD\+\_\+\+BACTRL\+\_\+\+AREGBSC\+\_\+\+NOSHIFT}} $<$$<$ 5)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaec18bd028f92f152561b9c88debc0fb6}{LCD\+\_\+\+BACTRL\+\_\+\+AREGBSC\+\_\+\+SHIFTLEFT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gafa4b21c6ef65f1ceb3dde14e139d85ec}{\+\_\+\+LCD\+\_\+\+BACTRL\+\_\+\+AREGBSC\+\_\+\+SHIFTLEFT}} $<$$<$ 5)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaad9fb00154b6f15dc457c2964899977d}{LCD\+\_\+\+BACTRL\+\_\+\+AREGBSC\+\_\+\+SHIFTRIGHT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gac74bc0ce64c27222764d9fbf1173f87e}{\+\_\+\+LCD\+\_\+\+BACTRL\+\_\+\+AREGBSC\+\_\+\+SHIFTRIGHT}} $<$$<$ 5)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga5a11c457d15002bef7944d0c1752e866}{LCD\+\_\+\+BACTRL\+\_\+\+ALOGSEL}}~(0x1\+UL $<$$<$ 7)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga5fd8f3222f1f62f4e56cef36e9c6f11f}{\+\_\+\+LCD\+\_\+\+BACTRL\+\_\+\+ALOGSEL\+\_\+\+SHIFT}}~7
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gada21f3423f2dc6423e90623f0468724d}{\+\_\+\+LCD\+\_\+\+BACTRL\+\_\+\+ALOGSEL\+\_\+\+MASK}}~0x80\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga268c11c4b32dad5c09467429b55ce4e2}{\+\_\+\+LCD\+\_\+\+BACTRL\+\_\+\+ALOGSEL\+\_\+\+DEFAULT}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaf090922d74b80fbba78fd07c2eaced58}{\+\_\+\+LCD\+\_\+\+BACTRL\+\_\+\+ALOGSEL\+\_\+\+AND}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaf0ded15b1b2dc957d46c6f0fa5923903}{\+\_\+\+LCD\+\_\+\+BACTRL\+\_\+\+ALOGSEL\+\_\+\+OR}}~0x00000001\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga528ad0c6b0c622b9cad3b6b697c84f41}{LCD\+\_\+\+BACTRL\+\_\+\+ALOGSEL\+\_\+\+DEFAULT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga268c11c4b32dad5c09467429b55ce4e2}{\+\_\+\+LCD\+\_\+\+BACTRL\+\_\+\+ALOGSEL\+\_\+\+DEFAULT}} $<$$<$ 7)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga8fc9c7ab21f18164db2b2aca96227c78}{LCD\+\_\+\+BACTRL\+\_\+\+ALOGSEL\+\_\+\+AND}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaf090922d74b80fbba78fd07c2eaced58}{\+\_\+\+LCD\+\_\+\+BACTRL\+\_\+\+ALOGSEL\+\_\+\+AND}} $<$$<$ 7)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga1e5d8a3bea08817e8a2f540243730eaa}{LCD\+\_\+\+BACTRL\+\_\+\+ALOGSEL\+\_\+\+OR}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaf0ded15b1b2dc957d46c6f0fa5923903}{\+\_\+\+LCD\+\_\+\+BACTRL\+\_\+\+ALOGSEL\+\_\+\+OR}} $<$$<$ 7)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga94507c02b4944e4369d5ee5cfb90850f}{LCD\+\_\+\+BACTRL\+\_\+\+FCEN}}~(0x1\+UL $<$$<$ 8)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga34de085aac8ef70348dec10578967548}{\+\_\+\+LCD\+\_\+\+BACTRL\+\_\+\+FCEN\+\_\+\+SHIFT}}~8
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga74b40a7b985fbf815d22dca781d87235}{\+\_\+\+LCD\+\_\+\+BACTRL\+\_\+\+FCEN\+\_\+\+MASK}}~0x100\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga7a8bf1a33529aa82f6abcfba3876db30}{\+\_\+\+LCD\+\_\+\+BACTRL\+\_\+\+FCEN\+\_\+\+DEFAULT}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gab3c637eba76f98795c915102e8691f28}{LCD\+\_\+\+BACTRL\+\_\+\+FCEN\+\_\+\+DEFAULT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga7a8bf1a33529aa82f6abcfba3876db30}{\+\_\+\+LCD\+\_\+\+BACTRL\+\_\+\+FCEN\+\_\+\+DEFAULT}} $<$$<$ 8)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gac83ebb2f730265df473611c5a049fb61}{\+\_\+\+LCD\+\_\+\+BACTRL\+\_\+\+FCPRESC\+\_\+\+SHIFT}}~16
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga16ab9aa548476936614c95135510063f}{\+\_\+\+LCD\+\_\+\+BACTRL\+\_\+\+FCPRESC\+\_\+\+MASK}}~0x30000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga8ad90ca340d168c0f028de20d23906ce}{\+\_\+\+LCD\+\_\+\+BACTRL\+\_\+\+FCPRESC\+\_\+\+DEFAULT}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gadcc47f45ee0f5a61e13bb5eef4ce2a99}{\+\_\+\+LCD\+\_\+\+BACTRL\+\_\+\+FCPRESC\+\_\+\+DIV1}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gadad74d157eaab04953e07400c196bc43}{\+\_\+\+LCD\+\_\+\+BACTRL\+\_\+\+FCPRESC\+\_\+\+DIV2}}~0x00000001\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga60d9e2aa38b3aad5954c2eba5c155aa9}{\+\_\+\+LCD\+\_\+\+BACTRL\+\_\+\+FCPRESC\+\_\+\+DIV4}}~0x00000002\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gafcab32f52d7f8a3b4c7c11283a932ecd}{\+\_\+\+LCD\+\_\+\+BACTRL\+\_\+\+FCPRESC\+\_\+\+DIV8}}~0x00000003\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga3e1df1ba38c63427bb3698f81d9001c2}{LCD\+\_\+\+BACTRL\+\_\+\+FCPRESC\+\_\+\+DEFAULT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga8ad90ca340d168c0f028de20d23906ce}{\+\_\+\+LCD\+\_\+\+BACTRL\+\_\+\+FCPRESC\+\_\+\+DEFAULT}} $<$$<$ 16)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaad7699a92c900f110c56466f426d6ca6}{LCD\+\_\+\+BACTRL\+\_\+\+FCPRESC\+\_\+\+DIV1}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gadcc47f45ee0f5a61e13bb5eef4ce2a99}{\+\_\+\+LCD\+\_\+\+BACTRL\+\_\+\+FCPRESC\+\_\+\+DIV1}} $<$$<$ 16)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaf93f8cff74cfca9b3522444fa5dac430}{LCD\+\_\+\+BACTRL\+\_\+\+FCPRESC\+\_\+\+DIV2}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gadad74d157eaab04953e07400c196bc43}{\+\_\+\+LCD\+\_\+\+BACTRL\+\_\+\+FCPRESC\+\_\+\+DIV2}} $<$$<$ 16)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga4dca7ee710b67c7d766af03d8fe147dc}{LCD\+\_\+\+BACTRL\+\_\+\+FCPRESC\+\_\+\+DIV4}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga60d9e2aa38b3aad5954c2eba5c155aa9}{\+\_\+\+LCD\+\_\+\+BACTRL\+\_\+\+FCPRESC\+\_\+\+DIV4}} $<$$<$ 16)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga0f614f3dea8e317279b998575b78ab5d}{LCD\+\_\+\+BACTRL\+\_\+\+FCPRESC\+\_\+\+DIV8}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gafcab32f52d7f8a3b4c7c11283a932ecd}{\+\_\+\+LCD\+\_\+\+BACTRL\+\_\+\+FCPRESC\+\_\+\+DIV8}} $<$$<$ 16)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaa23ad392797450b8d2b93aaae0d91657}{\+\_\+\+LCD\+\_\+\+BACTRL\+\_\+\+FCTOP\+\_\+\+SHIFT}}~18
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaa999db158edf029d1c64a0625b7b688b}{\+\_\+\+LCD\+\_\+\+BACTRL\+\_\+\+FCTOP\+\_\+\+MASK}}~0x\+FC0000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga31f70595e633dbb871dd73b9dbbaaedc}{\+\_\+\+LCD\+\_\+\+BACTRL\+\_\+\+FCTOP\+\_\+\+DEFAULT}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gafae8231e0f29146570f50a6b651e9499}{LCD\+\_\+\+BACTRL\+\_\+\+FCTOP\+\_\+\+DEFAULT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga31f70595e633dbb871dd73b9dbbaaedc}{\+\_\+\+LCD\+\_\+\+BACTRL\+\_\+\+FCTOP\+\_\+\+DEFAULT}} $<$$<$ 18)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga78999395f86fa04e858efb9ebcd10184}{LCD\+\_\+\+BACTRL\+\_\+\+ALOC}}~(0x1\+UL $<$$<$ 28)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga2fbafeedeb1d10de3ac6bac48fa8239f}{\+\_\+\+LCD\+\_\+\+BACTRL\+\_\+\+ALOC\+\_\+\+SHIFT}}~28
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga9565a42d7ea3ea870e2b1d083aca1c2c}{\+\_\+\+LCD\+\_\+\+BACTRL\+\_\+\+ALOC\+\_\+\+MASK}}~0x10000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gad074defa4b2b13cd7b6b1c502c7ae394}{\+\_\+\+LCD\+\_\+\+BACTRL\+\_\+\+ALOC\+\_\+\+DEFAULT}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga49d34008f7b80d9ad5a25e008833b9a8}{\+\_\+\+LCD\+\_\+\+BACTRL\+\_\+\+ALOC\+\_\+\+SEG0\+TO7}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gacfdab16eeb34756ffbc51c6f2f456f36}{\+\_\+\+LCD\+\_\+\+BACTRL\+\_\+\+ALOC\+\_\+\+SEG8\+TO15}}~0x00000001\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga85fe3644a9c6aee6f70504b8003934e7}{LCD\+\_\+\+BACTRL\+\_\+\+ALOC\+\_\+\+DEFAULT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gad074defa4b2b13cd7b6b1c502c7ae394}{\+\_\+\+LCD\+\_\+\+BACTRL\+\_\+\+ALOC\+\_\+\+DEFAULT}} $<$$<$ 28)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga4e869c30c9d893e20fd5b5a5102966a9}{LCD\+\_\+\+BACTRL\+\_\+\+ALOC\+\_\+\+SEG0\+TO7}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga49d34008f7b80d9ad5a25e008833b9a8}{\+\_\+\+LCD\+\_\+\+BACTRL\+\_\+\+ALOC\+\_\+\+SEG0\+TO7}} $<$$<$ 28)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga2b96ff5b4f9cc964184af81fe145da85}{LCD\+\_\+\+BACTRL\+\_\+\+ALOC\+\_\+\+SEG8\+TO15}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gacfdab16eeb34756ffbc51c6f2f456f36}{\+\_\+\+LCD\+\_\+\+BACTRL\+\_\+\+ALOC\+\_\+\+SEG8\+TO15}} $<$$<$ 28)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaae8c659c325e7bb7815e9dad3b0ec8d3}{\+\_\+\+LCD\+\_\+\+STATUS\+\_\+\+RESETVALUE}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga849161963a3529a2c4b13eadb7bda596}{\+\_\+\+LCD\+\_\+\+STATUS\+\_\+\+MASK}}~0x0000010\+FUL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga496da33b9c1bfd72db319219fca838c7}{\+\_\+\+LCD\+\_\+\+STATUS\+\_\+\+ASTATE\+\_\+\+SHIFT}}~0
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga5477eb5d3226a99e17ea67615841f0ef}{\+\_\+\+LCD\+\_\+\+STATUS\+\_\+\+ASTATE\+\_\+\+MASK}}~0x\+FUL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaaaef5191d5bfee11c667c4e33c918565}{\+\_\+\+LCD\+\_\+\+STATUS\+\_\+\+ASTATE\+\_\+\+DEFAULT}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga88b0a24a87407ac5e628b87302d20a3d}{LCD\+\_\+\+STATUS\+\_\+\+ASTATE\+\_\+\+DEFAULT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaaaef5191d5bfee11c667c4e33c918565}{\+\_\+\+LCD\+\_\+\+STATUS\+\_\+\+ASTATE\+\_\+\+DEFAULT}} $<$$<$ 0)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga79f01b6b6f7a6b8e9e483733bb0f8c03}{LCD\+\_\+\+STATUS\+\_\+\+BLINK}}~(0x1\+UL $<$$<$ 8)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gae9548fcf07e819d6f8669ebdcab69b35}{\+\_\+\+LCD\+\_\+\+STATUS\+\_\+\+BLINK\+\_\+\+SHIFT}}~8
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga929b15a22fca621e02cd35a5e51c935f}{\+\_\+\+LCD\+\_\+\+STATUS\+\_\+\+BLINK\+\_\+\+MASK}}~0x100\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gac25edc9401af26b1715118ff3866dc7e}{\+\_\+\+LCD\+\_\+\+STATUS\+\_\+\+BLINK\+\_\+\+DEFAULT}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga1c6e139890c8bffc0d469066f66dd7a0}{LCD\+\_\+\+STATUS\+\_\+\+BLINK\+\_\+\+DEFAULT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gac25edc9401af26b1715118ff3866dc7e}{\+\_\+\+LCD\+\_\+\+STATUS\+\_\+\+BLINK\+\_\+\+DEFAULT}} $<$$<$ 8)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gac195a1bcf70bfec63bf4b0fee25d2231}{\+\_\+\+LCD\+\_\+\+AREGA\+\_\+\+RESETVALUE}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaed809a6b89cab111364c0e86ed63fac9}{\+\_\+\+LCD\+\_\+\+AREGA\+\_\+\+MASK}}~0x000000\+FFUL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaeced9c64b95dda308a54f4944701f8f6}{\+\_\+\+LCD\+\_\+\+AREGA\+\_\+\+AREGA\+\_\+\+SHIFT}}~0
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gafbf10b697f83eee3d594241e615a3904}{\+\_\+\+LCD\+\_\+\+AREGA\+\_\+\+AREGA\+\_\+\+MASK}}~0x\+FFUL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga9fb7ca64e1a787f28fc1d525e91d221c}{\+\_\+\+LCD\+\_\+\+AREGA\+\_\+\+AREGA\+\_\+\+DEFAULT}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga8a218fff6778905ab20ab17aef405a2d}{LCD\+\_\+\+AREGA\+\_\+\+AREGA\+\_\+\+DEFAULT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga9fb7ca64e1a787f28fc1d525e91d221c}{\+\_\+\+LCD\+\_\+\+AREGA\+\_\+\+AREGA\+\_\+\+DEFAULT}} $<$$<$ 0)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaeca2a160abcbf37d46f6f6e71fbcb63e}{\+\_\+\+LCD\+\_\+\+AREGB\+\_\+\+RESETVALUE}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga5d45bfe0a94afcdf3fe1dd834cc7118d}{\+\_\+\+LCD\+\_\+\+AREGB\+\_\+\+MASK}}~0x000000\+FFUL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga6bd6779dee8e566fe9b0ca488ee3890f}{\+\_\+\+LCD\+\_\+\+AREGB\+\_\+\+AREGB\+\_\+\+SHIFT}}~0
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga629e6439db48fd51d571cf395724574d}{\+\_\+\+LCD\+\_\+\+AREGB\+\_\+\+AREGB\+\_\+\+MASK}}~0x\+FFUL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga72a89a19a157103a09342156cf39029e}{\+\_\+\+LCD\+\_\+\+AREGB\+\_\+\+AREGB\+\_\+\+DEFAULT}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga0d41326034ff4c04b393ad217f224c7e}{LCD\+\_\+\+AREGB\+\_\+\+AREGB\+\_\+\+DEFAULT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga72a89a19a157103a09342156cf39029e}{\+\_\+\+LCD\+\_\+\+AREGB\+\_\+\+AREGB\+\_\+\+DEFAULT}} $<$$<$ 0)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaa3fcdd4a7aaa62ab5d827db9caff1a5f}{\+\_\+\+LCD\+\_\+\+IF\+\_\+\+RESETVALUE}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gabd02480431aeb6a340eac81f232dff1f}{\+\_\+\+LCD\+\_\+\+IF\+\_\+\+MASK}}~0x00000001\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga075f5273799fd4b7c6b8446a393a68f9}{LCD\+\_\+\+IF\+\_\+\+FC}}~(0x1\+UL $<$$<$ 0)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga138a3f1e2634e2271bc68e680e4a936a}{\+\_\+\+LCD\+\_\+\+IF\+\_\+\+FC\+\_\+\+SHIFT}}~0
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga73f632062796bab675e4affffb65050c}{\+\_\+\+LCD\+\_\+\+IF\+\_\+\+FC\+\_\+\+MASK}}~0x1\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga977809b640c0a705b9cd95478be25b0a}{\+\_\+\+LCD\+\_\+\+IF\+\_\+\+FC\+\_\+\+DEFAULT}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga7ed115b85cb73f9411903939d5485e33}{LCD\+\_\+\+IF\+\_\+\+FC\+\_\+\+DEFAULT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga977809b640c0a705b9cd95478be25b0a}{\+\_\+\+LCD\+\_\+\+IF\+\_\+\+FC\+\_\+\+DEFAULT}} $<$$<$ 0)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gae65c1fdd29ae7af00258bc694219d791}{\+\_\+\+LCD\+\_\+\+IFS\+\_\+\+RESETVALUE}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga4c943494365e3250813cf70a2426712e}{\+\_\+\+LCD\+\_\+\+IFS\+\_\+\+MASK}}~0x00000001\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaa942b427316b56f4d88c7a543627f479}{LCD\+\_\+\+IFS\+\_\+\+FC}}~(0x1\+UL $<$$<$ 0)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga12c68f801b2887a7f975661bc85e4f58}{\+\_\+\+LCD\+\_\+\+IFS\+\_\+\+FC\+\_\+\+SHIFT}}~0
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gad77e634babbbe7f027f55a99f7e3c0b9}{\+\_\+\+LCD\+\_\+\+IFS\+\_\+\+FC\+\_\+\+MASK}}~0x1\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gace5cdca73dcd0f7866eb4d6a4ebba0be}{\+\_\+\+LCD\+\_\+\+IFS\+\_\+\+FC\+\_\+\+DEFAULT}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gab606eb6927e777815c6d549ef3dc97ec}{LCD\+\_\+\+IFS\+\_\+\+FC\+\_\+\+DEFAULT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gace5cdca73dcd0f7866eb4d6a4ebba0be}{\+\_\+\+LCD\+\_\+\+IFS\+\_\+\+FC\+\_\+\+DEFAULT}} $<$$<$ 0)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga3b248239634f2d248711b9e9da0bd0fa}{\+\_\+\+LCD\+\_\+\+IFC\+\_\+\+RESETVALUE}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaa54bae53c54c9eb2fd36f1acc539ad3c}{\+\_\+\+LCD\+\_\+\+IFC\+\_\+\+MASK}}~0x00000001\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga8a8e4a92243cf7f3de73a375b12a8581}{LCD\+\_\+\+IFC\+\_\+\+FC}}~(0x1\+UL $<$$<$ 0)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga5cf99f4a5b795e36bfd2df2479a0ce8f}{\+\_\+\+LCD\+\_\+\+IFC\+\_\+\+FC\+\_\+\+SHIFT}}~0
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gab4e8809b8884528a095007d37350ad6b}{\+\_\+\+LCD\+\_\+\+IFC\+\_\+\+FC\+\_\+\+MASK}}~0x1\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga24f20a220a52cd2303a459106591f128}{\+\_\+\+LCD\+\_\+\+IFC\+\_\+\+FC\+\_\+\+DEFAULT}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gadbf7b3a7a1a2336d612d64fe59b7ae84}{LCD\+\_\+\+IFC\+\_\+\+FC\+\_\+\+DEFAULT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga24f20a220a52cd2303a459106591f128}{\+\_\+\+LCD\+\_\+\+IFC\+\_\+\+FC\+\_\+\+DEFAULT}} $<$$<$ 0)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga6af922f45031f387583931a5b7a65b01}{\+\_\+\+LCD\+\_\+\+IEN\+\_\+\+RESETVALUE}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gac3b8f5cce1cb353f593815090103a653}{\+\_\+\+LCD\+\_\+\+IEN\+\_\+\+MASK}}~0x00000001\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga04ce5dbbc4515b7ee79095c0031b7dd5}{LCD\+\_\+\+IEN\+\_\+\+FC}}~(0x1\+UL $<$$<$ 0)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga96f3e1d274861a545c9b7e37d4c56bfe}{\+\_\+\+LCD\+\_\+\+IEN\+\_\+\+FC\+\_\+\+SHIFT}}~0
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga650522ce8a8e53779ae9667db26c3fe1}{\+\_\+\+LCD\+\_\+\+IEN\+\_\+\+FC\+\_\+\+MASK}}~0x1\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gae3aa079a5db60481e4a7363fe2199114}{\+\_\+\+LCD\+\_\+\+IEN\+\_\+\+FC\+\_\+\+DEFAULT}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaf729208ce8e2d4eb7246a2740e97ba50}{LCD\+\_\+\+IEN\+\_\+\+FC\+\_\+\+DEFAULT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gae3aa079a5db60481e4a7363fe2199114}{\+\_\+\+LCD\+\_\+\+IEN\+\_\+\+FC\+\_\+\+DEFAULT}} $<$$<$ 0)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga31407493761fe1080d30b5259679c33d}{\+\_\+\+LCD\+\_\+\+SEGD0\+L\+\_\+\+RESETVALUE}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaaa48052c1239a78b0366c7764e68d1a8}{\+\_\+\+LCD\+\_\+\+SEGD0\+L\+\_\+\+MASK}}~0x\+FFFFFFFFUL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gae523c963d40fcb4d679a0966733ddf57}{\+\_\+\+LCD\+\_\+\+SEGD0\+L\+\_\+\+SEGD0\+L\+\_\+\+SHIFT}}~0
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaeeb3e3296d0a431d0d34706a80ca88a9}{\+\_\+\+LCD\+\_\+\+SEGD0\+L\+\_\+\+SEGD0\+L\+\_\+\+MASK}}~0x\+FFFFFFFFUL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gafd0600616f3206472ff47d19e84565e7}{\+\_\+\+LCD\+\_\+\+SEGD0\+L\+\_\+\+SEGD0\+L\+\_\+\+DEFAULT}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gae0074555237227000873dfce30d6bf34}{LCD\+\_\+\+SEGD0\+L\+\_\+\+SEGD0\+L\+\_\+\+DEFAULT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gafd0600616f3206472ff47d19e84565e7}{\+\_\+\+LCD\+\_\+\+SEGD0\+L\+\_\+\+SEGD0\+L\+\_\+\+DEFAULT}} $<$$<$ 0)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga94a98657b0cc0b0805dc1d2209a9fb8a}{\+\_\+\+LCD\+\_\+\+SEGD1\+L\+\_\+\+RESETVALUE}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaa48633336395e0f6bfa7087e4067d090}{\+\_\+\+LCD\+\_\+\+SEGD1\+L\+\_\+\+MASK}}~0x\+FFFFFFFFUL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gae45ad36e741576a83d78ef7b7d6dc79c}{\+\_\+\+LCD\+\_\+\+SEGD1\+L\+\_\+\+SEGD1\+L\+\_\+\+SHIFT}}~0
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gab0b93cf92afe72f76eec49fd49e5d220}{\+\_\+\+LCD\+\_\+\+SEGD1\+L\+\_\+\+SEGD1\+L\+\_\+\+MASK}}~0x\+FFFFFFFFUL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaa2cf743d3534c7815eac3cf276de7ad6}{\+\_\+\+LCD\+\_\+\+SEGD1\+L\+\_\+\+SEGD1\+L\+\_\+\+DEFAULT}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaa98dfdf4c5c58f56784639fb054b7941}{LCD\+\_\+\+SEGD1\+L\+\_\+\+SEGD1\+L\+\_\+\+DEFAULT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaa2cf743d3534c7815eac3cf276de7ad6}{\+\_\+\+LCD\+\_\+\+SEGD1\+L\+\_\+\+SEGD1\+L\+\_\+\+DEFAULT}} $<$$<$ 0)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga5ce8ddd955307b0f7d578b1b2ef3a5d3}{\+\_\+\+LCD\+\_\+\+SEGD2\+L\+\_\+\+RESETVALUE}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga6738d4611c779bd8e694050784a6db66}{\+\_\+\+LCD\+\_\+\+SEGD2\+L\+\_\+\+MASK}}~0x\+FFFFFFFFUL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaee20f7b07f7ec278fbc5af2f65f16f10}{\+\_\+\+LCD\+\_\+\+SEGD2\+L\+\_\+\+SEGD2\+L\+\_\+\+SHIFT}}~0
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga234e0670c9edcbcbfdf5dfbfb638f225}{\+\_\+\+LCD\+\_\+\+SEGD2\+L\+\_\+\+SEGD2\+L\+\_\+\+MASK}}~0x\+FFFFFFFFUL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaef4305157cc031a822021f0acf718ba2}{\+\_\+\+LCD\+\_\+\+SEGD2\+L\+\_\+\+SEGD2\+L\+\_\+\+DEFAULT}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga94cb8e45341baeecdc82e4c3b5d9baf6}{LCD\+\_\+\+SEGD2\+L\+\_\+\+SEGD2\+L\+\_\+\+DEFAULT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaef4305157cc031a822021f0acf718ba2}{\+\_\+\+LCD\+\_\+\+SEGD2\+L\+\_\+\+SEGD2\+L\+\_\+\+DEFAULT}} $<$$<$ 0)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga6c1d6f5c363062281bd0fcfb9e6354f5}{\+\_\+\+LCD\+\_\+\+SEGD3\+L\+\_\+\+RESETVALUE}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaa2666a5f01a733a1cc7865fe0b9b4bec}{\+\_\+\+LCD\+\_\+\+SEGD3\+L\+\_\+\+MASK}}~0x\+FFFFFFFFUL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga2a709d45856cfe4dffada62e5eded677}{\+\_\+\+LCD\+\_\+\+SEGD3\+L\+\_\+\+SEGD3\+L\+\_\+\+SHIFT}}~0
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gad7a867dec1c92fcdcc73df842c7a09b1}{\+\_\+\+LCD\+\_\+\+SEGD3\+L\+\_\+\+SEGD3\+L\+\_\+\+MASK}}~0x\+FFFFFFFFUL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga61bb93ea190f4122a29a2e59c687c72d}{\+\_\+\+LCD\+\_\+\+SEGD3\+L\+\_\+\+SEGD3\+L\+\_\+\+DEFAULT}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gac443b41d37afa30e165ff8f2b91ed359}{LCD\+\_\+\+SEGD3\+L\+\_\+\+SEGD3\+L\+\_\+\+DEFAULT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga61bb93ea190f4122a29a2e59c687c72d}{\+\_\+\+LCD\+\_\+\+SEGD3\+L\+\_\+\+SEGD3\+L\+\_\+\+DEFAULT}} $<$$<$ 0)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gae7b2e8defa5c5a63de6583d5ff4e7961}{\+\_\+\+LCD\+\_\+\+SEGD0\+H\+\_\+\+RESETVALUE}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga635c59afd0b320b73342b550b835542c}{\+\_\+\+LCD\+\_\+\+SEGD0\+H\+\_\+\+MASK}}~0x000000\+FFUL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga55f9836c3a9e4e456d93def25ef58d92}{\+\_\+\+LCD\+\_\+\+SEGD0\+H\+\_\+\+SEGD0\+H\+\_\+\+SHIFT}}~0
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga40b56d49c5a5eb5051cd930526d5bb18}{\+\_\+\+LCD\+\_\+\+SEGD0\+H\+\_\+\+SEGD0\+H\+\_\+\+MASK}}~0x\+FFUL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gad0cc7e1f1bbd08f4e4e1defb470b7c4f}{\+\_\+\+LCD\+\_\+\+SEGD0\+H\+\_\+\+SEGD0\+H\+\_\+\+DEFAULT}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga2a6e0b850a59631bdbd1eb7d961ac985}{LCD\+\_\+\+SEGD0\+H\+\_\+\+SEGD0\+H\+\_\+\+DEFAULT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gad0cc7e1f1bbd08f4e4e1defb470b7c4f}{\+\_\+\+LCD\+\_\+\+SEGD0\+H\+\_\+\+SEGD0\+H\+\_\+\+DEFAULT}} $<$$<$ 0)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga2d7f4e8436b2f2aad08a172280228d28}{\+\_\+\+LCD\+\_\+\+SEGD1\+H\+\_\+\+RESETVALUE}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga0c77f43d5c1f0ca7c071536dc9da46e5}{\+\_\+\+LCD\+\_\+\+SEGD1\+H\+\_\+\+MASK}}~0x000000\+FFUL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga45b13daa5fc9f05995be9fb562741a58}{\+\_\+\+LCD\+\_\+\+SEGD1\+H\+\_\+\+SEGD1\+H\+\_\+\+SHIFT}}~0
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gab71e745eb534c9d9db8a770cfe0582c2}{\+\_\+\+LCD\+\_\+\+SEGD1\+H\+\_\+\+SEGD1\+H\+\_\+\+MASK}}~0x\+FFUL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga70892649ed955ef99723ca4ae8f6faef}{\+\_\+\+LCD\+\_\+\+SEGD1\+H\+\_\+\+SEGD1\+H\+\_\+\+DEFAULT}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga3a765b6de9d857d4e40eaa86287bed6c}{LCD\+\_\+\+SEGD1\+H\+\_\+\+SEGD1\+H\+\_\+\+DEFAULT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga70892649ed955ef99723ca4ae8f6faef}{\+\_\+\+LCD\+\_\+\+SEGD1\+H\+\_\+\+SEGD1\+H\+\_\+\+DEFAULT}} $<$$<$ 0)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gae79d50187200c9fda9f4723d80b84300}{\+\_\+\+LCD\+\_\+\+SEGD2\+H\+\_\+\+RESETVALUE}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga61bedd33cebb08cd2530c362c3742777}{\+\_\+\+LCD\+\_\+\+SEGD2\+H\+\_\+\+MASK}}~0x000000\+FFUL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga68bfbcfd2126938b5c438d9fa024252b}{\+\_\+\+LCD\+\_\+\+SEGD2\+H\+\_\+\+SEGD2\+H\+\_\+\+SHIFT}}~0
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gad02f46afe850fdee6458356732d9b9da}{\+\_\+\+LCD\+\_\+\+SEGD2\+H\+\_\+\+SEGD2\+H\+\_\+\+MASK}}~0x\+FFUL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga1a60adb2b7a22e5def0e497e225eb6db}{\+\_\+\+LCD\+\_\+\+SEGD2\+H\+\_\+\+SEGD2\+H\+\_\+\+DEFAULT}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga323a830a403c21a885b2c413c68a3a93}{LCD\+\_\+\+SEGD2\+H\+\_\+\+SEGD2\+H\+\_\+\+DEFAULT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga1a60adb2b7a22e5def0e497e225eb6db}{\+\_\+\+LCD\+\_\+\+SEGD2\+H\+\_\+\+SEGD2\+H\+\_\+\+DEFAULT}} $<$$<$ 0)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga15575f0eeac1121ae1f57bc885a0c679}{\+\_\+\+LCD\+\_\+\+SEGD3\+H\+\_\+\+RESETVALUE}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gad91935ee56a7319d0e2e609f83b22c05}{\+\_\+\+LCD\+\_\+\+SEGD3\+H\+\_\+\+MASK}}~0x000000\+FFUL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga4bc641b17e7d6653cd8d88db57de371c}{\+\_\+\+LCD\+\_\+\+SEGD3\+H\+\_\+\+SEGD3\+H\+\_\+\+SHIFT}}~0
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga3679469aca60430763a31807132023c4}{\+\_\+\+LCD\+\_\+\+SEGD3\+H\+\_\+\+SEGD3\+H\+\_\+\+MASK}}~0x\+FFUL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga9cfa2b638e8e6f14f872c36ba97caa20}{\+\_\+\+LCD\+\_\+\+SEGD3\+H\+\_\+\+SEGD3\+H\+\_\+\+DEFAULT}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga726af9762cd2afc995410f91c2c867da}{LCD\+\_\+\+SEGD3\+H\+\_\+\+SEGD3\+H\+\_\+\+DEFAULT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga9cfa2b638e8e6f14f872c36ba97caa20}{\+\_\+\+LCD\+\_\+\+SEGD3\+H\+\_\+\+SEGD3\+H\+\_\+\+DEFAULT}} $<$$<$ 0)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga6fb5f8587b4144fcd48317fdc1c9c403}{\+\_\+\+LCD\+\_\+\+FREEZE\+\_\+\+RESETVALUE}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga9d6fc199cf122c5e8c95b3842d653e96}{\+\_\+\+LCD\+\_\+\+FREEZE\+\_\+\+MASK}}~0x00000001\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga967d57f30f4265c94e0b41a064ff1ced}{LCD\+\_\+\+FREEZE\+\_\+\+REGFREEZE}}~(0x1\+UL $<$$<$ 0)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga708322188d64564b19aac9a1c702cb3f}{\+\_\+\+LCD\+\_\+\+FREEZE\+\_\+\+REGFREEZE\+\_\+\+SHIFT}}~0
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga4a11890991306073bf1631349bf5570f}{\+\_\+\+LCD\+\_\+\+FREEZE\+\_\+\+REGFREEZE\+\_\+\+MASK}}~0x1\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga80ad48090e90e8ca35f4f834899a6b9f}{\+\_\+\+LCD\+\_\+\+FREEZE\+\_\+\+REGFREEZE\+\_\+\+DEFAULT}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga9ed89d0cf866ea0c3424a0ea629fc200}{\+\_\+\+LCD\+\_\+\+FREEZE\+\_\+\+REGFREEZE\+\_\+\+UPDATE}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga6eb847f09c8e0a939c74b34b2b44eb90}{\+\_\+\+LCD\+\_\+\+FREEZE\+\_\+\+REGFREEZE\+\_\+\+FREEZE}}~0x00000001\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga284c8b25e666d984cbc56137146948c6}{LCD\+\_\+\+FREEZE\+\_\+\+REGFREEZE\+\_\+\+DEFAULT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga80ad48090e90e8ca35f4f834899a6b9f}{\+\_\+\+LCD\+\_\+\+FREEZE\+\_\+\+REGFREEZE\+\_\+\+DEFAULT}} $<$$<$ 0)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga646e3a1cc35c927d47f8d61282d92476}{LCD\+\_\+\+FREEZE\+\_\+\+REGFREEZE\+\_\+\+UPDATE}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga9ed89d0cf866ea0c3424a0ea629fc200}{\+\_\+\+LCD\+\_\+\+FREEZE\+\_\+\+REGFREEZE\+\_\+\+UPDATE}} $<$$<$ 0)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gabbbeb6962e92edb0e73890d295357578}{LCD\+\_\+\+FREEZE\+\_\+\+REGFREEZE\+\_\+\+FREEZE}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga6eb847f09c8e0a939c74b34b2b44eb90}{\+\_\+\+LCD\+\_\+\+FREEZE\+\_\+\+REGFREEZE\+\_\+\+FREEZE}} $<$$<$ 0)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga8427c76e23bd8a1ef675655c6e4233bb}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+RESETVALUE}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gac4b216c8115c5cb63008d89ab462f92a}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+MASK}}~0x000\+FFFFFUL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga1d1d7b38e04238ff0b3b0dc804000dd9}{LCD\+\_\+\+SYNCBUSY\+\_\+\+CTRL}}~(0x1\+UL $<$$<$ 0)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga3d7ee94aa59b296b94531acab0164b84}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+CTRL\+\_\+\+SHIFT}}~0
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gab77bea5e337709000556f90177bda6da}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+CTRL\+\_\+\+MASK}}~0x1\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga97f7e10382da15df3d424d32d260cb8b}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+CTRL\+\_\+\+DEFAULT}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gac61bbcfdab5aa7e640ce79d59047145a}{LCD\+\_\+\+SYNCBUSY\+\_\+\+CTRL\+\_\+\+DEFAULT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga97f7e10382da15df3d424d32d260cb8b}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+CTRL\+\_\+\+DEFAULT}} $<$$<$ 0)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gadda5add5b633a150148d84797ed35a81}{LCD\+\_\+\+SYNCBUSY\+\_\+\+BACTRL}}~(0x1\+UL $<$$<$ 1)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga309db5cb200753655adea122cf802d04}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+BACTRL\+\_\+\+SHIFT}}~1
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga8641a1a7e2ebe0ed6932279d01cc4a6f}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+BACTRL\+\_\+\+MASK}}~0x2\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga8ef054b72e253a9ba710b1d4a18a377a}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+BACTRL\+\_\+\+DEFAULT}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga2be9ec04addb02100b199300240bd151}{LCD\+\_\+\+SYNCBUSY\+\_\+\+BACTRL\+\_\+\+DEFAULT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga8ef054b72e253a9ba710b1d4a18a377a}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+BACTRL\+\_\+\+DEFAULT}} $<$$<$ 1)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gababd27507119e006e024304a4f6f5cb3}{LCD\+\_\+\+SYNCBUSY\+\_\+\+AREGA}}~(0x1\+UL $<$$<$ 2)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga02a5396684fc68e2186003ee744f2651}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+AREGA\+\_\+\+SHIFT}}~2
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaea5c13762bede3721bc4e142b08690b9}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+AREGA\+\_\+\+MASK}}~0x4\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga6001db6e30e54c58a254371a12e72764}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+AREGA\+\_\+\+DEFAULT}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gada172c7ebc1c4b60ab8bc6689d1e6e6c}{LCD\+\_\+\+SYNCBUSY\+\_\+\+AREGA\+\_\+\+DEFAULT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga6001db6e30e54c58a254371a12e72764}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+AREGA\+\_\+\+DEFAULT}} $<$$<$ 2)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga1b21b0255af756cedb2027458ded7827}{LCD\+\_\+\+SYNCBUSY\+\_\+\+AREGB}}~(0x1\+UL $<$$<$ 3)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaae4df5ef2ae5fa19d18e1190891bb19f}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+AREGB\+\_\+\+SHIFT}}~3
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga36b37511b9412b76e5789a8bed9dbdd3}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+AREGB\+\_\+\+MASK}}~0x8\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gae8a2918e55163c2fc0569a2f006f7583}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+AREGB\+\_\+\+DEFAULT}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaf6f81d70c7bd27fe1bbab89ed34d1544}{LCD\+\_\+\+SYNCBUSY\+\_\+\+AREGB\+\_\+\+DEFAULT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gae8a2918e55163c2fc0569a2f006f7583}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+AREGB\+\_\+\+DEFAULT}} $<$$<$ 3)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga94aa2844627efff9b6f991805276a7cb}{LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD0L}}~(0x1\+UL $<$$<$ 4)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gae3e1507783e176a31e08e4bb68964794}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD0\+L\+\_\+\+SHIFT}}~4
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaa2af2366cd3a053d45eb69801462f473}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD0\+L\+\_\+\+MASK}}~0x10\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga55cb028f9440ad84459e3ed4ef75bc5e}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD0\+L\+\_\+\+DEFAULT}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gab1a9f38b61d52f13fe2b4c29745e7268}{LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD0\+L\+\_\+\+DEFAULT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga55cb028f9440ad84459e3ed4ef75bc5e}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD0\+L\+\_\+\+DEFAULT}} $<$$<$ 4)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga40d97e5377359f7d0525b51631b5b577}{LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD1L}}~(0x1\+UL $<$$<$ 5)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaf45752579199cb1ac80d76c28dd2bf09}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD1\+L\+\_\+\+SHIFT}}~5
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga226a851a26a4563960e2fc2d8c06cf58}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD1\+L\+\_\+\+MASK}}~0x20\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaca8de8031a685de8dfa5cdc7f84fb5f8}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD1\+L\+\_\+\+DEFAULT}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga270264161c10a83ed52c52753d397844}{LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD1\+L\+\_\+\+DEFAULT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaca8de8031a685de8dfa5cdc7f84fb5f8}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD1\+L\+\_\+\+DEFAULT}} $<$$<$ 5)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga717e3d4f845dcdb7f5cbca065a037bf8}{LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD2L}}~(0x1\+UL $<$$<$ 6)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga606bcfea543de959af59ea2a0416d7c7}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD2\+L\+\_\+\+SHIFT}}~6
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gad45ec80c8fc2f38dd55a196e9c94ec63}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD2\+L\+\_\+\+MASK}}~0x40\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga79b0d582bec833c9e40fb3ec6701faba}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD2\+L\+\_\+\+DEFAULT}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga23e59fb950ef01876ea687dde0a97a15}{LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD2\+L\+\_\+\+DEFAULT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga79b0d582bec833c9e40fb3ec6701faba}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD2\+L\+\_\+\+DEFAULT}} $<$$<$ 6)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga7ff4ec635f6f7dafd8be84c6dba6819b}{LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD3L}}~(0x1\+UL $<$$<$ 7)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga90d586449d135f9f0de8a83efb30ceda}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD3\+L\+\_\+\+SHIFT}}~7
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga115b41db6611e8f8a56ba8ff15e4f0a3}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD3\+L\+\_\+\+MASK}}~0x80\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga8eecce84edd1085c6e1cf7135676d6ea}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD3\+L\+\_\+\+DEFAULT}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga3ccc427e839c7890ae6095890b12b8d9}{LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD3\+L\+\_\+\+DEFAULT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga8eecce84edd1085c6e1cf7135676d6ea}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD3\+L\+\_\+\+DEFAULT}} $<$$<$ 7)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga4a3c54006afc5241d9a38d8b47dae7b5}{LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD0H}}~(0x1\+UL $<$$<$ 8)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gae63fdc0f65e476506cb12bd5ce6813aa}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD0\+H\+\_\+\+SHIFT}}~8
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gac5f615f7915b97d99107b68eee18a9ac}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD0\+H\+\_\+\+MASK}}~0x100\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gae44c1b58cf1f512274f9697f5e02d0c2}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD0\+H\+\_\+\+DEFAULT}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga7a852c072f403b39af36e0d5a915e427}{LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD0\+H\+\_\+\+DEFAULT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gae44c1b58cf1f512274f9697f5e02d0c2}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD0\+H\+\_\+\+DEFAULT}} $<$$<$ 8)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga815ed5306c2299e24cf5da6b2da5b119}{LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD1H}}~(0x1\+UL $<$$<$ 9)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga8d43356000fc9a858a63587c1fca81a9}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD1\+H\+\_\+\+SHIFT}}~9
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga685342a709c64eccb027008015797a5a}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD1\+H\+\_\+\+MASK}}~0x200\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga4352d4f1a863dd2f3889a776107e8690}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD1\+H\+\_\+\+DEFAULT}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaa60808559d6607f3bd348631af1beca3}{LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD1\+H\+\_\+\+DEFAULT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga4352d4f1a863dd2f3889a776107e8690}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD1\+H\+\_\+\+DEFAULT}} $<$$<$ 9)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga58251dfa137d6095b5340183f06c7cb0}{LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD2H}}~(0x1\+UL $<$$<$ 10)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga68ddf3a1d29a996c910739970008bb88}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD2\+H\+\_\+\+SHIFT}}~10
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga94901a1f1e5fa3c7294df873e35c2e4b}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD2\+H\+\_\+\+MASK}}~0x400\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga0ffcd63c8d007309162a0951f6a32690}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD2\+H\+\_\+\+DEFAULT}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gad634cb036e311acc91688857f7ee2e40}{LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD2\+H\+\_\+\+DEFAULT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga0ffcd63c8d007309162a0951f6a32690}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD2\+H\+\_\+\+DEFAULT}} $<$$<$ 10)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga1806d5b27b5b0cdc671b56dc83b8747c}{LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD3H}}~(0x1\+UL $<$$<$ 11)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga4885710f2d385455829010e77b15994e}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD3\+H\+\_\+\+SHIFT}}~11
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga5ae9317859a8698fc4e917f937c467fe}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD3\+H\+\_\+\+MASK}}~0x800\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga11118008c879721737745ddf93ed8f3a}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD3\+H\+\_\+\+DEFAULT}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga2276035f103472021e6491bc355dba20}{LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD3\+H\+\_\+\+DEFAULT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga11118008c879721737745ddf93ed8f3a}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD3\+H\+\_\+\+DEFAULT}} $<$$<$ 11)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga078ce8854d060f403c9d3355b267392f}{LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD4H}}~(0x1\+UL $<$$<$ 12)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga4cf7dee3d719d5b5a9db943613db3454}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD4\+H\+\_\+\+SHIFT}}~12
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga0f883f1aa798fa661351cfb22c6c99ef}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD4\+H\+\_\+\+MASK}}~0x1000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gafd8276dde21576c2c547a60696fe953a}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD4\+H\+\_\+\+DEFAULT}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga24ba7a1150e4407dc302d867e9ff5909}{LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD4\+H\+\_\+\+DEFAULT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gafd8276dde21576c2c547a60696fe953a}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD4\+H\+\_\+\+DEFAULT}} $<$$<$ 12)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga056e8da18e59bc38f5ada5e5cf406b83}{LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD5H}}~(0x1\+UL $<$$<$ 13)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga1729bced2c0f4c2f6f949e14548af24f}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD5\+H\+\_\+\+SHIFT}}~13
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaf2aca1ee2f61f797489942beec36be75}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD5\+H\+\_\+\+MASK}}~0x2000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaa72a33edd29a62e4c8df8836c2a96b25}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD5\+H\+\_\+\+DEFAULT}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga2eb05f63bbce3cbba6d1c0e2a9aa8f4e}{LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD5\+H\+\_\+\+DEFAULT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaa72a33edd29a62e4c8df8836c2a96b25}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD5\+H\+\_\+\+DEFAULT}} $<$$<$ 13)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gabe4544d8f0142aa4e89233bbf042e5db}{LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD6H}}~(0x1\+UL $<$$<$ 14)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gab839c702ede1e65d881b6f4b29482d06}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD6\+H\+\_\+\+SHIFT}}~14
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gad2e4740e4efe8df157758b5f68717295}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD6\+H\+\_\+\+MASK}}~0x4000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga0eb88635dc41b840322a3e2e044f5196}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD6\+H\+\_\+\+DEFAULT}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gafb38b0fc311c527e08d859ed3da0e4b1}{LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD6\+H\+\_\+\+DEFAULT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga0eb88635dc41b840322a3e2e044f5196}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD6\+H\+\_\+\+DEFAULT}} $<$$<$ 14)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga32a8e702e59a5a273fb0f93ed24e6131}{LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD7H}}~(0x1\+UL $<$$<$ 15)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga352e7394aaf8b5b8ff3aad8df53690e3}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD7\+H\+\_\+\+SHIFT}}~15
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga0c0a986f6ae809aab5cea9a62ad84b5c}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD7\+H\+\_\+\+MASK}}~0x8000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaf7121c5c15d7f4ac5645b73573a01d8d}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD7\+H\+\_\+\+DEFAULT}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gacc543e926e005687195f245f54d167ae}{LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD7\+H\+\_\+\+DEFAULT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaf7121c5c15d7f4ac5645b73573a01d8d}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD7\+H\+\_\+\+DEFAULT}} $<$$<$ 15)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gacc98333eb088919cc540b8794971b8bf}{LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD4L}}~(0x1\+UL $<$$<$ 16)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gac55e28b13b657859ae3443b521989e4d}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD4\+L\+\_\+\+SHIFT}}~16
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gae8828a1c2ccf29d6b7b6286c3d18b7e1}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD4\+L\+\_\+\+MASK}}~0x10000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gad24b2a452e70b7f5a53e0b8fbd8a6960}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD4\+L\+\_\+\+DEFAULT}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga45b3637215ff0db84b7089568486851e}{LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD4\+L\+\_\+\+DEFAULT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gad24b2a452e70b7f5a53e0b8fbd8a6960}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD4\+L\+\_\+\+DEFAULT}} $<$$<$ 16)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gad15317f6251cd17c5fe426bdc8ea3d9c}{LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD5L}}~(0x1\+UL $<$$<$ 17)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga7732abf9ec789bb26df27cc2962d05b5}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD5\+L\+\_\+\+SHIFT}}~17
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga0fbb2616aeac738ff1c27b79472b4afe}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD5\+L\+\_\+\+MASK}}~0x20000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gab01b63a279da7b14142d34cc7ec7708d}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD5\+L\+\_\+\+DEFAULT}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaa9a0dfb075bb3dce73d829e3189ddd18}{LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD5\+L\+\_\+\+DEFAULT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gab01b63a279da7b14142d34cc7ec7708d}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD5\+L\+\_\+\+DEFAULT}} $<$$<$ 17)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaf4914458ee03251eb8f6988b8b615021}{LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD6L}}~(0x1\+UL $<$$<$ 18)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga000ef1a84b8850d319516ac514fe7dc6}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD6\+L\+\_\+\+SHIFT}}~18
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga05123b250fee67b82b2e41ec0bc52c17}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD6\+L\+\_\+\+MASK}}~0x40000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gabec23bbf3bcff6406f781a64a4c9a952}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD6\+L\+\_\+\+DEFAULT}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaa381b978d57791b3e938745c5b154e7d}{LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD6\+L\+\_\+\+DEFAULT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gabec23bbf3bcff6406f781a64a4c9a952}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD6\+L\+\_\+\+DEFAULT}} $<$$<$ 18)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga21b6b91861e3332ddd980dbafa541857}{LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD7L}}~(0x1\+UL $<$$<$ 19)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga0a4b3e3d1b620e9b356ba40da1ab35cb}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD7\+L\+\_\+\+SHIFT}}~19
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga9ebe96dd7a4310a1f0f82c59e900185a}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD7\+L\+\_\+\+MASK}}~0x80000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaae795bd6d7b9fca4b04d0e5215aa7cf5}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD7\+L\+\_\+\+DEFAULT}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga4364b96a74d4a2f116c0880ce0355d00}{LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD7\+L\+\_\+\+DEFAULT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaae795bd6d7b9fca4b04d0e5215aa7cf5}{\+\_\+\+LCD\+\_\+\+SYNCBUSY\+\_\+\+SEGD7\+L\+\_\+\+DEFAULT}} $<$$<$ 19)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaa352d9c2972451729a8ed51155be511a}{\+\_\+\+LCD\+\_\+\+SEGD4\+H\+\_\+\+RESETVALUE}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga2fb85d98c922ffef2781df74a00e9357}{\+\_\+\+LCD\+\_\+\+SEGD4\+H\+\_\+\+MASK}}~0x000000\+FFUL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga0e7eace1994b69fb1e909a0386fd01d8}{\+\_\+\+LCD\+\_\+\+SEGD4\+H\+\_\+\+SEGD4\+H\+\_\+\+SHIFT}}~0
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gac2a0f15b2e55c522c7dd097d7ffc7b02}{\+\_\+\+LCD\+\_\+\+SEGD4\+H\+\_\+\+SEGD4\+H\+\_\+\+MASK}}~0x\+FFUL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga32c6d5abb3708bf23acd1f3915bfae7c}{\+\_\+\+LCD\+\_\+\+SEGD4\+H\+\_\+\+SEGD4\+H\+\_\+\+DEFAULT}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga81352a8cb3e2ff31760ee21306062530}{LCD\+\_\+\+SEGD4\+H\+\_\+\+SEGD4\+H\+\_\+\+DEFAULT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga32c6d5abb3708bf23acd1f3915bfae7c}{\+\_\+\+LCD\+\_\+\+SEGD4\+H\+\_\+\+SEGD4\+H\+\_\+\+DEFAULT}} $<$$<$ 0)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga06cd4aa70e749b321c95df996890ae04}{\+\_\+\+LCD\+\_\+\+SEGD5\+H\+\_\+\+RESETVALUE}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga7d9beddb2e4c47492eade7adb0349310}{\+\_\+\+LCD\+\_\+\+SEGD5\+H\+\_\+\+MASK}}~0x000000\+FFUL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga3fec5e948e02bd03680b970e00b80b80}{\+\_\+\+LCD\+\_\+\+SEGD5\+H\+\_\+\+SEGD5\+H\+\_\+\+SHIFT}}~0
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga8e994bdb7ec0bc49ea09d65955aeb1f1}{\+\_\+\+LCD\+\_\+\+SEGD5\+H\+\_\+\+SEGD5\+H\+\_\+\+MASK}}~0x\+FFUL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga01ef1792d89ea0fdbf0746e9435a2ae9}{\+\_\+\+LCD\+\_\+\+SEGD5\+H\+\_\+\+SEGD5\+H\+\_\+\+DEFAULT}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gab9269fa17c0261ce4b397b926eaa405b}{LCD\+\_\+\+SEGD5\+H\+\_\+\+SEGD5\+H\+\_\+\+DEFAULT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga01ef1792d89ea0fdbf0746e9435a2ae9}{\+\_\+\+LCD\+\_\+\+SEGD5\+H\+\_\+\+SEGD5\+H\+\_\+\+DEFAULT}} $<$$<$ 0)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga1e48404f5e5ffc34a0380d973645c04b}{\+\_\+\+LCD\+\_\+\+SEGD6\+H\+\_\+\+RESETVALUE}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga18d61e16bc41715de12d852f1cdf6b49}{\+\_\+\+LCD\+\_\+\+SEGD6\+H\+\_\+\+MASK}}~0x000000\+FFUL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga0e0edd823e61f607faeecae9f8242506}{\+\_\+\+LCD\+\_\+\+SEGD6\+H\+\_\+\+SEGD6\+H\+\_\+\+SHIFT}}~0
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gab8489da88e151b33727c6ea96f1daf72}{\+\_\+\+LCD\+\_\+\+SEGD6\+H\+\_\+\+SEGD6\+H\+\_\+\+MASK}}~0x\+FFUL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gad87cfcc12d4a5b748593fe0ba13e289e}{\+\_\+\+LCD\+\_\+\+SEGD6\+H\+\_\+\+SEGD6\+H\+\_\+\+DEFAULT}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaf24493d15e625a466facc12f16695941}{LCD\+\_\+\+SEGD6\+H\+\_\+\+SEGD6\+H\+\_\+\+DEFAULT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gad87cfcc12d4a5b748593fe0ba13e289e}{\+\_\+\+LCD\+\_\+\+SEGD6\+H\+\_\+\+SEGD6\+H\+\_\+\+DEFAULT}} $<$$<$ 0)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga90f694003eb3384950862ec3d4f80dd0}{\+\_\+\+LCD\+\_\+\+SEGD7\+H\+\_\+\+RESETVALUE}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga51ed131e42be5805429b2b119459b2d1}{\+\_\+\+LCD\+\_\+\+SEGD7\+H\+\_\+\+MASK}}~0x000000\+FFUL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gae8fb8d8260c6fc16241f0052f272e8b7}{\+\_\+\+LCD\+\_\+\+SEGD7\+H\+\_\+\+SEGD7\+H\+\_\+\+SHIFT}}~0
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga5a988a7633f00c7b2dc8fd9ada059753}{\+\_\+\+LCD\+\_\+\+SEGD7\+H\+\_\+\+SEGD7\+H\+\_\+\+MASK}}~0x\+FFUL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga7fc631c08aa05cc93728d88b3386a3ff}{\+\_\+\+LCD\+\_\+\+SEGD7\+H\+\_\+\+SEGD7\+H\+\_\+\+DEFAULT}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga28a99b933d42fa58f5167542862af86e}{LCD\+\_\+\+SEGD7\+H\+\_\+\+SEGD7\+H\+\_\+\+DEFAULT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga7fc631c08aa05cc93728d88b3386a3ff}{\+\_\+\+LCD\+\_\+\+SEGD7\+H\+\_\+\+SEGD7\+H\+\_\+\+DEFAULT}} $<$$<$ 0)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga3965719d6017427c8e37878d5c2e37f7}{\+\_\+\+LCD\+\_\+\+SEGD4\+L\+\_\+\+RESETVALUE}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga9f0091d8d10d22fa44001d782d7dce9b}{\+\_\+\+LCD\+\_\+\+SEGD4\+L\+\_\+\+MASK}}~0x\+FFFFFFFFUL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gac94865d69998de1849efce90e1071a2b}{\+\_\+\+LCD\+\_\+\+SEGD4\+L\+\_\+\+SEGD4\+L\+\_\+\+SHIFT}}~0
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga16a896bc3c7c551add21ac570c95ae0c}{\+\_\+\+LCD\+\_\+\+SEGD4\+L\+\_\+\+SEGD4\+L\+\_\+\+MASK}}~0x\+FFFFFFFFUL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga5bcc830a3bb9d6625118bd210355160f}{\+\_\+\+LCD\+\_\+\+SEGD4\+L\+\_\+\+SEGD4\+L\+\_\+\+DEFAULT}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga7324b3e6c0da20ce5b76d03c5dd54c00}{LCD\+\_\+\+SEGD4\+L\+\_\+\+SEGD4\+L\+\_\+\+DEFAULT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga5bcc830a3bb9d6625118bd210355160f}{\+\_\+\+LCD\+\_\+\+SEGD4\+L\+\_\+\+SEGD4\+L\+\_\+\+DEFAULT}} $<$$<$ 0)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga5a787cf862580d798e3185076da9caa8}{\+\_\+\+LCD\+\_\+\+SEGD5\+L\+\_\+\+RESETVALUE}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gae66ecc0589203113b2fb47eda788c56d}{\+\_\+\+LCD\+\_\+\+SEGD5\+L\+\_\+\+MASK}}~0x\+FFFFFFFFUL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga2b2aa620e393f25c2e80ae9745f85cba}{\+\_\+\+LCD\+\_\+\+SEGD5\+L\+\_\+\+SEGD5\+L\+\_\+\+SHIFT}}~0
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gad6189492329d41ca73e0e54b82680a35}{\+\_\+\+LCD\+\_\+\+SEGD5\+L\+\_\+\+SEGD5\+L\+\_\+\+MASK}}~0x\+FFFFFFFFUL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gad2714d6d165d1dcc1f7f65d221774605}{\+\_\+\+LCD\+\_\+\+SEGD5\+L\+\_\+\+SEGD5\+L\+\_\+\+DEFAULT}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga0e50d5b41fd4359786a68fcb44ff3be9}{LCD\+\_\+\+SEGD5\+L\+\_\+\+SEGD5\+L\+\_\+\+DEFAULT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gad2714d6d165d1dcc1f7f65d221774605}{\+\_\+\+LCD\+\_\+\+SEGD5\+L\+\_\+\+SEGD5\+L\+\_\+\+DEFAULT}} $<$$<$ 0)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga9c17e6155410b2d906c3a7939cc70e93}{\+\_\+\+LCD\+\_\+\+SEGD6\+L\+\_\+\+RESETVALUE}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaeb3a1aabdec6f83cbc85a0a1aa748c59}{\+\_\+\+LCD\+\_\+\+SEGD6\+L\+\_\+\+MASK}}~0x\+FFFFFFFFUL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gab1c3d14bfe830694acb1ff45cf2e9e4a}{\+\_\+\+LCD\+\_\+\+SEGD6\+L\+\_\+\+SEGD6\+L\+\_\+\+SHIFT}}~0
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga9fbac8a139a27586d342c9cd686519c0}{\+\_\+\+LCD\+\_\+\+SEGD6\+L\+\_\+\+SEGD6\+L\+\_\+\+MASK}}~0x\+FFFFFFFFUL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaf28c5498d9f9d3b030e8acc985338966}{\+\_\+\+LCD\+\_\+\+SEGD6\+L\+\_\+\+SEGD6\+L\+\_\+\+DEFAULT}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaee38690de1a5f0f5f5bf1568044d42c7}{LCD\+\_\+\+SEGD6\+L\+\_\+\+SEGD6\+L\+\_\+\+DEFAULT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaf28c5498d9f9d3b030e8acc985338966}{\+\_\+\+LCD\+\_\+\+SEGD6\+L\+\_\+\+SEGD6\+L\+\_\+\+DEFAULT}} $<$$<$ 0)
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gab84c4797c64003c8a42d9b08743ac92a}{\+\_\+\+LCD\+\_\+\+SEGD7\+L\+\_\+\+RESETVALUE}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga8615eb7eb5f5620abfa07ec88d9eaec0}{\+\_\+\+LCD\+\_\+\+SEGD7\+L\+\_\+\+MASK}}~0x\+FFFFFFFFUL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gab0e2f524fa0f5a0f08c2bac15f1f8773}{\+\_\+\+LCD\+\_\+\+SEGD7\+L\+\_\+\+SEGD7\+L\+\_\+\+SHIFT}}~0
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga588151a7bd843a8d7c66ef227328747b}{\+\_\+\+LCD\+\_\+\+SEGD7\+L\+\_\+\+SEGD7\+L\+\_\+\+MASK}}~0x\+FFFFFFFFUL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga897f3e6a42ca42e9e7433e9168132871}{\+\_\+\+LCD\+\_\+\+SEGD7\+L\+\_\+\+SEGD7\+L\+\_\+\+DEFAULT}}~0x00000000\+UL
+\item 
+\#define \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gafbc0baac5ad75e49efa607e0ad1c5441}{LCD\+\_\+\+SEGD7\+L\+\_\+\+SEGD7\+L\+\_\+\+DEFAULT}}~(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga897f3e6a42ca42e9e7433e9168132871}{\+\_\+\+LCD\+\_\+\+SEGD7\+L\+\_\+\+SEGD7\+L\+\_\+\+DEFAULT}} $<$$<$ 0)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+EFM32\+GG\+\_\+\+LCD register and bit field definitions. 
+
+\hypertarget{efm32gg__lcd_8h_autotoc_md48}{}\doxysubsection{\texorpdfstring{License}{License}}\label{efm32gg__lcd_8h_autotoc_md48}
+{\bfseries{Copyright 2022 Silicon Laboratories Inc. www.\+silabs.\+com}}
+
+SPDX-\/\+License-\/\+Identifier\+: Zlib
+
+The licensor of this software is Silicon Laboratories Inc.
+
+This software is provided \textquotesingle{}as-\/is\textquotesingle{}, without any express or implied warranty. In no event will the authors be held liable for any damages arising from the use of this software.
+
+Permission is granted to anyone to use this software for any purpose, including commercial applications, and to alter it and redistribute it freely, subject to the following restrictions\+:
+
+
+\begin{DoxyEnumerate}
+\item The origin of this software must not be misrepresented; you must not claim that you wrote the original software. If you use this software in a product, an acknowledgment in the product documentation would be appreciated but is not required.
+\item Altered source versions must be plainly marked as such, and must not be misrepresented as being the original software.
+\item This notice may not be removed or altered from any source distribution. 
+\end{DoxyEnumerate}

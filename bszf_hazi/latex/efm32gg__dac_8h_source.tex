@@ -1,0 +1,744 @@
+\doxysection{efm32gg\+\_\+dac.\+h}
+\hypertarget{efm32gg__dac_8h_source}{}\label{efm32gg__dac_8h_source}\index{gecko\_sdk\_4.4.4/platform/Device/SiliconLabs/EFM32GG/Include/efm32gg\_dac.h@{gecko\_sdk\_4.4.4/platform/Device/SiliconLabs/EFM32GG/Include/efm32gg\_dac.h}}
+\mbox{\hyperlink{efm32gg__dac_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#if\ defined(\_\_ICCARM\_\_)}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#pragma\ system\_include\ \ \ \ \ \ \ }\textcolor{comment}{/*\ Treat\ file\ as\ system\ include\ file.\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#elif\ defined(\_\_ARMCC\_VERSION)\ \&\&\ (\_\_ARMCC\_VERSION\ >=\ 6010050)}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#pragma\ clang\ system\_header\ \ }\textcolor{comment}{/*\ Treat\ file\ as\ system\ include\ file.\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00041\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00046\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00047\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_d_a_c___type_def_ac2abd47b5cbcf51f0a831abfd88dedb1}{CTRL}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00048\ \ \ \_\_IM\ uint32\_t\ \ \mbox{\hyperlink{struct_d_a_c___type_def_ad46a52ed68fd68a20b63046f6ab6c94b}{STATUS}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00049\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_d_a_c___type_def_ab3af73b7fd7e4bd8eeaac2852a1380ee}{CH0CTRL}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00050\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_d_a_c___type_def_a8e885e6e631bad6c4b9d00afffcd3e22}{CH1CTRL}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00051\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_d_a_c___type_def_a0ff049f578fc679be6e6ef3d073ae24c}{IEN}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00052\ \ \ \_\_IM\ uint32\_t\ \ \mbox{\hyperlink{struct_d_a_c___type_def_ad16f29fcf4d7183c5da70cf12866adbd}{IF}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00053\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_d_a_c___type_def_a76007ae718032e7a91da47cac0dcb5ad}{IFS}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00054\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_d_a_c___type_def_a745024533fffd6025929a20ed0335757}{IFC}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00055\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_d_a_c___type_def_a2cba4fe57ce2cae8e387aa0d42486653}{CH0DATA}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00056\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_d_a_c___type_def_a3155880e69641fff1470dcec0b45354f}{CH1DATA}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00057\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_d_a_c___type_def_ab0e27a4042b7ae3b8f33ea875a5b6775}{COMBDATA}};\ \ \ \ \ \ }
+\DoxyCodeLine{00058\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_d_a_c___type_def_aa56ccb4fea02464f80904edc5557acf3}{CAL}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00059\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_d_a_c___type_def_a6899f9848c5d51f260b154a094fc26ed}{BIASPROG}};\ \ \ \ \ \ }
+\DoxyCodeLine{00060\ \ \ uint32\_t\ \ \ \ \ \ \ RESERVED0[8U];\ }
+\DoxyCodeLine{00061\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_d_a_c___type_def_aae15cd74c96e91dcb4ddced32607dbba}{OPACTRL}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00062\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_d_a_c___type_def_ad042949266b8cf5112dd58b478b8f24e}{OPAOFFSET}};\ \ \ \ \ }
+\DoxyCodeLine{00063\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_d_a_c___type_def_a35b8c100a5bd5c447fe3cd17f539f0d4}{OPA0MUX}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00064\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_d_a_c___type_def_ada6aa3cc2cf769a03a25d0c2cda0cb89}{OPA1MUX}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00065\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_d_a_c___type_def_a151de0dd582f9e3a1b5b4305a4adeb26}{OPA2MUX}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00066\ \}\ \mbox{\hyperlink{struct_d_a_c___type_def}{DAC\_TypeDef}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00068\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00073\ \textcolor{comment}{/*\ Bit\ fields\ for\ DAC\ CTRL\ */}}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#define\ \_DAC\_CTRL\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000010UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#define\ \_DAC\_CTRL\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x003703FFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#define\ DAC\_CTRL\_DIFF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#define\ \_DAC\_CTRL\_DIFF\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#define\ \_DAC\_CTRL\_DIFF\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#define\ \_DAC\_CTRL\_DIFF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#define\ DAC\_CTRL\_DIFF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_CTRL\_DIFF\_DEFAULT\ <<\ 0)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#define\ DAC\_CTRL\_SINEMODE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#define\ \_DAC\_CTRL\_SINEMODE\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#define\ \_DAC\_CTRL\_SINEMODE\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x2UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#define\ \_DAC\_CTRL\_SINEMODE\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#define\ DAC\_CTRL\_SINEMODE\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_CTRL\_SINEMODE\_DEFAULT\ <<\ 1)\ \ \ \ }}
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#define\ \_DAC\_CTRL\_CONVMODE\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#define\ \_DAC\_CTRL\_CONVMODE\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xCUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#define\ \_DAC\_CTRL\_CONVMODE\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#define\ \_DAC\_CTRL\_CONVMODE\_CONTINUOUS\ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#define\ \_DAC\_CTRL\_CONVMODE\_SAMPLEHOLD\ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#define\ \_DAC\_CTRL\_CONVMODE\_SAMPLEOFF\ \ \ \ \ \ \ \ \ \ 0x00000002UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#define\ DAC\_CTRL\_CONVMODE\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_CTRL\_CONVMODE\_DEFAULT\ <<\ 2)\ \ \ \ }}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#define\ DAC\_CTRL\_CONVMODE\_CONTINUOUS\ \ \ \ \ \ \ \ \ \ (\_DAC\_CTRL\_CONVMODE\_CONTINUOUS\ <<\ 2)\ }}
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\#define\ DAC\_CTRL\_CONVMODE\_SAMPLEHOLD\ \ \ \ \ \ \ \ \ \ (\_DAC\_CTRL\_CONVMODE\_SAMPLEHOLD\ <<\ 2)\ }}
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#define\ DAC\_CTRL\_CONVMODE\_SAMPLEOFF\ \ \ \ \ \ \ \ \ \ \ (\_DAC\_CTRL\_CONVMODE\_SAMPLEOFF\ <<\ 2)\ \ }}
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\#define\ \_DAC\_CTRL\_OUTMODE\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\#define\ \_DAC\_CTRL\_OUTMODE\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x30UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\#define\ \_DAC\_CTRL\_OUTMODE\_DISABLE\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#define\ \_DAC\_CTRL\_OUTMODE\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#define\ \_DAC\_CTRL\_OUTMODE\_PIN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#define\ \_DAC\_CTRL\_OUTMODE\_ADC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000002UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#define\ \_DAC\_CTRL\_OUTMODE\_PINADC\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000003UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00103\ \textcolor{preprocessor}{\#define\ DAC\_CTRL\_OUTMODE\_DISABLE\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_CTRL\_OUTMODE\_DISABLE\ <<\ 4)\ \ \ \ \ }}
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#define\ DAC\_CTRL\_OUTMODE\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_CTRL\_OUTMODE\_DEFAULT\ <<\ 4)\ \ \ \ \ }}
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#define\ DAC\_CTRL\_OUTMODE\_PIN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_CTRL\_OUTMODE\_PIN\ <<\ 4)\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\#define\ DAC\_CTRL\_OUTMODE\_ADC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_CTRL\_OUTMODE\_ADC\ <<\ 4)\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00107\ \textcolor{preprocessor}{\#define\ DAC\_CTRL\_OUTMODE\_PINADC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_CTRL\_OUTMODE\_PINADC\ <<\ 4)\ \ \ \ \ \ }}
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\#define\ DAC\_CTRL\_OUTENPRS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 6)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\#define\ \_DAC\_CTRL\_OUTENPRS\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 6\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00110\ \textcolor{preprocessor}{\#define\ \_DAC\_CTRL\_OUTENPRS\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x40UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\#define\ \_DAC\_CTRL\_OUTENPRS\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#define\ DAC\_CTRL\_OUTENPRS\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_CTRL\_OUTENPRS\_DEFAULT\ <<\ 6)\ \ \ \ }}
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#define\ DAC\_CTRL\_CH0PRESCRST\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 7)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#define\ \_DAC\_CTRL\_CH0PRESCRST\_SHIFT\ \ \ \ \ \ \ \ \ \ \ 7\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\#define\ \_DAC\_CTRL\_CH0PRESCRST\_MASK\ \ \ \ \ \ \ \ \ \ \ \ 0x80UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#define\ \_DAC\_CTRL\_CH0PRESCRST\_DEFAULT\ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00117\ \textcolor{preprocessor}{\#define\ DAC\_CTRL\_CH0PRESCRST\_DEFAULT\ \ \ \ \ \ \ \ \ \ (\_DAC\_CTRL\_CH0PRESCRST\_DEFAULT\ <<\ 7)\ }}
+\DoxyCodeLine{00118\ \textcolor{preprocessor}{\#define\ \_DAC\_CTRL\_REFSEL\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00119\ \textcolor{preprocessor}{\#define\ \_DAC\_CTRL\_REFSEL\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x300UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00120\ \textcolor{preprocessor}{\#define\ \_DAC\_CTRL\_REFSEL\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\#define\ \_DAC\_CTRL\_REFSEL\_1V25\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00122\ \textcolor{preprocessor}{\#define\ \_DAC\_CTRL\_REFSEL\_2V5\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\#define\ \_DAC\_CTRL\_REFSEL\_VDD\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000002UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\#define\ DAC\_CTRL\_REFSEL\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_CTRL\_REFSEL\_DEFAULT\ <<\ 8)\ \ \ \ \ \ }}
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\#define\ DAC\_CTRL\_REFSEL\_1V25\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_CTRL\_REFSEL\_1V25\ <<\ 8)\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00126\ \textcolor{preprocessor}{\#define\ DAC\_CTRL\_REFSEL\_2V5\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_CTRL\_REFSEL\_2V5\ <<\ 8)\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\#define\ DAC\_CTRL\_REFSEL\_VDD\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_CTRL\_REFSEL\_VDD\ <<\ 8)\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\#define\ \_DAC\_CTRL\_PRESC\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 16\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{\#define\ \_DAC\_CTRL\_PRESC\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x70000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00130\ \textcolor{preprocessor}{\#define\ \_DAC\_CTRL\_PRESC\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00131\ \textcolor{preprocessor}{\#define\ \_DAC\_CTRL\_PRESC\_NODIVISION\ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00132\ \textcolor{preprocessor}{\#define\ DAC\_CTRL\_PRESC\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_CTRL\_PRESC\_DEFAULT\ <<\ 16)\ \ \ \ \ \ }}
+\DoxyCodeLine{00133\ \textcolor{preprocessor}{\#define\ DAC\_CTRL\_PRESC\_NODIVISION\ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_CTRL\_PRESC\_NODIVISION\ <<\ 16)\ \ \ }}
+\DoxyCodeLine{00134\ \textcolor{preprocessor}{\#define\ \_DAC\_CTRL\_REFRSEL\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 20\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00135\ \textcolor{preprocessor}{\#define\ \_DAC\_CTRL\_REFRSEL\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x300000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00136\ \textcolor{preprocessor}{\#define\ \_DAC\_CTRL\_REFRSEL\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\#define\ \_DAC\_CTRL\_REFRSEL\_8CYCLES\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00138\ \textcolor{preprocessor}{\#define\ \_DAC\_CTRL\_REFRSEL\_16CYCLES\ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00139\ \textcolor{preprocessor}{\#define\ \_DAC\_CTRL\_REFRSEL\_32CYCLES\ \ \ \ \ \ \ \ \ \ \ \ 0x00000002UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00140\ \textcolor{preprocessor}{\#define\ \_DAC\_CTRL\_REFRSEL\_64CYCLES\ \ \ \ \ \ \ \ \ \ \ \ 0x00000003UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00141\ \textcolor{preprocessor}{\#define\ DAC\_CTRL\_REFRSEL\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_CTRL\_REFRSEL\_DEFAULT\ <<\ 20)\ \ \ \ }}
+\DoxyCodeLine{00142\ \textcolor{preprocessor}{\#define\ DAC\_CTRL\_REFRSEL\_8CYCLES\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_CTRL\_REFRSEL\_8CYCLES\ <<\ 20)\ \ \ \ }}
+\DoxyCodeLine{00143\ \textcolor{preprocessor}{\#define\ DAC\_CTRL\_REFRSEL\_16CYCLES\ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_CTRL\_REFRSEL\_16CYCLES\ <<\ 20)\ \ \ }}
+\DoxyCodeLine{00144\ \textcolor{preprocessor}{\#define\ DAC\_CTRL\_REFRSEL\_32CYCLES\ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_CTRL\_REFRSEL\_32CYCLES\ <<\ 20)\ \ \ }}
+\DoxyCodeLine{00145\ \textcolor{preprocessor}{\#define\ DAC\_CTRL\_REFRSEL\_64CYCLES\ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_CTRL\_REFRSEL\_64CYCLES\ <<\ 20)\ \ \ }}
+\DoxyCodeLine{00147\ \textcolor{comment}{/*\ Bit\ fields\ for\ DAC\ STATUS\ */}}
+\DoxyCodeLine{00148\ \textcolor{preprocessor}{\#define\ \_DAC\_STATUS\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00149\ \textcolor{preprocessor}{\#define\ \_DAC\_STATUS\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000003UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00150\ \textcolor{preprocessor}{\#define\ DAC\_STATUS\_CH0DV\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00151\ \textcolor{preprocessor}{\#define\ \_DAC\_STATUS\_CH0DV\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00152\ \textcolor{preprocessor}{\#define\ \_DAC\_STATUS\_CH0DV\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00153\ \textcolor{preprocessor}{\#define\ \_DAC\_STATUS\_CH0DV\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00154\ \textcolor{preprocessor}{\#define\ DAC\_STATUS\_CH0DV\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_STATUS\_CH0DV\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00155\ \textcolor{preprocessor}{\#define\ DAC\_STATUS\_CH1DV\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00156\ \textcolor{preprocessor}{\#define\ \_DAC\_STATUS\_CH1DV\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00157\ \textcolor{preprocessor}{\#define\ \_DAC\_STATUS\_CH1DV\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x2UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00158\ \textcolor{preprocessor}{\#define\ \_DAC\_STATUS\_CH1DV\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00159\ \textcolor{preprocessor}{\#define\ DAC\_STATUS\_CH1DV\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_STATUS\_CH1DV\_DEFAULT\ <<\ 1)\ }}
+\DoxyCodeLine{00161\ \textcolor{comment}{/*\ Bit\ fields\ for\ DAC\ CH0CTRL\ */}}
+\DoxyCodeLine{00162\ \textcolor{preprocessor}{\#define\ \_DAC\_CH0CTRL\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00163\ \textcolor{preprocessor}{\#define\ \_DAC\_CH0CTRL\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x000000F7UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00164\ \textcolor{preprocessor}{\#define\ DAC\_CH0CTRL\_EN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00165\ \textcolor{preprocessor}{\#define\ \_DAC\_CH0CTRL\_EN\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00166\ \textcolor{preprocessor}{\#define\ \_DAC\_CH0CTRL\_EN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00167\ \textcolor{preprocessor}{\#define\ \_DAC\_CH0CTRL\_EN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00168\ \textcolor{preprocessor}{\#define\ DAC\_CH0CTRL\_EN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_CH0CTRL\_EN\_DEFAULT\ <<\ 0)\ \ \ \ \ }}
+\DoxyCodeLine{00169\ \textcolor{preprocessor}{\#define\ DAC\_CH0CTRL\_REFREN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00170\ \textcolor{preprocessor}{\#define\ \_DAC\_CH0CTRL\_REFREN\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00171\ \textcolor{preprocessor}{\#define\ \_DAC\_CH0CTRL\_REFREN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x2UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00172\ \textcolor{preprocessor}{\#define\ \_DAC\_CH0CTRL\_REFREN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00173\ \textcolor{preprocessor}{\#define\ DAC\_CH0CTRL\_REFREN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_CH0CTRL\_REFREN\_DEFAULT\ <<\ 1)\ }}
+\DoxyCodeLine{00174\ \textcolor{preprocessor}{\#define\ DAC\_CH0CTRL\_PRSEN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 2)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00175\ \textcolor{preprocessor}{\#define\ \_DAC\_CH0CTRL\_PRSEN\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00176\ \textcolor{preprocessor}{\#define\ \_DAC\_CH0CTRL\_PRSEN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x4UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00177\ \textcolor{preprocessor}{\#define\ \_DAC\_CH0CTRL\_PRSEN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00178\ \textcolor{preprocessor}{\#define\ DAC\_CH0CTRL\_PRSEN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_CH0CTRL\_PRSEN\_DEFAULT\ <<\ 2)\ \ }}
+\DoxyCodeLine{00179\ \textcolor{preprocessor}{\#define\ \_DAC\_CH0CTRL\_PRSSEL\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ 4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00180\ \textcolor{preprocessor}{\#define\ \_DAC\_CH0CTRL\_PRSSEL\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xF0UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00181\ \textcolor{preprocessor}{\#define\ \_DAC\_CH0CTRL\_PRSSEL\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00182\ \textcolor{preprocessor}{\#define\ \_DAC\_CH0CTRL\_PRSSEL\_PRSCH0\ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00183\ \textcolor{preprocessor}{\#define\ \_DAC\_CH0CTRL\_PRSSEL\_PRSCH1\ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00184\ \textcolor{preprocessor}{\#define\ \_DAC\_CH0CTRL\_PRSSEL\_PRSCH2\ \ \ \ \ \ \ \ \ \ \ \ 0x00000002UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00185\ \textcolor{preprocessor}{\#define\ \_DAC\_CH0CTRL\_PRSSEL\_PRSCH3\ \ \ \ \ \ \ \ \ \ \ \ 0x00000003UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00186\ \textcolor{preprocessor}{\#define\ \_DAC\_CH0CTRL\_PRSSEL\_PRSCH4\ \ \ \ \ \ \ \ \ \ \ \ 0x00000004UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00187\ \textcolor{preprocessor}{\#define\ \_DAC\_CH0CTRL\_PRSSEL\_PRSCH5\ \ \ \ \ \ \ \ \ \ \ \ 0x00000005UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00188\ \textcolor{preprocessor}{\#define\ \_DAC\_CH0CTRL\_PRSSEL\_PRSCH6\ \ \ \ \ \ \ \ \ \ \ \ 0x00000006UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00189\ \textcolor{preprocessor}{\#define\ \_DAC\_CH0CTRL\_PRSSEL\_PRSCH7\ \ \ \ \ \ \ \ \ \ \ \ 0x00000007UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00190\ \textcolor{preprocessor}{\#define\ \_DAC\_CH0CTRL\_PRSSEL\_PRSCH8\ \ \ \ \ \ \ \ \ \ \ \ 0x00000008UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00191\ \textcolor{preprocessor}{\#define\ \_DAC\_CH0CTRL\_PRSSEL\_PRSCH9\ \ \ \ \ \ \ \ \ \ \ \ 0x00000009UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00192\ \textcolor{preprocessor}{\#define\ \_DAC\_CH0CTRL\_PRSSEL\_PRSCH10\ \ \ \ \ \ \ \ \ \ \ 0x0000000AUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00193\ \textcolor{preprocessor}{\#define\ \_DAC\_CH0CTRL\_PRSSEL\_PRSCH11\ \ \ \ \ \ \ \ \ \ \ 0x0000000BUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00194\ \textcolor{preprocessor}{\#define\ DAC\_CH0CTRL\_PRSSEL\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_CH0CTRL\_PRSSEL\_DEFAULT\ <<\ 4)\ }}
+\DoxyCodeLine{00195\ \textcolor{preprocessor}{\#define\ DAC\_CH0CTRL\_PRSSEL\_PRSCH0\ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_CH0CTRL\_PRSSEL\_PRSCH0\ <<\ 4)\ \ }}
+\DoxyCodeLine{00196\ \textcolor{preprocessor}{\#define\ DAC\_CH0CTRL\_PRSSEL\_PRSCH1\ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_CH0CTRL\_PRSSEL\_PRSCH1\ <<\ 4)\ \ }}
+\DoxyCodeLine{00197\ \textcolor{preprocessor}{\#define\ DAC\_CH0CTRL\_PRSSEL\_PRSCH2\ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_CH0CTRL\_PRSSEL\_PRSCH2\ <<\ 4)\ \ }}
+\DoxyCodeLine{00198\ \textcolor{preprocessor}{\#define\ DAC\_CH0CTRL\_PRSSEL\_PRSCH3\ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_CH0CTRL\_PRSSEL\_PRSCH3\ <<\ 4)\ \ }}
+\DoxyCodeLine{00199\ \textcolor{preprocessor}{\#define\ DAC\_CH0CTRL\_PRSSEL\_PRSCH4\ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_CH0CTRL\_PRSSEL\_PRSCH4\ <<\ 4)\ \ }}
+\DoxyCodeLine{00200\ \textcolor{preprocessor}{\#define\ DAC\_CH0CTRL\_PRSSEL\_PRSCH5\ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_CH0CTRL\_PRSSEL\_PRSCH5\ <<\ 4)\ \ }}
+\DoxyCodeLine{00201\ \textcolor{preprocessor}{\#define\ DAC\_CH0CTRL\_PRSSEL\_PRSCH6\ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_CH0CTRL\_PRSSEL\_PRSCH6\ <<\ 4)\ \ }}
+\DoxyCodeLine{00202\ \textcolor{preprocessor}{\#define\ DAC\_CH0CTRL\_PRSSEL\_PRSCH7\ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_CH0CTRL\_PRSSEL\_PRSCH7\ <<\ 4)\ \ }}
+\DoxyCodeLine{00203\ \textcolor{preprocessor}{\#define\ DAC\_CH0CTRL\_PRSSEL\_PRSCH8\ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_CH0CTRL\_PRSSEL\_PRSCH8\ <<\ 4)\ \ }}
+\DoxyCodeLine{00204\ \textcolor{preprocessor}{\#define\ DAC\_CH0CTRL\_PRSSEL\_PRSCH9\ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_CH0CTRL\_PRSSEL\_PRSCH9\ <<\ 4)\ \ }}
+\DoxyCodeLine{00205\ \textcolor{preprocessor}{\#define\ DAC\_CH0CTRL\_PRSSEL\_PRSCH10\ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_CH0CTRL\_PRSSEL\_PRSCH10\ <<\ 4)\ }}
+\DoxyCodeLine{00206\ \textcolor{preprocessor}{\#define\ DAC\_CH0CTRL\_PRSSEL\_PRSCH11\ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_CH0CTRL\_PRSSEL\_PRSCH11\ <<\ 4)\ }}
+\DoxyCodeLine{00208\ \textcolor{comment}{/*\ Bit\ fields\ for\ DAC\ CH1CTRL\ */}}
+\DoxyCodeLine{00209\ \textcolor{preprocessor}{\#define\ \_DAC\_CH1CTRL\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00210\ \textcolor{preprocessor}{\#define\ \_DAC\_CH1CTRL\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x000000F7UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00211\ \textcolor{preprocessor}{\#define\ DAC\_CH1CTRL\_EN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00212\ \textcolor{preprocessor}{\#define\ \_DAC\_CH1CTRL\_EN\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00213\ \textcolor{preprocessor}{\#define\ \_DAC\_CH1CTRL\_EN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00214\ \textcolor{preprocessor}{\#define\ \_DAC\_CH1CTRL\_EN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00215\ \textcolor{preprocessor}{\#define\ DAC\_CH1CTRL\_EN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_CH1CTRL\_EN\_DEFAULT\ <<\ 0)\ \ \ \ \ }}
+\DoxyCodeLine{00216\ \textcolor{preprocessor}{\#define\ DAC\_CH1CTRL\_REFREN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00217\ \textcolor{preprocessor}{\#define\ \_DAC\_CH1CTRL\_REFREN\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00218\ \textcolor{preprocessor}{\#define\ \_DAC\_CH1CTRL\_REFREN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x2UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00219\ \textcolor{preprocessor}{\#define\ \_DAC\_CH1CTRL\_REFREN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00220\ \textcolor{preprocessor}{\#define\ DAC\_CH1CTRL\_REFREN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_CH1CTRL\_REFREN\_DEFAULT\ <<\ 1)\ }}
+\DoxyCodeLine{00221\ \textcolor{preprocessor}{\#define\ DAC\_CH1CTRL\_PRSEN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 2)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00222\ \textcolor{preprocessor}{\#define\ \_DAC\_CH1CTRL\_PRSEN\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00223\ \textcolor{preprocessor}{\#define\ \_DAC\_CH1CTRL\_PRSEN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x4UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00224\ \textcolor{preprocessor}{\#define\ \_DAC\_CH1CTRL\_PRSEN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00225\ \textcolor{preprocessor}{\#define\ DAC\_CH1CTRL\_PRSEN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_CH1CTRL\_PRSEN\_DEFAULT\ <<\ 2)\ \ }}
+\DoxyCodeLine{00226\ \textcolor{preprocessor}{\#define\ \_DAC\_CH1CTRL\_PRSSEL\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ 4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00227\ \textcolor{preprocessor}{\#define\ \_DAC\_CH1CTRL\_PRSSEL\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xF0UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00228\ \textcolor{preprocessor}{\#define\ \_DAC\_CH1CTRL\_PRSSEL\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00229\ \textcolor{preprocessor}{\#define\ \_DAC\_CH1CTRL\_PRSSEL\_PRSCH0\ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00230\ \textcolor{preprocessor}{\#define\ \_DAC\_CH1CTRL\_PRSSEL\_PRSCH1\ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00231\ \textcolor{preprocessor}{\#define\ \_DAC\_CH1CTRL\_PRSSEL\_PRSCH2\ \ \ \ \ \ \ \ \ \ \ \ 0x00000002UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00232\ \textcolor{preprocessor}{\#define\ \_DAC\_CH1CTRL\_PRSSEL\_PRSCH3\ \ \ \ \ \ \ \ \ \ \ \ 0x00000003UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00233\ \textcolor{preprocessor}{\#define\ \_DAC\_CH1CTRL\_PRSSEL\_PRSCH4\ \ \ \ \ \ \ \ \ \ \ \ 0x00000004UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00234\ \textcolor{preprocessor}{\#define\ \_DAC\_CH1CTRL\_PRSSEL\_PRSCH5\ \ \ \ \ \ \ \ \ \ \ \ 0x00000005UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00235\ \textcolor{preprocessor}{\#define\ \_DAC\_CH1CTRL\_PRSSEL\_PRSCH6\ \ \ \ \ \ \ \ \ \ \ \ 0x00000006UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00236\ \textcolor{preprocessor}{\#define\ \_DAC\_CH1CTRL\_PRSSEL\_PRSCH7\ \ \ \ \ \ \ \ \ \ \ \ 0x00000007UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00237\ \textcolor{preprocessor}{\#define\ \_DAC\_CH1CTRL\_PRSSEL\_PRSCH8\ \ \ \ \ \ \ \ \ \ \ \ 0x00000008UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00238\ \textcolor{preprocessor}{\#define\ \_DAC\_CH1CTRL\_PRSSEL\_PRSCH9\ \ \ \ \ \ \ \ \ \ \ \ 0x00000009UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00239\ \textcolor{preprocessor}{\#define\ \_DAC\_CH1CTRL\_PRSSEL\_PRSCH10\ \ \ \ \ \ \ \ \ \ \ 0x0000000AUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00240\ \textcolor{preprocessor}{\#define\ \_DAC\_CH1CTRL\_PRSSEL\_PRSCH11\ \ \ \ \ \ \ \ \ \ \ 0x0000000BUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00241\ \textcolor{preprocessor}{\#define\ DAC\_CH1CTRL\_PRSSEL\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_CH1CTRL\_PRSSEL\_DEFAULT\ <<\ 4)\ }}
+\DoxyCodeLine{00242\ \textcolor{preprocessor}{\#define\ DAC\_CH1CTRL\_PRSSEL\_PRSCH0\ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_CH1CTRL\_PRSSEL\_PRSCH0\ <<\ 4)\ \ }}
+\DoxyCodeLine{00243\ \textcolor{preprocessor}{\#define\ DAC\_CH1CTRL\_PRSSEL\_PRSCH1\ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_CH1CTRL\_PRSSEL\_PRSCH1\ <<\ 4)\ \ }}
+\DoxyCodeLine{00244\ \textcolor{preprocessor}{\#define\ DAC\_CH1CTRL\_PRSSEL\_PRSCH2\ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_CH1CTRL\_PRSSEL\_PRSCH2\ <<\ 4)\ \ }}
+\DoxyCodeLine{00245\ \textcolor{preprocessor}{\#define\ DAC\_CH1CTRL\_PRSSEL\_PRSCH3\ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_CH1CTRL\_PRSSEL\_PRSCH3\ <<\ 4)\ \ }}
+\DoxyCodeLine{00246\ \textcolor{preprocessor}{\#define\ DAC\_CH1CTRL\_PRSSEL\_PRSCH4\ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_CH1CTRL\_PRSSEL\_PRSCH4\ <<\ 4)\ \ }}
+\DoxyCodeLine{00247\ \textcolor{preprocessor}{\#define\ DAC\_CH1CTRL\_PRSSEL\_PRSCH5\ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_CH1CTRL\_PRSSEL\_PRSCH5\ <<\ 4)\ \ }}
+\DoxyCodeLine{00248\ \textcolor{preprocessor}{\#define\ DAC\_CH1CTRL\_PRSSEL\_PRSCH6\ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_CH1CTRL\_PRSSEL\_PRSCH6\ <<\ 4)\ \ }}
+\DoxyCodeLine{00249\ \textcolor{preprocessor}{\#define\ DAC\_CH1CTRL\_PRSSEL\_PRSCH7\ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_CH1CTRL\_PRSSEL\_PRSCH7\ <<\ 4)\ \ }}
+\DoxyCodeLine{00250\ \textcolor{preprocessor}{\#define\ DAC\_CH1CTRL\_PRSSEL\_PRSCH8\ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_CH1CTRL\_PRSSEL\_PRSCH8\ <<\ 4)\ \ }}
+\DoxyCodeLine{00251\ \textcolor{preprocessor}{\#define\ DAC\_CH1CTRL\_PRSSEL\_PRSCH9\ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_CH1CTRL\_PRSSEL\_PRSCH9\ <<\ 4)\ \ }}
+\DoxyCodeLine{00252\ \textcolor{preprocessor}{\#define\ DAC\_CH1CTRL\_PRSSEL\_PRSCH10\ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_CH1CTRL\_PRSSEL\_PRSCH10\ <<\ 4)\ }}
+\DoxyCodeLine{00253\ \textcolor{preprocessor}{\#define\ DAC\_CH1CTRL\_PRSSEL\_PRSCH11\ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_CH1CTRL\_PRSSEL\_PRSCH11\ <<\ 4)\ }}
+\DoxyCodeLine{00255\ \textcolor{comment}{/*\ Bit\ fields\ for\ DAC\ IEN\ */}}
+\DoxyCodeLine{00256\ \textcolor{preprocessor}{\#define\ \_DAC\_IEN\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00257\ \textcolor{preprocessor}{\#define\ \_DAC\_IEN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000033UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00258\ \textcolor{preprocessor}{\#define\ DAC\_IEN\_CH0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00259\ \textcolor{preprocessor}{\#define\ \_DAC\_IEN\_CH0\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00260\ \textcolor{preprocessor}{\#define\ \_DAC\_IEN\_CH0\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00261\ \textcolor{preprocessor}{\#define\ \_DAC\_IEN\_CH0\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00262\ \textcolor{preprocessor}{\#define\ DAC\_IEN\_CH0\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_IEN\_CH0\_DEFAULT\ <<\ 0)\ \ \ }}
+\DoxyCodeLine{00263\ \textcolor{preprocessor}{\#define\ DAC\_IEN\_CH1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00264\ \textcolor{preprocessor}{\#define\ \_DAC\_IEN\_CH1\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00265\ \textcolor{preprocessor}{\#define\ \_DAC\_IEN\_CH1\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x2UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00266\ \textcolor{preprocessor}{\#define\ \_DAC\_IEN\_CH1\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00267\ \textcolor{preprocessor}{\#define\ DAC\_IEN\_CH1\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_IEN\_CH1\_DEFAULT\ <<\ 1)\ \ \ }}
+\DoxyCodeLine{00268\ \textcolor{preprocessor}{\#define\ DAC\_IEN\_CH0UF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 4)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00269\ \textcolor{preprocessor}{\#define\ \_DAC\_IEN\_CH0UF\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00270\ \textcolor{preprocessor}{\#define\ \_DAC\_IEN\_CH0UF\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x10UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00271\ \textcolor{preprocessor}{\#define\ \_DAC\_IEN\_CH0UF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00272\ \textcolor{preprocessor}{\#define\ DAC\_IEN\_CH0UF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_IEN\_CH0UF\_DEFAULT\ <<\ 4)\ }}
+\DoxyCodeLine{00273\ \textcolor{preprocessor}{\#define\ DAC\_IEN\_CH1UF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 5)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00274\ \textcolor{preprocessor}{\#define\ \_DAC\_IEN\_CH1UF\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 5\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00275\ \textcolor{preprocessor}{\#define\ \_DAC\_IEN\_CH1UF\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x20UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00276\ \textcolor{preprocessor}{\#define\ \_DAC\_IEN\_CH1UF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00277\ \textcolor{preprocessor}{\#define\ DAC\_IEN\_CH1UF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_IEN\_CH1UF\_DEFAULT\ <<\ 5)\ }}
+\DoxyCodeLine{00279\ \textcolor{comment}{/*\ Bit\ fields\ for\ DAC\ IF\ */}}
+\DoxyCodeLine{00280\ \textcolor{preprocessor}{\#define\ \_DAC\_IF\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00281\ \textcolor{preprocessor}{\#define\ \_DAC\_IF\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000033UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00282\ \textcolor{preprocessor}{\#define\ DAC\_IF\_CH0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00283\ \textcolor{preprocessor}{\#define\ \_DAC\_IF\_CH0\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00284\ \textcolor{preprocessor}{\#define\ \_DAC\_IF\_CH0\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00285\ \textcolor{preprocessor}{\#define\ \_DAC\_IF\_CH0\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00286\ \textcolor{preprocessor}{\#define\ DAC\_IF\_CH0\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_IF\_CH0\_DEFAULT\ <<\ 0)\ \ \ }}
+\DoxyCodeLine{00287\ \textcolor{preprocessor}{\#define\ DAC\_IF\_CH1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00288\ \textcolor{preprocessor}{\#define\ \_DAC\_IF\_CH1\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00289\ \textcolor{preprocessor}{\#define\ \_DAC\_IF\_CH1\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x2UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00290\ \textcolor{preprocessor}{\#define\ \_DAC\_IF\_CH1\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00291\ \textcolor{preprocessor}{\#define\ DAC\_IF\_CH1\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_IF\_CH1\_DEFAULT\ <<\ 1)\ \ \ }}
+\DoxyCodeLine{00292\ \textcolor{preprocessor}{\#define\ DAC\_IF\_CH0UF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 4)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00293\ \textcolor{preprocessor}{\#define\ \_DAC\_IF\_CH0UF\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00294\ \textcolor{preprocessor}{\#define\ \_DAC\_IF\_CH0UF\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x10UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00295\ \textcolor{preprocessor}{\#define\ \_DAC\_IF\_CH0UF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00296\ \textcolor{preprocessor}{\#define\ DAC\_IF\_CH0UF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_IF\_CH0UF\_DEFAULT\ <<\ 4)\ }}
+\DoxyCodeLine{00297\ \textcolor{preprocessor}{\#define\ DAC\_IF\_CH1UF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 5)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00298\ \textcolor{preprocessor}{\#define\ \_DAC\_IF\_CH1UF\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 5\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00299\ \textcolor{preprocessor}{\#define\ \_DAC\_IF\_CH1UF\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x20UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00300\ \textcolor{preprocessor}{\#define\ \_DAC\_IF\_CH1UF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00301\ \textcolor{preprocessor}{\#define\ DAC\_IF\_CH1UF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_IF\_CH1UF\_DEFAULT\ <<\ 5)\ }}
+\DoxyCodeLine{00303\ \textcolor{comment}{/*\ Bit\ fields\ for\ DAC\ IFS\ */}}
+\DoxyCodeLine{00304\ \textcolor{preprocessor}{\#define\ \_DAC\_IFS\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00305\ \textcolor{preprocessor}{\#define\ \_DAC\_IFS\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000033UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00306\ \textcolor{preprocessor}{\#define\ DAC\_IFS\_CH0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00307\ \textcolor{preprocessor}{\#define\ \_DAC\_IFS\_CH0\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00308\ \textcolor{preprocessor}{\#define\ \_DAC\_IFS\_CH0\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00309\ \textcolor{preprocessor}{\#define\ \_DAC\_IFS\_CH0\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00310\ \textcolor{preprocessor}{\#define\ DAC\_IFS\_CH0\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_IFS\_CH0\_DEFAULT\ <<\ 0)\ \ \ }}
+\DoxyCodeLine{00311\ \textcolor{preprocessor}{\#define\ DAC\_IFS\_CH1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00312\ \textcolor{preprocessor}{\#define\ \_DAC\_IFS\_CH1\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00313\ \textcolor{preprocessor}{\#define\ \_DAC\_IFS\_CH1\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x2UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00314\ \textcolor{preprocessor}{\#define\ \_DAC\_IFS\_CH1\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00315\ \textcolor{preprocessor}{\#define\ DAC\_IFS\_CH1\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_IFS\_CH1\_DEFAULT\ <<\ 1)\ \ \ }}
+\DoxyCodeLine{00316\ \textcolor{preprocessor}{\#define\ DAC\_IFS\_CH0UF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 4)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00317\ \textcolor{preprocessor}{\#define\ \_DAC\_IFS\_CH0UF\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00318\ \textcolor{preprocessor}{\#define\ \_DAC\_IFS\_CH0UF\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x10UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00319\ \textcolor{preprocessor}{\#define\ \_DAC\_IFS\_CH0UF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00320\ \textcolor{preprocessor}{\#define\ DAC\_IFS\_CH0UF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_IFS\_CH0UF\_DEFAULT\ <<\ 4)\ }}
+\DoxyCodeLine{00321\ \textcolor{preprocessor}{\#define\ DAC\_IFS\_CH1UF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 5)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00322\ \textcolor{preprocessor}{\#define\ \_DAC\_IFS\_CH1UF\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 5\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00323\ \textcolor{preprocessor}{\#define\ \_DAC\_IFS\_CH1UF\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x20UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00324\ \textcolor{preprocessor}{\#define\ \_DAC\_IFS\_CH1UF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00325\ \textcolor{preprocessor}{\#define\ DAC\_IFS\_CH1UF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_IFS\_CH1UF\_DEFAULT\ <<\ 5)\ }}
+\DoxyCodeLine{00327\ \textcolor{comment}{/*\ Bit\ fields\ for\ DAC\ IFC\ */}}
+\DoxyCodeLine{00328\ \textcolor{preprocessor}{\#define\ \_DAC\_IFC\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00329\ \textcolor{preprocessor}{\#define\ \_DAC\_IFC\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000033UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00330\ \textcolor{preprocessor}{\#define\ DAC\_IFC\_CH0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00331\ \textcolor{preprocessor}{\#define\ \_DAC\_IFC\_CH0\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00332\ \textcolor{preprocessor}{\#define\ \_DAC\_IFC\_CH0\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00333\ \textcolor{preprocessor}{\#define\ \_DAC\_IFC\_CH0\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00334\ \textcolor{preprocessor}{\#define\ DAC\_IFC\_CH0\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_IFC\_CH0\_DEFAULT\ <<\ 0)\ \ \ }}
+\DoxyCodeLine{00335\ \textcolor{preprocessor}{\#define\ DAC\_IFC\_CH1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00336\ \textcolor{preprocessor}{\#define\ \_DAC\_IFC\_CH1\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00337\ \textcolor{preprocessor}{\#define\ \_DAC\_IFC\_CH1\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x2UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00338\ \textcolor{preprocessor}{\#define\ \_DAC\_IFC\_CH1\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00339\ \textcolor{preprocessor}{\#define\ DAC\_IFC\_CH1\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_IFC\_CH1\_DEFAULT\ <<\ 1)\ \ \ }}
+\DoxyCodeLine{00340\ \textcolor{preprocessor}{\#define\ DAC\_IFC\_CH0UF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 4)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00341\ \textcolor{preprocessor}{\#define\ \_DAC\_IFC\_CH0UF\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00342\ \textcolor{preprocessor}{\#define\ \_DAC\_IFC\_CH0UF\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x10UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00343\ \textcolor{preprocessor}{\#define\ \_DAC\_IFC\_CH0UF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00344\ \textcolor{preprocessor}{\#define\ DAC\_IFC\_CH0UF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_IFC\_CH0UF\_DEFAULT\ <<\ 4)\ }}
+\DoxyCodeLine{00345\ \textcolor{preprocessor}{\#define\ DAC\_IFC\_CH1UF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 5)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00346\ \textcolor{preprocessor}{\#define\ \_DAC\_IFC\_CH1UF\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 5\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00347\ \textcolor{preprocessor}{\#define\ \_DAC\_IFC\_CH1UF\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x20UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00348\ \textcolor{preprocessor}{\#define\ \_DAC\_IFC\_CH1UF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00349\ \textcolor{preprocessor}{\#define\ DAC\_IFC\_CH1UF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_IFC\_CH1UF\_DEFAULT\ <<\ 5)\ }}
+\DoxyCodeLine{00351\ \textcolor{comment}{/*\ Bit\ fields\ for\ DAC\ CH0DATA\ */}}
+\DoxyCodeLine{00352\ \textcolor{preprocessor}{\#define\ \_DAC\_CH0DATA\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00353\ \textcolor{preprocessor}{\#define\ \_DAC\_CH0DATA\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000FFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00354\ \textcolor{preprocessor}{\#define\ \_DAC\_CH0DATA\_DATA\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00355\ \textcolor{preprocessor}{\#define\ \_DAC\_CH0DATA\_DATA\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00356\ \textcolor{preprocessor}{\#define\ \_DAC\_CH0DATA\_DATA\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00357\ \textcolor{preprocessor}{\#define\ DAC\_CH0DATA\_DATA\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_CH0DATA\_DATA\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00359\ \textcolor{comment}{/*\ Bit\ fields\ for\ DAC\ CH1DATA\ */}}
+\DoxyCodeLine{00360\ \textcolor{preprocessor}{\#define\ \_DAC\_CH1DATA\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00361\ \textcolor{preprocessor}{\#define\ \_DAC\_CH1DATA\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000FFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00362\ \textcolor{preprocessor}{\#define\ \_DAC\_CH1DATA\_DATA\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00363\ \textcolor{preprocessor}{\#define\ \_DAC\_CH1DATA\_DATA\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00364\ \textcolor{preprocessor}{\#define\ \_DAC\_CH1DATA\_DATA\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00365\ \textcolor{preprocessor}{\#define\ DAC\_CH1DATA\_DATA\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_CH1DATA\_DATA\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00367\ \textcolor{comment}{/*\ Bit\ fields\ for\ DAC\ COMBDATA\ */}}
+\DoxyCodeLine{00368\ \textcolor{preprocessor}{\#define\ \_DAC\_COMBDATA\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00369\ \textcolor{preprocessor}{\#define\ \_DAC\_COMBDATA\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0FFF0FFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00370\ \textcolor{preprocessor}{\#define\ \_DAC\_COMBDATA\_CH0DATA\_SHIFT\ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00371\ \textcolor{preprocessor}{\#define\ \_DAC\_COMBDATA\_CH0DATA\_MASK\ \ \ \ \ \ \ \ \ \ \ \ 0xFFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00372\ \textcolor{preprocessor}{\#define\ \_DAC\_COMBDATA\_CH0DATA\_DEFAULT\ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00373\ \textcolor{preprocessor}{\#define\ DAC\_COMBDATA\_CH0DATA\_DEFAULT\ \ \ \ \ \ \ \ \ \ (\_DAC\_COMBDATA\_CH0DATA\_DEFAULT\ <<\ 0)\ \ }}
+\DoxyCodeLine{00374\ \textcolor{preprocessor}{\#define\ \_DAC\_COMBDATA\_CH1DATA\_SHIFT\ \ \ \ \ \ \ \ \ \ \ 16\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00375\ \textcolor{preprocessor}{\#define\ \_DAC\_COMBDATA\_CH1DATA\_MASK\ \ \ \ \ \ \ \ \ \ \ \ 0xFFF0000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00376\ \textcolor{preprocessor}{\#define\ \_DAC\_COMBDATA\_CH1DATA\_DEFAULT\ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00377\ \textcolor{preprocessor}{\#define\ DAC\_COMBDATA\_CH1DATA\_DEFAULT\ \ \ \ \ \ \ \ \ \ (\_DAC\_COMBDATA\_CH1DATA\_DEFAULT\ <<\ 16)\ }}
+\DoxyCodeLine{00379\ \textcolor{comment}{/*\ Bit\ fields\ for\ DAC\ CAL\ */}}
+\DoxyCodeLine{00380\ \textcolor{preprocessor}{\#define\ \_DAC\_CAL\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00400000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00381\ \textcolor{preprocessor}{\#define\ \_DAC\_CAL\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x007F3F3FUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00382\ \textcolor{preprocessor}{\#define\ \_DAC\_CAL\_CH0OFFSET\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00383\ \textcolor{preprocessor}{\#define\ \_DAC\_CAL\_CH0OFFSET\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x3FUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00384\ \textcolor{preprocessor}{\#define\ \_DAC\_CAL\_CH0OFFSET\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00385\ \textcolor{preprocessor}{\#define\ DAC\_CAL\_CH0OFFSET\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_CAL\_CH0OFFSET\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00386\ \textcolor{preprocessor}{\#define\ \_DAC\_CAL\_CH1OFFSET\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00387\ \textcolor{preprocessor}{\#define\ \_DAC\_CAL\_CH1OFFSET\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x3F00UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00388\ \textcolor{preprocessor}{\#define\ \_DAC\_CAL\_CH1OFFSET\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00389\ \textcolor{preprocessor}{\#define\ DAC\_CAL\_CH1OFFSET\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_CAL\_CH1OFFSET\_DEFAULT\ <<\ 8)\ }}
+\DoxyCodeLine{00390\ \textcolor{preprocessor}{\#define\ \_DAC\_CAL\_GAIN\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 16\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00391\ \textcolor{preprocessor}{\#define\ \_DAC\_CAL\_GAIN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x7F0000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00392\ \textcolor{preprocessor}{\#define\ \_DAC\_CAL\_GAIN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000040UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00393\ \textcolor{preprocessor}{\#define\ DAC\_CAL\_GAIN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_CAL\_GAIN\_DEFAULT\ <<\ 16)\ \ \ \ \ }}
+\DoxyCodeLine{00395\ \textcolor{comment}{/*\ Bit\ fields\ for\ DAC\ BIASPROG\ */}}
+\DoxyCodeLine{00396\ \textcolor{preprocessor}{\#define\ \_DAC\_BIASPROG\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00004747UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00397\ \textcolor{preprocessor}{\#define\ \_DAC\_BIASPROG\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00004F4FUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00398\ \textcolor{preprocessor}{\#define\ \_DAC\_BIASPROG\_BIASPROG\_SHIFT\ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00399\ \textcolor{preprocessor}{\#define\ \_DAC\_BIASPROG\_BIASPROG\_MASK\ \ \ \ \ \ \ \ \ \ \ 0xFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00400\ \textcolor{preprocessor}{\#define\ \_DAC\_BIASPROG\_BIASPROG\_DEFAULT\ \ \ \ \ \ \ \ 0x00000007UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00401\ \textcolor{preprocessor}{\#define\ DAC\_BIASPROG\_BIASPROG\_DEFAULT\ \ \ \ \ \ \ \ \ (\_DAC\_BIASPROG\_BIASPROG\_DEFAULT\ <<\ 0)\ \ \ \ \ \ }}
+\DoxyCodeLine{00402\ \textcolor{preprocessor}{\#define\ DAC\_BIASPROG\_HALFBIAS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 6)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00403\ \textcolor{preprocessor}{\#define\ \_DAC\_BIASPROG\_HALFBIAS\_SHIFT\ \ \ \ \ \ \ \ \ \ 6\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00404\ \textcolor{preprocessor}{\#define\ \_DAC\_BIASPROG\_HALFBIAS\_MASK\ \ \ \ \ \ \ \ \ \ \ 0x40UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00405\ \textcolor{preprocessor}{\#define\ \_DAC\_BIASPROG\_HALFBIAS\_DEFAULT\ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00406\ \textcolor{preprocessor}{\#define\ DAC\_BIASPROG\_HALFBIAS\_DEFAULT\ \ \ \ \ \ \ \ \ (\_DAC\_BIASPROG\_HALFBIAS\_DEFAULT\ <<\ 6)\ \ \ \ \ \ }}
+\DoxyCodeLine{00407\ \textcolor{preprocessor}{\#define\ \_DAC\_BIASPROG\_OPA2BIASPROG\_SHIFT\ \ \ \ \ \ 8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00408\ \textcolor{preprocessor}{\#define\ \_DAC\_BIASPROG\_OPA2BIASPROG\_MASK\ \ \ \ \ \ \ 0xF00UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00409\ \textcolor{preprocessor}{\#define\ \_DAC\_BIASPROG\_OPA2BIASPROG\_DEFAULT\ \ \ \ 0x00000007UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00410\ \textcolor{preprocessor}{\#define\ DAC\_BIASPROG\_OPA2BIASPROG\_DEFAULT\ \ \ \ \ (\_DAC\_BIASPROG\_OPA2BIASPROG\_DEFAULT\ <<\ 8)\ \ }}
+\DoxyCodeLine{00411\ \textcolor{preprocessor}{\#define\ DAC\_BIASPROG\_OPA2HALFBIAS\ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 14)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00412\ \textcolor{preprocessor}{\#define\ \_DAC\_BIASPROG\_OPA2HALFBIAS\_SHIFT\ \ \ \ \ \ 14\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00413\ \textcolor{preprocessor}{\#define\ \_DAC\_BIASPROG\_OPA2HALFBIAS\_MASK\ \ \ \ \ \ \ 0x4000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00414\ \textcolor{preprocessor}{\#define\ \_DAC\_BIASPROG\_OPA2HALFBIAS\_DEFAULT\ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00415\ \textcolor{preprocessor}{\#define\ DAC\_BIASPROG\_OPA2HALFBIAS\_DEFAULT\ \ \ \ \ (\_DAC\_BIASPROG\_OPA2HALFBIAS\_DEFAULT\ <<\ 14)\ }}
+\DoxyCodeLine{00417\ \textcolor{comment}{/*\ Bit\ fields\ for\ DAC\ OPACTRL\ */}}
+\DoxyCodeLine{00418\ \textcolor{preprocessor}{\#define\ \_DAC\_OPACTRL\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00419\ \textcolor{preprocessor}{\#define\ \_DAC\_OPACTRL\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x01C3F1C7UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00420\ \textcolor{preprocessor}{\#define\ DAC\_OPACTRL\_OPA0EN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00421\ \textcolor{preprocessor}{\#define\ \_DAC\_OPACTRL\_OPA0EN\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00422\ \textcolor{preprocessor}{\#define\ \_DAC\_OPACTRL\_OPA0EN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00423\ \textcolor{preprocessor}{\#define\ \_DAC\_OPACTRL\_OPA0EN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00424\ \textcolor{preprocessor}{\#define\ DAC\_OPACTRL\_OPA0EN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPACTRL\_OPA0EN\_DEFAULT\ <<\ 0)\ \ \ \ \ \ }}
+\DoxyCodeLine{00425\ \textcolor{preprocessor}{\#define\ DAC\_OPACTRL\_OPA1EN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00426\ \textcolor{preprocessor}{\#define\ \_DAC\_OPACTRL\_OPA1EN\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00427\ \textcolor{preprocessor}{\#define\ \_DAC\_OPACTRL\_OPA1EN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x2UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00428\ \textcolor{preprocessor}{\#define\ \_DAC\_OPACTRL\_OPA1EN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00429\ \textcolor{preprocessor}{\#define\ DAC\_OPACTRL\_OPA1EN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPACTRL\_OPA1EN\_DEFAULT\ <<\ 1)\ \ \ \ \ \ }}
+\DoxyCodeLine{00430\ \textcolor{preprocessor}{\#define\ DAC\_OPACTRL\_OPA2EN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 2)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00431\ \textcolor{preprocessor}{\#define\ \_DAC\_OPACTRL\_OPA2EN\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ 2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00432\ \textcolor{preprocessor}{\#define\ \_DAC\_OPACTRL\_OPA2EN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x4UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00433\ \textcolor{preprocessor}{\#define\ \_DAC\_OPACTRL\_OPA2EN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00434\ \textcolor{preprocessor}{\#define\ DAC\_OPACTRL\_OPA2EN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPACTRL\_OPA2EN\_DEFAULT\ <<\ 2)\ \ \ \ \ \ }}
+\DoxyCodeLine{00435\ \textcolor{preprocessor}{\#define\ DAC\_OPACTRL\_OPA0HCMDIS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 6)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00436\ \textcolor{preprocessor}{\#define\ \_DAC\_OPACTRL\_OPA0HCMDIS\_SHIFT\ \ \ \ \ \ \ \ \ 6\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00437\ \textcolor{preprocessor}{\#define\ \_DAC\_OPACTRL\_OPA0HCMDIS\_MASK\ \ \ \ \ \ \ \ \ \ 0x40UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00438\ \textcolor{preprocessor}{\#define\ \_DAC\_OPACTRL\_OPA0HCMDIS\_DEFAULT\ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00439\ \textcolor{preprocessor}{\#define\ DAC\_OPACTRL\_OPA0HCMDIS\_DEFAULT\ \ \ \ \ \ \ \ (\_DAC\_OPACTRL\_OPA0HCMDIS\_DEFAULT\ <<\ 6)\ \ }}
+\DoxyCodeLine{00440\ \textcolor{preprocessor}{\#define\ DAC\_OPACTRL\_OPA1HCMDIS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 7)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00441\ \textcolor{preprocessor}{\#define\ \_DAC\_OPACTRL\_OPA1HCMDIS\_SHIFT\ \ \ \ \ \ \ \ \ 7\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00442\ \textcolor{preprocessor}{\#define\ \_DAC\_OPACTRL\_OPA1HCMDIS\_MASK\ \ \ \ \ \ \ \ \ \ 0x80UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00443\ \textcolor{preprocessor}{\#define\ \_DAC\_OPACTRL\_OPA1HCMDIS\_DEFAULT\ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00444\ \textcolor{preprocessor}{\#define\ DAC\_OPACTRL\_OPA1HCMDIS\_DEFAULT\ \ \ \ \ \ \ \ (\_DAC\_OPACTRL\_OPA1HCMDIS\_DEFAULT\ <<\ 7)\ \ }}
+\DoxyCodeLine{00445\ \textcolor{preprocessor}{\#define\ DAC\_OPACTRL\_OPA2HCMDIS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 8)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00446\ \textcolor{preprocessor}{\#define\ \_DAC\_OPACTRL\_OPA2HCMDIS\_SHIFT\ \ \ \ \ \ \ \ \ 8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00447\ \textcolor{preprocessor}{\#define\ \_DAC\_OPACTRL\_OPA2HCMDIS\_MASK\ \ \ \ \ \ \ \ \ \ 0x100UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00448\ \textcolor{preprocessor}{\#define\ \_DAC\_OPACTRL\_OPA2HCMDIS\_DEFAULT\ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00449\ \textcolor{preprocessor}{\#define\ DAC\_OPACTRL\_OPA2HCMDIS\_DEFAULT\ \ \ \ \ \ \ \ (\_DAC\_OPACTRL\_OPA2HCMDIS\_DEFAULT\ <<\ 8)\ \ }}
+\DoxyCodeLine{00450\ \textcolor{preprocessor}{\#define\ \_DAC\_OPACTRL\_OPA0LPFDIS\_SHIFT\ \ \ \ \ \ \ \ \ 12\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00451\ \textcolor{preprocessor}{\#define\ \_DAC\_OPACTRL\_OPA0LPFDIS\_MASK\ \ \ \ \ \ \ \ \ \ 0x3000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00452\ \textcolor{preprocessor}{\#define\ \_DAC\_OPACTRL\_OPA0LPFDIS\_DEFAULT\ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00453\ \textcolor{preprocessor}{\#define\ \_DAC\_OPACTRL\_OPA0LPFDIS\_PLPFDIS\ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00454\ \textcolor{preprocessor}{\#define\ \_DAC\_OPACTRL\_OPA0LPFDIS\_NLPFDIS\ \ \ \ \ \ \ 0x00000002UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00455\ \textcolor{preprocessor}{\#define\ DAC\_OPACTRL\_OPA0LPFDIS\_DEFAULT\ \ \ \ \ \ \ \ (\_DAC\_OPACTRL\_OPA0LPFDIS\_DEFAULT\ <<\ 12)\ }}
+\DoxyCodeLine{00456\ \textcolor{preprocessor}{\#define\ DAC\_OPACTRL\_OPA0LPFDIS\_PLPFDIS\ \ \ \ \ \ \ \ (\_DAC\_OPACTRL\_OPA0LPFDIS\_PLPFDIS\ <<\ 12)\ }}
+\DoxyCodeLine{00457\ \textcolor{preprocessor}{\#define\ DAC\_OPACTRL\_OPA0LPFDIS\_NLPFDIS\ \ \ \ \ \ \ \ (\_DAC\_OPACTRL\_OPA0LPFDIS\_NLPFDIS\ <<\ 12)\ }}
+\DoxyCodeLine{00458\ \textcolor{preprocessor}{\#define\ \_DAC\_OPACTRL\_OPA1LPFDIS\_SHIFT\ \ \ \ \ \ \ \ \ 14\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00459\ \textcolor{preprocessor}{\#define\ \_DAC\_OPACTRL\_OPA1LPFDIS\_MASK\ \ \ \ \ \ \ \ \ \ 0xC000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00460\ \textcolor{preprocessor}{\#define\ \_DAC\_OPACTRL\_OPA1LPFDIS\_DEFAULT\ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00461\ \textcolor{preprocessor}{\#define\ \_DAC\_OPACTRL\_OPA1LPFDIS\_PLPFDIS\ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00462\ \textcolor{preprocessor}{\#define\ \_DAC\_OPACTRL\_OPA1LPFDIS\_NLPFDIS\ \ \ \ \ \ \ 0x00000002UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00463\ \textcolor{preprocessor}{\#define\ DAC\_OPACTRL\_OPA1LPFDIS\_DEFAULT\ \ \ \ \ \ \ \ (\_DAC\_OPACTRL\_OPA1LPFDIS\_DEFAULT\ <<\ 14)\ }}
+\DoxyCodeLine{00464\ \textcolor{preprocessor}{\#define\ DAC\_OPACTRL\_OPA1LPFDIS\_PLPFDIS\ \ \ \ \ \ \ \ (\_DAC\_OPACTRL\_OPA1LPFDIS\_PLPFDIS\ <<\ 14)\ }}
+\DoxyCodeLine{00465\ \textcolor{preprocessor}{\#define\ DAC\_OPACTRL\_OPA1LPFDIS\_NLPFDIS\ \ \ \ \ \ \ \ (\_DAC\_OPACTRL\_OPA1LPFDIS\_NLPFDIS\ <<\ 14)\ }}
+\DoxyCodeLine{00466\ \textcolor{preprocessor}{\#define\ \_DAC\_OPACTRL\_OPA2LPFDIS\_SHIFT\ \ \ \ \ \ \ \ \ 16\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00467\ \textcolor{preprocessor}{\#define\ \_DAC\_OPACTRL\_OPA2LPFDIS\_MASK\ \ \ \ \ \ \ \ \ \ 0x30000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00468\ \textcolor{preprocessor}{\#define\ \_DAC\_OPACTRL\_OPA2LPFDIS\_DEFAULT\ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00469\ \textcolor{preprocessor}{\#define\ \_DAC\_OPACTRL\_OPA2LPFDIS\_PLPFDIS\ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00470\ \textcolor{preprocessor}{\#define\ \_DAC\_OPACTRL\_OPA2LPFDIS\_NLPFDIS\ \ \ \ \ \ \ 0x00000002UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00471\ \textcolor{preprocessor}{\#define\ DAC\_OPACTRL\_OPA2LPFDIS\_DEFAULT\ \ \ \ \ \ \ \ (\_DAC\_OPACTRL\_OPA2LPFDIS\_DEFAULT\ <<\ 16)\ }}
+\DoxyCodeLine{00472\ \textcolor{preprocessor}{\#define\ DAC\_OPACTRL\_OPA2LPFDIS\_PLPFDIS\ \ \ \ \ \ \ \ (\_DAC\_OPACTRL\_OPA2LPFDIS\_PLPFDIS\ <<\ 16)\ }}
+\DoxyCodeLine{00473\ \textcolor{preprocessor}{\#define\ DAC\_OPACTRL\_OPA2LPFDIS\_NLPFDIS\ \ \ \ \ \ \ \ (\_DAC\_OPACTRL\_OPA2LPFDIS\_NLPFDIS\ <<\ 16)\ }}
+\DoxyCodeLine{00474\ \textcolor{preprocessor}{\#define\ DAC\_OPACTRL\_OPA0SHORT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 22)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00475\ \textcolor{preprocessor}{\#define\ \_DAC\_OPACTRL\_OPA0SHORT\_SHIFT\ \ \ \ \ \ \ \ \ \ 22\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00476\ \textcolor{preprocessor}{\#define\ \_DAC\_OPACTRL\_OPA0SHORT\_MASK\ \ \ \ \ \ \ \ \ \ \ 0x400000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00477\ \textcolor{preprocessor}{\#define\ \_DAC\_OPACTRL\_OPA0SHORT\_DEFAULT\ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00478\ \textcolor{preprocessor}{\#define\ DAC\_OPACTRL\_OPA0SHORT\_DEFAULT\ \ \ \ \ \ \ \ \ (\_DAC\_OPACTRL\_OPA0SHORT\_DEFAULT\ <<\ 22)\ \ }}
+\DoxyCodeLine{00479\ \textcolor{preprocessor}{\#define\ DAC\_OPACTRL\_OPA1SHORT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 23)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00480\ \textcolor{preprocessor}{\#define\ \_DAC\_OPACTRL\_OPA1SHORT\_SHIFT\ \ \ \ \ \ \ \ \ \ 23\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00481\ \textcolor{preprocessor}{\#define\ \_DAC\_OPACTRL\_OPA1SHORT\_MASK\ \ \ \ \ \ \ \ \ \ \ 0x800000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00482\ \textcolor{preprocessor}{\#define\ \_DAC\_OPACTRL\_OPA1SHORT\_DEFAULT\ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00483\ \textcolor{preprocessor}{\#define\ DAC\_OPACTRL\_OPA1SHORT\_DEFAULT\ \ \ \ \ \ \ \ \ (\_DAC\_OPACTRL\_OPA1SHORT\_DEFAULT\ <<\ 23)\ \ }}
+\DoxyCodeLine{00484\ \textcolor{preprocessor}{\#define\ DAC\_OPACTRL\_OPA2SHORT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 24)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00485\ \textcolor{preprocessor}{\#define\ \_DAC\_OPACTRL\_OPA2SHORT\_SHIFT\ \ \ \ \ \ \ \ \ \ 24\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00486\ \textcolor{preprocessor}{\#define\ \_DAC\_OPACTRL\_OPA2SHORT\_MASK\ \ \ \ \ \ \ \ \ \ \ 0x1000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00487\ \textcolor{preprocessor}{\#define\ \_DAC\_OPACTRL\_OPA2SHORT\_DEFAULT\ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00488\ \textcolor{preprocessor}{\#define\ DAC\_OPACTRL\_OPA2SHORT\_DEFAULT\ \ \ \ \ \ \ \ \ (\_DAC\_OPACTRL\_OPA2SHORT\_DEFAULT\ <<\ 24)\ \ }}
+\DoxyCodeLine{00490\ \textcolor{comment}{/*\ Bit\ fields\ for\ DAC\ OPAOFFSET\ */}}
+\DoxyCodeLine{00491\ \textcolor{preprocessor}{\#define\ \_DAC\_OPAOFFSET\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000020UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00492\ \textcolor{preprocessor}{\#define\ \_DAC\_OPAOFFSET\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0000003FUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00493\ \textcolor{preprocessor}{\#define\ \_DAC\_OPAOFFSET\_OPA2OFFSET\_SHIFT\ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00494\ \textcolor{preprocessor}{\#define\ \_DAC\_OPAOFFSET\_OPA2OFFSET\_MASK\ \ \ \ \ \ \ \ 0x3FUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00495\ \textcolor{preprocessor}{\#define\ \_DAC\_OPAOFFSET\_OPA2OFFSET\_DEFAULT\ \ \ \ \ 0x00000020UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00496\ \textcolor{preprocessor}{\#define\ DAC\_OPAOFFSET\_OPA2OFFSET\_DEFAULT\ \ \ \ \ \ (\_DAC\_OPAOFFSET\_OPA2OFFSET\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00498\ \textcolor{comment}{/*\ Bit\ fields\ for\ DAC\ OPA0MUX\ */}}
+\DoxyCodeLine{00499\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA0MUX\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00400000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00500\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA0MUX\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x74C7F737UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00501\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA0MUX\_POSSEL\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00502\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA0MUX\_POSSEL\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x7UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00503\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA0MUX\_POSSEL\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00504\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA0MUX\_POSSEL\_DISABLE\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00505\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA0MUX\_POSSEL\_DAC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00506\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA0MUX\_POSSEL\_POSPAD\ \ \ \ \ \ \ \ \ \ \ \ 0x00000002UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00507\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA0MUX\_POSSEL\_OPA0INP\ \ \ \ \ \ \ \ \ \ \ 0x00000003UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00508\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA0MUX\_POSSEL\_OPATAP\ \ \ \ \ \ \ \ \ \ \ \ 0x00000004UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00509\ \textcolor{preprocessor}{\#define\ DAC\_OPA0MUX\_POSSEL\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA0MUX\_POSSEL\_DEFAULT\ <<\ 0)\ \ \ }}
+\DoxyCodeLine{00510\ \textcolor{preprocessor}{\#define\ DAC\_OPA0MUX\_POSSEL\_DISABLE\ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA0MUX\_POSSEL\_DISABLE\ <<\ 0)\ \ \ }}
+\DoxyCodeLine{00511\ \textcolor{preprocessor}{\#define\ DAC\_OPA0MUX\_POSSEL\_DAC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA0MUX\_POSSEL\_DAC\ <<\ 0)\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00512\ \textcolor{preprocessor}{\#define\ DAC\_OPA0MUX\_POSSEL\_POSPAD\ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA0MUX\_POSSEL\_POSPAD\ <<\ 0)\ \ \ \ }}
+\DoxyCodeLine{00513\ \textcolor{preprocessor}{\#define\ DAC\_OPA0MUX\_POSSEL\_OPA0INP\ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA0MUX\_POSSEL\_OPA0INP\ <<\ 0)\ \ \ }}
+\DoxyCodeLine{00514\ \textcolor{preprocessor}{\#define\ DAC\_OPA0MUX\_POSSEL\_OPATAP\ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA0MUX\_POSSEL\_OPATAP\ <<\ 0)\ \ \ \ }}
+\DoxyCodeLine{00515\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA0MUX\_NEGSEL\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ 4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00516\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA0MUX\_NEGSEL\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x30UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00517\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA0MUX\_NEGSEL\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00518\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA0MUX\_NEGSEL\_DISABLE\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00519\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA0MUX\_NEGSEL\_UG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00520\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA0MUX\_NEGSEL\_OPATAP\ \ \ \ \ \ \ \ \ \ \ \ 0x00000002UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00521\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA0MUX\_NEGSEL\_NEGPAD\ \ \ \ \ \ \ \ \ \ \ \ 0x00000003UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00522\ \textcolor{preprocessor}{\#define\ DAC\_OPA0MUX\_NEGSEL\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA0MUX\_NEGSEL\_DEFAULT\ <<\ 4)\ \ \ }}
+\DoxyCodeLine{00523\ \textcolor{preprocessor}{\#define\ DAC\_OPA0MUX\_NEGSEL\_DISABLE\ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA0MUX\_NEGSEL\_DISABLE\ <<\ 4)\ \ \ }}
+\DoxyCodeLine{00524\ \textcolor{preprocessor}{\#define\ DAC\_OPA0MUX\_NEGSEL\_UG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA0MUX\_NEGSEL\_UG\ <<\ 4)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00525\ \textcolor{preprocessor}{\#define\ DAC\_OPA0MUX\_NEGSEL\_OPATAP\ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA0MUX\_NEGSEL\_OPATAP\ <<\ 4)\ \ \ \ }}
+\DoxyCodeLine{00526\ \textcolor{preprocessor}{\#define\ DAC\_OPA0MUX\_NEGSEL\_NEGPAD\ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA0MUX\_NEGSEL\_NEGPAD\ <<\ 4)\ \ \ \ }}
+\DoxyCodeLine{00527\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA0MUX\_RESINMUX\_SHIFT\ \ \ \ \ \ \ \ \ \ \ 8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00528\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA0MUX\_RESINMUX\_MASK\ \ \ \ \ \ \ \ \ \ \ \ 0x700UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00529\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA0MUX\_RESINMUX\_DEFAULT\ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00530\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA0MUX\_RESINMUX\_DISABLE\ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00531\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA0MUX\_RESINMUX\_OPA0INP\ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00532\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA0MUX\_RESINMUX\_NEGPAD\ \ \ \ \ \ \ \ \ \ 0x00000002UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00533\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA0MUX\_RESINMUX\_POSPAD\ \ \ \ \ \ \ \ \ \ 0x00000003UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00534\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA0MUX\_RESINMUX\_VSS\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000004UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00535\ \textcolor{preprocessor}{\#define\ DAC\_OPA0MUX\_RESINMUX\_DEFAULT\ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA0MUX\_RESINMUX\_DEFAULT\ <<\ 8)\ }}
+\DoxyCodeLine{00536\ \textcolor{preprocessor}{\#define\ DAC\_OPA0MUX\_RESINMUX\_DISABLE\ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA0MUX\_RESINMUX\_DISABLE\ <<\ 8)\ }}
+\DoxyCodeLine{00537\ \textcolor{preprocessor}{\#define\ DAC\_OPA0MUX\_RESINMUX\_OPA0INP\ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA0MUX\_RESINMUX\_OPA0INP\ <<\ 8)\ }}
+\DoxyCodeLine{00538\ \textcolor{preprocessor}{\#define\ DAC\_OPA0MUX\_RESINMUX\_NEGPAD\ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA0MUX\_RESINMUX\_NEGPAD\ <<\ 8)\ \ }}
+\DoxyCodeLine{00539\ \textcolor{preprocessor}{\#define\ DAC\_OPA0MUX\_RESINMUX\_POSPAD\ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA0MUX\_RESINMUX\_POSPAD\ <<\ 8)\ \ }}
+\DoxyCodeLine{00540\ \textcolor{preprocessor}{\#define\ DAC\_OPA0MUX\_RESINMUX\_VSS\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA0MUX\_RESINMUX\_VSS\ <<\ 8)\ \ \ \ \ }}
+\DoxyCodeLine{00541\ \textcolor{preprocessor}{\#define\ DAC\_OPA0MUX\_PPEN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 12)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00542\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA0MUX\_PPEN\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 12\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00543\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA0MUX\_PPEN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00544\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA0MUX\_PPEN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00545\ \textcolor{preprocessor}{\#define\ DAC\_OPA0MUX\_PPEN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA0MUX\_PPEN\_DEFAULT\ <<\ 12)\ \ \ \ }}
+\DoxyCodeLine{00546\ \textcolor{preprocessor}{\#define\ DAC\_OPA0MUX\_NPEN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 13)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00547\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA0MUX\_NPEN\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 13\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00548\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA0MUX\_NPEN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x2000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00549\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA0MUX\_NPEN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00550\ \textcolor{preprocessor}{\#define\ DAC\_OPA0MUX\_NPEN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA0MUX\_NPEN\_DEFAULT\ <<\ 13)\ \ \ \ }}
+\DoxyCodeLine{00551\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA0MUX\_OUTPEN\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ 14\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00552\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA0MUX\_OUTPEN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x7C000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00553\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA0MUX\_OUTPEN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00554\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA0MUX\_OUTPEN\_OUT0\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00555\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA0MUX\_OUTPEN\_OUT1\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000002UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00556\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA0MUX\_OUTPEN\_OUT2\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000004UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00557\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA0MUX\_OUTPEN\_OUT3\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000008UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00558\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA0MUX\_OUTPEN\_OUT4\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000010UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00559\ \textcolor{preprocessor}{\#define\ DAC\_OPA0MUX\_OUTPEN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA0MUX\_OUTPEN\_DEFAULT\ <<\ 14)\ \ }}
+\DoxyCodeLine{00560\ \textcolor{preprocessor}{\#define\ DAC\_OPA0MUX\_OUTPEN\_OUT0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA0MUX\_OUTPEN\_OUT0\ <<\ 14)\ \ \ \ \ }}
+\DoxyCodeLine{00561\ \textcolor{preprocessor}{\#define\ DAC\_OPA0MUX\_OUTPEN\_OUT1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA0MUX\_OUTPEN\_OUT1\ <<\ 14)\ \ \ \ \ }}
+\DoxyCodeLine{00562\ \textcolor{preprocessor}{\#define\ DAC\_OPA0MUX\_OUTPEN\_OUT2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA0MUX\_OUTPEN\_OUT2\ <<\ 14)\ \ \ \ \ }}
+\DoxyCodeLine{00563\ \textcolor{preprocessor}{\#define\ DAC\_OPA0MUX\_OUTPEN\_OUT3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA0MUX\_OUTPEN\_OUT3\ <<\ 14)\ \ \ \ \ }}
+\DoxyCodeLine{00564\ \textcolor{preprocessor}{\#define\ DAC\_OPA0MUX\_OUTPEN\_OUT4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA0MUX\_OUTPEN\_OUT4\ <<\ 14)\ \ \ \ \ }}
+\DoxyCodeLine{00565\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA0MUX\_OUTMODE\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ 22\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00566\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA0MUX\_OUTMODE\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ 0xC00000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00567\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA0MUX\_OUTMODE\_DISABLE\ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00568\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA0MUX\_OUTMODE\_DEFAULT\ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00569\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA0MUX\_OUTMODE\_MAIN\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00570\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA0MUX\_OUTMODE\_ALT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000002UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00571\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA0MUX\_OUTMODE\_ALL\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000003UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00572\ \textcolor{preprocessor}{\#define\ DAC\_OPA0MUX\_OUTMODE\_DISABLE\ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA0MUX\_OUTMODE\_DISABLE\ <<\ 22)\ }}
+\DoxyCodeLine{00573\ \textcolor{preprocessor}{\#define\ DAC\_OPA0MUX\_OUTMODE\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA0MUX\_OUTMODE\_DEFAULT\ <<\ 22)\ }}
+\DoxyCodeLine{00574\ \textcolor{preprocessor}{\#define\ DAC\_OPA0MUX\_OUTMODE\_MAIN\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA0MUX\_OUTMODE\_MAIN\ <<\ 22)\ \ \ \ }}
+\DoxyCodeLine{00575\ \textcolor{preprocessor}{\#define\ DAC\_OPA0MUX\_OUTMODE\_ALT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA0MUX\_OUTMODE\_ALT\ <<\ 22)\ \ \ \ \ }}
+\DoxyCodeLine{00576\ \textcolor{preprocessor}{\#define\ DAC\_OPA0MUX\_OUTMODE\_ALL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA0MUX\_OUTMODE\_ALL\ <<\ 22)\ \ \ \ \ }}
+\DoxyCodeLine{00577\ \textcolor{preprocessor}{\#define\ DAC\_OPA0MUX\_NEXTOUT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 26)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00578\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA0MUX\_NEXTOUT\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ 26\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00579\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA0MUX\_NEXTOUT\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ 0x4000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00580\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA0MUX\_NEXTOUT\_DEFAULT\ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00581\ \textcolor{preprocessor}{\#define\ DAC\_OPA0MUX\_NEXTOUT\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA0MUX\_NEXTOUT\_DEFAULT\ <<\ 26)\ }}
+\DoxyCodeLine{00582\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA0MUX\_RESSEL\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ 28\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00583\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA0MUX\_RESSEL\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x70000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00584\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA0MUX\_RESSEL\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00585\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA0MUX\_RESSEL\_RES0\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00586\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA0MUX\_RESSEL\_RES1\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00587\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA0MUX\_RESSEL\_RES2\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000002UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00588\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA0MUX\_RESSEL\_RES3\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000003UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00589\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA0MUX\_RESSEL\_RES4\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000004UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00590\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA0MUX\_RESSEL\_RES5\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000005UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00591\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA0MUX\_RESSEL\_RES6\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000006UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00592\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA0MUX\_RESSEL\_RES7\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000007UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00593\ \textcolor{preprocessor}{\#define\ DAC\_OPA0MUX\_RESSEL\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA0MUX\_RESSEL\_DEFAULT\ <<\ 28)\ \ }}
+\DoxyCodeLine{00594\ \textcolor{preprocessor}{\#define\ DAC\_OPA0MUX\_RESSEL\_RES0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA0MUX\_RESSEL\_RES0\ <<\ 28)\ \ \ \ \ }}
+\DoxyCodeLine{00595\ \textcolor{preprocessor}{\#define\ DAC\_OPA0MUX\_RESSEL\_RES1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA0MUX\_RESSEL\_RES1\ <<\ 28)\ \ \ \ \ }}
+\DoxyCodeLine{00596\ \textcolor{preprocessor}{\#define\ DAC\_OPA0MUX\_RESSEL\_RES2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA0MUX\_RESSEL\_RES2\ <<\ 28)\ \ \ \ \ }}
+\DoxyCodeLine{00597\ \textcolor{preprocessor}{\#define\ DAC\_OPA0MUX\_RESSEL\_RES3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA0MUX\_RESSEL\_RES3\ <<\ 28)\ \ \ \ \ }}
+\DoxyCodeLine{00598\ \textcolor{preprocessor}{\#define\ DAC\_OPA0MUX\_RESSEL\_RES4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA0MUX\_RESSEL\_RES4\ <<\ 28)\ \ \ \ \ }}
+\DoxyCodeLine{00599\ \textcolor{preprocessor}{\#define\ DAC\_OPA0MUX\_RESSEL\_RES5\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA0MUX\_RESSEL\_RES5\ <<\ 28)\ \ \ \ \ }}
+\DoxyCodeLine{00600\ \textcolor{preprocessor}{\#define\ DAC\_OPA0MUX\_RESSEL\_RES6\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA0MUX\_RESSEL\_RES6\ <<\ 28)\ \ \ \ \ }}
+\DoxyCodeLine{00601\ \textcolor{preprocessor}{\#define\ DAC\_OPA0MUX\_RESSEL\_RES7\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA0MUX\_RESSEL\_RES7\ <<\ 28)\ \ \ \ \ }}
+\DoxyCodeLine{00603\ \textcolor{comment}{/*\ Bit\ fields\ for\ DAC\ OPA1MUX\ */}}
+\DoxyCodeLine{00604\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA1MUX\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00605\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA1MUX\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x74C7F737UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00606\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA1MUX\_POSSEL\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00607\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA1MUX\_POSSEL\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x7UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00608\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA1MUX\_POSSEL\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00609\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA1MUX\_POSSEL\_DISABLE\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00610\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA1MUX\_POSSEL\_DAC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00611\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA1MUX\_POSSEL\_POSPAD\ \ \ \ \ \ \ \ \ \ \ \ 0x00000002UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00612\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA1MUX\_POSSEL\_OPA0INP\ \ \ \ \ \ \ \ \ \ \ 0x00000003UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00613\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA1MUX\_POSSEL\_OPATAP\ \ \ \ \ \ \ \ \ \ \ \ 0x00000004UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00614\ \textcolor{preprocessor}{\#define\ DAC\_OPA1MUX\_POSSEL\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA1MUX\_POSSEL\_DEFAULT\ <<\ 0)\ \ \ }}
+\DoxyCodeLine{00615\ \textcolor{preprocessor}{\#define\ DAC\_OPA1MUX\_POSSEL\_DISABLE\ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA1MUX\_POSSEL\_DISABLE\ <<\ 0)\ \ \ }}
+\DoxyCodeLine{00616\ \textcolor{preprocessor}{\#define\ DAC\_OPA1MUX\_POSSEL\_DAC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA1MUX\_POSSEL\_DAC\ <<\ 0)\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00617\ \textcolor{preprocessor}{\#define\ DAC\_OPA1MUX\_POSSEL\_POSPAD\ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA1MUX\_POSSEL\_POSPAD\ <<\ 0)\ \ \ \ }}
+\DoxyCodeLine{00618\ \textcolor{preprocessor}{\#define\ DAC\_OPA1MUX\_POSSEL\_OPA0INP\ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA1MUX\_POSSEL\_OPA0INP\ <<\ 0)\ \ \ }}
+\DoxyCodeLine{00619\ \textcolor{preprocessor}{\#define\ DAC\_OPA1MUX\_POSSEL\_OPATAP\ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA1MUX\_POSSEL\_OPATAP\ <<\ 0)\ \ \ \ }}
+\DoxyCodeLine{00620\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA1MUX\_NEGSEL\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ 4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00621\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA1MUX\_NEGSEL\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x30UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00622\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA1MUX\_NEGSEL\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00623\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA1MUX\_NEGSEL\_DISABLE\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00624\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA1MUX\_NEGSEL\_UG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00625\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA1MUX\_NEGSEL\_OPATAP\ \ \ \ \ \ \ \ \ \ \ \ 0x00000002UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00626\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA1MUX\_NEGSEL\_NEGPAD\ \ \ \ \ \ \ \ \ \ \ \ 0x00000003UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00627\ \textcolor{preprocessor}{\#define\ DAC\_OPA1MUX\_NEGSEL\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA1MUX\_NEGSEL\_DEFAULT\ <<\ 4)\ \ \ }}
+\DoxyCodeLine{00628\ \textcolor{preprocessor}{\#define\ DAC\_OPA1MUX\_NEGSEL\_DISABLE\ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA1MUX\_NEGSEL\_DISABLE\ <<\ 4)\ \ \ }}
+\DoxyCodeLine{00629\ \textcolor{preprocessor}{\#define\ DAC\_OPA1MUX\_NEGSEL\_UG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA1MUX\_NEGSEL\_UG\ <<\ 4)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00630\ \textcolor{preprocessor}{\#define\ DAC\_OPA1MUX\_NEGSEL\_OPATAP\ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA1MUX\_NEGSEL\_OPATAP\ <<\ 4)\ \ \ \ }}
+\DoxyCodeLine{00631\ \textcolor{preprocessor}{\#define\ DAC\_OPA1MUX\_NEGSEL\_NEGPAD\ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA1MUX\_NEGSEL\_NEGPAD\ <<\ 4)\ \ \ \ }}
+\DoxyCodeLine{00632\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA1MUX\_RESINMUX\_SHIFT\ \ \ \ \ \ \ \ \ \ \ 8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00633\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA1MUX\_RESINMUX\_MASK\ \ \ \ \ \ \ \ \ \ \ \ 0x700UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00634\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA1MUX\_RESINMUX\_DEFAULT\ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00635\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA1MUX\_RESINMUX\_DISABLE\ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00636\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA1MUX\_RESINMUX\_OPA0INP\ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00637\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA1MUX\_RESINMUX\_NEGPAD\ \ \ \ \ \ \ \ \ \ 0x00000002UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00638\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA1MUX\_RESINMUX\_POSPAD\ \ \ \ \ \ \ \ \ \ 0x00000003UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00639\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA1MUX\_RESINMUX\_VSS\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000004UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00640\ \textcolor{preprocessor}{\#define\ DAC\_OPA1MUX\_RESINMUX\_DEFAULT\ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA1MUX\_RESINMUX\_DEFAULT\ <<\ 8)\ }}
+\DoxyCodeLine{00641\ \textcolor{preprocessor}{\#define\ DAC\_OPA1MUX\_RESINMUX\_DISABLE\ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA1MUX\_RESINMUX\_DISABLE\ <<\ 8)\ }}
+\DoxyCodeLine{00642\ \textcolor{preprocessor}{\#define\ DAC\_OPA1MUX\_RESINMUX\_OPA0INP\ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA1MUX\_RESINMUX\_OPA0INP\ <<\ 8)\ }}
+\DoxyCodeLine{00643\ \textcolor{preprocessor}{\#define\ DAC\_OPA1MUX\_RESINMUX\_NEGPAD\ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA1MUX\_RESINMUX\_NEGPAD\ <<\ 8)\ \ }}
+\DoxyCodeLine{00644\ \textcolor{preprocessor}{\#define\ DAC\_OPA1MUX\_RESINMUX\_POSPAD\ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA1MUX\_RESINMUX\_POSPAD\ <<\ 8)\ \ }}
+\DoxyCodeLine{00645\ \textcolor{preprocessor}{\#define\ DAC\_OPA1MUX\_RESINMUX\_VSS\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA1MUX\_RESINMUX\_VSS\ <<\ 8)\ \ \ \ \ }}
+\DoxyCodeLine{00646\ \textcolor{preprocessor}{\#define\ DAC\_OPA1MUX\_PPEN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 12)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00647\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA1MUX\_PPEN\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 12\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00648\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA1MUX\_PPEN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00649\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA1MUX\_PPEN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00650\ \textcolor{preprocessor}{\#define\ DAC\_OPA1MUX\_PPEN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA1MUX\_PPEN\_DEFAULT\ <<\ 12)\ \ \ \ }}
+\DoxyCodeLine{00651\ \textcolor{preprocessor}{\#define\ DAC\_OPA1MUX\_NPEN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 13)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00652\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA1MUX\_NPEN\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 13\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00653\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA1MUX\_NPEN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x2000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00654\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA1MUX\_NPEN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00655\ \textcolor{preprocessor}{\#define\ DAC\_OPA1MUX\_NPEN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA1MUX\_NPEN\_DEFAULT\ <<\ 13)\ \ \ \ }}
+\DoxyCodeLine{00656\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA1MUX\_OUTPEN\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ 14\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00657\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA1MUX\_OUTPEN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x7C000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00658\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA1MUX\_OUTPEN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00659\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA1MUX\_OUTPEN\_OUT0\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00660\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA1MUX\_OUTPEN\_OUT1\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000002UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00661\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA1MUX\_OUTPEN\_OUT2\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000004UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00662\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA1MUX\_OUTPEN\_OUT3\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000008UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00663\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA1MUX\_OUTPEN\_OUT4\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000010UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00664\ \textcolor{preprocessor}{\#define\ DAC\_OPA1MUX\_OUTPEN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA1MUX\_OUTPEN\_DEFAULT\ <<\ 14)\ \ }}
+\DoxyCodeLine{00665\ \textcolor{preprocessor}{\#define\ DAC\_OPA1MUX\_OUTPEN\_OUT0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA1MUX\_OUTPEN\_OUT0\ <<\ 14)\ \ \ \ \ }}
+\DoxyCodeLine{00666\ \textcolor{preprocessor}{\#define\ DAC\_OPA1MUX\_OUTPEN\_OUT1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA1MUX\_OUTPEN\_OUT1\ <<\ 14)\ \ \ \ \ }}
+\DoxyCodeLine{00667\ \textcolor{preprocessor}{\#define\ DAC\_OPA1MUX\_OUTPEN\_OUT2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA1MUX\_OUTPEN\_OUT2\ <<\ 14)\ \ \ \ \ }}
+\DoxyCodeLine{00668\ \textcolor{preprocessor}{\#define\ DAC\_OPA1MUX\_OUTPEN\_OUT3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA1MUX\_OUTPEN\_OUT3\ <<\ 14)\ \ \ \ \ }}
+\DoxyCodeLine{00669\ \textcolor{preprocessor}{\#define\ DAC\_OPA1MUX\_OUTPEN\_OUT4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA1MUX\_OUTPEN\_OUT4\ <<\ 14)\ \ \ \ \ }}
+\DoxyCodeLine{00670\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA1MUX\_OUTMODE\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ 22\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00671\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA1MUX\_OUTMODE\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ 0xC00000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00672\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA1MUX\_OUTMODE\_DEFAULT\ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00673\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA1MUX\_OUTMODE\_DISABLE\ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00674\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA1MUX\_OUTMODE\_MAIN\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00675\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA1MUX\_OUTMODE\_ALT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000002UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00676\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA1MUX\_OUTMODE\_ALL\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000003UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00677\ \textcolor{preprocessor}{\#define\ DAC\_OPA1MUX\_OUTMODE\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA1MUX\_OUTMODE\_DEFAULT\ <<\ 22)\ }}
+\DoxyCodeLine{00678\ \textcolor{preprocessor}{\#define\ DAC\_OPA1MUX\_OUTMODE\_DISABLE\ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA1MUX\_OUTMODE\_DISABLE\ <<\ 22)\ }}
+\DoxyCodeLine{00679\ \textcolor{preprocessor}{\#define\ DAC\_OPA1MUX\_OUTMODE\_MAIN\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA1MUX\_OUTMODE\_MAIN\ <<\ 22)\ \ \ \ }}
+\DoxyCodeLine{00680\ \textcolor{preprocessor}{\#define\ DAC\_OPA1MUX\_OUTMODE\_ALT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA1MUX\_OUTMODE\_ALT\ <<\ 22)\ \ \ \ \ }}
+\DoxyCodeLine{00681\ \textcolor{preprocessor}{\#define\ DAC\_OPA1MUX\_OUTMODE\_ALL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA1MUX\_OUTMODE\_ALL\ <<\ 22)\ \ \ \ \ }}
+\DoxyCodeLine{00682\ \textcolor{preprocessor}{\#define\ DAC\_OPA1MUX\_NEXTOUT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 26)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00683\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA1MUX\_NEXTOUT\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ 26\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00684\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA1MUX\_NEXTOUT\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ 0x4000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00685\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA1MUX\_NEXTOUT\_DEFAULT\ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00686\ \textcolor{preprocessor}{\#define\ DAC\_OPA1MUX\_NEXTOUT\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA1MUX\_NEXTOUT\_DEFAULT\ <<\ 26)\ }}
+\DoxyCodeLine{00687\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA1MUX\_RESSEL\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ 28\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00688\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA1MUX\_RESSEL\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x70000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00689\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA1MUX\_RESSEL\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00690\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA1MUX\_RESSEL\_RES0\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00691\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA1MUX\_RESSEL\_RES1\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00692\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA1MUX\_RESSEL\_RES2\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000002UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00693\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA1MUX\_RESSEL\_RES3\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000003UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00694\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA1MUX\_RESSEL\_RES4\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000004UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00695\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA1MUX\_RESSEL\_RES5\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000005UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00696\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA1MUX\_RESSEL\_RES6\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000006UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00697\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA1MUX\_RESSEL\_RES7\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000007UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00698\ \textcolor{preprocessor}{\#define\ DAC\_OPA1MUX\_RESSEL\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA1MUX\_RESSEL\_DEFAULT\ <<\ 28)\ \ }}
+\DoxyCodeLine{00699\ \textcolor{preprocessor}{\#define\ DAC\_OPA1MUX\_RESSEL\_RES0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA1MUX\_RESSEL\_RES0\ <<\ 28)\ \ \ \ \ }}
+\DoxyCodeLine{00700\ \textcolor{preprocessor}{\#define\ DAC\_OPA1MUX\_RESSEL\_RES1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA1MUX\_RESSEL\_RES1\ <<\ 28)\ \ \ \ \ }}
+\DoxyCodeLine{00701\ \textcolor{preprocessor}{\#define\ DAC\_OPA1MUX\_RESSEL\_RES2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA1MUX\_RESSEL\_RES2\ <<\ 28)\ \ \ \ \ }}
+\DoxyCodeLine{00702\ \textcolor{preprocessor}{\#define\ DAC\_OPA1MUX\_RESSEL\_RES3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA1MUX\_RESSEL\_RES3\ <<\ 28)\ \ \ \ \ }}
+\DoxyCodeLine{00703\ \textcolor{preprocessor}{\#define\ DAC\_OPA1MUX\_RESSEL\_RES4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA1MUX\_RESSEL\_RES4\ <<\ 28)\ \ \ \ \ }}
+\DoxyCodeLine{00704\ \textcolor{preprocessor}{\#define\ DAC\_OPA1MUX\_RESSEL\_RES5\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA1MUX\_RESSEL\_RES5\ <<\ 28)\ \ \ \ \ }}
+\DoxyCodeLine{00705\ \textcolor{preprocessor}{\#define\ DAC\_OPA1MUX\_RESSEL\_RES6\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA1MUX\_RESSEL\_RES6\ <<\ 28)\ \ \ \ \ }}
+\DoxyCodeLine{00706\ \textcolor{preprocessor}{\#define\ DAC\_OPA1MUX\_RESSEL\_RES7\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA1MUX\_RESSEL\_RES7\ <<\ 28)\ \ \ \ \ }}
+\DoxyCodeLine{00708\ \textcolor{comment}{/*\ Bit\ fields\ for\ DAC\ OPA2MUX\ */}}
+\DoxyCodeLine{00709\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA2MUX\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00710\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA2MUX\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x7440F737UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00711\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA2MUX\_POSSEL\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00712\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA2MUX\_POSSEL\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x7UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00713\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA2MUX\_POSSEL\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00714\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA2MUX\_POSSEL\_DISABLE\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00715\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA2MUX\_POSSEL\_POSPAD\ \ \ \ \ \ \ \ \ \ \ \ 0x00000002UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00716\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA2MUX\_POSSEL\_OPA1INP\ \ \ \ \ \ \ \ \ \ \ 0x00000003UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00717\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA2MUX\_POSSEL\_OPATAP\ \ \ \ \ \ \ \ \ \ \ \ 0x00000004UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00718\ \textcolor{preprocessor}{\#define\ DAC\_OPA2MUX\_POSSEL\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA2MUX\_POSSEL\_DEFAULT\ <<\ 0)\ \ \ }}
+\DoxyCodeLine{00719\ \textcolor{preprocessor}{\#define\ DAC\_OPA2MUX\_POSSEL\_DISABLE\ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA2MUX\_POSSEL\_DISABLE\ <<\ 0)\ \ \ }}
+\DoxyCodeLine{00720\ \textcolor{preprocessor}{\#define\ DAC\_OPA2MUX\_POSSEL\_POSPAD\ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA2MUX\_POSSEL\_POSPAD\ <<\ 0)\ \ \ \ }}
+\DoxyCodeLine{00721\ \textcolor{preprocessor}{\#define\ DAC\_OPA2MUX\_POSSEL\_OPA1INP\ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA2MUX\_POSSEL\_OPA1INP\ <<\ 0)\ \ \ }}
+\DoxyCodeLine{00722\ \textcolor{preprocessor}{\#define\ DAC\_OPA2MUX\_POSSEL\_OPATAP\ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA2MUX\_POSSEL\_OPATAP\ <<\ 0)\ \ \ \ }}
+\DoxyCodeLine{00723\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA2MUX\_NEGSEL\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ 4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00724\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA2MUX\_NEGSEL\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x30UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00725\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA2MUX\_NEGSEL\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00726\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA2MUX\_NEGSEL\_DISABLE\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00727\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA2MUX\_NEGSEL\_UG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00728\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA2MUX\_NEGSEL\_OPATAP\ \ \ \ \ \ \ \ \ \ \ \ 0x00000002UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00729\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA2MUX\_NEGSEL\_NEGPAD\ \ \ \ \ \ \ \ \ \ \ \ 0x00000003UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00730\ \textcolor{preprocessor}{\#define\ DAC\_OPA2MUX\_NEGSEL\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA2MUX\_NEGSEL\_DEFAULT\ <<\ 4)\ \ \ }}
+\DoxyCodeLine{00731\ \textcolor{preprocessor}{\#define\ DAC\_OPA2MUX\_NEGSEL\_DISABLE\ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA2MUX\_NEGSEL\_DISABLE\ <<\ 4)\ \ \ }}
+\DoxyCodeLine{00732\ \textcolor{preprocessor}{\#define\ DAC\_OPA2MUX\_NEGSEL\_UG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA2MUX\_NEGSEL\_UG\ <<\ 4)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00733\ \textcolor{preprocessor}{\#define\ DAC\_OPA2MUX\_NEGSEL\_OPATAP\ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA2MUX\_NEGSEL\_OPATAP\ <<\ 4)\ \ \ \ }}
+\DoxyCodeLine{00734\ \textcolor{preprocessor}{\#define\ DAC\_OPA2MUX\_NEGSEL\_NEGPAD\ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA2MUX\_NEGSEL\_NEGPAD\ <<\ 4)\ \ \ \ }}
+\DoxyCodeLine{00735\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA2MUX\_RESINMUX\_SHIFT\ \ \ \ \ \ \ \ \ \ \ 8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00736\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA2MUX\_RESINMUX\_MASK\ \ \ \ \ \ \ \ \ \ \ \ 0x700UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00737\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA2MUX\_RESINMUX\_DEFAULT\ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00738\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA2MUX\_RESINMUX\_DISABLE\ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00739\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA2MUX\_RESINMUX\_OPA1INP\ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00740\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA2MUX\_RESINMUX\_NEGPAD\ \ \ \ \ \ \ \ \ \ 0x00000002UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00741\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA2MUX\_RESINMUX\_POSPAD\ \ \ \ \ \ \ \ \ \ 0x00000003UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00742\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA2MUX\_RESINMUX\_VSS\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000004UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00743\ \textcolor{preprocessor}{\#define\ DAC\_OPA2MUX\_RESINMUX\_DEFAULT\ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA2MUX\_RESINMUX\_DEFAULT\ <<\ 8)\ }}
+\DoxyCodeLine{00744\ \textcolor{preprocessor}{\#define\ DAC\_OPA2MUX\_RESINMUX\_DISABLE\ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA2MUX\_RESINMUX\_DISABLE\ <<\ 8)\ }}
+\DoxyCodeLine{00745\ \textcolor{preprocessor}{\#define\ DAC\_OPA2MUX\_RESINMUX\_OPA1INP\ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA2MUX\_RESINMUX\_OPA1INP\ <<\ 8)\ }}
+\DoxyCodeLine{00746\ \textcolor{preprocessor}{\#define\ DAC\_OPA2MUX\_RESINMUX\_NEGPAD\ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA2MUX\_RESINMUX\_NEGPAD\ <<\ 8)\ \ }}
+\DoxyCodeLine{00747\ \textcolor{preprocessor}{\#define\ DAC\_OPA2MUX\_RESINMUX\_POSPAD\ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA2MUX\_RESINMUX\_POSPAD\ <<\ 8)\ \ }}
+\DoxyCodeLine{00748\ \textcolor{preprocessor}{\#define\ DAC\_OPA2MUX\_RESINMUX\_VSS\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA2MUX\_RESINMUX\_VSS\ <<\ 8)\ \ \ \ \ }}
+\DoxyCodeLine{00749\ \textcolor{preprocessor}{\#define\ DAC\_OPA2MUX\_PPEN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 12)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00750\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA2MUX\_PPEN\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 12\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00751\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA2MUX\_PPEN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00752\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA2MUX\_PPEN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00753\ \textcolor{preprocessor}{\#define\ DAC\_OPA2MUX\_PPEN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA2MUX\_PPEN\_DEFAULT\ <<\ 12)\ \ \ \ }}
+\DoxyCodeLine{00754\ \textcolor{preprocessor}{\#define\ DAC\_OPA2MUX\_NPEN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 13)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00755\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA2MUX\_NPEN\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 13\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00756\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA2MUX\_NPEN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x2000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00757\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA2MUX\_NPEN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00758\ \textcolor{preprocessor}{\#define\ DAC\_OPA2MUX\_NPEN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA2MUX\_NPEN\_DEFAULT\ <<\ 13)\ \ \ \ }}
+\DoxyCodeLine{00759\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA2MUX\_OUTPEN\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ 14\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00760\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA2MUX\_OUTPEN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xC000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00761\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA2MUX\_OUTPEN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00762\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA2MUX\_OUTPEN\_OUT0\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00763\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA2MUX\_OUTPEN\_OUT1\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000002UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00764\ \textcolor{preprocessor}{\#define\ DAC\_OPA2MUX\_OUTPEN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA2MUX\_OUTPEN\_DEFAULT\ <<\ 14)\ \ }}
+\DoxyCodeLine{00765\ \textcolor{preprocessor}{\#define\ DAC\_OPA2MUX\_OUTPEN\_OUT0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA2MUX\_OUTPEN\_OUT0\ <<\ 14)\ \ \ \ \ }}
+\DoxyCodeLine{00766\ \textcolor{preprocessor}{\#define\ DAC\_OPA2MUX\_OUTPEN\_OUT1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA2MUX\_OUTPEN\_OUT1\ <<\ 14)\ \ \ \ \ }}
+\DoxyCodeLine{00767\ \textcolor{preprocessor}{\#define\ DAC\_OPA2MUX\_OUTMODE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 22)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00768\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA2MUX\_OUTMODE\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ 22\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00769\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA2MUX\_OUTMODE\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ 0x400000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00770\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA2MUX\_OUTMODE\_DEFAULT\ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00771\ \textcolor{preprocessor}{\#define\ DAC\_OPA2MUX\_OUTMODE\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA2MUX\_OUTMODE\_DEFAULT\ <<\ 22)\ }}
+\DoxyCodeLine{00772\ \textcolor{preprocessor}{\#define\ DAC\_OPA2MUX\_NEXTOUT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 26)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00773\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA2MUX\_NEXTOUT\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ 26\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00774\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA2MUX\_NEXTOUT\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ 0x4000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00775\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA2MUX\_NEXTOUT\_DEFAULT\ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00776\ \textcolor{preprocessor}{\#define\ DAC\_OPA2MUX\_NEXTOUT\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA2MUX\_NEXTOUT\_DEFAULT\ <<\ 26)\ }}
+\DoxyCodeLine{00777\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA2MUX\_RESSEL\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ 28\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00778\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA2MUX\_RESSEL\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x70000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00779\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA2MUX\_RESSEL\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00780\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA2MUX\_RESSEL\_RES0\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00781\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA2MUX\_RESSEL\_RES1\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00782\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA2MUX\_RESSEL\_RES2\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000002UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00783\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA2MUX\_RESSEL\_RES3\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000003UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00784\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA2MUX\_RESSEL\_RES4\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000004UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00785\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA2MUX\_RESSEL\_RES5\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000005UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00786\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA2MUX\_RESSEL\_RES6\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000006UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00787\ \textcolor{preprocessor}{\#define\ \_DAC\_OPA2MUX\_RESSEL\_RES7\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000007UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00788\ \textcolor{preprocessor}{\#define\ DAC\_OPA2MUX\_RESSEL\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA2MUX\_RESSEL\_DEFAULT\ <<\ 28)\ \ }}
+\DoxyCodeLine{00789\ \textcolor{preprocessor}{\#define\ DAC\_OPA2MUX\_RESSEL\_RES0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA2MUX\_RESSEL\_RES0\ <<\ 28)\ \ \ \ \ }}
+\DoxyCodeLine{00790\ \textcolor{preprocessor}{\#define\ DAC\_OPA2MUX\_RESSEL\_RES1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA2MUX\_RESSEL\_RES1\ <<\ 28)\ \ \ \ \ }}
+\DoxyCodeLine{00791\ \textcolor{preprocessor}{\#define\ DAC\_OPA2MUX\_RESSEL\_RES2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA2MUX\_RESSEL\_RES2\ <<\ 28)\ \ \ \ \ }}
+\DoxyCodeLine{00792\ \textcolor{preprocessor}{\#define\ DAC\_OPA2MUX\_RESSEL\_RES3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA2MUX\_RESSEL\_RES3\ <<\ 28)\ \ \ \ \ }}
+\DoxyCodeLine{00793\ \textcolor{preprocessor}{\#define\ DAC\_OPA2MUX\_RESSEL\_RES4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA2MUX\_RESSEL\_RES4\ <<\ 28)\ \ \ \ \ }}
+\DoxyCodeLine{00794\ \textcolor{preprocessor}{\#define\ DAC\_OPA2MUX\_RESSEL\_RES5\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA2MUX\_RESSEL\_RES5\ <<\ 28)\ \ \ \ \ }}
+\DoxyCodeLine{00795\ \textcolor{preprocessor}{\#define\ DAC\_OPA2MUX\_RESSEL\_RES6\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA2MUX\_RESSEL\_RES6\ <<\ 28)\ \ \ \ \ }}
+\DoxyCodeLine{00796\ \textcolor{preprocessor}{\#define\ DAC\_OPA2MUX\_RESSEL\_RES7\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_DAC\_OPA2MUX\_RESSEL\_RES7\ <<\ 28)\ \ \ \ \ }}
+
+\end{DoxyCode}

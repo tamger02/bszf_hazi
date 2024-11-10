@@ -1,0 +1,204 @@
+\doxysection{GPIOINT -\/ GPIO Interrupt}
+\hypertarget{group__gpioint}{}\label{group__gpioint}\index{GPIOINT -\/ GPIO Interrupt@{GPIOINT -\/ GPIO Interrupt}}
+
+
+GPIOINT General Purpose Input/\+Output Interrupt dispatcher.  
+
+
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{group__gpioint_ga36604baa483abf7333db8be6ebda6d0a}\label{group__gpioint_ga36604baa483abf7333db8be6ebda6d0a} 
+\#define {\bfseries INTERRUPT\+\_\+\+UNAVAILABLE}~(0x\+FF)
+\begin{DoxyCompactList}\small\item\em A MACRO for Interrupt Un-\/available. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__gpioint_ga6293171ef21400e53df1dc1a5fe47612}{GPIOINT\+\_\+\+Irq\+Callback\+Ptr\+\_\+t}}) (uint8\+\_\+t int\+No)
+\begin{DoxyCompactList}\small\item\em GPIO interrupt callback function pointer. \end{DoxyCompactList}\item 
+typedef void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__gpioint_ga55f5c9053c20dd1a99d38f559db96666}{GPIOINT\+\_\+\+Irq\+Callback\+Ptr\+Ext\+\_\+t}}) (uint8\+\_\+t int\+No, void \texorpdfstring{$\ast$}{*}ctx)
+\begin{DoxyCompactList}\small\item\em Extended GPIO interrupt callback function pointer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{group__gpioint_gac93e5702d7693ab3efbbccd9782b22e0}\label{group__gpioint_gac93e5702d7693ab3efbbccd9782b22e0} 
+void {\bfseries GPIOINT\+\_\+\+Init} (void)
+\begin{DoxyCompactList}\small\item\em Initialization of GPIOINT module. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__gpioint_gab84256df4197d4115fade5fc26a37258}{GPIOINT\+\_\+\+Callback\+Register}} (uint8\+\_\+t int\+No, \mbox{\hyperlink{group__gpioint_ga6293171ef21400e53df1dc1a5fe47612}{GPIOINT\+\_\+\+Irq\+Callback\+Ptr\+\_\+t}} callback\+Ptr)
+\begin{DoxyCompactList}\small\item\em Registers user callback for given pin interrupt number. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{group__gpioint_ga3681eeca09700438e23f477689905c5f}{GPIOINT\+\_\+\+Callback\+Register\+Ext}} (uint8\+\_\+t pin, \mbox{\hyperlink{group__gpioint_ga55f5c9053c20dd1a99d38f559db96666}{GPIOINT\+\_\+\+Irq\+Callback\+Ptr\+Ext\+\_\+t}} callback\+Ptr, void \texorpdfstring{$\ast$}{*}callback\+Ctx)
+\begin{DoxyCompactList}\small\item\em Registers user callback for given pin interrupt number. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group__gpioint_ga0c9b18a9be41c7f35a51d2f1efc4f456}{GPIOINT\+\_\+\+Callback\+Un\+Register}} (uint8\+\_\+t int\+No)
+\begin{DoxyCompactList}\small\item\em Unregister user callback for a given pin interrupt number. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+GPIOINT General Purpose Input/\+Output Interrupt dispatcher. 
+
+The source files for the GPIO interrupt dispatcher library resides in the emdrv/gpiointerrupt folder, and are named \doxylink{gpiointerrupt_8c}{gpiointerrupt.\+c} and \doxylink{gpiointerrupt_8h}{gpiointerrupt.\+h}.
+
+~\newline
+ \hypertarget{group__gpioint_gpioint_intro}{}\doxysubsection{\texorpdfstring{Introduction}{Introduction}}\label{group__gpioint_gpioint_intro}
+EFM32/\+EZR32/\+EFR32 has two GPIO interrupts lines, Odd and Even. If more than two interrupts are used then interrupt routine must dispatch from a callback register. This module provides small dispatcher for both GPIO interrupts enabling handling of up to 32 GPIO pin interrupts.
+
+It is up to the user to configure and enable interrupt on given pin. This can be done using the GPIO library (emlib). This module handles the dispatch register and clearing of interrupt flags.
+
+In order to use this dispatcher, it has to be initialized first by calling \doxylink{group__gpioint_gac93e5702d7693ab3efbbccd9782b22e0}{GPIOINT\+\_\+\+Init()}. Then each pin interrupt number must be configured by first registering the callback function for given interrupt number and then configure and enabling the interrupt number in the GPIO module.
+
+The extended function \doxylink{group__gpioint_ga3681eeca09700438e23f477689905c5f}{GPIOINT\+\_\+\+Callback\+Register\+Ext()} may also be used to register a callback with context for a given pin number. The first available interrupt number will be returned.
+
+~\newline
+ \hypertarget{group__gpioint_gpioint_api}{}\doxysubsection{\texorpdfstring{The API}{The API}}\label{group__gpioint_gpioint_api}
+This section contain brief descriptions of the functions in the API. You will find detailed information on parameters by clicking on the hyperlinked function names.
+
+Your application code must include one header file\+: {\itshape \doxylink{gpiointerrupt_8h}{gpiointerrupt.\+h}}.
+
+\doxylink{group__gpioint_gac93e5702d7693ab3efbbccd9782b22e0}{GPIOINT\+\_\+\+Init()} ~\newline
+ This functions initializes the dispatcher register. Typically \doxylink{group__gpioint_gac93e5702d7693ab3efbbccd9782b22e0}{GPIOINT\+\_\+\+Init()} is called once in your startup code.
+
+\doxylink{group__gpioint_gab84256df4197d4115fade5fc26a37258}{GPIOINT\+\_\+\+Callback\+Register()} ~\newline
+ Register a callback function on a pin interrupt number.
+
+\doxylink{group__gpioint_ga0c9b18a9be41c7f35a51d2f1efc4f456}{GPIOINT\+\_\+\+Callback\+Un\+Register()} ~\newline
+ Un-\/register a callback function on a pin interrupt number.
+
+\doxylink{group__gpioint_ga3681eeca09700438e23f477689905c5f}{GPIOINT\+\_\+\+Callback\+Register\+Ext()} ~\newline
+ Register a callback function with context on a pin number.
+
+~\newline
+ \hypertarget{group__gpioint_gpioint_example}{}\doxysubsection{\texorpdfstring{Example}{Example}}\label{group__gpioint_gpioint_example}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{gpiointerrupt_8h}{gpiointerrupt.h}}"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{em__chip_8h}{em\_chip.h}}"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{em__cmu_8h}{em\_cmu.h}}"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{em__gpio_8h}{em\_gpio.h}}"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ An\ array\ to\ track\ if\ given\ pin\ callback\ was\ called}}
+\DoxyCodeLine{\textcolor{keyword}{volatile}\ uint8\_t\ pinInt[32];}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Gpio\ callbacks\ called\ when\ pin\ interrupt\ was\ triggered.}}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ gpioCallback1(uint8\_t\ intNo)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ pinInt[intNo]++;}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ gpioCallback3(uint8\_t\ intNo)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ pinInt[intNo]++;}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ gpioCallback8(uint8\_t\ intNo)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ pinInt[intNo]++;}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ main(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{group__chip_ga6491ac6b7e786d253753c334615bce61}{CHIP\_Init}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{comment}{//\ Enable\ clock\ for\ GPIO\ module,\ initialize\ GPIOINT}}
+\DoxyCodeLine{\ \ CMU\_ClockEnable(cmuClock\_GPIO,\ \textcolor{keyword}{true});}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{group__gpioint_gac93e5702d7693ab3efbbccd9782b22e0}{GPIOINT\_Init}}();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{comment}{//\ Register\ callback\ functions\ and\ enable\ interrupts}}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{group__gpioint_gab84256df4197d4115fade5fc26a37258}{GPIOINT\_CallbackRegister}}(1,\ gpioCallback1);}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{group__gpioint_gab84256df4197d4115fade5fc26a37258}{GPIOINT\_CallbackRegister}}(3,\ gpioCallback3);}
+\DoxyCodeLine{\ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ intPin8\ =\ \mbox{\hyperlink{group__gpioint_ga3681eeca09700438e23f477689905c5f}{GPIOINT\_CallbackRegisterExt}}(8,\ gpioCallback8,\ (\textcolor{keywordtype}{void}\ *)callback8context);}
+\DoxyCodeLine{\ \ GPIO\_IntEnable(1<<1\ |\ 1<<3\ |\ 1<<intPin8);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{while}(\textcolor{keyword}{true});}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{group__gpioint_ga6293171ef21400e53df1dc1a5fe47612}\index{GPIOINT -\/ GPIO Interrupt@{GPIOINT -\/ GPIO Interrupt}!GPIOINT\_IrqCallbackPtr\_t@{GPIOINT\_IrqCallbackPtr\_t}}
+\index{GPIOINT\_IrqCallbackPtr\_t@{GPIOINT\_IrqCallbackPtr\_t}!GPIOINT -\/ GPIO Interrupt@{GPIOINT -\/ GPIO Interrupt}}
+\doxysubsubsection{\texorpdfstring{GPIOINT\_IrqCallbackPtr\_t}{GPIOINT\_IrqCallbackPtr\_t}}
+{\footnotesize\ttfamily \label{group__gpioint_ga6293171ef21400e53df1dc1a5fe47612} 
+typedef void(\texorpdfstring{$\ast$}{*} GPIOINT\+\_\+\+Irq\+Callback\+Ptr\+\_\+t) (uint8\+\_\+t int\+No)}
+
+
+
+GPIO interrupt callback function pointer. 
+
+Parameters\+: \begin{DoxyItemize}
+\item int\+No -\/ The pin interrupt number the callback function is invoked for. \end{DoxyItemize}
+\Hypertarget{group__gpioint_ga55f5c9053c20dd1a99d38f559db96666}\index{GPIOINT -\/ GPIO Interrupt@{GPIOINT -\/ GPIO Interrupt}!GPIOINT\_IrqCallbackPtrExt\_t@{GPIOINT\_IrqCallbackPtrExt\_t}}
+\index{GPIOINT\_IrqCallbackPtrExt\_t@{GPIOINT\_IrqCallbackPtrExt\_t}!GPIOINT -\/ GPIO Interrupt@{GPIOINT -\/ GPIO Interrupt}}
+\doxysubsubsection{\texorpdfstring{GPIOINT\_IrqCallbackPtrExt\_t}{GPIOINT\_IrqCallbackPtrExt\_t}}
+{\footnotesize\ttfamily \label{group__gpioint_ga55f5c9053c20dd1a99d38f559db96666} 
+typedef void(\texorpdfstring{$\ast$}{*} GPIOINT\+\_\+\+Irq\+Callback\+Ptr\+Ext\+\_\+t) (uint8\+\_\+t int\+No, void \texorpdfstring{$\ast$}{*}ctx)}
+
+
+
+Extended GPIO interrupt callback function pointer. 
+
+Parameters\+: \begin{DoxyItemize}
+\item int\+No -\/ The pin interrupt number the callback function is invoked for. \item ctx -\/ Pointer to callback context. \end{DoxyItemize}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{group__gpioint_gab84256df4197d4115fade5fc26a37258}\index{GPIOINT -\/ GPIO Interrupt@{GPIOINT -\/ GPIO Interrupt}!GPIOINT\_CallbackRegister@{GPIOINT\_CallbackRegister}}
+\index{GPIOINT\_CallbackRegister@{GPIOINT\_CallbackRegister}!GPIOINT -\/ GPIO Interrupt@{GPIOINT -\/ GPIO Interrupt}}
+\doxysubsubsection{\texorpdfstring{GPIOINT\_CallbackRegister()}{GPIOINT\_CallbackRegister()}}
+{\footnotesize\ttfamily \label{group__gpioint_gab84256df4197d4115fade5fc26a37258} 
+void GPIOINT\+\_\+\+Callback\+Register (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{int\+No}{, }\item[{\mbox{\hyperlink{group__gpioint_ga6293171ef21400e53df1dc1a5fe47612}{GPIOINT\+\_\+\+Irq\+Callback\+Ptr\+\_\+t}}}]{callback\+Ptr}{}\end{DoxyParamCaption})}
+
+
+
+Registers user callback for given pin interrupt number. 
+
+Use this function to register a callback which shall be called upon interrupt generated for a given pin interrupt number. Interrupt itself must be configured externally. Function overwrites previously registered callback.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em int\+No} & Pin interrupt number for the callback. \\
+\hline
+\mbox{\texttt{ in}}  & {\em callback\+Ptr} & A pointer to callback function. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group__gpioint_ga3681eeca09700438e23f477689905c5f}\index{GPIOINT -\/ GPIO Interrupt@{GPIOINT -\/ GPIO Interrupt}!GPIOINT\_CallbackRegisterExt@{GPIOINT\_CallbackRegisterExt}}
+\index{GPIOINT\_CallbackRegisterExt@{GPIOINT\_CallbackRegisterExt}!GPIOINT -\/ GPIO Interrupt@{GPIOINT -\/ GPIO Interrupt}}
+\doxysubsubsection{\texorpdfstring{GPIOINT\_CallbackRegisterExt()}{GPIOINT\_CallbackRegisterExt()}}
+{\footnotesize\ttfamily \label{group__gpioint_ga3681eeca09700438e23f477689905c5f} 
+unsigned int GPIOINT\+\_\+\+Callback\+Register\+Ext (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{pin}{, }\item[{\mbox{\hyperlink{group__gpioint_ga55f5c9053c20dd1a99d38f559db96666}{GPIOINT\+\_\+\+Irq\+Callback\+Ptr\+Ext\+\_\+t}}}]{callback\+Ptr}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{callback\+Ctx}{}\end{DoxyParamCaption})}
+
+
+
+Registers user callback for given pin interrupt number. 
+
+Use this function to register a callback with context which shall be called upon interrupt generated for a given pin number. The function will return an interrupt number if one is available. Interrupt itself must be configured externally.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em pin} & Pin number for the callback. \\
+\hline
+\mbox{\texttt{ in}}  & {\em callback\+Ptr} & A pointer to callback function. \\
+\hline
+\mbox{\texttt{ in}}  & {\em callback\+Ctx} & A pointer to the callback context.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Interrupt number, or INTERRUPT\+\_\+\+UNAVAILABLE if all are in use 
+\end{DoxyReturn}
+\Hypertarget{group__gpioint_ga0c9b18a9be41c7f35a51d2f1efc4f456}\index{GPIOINT -\/ GPIO Interrupt@{GPIOINT -\/ GPIO Interrupt}!GPIOINT\_CallbackUnRegister@{GPIOINT\_CallbackUnRegister}}
+\index{GPIOINT\_CallbackUnRegister@{GPIOINT\_CallbackUnRegister}!GPIOINT -\/ GPIO Interrupt@{GPIOINT -\/ GPIO Interrupt}}
+\doxysubsubsection{\texorpdfstring{GPIOINT\_CallbackUnRegister()}{GPIOINT\_CallbackUnRegister()}}
+{\footnotesize\ttfamily \label{group__gpioint_ga0c9b18a9be41c7f35a51d2f1efc4f456} 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void GPIOINT\+\_\+\+Callback\+Un\+Register (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{int\+No}{}\end{DoxyParamCaption})}
+
+
+
+Unregister user callback for a given pin interrupt number. 
+
+Use this function to unregister a callback.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em int\+No} & Pin interrupt number for the callback. \\
+\hline
+\end{DoxyParams}

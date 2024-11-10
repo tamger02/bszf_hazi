@@ -1,0 +1,220 @@
+\doxysection{gecko\+\_\+sdk\+\_\+4.4.4/platform/service/sleeptimer/src/sl\+\_\+sleeptimer.c File Reference}
+\hypertarget{sl__sleeptimer_8c}{}\label{sl__sleeptimer_8c}\index{gecko\_sdk\_4.4.4/platform/service/sleeptimer/src/sl\_sleeptimer.c@{gecko\_sdk\_4.4.4/platform/service/sleeptimer/src/sl\_sleeptimer.c}}
+
+
+SLEEPTIMER API implementation.  
+
+
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include "{}em\+\_\+device.\+h"{}}\newline
+{\ttfamily \#include "{}em\+\_\+core\+\_\+generic.\+h"{}}\newline
+{\ttfamily \#include "{}sl\+\_\+sleeptimer.\+h"{}}\newline
+{\ttfamily \#include "{}sli\+\_\+sleeptimer\+\_\+hal.\+h"{}}\newline
+{\ttfamily \#include "{}sl\+\_\+atomic.\+h"{}}\newline
+{\ttfamily \#include "{}sl\+\_\+sleeptimer\+\_\+config.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{sl__sleeptimer_8c_a52cd1ba9167691e60c592b812b3c52d9}\label{sl__sleeptimer_8c_a52cd1ba9167691e60c592b812b3c52d9} 
+\#define {\bfseries TIME\+\_\+\+UNIX\+\_\+\+EPOCH}~(1970u)
+\item 
+\Hypertarget{sl__sleeptimer_8c_a781eaab86824685d2ec534ff007687b7}\label{sl__sleeptimer_8c_a781eaab86824685d2ec534ff007687b7} 
+\#define {\bfseries TIME\+\_\+\+NTP\+\_\+\+EPOCH}~(1900u)
+\item 
+\Hypertarget{sl__sleeptimer_8c_a0cf57ba6b5451165cbc879d9f6d651f5}\label{sl__sleeptimer_8c_a0cf57ba6b5451165cbc879d9f6d651f5} 
+\#define {\bfseries TIME\+\_\+\+ZIGBEE\+\_\+\+EPOCH}~(2000u)
+\item 
+\Hypertarget{sl__sleeptimer_8c_a5c3fd407245d1114e969619f49a7b616}\label{sl__sleeptimer_8c_a5c3fd407245d1114e969619f49a7b616} 
+\#define {\bfseries TIME\+\_\+64\+\_\+\+EPOCH}~TIME\+\_\+\+NTP\+\_\+\+EPOCH
+\item 
+\Hypertarget{sl__sleeptimer_8c_a180b00d12ec6edb089e3b15367b994ef}\label{sl__sleeptimer_8c_a180b00d12ec6edb089e3b15367b994ef} 
+\#define {\bfseries TIME\+\_\+\+NTP\+\_\+\+UNIX\+\_\+\+EPOCH\+\_\+\+DIFF}~(TIME\+\_\+\+UNIX\+\_\+\+EPOCH -\/ TIME\+\_\+\+NTP\+\_\+\+EPOCH)
+\item 
+\Hypertarget{sl__sleeptimer_8c_a9d0868ba672a5767caeb807b2e4e8ff7}\label{sl__sleeptimer_8c_a9d0868ba672a5767caeb807b2e4e8ff7} 
+\#define {\bfseries TIME\+\_\+\+ZIGBEE\+\_\+\+UNIX\+\_\+\+EPOCH\+\_\+\+DIFF}~(TIME\+\_\+\+ZIGBEE\+\_\+\+EPOCH -\/ TIME\+\_\+\+UNIX\+\_\+\+EPOCH)
+\item 
+\Hypertarget{sl__sleeptimer_8c_af11204d28b4de0a88dad86a306896c6e}\label{sl__sleeptimer_8c_af11204d28b4de0a88dad86a306896c6e} 
+\#define {\bfseries TIME\+\_\+\+DAY\+\_\+\+COUNT\+\_\+\+NTP\+\_\+\+TO\+\_\+\+UNIX\+\_\+\+EPOCH}~(TIME\+\_\+\+NTP\+\_\+\+UNIX\+\_\+\+EPOCH\+\_\+\+DIFF \texorpdfstring{$\ast$}{*} 365u + 17u)
+\begin{DoxyCompactList}\small\item\em 70 years and 17 leap days \end{DoxyCompactList}\item 
+\Hypertarget{sl__sleeptimer_8c_ada3aae42d6584eab98190dfe841f2d9a}\label{sl__sleeptimer_8c_ada3aae42d6584eab98190dfe841f2d9a} 
+\#define {\bfseries TIME\+\_\+\+DAY\+\_\+\+COUNT\+\_\+\+ZIGBEE\+\_\+\+TO\+\_\+\+UNIX\+\_\+\+EPOCH}~(TIME\+\_\+\+ZIGBEE\+\_\+\+UNIX\+\_\+\+EPOCH\+\_\+\+DIFF \texorpdfstring{$\ast$}{*} 365u + 7u)
+\begin{DoxyCompactList}\small\item\em 30 years and 7 leap days \end{DoxyCompactList}\item 
+\Hypertarget{sl__sleeptimer_8c_a79aee5b8e3b57e2984e633855120ea0c}\label{sl__sleeptimer_8c_a79aee5b8e3b57e2984e633855120ea0c} 
+\#define {\bfseries TIME\+\_\+\+SEC\+\_\+\+PER\+\_\+\+DAY}~(60u \texorpdfstring{$\ast$}{*} 60u \texorpdfstring{$\ast$}{*} 24u)
+\item 
+\Hypertarget{sl__sleeptimer_8c_a759a1e3e0ccddd43ee43974b5d5c52e9}\label{sl__sleeptimer_8c_a759a1e3e0ccddd43ee43974b5d5c52e9} 
+\#define {\bfseries TIME\+\_\+\+NTP\+\_\+\+EPOCH\+\_\+\+OFFSET\+\_\+\+SEC}~(\mbox{\hyperlink{sl__sleeptimer_8c_af11204d28b4de0a88dad86a306896c6e}{TIME\+\_\+\+DAY\+\_\+\+COUNT\+\_\+\+NTP\+\_\+\+TO\+\_\+\+UNIX\+\_\+\+EPOCH}} \texorpdfstring{$\ast$}{*} TIME\+\_\+\+SEC\+\_\+\+PER\+\_\+\+DAY)
+\item 
+\Hypertarget{sl__sleeptimer_8c_a1fa3164334084736ae6e38f75412eea8}\label{sl__sleeptimer_8c_a1fa3164334084736ae6e38f75412eea8} 
+\#define {\bfseries TIME\+\_\+\+ZIGBEE\+\_\+\+EPOCH\+\_\+\+OFFSET\+\_\+\+SEC}~(\mbox{\hyperlink{sl__sleeptimer_8c_ada3aae42d6584eab98190dfe841f2d9a}{TIME\+\_\+\+DAY\+\_\+\+COUNT\+\_\+\+ZIGBEE\+\_\+\+TO\+\_\+\+UNIX\+\_\+\+EPOCH}} \texorpdfstring{$\ast$}{*} TIME\+\_\+\+SEC\+\_\+\+PER\+\_\+\+DAY)
+\item 
+\Hypertarget{sl__sleeptimer_8c_a3549082e7cd5eb54b73dd11206494438}\label{sl__sleeptimer_8c_a3549082e7cd5eb54b73dd11206494438} 
+\#define {\bfseries TIME\+\_\+\+DAY\+\_\+\+PER\+\_\+\+YEAR}~(365u)
+\item 
+\Hypertarget{sl__sleeptimer_8c_a41ee683563d7ab8371e4851de525007b}\label{sl__sleeptimer_8c_a41ee683563d7ab8371e4851de525007b} 
+\#define {\bfseries TIME\+\_\+\+SEC\+\_\+\+PER\+\_\+\+YEAR}~(TIME\+\_\+\+SEC\+\_\+\+PER\+\_\+\+DAY \texorpdfstring{$\ast$}{*} TIME\+\_\+\+DAY\+\_\+\+PER\+\_\+\+YEAR)
+\item 
+\Hypertarget{sl__sleeptimer_8c_a5167d154f67487f00a2b54556c9d6c2b}\label{sl__sleeptimer_8c_a5167d154f67487f00a2b54556c9d6c2b} 
+\#define {\bfseries TIME\+\_\+\+UNIX\+\_\+\+TIMESTAMP\+\_\+\+MAX}~(0x7\+FFFFFFF)
+\item 
+\Hypertarget{sl__sleeptimer_8c_ac810b195c55cb560fa189a734b23152d}\label{sl__sleeptimer_8c_ac810b195c55cb560fa189a734b23152d} 
+\#define {\bfseries TIME\+\_\+64\+\_\+\+BIT\+\_\+\+UNIX\+\_\+\+TIMESTAMP\+\_\+\+MAX}~(0x497968\+BD7F)
+\item 
+\Hypertarget{sl__sleeptimer_8c_a46a5d474894ce3517720b21df1acc9d0}\label{sl__sleeptimer_8c_a46a5d474894ce3517720b21df1acc9d0} 
+\#define {\bfseries TIME\+\_\+\+UNIX\+\_\+\+YEAR\+\_\+\+MAX}~(2038u -\/ TIME\+\_\+\+NTP\+\_\+\+EPOCH)
+\begin{DoxyCompactList}\small\item\em Max UNIX year based from a 1900 epoch. \end{DoxyCompactList}\item 
+\Hypertarget{sl__sleeptimer_8c_a6d2b0a474f1f74fc5a9803759eb649e9}\label{sl__sleeptimer_8c_a6d2b0a474f1f74fc5a9803759eb649e9} 
+\#define {\bfseries TIME\+\_\+64\+\_\+\+BIT\+\_\+\+YEAR\+\_\+\+MAX}~(11899u -\/ TIME\+\_\+\+NTP\+\_\+\+EPOCH)
+\begin{DoxyCompactList}\small\item\em Max 64 bit format year based from a 1900 epoch. \end{DoxyCompactList}\item 
+\Hypertarget{sl__sleeptimer_8c_a6d6a6fc761c9767424d6e67a214024ae}\label{sl__sleeptimer_8c_a6d6a6fc761c9767424d6e67a214024ae} 
+\#define {\bfseries TIME\+\_\+64\+\_\+\+TO\+\_\+32\+\_\+\+EPOCH\+\_\+\+OFFSET\+\_\+\+SEC}~TIME\+\_\+\+NTP\+\_\+\+EPOCH\+\_\+\+OFFSET\+\_\+\+SEC
+\item 
+\Hypertarget{sl__sleeptimer_8c_ac332cff68de0893a81f6f791e3737764}\label{sl__sleeptimer_8c_ac332cff68de0893a81f6f791e3737764} 
+\#define {\bfseries TIME\+\_\+\+UNIX\+\_\+\+TO\+\_\+\+NTP\+\_\+\+MAX}~(0x\+FFFFFFFF -\/ TIME\+\_\+\+NTP\+\_\+\+EPOCH\+\_\+\+OFFSET\+\_\+\+SEC)
+\item 
+\Hypertarget{sl__sleeptimer_8c_adcc29b2cbc776d459db9b81cca2a4794}\label{sl__sleeptimer_8c_adcc29b2cbc776d459db9b81cca2a4794} 
+\#define {\bfseries MIN\+\_\+\+DIFF\+\_\+\+BETWEEN\+\_\+\+COUNT\+\_\+\+AND\+\_\+\+EXPIRATION}~2
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{sl__sleeptimer_8c_aa8ff77341f2164e6727696f19f30bd98}\label{sl__sleeptimer_8c_aa8ff77341f2164e6727696f19f30bd98} 
+typedef uint32\+\_\+t {\bfseries sl\+\_\+sleeptimer\+\_\+tick\+\_\+count\+\_\+t}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{sl__sleeptimer_8c_a6781b49d2c19d091de46dc57a48f0ce1}{SLEEPTIMER\+\_\+\+ENUM}} (sl\+\_\+sleeptimer\+\_\+time\+\_\+format\+\_\+t)
+\begin{DoxyCompactList}\small\item\em Time Format. \end{DoxyCompactList}\item 
+\Hypertarget{sl__sleeptimer_8c_a6d04ae0971d90786d8c59a699652b212}\label{sl__sleeptimer_8c_a6d04ae0971d90786d8c59a699652b212} 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t {\bfseries div\+\_\+to\+\_\+log2} (uint32\+\_\+t div)
+\item 
+\Hypertarget{sl__sleeptimer_8c_ad2cb5f7b86ff9c08d870ca29b3e4d4d0}\label{sl__sleeptimer_8c_ad2cb5f7b86ff9c08d870ca29b3e4d4d0} 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE bool {\bfseries is\+\_\+power\+\_\+of\+\_\+2} (uint32\+\_\+t nbr)
+\item 
+sl\+\_\+status\+\_\+t \mbox{\hyperlink{group__sleeptimer_gae661a78719a6acc014efa15216ae4a54}{sl\+\_\+sleeptimer\+\_\+init}} (void)
+\item 
+sl\+\_\+status\+\_\+t \mbox{\hyperlink{group__sleeptimer_ga43c32bdb2a9fcfbe279563a9fd689711}{sl\+\_\+sleeptimer\+\_\+start\+\_\+timer}} (\mbox{\hyperlink{structsl__sleeptimer__timer__handle}{sl\+\_\+sleeptimer\+\_\+timer\+\_\+handle\+\_\+t}} \texorpdfstring{$\ast$}{*}handle, uint32\+\_\+t timeout, \mbox{\hyperlink{group__sleeptimer_ga9049589e4153204fb3e97cbe1ecda89b}{sl\+\_\+sleeptimer\+\_\+timer\+\_\+callback\+\_\+t}} callback, void \texorpdfstring{$\ast$}{*}callback\+\_\+data, uint8\+\_\+t priority, uint16\+\_\+t option\+\_\+flags)
+\item 
+sl\+\_\+status\+\_\+t \mbox{\hyperlink{group__sleeptimer_gaacd5a666731a0ba4823107e552e23e69}{sl\+\_\+sleeptimer\+\_\+restart\+\_\+timer}} (\mbox{\hyperlink{structsl__sleeptimer__timer__handle}{sl\+\_\+sleeptimer\+\_\+timer\+\_\+handle\+\_\+t}} \texorpdfstring{$\ast$}{*}handle, uint32\+\_\+t timeout, \mbox{\hyperlink{group__sleeptimer_ga9049589e4153204fb3e97cbe1ecda89b}{sl\+\_\+sleeptimer\+\_\+timer\+\_\+callback\+\_\+t}} callback, void \texorpdfstring{$\ast$}{*}callback\+\_\+data, uint8\+\_\+t priority, uint16\+\_\+t option\+\_\+flags)
+\item 
+sl\+\_\+status\+\_\+t \mbox{\hyperlink{group__sleeptimer_ga2ceb1b76334902525dd32e937e90bb16}{sl\+\_\+sleeptimer\+\_\+start\+\_\+periodic\+\_\+timer}} (\mbox{\hyperlink{structsl__sleeptimer__timer__handle}{sl\+\_\+sleeptimer\+\_\+timer\+\_\+handle\+\_\+t}} \texorpdfstring{$\ast$}{*}handle, uint32\+\_\+t timeout, \mbox{\hyperlink{group__sleeptimer_ga9049589e4153204fb3e97cbe1ecda89b}{sl\+\_\+sleeptimer\+\_\+timer\+\_\+callback\+\_\+t}} callback, void \texorpdfstring{$\ast$}{*}callback\+\_\+data, uint8\+\_\+t priority, uint16\+\_\+t option\+\_\+flags)
+\item 
+sl\+\_\+status\+\_\+t \mbox{\hyperlink{group__sleeptimer_gae4639653b4bf4ed68049b2a12a6c6d83}{sl\+\_\+sleeptimer\+\_\+start\+\_\+periodic\+\_\+timer\+\_\+ms}} (\mbox{\hyperlink{structsl__sleeptimer__timer__handle}{sl\+\_\+sleeptimer\+\_\+timer\+\_\+handle\+\_\+t}} \texorpdfstring{$\ast$}{*}handle, uint32\+\_\+t timeout\+\_\+ms, \mbox{\hyperlink{group__sleeptimer_ga9049589e4153204fb3e97cbe1ecda89b}{sl\+\_\+sleeptimer\+\_\+timer\+\_\+callback\+\_\+t}} callback, void \texorpdfstring{$\ast$}{*}callback\+\_\+data, uint8\+\_\+t priority, uint16\+\_\+t option\+\_\+flags)
+\item 
+sl\+\_\+status\+\_\+t \mbox{\hyperlink{group__sleeptimer_gaf54408a7f172b684de33d9a7f4e01be9}{sl\+\_\+sleeptimer\+\_\+restart\+\_\+periodic\+\_\+timer}} (\mbox{\hyperlink{structsl__sleeptimer__timer__handle}{sl\+\_\+sleeptimer\+\_\+timer\+\_\+handle\+\_\+t}} \texorpdfstring{$\ast$}{*}handle, uint32\+\_\+t timeout, \mbox{\hyperlink{group__sleeptimer_ga9049589e4153204fb3e97cbe1ecda89b}{sl\+\_\+sleeptimer\+\_\+timer\+\_\+callback\+\_\+t}} callback, void \texorpdfstring{$\ast$}{*}callback\+\_\+data, uint8\+\_\+t priority, uint16\+\_\+t option\+\_\+flags)
+\item 
+sl\+\_\+status\+\_\+t \mbox{\hyperlink{group__sleeptimer_ga1a44174e7a8eccbabde499875cb8462a}{sl\+\_\+sleeptimer\+\_\+restart\+\_\+periodic\+\_\+timer\+\_\+ms}} (\mbox{\hyperlink{structsl__sleeptimer__timer__handle}{sl\+\_\+sleeptimer\+\_\+timer\+\_\+handle\+\_\+t}} \texorpdfstring{$\ast$}{*}handle, uint32\+\_\+t timeout\+\_\+ms, \mbox{\hyperlink{group__sleeptimer_ga9049589e4153204fb3e97cbe1ecda89b}{sl\+\_\+sleeptimer\+\_\+timer\+\_\+callback\+\_\+t}} callback, void \texorpdfstring{$\ast$}{*}callback\+\_\+data, uint8\+\_\+t priority, uint16\+\_\+t option\+\_\+flags)
+\item 
+sl\+\_\+status\+\_\+t \mbox{\hyperlink{group__sleeptimer_ga1f4f25aa754cd35214dba9762450b0ca}{sl\+\_\+sleeptimer\+\_\+stop\+\_\+timer}} (\mbox{\hyperlink{structsl__sleeptimer__timer__handle}{sl\+\_\+sleeptimer\+\_\+timer\+\_\+handle\+\_\+t}} \texorpdfstring{$\ast$}{*}handle)
+\item 
+sl\+\_\+status\+\_\+t \mbox{\hyperlink{group__sleeptimer_gac0236c1c353317c41d577867e7429874}{sl\+\_\+sleeptimer\+\_\+is\+\_\+timer\+\_\+running}} (\mbox{\hyperlink{structsl__sleeptimer__timer__handle}{sl\+\_\+sleeptimer\+\_\+timer\+\_\+handle\+\_\+t}} \texorpdfstring{$\ast$}{*}handle, bool \texorpdfstring{$\ast$}{*}running)
+\item 
+sl\+\_\+status\+\_\+t \mbox{\hyperlink{group__sleeptimer_ga6a06acb331e2e3c0efeb83f42a4d9c16}{sl\+\_\+sleeptimer\+\_\+get\+\_\+timer\+\_\+time\+\_\+remaining}} (\mbox{\hyperlink{structsl__sleeptimer__timer__handle}{sl\+\_\+sleeptimer\+\_\+timer\+\_\+handle\+\_\+t}} \texorpdfstring{$\ast$}{*}handle, uint32\+\_\+t \texorpdfstring{$\ast$}{*}time)
+\item 
+sl\+\_\+status\+\_\+t \mbox{\hyperlink{group__sleeptimer_gaf96ccea3e4d1727dc2fd2fa98f94ccb1}{sl\+\_\+sleeptimer\+\_\+get\+\_\+remaining\+\_\+time\+\_\+of\+\_\+first\+\_\+timer}} (uint16\+\_\+t option\+\_\+flags, uint32\+\_\+t \texorpdfstring{$\ast$}{*}time\+\_\+remaining)
+\item 
+bool \mbox{\hyperlink{sl__sleeptimer_8c_a8a4c3071d63b9a731a9080949d29b60f}{sli\+\_\+sleeptimer\+\_\+is\+\_\+power\+\_\+manager\+\_\+timer\+\_\+next\+\_\+to\+\_\+expire}} (void)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{group__sleeptimer_gae0397d420800b7c2d2afd5bbb9710067}{sl\+\_\+sleeptimer\+\_\+get\+\_\+tick\+\_\+count}} (void)
+\item 
+uint64\+\_\+t \mbox{\hyperlink{group__sleeptimer_gaaf928eeb3dad0d43098b3aed9049959a}{sl\+\_\+sleeptimer\+\_\+get\+\_\+tick\+\_\+count64}} (void)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{group__sleeptimer_ga69085e47b9cc43ac0cfdc08783c13aed}{sl\+\_\+sleeptimer\+\_\+get\+\_\+timer\+\_\+frequency}} (void)
+\item 
+void \mbox{\hyperlink{group__sleeptimer_ga7d7c4ae596755e3e5e3c0c0aa5e749b3}{sl\+\_\+sleeptimer\+\_\+delay\+\_\+millisecond}} (uint16\+\_\+t time\+\_\+ms)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{group__sleeptimer_gadf3a3eb05b0f5adbc7ee488113299f61}{sl\+\_\+sleeptimer\+\_\+ms\+\_\+to\+\_\+tick}} (uint16\+\_\+t time\+\_\+ms)
+\item 
+sl\+\_\+status\+\_\+t \mbox{\hyperlink{group__sleeptimer_ga7484d4be4877b94a687f4410fccc6271}{sl\+\_\+sleeptimer\+\_\+ms32\+\_\+to\+\_\+tick}} (uint32\+\_\+t time\+\_\+ms, uint32\+\_\+t \texorpdfstring{$\ast$}{*}tick)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{group__sleeptimer_ga3218039eab8d09231cc092fdc2a1dba5}{sl\+\_\+sleeptimer\+\_\+get\+\_\+max\+\_\+ms32\+\_\+conversion}} (void)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{group__sleeptimer_ga2c2a2a131e401894d3e09513442667b5}{sl\+\_\+sleeptimer\+\_\+tick\+\_\+to\+\_\+ms}} (uint32\+\_\+t tick)
+\item 
+sl\+\_\+status\+\_\+t \mbox{\hyperlink{group__sleeptimer_ga6882d0577137d8e20ec531be45678fba}{sl\+\_\+sleeptimer\+\_\+tick64\+\_\+to\+\_\+ms}} (uint64\+\_\+t tick, uint64\+\_\+t \texorpdfstring{$\ast$}{*}ms)
+\item 
+\Hypertarget{sl__sleeptimer_8c_acb5c9451a14018974b30d987c5d6590f}\label{sl__sleeptimer_8c_acb5c9451a14018974b30d987c5d6590f} 
+void {\bfseries process\+\_\+timer\+\_\+irq} (uint8\+\_\+t local\+\_\+flag)
+\item 
+bool \mbox{\hyperlink{group__sleeptimer_ga0b38592836a9a01d6f315d417d3d6cd9}{sl\+\_\+sleeptimer\+\_\+is\+\_\+power\+\_\+manager\+\_\+early\+\_\+restore\+\_\+timer\+\_\+latest\+\_\+to\+\_\+expire}} (void)
+\item 
+uint16\+\_\+t \mbox{\hyperlink{group__sleeptimer_ga4c13ce5d0c1fc60a1596201932bb6b5f}{sl\+\_\+sleeptimer\+\_\+get\+\_\+clock\+\_\+accuracy}} (void)
+\begin{DoxyCompactList}\small\item\em Gets the precision (in PPM) of the sleeptimer\textquotesingle{}s clock. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{sl__sleeptimer_8c_a8374b886bdad2caa7cb363180f8ff101}{sli\+\_\+sleeptimer\+\_\+update\+\_\+sleep\+\_\+on\+\_\+isr\+\_\+exit}} (bool flag)
+\begin{DoxyCompactList}\small\item\em Update sleep\+\_\+on\+\_\+isr\+\_\+exit flag. \end{DoxyCompactList}\item 
+\Hypertarget{sl__sleeptimer_8c_a1684f97fccf5f634c07c20d337390cf6}\label{sl__sleeptimer_8c_a1684f97fccf5f634c07c20d337390cf6} 
+uint32\+\_\+t {\bfseries sli\+\_\+sleeptimer\+\_\+get\+\_\+capture} (void)
+\item 
+\Hypertarget{sl__sleeptimer_8c_a6ef857e8ac3cf418639e800e6d1f4de2}\label{sl__sleeptimer_8c_a6ef857e8ac3cf418639e800e6d1f4de2} 
+void {\bfseries sli\+\_\+sleeptimer\+\_\+reset\+\_\+prs\+\_\+signal} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+SLEEPTIMER API implementation. 
+
+\hypertarget{sl__sleeptimer_8c_autotoc_md132}{}\doxysubsection{\texorpdfstring{License}{License}}\label{sl__sleeptimer_8c_autotoc_md132}
+{\bfseries{Copyright 2019 Silicon Laboratories Inc. www.\+silabs.\+com}}
+
+SPDX-\/\+License-\/\+Identifier\+: Zlib
+
+The licensor of this software is Silicon Laboratories Inc.
+
+This software is provided \textquotesingle{}as-\/is\textquotesingle{}, without any express or implied warranty. In no event will the authors be held liable for any damages arising from the use of this software.
+
+Permission is granted to anyone to use this software for any purpose, including commercial applications, and to alter it and redistribute it freely, subject to the following restrictions\+:
+
+
+\begin{DoxyEnumerate}
+\item The origin of this software must not be misrepresented; you must not claim that you wrote the original software. If you use this software in a product, an acknowledgment in the product documentation would be appreciated but is not required.
+\item Altered source versions must be plainly marked as such, and must not be misrepresented as being the original software.
+\item This notice may not be removed or altered from any source distribution. 
+\end{DoxyEnumerate}
+
+\doxysubsection{Function Documentation}
+\Hypertarget{sl__sleeptimer_8c_a6781b49d2c19d091de46dc57a48f0ce1}\index{sl\_sleeptimer.c@{sl\_sleeptimer.c}!SLEEPTIMER\_ENUM@{SLEEPTIMER\_ENUM}}
+\index{SLEEPTIMER\_ENUM@{SLEEPTIMER\_ENUM}!sl\_sleeptimer.c@{sl\_sleeptimer.c}}
+\doxysubsubsection{\texorpdfstring{SLEEPTIMER\_ENUM()}{SLEEPTIMER\_ENUM()}}
+{\footnotesize\ttfamily \label{sl__sleeptimer_8c_a6781b49d2c19d091de46dc57a48f0ce1} 
+SLEEPTIMER\+\_\+\+ENUM (\begin{DoxyParamCaption}\item[{sl\+\_\+sleeptimer\+\_\+time\+\_\+format\+\_\+t}]{}{}\end{DoxyParamCaption})}
+
+
+
+Time Format. 
+
+\texorpdfstring{$<$}{<} Number of seconds since January 1, 1970, 00\+:00. Type is signed, so represented on 31 bit.
+
+\texorpdfstring{$<$}{<} Number of seconds since January 1, 1900, 00\+:00. Type is unsigned, so represented on 32 bit.
+
+\texorpdfstring{$<$}{<} Number of seconds since January 1, 2000, 00\+:00. Type is unsigned, so represented on 32 bit.
+
+\texorpdfstring{$<$}{<} Number of seconds since January 1, 1900, 00\+:00. Type is unsigned, so represented on 64 bit.\Hypertarget{sl__sleeptimer_8c_a8a4c3071d63b9a731a9080949d29b60f}\index{sl\_sleeptimer.c@{sl\_sleeptimer.c}!sli\_sleeptimer\_is\_power\_manager\_timer\_next\_to\_expire@{sli\_sleeptimer\_is\_power\_manager\_timer\_next\_to\_expire}}
+\index{sli\_sleeptimer\_is\_power\_manager\_timer\_next\_to\_expire@{sli\_sleeptimer\_is\_power\_manager\_timer\_next\_to\_expire}!sl\_sleeptimer.c@{sl\_sleeptimer.c}}
+\doxysubsubsection{\texorpdfstring{sli\_sleeptimer\_is\_power\_manager\_timer\_next\_to\_expire()}{sli\_sleeptimer\_is\_power\_manager\_timer\_next\_to\_expire()}}
+{\footnotesize\ttfamily \label{sl__sleeptimer_8c_a8a4c3071d63b9a731a9080949d29b60f} 
+bool sli\+\_\+sleeptimer\+\_\+is\+\_\+power\+\_\+manager\+\_\+timer\+\_\+next\+\_\+to\+\_\+expire (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+Determines if next timer to expire has the option flag "{}\+SL\+\_\+\+SLEEPTIMER\+\_\+\+POWER\+\_\+\+MANAGER\+\_\+\+EARLY\+\_\+\+WAKEUP\+\_\+\+TIMER\+\_\+\+FLAG"{}.
+
+\begin{DoxyNote}{Note}
+This function is for internal use only.
+
+A check to validate that the Power Manager Sleeptimer is expired on top of being the next timer was added. This is because this function is called when coming back from EM2 sleep to validate that the system woke up because of this precise timer expiration. Some race conditions, seen with Free\+RTOS, could create invalid RTC interrupt leading to believe that the power manager timer was expired when it was not. 
+\end{DoxyNote}
+\Hypertarget{sl__sleeptimer_8c_a8374b886bdad2caa7cb363180f8ff101}\index{sl\_sleeptimer.c@{sl\_sleeptimer.c}!sli\_sleeptimer\_update\_sleep\_on\_isr\_exit@{sli\_sleeptimer\_update\_sleep\_on\_isr\_exit}}
+\index{sli\_sleeptimer\_update\_sleep\_on\_isr\_exit@{sli\_sleeptimer\_update\_sleep\_on\_isr\_exit}!sl\_sleeptimer.c@{sl\_sleeptimer.c}}
+\doxysubsubsection{\texorpdfstring{sli\_sleeptimer\_update\_sleep\_on\_isr\_exit()}{sli\_sleeptimer\_update\_sleep\_on\_isr\_exit()}}
+{\footnotesize\ttfamily \label{sl__sleeptimer_8c_a8374b886bdad2caa7cb363180f8ff101} 
+void sli\+\_\+sleeptimer\+\_\+update\+\_\+sleep\+\_\+on\+\_\+isr\+\_\+exit (\begin{DoxyParamCaption}\item[{bool}]{flag}{}\end{DoxyParamCaption})}
+
+
+
+Update sleep\+\_\+on\+\_\+isr\+\_\+exit flag. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em flag} & Value update\+\_\+sleep\+\_\+on\+\_\+isr\+\_\+exit will be set to. \\
+\hline
+\end{DoxyParams}

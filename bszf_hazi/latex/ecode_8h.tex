@@ -1,0 +1,58 @@
+\doxysection{gecko\+\_\+sdk\+\_\+4.4.4/platform/emdrv/common/inc/ecode.h File Reference}
+\hypertarget{ecode_8h}{}\label{ecode_8h}\index{gecko\_sdk\_4.4.4/platform/emdrv/common/inc/ecode.h@{gecko\_sdk\_4.4.4/platform/emdrv/common/inc/ecode.h}}
+
+
+Energy Aware drivers error code definitions.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries ECODE\+\_\+\+EMDRV\+\_\+\+BASE}~(0x\+F0000000U)
+\begin{DoxyCompactList}\small\item\em Base value for all EMDRV errorcodes. \end{DoxyCompactList}\item 
+\#define {\bfseries ECODE\+\_\+\+OK}~(0U)
+\begin{DoxyCompactList}\small\item\em Generic success return value. \end{DoxyCompactList}\item 
+\#define {\bfseries ECODE\+\_\+\+EMDRV\+\_\+\+SPIDRV\+\_\+\+BASE}~(\mbox{\hyperlink{group__ecode_gab5c93ce8fa98b03d93fee45b2a04402e}{ECODE\+\_\+\+EMDRV\+\_\+\+BASE}} \texorpdfstring{$\vert$}{|} 0x00002000U)
+\begin{DoxyCompactList}\small\item\em Base value for SPIDRV error codes. \end{DoxyCompactList}\item 
+\#define {\bfseries ECODE\+\_\+\+EMDRV\+\_\+\+NVM\+\_\+\+BASE}~(\mbox{\hyperlink{group__ecode_gab5c93ce8fa98b03d93fee45b2a04402e}{ECODE\+\_\+\+EMDRV\+\_\+\+BASE}} \texorpdfstring{$\vert$}{|} 0x00003000U)
+\begin{DoxyCompactList}\small\item\em Base value for NVM error codes. \end{DoxyCompactList}\item 
+\#define {\bfseries ECODE\+\_\+\+EMDRV\+\_\+\+USTIMER\+\_\+\+BASE}~(\mbox{\hyperlink{group__ecode_gab5c93ce8fa98b03d93fee45b2a04402e}{ECODE\+\_\+\+EMDRV\+\_\+\+BASE}} \texorpdfstring{$\vert$}{|} 0x00004000U)
+\begin{DoxyCompactList}\small\item\em Base value for USTIMER error codes. \end{DoxyCompactList}\item 
+\#define {\bfseries ECODE\+\_\+\+EMDRV\+\_\+\+UARTDRV\+\_\+\+BASE}~(\mbox{\hyperlink{group__ecode_gab5c93ce8fa98b03d93fee45b2a04402e}{ECODE\+\_\+\+EMDRV\+\_\+\+BASE}} \texorpdfstring{$\vert$}{|} 0x00007000U)
+\begin{DoxyCompactList}\small\item\em Base value for UARTDRV error codes. \end{DoxyCompactList}\item 
+\#define {\bfseries ECODE\+\_\+\+EMDRV\+\_\+\+DMADRV\+\_\+\+BASE}~(\mbox{\hyperlink{group__ecode_gab5c93ce8fa98b03d93fee45b2a04402e}{ECODE\+\_\+\+EMDRV\+\_\+\+BASE}} \texorpdfstring{$\vert$}{|} 0x00008000U)
+\begin{DoxyCompactList}\small\item\em Base value for DMADRV error codes. \end{DoxyCompactList}\item 
+\#define {\bfseries ECODE\+\_\+\+EMDRV\+\_\+\+EZRADIODRV\+\_\+\+BASE}~(\mbox{\hyperlink{group__ecode_gab5c93ce8fa98b03d93fee45b2a04402e}{ECODE\+\_\+\+EMDRV\+\_\+\+BASE}} \texorpdfstring{$\vert$}{|} 0x00009000U)
+\begin{DoxyCompactList}\small\item\em Base value for EZRADIODRV error codes. \end{DoxyCompactList}\item 
+\#define {\bfseries ECODE\+\_\+\+EMDRV\+\_\+\+TEMPDRV\+\_\+\+BASE}~(\mbox{\hyperlink{group__ecode_gab5c93ce8fa98b03d93fee45b2a04402e}{ECODE\+\_\+\+EMDRV\+\_\+\+BASE}} \texorpdfstring{$\vert$}{|} 0x0000\+D000U)
+\begin{DoxyCompactList}\small\item\em Base value for TEMPDRV error codes. \end{DoxyCompactList}\item 
+\#define {\bfseries ECODE\+\_\+\+EMDRV\+\_\+\+NVM3\+\_\+\+BASE}~(\mbox{\hyperlink{group__ecode_gab5c93ce8fa98b03d93fee45b2a04402e}{ECODE\+\_\+\+EMDRV\+\_\+\+BASE}} \texorpdfstring{$\vert$}{|} 0x0000\+E000U)
+\begin{DoxyCompactList}\small\item\em Base value for NVM3 error codes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef uint32\+\_\+t \mbox{\hyperlink{group__ecode_ga7bf5621660c5ba69ac4dd3044173d35c}{Ecode\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Typedef for API function error code return values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Energy Aware drivers error code definitions. 
+
+\hypertarget{ecode_8h_autotoc_md77}{}\doxysubsection{\texorpdfstring{License}{License}}\label{ecode_8h_autotoc_md77}
+{\bfseries{Copyright 2018 Silicon Laboratories Inc. www.\+silabs.\+com}}
+
+SPDX-\/\+License-\/\+Identifier\+: Zlib
+
+The licensor of this software is Silicon Laboratories Inc.
+
+This software is provided \textquotesingle{}as-\/is\textquotesingle{}, without any express or implied warranty. In no event will the authors be held liable for any damages arising from the use of this software.
+
+Permission is granted to anyone to use this software for any purpose, including commercial applications, and to alter it and redistribute it freely, subject to the following restrictions\+:
+
+
+\begin{DoxyEnumerate}
+\item The origin of this software must not be misrepresented; you must not claim that you wrote the original software. If you use this software in a product, an acknowledgment in the product documentation would be appreciated but is not required.
+\item Altered source versions must be plainly marked as such, and must not be misrepresented as being the original software.
+\item This notice may not be removed or altered from any source distribution. 
+\end{DoxyEnumerate}

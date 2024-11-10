@@ -1,0 +1,119 @@
+\doxysection{gecko\+\_\+sdk\+\_\+4.4.4/platform/\+Device/\+Silicon\+Labs/\+EFM32\+GG/\+Source/system\+\_\+efm32gg.c File Reference}
+\hypertarget{system__efm32gg_8c}{}\label{system__efm32gg_8c}\index{gecko\_sdk\_4.4.4/platform/Device/SiliconLabs/EFM32GG/Source/system\_efm32gg.c@{gecko\_sdk\_4.4.4/platform/Device/SiliconLabs/EFM32GG/Source/system\_efm32gg.c}}
+
+
+CMSIS Cortex-\/\+M3 System Layer for EFM32\+GG devices.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include "{}em\+\_\+device.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{system__efm32gg_8c_a16a9bb92649e0f2503f1565bf56e2afc}{EFM32\+\_\+\+LFRCO\+\_\+\+FREQ}}~(32768UL)
+\item 
+\#define \mbox{\hyperlink{system__efm32gg_8c_a747f64e814730ee6c0fa0483ef475a87}{EFM32\+\_\+\+ULFRCO\+\_\+\+FREQ}}~(1000\+UL)
+\item 
+\#define \mbox{\hyperlink{system__efm32gg_8c_acb2de58226beebaf4830db62d7b6c1d6}{EFM32\+\_\+\+HFXO\+\_\+\+FREQ}}~(48000000\+UL)
+\item 
+\#define \mbox{\hyperlink{system__efm32gg_8c_acf415d3ffe9ce1a46bef43fb0953c9ea}{EFM32\+\_\+\+HFRCO\+\_\+\+MAX\+\_\+\+FREQ}}~(28000000\+UL)
+\item 
+\#define \mbox{\hyperlink{system__efm32gg_8c_a27d1136b2fa0bc83ea108d11cd29c502}{EFM32\+\_\+\+LFXO\+\_\+\+FREQ}}~(\mbox{\hyperlink{system__efm32gg_8c_a16a9bb92649e0f2503f1565bf56e2afc}{EFM32\+\_\+\+LFRCO\+\_\+\+FREQ}})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint8\+\_\+t \mbox{\hyperlink{system__efm32gg_8c_a442d0fcb831f601f02d643a64ab80f4c}{Get\+Prod\+Rev}} (void)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{group___e_f_m32_g_g_gaf2e6aa1120f0e55e38c83d8387625d16}{System\+Core\+Clock\+Get}} (void)
+\begin{DoxyCompactList}\small\item\em Get the current core clock frequency. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___e_f_m32_g_g_ga64cc4ea6124c6503b120933d91edf1a0}{System\+Max\+Core\+Clock\+Get}} (void)
+\begin{DoxyCompactList}\small\item\em Get the maximum core clock frequency. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___e_f_m32_g_g_gab5991f4c3faeaed3b4f20d5ab515f1f2}{System\+HFClock\+Get}} (void)
+\begin{DoxyCompactList}\small\item\em Get the current HFCLK frequency. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___e_f_m32_g_g_gaef32887eb9b08a5dd7db73c35ca7c747}{System\+HFXOClock\+Get}} (void)
+\begin{DoxyCompactList}\small\item\em Get high frequency crystal oscillator clock frequency for target system. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___e_f_m32_g_g_gae8a3b3b223a7d08bf9e4d86a259f4e14}{System\+HFXOClock\+Set}} (uint32\+\_\+t freq)
+\begin{DoxyCompactList}\small\item\em Set high frequency crystal oscillator clock frequency for target system. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___e_f_m32_g_g_ga93f514700ccf00d08dbdcff7f1224eb2}{System\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize the system. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___e_f_m32_g_g_ga477d1670608b8ca76108b6e21c1124eb}{System\+LFRCOClock\+Get}} (void)
+\begin{DoxyCompactList}\small\item\em Get low frequency RC oscillator clock frequency for target system. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___e_f_m32_g_g_ga88eecfafda55942454a9e10912b3f224}{System\+ULFRCOClock\+Get}} (void)
+\begin{DoxyCompactList}\small\item\em Get ultra low frequency RC oscillator clock frequency for target system. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___e_f_m32_g_g_ga186aefb7bb200c8fda0fc0a4d4b2aa14}{System\+LFXOClock\+Get}} (void)
+\begin{DoxyCompactList}\small\item\em Get low frequency crystal oscillator clock frequency for target system. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___e_f_m32_g_g_gace8c3b705bdbdc9172fbc7f2415dfd8b}{System\+LFXOClock\+Set}} (uint32\+\_\+t freq)
+\begin{DoxyCompactList}\small\item\em Set low frequency crystal oscillator clock frequency for target system. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{group___e_f_m32_g_g_gaa3cd3e43291e81e795d642b79b6088e6}{System\+Core\+Clock}} = 14000000\+UL
+\begin{DoxyCompactList}\small\item\em System System Clock Frequency (Core Clock). \end{DoxyCompactList}\item 
+\Hypertarget{system__efm32gg_8c_a840c3a2bb881b87163b228bd9f35b458}\label{system__efm32gg_8c_a840c3a2bb881b87163b228bd9f35b458} 
+const \mbox{\hyperlink{uniont_vector_entry}{t\+Vector\+Entry}} {\bfseries \+\_\+\+\_\+\+VECTOR\+\_\+\+TABLE} \mbox{[}16+\mbox{\hyperlink{group___e_f_m32_g_g990_f1024___part_ga1f5541236b626715663b8cc3ec32e50d}{EXT\+\_\+\+IRQ\+\_\+\+COUNT}}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+CMSIS Cortex-\/\+M3 System Layer for EFM32\+GG devices. 
+
+\hypertarget{system__efm32gg_8c_autotoc_md76}{}\doxysubsection{\texorpdfstring{License}{License}}\label{system__efm32gg_8c_autotoc_md76}
+{\bfseries{Copyright 2022 Silicon Laboratories Inc. www.\+silabs.\+com}}
+
+SPDX-\/\+License-\/\+Identifier\+: Zlib
+
+The licensor of this software is Silicon Laboratories Inc.
+
+This software is provided \textquotesingle{}as-\/is\textquotesingle{}, without any express or implied warranty. In no event will the authors be held liable for any damages arising from the use of this software.
+
+Permission is granted to anyone to use this software for any purpose, including commercial applications, and to alter it and redistribute it freely, subject to the following restrictions\+:
+
+
+\begin{DoxyEnumerate}
+\item The origin of this software must not be misrepresented; you must not claim that you wrote the original software. If you use this software in a product, an acknowledgment in the product documentation would be appreciated but is not required.
+\item Altered source versions must be plainly marked as such, and must not be misrepresented as being the original software.
+\item This notice may not be removed or altered from any source distribution. 
+\end{DoxyEnumerate}
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{system__efm32gg_8c_acf415d3ffe9ce1a46bef43fb0953c9ea}\index{system\_efm32gg.c@{system\_efm32gg.c}!EFM32\_HFRCO\_MAX\_FREQ@{EFM32\_HFRCO\_MAX\_FREQ}}
+\index{EFM32\_HFRCO\_MAX\_FREQ@{EFM32\_HFRCO\_MAX\_FREQ}!system\_efm32gg.c@{system\_efm32gg.c}}
+\doxysubsubsection{\texorpdfstring{EFM32\_HFRCO\_MAX\_FREQ}{EFM32\_HFRCO\_MAX\_FREQ}}
+{\footnotesize\ttfamily \label{system__efm32gg_8c_acf415d3ffe9ce1a46bef43fb0953c9ea} 
+\#define EFM32\+\_\+\+HFRCO\+\_\+\+MAX\+\_\+\+FREQ~(28000000\+UL)}
+
+Maximum HFRCO frequency. \Hypertarget{system__efm32gg_8c_acb2de58226beebaf4830db62d7b6c1d6}\index{system\_efm32gg.c@{system\_efm32gg.c}!EFM32\_HFXO\_FREQ@{EFM32\_HFXO\_FREQ}}
+\index{EFM32\_HFXO\_FREQ@{EFM32\_HFXO\_FREQ}!system\_efm32gg.c@{system\_efm32gg.c}}
+\doxysubsubsection{\texorpdfstring{EFM32\_HFXO\_FREQ}{EFM32\_HFXO\_FREQ}}
+{\footnotesize\ttfamily \label{system__efm32gg_8c_acb2de58226beebaf4830db62d7b6c1d6} 
+\#define EFM32\+\_\+\+HFXO\+\_\+\+FREQ~(48000000\+UL)}
+
+HFXO frequency. \Hypertarget{system__efm32gg_8c_a16a9bb92649e0f2503f1565bf56e2afc}\index{system\_efm32gg.c@{system\_efm32gg.c}!EFM32\_LFRCO\_FREQ@{EFM32\_LFRCO\_FREQ}}
+\index{EFM32\_LFRCO\_FREQ@{EFM32\_LFRCO\_FREQ}!system\_efm32gg.c@{system\_efm32gg.c}}
+\doxysubsubsection{\texorpdfstring{EFM32\_LFRCO\_FREQ}{EFM32\_LFRCO\_FREQ}}
+{\footnotesize\ttfamily \label{system__efm32gg_8c_a16a9bb92649e0f2503f1565bf56e2afc} 
+\#define EFM32\+\_\+\+LFRCO\+\_\+\+FREQ~(32768UL)}
+
+LFRCO frequency, tuned to below frequency during manufacturing. \Hypertarget{system__efm32gg_8c_a27d1136b2fa0bc83ea108d11cd29c502}\index{system\_efm32gg.c@{system\_efm32gg.c}!EFM32\_LFXO\_FREQ@{EFM32\_LFXO\_FREQ}}
+\index{EFM32\_LFXO\_FREQ@{EFM32\_LFXO\_FREQ}!system\_efm32gg.c@{system\_efm32gg.c}}
+\doxysubsubsection{\texorpdfstring{EFM32\_LFXO\_FREQ}{EFM32\_LFXO\_FREQ}}
+{\footnotesize\ttfamily \label{system__efm32gg_8c_a27d1136b2fa0bc83ea108d11cd29c502} 
+\#define EFM32\+\_\+\+LFXO\+\_\+\+FREQ~(\mbox{\hyperlink{system__efm32gg_8c_a16a9bb92649e0f2503f1565bf56e2afc}{EFM32\+\_\+\+LFRCO\+\_\+\+FREQ}})}
+
+(DO\+\_\+\+NOT\+\_\+\+INCLUDE\+\_\+\+WITH\+\_\+\+DOXYGEN) LFXO frequency. \Hypertarget{system__efm32gg_8c_a747f64e814730ee6c0fa0483ef475a87}\index{system\_efm32gg.c@{system\_efm32gg.c}!EFM32\_ULFRCO\_FREQ@{EFM32\_ULFRCO\_FREQ}}
+\index{EFM32\_ULFRCO\_FREQ@{EFM32\_ULFRCO\_FREQ}!system\_efm32gg.c@{system\_efm32gg.c}}
+\doxysubsubsection{\texorpdfstring{EFM32\_ULFRCO\_FREQ}{EFM32\_ULFRCO\_FREQ}}
+{\footnotesize\ttfamily \label{system__efm32gg_8c_a747f64e814730ee6c0fa0483ef475a87} 
+\#define EFM32\+\_\+\+ULFRCO\+\_\+\+FREQ~(1000\+UL)}
+
+ULFRCO frequency. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{system__efm32gg_8c_a442d0fcb831f601f02d643a64ab80f4c}\index{system\_efm32gg.c@{system\_efm32gg.c}!GetProdRev@{GetProdRev}}
+\index{GetProdRev@{GetProdRev}!system\_efm32gg.c@{system\_efm32gg.c}}
+\doxysubsubsection{\texorpdfstring{GetProdRev()}{GetProdRev()}}
+{\footnotesize\ttfamily \label{system__efm32gg_8c_a442d0fcb831f601f02d643a64ab80f4c} 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint8\+\_\+t Get\+Prod\+Rev (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+(DO\+\_\+\+NOT\+\_\+\+INCLUDE\+\_\+\+WITH\+\_\+\+DOXYGEN) 

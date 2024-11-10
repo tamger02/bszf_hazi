@@ -1,0 +1,64 @@
+\doxysection{uartdrv\+\_\+config.\+h}
+\hypertarget{uartdrv__config_8h_source}{}\label{uartdrv__config_8h_source}\index{config/uartdrv\_config.h@{config/uartdrv\_config.h}}
+\mbox{\hyperlink{uartdrv__config_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#ifndef\ \_\_SILICON\_LABS\_UARTDRV\_CONFIG\_H\_\_}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ \_\_SILICON\_LABS\_UARTDRV\_CONFIG\_H\_\_}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#if\ !defined(EMDRV\_UARTDRV\_MAX\_CONCURRENT\_RX\_BUFS)}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ EMDRV\_UARTDRV\_MAX\_CONCURRENT\_RX\_BUFS\ \ \ \ 6}}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#if\ !defined(EMDRV\_UARTDRV\_MAX\_CONCURRENT\_TX\_BUFS)}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#define\ EMDRV\_UARTDRV\_MAX\_CONCURRENT\_TX\_BUFS\ \ \ \ 6}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \textcolor{comment}{//\ <<<\ Use\ Configuration\ Wizard\ in\ Context\ Menu\ >>>}}
+\DoxyCodeLine{00064\ \textcolor{comment}{//\ <h>\ UARTDRV\ Settings}}
+\DoxyCodeLine{00065\ }
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#if\ !defined(EMDRV\_UARTDRV\_FLOW\_CONTROL\_ENABLE)}}
+\DoxyCodeLine{00068\ \textcolor{comment}{//\ <o\ EMDRV\_UARTDRV\_FLOW\_CONTROL\_ENABLE>\ \ Flow\ control\ support}}
+\DoxyCodeLine{00069\ \textcolor{comment}{//\ <1=>\ Enable}}
+\DoxyCodeLine{00070\ \textcolor{comment}{//\ <0=>\ Disable}}
+\DoxyCodeLine{00071\ \textcolor{comment}{//\ <i>\ Default:\ 1}}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#define\ EMDRV\_UARTDRV\_FLOW\_CONTROL\_ENABLE\ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#if\ !defined(EMDRV\_UARTDRV\_MAX\_DRIVER\_INSTANCES)}}
+\DoxyCodeLine{00077\ \textcolor{comment}{//\ <o\ EMDRV\_UARTDRV\_MAX\_DRIVER\_INSTANCES>\ Maximum\ number\ of\ driver\ instances}}
+\DoxyCodeLine{00078\ \textcolor{comment}{//\ <i>\ This\ maximum\ only\ applies\ when\ UARTDRV\_FLOW\_CONTROL\_ENABLE\ =\ 1}}
+\DoxyCodeLine{00079\ \textcolor{comment}{//\ <i>\ Default:\ 4}}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#define\ EMDRV\_UARTDRV\_MAX\_DRIVER\_INSTANCES\ \ \ \ \ \ 4}}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#if\ !defined(UARTDRV\_FC\_SW\_XON)}}
+\DoxyCodeLine{00085\ \textcolor{comment}{//\ <o\ UARTDRV\_FC\_SW\_XON>\ UART\ software\ flow\ control\ code:\ request\ peer\ to\ start\ TX}}
+\DoxyCodeLine{00086\ \textcolor{comment}{//\ <i>\ Default:\ 0x11}}
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#define\ UARTDRV\_FC\_SW\_XON\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x11}}
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00089\ }
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#if\ !defined(UARTDRV\_FC\_SW\_XOFF)}}
+\DoxyCodeLine{00092\ \textcolor{comment}{//\ <o\ UARTDRV\_FC\_SW\_XOFF>\ UART\ software\ flow\ control\ code:\ request\ peer\ to\ stop\ TX}}
+\DoxyCodeLine{00093\ \textcolor{comment}{//\ <i>\ Default:\ 0x13}}
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\#define\ UARTDRV\_FC\_SW\_XOFF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x13}}
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\#if\ !defined(UARTDRV\_RESTRICT\_ENERGY\_MODE\_TO\_ALLOW\_RECEPTION)}}
+\DoxyCodeLine{00099\ \textcolor{comment}{//\ <o\ UARTDRV\_RESTRICT\_ENERGY\_MODE\_TO\_ALLOW\_RECEPTION>\ \ Enable\ reception\ when\ sleeping}}
+\DoxyCodeLine{00100\ \textcolor{comment}{//\ <i>\ Enable\ reception\ when\ sleeping\ will\ use\ the\ power\ manager\ and\ add\ EM1}}
+\DoxyCodeLine{00101\ \textcolor{comment}{//\ <i>\ requirement\ during\ receive\ operations\ that\ use\ DMA.}}
+\DoxyCodeLine{00102\ \textcolor{comment}{//\ <1=>\ Enable}}
+\DoxyCodeLine{00103\ \textcolor{comment}{//\ <0=>\ Disable}}
+\DoxyCodeLine{00104\ \textcolor{comment}{//\ <i>\ Default:\ 1}}
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#define\ UARTDRV\_RESTRICT\_ENERGY\_MODE\_TO\_ALLOW\_RECEPTION\ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \textcolor{comment}{//</h>}}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \textcolor{comment}{//\ <<<\ end\ of\ configuration\ section\ >>>}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_\_SILICON\_LABS\_UARTDRV\_CONFIG\_H\_\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

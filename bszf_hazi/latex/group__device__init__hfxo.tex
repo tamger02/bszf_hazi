@@ -1,0 +1,60 @@
+\doxysubsection{HFXO Initialization}
+\hypertarget{group__device__init__hfxo}{}\label{group__device__init__hfxo}\index{HFXO Initialization@{HFXO Initialization}}
+
+
+Initialize the HFXO oscillator.  
+
+
+\doxysubsubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+sl\+\_\+status\+\_\+t \mbox{\hyperlink{group__device__init__hfxo_ga04323b383059be8b42abdbe94abe19f0}{sl\+\_\+device\+\_\+init\+\_\+hfxo}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+Initialize the HFXO oscillator. 
+
+Configure the HFXO for crystal or externally-\/generated waveform operation.
+
+When operating in crystal mode, the value of the variable tuning capacitor C\textsubscript{tune} is sourced from a prioritized list of locations\+:
+
+
+\begin{DoxyEnumerate}
+\item Device-\/specific tuning value in Device Information page (factory calibrated PCB and SiP modules with integrated HFXO)
+\item Device-\/specific tuning value in User Data page at offset 0x100 (manufacturing token {\ttfamily TOKEN\+\_\+\+MFG\+\_\+\+CTUNE})
+\item Application-\/specific tuning value in configuration header {\ttfamily \doxylink{sl__device__init__hfxo__config_8h}{sl\+\_\+device\+\_\+init\+\_\+hfxo\+\_\+config.\+h}}
+\item Default value in EMLIB initialization struct for HFXO
+\end{DoxyEnumerate}
+
+If using Simplicity Studio, this configuration header is also configurable through the Project Configurator by selecting the "{}\+Device Init\+: HFXO"{} configuration component. 
+
+\doxysubsubsection{Function Documentation}
+\Hypertarget{group__device__init__hfxo_ga04323b383059be8b42abdbe94abe19f0}\index{HFXO Initialization@{HFXO Initialization}!sl\_device\_init\_hfxo@{sl\_device\_init\_hfxo}}
+\index{sl\_device\_init\_hfxo@{sl\_device\_init\_hfxo}!HFXO Initialization@{HFXO Initialization}}
+\doxysubsubsubsection{\texorpdfstring{sl\_device\_init\_hfxo()}{sl\_device\_init\_hfxo()}}
+{\footnotesize\ttfamily \label{group__device__init__hfxo_ga04323b383059be8b42abdbe94abe19f0} 
+sl\+\_\+status\+\_\+t sl\+\_\+device\+\_\+init\+\_\+hfxo (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+Initialize HFXO
+
+Configure the HFXO for crystal or externally-\/generated waveform operation.
+
+When operating in crystal mode, the value of the variable tuning capacitor C\textsubscript{tune} is sourced from a prioritized list of locations\+:
+
+
+\begin{DoxyEnumerate}
+\item Device-\/specific tuning value in Device Information page (PCB and SiP modules with integrated HFXO)
+\item Device-\/specific tuning value in User Data page at offset 0x100 ("{}manufacturing token"{})
+\item Application-\/specific tuning value in configuration header {\ttfamily \doxylink{sl__device__init__hfxo__config_8h}{sl\+\_\+device\+\_\+init\+\_\+hfxo\+\_\+config.\+h}}
+\item Default value in EMLIB initialization struct for HFXO
+\end{DoxyEnumerate}
+
+\begin{DoxyReturn}{Returns}
+Status code 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em SL\+\_\+\+STATUS\+\_\+\+OK} & HFXO started successfully \\
+\hline
+\end{DoxyRetVals}

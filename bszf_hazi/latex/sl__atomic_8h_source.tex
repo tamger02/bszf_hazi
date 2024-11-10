@@ -1,0 +1,68 @@
+\doxysection{sl\+\_\+atomic.\+h}
+\hypertarget{sl__atomic_8h_source}{}\label{sl__atomic_8h_source}\index{gecko\_sdk\_4.4.4/platform/common/inc/sl\_atomic.h@{gecko\_sdk\_4.4.4/platform/common/inc/sl\_atomic.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ @file}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ @brief\ Implementation\ of\ atomic\ operations.}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *******************************************************************************}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \#\ License}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ <b>Copyright\ 2019\ Silicon\ Laboratories\ Inc.\ www.silabs.com</b>}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *******************************************************************************}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ SPDX-\/License-\/Identifier:\ Zlib}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ The\ licensor\ of\ this\ software\ is\ Silicon\ Laboratories\ Inc.}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ This\ software\ is\ provided\ 'as-\/is',\ without\ any\ express\ or\ implied}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ warranty.\ In\ no\ event\ will\ the\ authors\ be\ held\ liable\ for\ any\ damages}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ arising\ from\ the\ use\ of\ this\ software.}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ Permission\ is\ granted\ to\ anyone\ to\ use\ this\ software\ for\ any\ purpose,}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ including\ commercial\ applications,\ and\ to\ alter\ it\ and\ redistribute\ it}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ freely,\ subject\ to\ the\ following\ restrictions:}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ 1.\ The\ origin\ of\ this\ software\ must\ not\ be\ misrepresented;\ you\ must\ not}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ \ \ \ claim\ that\ you\ wrote\ the\ original\ software.\ If\ you\ use\ this\ software}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ \ \ \ in\ a\ product,\ an\ acknowledgment\ in\ the\ product\ documentation\ would\ be}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ \ \ \ appreciated\ but\ is\ not\ required.}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ 2.\ Altered\ source\ versions\ must\ be\ plainly\ marked\ as\ such,\ and\ must\ not\ be}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ \ \ \ misrepresented\ as\ being\ the\ original\ software.}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ 3.\ This\ notice\ may\ not\ be\ removed\ or\ altered\ from\ any\ source\ distribution.}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#ifndef\ SL\_ATOMIC\_H}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ SL\_ATOMIC\_H}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ *\ @addtogroup\ atomic\ Atomic\ Operations}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ *\ @brief\ Atomic\ operations\ provide\ RAM\ store\ and\ read\ functionalities.}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ *\ @n\ @section\ atomic\_usage\ Atomic\ Operations\ Usage}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ *\ @\{}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#define\ sl\_atomic\_load(dest,\ source)\ \ \ \ \ ((dest)\ =\ (source))}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{00060\ \textcolor{comment}{\ *\ @brief\ \ \ \ \ \ \ \ \ Perform\ an\ atomic\ store.\ Use\ when\ a\ value\ must\ be\ stored\ in}}
+\DoxyCodeLine{00061\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ RAM.}}
+\DoxyCodeLine{00062\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00063\ \textcolor{comment}{\ *\ @param\ dest\ \ \ \ Variable\ where\ to\ store\ the\ value.}}
+\DoxyCodeLine{00064\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00065\ \textcolor{comment}{\ *\ @param\ source\ \ Variable\ that\ contains\ the\ value\ to\ store\ in\ 'dest'.}}
+\DoxyCodeLine{00066\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00067\ \textcolor{comment}{\ *\ @note\ \ \ \ \ \ \ \ \ \ Does\ only\ support\ native\ types\ <=\ 32\ bits.}}
+\DoxyCodeLine{00068\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00069\ \textcolor{comment}{\ *\ @note\ \ \ \ \ \ \ \ \ \ Store\ operation\ on\ 32\ bit\ value\ is\ atomic\ on\ ARM\ architecture.}}
+\DoxyCodeLine{00070\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00071\ \textcolor{comment}{\ *\ @note\ \ \ \ \ \ \ \ \ \ Only\ the\ store\ operation\ to\ 'dest'\ is\ guaranteed\ to\ be}}
+\DoxyCodeLine{00072\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ performed\ atomically.\ If\ reading\ from\ 'source'\ implies\ a\ load,}}
+\DoxyCodeLine{00073\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ the\ store\ and\ load\ operations\ are\ not\ guaranteed\ to\ be}}
+\DoxyCodeLine{00074\ \textcolor{comment}{\ *\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ performed\ atomically.}}
+\DoxyCodeLine{00075\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#define\ sl\_atomic\_store(dest,\ source)\ \ \ \ ((dest)\ =\ (source))}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ SL\_ATOMIC\_H\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

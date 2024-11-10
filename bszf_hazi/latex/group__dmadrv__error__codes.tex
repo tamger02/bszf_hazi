@@ -1,0 +1,32 @@
+\doxysubsection{Error Codes}
+\hypertarget{group__dmadrv__error__codes}{}\label{group__dmadrv__error__codes}\index{Error Codes@{Error Codes}}
+\doxysubsubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{group__dmadrv__error__codes_gac20848ba30d8793ad1344fc442aae4c4}\label{group__dmadrv__error__codes_gac20848ba30d8793ad1344fc442aae4c4} 
+\#define {\bfseries ECODE\+\_\+\+EMDRV\+\_\+\+DMADRV\+\_\+\+OK}~(\mbox{\hyperlink{group__ecode_gad59417e7951d81dfc15ec2757f08148e}{ECODE\+\_\+\+OK}})
+\begin{DoxyCompactList}\small\item\em A successful return value. \end{DoxyCompactList}\item 
+\Hypertarget{group__dmadrv__error__codes_ga3b8e93e5fab3ce4f3f12f137c7b83410}\label{group__dmadrv__error__codes_ga3b8e93e5fab3ce4f3f12f137c7b83410} 
+\#define {\bfseries ECODE\+\_\+\+EMDRV\+\_\+\+DMADRV\+\_\+\+PARAM\+\_\+\+ERROR}~(\mbox{\hyperlink{group__ecode_gaf42696e8f3ccd7165e59feea571189b4}{ECODE\+\_\+\+EMDRV\+\_\+\+DMADRV\+\_\+\+BASE}} \texorpdfstring{$\vert$}{|} 0x00000001)
+\begin{DoxyCompactList}\small\item\em An illegal input parameter. \end{DoxyCompactList}\item 
+\Hypertarget{group__dmadrv__error__codes_ga718c15920e4f1c5885827eb903e70d64}\label{group__dmadrv__error__codes_ga718c15920e4f1c5885827eb903e70d64} 
+\#define {\bfseries ECODE\+\_\+\+EMDRV\+\_\+\+DMADRV\+\_\+\+NOT\+\_\+\+INITIALIZED}~(\mbox{\hyperlink{group__ecode_gaf42696e8f3ccd7165e59feea571189b4}{ECODE\+\_\+\+EMDRV\+\_\+\+DMADRV\+\_\+\+BASE}} \texorpdfstring{$\vert$}{|} 0x00000002)
+\begin{DoxyCompactList}\small\item\em DMA is not initialized. \end{DoxyCompactList}\item 
+\Hypertarget{group__dmadrv__error__codes_ga7c91611d3f79a7496ba2dee2639f7965}\label{group__dmadrv__error__codes_ga7c91611d3f79a7496ba2dee2639f7965} 
+\#define {\bfseries ECODE\+\_\+\+EMDRV\+\_\+\+DMADRV\+\_\+\+ALREADY\+\_\+\+INITIALIZED}~(\mbox{\hyperlink{group__ecode_gaf42696e8f3ccd7165e59feea571189b4}{ECODE\+\_\+\+EMDRV\+\_\+\+DMADRV\+\_\+\+BASE}} \texorpdfstring{$\vert$}{|} 0x00000003)
+\begin{DoxyCompactList}\small\item\em DMA has already been initialized. \end{DoxyCompactList}\item 
+\Hypertarget{group__dmadrv__error__codes_gaab97205f395c359f6d639347bb9f0f5f}\label{group__dmadrv__error__codes_gaab97205f395c359f6d639347bb9f0f5f} 
+\#define {\bfseries ECODE\+\_\+\+EMDRV\+\_\+\+DMADRV\+\_\+\+CHANNELS\+\_\+\+EXHAUSTED}~(\mbox{\hyperlink{group__ecode_gaf42696e8f3ccd7165e59feea571189b4}{ECODE\+\_\+\+EMDRV\+\_\+\+DMADRV\+\_\+\+BASE}} \texorpdfstring{$\vert$}{|} 0x00000004)
+\begin{DoxyCompactList}\small\item\em No DMA channels available. \end{DoxyCompactList}\item 
+\Hypertarget{group__dmadrv__error__codes_ga7414a4bd6c8211ada153e2129e04f183}\label{group__dmadrv__error__codes_ga7414a4bd6c8211ada153e2129e04f183} 
+\#define {\bfseries ECODE\+\_\+\+EMDRV\+\_\+\+DMADRV\+\_\+\+IN\+\_\+\+USE}~(\mbox{\hyperlink{group__ecode_gaf42696e8f3ccd7165e59feea571189b4}{ECODE\+\_\+\+EMDRV\+\_\+\+DMADRV\+\_\+\+BASE}} \texorpdfstring{$\vert$}{|} 0x00000005)
+\begin{DoxyCompactList}\small\item\em DMA is in use. \end{DoxyCompactList}\item 
+\Hypertarget{group__dmadrv__error__codes_ga3c5f5833c747aec203d10853194ff348}\label{group__dmadrv__error__codes_ga3c5f5833c747aec203d10853194ff348} 
+\#define {\bfseries ECODE\+\_\+\+EMDRV\+\_\+\+DMADRV\+\_\+\+ALREADY\+\_\+\+FREED}~(\mbox{\hyperlink{group__ecode_gaf42696e8f3ccd7165e59feea571189b4}{ECODE\+\_\+\+EMDRV\+\_\+\+DMADRV\+\_\+\+BASE}} \texorpdfstring{$\vert$}{|} 0x00000006)
+\begin{DoxyCompactList}\small\item\em A DMA channel was free. \end{DoxyCompactList}\item 
+\Hypertarget{group__dmadrv__error__codes_ga04c887be3eba7ea848f6b6bd25c16600}\label{group__dmadrv__error__codes_ga04c887be3eba7ea848f6b6bd25c16600} 
+\#define {\bfseries ECODE\+\_\+\+EMDRV\+\_\+\+DMADRV\+\_\+\+CH\+\_\+\+NOT\+\_\+\+ALLOCATED}~(\mbox{\hyperlink{group__ecode_gaf42696e8f3ccd7165e59feea571189b4}{ECODE\+\_\+\+EMDRV\+\_\+\+DMADRV\+\_\+\+BASE}} \texorpdfstring{$\vert$}{|} 0x00000007)
+\begin{DoxyCompactList}\small\item\em A channel is not reserved. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}

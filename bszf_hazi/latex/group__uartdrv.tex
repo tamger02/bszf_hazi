@@ -1,0 +1,778 @@
+\doxysection{UARTDRV -\/ UART Driver}
+\hypertarget{group__uartdrv}{}\label{group__uartdrv}\index{UARTDRV -\/ UART Driver@{UARTDRV -\/ UART Driver}}
+
+
+Universal Asynchronous Receiver/\+Transmitter Driver.  
+
+
+\doxysubsubsection*{Topics}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__uartdrv__error__codes}{Error Codes}}
+\item 
+\mbox{\hyperlink{group__uartdrv__status__codes}{Status Codes}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_u_a_r_t_d_r_v___buffer__t}{UARTDRV\+\_\+\+Buffer\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em UART transfer buffer. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_u_a_r_t_d_r_v___buffer___fifo_queue__t}{UARTDRV\+\_\+\+Buffer\+\_\+\+Fifo\+Queue\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Transfer operation FIFO queue typedef. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_u_a_r_t_d_r_v___handle_data}{UARTDRV\+\_\+\+Handle\+Data}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__uartdrv_gabe460e78b696ee85a78db220e5f6ec89}{EMDRV\+\_\+\+UARTDRV\+\_\+\+MAX\+\_\+\+CONCURRENT\+\_\+\+RX\+\_\+\+BUFS}}~6
+\item 
+\#define \mbox{\hyperlink{group__uartdrv_ga1a5792abd05dc9ec1eb1c2fa0e9b9d6a}{EMDRV\+\_\+\+UARTDRV\+\_\+\+MAX\+\_\+\+CONCURRENT\+\_\+\+TX\+\_\+\+BUFS}}~6
+\item 
+\Hypertarget{group__uartdrv_gae325304971b4f6d0e7ddc6ce8b931fd2}\label{group__uartdrv_gae325304971b4f6d0e7ddc6ce8b931fd2} 
+\#define {\bfseries EMDRV\+\_\+\+UARTDRV\+\_\+\+FLOW\+\_\+\+CONTROL\+\_\+\+ENABLE}~1
+\begin{DoxyCompactList}\small\item\em Set to 1 to include flow control support. \end{DoxyCompactList}\item 
+\Hypertarget{group__uartdrv_gaede5027a4c6873b9679f0b6df1acd11c}\label{group__uartdrv_gaede5027a4c6873b9679f0b6df1acd11c} 
+\#define {\bfseries EMDRV\+\_\+\+UARTDRV\+\_\+\+MAX\+\_\+\+DRIVER\+\_\+\+INSTANCES}~4
+\begin{DoxyCompactList}\small\item\em Maximum number of driver instances. \end{DoxyCompactList}\item 
+\Hypertarget{group__uartdrv_ga0d5de1353096abcc856b6ad24abc60bb}\label{group__uartdrv_ga0d5de1353096abcc856b6ad24abc60bb} 
+\#define {\bfseries UARTDRV\+\_\+\+FC\+\_\+\+SW\+\_\+\+XON}~0x11
+\begin{DoxyCompactList}\small\item\em UART software flow control code\+: request peer to start TX. \end{DoxyCompactList}\item 
+\Hypertarget{group__uartdrv_ga528f36160480e9caadd6bdad3f61765c}\label{group__uartdrv_ga528f36160480e9caadd6bdad3f61765c} 
+\#define {\bfseries UARTDRV\+\_\+\+FC\+\_\+\+SW\+\_\+\+XOFF}~0x13
+\begin{DoxyCompactList}\small\item\em UART software flow control code\+: request peer to stop TX. \end{DoxyCompactList}\item 
+\Hypertarget{group__uartdrv_ga9201ffeb719cd15b70e27068a0f61be2}\label{group__uartdrv_ga9201ffeb719cd15b70e27068a0f61be2} 
+\#define {\bfseries UARTDRV\+\_\+\+RESTRICT\+\_\+\+ENERGY\+\_\+\+MODE\+\_\+\+TO\+\_\+\+ALLOW\+\_\+\+RECEPTION}~1
+\begin{DoxyCompactList}\small\item\em UART enable reception when sleeping. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__uartdrv_ga24318918f06c584749d8a2f8a96be2fc}{DEFINE\+\_\+\+BUF\+\_\+\+QUEUE}}(q\+Size,  q\+Name)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{group__uartdrv_ga20f2dca466c884ed896061f8e90ff816}\label{group__uartdrv_ga20f2dca466c884ed896061f8e90ff816} 
+typedef uint32\+\_\+t {\bfseries UARTDRV\+\_\+\+Count\+\_\+t}
+\begin{DoxyCompactList}\small\item\em A UART transfer count. \end{DoxyCompactList}\item 
+\Hypertarget{group__uartdrv_gae1cf3e2748cf7a377fe60f055c07c3a6}\label{group__uartdrv_gae1cf3e2748cf7a377fe60f055c07c3a6} 
+typedef uint32\+\_\+t {\bfseries UARTDRV\+\_\+\+Status\+\_\+t}
+\begin{DoxyCompactList}\small\item\em A UART status return type. Bitfield of UARTDRV\+\_\+\+STATUS\+\_\+\texorpdfstring{$\ast$}{*} values. \end{DoxyCompactList}\item 
+typedef void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__uartdrv_ga75a7670b4c9deaa47bc197bbde9b7fb4}{UARTDRV\+\_\+\+Callback\+\_\+t}}) (struct \mbox{\hyperlink{struct_u_a_r_t_d_r_v___handle_data}{UARTDRV\+\_\+\+Handle\+Data}} \texorpdfstring{$\ast$}{*}handle, \mbox{\hyperlink{group__ecode_ga7bf5621660c5ba69ac4dd3044173d35c}{Ecode\+\_\+t}} transfer\+Status, uint8\+\_\+t \texorpdfstring{$\ast$}{*}data, \mbox{\hyperlink{group__uartdrv_ga20f2dca466c884ed896061f8e90ff816}{UARTDRV\+\_\+\+Count\+\_\+t}} transfer\+Count)
+\begin{DoxyCompactList}\small\item\em UARTDRV transfer completion callback function. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{struct_u_a_r_t_d_r_v___handle_data}{UARTDRV\+\_\+\+Handle\+Data}} \mbox{\hyperlink{group__uartdrv_gac38a311be86450bee230b5bf111cecf3}{UARTDRV\+\_\+\+Handle\+Data\+\_\+t}}
+\item 
+\Hypertarget{group__uartdrv_ga559d69d7978a815087a905fb13af15ea}\label{group__uartdrv_ga559d69d7978a815087a905fb13af15ea} 
+typedef \mbox{\hyperlink{group__uartdrv_gac38a311be86450bee230b5bf111cecf3}{UARTDRV\+\_\+\+Handle\+Data\+\_\+t}} \texorpdfstring{$\ast$}{*} {\bfseries UARTDRV\+\_\+\+Handle\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Handle pointer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__uartdrv_gadd561e294765dfb017374057fd99ceb8}{SL\+\_\+\+ENUM}} (UARTDRV\+\_\+\+Flow\+Control\+Type\+\_\+t)
+\item 
+\mbox{\hyperlink{group__uartdrv_ga88d8ed44e5de7fddff07b6f98c6be21f}{SL\+\_\+\+ENUM}} (UARTDRV\+\_\+\+Flow\+Control\+State\+\_\+t)
+\begin{DoxyCompactList}\small\item\em Flow Control state. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__uartdrv_ga0111d9b9c81c8b15cfde60ac8d19c36c}{SL\+\_\+\+ENUM}} (UARTDRV\+\_\+\+Abort\+Type\+\_\+t)
+\begin{DoxyCompactList}\small\item\em Transfer abort type. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__ecode_ga7bf5621660c5ba69ac4dd3044173d35c}{Ecode\+\_\+t}} \mbox{\hyperlink{group__uartdrv_ga3b4222031534ab6d54ca068b5fa6e596}{UARTDRV\+\_\+\+De\+Init}} (\mbox{\hyperlink{group__uartdrv_ga559d69d7978a815087a905fb13af15ea}{UARTDRV\+\_\+\+Handle\+\_\+t}} handle)
+\begin{DoxyCompactList}\small\item\em Deinitialize a UART driver instance. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__uartdrv_gae1cf3e2748cf7a377fe60f055c07c3a6}{UARTDRV\+\_\+\+Status\+\_\+t}} \mbox{\hyperlink{group__uartdrv_ga38e53b4e39e17d0f7be9034ef11eb534}{UARTDRV\+\_\+\+Get\+Peripheral\+Status}} (\mbox{\hyperlink{group__uartdrv_ga559d69d7978a815087a905fb13af15ea}{UARTDRV\+\_\+\+Handle\+\_\+t}} handle)
+\begin{DoxyCompactList}\small\item\em Return the status of the UART peripheral associated with a given handle. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__uartdrv_gae1cf3e2748cf7a377fe60f055c07c3a6}{UARTDRV\+\_\+\+Status\+\_\+t}} \mbox{\hyperlink{group__uartdrv_ga34806bf9fc4d876aa6ae725ce060541b}{UARTDRV\+\_\+\+Get\+Receive\+Status}} (\mbox{\hyperlink{group__uartdrv_ga559d69d7978a815087a905fb13af15ea}{UARTDRV\+\_\+\+Handle\+\_\+t}} handle, uint8\+\_\+t \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}buffer, \mbox{\hyperlink{group__uartdrv_ga20f2dca466c884ed896061f8e90ff816}{UARTDRV\+\_\+\+Count\+\_\+t}} \texorpdfstring{$\ast$}{*}bytes\+Received, \mbox{\hyperlink{group__uartdrv_ga20f2dca466c884ed896061f8e90ff816}{UARTDRV\+\_\+\+Count\+\_\+t}} \texorpdfstring{$\ast$}{*}bytes\+Remaining)
+\begin{DoxyCompactList}\small\item\em Check the status of the UART and gather information about any ongoing receive operations. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__uartdrv_gae1cf3e2748cf7a377fe60f055c07c3a6}{UARTDRV\+\_\+\+Status\+\_\+t}} \mbox{\hyperlink{group__uartdrv_gae5387109fb659840fa822aa6ae08b81f}{UARTDRV\+\_\+\+Get\+Transmit\+Status}} (\mbox{\hyperlink{group__uartdrv_ga559d69d7978a815087a905fb13af15ea}{UARTDRV\+\_\+\+Handle\+\_\+t}} handle, uint8\+\_\+t \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}buffer, \mbox{\hyperlink{group__uartdrv_ga20f2dca466c884ed896061f8e90ff816}{UARTDRV\+\_\+\+Count\+\_\+t}} \texorpdfstring{$\ast$}{*}bytes\+Sent, \mbox{\hyperlink{group__uartdrv_ga20f2dca466c884ed896061f8e90ff816}{UARTDRV\+\_\+\+Count\+\_\+t}} \texorpdfstring{$\ast$}{*}bytes\+Remaining)
+\begin{DoxyCompactList}\small\item\em Check the status of the UART and gather information about any ongoing transmit operations. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group__uartdrv_gab9b0230941575668b73874ffe1ff01e4}{UARTDRV\+\_\+\+Get\+Receive\+Depth}} (\mbox{\hyperlink{group__uartdrv_ga559d69d7978a815087a905fb13af15ea}{UARTDRV\+\_\+\+Handle\+\_\+t}} handle)
+\begin{DoxyCompactList}\small\item\em Return the number of queued receive operations. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group__uartdrv_gab467cb6aa9940119e4f03bd860c76266}{UARTDRV\+\_\+\+Get\+Transmit\+Depth}} (\mbox{\hyperlink{group__uartdrv_ga559d69d7978a815087a905fb13af15ea}{UARTDRV\+\_\+\+Handle\+\_\+t}} handle)
+\begin{DoxyCompactList}\small\item\em Returns the number of queued transmit operations. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__ecode_ga7bf5621660c5ba69ac4dd3044173d35c}{Ecode\+\_\+t}} \mbox{\hyperlink{group__uartdrv_ga484ac0b78a9eccb0ec6a1d30b7cc3232}{UARTDRV\+\_\+\+Transmit}} (\mbox{\hyperlink{group__uartdrv_ga559d69d7978a815087a905fb13af15ea}{UARTDRV\+\_\+\+Handle\+\_\+t}} handle, uint8\+\_\+t \texorpdfstring{$\ast$}{*}data, \mbox{\hyperlink{group__uartdrv_ga20f2dca466c884ed896061f8e90ff816}{UARTDRV\+\_\+\+Count\+\_\+t}} count, \mbox{\hyperlink{group__uartdrv_ga75a7670b4c9deaa47bc197bbde9b7fb4}{UARTDRV\+\_\+\+Callback\+\_\+t}} callback)
+\begin{DoxyCompactList}\small\item\em Start a non-\/blocking transmit. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__ecode_ga7bf5621660c5ba69ac4dd3044173d35c}{Ecode\+\_\+t}} \mbox{\hyperlink{group__uartdrv_ga1d8a5e61c33176ad32cf3c1330e132c6}{UARTDRV\+\_\+\+Receive}} (\mbox{\hyperlink{group__uartdrv_ga559d69d7978a815087a905fb13af15ea}{UARTDRV\+\_\+\+Handle\+\_\+t}} handle, uint8\+\_\+t \texorpdfstring{$\ast$}{*}data, \mbox{\hyperlink{group__uartdrv_ga20f2dca466c884ed896061f8e90ff816}{UARTDRV\+\_\+\+Count\+\_\+t}} count, \mbox{\hyperlink{group__uartdrv_ga75a7670b4c9deaa47bc197bbde9b7fb4}{UARTDRV\+\_\+\+Callback\+\_\+t}} callback)
+\begin{DoxyCompactList}\small\item\em Start a non-\/blocking receive. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__ecode_ga7bf5621660c5ba69ac4dd3044173d35c}{Ecode\+\_\+t}} \mbox{\hyperlink{group__uartdrv_ga58f8120e861e2d9335e2acceec1ae4f7}{UARTDRV\+\_\+\+TransmitB}} (\mbox{\hyperlink{group__uartdrv_ga559d69d7978a815087a905fb13af15ea}{UARTDRV\+\_\+\+Handle\+\_\+t}} handle, uint8\+\_\+t \texorpdfstring{$\ast$}{*}data, \mbox{\hyperlink{group__uartdrv_ga20f2dca466c884ed896061f8e90ff816}{UARTDRV\+\_\+\+Count\+\_\+t}} count)
+\begin{DoxyCompactList}\small\item\em Start a blocking transmit. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__ecode_ga7bf5621660c5ba69ac4dd3044173d35c}{Ecode\+\_\+t}} \mbox{\hyperlink{group__uartdrv_ga5d8380296aa482ac95360d3855a2e150}{UARTDRV\+\_\+\+ReceiveB}} (\mbox{\hyperlink{group__uartdrv_ga559d69d7978a815087a905fb13af15ea}{UARTDRV\+\_\+\+Handle\+\_\+t}} handle, uint8\+\_\+t \texorpdfstring{$\ast$}{*}data, \mbox{\hyperlink{group__uartdrv_ga20f2dca466c884ed896061f8e90ff816}{UARTDRV\+\_\+\+Count\+\_\+t}} count)
+\begin{DoxyCompactList}\small\item\em Start a blocking receive. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__ecode_ga7bf5621660c5ba69ac4dd3044173d35c}{Ecode\+\_\+t}} \mbox{\hyperlink{group__uartdrv_ga762bade408c1a64812467e1f58026899}{UARTDRV\+\_\+\+Force\+Transmit}} (\mbox{\hyperlink{group__uartdrv_ga559d69d7978a815087a905fb13af15ea}{UARTDRV\+\_\+\+Handle\+\_\+t}} handle, uint8\+\_\+t \texorpdfstring{$\ast$}{*}data, \mbox{\hyperlink{group__uartdrv_ga20f2dca466c884ed896061f8e90ff816}{UARTDRV\+\_\+\+Count\+\_\+t}} count)
+\begin{DoxyCompactList}\small\item\em Direct transmit without interrupts or callback. This is a blocking function. that ignores flow control if enabled. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__uartdrv_ga20f2dca466c884ed896061f8e90ff816}{UARTDRV\+\_\+\+Count\+\_\+t}} \mbox{\hyperlink{group__uartdrv_gac978c9e489a78347598b3005bb49545e}{UARTDRV\+\_\+\+Force\+Receive}} (\mbox{\hyperlink{group__uartdrv_ga559d69d7978a815087a905fb13af15ea}{UARTDRV\+\_\+\+Handle\+\_\+t}} handle, uint8\+\_\+t \texorpdfstring{$\ast$}{*}data, \mbox{\hyperlink{group__uartdrv_ga20f2dca466c884ed896061f8e90ff816}{UARTDRV\+\_\+\+Count\+\_\+t}} max\+Length)
+\begin{DoxyCompactList}\small\item\em Direct receive without interrupts or callback. This is a blocking function. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__ecode_ga7bf5621660c5ba69ac4dd3044173d35c}{Ecode\+\_\+t}} \mbox{\hyperlink{group__uartdrv_ga0abd859c2a17dafe03abceeb4c96a12a}{UARTDRV\+\_\+\+Abort}} (\mbox{\hyperlink{group__uartdrv_ga559d69d7978a815087a905fb13af15ea}{UARTDRV\+\_\+\+Handle\+\_\+t}} handle, UARTDRV\+\_\+\+Abort\+Type\+\_\+t type)
+\begin{DoxyCompactList}\small\item\em Abort ongoing UART transfers. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__ecode_ga7bf5621660c5ba69ac4dd3044173d35c}{Ecode\+\_\+t}} \mbox{\hyperlink{group__uartdrv_gafa7cbc80545ad814f338c4043de5023c}{UARTDRV\+\_\+\+Pause\+Transmit}} (\mbox{\hyperlink{group__uartdrv_ga559d69d7978a815087a905fb13af15ea}{UARTDRV\+\_\+\+Handle\+\_\+t}} handle)
+\begin{DoxyCompactList}\small\item\em Pause an ongoing transmit operation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__ecode_ga7bf5621660c5ba69ac4dd3044173d35c}{Ecode\+\_\+t}} \mbox{\hyperlink{group__uartdrv_ga6e83c35be3ad93e6717ce8dc54a155c7}{UARTDRV\+\_\+\+Resume\+Transmit}} (\mbox{\hyperlink{group__uartdrv_ga559d69d7978a815087a905fb13af15ea}{UARTDRV\+\_\+\+Handle\+\_\+t}} handle)
+\begin{DoxyCompactList}\small\item\em Resume a paused transmit operation. \end{DoxyCompactList}\item 
+UARTDRV\+\_\+\+Flow\+Control\+State\+\_\+t \mbox{\hyperlink{group__uartdrv_ga54bed0223f912f7a5a5e1c4a62356ffe}{UARTDRV\+\_\+\+Flow\+Control\+Get\+Self\+Status}} (\mbox{\hyperlink{group__uartdrv_ga559d69d7978a815087a905fb13af15ea}{UARTDRV\+\_\+\+Handle\+\_\+t}} handle)
+\begin{DoxyCompactList}\small\item\em Check the self flow control status. \end{DoxyCompactList}\item 
+UARTDRV\+\_\+\+Flow\+Control\+State\+\_\+t \mbox{\hyperlink{group__uartdrv_ga3ba0e9be643afcefc0962dcdb2e635a7}{UARTDRV\+\_\+\+Flow\+Control\+Get\+Peer\+Status}} (\mbox{\hyperlink{group__uartdrv_ga559d69d7978a815087a905fb13af15ea}{UARTDRV\+\_\+\+Handle\+\_\+t}} handle)
+\begin{DoxyCompactList}\small\item\em Check the peer\textquotesingle{}s flow control status. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__ecode_ga7bf5621660c5ba69ac4dd3044173d35c}{Ecode\+\_\+t}} \mbox{\hyperlink{group__uartdrv_ga793738f4fce0d507867e3a56d36426d2}{UARTDRV\+\_\+\+Flow\+Control\+Set}} (\mbox{\hyperlink{group__uartdrv_ga559d69d7978a815087a905fb13af15ea}{UARTDRV\+\_\+\+Handle\+\_\+t}} handle, UARTDRV\+\_\+\+Flow\+Control\+State\+\_\+t state)
+\begin{DoxyCompactList}\small\item\em Set UART flow control state. Set n\+RTS pin if hardware flow control is enabled. Send XON/\+XOFF if software flow control is enabled. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__ecode_ga7bf5621660c5ba69ac4dd3044173d35c}{Ecode\+\_\+t}} \mbox{\hyperlink{group__uartdrv_ga110407a69b9915d78980749b449a106c}{UARTDRV\+\_\+\+Flow\+Control\+Set\+Peer\+Status}} (\mbox{\hyperlink{group__uartdrv_ga559d69d7978a815087a905fb13af15ea}{UARTDRV\+\_\+\+Handle\+\_\+t}} handle, UARTDRV\+\_\+\+Flow\+Control\+State\+\_\+t state)
+\begin{DoxyCompactList}\small\item\em Set peer UART flow control state. Pause/resume transmit accordingly. Only for manual software flow control. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__ecode_ga7bf5621660c5ba69ac4dd3044173d35c}{Ecode\+\_\+t}} \mbox{\hyperlink{group__uartdrv_ga8e0d51c55deaa14695b276c3c19cd4a1}{UARTDRV\+\_\+\+Flow\+Control\+Ignore\+Restrain}} (\mbox{\hyperlink{group__uartdrv_ga559d69d7978a815087a905fb13af15ea}{UARTDRV\+\_\+\+Handle\+\_\+t}} handle)
+\begin{DoxyCompactList}\small\item\em Enable transmission when restrained by flow control. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Universal Asynchronous Receiver/\+Transmitter Driver. 
+
+The source files for the UART driver library, \doxylink{uartdrv_8c}{uartdrv.\+c} and \doxylink{uartdrv_8h}{uartdrv.\+h}, are in the emdrv/uartdrv folder.
+
+~\newline
+ \hypertarget{group__uartdrv_uartdrv_intro}{}\doxysubsection{\texorpdfstring{Introduction}{Introduction}}\label{group__uartdrv_uartdrv_intro}
+The UART driver supports the UART capabilities of the USART, UART, and LEUART peripherals. The driver is fully reentrant and supports multiple driver instances. The driver does not buffer or queue data. However, it queues UART transmit and receive operations. Both blocking and non-\/blocking transfer functions are available. Non-\/blocking transfer functions report transfer completion with callback functions. Transfers are done using DMA. Simple direct/forced transmit and receive functions are also available. Note that these functions are blocking and not suitable for low energy applications because they use CPU polling.
+
+UART hardware flow control (CTS/\+RTS) is fully supported by the driver. UART software flow control (XON/\+XOFF) is partially supported by the driver. For more information about flow control support, see \doxysectlink{group__uartdrv_uartdrv_fc}{Flow Control Support}{1}.
+
+\begin{DoxyNote}{Note}
+Transfer completion callback functions are called from within the DMA interrupt handler with interrupts disabled.
+\end{DoxyNote}
+~\newline
+ \hypertarget{group__uartdrv_uartdrv_conf}{}\doxysubsection{\texorpdfstring{Configuration Options}{Configuration Options}}\label{group__uartdrv_uartdrv_conf}
+Some properties of the UARTDRV driver are compile-\/time configurable. These properties are set in a \doxylink{uartdrv__config_8h}{uartdrv\+\_\+config.\+h} file. A template for this file, containing default values, is in the emdrv/config folder. To configure UARTDRV for your application, provide a custom configuration file, or override the defines on the compiler command line. These are the available configuration parameters with default values defined. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \textcolor{comment}{//\ Set\ to\ 1\ to\ enable\ hardware\ flow\ control.}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EMDRV\_UARTDRV\_FLOW\_CONTROL\_ENABLE\ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{comment}{//\ Maximum\ number\ of\ driver\ instances.}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ EMDRV\_UARTDRV\_MAX\_DRIVER\_INSTANCES\ \ \ \ \ \ 4}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{comment}{//\ UART\ software\ flow\ control\ code:\ request\ peer\ to\ start\ Tx.}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ UARTDRV\_FC\_SW\_XON\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x11}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{comment}{//\ UART\ software\ flow\ control\ code:\ request\ peer\ to\ stop\ Tx.}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define\ UARTDRV\_FC\_SW\_XOFF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x13}}
+
+\end{DoxyCode}
+
+
+The properties of each UART driver instance are set at run-\/time via the UARTDRV\+\_\+\+Init\+Uart\+\_\+t data structure input parameter to the UARTDRV\+\_\+\+Init\+Uart() function for UART and USART peripherals, and the UARTDRV\+\_\+\+Init\+Leuart\+\_\+t data structure input parameter to the UARTDRV\+\_\+\+Init\+Leuart() function for LEUART peripherals.
+
+~\newline
+ \hypertarget{group__uartdrv_uartdrv_api}{}\doxysubsection{\texorpdfstring{The API}{The API}}\label{group__uartdrv_uartdrv_api}
+This section contains brief descriptions of the functions in the API. For more information on input and output parameters and return values, click on the hyperlinked function names. Most functions return an error code, \doxylink{group__uartdrv__error__codes_gab58e66dca86247dadeb887240b081bfb}{ECODE\+\_\+\+EMDRV\+\_\+\+UARTDRV\+\_\+\+OK} is returned on success, see \doxylink{ecode_8h}{ecode.\+h} and \doxylink{uartdrv_8h}{uartdrv.\+h} for other error codes.
+
+The application code must include {\itshape \doxylink{uartdrv_8h}{uartdrv.\+h}} header file.
+
+UARTDRV\+\_\+\+Init\+Uart(), UARTDRV\+\_\+\+Init\+Leuart() and \doxylink{group__uartdrv_ga3b4222031534ab6d54ca068b5fa6e596}{UARTDRV\+\_\+\+De\+Init()} ~\newline
+ These functions initialize and deinitialize the UARTDRV driver. Typically, UARTDRV\+\_\+\+Init\+Uart() (for UART/\+USART) or UARTDRV\+\_\+\+Init\+Leuart() (for LEUART) are called once in the startup code.
+
+\doxylink{group__uartdrv_ga34806bf9fc4d876aa6ae725ce060541b}{UARTDRV\+\_\+\+Get\+Receive\+Status()} and \doxylink{group__uartdrv_gae5387109fb659840fa822aa6ae08b81f}{UARTDRV\+\_\+\+Get\+Transmit\+Status()} ~\newline
+ Query the status of a current transmit or receive operations. Reports number of items (frames) transmitted and remaining.
+
+\doxylink{group__uartdrv_gab9b0230941575668b73874ffe1ff01e4}{UARTDRV\+\_\+\+Get\+Receive\+Depth()} and \doxylink{group__uartdrv_gab467cb6aa9940119e4f03bd860c76266}{UARTDRV\+\_\+\+Get\+Transmit\+Depth()} ~\newline
+ Get the number of queued receive or transmit operations.
+
+\doxylink{group__uartdrv_ga484ac0b78a9eccb0ec6a1d30b7cc3232}{UARTDRV\+\_\+\+Transmit()}, \doxylink{group__uartdrv_ga1d8a5e61c33176ad32cf3c1330e132c6}{UARTDRV\+\_\+\+Receive()} ~\newline
+ \doxylink{group__uartdrv_ga58f8120e861e2d9335e2acceec1ae4f7}{UARTDRV\+\_\+\+Transmit\+B()}, \doxylink{group__uartdrv_ga5d8380296aa482ac95360d3855a2e150}{UARTDRV\+\_\+\+Receive\+B()} ~\newline
+ \doxylink{group__uartdrv_ga762bade408c1a64812467e1f58026899}{UARTDRV\+\_\+\+Force\+Transmit()} and \doxylink{group__uartdrv_gac978c9e489a78347598b3005bb49545e}{UARTDRV\+\_\+\+Force\+Receive()} ~\newline
+ Blocking and non-\/blocking transfer functions are included. The blocking versions have an uppercase B (for Blocking) at the end of their function name. Blocking functions do not return before the transfer is complete. The non-\/blocking functions signal a transfer completion with a callback function. \doxylink{group__uartdrv_ga762bade408c1a64812467e1f58026899}{UARTDRV\+\_\+\+Force\+Transmit()} and \doxylink{group__uartdrv_gac978c9e489a78347598b3005bb49545e}{UARTDRV\+\_\+\+Force\+Receive()} are also blocking. These two functions access the UART peripheral directly without using DMA or interrupts. \doxylink{group__uartdrv_ga762bade408c1a64812467e1f58026899}{UARTDRV\+\_\+\+Force\+Transmit()} does not respect flow control. \doxylink{group__uartdrv_gac978c9e489a78347598b3005bb49545e}{UARTDRV\+\_\+\+Force\+Receive()} forces RTS low.
+
+\doxylink{group__uartdrv_ga0abd859c2a17dafe03abceeb4c96a12a}{UARTDRV\+\_\+\+Abort()} ~\newline
+ Abort current transmit or receive operations and remove all queued operations.
+
+\doxylink{group__uartdrv_ga793738f4fce0d507867e3a56d36426d2}{UARTDRV\+\_\+\+Flow\+Control\+Set()}, \doxylink{group__uartdrv_ga54bed0223f912f7a5a5e1c4a62356ffe}{UARTDRV\+\_\+\+Flow\+Control\+Get\+Self\+Status()}, \doxylink{group__uartdrv_ga110407a69b9915d78980749b449a106c}{UARTDRV\+\_\+\+Flow\+Control\+Set\+Peer\+Status()} and \doxylink{group__uartdrv_ga3ba0e9be643afcefc0962dcdb2e635a7}{UARTDRV\+\_\+\+Flow\+Control\+Get\+Peer\+Status()} ~\newline
+ Set and get flow control status of self or peer device. Note that the return value from these two functions depends on the flow control mode set by \doxylink{group__uartdrv_ga793738f4fce0d507867e3a56d36426d2}{UARTDRV\+\_\+\+Flow\+Control\+Set()}, UARTDRV\+\_\+\+Init\+Uart(), or UARTDRV\+\_\+\+Init\+Leuart().
+
+\doxylink{group__uartdrv_ga8e0d51c55deaa14695b276c3c19cd4a1}{UARTDRV\+\_\+\+Flow\+Control\+Ignore\+Restrain()} ~\newline
+ Enables transmission when restrained by flow control.
+
+\doxylink{group__uartdrv_gafa7cbc80545ad814f338c4043de5023c}{UARTDRV\+\_\+\+Pause\+Transmit()} and \doxylink{group__uartdrv_ga6e83c35be3ad93e6717ce8dc54a155c7}{UARTDRV\+\_\+\+Resume\+Transmit()} ~\newline
+ Pause a currently active transmit operation by preventing the DMA from loading the UART FIFO. Will not override HW flow control state (if applicable), but can be used in conjunction.
+
+~\newline
+ \hypertarget{group__uartdrv_uartdrv_fc}{}\doxysubsection{\texorpdfstring{Flow Control Support}{Flow Control Support}}\label{group__uartdrv_uartdrv_fc}
+If UART flow control is not required, make sure that EMDRV\+\_\+\+UARTDRV\+\_\+\+FLOW\+\_\+\+CONTROL\+\_\+\+ENABLE is set to 0. This reduces the code size and complexity of the driver.
+
+Both hardware and software flow control are supported. To enable either of these, set EMDRV\+\_\+\+UARTDRV\+\_\+\+FLOW\+\_\+\+CONTROL\+\_\+\+ENABLE to 1 in \doxylink{uartdrv__config_8h}{uartdrv\+\_\+config.\+h}.
+
+~\newline
+ \hypertarget{group__uartdrv_uartdrv_fc_hw}{}\doxysubsubsection{\texorpdfstring{Hardware Flow Control}{Hardware Flow Control}}\label{group__uartdrv_uartdrv_fc_hw}
+UART hardware flow control uses two additional pins for flow control handshaking, the clear-\/to-\/send (CTS) and ready-\/to-\/send (RTS) pins. RTS is an output and CTS is an input. These are active-\/low signals. When CTS is high, the UART transmitter should stop sending frames. A receiver should set RTS high when it is no longer capable of receiving data.
+
+\begin{DoxyParagraph}{Peripheral Hardware Flow Control}
+
+\end{DoxyParagraph}
+Newer devices natively support CTS/\+RTS in the USART peripheral hardware. To enable hardware flow control, perform the following steps\+:
+
+
+\begin{DoxyItemize}
+\item Set EMDRV\+\_\+\+UARTDRV\+\_\+\+FLOW\+\_\+\+CONTROL\+\_\+\+ENABLE to 1.
+\item In the UARTDRV\+\_\+\+Init\+Uart\+\_\+t struct passed to UARTDRV\+\_\+\+Init\+Uart(), set UARTDRV\+\_\+\+Init\+Uart\+\_\+t.\+fc\+Type = uartdrv\+Flow\+Control\+Hw\+Uart.
+\item Define the pins for CTS and RTS by setting cts\+Port, cts\+Pin, rts\+Port and rts\+Pin in the init struct.
+\item Also define the CTS and RTS locations by setting port\+Location\+Cts and port\+Location\+Rts in the init struct.
+\end{DoxyItemize}
+
+\begin{DoxyParagraph}{GPIO Hardware Flow Control}
+
+\end{DoxyParagraph}
+To support hardware flow control on devices that don\textquotesingle{}t have UART CTS/\+RTS hardware support, the driver includes the GPIOINT driver to emulate a hardware implementation of UART CTS/\+RTS flow control on these devices.
+
+To enable hardware flow control, perform the following steps\+:
+
+
+\begin{DoxyItemize}
+\item Set EMDRV\+\_\+\+UARTDRV\+\_\+\+FLOW\+\_\+\+CONTROL\+\_\+\+ENABLE to 1.
+\item UART/\+USART\+: In the UARTDRV\+\_\+\+Init\+Uart\+\_\+t struct passed to UARTDRV\+\_\+\+Init\+Uart(), set UARTDRV\+\_\+\+Init\+Uart\+\_\+t.\+fc\+Type = uartdrv\+Flow\+Control\+Hw.
+\item LEUART\+: In the UARTDRV\+\_\+\+Init\+Leuart\+\_\+t struct passed to UARTDRV\+\_\+\+Init\+Leuart(), set UARTDRV\+\_\+\+Init\+Leuart\+\_\+t.\+fc\+Type = uartdrv\+Flow\+Control\+Hw.
+\item Define the pins for CTS and RTS by setting cts\+Port, cts\+Pin, rts\+Port and rts\+Pin in the same init struct.
+\end{DoxyItemize}
+
+\begin{DoxyNote}{Note}
+Because of the limitations in GPIO interrupt hardware, you cannot select CTS pins in multiple driver instances with the same pin number. For example, pin A0 and B0 cannot serve as CTS pins in two concurrent driver instances.
+\end{DoxyNote}
+RTS is set high whenever there are no Rx operations queued. The UART transmitter is halted when the CTS pin goes high. The transmitter completes the current frame before halting. DMA transfers are also halted.
+
+~\newline
+ \hypertarget{group__uartdrv_uartdrv_fc_sw}{}\doxysubsubsection{\texorpdfstring{Software Flow Control}{Software Flow Control}}\label{group__uartdrv_uartdrv_fc_sw}
+UART software flow control uses in-\/band signaling, meaning the receiver sends special flow control characters to the transmitter and thereby removes the need for dedicated wires for flow control. The two symbols UARTDRV\+\_\+\+FC\+\_\+\+SW\+\_\+\+XON and UARTDRV\+\_\+\+FC\+\_\+\+SW\+\_\+\+XOFF are defined in \doxylink{uartdrv__config_8h}{uartdrv\+\_\+config.\+h}.
+
+To enable support for software flow control, perform the following steps\+:
+
+
+\begin{DoxyItemize}
+\item Set EMDRV\+\_\+\+UARTDRV\+\_\+\+FLOW\+\_\+\+CONTROL\+\_\+\+ENABLE to 1.
+\item UART/\+USART\+: In the UARTDRV\+\_\+\+Init\+Uart\+\_\+t structure passed to UARTDRV\+\_\+\+Init\+Uart(), set UARTDRV\+\_\+\+Init\+Uart\+\_\+t.\+fc\+Type = uartdrv\+Flow\+Control\+Sw.
+\item LEUART\+: In the UARTDRV\+\_\+\+Init\+Leuart\+\_\+t structure passed to UARTDRV\+\_\+\+Init\+Leuart(), set UARTDRV\+\_\+\+Init\+Leuart\+\_\+t.\+fc\+Type = uartdrv\+Flow\+Control\+Sw.
+\end{DoxyItemize}
+
+\begin{DoxyNote}{Note}
+Software flow control is partial only.
+\end{DoxyNote}
+The application must monitor buffers and make decisions on when to send XON/ XOFF. XON/\+XOFF can be sent to the peer using \doxylink{group__uartdrv_ga793738f4fce0d507867e3a56d36426d2}{UARTDRV\+\_\+\+Flow\+Control\+Set()}. Though \doxylink{group__uartdrv_ga793738f4fce0d507867e3a56d36426d2}{UARTDRV\+\_\+\+Flow\+Control\+Set()} will pause the active transmit operation to send a flow control character, there is no way to guarantee the order. If the application implements a specific packet format where the flow control codes may appear only in fixed positions, the application should not use \doxylink{group__uartdrv_ga793738f4fce0d507867e3a56d36426d2}{UARTDRV\+\_\+\+Flow\+Control\+Set()} but implement read and write of XON/\+XOFF into packet buffers. If the application code fully implements all the flow control logic, EMDRV\+\_\+\+UARTDRV\+\_\+\+FLOW\+\_\+\+CONTROL\+\_\+\+ENABLE should be set to 0 to reduce code space.
+
+~\newline
+ \hypertarget{group__uartdrv_uartdrv_example}{}\doxysubsection{\texorpdfstring{Example}{Example}}\label{group__uartdrv_uartdrv_example}
+
+
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{group__uartdrv_ga24318918f06c584749d8a2f8a96be2fc}\index{UARTDRV -\/ UART Driver@{UARTDRV -\/ UART Driver}!DEFINE\_BUF\_QUEUE@{DEFINE\_BUF\_QUEUE}}
+\index{DEFINE\_BUF\_QUEUE@{DEFINE\_BUF\_QUEUE}!UARTDRV -\/ UART Driver@{UARTDRV -\/ UART Driver}}
+\doxysubsubsection{\texorpdfstring{DEFINE\_BUF\_QUEUE}{DEFINE\_BUF\_QUEUE}}
+{\footnotesize\ttfamily \label{group__uartdrv_ga24318918f06c584749d8a2f8a96be2fc} 
+\#define DEFINE\+\_\+\+BUF\+\_\+\+QUEUE(\begin{DoxyParamCaption}\item[{}]{q\+Size}{, }\item[{}]{q\+Name}{}\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ uint16\_t\ head;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ uint16\_t\ tail;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{volatile}\ uint16\_t\ used;\ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{const}\ uint16\_t\ size;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{struct_u_a_r_t_d_r_v___buffer__t}{UARTDRV\_Buffer\_t}}\ fifo[qSize];\ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \}\ \_\#\#qName;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \textcolor{keyword}{static}\ \textcolor{keyword}{volatile}\ \_\#\#qName\ qName\ =\ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ .head\ =\ 0,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ .tail\ =\ 0,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ .used\ =\ 0,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \ \ .size\ =\ qSize,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}
+\DoxyCodeLine{\ \ \}}
+
+\end{DoxyCode}
+Macros to define FIFO and buffer queues. typedef can\textquotesingle{}t be used because the size of the FIFO array in the queues can change. \Hypertarget{group__uartdrv_gabe460e78b696ee85a78db220e5f6ec89}\index{UARTDRV -\/ UART Driver@{UARTDRV -\/ UART Driver}!EMDRV\_UARTDRV\_MAX\_CONCURRENT\_RX\_BUFS@{EMDRV\_UARTDRV\_MAX\_CONCURRENT\_RX\_BUFS}}
+\index{EMDRV\_UARTDRV\_MAX\_CONCURRENT\_RX\_BUFS@{EMDRV\_UARTDRV\_MAX\_CONCURRENT\_RX\_BUFS}!UARTDRV -\/ UART Driver@{UARTDRV -\/ UART Driver}}
+\doxysubsubsection{\texorpdfstring{EMDRV\_UARTDRV\_MAX\_CONCURRENT\_RX\_BUFS}{EMDRV\_UARTDRV\_MAX\_CONCURRENT\_RX\_BUFS}}
+{\footnotesize\ttfamily \label{group__uartdrv_gabe460e78b696ee85a78db220e5f6ec89} 
+\#define EMDRV\+\_\+\+UARTDRV\+\_\+\+MAX\+\_\+\+CONCURRENT\+\_\+\+RX\+\_\+\+BUFS~6}
+
+Size of the receive operation queue.
+
+The maximum number of receive operations that can be queued up for one driver instance before \doxylink{group__uartdrv_ga1d8a5e61c33176ad32cf3c1330e132c6}{UARTDRV\+\_\+\+Receive()} returns \doxylink{group__uartdrv__error__codes_ga1508fd8b2237135b1b02a2b7096edac0}{ECODE\+\_\+\+EMDRV\+\_\+\+UARTDRV\+\_\+\+QUEUE\+\_\+\+FULL}. \begin{DoxyNote}{Note}
+This macro is not used by the UARTDRV itself, but is intended to be used with the \doxylink{group__uartdrv_ga24318918f06c584749d8a2f8a96be2fc}{DEFINE\+\_\+\+BUF\+\_\+\+QUEUE} macro by the user of the driver to allocate instances of the \doxylink{struct_u_a_r_t_d_r_v___buffer___fifo_queue__t}{UARTDRV\+\_\+\+Buffer\+\_\+\+Fifo\+Queue\+\_\+t} struct. 
+\end{DoxyNote}
+\Hypertarget{group__uartdrv_ga1a5792abd05dc9ec1eb1c2fa0e9b9d6a}\index{UARTDRV -\/ UART Driver@{UARTDRV -\/ UART Driver}!EMDRV\_UARTDRV\_MAX\_CONCURRENT\_TX\_BUFS@{EMDRV\_UARTDRV\_MAX\_CONCURRENT\_TX\_BUFS}}
+\index{EMDRV\_UARTDRV\_MAX\_CONCURRENT\_TX\_BUFS@{EMDRV\_UARTDRV\_MAX\_CONCURRENT\_TX\_BUFS}!UARTDRV -\/ UART Driver@{UARTDRV -\/ UART Driver}}
+\doxysubsubsection{\texorpdfstring{EMDRV\_UARTDRV\_MAX\_CONCURRENT\_TX\_BUFS}{EMDRV\_UARTDRV\_MAX\_CONCURRENT\_TX\_BUFS}}
+{\footnotesize\ttfamily \label{group__uartdrv_ga1a5792abd05dc9ec1eb1c2fa0e9b9d6a} 
+\#define EMDRV\+\_\+\+UARTDRV\+\_\+\+MAX\+\_\+\+CONCURRENT\+\_\+\+TX\+\_\+\+BUFS~6}
+
+Size of the transmit operation queue.
+
+The maximum number of transmit operations that can be queued up for one driver instance before \doxylink{group__uartdrv_ga484ac0b78a9eccb0ec6a1d30b7cc3232}{UARTDRV\+\_\+\+Transmit()} returns \doxylink{group__uartdrv__error__codes_ga1508fd8b2237135b1b02a2b7096edac0}{ECODE\+\_\+\+EMDRV\+\_\+\+UARTDRV\+\_\+\+QUEUE\+\_\+\+FULL}. \begin{DoxyNote}{Note}
+This macro is not used by the UARTDRV itself, but is intended to be used with the \doxylink{group__uartdrv_ga24318918f06c584749d8a2f8a96be2fc}{DEFINE\+\_\+\+BUF\+\_\+\+QUEUE} macro by the user of the driver to allocate instances of the \doxylink{struct_u_a_r_t_d_r_v___buffer___fifo_queue__t}{UARTDRV\+\_\+\+Buffer\+\_\+\+Fifo\+Queue\+\_\+t} struct. 
+\end{DoxyNote}
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{group__uartdrv_ga75a7670b4c9deaa47bc197bbde9b7fb4}\index{UARTDRV -\/ UART Driver@{UARTDRV -\/ UART Driver}!UARTDRV\_Callback\_t@{UARTDRV\_Callback\_t}}
+\index{UARTDRV\_Callback\_t@{UARTDRV\_Callback\_t}!UARTDRV -\/ UART Driver@{UARTDRV -\/ UART Driver}}
+\doxysubsubsection{\texorpdfstring{UARTDRV\_Callback\_t}{UARTDRV\_Callback\_t}}
+{\footnotesize\ttfamily \label{group__uartdrv_ga75a7670b4c9deaa47bc197bbde9b7fb4} 
+typedef void(\texorpdfstring{$\ast$}{*} UARTDRV\+\_\+\+Callback\+\_\+t) (struct \mbox{\hyperlink{struct_u_a_r_t_d_r_v___handle_data}{UARTDRV\+\_\+\+Handle\+Data}} \texorpdfstring{$\ast$}{*}handle, \mbox{\hyperlink{group__ecode_ga7bf5621660c5ba69ac4dd3044173d35c}{Ecode\+\_\+t}} transfer\+Status, uint8\+\_\+t \texorpdfstring{$\ast$}{*}data, \mbox{\hyperlink{group__uartdrv_ga20f2dca466c884ed896061f8e90ff816}{UARTDRV\+\_\+\+Count\+\_\+t}} transfer\+Count)}
+
+
+
+UARTDRV transfer completion callback function. 
+
+Called when a transfer is complete. An application should check the transfer\+Status and items\+Transferred values.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em handle} & The UARTDRV device handle used to start the transfer.\\
+\hline
+\mbox{\texttt{ in}}  & {\em transfer\+Status} & Completion status of the transfer operation.\\
+\hline
+\mbox{\texttt{ in}}  & {\em data} & A pointer to the transfer data buffer.\\
+\hline
+\mbox{\texttt{ in}}  & {\em transfer\+Count} & A number of bytes transferred. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group__uartdrv_gac38a311be86450bee230b5bf111cecf3}\index{UARTDRV -\/ UART Driver@{UARTDRV -\/ UART Driver}!UARTDRV\_HandleData\_t@{UARTDRV\_HandleData\_t}}
+\index{UARTDRV\_HandleData\_t@{UARTDRV\_HandleData\_t}!UARTDRV -\/ UART Driver@{UARTDRV -\/ UART Driver}}
+\doxysubsubsection{\texorpdfstring{UARTDRV\_HandleData\_t}{UARTDRV\_HandleData\_t}}
+{\footnotesize\ttfamily \label{group__uartdrv_gac38a311be86450bee230b5bf111cecf3} 
+typedef struct \mbox{\hyperlink{struct_u_a_r_t_d_r_v___handle_data}{UARTDRV\+\_\+\+Handle\+Data}} \mbox{\hyperlink{group__uartdrv_gac38a311be86450bee230b5bf111cecf3}{UARTDRV\+\_\+\+Handle\+Data\+\_\+t}}}
+
+A UART driver instance handle data structure. Allocated by the application using UARTDRV. Several concurrent driver instances may exist in an application. The application must not modify the contents of this handle and should not depend on its values. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{group__uartdrv_ga0111d9b9c81c8b15cfde60ac8d19c36c}\index{UARTDRV -\/ UART Driver@{UARTDRV -\/ UART Driver}!SL\_ENUM@{SL\_ENUM}}
+\index{SL\_ENUM@{SL\_ENUM}!UARTDRV -\/ UART Driver@{UARTDRV -\/ UART Driver}}
+\doxysubsubsection{\texorpdfstring{SL\_ENUM()}{SL\_ENUM()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{group__uartdrv_ga0111d9b9c81c8b15cfde60ac8d19c36c} 
+SL\+\_\+\+ENUM (\begin{DoxyParamCaption}\item[{UARTDRV\+\_\+\+Abort\+Type\+\_\+t}]{}{}\end{DoxyParamCaption})}
+
+
+
+Transfer abort type. 
+
+\texorpdfstring{$<$}{<} Abort current and queued transmit operations
+
+\texorpdfstring{$<$}{<} Abort current and queued receive operations
+
+\texorpdfstring{$<$}{<} Abort all current and queued operations\Hypertarget{group__uartdrv_ga88d8ed44e5de7fddff07b6f98c6be21f}\index{UARTDRV -\/ UART Driver@{UARTDRV -\/ UART Driver}!SL\_ENUM@{SL\_ENUM}}
+\index{SL\_ENUM@{SL\_ENUM}!UARTDRV -\/ UART Driver@{UARTDRV -\/ UART Driver}}
+\doxysubsubsection{\texorpdfstring{SL\_ENUM()}{SL\_ENUM()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{group__uartdrv_ga88d8ed44e5de7fddff07b6f98c6be21f} 
+SL\+\_\+\+ENUM (\begin{DoxyParamCaption}\item[{UARTDRV\+\_\+\+Flow\+Control\+State\+\_\+t}]{}{}\end{DoxyParamCaption})}
+
+
+
+Flow Control state. 
+
+\texorpdfstring{$<$}{<} XON or n\+RTS/n\+CTS low
+
+\texorpdfstring{$<$}{<} XOFF or n\+RTS/n\+CTS high
+
+\texorpdfstring{$<$}{<} This driver controls the state.\Hypertarget{group__uartdrv_gadd561e294765dfb017374057fd99ceb8}\index{UARTDRV -\/ UART Driver@{UARTDRV -\/ UART Driver}!SL\_ENUM@{SL\_ENUM}}
+\index{SL\_ENUM@{SL\_ENUM}!UARTDRV -\/ UART Driver@{UARTDRV -\/ UART Driver}}
+\doxysubsubsection{\texorpdfstring{SL\_ENUM()}{SL\_ENUM()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{group__uartdrv_gadd561e294765dfb017374057fd99ceb8} 
+SL\+\_\+\+ENUM (\begin{DoxyParamCaption}\item[{UARTDRV\+\_\+\+Flow\+Control\+Type\+\_\+t}]{}{}\end{DoxyParamCaption})}
+
+\texorpdfstring{$<$}{<} None
+
+\texorpdfstring{$<$}{<} Software XON/\+XOFF
+
+\texorpdfstring{$<$}{<} n\+RTS/n\+CTS hardware handshake
+
+\texorpdfstring{$<$}{<} UART peripheral controls n\+RTS/n\+CTS\Hypertarget{group__uartdrv_ga0abd859c2a17dafe03abceeb4c96a12a}\index{UARTDRV -\/ UART Driver@{UARTDRV -\/ UART Driver}!UARTDRV\_Abort@{UARTDRV\_Abort}}
+\index{UARTDRV\_Abort@{UARTDRV\_Abort}!UARTDRV -\/ UART Driver@{UARTDRV -\/ UART Driver}}
+\doxysubsubsection{\texorpdfstring{UARTDRV\_Abort()}{UARTDRV\_Abort()}}
+{\footnotesize\ttfamily \label{group__uartdrv_ga0abd859c2a17dafe03abceeb4c96a12a} 
+\mbox{\hyperlink{group__ecode_ga7bf5621660c5ba69ac4dd3044173d35c}{Ecode\+\_\+t}} UARTDRV\+\_\+\+Abort (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__uartdrv_ga559d69d7978a815087a905fb13af15ea}{UARTDRV\+\_\+\+Handle\+\_\+t}}}]{handle}{, }\item[{UARTDRV\+\_\+\+Abort\+Type\+\_\+t}]{type}{}\end{DoxyParamCaption})}
+
+
+
+Abort ongoing UART transfers. 
+
+All ongoing or queued operations of the given abort type will be aborted.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em handle} & Pointer to a UART driver handle.\\
+\hline
+\mbox{\texttt{ in}}  & {\em type} & Abort type -- whether to abort only Tx, only Rx, or both.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{group__uartdrv__error__codes_gab58e66dca86247dadeb887240b081bfb}{ECODE\+\_\+\+EMDRV\+\_\+\+UARTDRV\+\_\+\+OK} on success, \doxylink{group__uartdrv__error__codes_ga1c71e9adb59ea02dd52b94ee2958ada4}{ECODE\+\_\+\+EMDRV\+\_\+\+UARTDRV\+\_\+\+IDLE} if the UART is idle. On failure, an appropriate UARTDRV \doxylink{group__ecode_ga7bf5621660c5ba69ac4dd3044173d35c}{Ecode\+\_\+t} is returned. 
+\end{DoxyReturn}
+\Hypertarget{group__uartdrv_ga3b4222031534ab6d54ca068b5fa6e596}\index{UARTDRV -\/ UART Driver@{UARTDRV -\/ UART Driver}!UARTDRV\_DeInit@{UARTDRV\_DeInit}}
+\index{UARTDRV\_DeInit@{UARTDRV\_DeInit}!UARTDRV -\/ UART Driver@{UARTDRV -\/ UART Driver}}
+\doxysubsubsection{\texorpdfstring{UARTDRV\_DeInit()}{UARTDRV\_DeInit()}}
+{\footnotesize\ttfamily \label{group__uartdrv_ga3b4222031534ab6d54ca068b5fa6e596} 
+\mbox{\hyperlink{group__ecode_ga7bf5621660c5ba69ac4dd3044173d35c}{Ecode\+\_\+t}} UARTDRV\+\_\+\+De\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__uartdrv_ga559d69d7978a815087a905fb13af15ea}{UARTDRV\+\_\+\+Handle\+\_\+t}}}]{handle}{}\end{DoxyParamCaption})}
+
+
+
+Deinitialize a UART driver instance. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em handle} & Pointer to a UART driver handle.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{group__uartdrv__error__codes_gab58e66dca86247dadeb887240b081bfb}{ECODE\+\_\+\+EMDRV\+\_\+\+UARTDRV\+\_\+\+OK} on success. On failure, an appropriate UARTDRV \doxylink{group__ecode_ga7bf5621660c5ba69ac4dd3044173d35c}{Ecode\+\_\+t} is returned. 
+\end{DoxyReturn}
+\Hypertarget{group__uartdrv_ga3ba0e9be643afcefc0962dcdb2e635a7}\index{UARTDRV -\/ UART Driver@{UARTDRV -\/ UART Driver}!UARTDRV\_FlowControlGetPeerStatus@{UARTDRV\_FlowControlGetPeerStatus}}
+\index{UARTDRV\_FlowControlGetPeerStatus@{UARTDRV\_FlowControlGetPeerStatus}!UARTDRV -\/ UART Driver@{UARTDRV -\/ UART Driver}}
+\doxysubsubsection{\texorpdfstring{UARTDRV\_FlowControlGetPeerStatus()}{UARTDRV\_FlowControlGetPeerStatus()}}
+{\footnotesize\ttfamily \label{group__uartdrv_ga3ba0e9be643afcefc0962dcdb2e635a7} 
+UARTDRV\+\_\+\+Flow\+Control\+State\+\_\+t UARTDRV\+\_\+\+Flow\+Control\+Get\+Peer\+Status (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__uartdrv_ga559d69d7978a815087a905fb13af15ea}{UARTDRV\+\_\+\+Handle\+\_\+t}}}]{handle}{}\end{DoxyParamCaption})}
+
+
+
+Check the peer\textquotesingle{}s flow control status. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em handle} & Pointer to a UART driver handle.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns uartdrv\+Flow\+Control\+On if clear to send. 
+\end{DoxyReturn}
+\Hypertarget{group__uartdrv_ga54bed0223f912f7a5a5e1c4a62356ffe}\index{UARTDRV -\/ UART Driver@{UARTDRV -\/ UART Driver}!UARTDRV\_FlowControlGetSelfStatus@{UARTDRV\_FlowControlGetSelfStatus}}
+\index{UARTDRV\_FlowControlGetSelfStatus@{UARTDRV\_FlowControlGetSelfStatus}!UARTDRV -\/ UART Driver@{UARTDRV -\/ UART Driver}}
+\doxysubsubsection{\texorpdfstring{UARTDRV\_FlowControlGetSelfStatus()}{UARTDRV\_FlowControlGetSelfStatus()}}
+{\footnotesize\ttfamily \label{group__uartdrv_ga54bed0223f912f7a5a5e1c4a62356ffe} 
+UARTDRV\+\_\+\+Flow\+Control\+State\+\_\+t UARTDRV\+\_\+\+Flow\+Control\+Get\+Self\+Status (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__uartdrv_ga559d69d7978a815087a905fb13af15ea}{UARTDRV\+\_\+\+Handle\+\_\+t}}}]{handle}{}\end{DoxyParamCaption})}
+
+
+
+Check the self flow control status. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em handle} & Pointer to a UART driver handle.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns uartdrv\+Flow\+Control\+On if requesting to send. 
+\end{DoxyReturn}
+\Hypertarget{group__uartdrv_ga8e0d51c55deaa14695b276c3c19cd4a1}\index{UARTDRV -\/ UART Driver@{UARTDRV -\/ UART Driver}!UARTDRV\_FlowControlIgnoreRestrain@{UARTDRV\_FlowControlIgnoreRestrain}}
+\index{UARTDRV\_FlowControlIgnoreRestrain@{UARTDRV\_FlowControlIgnoreRestrain}!UARTDRV -\/ UART Driver@{UARTDRV -\/ UART Driver}}
+\doxysubsubsection{\texorpdfstring{UARTDRV\_FlowControlIgnoreRestrain()}{UARTDRV\_FlowControlIgnoreRestrain()}}
+{\footnotesize\ttfamily \label{group__uartdrv_ga8e0d51c55deaa14695b276c3c19cd4a1} 
+\mbox{\hyperlink{group__ecode_ga7bf5621660c5ba69ac4dd3044173d35c}{Ecode\+\_\+t}} UARTDRV\+\_\+\+Flow\+Control\+Ignore\+Restrain (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__uartdrv_ga559d69d7978a815087a905fb13af15ea}{UARTDRV\+\_\+\+Handle\+\_\+t}}}]{handle}{}\end{DoxyParamCaption})}
+
+
+
+Enable transmission when restrained by flow control. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em handle} & Pointer to a UART driver handle.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{group__uartdrv__error__codes_gab58e66dca86247dadeb887240b081bfb}{ECODE\+\_\+\+EMDRV\+\_\+\+UARTDRV\+\_\+\+OK} on success. 
+\end{DoxyReturn}
+\Hypertarget{group__uartdrv_ga793738f4fce0d507867e3a56d36426d2}\index{UARTDRV -\/ UART Driver@{UARTDRV -\/ UART Driver}!UARTDRV\_FlowControlSet@{UARTDRV\_FlowControlSet}}
+\index{UARTDRV\_FlowControlSet@{UARTDRV\_FlowControlSet}!UARTDRV -\/ UART Driver@{UARTDRV -\/ UART Driver}}
+\doxysubsubsection{\texorpdfstring{UARTDRV\_FlowControlSet()}{UARTDRV\_FlowControlSet()}}
+{\footnotesize\ttfamily \label{group__uartdrv_ga793738f4fce0d507867e3a56d36426d2} 
+\mbox{\hyperlink{group__ecode_ga7bf5621660c5ba69ac4dd3044173d35c}{Ecode\+\_\+t}} UARTDRV\+\_\+\+Flow\+Control\+Set (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__uartdrv_ga559d69d7978a815087a905fb13af15ea}{UARTDRV\+\_\+\+Handle\+\_\+t}}}]{handle}{, }\item[{UARTDRV\+\_\+\+Flow\+Control\+State\+\_\+t}]{state}{}\end{DoxyParamCaption})}
+
+
+
+Set UART flow control state. Set n\+RTS pin if hardware flow control is enabled. Send XON/\+XOFF if software flow control is enabled. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em handle} & Pointer to a UART driver handle.\\
+\hline
+\mbox{\texttt{ in}}  & {\em state} & Flow control state.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{group__uartdrv__error__codes_gab58e66dca86247dadeb887240b081bfb}{ECODE\+\_\+\+EMDRV\+\_\+\+UARTDRV\+\_\+\+OK} on success. 
+\end{DoxyReturn}
+\Hypertarget{group__uartdrv_ga110407a69b9915d78980749b449a106c}\index{UARTDRV -\/ UART Driver@{UARTDRV -\/ UART Driver}!UARTDRV\_FlowControlSetPeerStatus@{UARTDRV\_FlowControlSetPeerStatus}}
+\index{UARTDRV\_FlowControlSetPeerStatus@{UARTDRV\_FlowControlSetPeerStatus}!UARTDRV -\/ UART Driver@{UARTDRV -\/ UART Driver}}
+\doxysubsubsection{\texorpdfstring{UARTDRV\_FlowControlSetPeerStatus()}{UARTDRV\_FlowControlSetPeerStatus()}}
+{\footnotesize\ttfamily \label{group__uartdrv_ga110407a69b9915d78980749b449a106c} 
+\mbox{\hyperlink{group__ecode_ga7bf5621660c5ba69ac4dd3044173d35c}{Ecode\+\_\+t}} UARTDRV\+\_\+\+Flow\+Control\+Set\+Peer\+Status (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__uartdrv_ga559d69d7978a815087a905fb13af15ea}{UARTDRV\+\_\+\+Handle\+\_\+t}}}]{handle}{, }\item[{UARTDRV\+\_\+\+Flow\+Control\+State\+\_\+t}]{state}{}\end{DoxyParamCaption})}
+
+
+
+Set peer UART flow control state. Pause/resume transmit accordingly. Only for manual software flow control. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em handle} & Pointer to a UART driver handle.\\
+\hline
+\mbox{\texttt{ in}}  & {\em state} & Flow control state.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{group__uartdrv__error__codes_gab58e66dca86247dadeb887240b081bfb}{ECODE\+\_\+\+EMDRV\+\_\+\+UARTDRV\+\_\+\+OK} on success. 
+\end{DoxyReturn}
+\Hypertarget{group__uartdrv_gac978c9e489a78347598b3005bb49545e}\index{UARTDRV -\/ UART Driver@{UARTDRV -\/ UART Driver}!UARTDRV\_ForceReceive@{UARTDRV\_ForceReceive}}
+\index{UARTDRV\_ForceReceive@{UARTDRV\_ForceReceive}!UARTDRV -\/ UART Driver@{UARTDRV -\/ UART Driver}}
+\doxysubsubsection{\texorpdfstring{UARTDRV\_ForceReceive()}{UARTDRV\_ForceReceive()}}
+{\footnotesize\ttfamily \label{group__uartdrv_gac978c9e489a78347598b3005bb49545e} 
+\mbox{\hyperlink{group__uartdrv_ga20f2dca466c884ed896061f8e90ff816}{UARTDRV\+\_\+\+Count\+\_\+t}} UARTDRV\+\_\+\+Force\+Receive (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__uartdrv_ga559d69d7978a815087a905fb13af15ea}{UARTDRV\+\_\+\+Handle\+\_\+t}}}]{handle}{, }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{data}{, }\item[{\mbox{\hyperlink{group__uartdrv_ga20f2dca466c884ed896061f8e90ff816}{UARTDRV\+\_\+\+Count\+\_\+t}}}]{max\+Count}{}\end{DoxyParamCaption})}
+
+
+
+Direct receive without interrupts or callback. This is a blocking function. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em handle} & Pointer to a UART driver handle.\\
+\hline
+\mbox{\texttt{ in}}  & {\em data} & pointer to buffer.\\
+\hline
+\mbox{\texttt{ in}}  & {\em max\+Count} & Maximum number of bytes to receive.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Number of bytes received. 
+\end{DoxyReturn}
+\Hypertarget{group__uartdrv_ga762bade408c1a64812467e1f58026899}\index{UARTDRV -\/ UART Driver@{UARTDRV -\/ UART Driver}!UARTDRV\_ForceTransmit@{UARTDRV\_ForceTransmit}}
+\index{UARTDRV\_ForceTransmit@{UARTDRV\_ForceTransmit}!UARTDRV -\/ UART Driver@{UARTDRV -\/ UART Driver}}
+\doxysubsubsection{\texorpdfstring{UARTDRV\_ForceTransmit()}{UARTDRV\_ForceTransmit()}}
+{\footnotesize\ttfamily \label{group__uartdrv_ga762bade408c1a64812467e1f58026899} 
+\mbox{\hyperlink{group__ecode_ga7bf5621660c5ba69ac4dd3044173d35c}{Ecode\+\_\+t}} UARTDRV\+\_\+\+Force\+Transmit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__uartdrv_ga559d69d7978a815087a905fb13af15ea}{UARTDRV\+\_\+\+Handle\+\_\+t}}}]{handle}{, }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{data}{, }\item[{\mbox{\hyperlink{group__uartdrv_ga20f2dca466c884ed896061f8e90ff816}{UARTDRV\+\_\+\+Count\+\_\+t}}}]{count}{}\end{DoxyParamCaption})}
+
+
+
+Direct transmit without interrupts or callback. This is a blocking function. that ignores flow control if enabled. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em handle} & Pointer to a UART driver handle.\\
+\hline
+\mbox{\texttt{ in}}  & {\em data} & Pointer to the buffer.\\
+\hline
+\mbox{\texttt{ in}}  & {\em count} & A number of bytes to transmit.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{group__uartdrv__error__codes_gab58e66dca86247dadeb887240b081bfb}{ECODE\+\_\+\+EMDRV\+\_\+\+UARTDRV\+\_\+\+OK} on success. 
+\end{DoxyReturn}
+\Hypertarget{group__uartdrv_ga38e53b4e39e17d0f7be9034ef11eb534}\index{UARTDRV -\/ UART Driver@{UARTDRV -\/ UART Driver}!UARTDRV\_GetPeripheralStatus@{UARTDRV\_GetPeripheralStatus}}
+\index{UARTDRV\_GetPeripheralStatus@{UARTDRV\_GetPeripheralStatus}!UARTDRV -\/ UART Driver@{UARTDRV -\/ UART Driver}}
+\doxysubsubsection{\texorpdfstring{UARTDRV\_GetPeripheralStatus()}{UARTDRV\_GetPeripheralStatus()}}
+{\footnotesize\ttfamily \label{group__uartdrv_ga38e53b4e39e17d0f7be9034ef11eb534} 
+\mbox{\hyperlink{group__uartdrv_gae1cf3e2748cf7a377fe60f055c07c3a6}{UARTDRV\+\_\+\+Status\+\_\+t}} UARTDRV\+\_\+\+Get\+Peripheral\+Status (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__uartdrv_ga559d69d7978a815087a905fb13af15ea}{UARTDRV\+\_\+\+Handle\+\_\+t}}}]{handle}{}\end{DoxyParamCaption})}
+
+
+
+Return the status of the UART peripheral associated with a given handle. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em handle} & Pointer to a UART driver handle.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+UART status value 
+\end{DoxyReturn}
+\Hypertarget{group__uartdrv_gab9b0230941575668b73874ffe1ff01e4}\index{UARTDRV -\/ UART Driver@{UARTDRV -\/ UART Driver}!UARTDRV\_GetReceiveDepth@{UARTDRV\_GetReceiveDepth}}
+\index{UARTDRV\_GetReceiveDepth@{UARTDRV\_GetReceiveDepth}!UARTDRV -\/ UART Driver@{UARTDRV -\/ UART Driver}}
+\doxysubsubsection{\texorpdfstring{UARTDRV\_GetReceiveDepth()}{UARTDRV\_GetReceiveDepth()}}
+{\footnotesize\ttfamily \label{group__uartdrv_gab9b0230941575668b73874ffe1ff01e4} 
+uint8\+\_\+t UARTDRV\+\_\+\+Get\+Receive\+Depth (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__uartdrv_ga559d69d7978a815087a905fb13af15ea}{UARTDRV\+\_\+\+Handle\+\_\+t}}}]{handle}{}\end{DoxyParamCaption})}
+
+
+
+Return the number of queued receive operations. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em handle} & Pointer to a UART driver handle.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of queued operations. 
+\end{DoxyReturn}
+\Hypertarget{group__uartdrv_ga34806bf9fc4d876aa6ae725ce060541b}\index{UARTDRV -\/ UART Driver@{UARTDRV -\/ UART Driver}!UARTDRV\_GetReceiveStatus@{UARTDRV\_GetReceiveStatus}}
+\index{UARTDRV\_GetReceiveStatus@{UARTDRV\_GetReceiveStatus}!UARTDRV -\/ UART Driver@{UARTDRV -\/ UART Driver}}
+\doxysubsubsection{\texorpdfstring{UARTDRV\_GetReceiveStatus()}{UARTDRV\_GetReceiveStatus()}}
+{\footnotesize\ttfamily \label{group__uartdrv_ga34806bf9fc4d876aa6ae725ce060541b} 
+\mbox{\hyperlink{group__uartdrv_gae1cf3e2748cf7a377fe60f055c07c3a6}{UARTDRV\+\_\+\+Status\+\_\+t}} UARTDRV\+\_\+\+Get\+Receive\+Status (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__uartdrv_ga559d69d7978a815087a905fb13af15ea}{UARTDRV\+\_\+\+Handle\+\_\+t}}}]{handle}{, }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{buffer}{, }\item[{\mbox{\hyperlink{group__uartdrv_ga20f2dca466c884ed896061f8e90ff816}{UARTDRV\+\_\+\+Count\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{items\+Received}{, }\item[{\mbox{\hyperlink{group__uartdrv_ga20f2dca466c884ed896061f8e90ff816}{UARTDRV\+\_\+\+Count\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{items\+Remaining}{}\end{DoxyParamCaption})}
+
+
+
+Check the status of the UART and gather information about any ongoing receive operations. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em handle} & Pointer to a UART driver handle.\\
+\hline
+\mbox{\texttt{ out}}  & {\em buffer} & Pointer to the current data buffer.\\
+\hline
+\mbox{\texttt{ out}}  & {\em items\+Received} & Current bytes received count.\\
+\hline
+\mbox{\texttt{ out}}  & {\em items\+Remaining} & Current bytes remaining count.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+UART status. 
+\end{DoxyReturn}
+\Hypertarget{group__uartdrv_gab467cb6aa9940119e4f03bd860c76266}\index{UARTDRV -\/ UART Driver@{UARTDRV -\/ UART Driver}!UARTDRV\_GetTransmitDepth@{UARTDRV\_GetTransmitDepth}}
+\index{UARTDRV\_GetTransmitDepth@{UARTDRV\_GetTransmitDepth}!UARTDRV -\/ UART Driver@{UARTDRV -\/ UART Driver}}
+\doxysubsubsection{\texorpdfstring{UARTDRV\_GetTransmitDepth()}{UARTDRV\_GetTransmitDepth()}}
+{\footnotesize\ttfamily \label{group__uartdrv_gab467cb6aa9940119e4f03bd860c76266} 
+uint8\+\_\+t UARTDRV\+\_\+\+Get\+Transmit\+Depth (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__uartdrv_ga559d69d7978a815087a905fb13af15ea}{UARTDRV\+\_\+\+Handle\+\_\+t}}}]{handle}{}\end{DoxyParamCaption})}
+
+
+
+Returns the number of queued transmit operations. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em handle} & Pointer to a UART driver handle.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The number of queued operations. 
+\end{DoxyReturn}
+\Hypertarget{group__uartdrv_gae5387109fb659840fa822aa6ae08b81f}\index{UARTDRV -\/ UART Driver@{UARTDRV -\/ UART Driver}!UARTDRV\_GetTransmitStatus@{UARTDRV\_GetTransmitStatus}}
+\index{UARTDRV\_GetTransmitStatus@{UARTDRV\_GetTransmitStatus}!UARTDRV -\/ UART Driver@{UARTDRV -\/ UART Driver}}
+\doxysubsubsection{\texorpdfstring{UARTDRV\_GetTransmitStatus()}{UARTDRV\_GetTransmitStatus()}}
+{\footnotesize\ttfamily \label{group__uartdrv_gae5387109fb659840fa822aa6ae08b81f} 
+\mbox{\hyperlink{group__uartdrv_gae1cf3e2748cf7a377fe60f055c07c3a6}{UARTDRV\+\_\+\+Status\+\_\+t}} UARTDRV\+\_\+\+Get\+Transmit\+Status (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__uartdrv_ga559d69d7978a815087a905fb13af15ea}{UARTDRV\+\_\+\+Handle\+\_\+t}}}]{handle}{, }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{buffer}{, }\item[{\mbox{\hyperlink{group__uartdrv_ga20f2dca466c884ed896061f8e90ff816}{UARTDRV\+\_\+\+Count\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{items\+Sent}{, }\item[{\mbox{\hyperlink{group__uartdrv_ga20f2dca466c884ed896061f8e90ff816}{UARTDRV\+\_\+\+Count\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{items\+Remaining}{}\end{DoxyParamCaption})}
+
+
+
+Check the status of the UART and gather information about any ongoing transmit operations. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em handle} & Pointer to a UART driver handle.\\
+\hline
+\mbox{\texttt{ out}}  & {\em buffer} & Pointer to the current data buffer.\\
+\hline
+\mbox{\texttt{ out}}  & {\em items\+Sent} & Current bytes sent count.\\
+\hline
+\mbox{\texttt{ out}}  & {\em items\+Remaining} & Current bytes remaining count.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+UART status. 
+\end{DoxyReturn}
+\Hypertarget{group__uartdrv_gafa7cbc80545ad814f338c4043de5023c}\index{UARTDRV -\/ UART Driver@{UARTDRV -\/ UART Driver}!UARTDRV\_PauseTransmit@{UARTDRV\_PauseTransmit}}
+\index{UARTDRV\_PauseTransmit@{UARTDRV\_PauseTransmit}!UARTDRV -\/ UART Driver@{UARTDRV -\/ UART Driver}}
+\doxysubsubsection{\texorpdfstring{UARTDRV\_PauseTransmit()}{UARTDRV\_PauseTransmit()}}
+{\footnotesize\ttfamily \label{group__uartdrv_gafa7cbc80545ad814f338c4043de5023c} 
+\mbox{\hyperlink{group__ecode_ga7bf5621660c5ba69ac4dd3044173d35c}{Ecode\+\_\+t}} UARTDRV\+\_\+\+Pause\+Transmit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__uartdrv_ga559d69d7978a815087a905fb13af15ea}{UARTDRV\+\_\+\+Handle\+\_\+t}}}]{handle}{}\end{DoxyParamCaption})}
+
+
+
+Pause an ongoing transmit operation. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em handle} & Pointer to a UART driver handle.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{group__uartdrv__error__codes_gab58e66dca86247dadeb887240b081bfb}{ECODE\+\_\+\+EMDRV\+\_\+\+UARTDRV\+\_\+\+OK} on success. On failure, an appropriate UARTDRV \doxylink{group__ecode_ga7bf5621660c5ba69ac4dd3044173d35c}{Ecode\+\_\+t} is returned. 
+\end{DoxyReturn}
+\Hypertarget{group__uartdrv_ga1d8a5e61c33176ad32cf3c1330e132c6}\index{UARTDRV -\/ UART Driver@{UARTDRV -\/ UART Driver}!UARTDRV\_Receive@{UARTDRV\_Receive}}
+\index{UARTDRV\_Receive@{UARTDRV\_Receive}!UARTDRV -\/ UART Driver@{UARTDRV -\/ UART Driver}}
+\doxysubsubsection{\texorpdfstring{UARTDRV\_Receive()}{UARTDRV\_Receive()}}
+{\footnotesize\ttfamily \label{group__uartdrv_ga1d8a5e61c33176ad32cf3c1330e132c6} 
+\mbox{\hyperlink{group__ecode_ga7bf5621660c5ba69ac4dd3044173d35c}{Ecode\+\_\+t}} UARTDRV\+\_\+\+Receive (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__uartdrv_ga559d69d7978a815087a905fb13af15ea}{UARTDRV\+\_\+\+Handle\+\_\+t}}}]{handle}{, }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{data}{, }\item[{\mbox{\hyperlink{group__uartdrv_ga20f2dca466c884ed896061f8e90ff816}{UARTDRV\+\_\+\+Count\+\_\+t}}}]{count}{, }\item[{\mbox{\hyperlink{group__uartdrv_ga75a7670b4c9deaa47bc197bbde9b7fb4}{UARTDRV\+\_\+\+Callback\+\_\+t}}}]{callback}{}\end{DoxyParamCaption})}
+
+
+
+Start a non-\/blocking receive. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em handle} & Pointer to a UART driver handle.\\
+\hline
+\mbox{\texttt{ in}}  & {\em data} & A receive data buffer.\\
+\hline
+\mbox{\texttt{ in}}  & {\em count} & A number of bytes received.\\
+\hline
+\mbox{\texttt{ in}}  & {\em callback} & A transfer completion callback.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{group__uartdrv__error__codes_gab58e66dca86247dadeb887240b081bfb}{ECODE\+\_\+\+EMDRV\+\_\+\+UARTDRV\+\_\+\+OK} on success. 
+\end{DoxyReturn}
+\Hypertarget{group__uartdrv_ga5d8380296aa482ac95360d3855a2e150}\index{UARTDRV -\/ UART Driver@{UARTDRV -\/ UART Driver}!UARTDRV\_ReceiveB@{UARTDRV\_ReceiveB}}
+\index{UARTDRV\_ReceiveB@{UARTDRV\_ReceiveB}!UARTDRV -\/ UART Driver@{UARTDRV -\/ UART Driver}}
+\doxysubsubsection{\texorpdfstring{UARTDRV\_ReceiveB()}{UARTDRV\_ReceiveB()}}
+{\footnotesize\ttfamily \label{group__uartdrv_ga5d8380296aa482ac95360d3855a2e150} 
+\mbox{\hyperlink{group__ecode_ga7bf5621660c5ba69ac4dd3044173d35c}{Ecode\+\_\+t}} UARTDRV\+\_\+\+ReceiveB (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__uartdrv_ga559d69d7978a815087a905fb13af15ea}{UARTDRV\+\_\+\+Handle\+\_\+t}}}]{handle}{, }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{data}{, }\item[{\mbox{\hyperlink{group__uartdrv_ga20f2dca466c884ed896061f8e90ff816}{UARTDRV\+\_\+\+Count\+\_\+t}}}]{count}{}\end{DoxyParamCaption})}
+
+
+
+Start a blocking receive. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em handle} & Pointer to a UART driver handle.\\
+\hline
+\mbox{\texttt{ in}}  & {\em data} & A receive data buffer.\\
+\hline
+\mbox{\texttt{ in}}  & {\em count} & A number of bytes received.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{group__uartdrv__error__codes_gab58e66dca86247dadeb887240b081bfb}{ECODE\+\_\+\+EMDRV\+\_\+\+UARTDRV\+\_\+\+OK} on success. 
+\end{DoxyReturn}
+\Hypertarget{group__uartdrv_ga6e83c35be3ad93e6717ce8dc54a155c7}\index{UARTDRV -\/ UART Driver@{UARTDRV -\/ UART Driver}!UARTDRV\_ResumeTransmit@{UARTDRV\_ResumeTransmit}}
+\index{UARTDRV\_ResumeTransmit@{UARTDRV\_ResumeTransmit}!UARTDRV -\/ UART Driver@{UARTDRV -\/ UART Driver}}
+\doxysubsubsection{\texorpdfstring{UARTDRV\_ResumeTransmit()}{UARTDRV\_ResumeTransmit()}}
+{\footnotesize\ttfamily \label{group__uartdrv_ga6e83c35be3ad93e6717ce8dc54a155c7} 
+\mbox{\hyperlink{group__ecode_ga7bf5621660c5ba69ac4dd3044173d35c}{Ecode\+\_\+t}} UARTDRV\+\_\+\+Resume\+Transmit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__uartdrv_ga559d69d7978a815087a905fb13af15ea}{UARTDRV\+\_\+\+Handle\+\_\+t}}}]{handle}{}\end{DoxyParamCaption})}
+
+
+
+Resume a paused transmit operation. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em handle} & Pointer to a UART driver handle.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{group__uartdrv__error__codes_gab58e66dca86247dadeb887240b081bfb}{ECODE\+\_\+\+EMDRV\+\_\+\+UARTDRV\+\_\+\+OK} on success. On failure, an appropriate UARTDRV \doxylink{group__ecode_ga7bf5621660c5ba69ac4dd3044173d35c}{Ecode\+\_\+t} is returned. 
+\end{DoxyReturn}
+\Hypertarget{group__uartdrv_ga484ac0b78a9eccb0ec6a1d30b7cc3232}\index{UARTDRV -\/ UART Driver@{UARTDRV -\/ UART Driver}!UARTDRV\_Transmit@{UARTDRV\_Transmit}}
+\index{UARTDRV\_Transmit@{UARTDRV\_Transmit}!UARTDRV -\/ UART Driver@{UARTDRV -\/ UART Driver}}
+\doxysubsubsection{\texorpdfstring{UARTDRV\_Transmit()}{UARTDRV\_Transmit()}}
+{\footnotesize\ttfamily \label{group__uartdrv_ga484ac0b78a9eccb0ec6a1d30b7cc3232} 
+\mbox{\hyperlink{group__ecode_ga7bf5621660c5ba69ac4dd3044173d35c}{Ecode\+\_\+t}} UARTDRV\+\_\+\+Transmit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__uartdrv_ga559d69d7978a815087a905fb13af15ea}{UARTDRV\+\_\+\+Handle\+\_\+t}}}]{handle}{, }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{data}{, }\item[{\mbox{\hyperlink{group__uartdrv_ga20f2dca466c884ed896061f8e90ff816}{UARTDRV\+\_\+\+Count\+\_\+t}}}]{count}{, }\item[{\mbox{\hyperlink{group__uartdrv_ga75a7670b4c9deaa47bc197bbde9b7fb4}{UARTDRV\+\_\+\+Callback\+\_\+t}}}]{callback}{}\end{DoxyParamCaption})}
+
+
+
+Start a non-\/blocking transmit. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em handle} & Pointer to a UART driver handle.\\
+\hline
+\mbox{\texttt{ in}}  & {\em data} & A transmit data buffer.\\
+\hline
+\mbox{\texttt{ in}}  & {\em count} & A number of bytes to transmit.\\
+\hline
+\mbox{\texttt{ in}}  & {\em callback} & A transfer completion callback.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{group__uartdrv__error__codes_gab58e66dca86247dadeb887240b081bfb}{ECODE\+\_\+\+EMDRV\+\_\+\+UARTDRV\+\_\+\+OK} on success. 
+\end{DoxyReturn}
+\Hypertarget{group__uartdrv_ga58f8120e861e2d9335e2acceec1ae4f7}\index{UARTDRV -\/ UART Driver@{UARTDRV -\/ UART Driver}!UARTDRV\_TransmitB@{UARTDRV\_TransmitB}}
+\index{UARTDRV\_TransmitB@{UARTDRV\_TransmitB}!UARTDRV -\/ UART Driver@{UARTDRV -\/ UART Driver}}
+\doxysubsubsection{\texorpdfstring{UARTDRV\_TransmitB()}{UARTDRV\_TransmitB()}}
+{\footnotesize\ttfamily \label{group__uartdrv_ga58f8120e861e2d9335e2acceec1ae4f7} 
+\mbox{\hyperlink{group__ecode_ga7bf5621660c5ba69ac4dd3044173d35c}{Ecode\+\_\+t}} UARTDRV\+\_\+\+TransmitB (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__uartdrv_ga559d69d7978a815087a905fb13af15ea}{UARTDRV\+\_\+\+Handle\+\_\+t}}}]{handle}{, }\item[{uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{data}{, }\item[{\mbox{\hyperlink{group__uartdrv_ga20f2dca466c884ed896061f8e90ff816}{UARTDRV\+\_\+\+Count\+\_\+t}}}]{count}{}\end{DoxyParamCaption})}
+
+
+
+Start a blocking transmit. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em handle} & Pointer to a UART driver handle.\\
+\hline
+\mbox{\texttt{ in}}  & {\em data} & A transmit data buffer.\\
+\hline
+\mbox{\texttt{ in}}  & {\em count} & A number of bytes to transmit.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{group__uartdrv__error__codes_gab58e66dca86247dadeb887240b081bfb}{ECODE\+\_\+\+EMDRV\+\_\+\+UARTDRV\+\_\+\+OK} on success. 
+\end{DoxyReturn}
+\input{group__uartdrv__error__codes}
+\input{group__uartdrv__status__codes}

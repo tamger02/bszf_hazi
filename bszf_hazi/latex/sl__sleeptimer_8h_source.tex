@@ -1,0 +1,335 @@
+\doxysection{sl\+\_\+sleeptimer.\+h}
+\hypertarget{sl__sleeptimer_8h_source}{}\label{sl__sleeptimer_8h_source}\index{gecko\_sdk\_4.4.4/platform/service/sleeptimer/inc/sl\_sleeptimer.h@{gecko\_sdk\_4.4.4/platform/service/sleeptimer/inc/sl\_sleeptimer.h}}
+\mbox{\hyperlink{sl__sleeptimer_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00031\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#ifndef\ SL\_SLEEPTIMER\_H}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ SL\_SLEEPTIMER\_H}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#include\ <stddef.h>}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#include\ "{}sl\_status.h"{}}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{sl__common_8h}{sl\_common.h}}"{}}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ SL\_SLEEPTIMER\_NO\_HIGH\_PRECISION\_HF\_CLOCKS\_REQUIRED\_FLAG\ (0x01)}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ SL\_SLEEPTIMER\_ANY\_FLAG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xFF)}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ SLEEPTIMER\_ENUM(name)\ typedef\ uint8\_t\ name;\ enum\ name\#\#\_enum}}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00054\ \textcolor{keyword}{typedef}\ uint32\_t\ \mbox{\hyperlink{group__sleeptimer_gaf41c2bc4240e5b819fc7f285f62172a2}{sl\_sleeptimer\_timestamp\_t}};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{comment}{//\ Timestamp,\ 64\ bits\ wall\ clock\ in\ seconds.}}
+\DoxyCodeLine{00057\ \textcolor{keyword}{typedef}\ uint64\_t\ \mbox{\hyperlink{group__sleeptimer_ga5d4d9e5fe98012d2cffedb00caa9c91b}{sl\_sleeptimer\_timestamp\_64\_t}};\ \ \ \ \ }
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00060\ \textcolor{keyword}{typedef}\ int32\_t\ \mbox{\hyperlink{group__sleeptimer_ga27148a3d37b9f3728cbd18b56b4c9979}{sl\_sleeptimer\_time\_zone\_offset\_t}};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{comment}{//\ Forward\ declaration}}
+\DoxyCodeLine{00063\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structsl__sleeptimer__timer__handle}{sl\_sleeptimer\_timer\_handle}}\ \mbox{\hyperlink{structsl__sleeptimer__timer__handle}{sl\_sleeptimer\_timer\_handle\_t}};}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00073\ \textcolor{keyword}{typedef}\ void\ (*\mbox{\hyperlink{group__sleeptimer_ga9049589e4153204fb3e97cbe1ecda89b}{sl\_sleeptimer\_timer\_callback\_t}})(\mbox{\hyperlink{structsl__sleeptimer__timer__handle}{sl\_sleeptimer\_timer\_handle\_t}}\ *handle,\ \textcolor{keywordtype}{void}\ *data);}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00076\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structsl__sleeptimer__timer__handle}{sl\_sleeptimer\_timer\_handle}}\ \{}
+\DoxyCodeLine{00077\ \ \ \textcolor{keywordtype}{void}\ *\mbox{\hyperlink{structsl__sleeptimer__timer__handle_afc64f62b84724ed1e11068e13d09fb46}{callback\_data}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00078\ \ \ uint8\_t\ \mbox{\hyperlink{structsl__sleeptimer__timer__handle_a4a542ed707ca6d81d0c847e469b48685}{priority}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00079\ \ \ uint16\_t\ \mbox{\hyperlink{structsl__sleeptimer__timer__handle_a3097af2ca03a6a032412136f4cd0b17b}{option\_flags}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00080\ \ \ \mbox{\hyperlink{structsl__sleeptimer__timer__handle}{sl\_sleeptimer\_timer\_handle\_t}}\ *\mbox{\hyperlink{structsl__sleeptimer__timer__handle_a521f1164f1262a3a3ab245b0e20a18ed}{next}};\ \ \ \ \ \ }
+\DoxyCodeLine{00081\ \ \ \mbox{\hyperlink{group__sleeptimer_ga9049589e4153204fb3e97cbe1ecda89b}{sl\_sleeptimer\_timer\_callback\_t}}\ \mbox{\hyperlink{structsl__sleeptimer__timer__handle_a226ead85a33786a88aa962d7fe9df836}{callback}};\ }
+\DoxyCodeLine{00082\ \ \ uint32\_t\ \mbox{\hyperlink{structsl__sleeptimer__timer__handle_a6932c800af617915bdec95c31252ae46}{timeout\_periodic}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00083\ \ \ uint32\_t\ \mbox{\hyperlink{structsl__sleeptimer__timer__handle_a6ca023223bbf20674c5ff82956546ff8}{delta}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00084\ \ \ uint32\_t\ \mbox{\hyperlink{structsl__sleeptimer__timer__handle_a4979511f52244375312507943c69d9bb}{timeout\_expected\_tc}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00085\ \ \ uint16\_t\ \mbox{\hyperlink{structsl__sleeptimer__timer__handle_a0d99f8380b3f2bdff0fd02cf23fd9486}{conversion\_error}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00086\ \ \ uint16\_t\ \mbox{\hyperlink{structsl__sleeptimer__timer__handle_af6570f84422c64e50e4d0eef321ab03f}{accumulated\_error}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00087\ \};}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00090\ \mbox{\hyperlink{group__sleeptimer_ga147e840cf5d02d54a06e16bccb8e088d}{SLEEPTIMER\_ENUM}}(sl\_sleeptimer\_month\_t)\ \{}
+\DoxyCodeLine{00091\ \ \ MONTH\_JANUARY\ =\ 0,}
+\DoxyCodeLine{00092\ \ \ MONTH\_FEBRUARY\ =\ 1,}
+\DoxyCodeLine{00093\ \ \ MONTH\_MARCH\ \ \ =\ 2,}
+\DoxyCodeLine{00094\ \ \ MONTH\_APRIL\ =\ 3,}
+\DoxyCodeLine{00095\ \ \ MONTH\_MAY\ =\ 4,}
+\DoxyCodeLine{00096\ \ \ MONTH\_JUNE\ =\ 5,}
+\DoxyCodeLine{00097\ \ \ MONTH\_JULY\ =\ 6,}
+\DoxyCodeLine{00098\ \ \ MONTH\_AUGUST\ =\ 7,}
+\DoxyCodeLine{00099\ \ \ MONTH\_SEPTEMBER\ =\ 8,}
+\DoxyCodeLine{00100\ \ \ MONTH\_OCTOBER\ =\ 9,}
+\DoxyCodeLine{00101\ \ \ MONTH\_NOVEMBER\ =\ 10,}
+\DoxyCodeLine{00102\ \ \ MONTH\_DECEMBER\ =\ 11,}
+\DoxyCodeLine{00103\ \};}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00106\ \mbox{\hyperlink{group__sleeptimer_ga147e840cf5d02d54a06e16bccb8e088d}{SLEEPTIMER\_ENUM}}(sl\_sleeptimer\_weekDay\_t)\ \{}
+\DoxyCodeLine{00107\ \ \ DAY\_SUNDAY\ =\ 0,}
+\DoxyCodeLine{00108\ \ \ DAY\_MONDAY\ =\ 1,}
+\DoxyCodeLine{00109\ \ \ DAY\_TUESDAY\ =\ 2,}
+\DoxyCodeLine{00110\ \ \ DAY\_WEDNESDAY\ =\ 3,}
+\DoxyCodeLine{00111\ \ \ DAY\_THURSDAY\ =\ 4,}
+\DoxyCodeLine{00112\ \ \ DAY\_FRIDAY\ =\ 5,}
+\DoxyCodeLine{00113\ \ \ DAY\_SATURDAY\ =\ 6,}
+\DoxyCodeLine{00114\ \};}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00117\ \textcolor{keyword}{typedef}\ \ \textcolor{keyword}{struct\ \ }\mbox{\hyperlink{structtime__date}{time\_date}}\ \{}
+\DoxyCodeLine{00118\ \ \ uint8\_t\ \mbox{\hyperlink{structtime__date_ad5f6b7eba7196e4e7238eac1493632b2}{sec}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00119\ \ \ uint8\_t\ \mbox{\hyperlink{structtime__date_a3ccfe0f6e76599b8b1e560453eb81409}{min}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00120\ \ \ uint8\_t\ \mbox{\hyperlink{structtime__date_aeb303fead2791abc808d3951700840ee}{hour}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00121\ \ \ uint8\_t\ \mbox{\hyperlink{structtime__date_af65c05fdd78d133cd71d5440870e9919}{month\_day}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00122\ \ \ sl\_sleeptimer\_month\_t\ \mbox{\hyperlink{structtime__date_a2f1aab8b6f8a26eb3eca0a649ab515a7}{month}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00123\ \ \ uint16\_t\ \mbox{\hyperlink{structtime__date_ae93ce452eb03874257ce8bcbb85ac61e}{year}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00124\ \ \ sl\_sleeptimer\_weekDay\_t\ \mbox{\hyperlink{structtime__date_a6388c2feed0e15693f680007a997bcd7}{day\_of\_week}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00125\ \ \ uint16\_t\ \mbox{\hyperlink{structtime__date_afcbade7355871d10e475819361a3b3d9}{day\_of\_year}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00126\ \ \ \mbox{\hyperlink{group__sleeptimer_ga27148a3d37b9f3728cbd18b56b4c9979}{sl\_sleeptimer\_time\_zone\_offset\_t}}\ \mbox{\hyperlink{structtime__date_a3cee1acfc4c8630f921609535183e704}{time\_zone}};\ }
+\DoxyCodeLine{00127\ \}\ \mbox{\hyperlink{group__sleeptimer_ga8b17c7e32e3ad35bb6b0a9c2001e8d64}{sl\_sleeptimer\_date\_t}};}
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00130\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00131\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00133\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00138\ sl\_status\_t\ \mbox{\hyperlink{group__sleeptimer_gae661a78719a6acc014efa15216ae4a54}{sl\_sleeptimer\_init}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00157\ sl\_status\_t\ \mbox{\hyperlink{group__sleeptimer_ga43c32bdb2a9fcfbe279563a9fd689711}{sl\_sleeptimer\_start\_timer}}(\mbox{\hyperlink{structsl__sleeptimer__timer__handle}{sl\_sleeptimer\_timer\_handle\_t}}\ *handle,}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ timeout,}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__sleeptimer_ga9049589e4153204fb3e97cbe1ecda89b}{sl\_sleeptimer\_timer\_callback\_t}}\ callback,}
+\DoxyCodeLine{00160\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ *callback\_data,}
+\DoxyCodeLine{00161\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ priority,}
+\DoxyCodeLine{00162\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ option\_flags);}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00181\ sl\_status\_t\ \mbox{\hyperlink{group__sleeptimer_gaacd5a666731a0ba4823107e552e23e69}{sl\_sleeptimer\_restart\_timer}}(\mbox{\hyperlink{structsl__sleeptimer__timer__handle}{sl\_sleeptimer\_timer\_handle\_t}}\ *handle,}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ timeout,}
+\DoxyCodeLine{00183\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__sleeptimer_ga9049589e4153204fb3e97cbe1ecda89b}{sl\_sleeptimer\_timer\_callback\_t}}\ callback,}
+\DoxyCodeLine{00184\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ *callback\_data,}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ priority,}
+\DoxyCodeLine{00186\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ option\_flags);}
+\DoxyCodeLine{00187\ }
+\DoxyCodeLine{00188\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00205\ sl\_status\_t\ \mbox{\hyperlink{group__sleeptimer_ga2ceb1b76334902525dd32e937e90bb16}{sl\_sleeptimer\_start\_periodic\_timer}}(\mbox{\hyperlink{structsl__sleeptimer__timer__handle}{sl\_sleeptimer\_timer\_handle\_t}}\ *handle,}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ timeout,}
+\DoxyCodeLine{00207\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__sleeptimer_ga9049589e4153204fb3e97cbe1ecda89b}{sl\_sleeptimer\_timer\_callback\_t}}\ callback,}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ *callback\_data,}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ priority,}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ option\_flags);}
+\DoxyCodeLine{00211\ }
+\DoxyCodeLine{00212\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00229\ sl\_status\_t\ \mbox{\hyperlink{group__sleeptimer_gaf54408a7f172b684de33d9a7f4e01be9}{sl\_sleeptimer\_restart\_periodic\_timer}}(\mbox{\hyperlink{structsl__sleeptimer__timer__handle}{sl\_sleeptimer\_timer\_handle\_t}}\ *handle,}
+\DoxyCodeLine{00230\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ timeout,}
+\DoxyCodeLine{00231\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__sleeptimer_ga9049589e4153204fb3e97cbe1ecda89b}{sl\_sleeptimer\_timer\_callback\_t}}\ callback,}
+\DoxyCodeLine{00232\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ *callback\_data,}
+\DoxyCodeLine{00233\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ priority,}
+\DoxyCodeLine{00234\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ option\_flags);}
+\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00236\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00243\ sl\_status\_t\ \mbox{\hyperlink{group__sleeptimer_ga1f4f25aa754cd35214dba9762450b0ca}{sl\_sleeptimer\_stop\_timer}}(\mbox{\hyperlink{structsl__sleeptimer__timer__handle}{sl\_sleeptimer\_timer\_handle\_t}}\ *handle);}
+\DoxyCodeLine{00244\ }
+\DoxyCodeLine{00245\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00255\ sl\_status\_t\ \mbox{\hyperlink{group__sleeptimer_gac0236c1c353317c41d577867e7429874}{sl\_sleeptimer\_is\_timer\_running}}(\mbox{\hyperlink{structsl__sleeptimer__timer__handle}{sl\_sleeptimer\_timer\_handle\_t}}\ *handle,}
+\DoxyCodeLine{00256\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ *running);}
+\DoxyCodeLine{00257\ }
+\DoxyCodeLine{00258\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00266\ sl\_status\_t\ \mbox{\hyperlink{group__sleeptimer_ga6a06acb331e2e3c0efeb83f42a4d9c16}{sl\_sleeptimer\_get\_timer\_time\_remaining}}(\mbox{\hyperlink{structsl__sleeptimer__timer__handle}{sl\_sleeptimer\_timer\_handle\_t}}\ *handle,}
+\DoxyCodeLine{00267\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ *time);}
+\DoxyCodeLine{00268\ }
+\DoxyCodeLine{00269\ \textcolor{comment}{/**************************************************************************/}}
+\DoxyCodeLine{00281\ sl\_status\_t\ \mbox{\hyperlink{group__sleeptimer_gaf96ccea3e4d1727dc2fd2fa98f94ccb1}{sl\_sleeptimer\_get\_remaining\_time\_of\_first\_timer}}(uint16\_t\ option\_flags,}
+\DoxyCodeLine{00282\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ *time\_remaining);}
+\DoxyCodeLine{00283\ }
+\DoxyCodeLine{00284\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00289\ uint32\_t\ \mbox{\hyperlink{group__sleeptimer_gae0397d420800b7c2d2afd5bbb9710067}{sl\_sleeptimer\_get\_tick\_count}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00290\ }
+\DoxyCodeLine{00291\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00296\ uint64\_t\ \mbox{\hyperlink{group__sleeptimer_gaaf928eeb3dad0d43098b3aed9049959a}{sl\_sleeptimer\_get\_tick\_count64}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00297\ }
+\DoxyCodeLine{00298\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00303\ uint32\_t\ \mbox{\hyperlink{group__sleeptimer_ga69085e47b9cc43ac0cfdc08783c13aed}{sl\_sleeptimer\_get\_timer\_frequency}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00304\ }
+\DoxyCodeLine{00305\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00319\ sl\_status\_t\ \mbox{\hyperlink{group__sleeptimer_ga157d43fdb64cb0d4afc864155bcf9bc8}{sl\_sleeptimer\_convert\_time\_to\_date}}(\mbox{\hyperlink{group__sleeptimer_gaf41c2bc4240e5b819fc7f285f62172a2}{sl\_sleeptimer\_timestamp\_t}}\ time,}
+\DoxyCodeLine{00320\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__sleeptimer_ga27148a3d37b9f3728cbd18b56b4c9979}{sl\_sleeptimer\_time\_zone\_offset\_t}}\ time\_zone,}
+\DoxyCodeLine{00321\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structtime__date}{sl\_sleeptimer\_date\_t}}\ *date);}
+\DoxyCodeLine{00322\ }
+\DoxyCodeLine{00323\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00337\ sl\_status\_t\ \mbox{\hyperlink{group__sleeptimer_gadc9658b94ee4e8f07912e6ad41ac0ad2}{sl\_sleeptimer\_convert\_time\_to\_date\_64}}(\mbox{\hyperlink{group__sleeptimer_ga5d4d9e5fe98012d2cffedb00caa9c91b}{sl\_sleeptimer\_timestamp\_64\_t}}\ time,}
+\DoxyCodeLine{00338\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__sleeptimer_ga27148a3d37b9f3728cbd18b56b4c9979}{sl\_sleeptimer\_time\_zone\_offset\_t}}\ time\_zone,}
+\DoxyCodeLine{00339\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structtime__date}{sl\_sleeptimer\_date\_t}}\ *date);}
+\DoxyCodeLine{00340\ }
+\DoxyCodeLine{00341\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00356\ sl\_status\_t\ \mbox{\hyperlink{group__sleeptimer_gab3c762fbb3fed88f5f256d4c9a03fc67}{sl\_sleeptimer\_convert\_date\_to\_time}}(\mbox{\hyperlink{structtime__date}{sl\_sleeptimer\_date\_t}}\ *date,}
+\DoxyCodeLine{00357\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__sleeptimer_gaf41c2bc4240e5b819fc7f285f62172a2}{sl\_sleeptimer\_timestamp\_t}}\ *time);}
+\DoxyCodeLine{00358\ }
+\DoxyCodeLine{00359\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00374\ sl\_status\_t\ \mbox{\hyperlink{group__sleeptimer_ga600725ddd39a7ef36334f6eac0879001}{sl\_sleeptimer\_convert\_date\_to\_time\_64}}(\mbox{\hyperlink{structtime__date}{sl\_sleeptimer\_date\_t}}\ *date,}
+\DoxyCodeLine{00375\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__sleeptimer_ga5d4d9e5fe98012d2cffedb00caa9c91b}{sl\_sleeptimer\_timestamp\_64\_t}}\ *time);}
+\DoxyCodeLine{00376\ }
+\DoxyCodeLine{00377\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00393\ uint32\_t\ \mbox{\hyperlink{group__sleeptimer_ga28561cd8d4b4e31153d3dc02e68f2645}{sl\_sleeptimer\_convert\_date\_to\_str}}(\textcolor{keywordtype}{char}\ *str,}
+\DoxyCodeLine{00394\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{size\_t}\ size,}
+\DoxyCodeLine{00395\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ *format,}
+\DoxyCodeLine{00396\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structtime__date}{sl\_sleeptimer\_date\_t}}\ *date);}
+\DoxyCodeLine{00397\ }
+\DoxyCodeLine{00398\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00407\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__sleeptimer_gafbd748d9a4654e9ae474a7020a5d9813}{sl\_sleeptimer\_set\_tz}}(\mbox{\hyperlink{group__sleeptimer_ga27148a3d37b9f3728cbd18b56b4c9979}{sl\_sleeptimer\_time\_zone\_offset\_t}}\ offset);}
+\DoxyCodeLine{00408\ }
+\DoxyCodeLine{00409\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00414\ \mbox{\hyperlink{group__sleeptimer_ga27148a3d37b9f3728cbd18b56b4c9979}{sl\_sleeptimer\_time\_zone\_offset\_t}}\ \mbox{\hyperlink{group__sleeptimer_ga91ebac6960e114d933e1ef7c4f32294a}{sl\_sleeptimer\_get\_tz}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00415\ }
+\DoxyCodeLine{00416\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00424\ \mbox{\hyperlink{group__sleeptimer_gaf41c2bc4240e5b819fc7f285f62172a2}{sl\_sleeptimer\_timestamp\_t}}\ \mbox{\hyperlink{group__sleeptimer_ga4d79ef7aa10606814bcc21053bfca558}{sl\_sleeptimer\_get\_time}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00425\ }
+\DoxyCodeLine{00426\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00434\ \mbox{\hyperlink{group__sleeptimer_ga5d4d9e5fe98012d2cffedb00caa9c91b}{sl\_sleeptimer\_timestamp\_64\_t}}\ \mbox{\hyperlink{group__sleeptimer_ga8e99647fc3da11223cf4e65b7ad8c52d}{sl\_sleeptimer\_get\_time\_64}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00435\ }
+\DoxyCodeLine{00436\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00446\ sl\_status\_t\ \mbox{\hyperlink{group__sleeptimer_gafbd64c7fbf7b0dfb7947a6f7bf288dca}{sl\_sleeptimer\_set\_time}}(\mbox{\hyperlink{group__sleeptimer_gaf41c2bc4240e5b819fc7f285f62172a2}{sl\_sleeptimer\_timestamp\_t}}\ time);}
+\DoxyCodeLine{00447\ }
+\DoxyCodeLine{00448\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00458\ sl\_status\_t\ \mbox{\hyperlink{group__sleeptimer_ga63a00c3c2b137b68f66d47ae77f0d26b}{sl\_sleeptimer\_set\_time\_64}}(\mbox{\hyperlink{group__sleeptimer_ga5d4d9e5fe98012d2cffedb00caa9c91b}{sl\_sleeptimer\_timestamp\_64\_t}}\ time);}
+\DoxyCodeLine{00459\ }
+\DoxyCodeLine{00460\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00472\ sl\_status\_t\ \mbox{\hyperlink{group__sleeptimer_ga2955c70feb8e0082ba54e30d2629d840}{sl\_sleeptimer\_get\_datetime}}(\mbox{\hyperlink{structtime__date}{sl\_sleeptimer\_date\_t}}\ *date);}
+\DoxyCodeLine{00473\ }
+\DoxyCodeLine{00474\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00484\ sl\_status\_t\ \mbox{\hyperlink{group__sleeptimer_ga840c8ef8049b364a45899320a9f0c8bf}{sl\_sleeptimer\_set\_datetime}}(\mbox{\hyperlink{structtime__date}{sl\_sleeptimer\_date\_t}}\ *date);}
+\DoxyCodeLine{00485\ }
+\DoxyCodeLine{00486\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00504\ sl\_status\_t\ \mbox{\hyperlink{group__sleeptimer_ga726d2e276fbac02b2246a446c3dcf755}{sl\_sleeptimer\_build\_datetime}}(\mbox{\hyperlink{structtime__date}{sl\_sleeptimer\_date\_t}}\ *date,}
+\DoxyCodeLine{00505\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ year,}
+\DoxyCodeLine{00506\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sl\_sleeptimer\_month\_t\ month,}
+\DoxyCodeLine{00507\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ month\_day,}
+\DoxyCodeLine{00508\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ hour,}
+\DoxyCodeLine{00509\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ min,}
+\DoxyCodeLine{00510\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ sec,}
+\DoxyCodeLine{00511\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__sleeptimer_ga27148a3d37b9f3728cbd18b56b4c9979}{sl\_sleeptimer\_time\_zone\_offset\_t}}\ tzOffset);}
+\DoxyCodeLine{00512\ }
+\DoxyCodeLine{00513\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00533\ sl\_status\_t\ \mbox{\hyperlink{group__sleeptimer_ga7290544e59a3a9700a0dc4a808e014a3}{sl\_sleeptimer\_build\_datetime\_64}}(\mbox{\hyperlink{structtime__date}{sl\_sleeptimer\_date\_t}}\ *date,}
+\DoxyCodeLine{00534\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ year,}
+\DoxyCodeLine{00535\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ sl\_sleeptimer\_month\_t\ month,}
+\DoxyCodeLine{00536\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ month\_day,}
+\DoxyCodeLine{00537\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ hour,}
+\DoxyCodeLine{00538\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ min,}
+\DoxyCodeLine{00539\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ sec,}
+\DoxyCodeLine{00540\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__sleeptimer_ga27148a3d37b9f3728cbd18b56b4c9979}{sl\_sleeptimer\_time\_zone\_offset\_t}}\ tzOffset);}
+\DoxyCodeLine{00541\ }
+\DoxyCodeLine{00542\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00556\ sl\_status\_t\ \mbox{\hyperlink{group__sleeptimer_gaf63bbad4e29c0b655b3d210bf3b3b086}{sl\_sleeptimer\_convert\_unix\_time\_to\_ntp}}(\mbox{\hyperlink{group__sleeptimer_gaf41c2bc4240e5b819fc7f285f62172a2}{sl\_sleeptimer\_timestamp\_t}}\ time,}
+\DoxyCodeLine{00557\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ *ntp\_time);}
+\DoxyCodeLine{00558\ }
+\DoxyCodeLine{00559\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00573\ sl\_status\_t\ \mbox{\hyperlink{group__sleeptimer_gaff086ed922350c8a4cffeed024d03871}{sl\_sleeptimer\_convert\_ntp\_time\_to\_unix}}(uint32\_t\ ntp\_time,}
+\DoxyCodeLine{00574\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__sleeptimer_gaf41c2bc4240e5b819fc7f285f62172a2}{sl\_sleeptimer\_timestamp\_t}}\ *time);}
+\DoxyCodeLine{00575\ }
+\DoxyCodeLine{00576\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00591\ sl\_status\_t\ \mbox{\hyperlink{group__sleeptimer_gaa73b94e0c15a1e2cf6b3cb0b37120ed4}{sl\_sleeptimer\_convert\_unix\_time\_to\_zigbee}}(\mbox{\hyperlink{group__sleeptimer_gaf41c2bc4240e5b819fc7f285f62172a2}{sl\_sleeptimer\_timestamp\_t}}\ time,}
+\DoxyCodeLine{00592\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ *zigbee\_time);}
+\DoxyCodeLine{00593\ }
+\DoxyCodeLine{00594\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00608\ sl\_status\_t\ \mbox{\hyperlink{group__sleeptimer_gaab1267658b2ac5e4249e87412ce7dede}{sl\_sleeptimer\_convert\_zigbee\_time\_to\_unix}}(uint32\_t\ zigbee\_time,}
+\DoxyCodeLine{00609\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__sleeptimer_gaf41c2bc4240e5b819fc7f285f62172a2}{sl\_sleeptimer\_timestamp\_t}}\ *time);}
+\DoxyCodeLine{00610\ }
+\DoxyCodeLine{00611\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00619\ \_\_STATIC\_INLINE\ \mbox{\hyperlink{group__sleeptimer_ga27148a3d37b9f3728cbd18b56b4c9979}{sl\_sleeptimer\_time\_zone\_offset\_t}}\ \mbox{\hyperlink{group__sleeptimer_ga173dc0338a7c53c13c73a4859158b901}{sl\_sleeptimer\_set\_tz\_ahead\_utc}}(uint8\_t\ hours,}
+\DoxyCodeLine{00620\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ minutes)}
+\DoxyCodeLine{00621\ \{}
+\DoxyCodeLine{00622\ \ \ \textcolor{keywordflow}{return}\ ((hours\ *\ 3600u)\ +\ (minutes\ *\ 60u));}
+\DoxyCodeLine{00623\ \}}
+\DoxyCodeLine{00624\ }
+\DoxyCodeLine{00625\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00633\ \_\_STATIC\_INLINE\ \mbox{\hyperlink{group__sleeptimer_ga27148a3d37b9f3728cbd18b56b4c9979}{sl\_sleeptimer\_time\_zone\_offset\_t}}\ \mbox{\hyperlink{group__sleeptimer_gafd73a4283a8c257f8e9c74f410679073}{sl\_sleeptimer\_set\_tz\_behind\_utc}}(uint8\_t\ hours,}
+\DoxyCodeLine{00634\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ minutes)}
+\DoxyCodeLine{00635\ \{}
+\DoxyCodeLine{00636\ \ \ \textcolor{keywordflow}{return}\ -\/(\mbox{\hyperlink{group__sleeptimer_ga27148a3d37b9f3728cbd18b56b4c9979}{sl\_sleeptimer\_time\_zone\_offset\_t}})((hours\ *\ 3600u)\ +\ (minutes\ *\ 60u));}
+\DoxyCodeLine{00637\ \}}
+\DoxyCodeLine{00638\ }
+\DoxyCodeLine{00639\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00644\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__sleeptimer_ga7d7c4ae596755e3e5e3c0c0aa5e749b3}{sl\_sleeptimer\_delay\_millisecond}}(uint16\_t\ time\_ms);}
+\DoxyCodeLine{00645\ }
+\DoxyCodeLine{00646\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00657\ uint32\_t\ \mbox{\hyperlink{group__sleeptimer_gadf3a3eb05b0f5adbc7ee488113299f61}{sl\_sleeptimer\_ms\_to\_tick}}(uint16\_t\ time\_ms);}
+\DoxyCodeLine{00658\ }
+\DoxyCodeLine{00659\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00678\ sl\_status\_t\ \mbox{\hyperlink{group__sleeptimer_ga7484d4be4877b94a687f4410fccc6271}{sl\_sleeptimer\_ms32\_to\_tick}}(uint32\_t\ time\_ms,}
+\DoxyCodeLine{00679\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ *tick);}
+\DoxyCodeLine{00680\ }
+\DoxyCodeLine{00681\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00687\ uint32\_t\ \mbox{\hyperlink{group__sleeptimer_ga3218039eab8d09231cc092fdc2a1dba5}{sl\_sleeptimer\_get\_max\_ms32\_conversion}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00688\ }
+\DoxyCodeLine{00689\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00698\ uint32\_t\ \mbox{\hyperlink{group__sleeptimer_ga2c2a2a131e401894d3e09513442667b5}{sl\_sleeptimer\_tick\_to\_ms}}(uint32\_t\ tick);}
+\DoxyCodeLine{00699\ }
+\DoxyCodeLine{00700\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00710\ sl\_status\_t\ \mbox{\hyperlink{group__sleeptimer_ga6882d0577137d8e20ec531be45678fba}{sl\_sleeptimer\_tick64\_to\_ms}}(uint64\_t\ tick,}
+\DoxyCodeLine{00711\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint64\_t\ *ms);}
+\DoxyCodeLine{00712\ }
+\DoxyCodeLine{00713\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00718\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{group__sleeptimer_ga0b38592836a9a01d6f315d417d3d6cd9}{sl\_sleeptimer\_is\_power\_manager\_early\_restore\_timer\_latest\_to\_expire}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00719\ }
+\DoxyCodeLine{00720\ \textcolor{comment}{/**************************************************************************/}}
+\DoxyCodeLine{00745\ \_\_STATIC\_INLINE\ sl\_status\_t\ \mbox{\hyperlink{group__sleeptimer_gadcb95c35f7307d91df1818e71f6540d2}{sl\_sleeptimer\_start\_timer\_ms}}(\mbox{\hyperlink{structsl__sleeptimer__timer__handle}{sl\_sleeptimer\_timer\_handle\_t}}\ *handle,}
+\DoxyCodeLine{00746\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ timeout\_ms,}
+\DoxyCodeLine{00747\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__sleeptimer_ga9049589e4153204fb3e97cbe1ecda89b}{sl\_sleeptimer\_timer\_callback\_t}}\ callback,}
+\DoxyCodeLine{00748\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ *callback\_data,}
+\DoxyCodeLine{00749\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ priority,}
+\DoxyCodeLine{00750\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ option\_flags)}
+\DoxyCodeLine{00751\ \{}
+\DoxyCodeLine{00752\ \ \ sl\_status\_t\ status;}
+\DoxyCodeLine{00753\ \ \ uint32\_t\ timeout\_tick;}
+\DoxyCodeLine{00754\ }
+\DoxyCodeLine{00755\ \ \ status\ =\ \mbox{\hyperlink{group__sleeptimer_ga7484d4be4877b94a687f4410fccc6271}{sl\_sleeptimer\_ms32\_to\_tick}}(timeout\_ms,\ \&timeout\_tick);}
+\DoxyCodeLine{00756\ \ \ \textcolor{keywordflow}{if}\ (status\ !=\ SL\_STATUS\_OK)\ \{}
+\DoxyCodeLine{00757\ \ \ \ \ \textcolor{keywordflow}{return}\ status;}
+\DoxyCodeLine{00758\ \ \ \}}
+\DoxyCodeLine{00759\ }
+\DoxyCodeLine{00760\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{group__sleeptimer_ga43c32bdb2a9fcfbe279563a9fd689711}{sl\_sleeptimer\_start\_timer}}(handle,\ timeout\_tick,\ callback,\ callback\_data,\ priority,\ option\_flags);}
+\DoxyCodeLine{00761\ \}}
+\DoxyCodeLine{00762\ }
+\DoxyCodeLine{00763\ \textcolor{comment}{/**************************************************************************/}}
+\DoxyCodeLine{00788\ \_\_STATIC\_INLINE\ sl\_status\_t\ \mbox{\hyperlink{group__sleeptimer_gab3da1641c9bae0857ba3cffcbc41f21a}{sl\_sleeptimer\_restart\_timer\_ms}}(\mbox{\hyperlink{structsl__sleeptimer__timer__handle}{sl\_sleeptimer\_timer\_handle\_t}}\ *handle,}
+\DoxyCodeLine{00789\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ timeout\_ms,}
+\DoxyCodeLine{00790\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__sleeptimer_ga9049589e4153204fb3e97cbe1ecda89b}{sl\_sleeptimer\_timer\_callback\_t}}\ callback,}
+\DoxyCodeLine{00791\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ *callback\_data,}
+\DoxyCodeLine{00792\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ priority,}
+\DoxyCodeLine{00793\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ option\_flags)}
+\DoxyCodeLine{00794\ \{}
+\DoxyCodeLine{00795\ \ \ sl\_status\_t\ status;}
+\DoxyCodeLine{00796\ \ \ uint32\_t\ timeout\_tick;}
+\DoxyCodeLine{00797\ }
+\DoxyCodeLine{00798\ \ \ status\ =\ \mbox{\hyperlink{group__sleeptimer_ga7484d4be4877b94a687f4410fccc6271}{sl\_sleeptimer\_ms32\_to\_tick}}(timeout\_ms,\ \&timeout\_tick);}
+\DoxyCodeLine{00799\ \ \ \textcolor{keywordflow}{if}\ (status\ !=\ SL\_STATUS\_OK)\ \{}
+\DoxyCodeLine{00800\ \ \ \ \ \textcolor{keywordflow}{return}\ status;}
+\DoxyCodeLine{00801\ \ \ \}}
+\DoxyCodeLine{00802\ }
+\DoxyCodeLine{00803\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{group__sleeptimer_gaacd5a666731a0ba4823107e552e23e69}{sl\_sleeptimer\_restart\_timer}}(handle,\ timeout\_tick,\ callback,\ callback\_data,\ priority,\ option\_flags);}
+\DoxyCodeLine{00804\ \}}
+\DoxyCodeLine{00805\ }
+\DoxyCodeLine{00806\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00831\ sl\_status\_t\ \mbox{\hyperlink{group__sleeptimer_gae4639653b4bf4ed68049b2a12a6c6d83}{sl\_sleeptimer\_start\_periodic\_timer\_ms}}(\mbox{\hyperlink{structsl__sleeptimer__timer__handle}{sl\_sleeptimer\_timer\_handle\_t}}\ *handle,}
+\DoxyCodeLine{00832\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ timeout\_ms,}
+\DoxyCodeLine{00833\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__sleeptimer_ga9049589e4153204fb3e97cbe1ecda89b}{sl\_sleeptimer\_timer\_callback\_t}}\ callback,}
+\DoxyCodeLine{00834\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ *callback\_data,}
+\DoxyCodeLine{00835\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ priority,}
+\DoxyCodeLine{00836\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ option\_flags);}
+\DoxyCodeLine{00837\ }
+\DoxyCodeLine{00838\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00863\ sl\_status\_t\ \mbox{\hyperlink{group__sleeptimer_ga1a44174e7a8eccbabde499875cb8462a}{sl\_sleeptimer\_restart\_periodic\_timer\_ms}}(\mbox{\hyperlink{structsl__sleeptimer__timer__handle}{sl\_sleeptimer\_timer\_handle\_t}}\ *handle,}
+\DoxyCodeLine{00864\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ timeout\_ms,}
+\DoxyCodeLine{00865\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__sleeptimer_ga9049589e4153204fb3e97cbe1ecda89b}{sl\_sleeptimer\_timer\_callback\_t}}\ callback,}
+\DoxyCodeLine{00866\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ *callback\_data,}
+\DoxyCodeLine{00867\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ priority,}
+\DoxyCodeLine{00868\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint16\_t\ option\_flags);}
+\DoxyCodeLine{00869\ }
+\DoxyCodeLine{00870\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00877\ uint16\_t\ \mbox{\hyperlink{group__sleeptimer_ga4c13ce5d0c1fc60a1596201932bb6b5f}{sl\_sleeptimer\_get\_clock\_accuracy}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00878\ }
+\DoxyCodeLine{00879\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00880\ \}}
+\DoxyCodeLine{00881\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00882\ }
+\DoxyCodeLine{00885\ \textcolor{comment}{/*\ *INDENT-\/OFF*\ */}}
+\DoxyCodeLine{00886\ \textcolor{comment}{/*\ THE\ REST\ OF\ THE\ FILE\ IS\ DOCUMENTATION\ ONLY!\ */}}
+\DoxyCodeLine{01130\ }
+\DoxyCodeLine{01131\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SL\_SLEEPTIMER\_H}}
+
+\end{DoxyCode}

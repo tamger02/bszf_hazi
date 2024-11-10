@@ -1,0 +1,125 @@
+\doxysection{efm32gg\+\_\+rmu.\+h}
+\hypertarget{efm32gg__rmu_8h_source}{}\label{efm32gg__rmu_8h_source}\index{gecko\_sdk\_4.4.4/platform/Device/SiliconLabs/EFM32GG/Include/efm32gg\_rmu.h@{gecko\_sdk\_4.4.4/platform/Device/SiliconLabs/EFM32GG/Include/efm32gg\_rmu.h}}
+\mbox{\hyperlink{efm32gg__rmu_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#if\ defined(\_\_ICCARM\_\_)}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#pragma\ system\_include\ \ \ \ \ \ \ }\textcolor{comment}{/*\ Treat\ file\ as\ system\ include\ file.\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#elif\ defined(\_\_ARMCC\_VERSION)\ \&\&\ (\_\_ARMCC\_VERSION\ >=\ 6010050)}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#pragma\ clang\ system\_header\ \ }\textcolor{comment}{/*\ Treat\ file\ as\ system\ include\ file.\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00041\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00046\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00047\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_r_m_u___type_def_a8c82cb9550cba0dcbe9ced2f2f43d9db}{CTRL}};\ \ \ \ \ }
+\DoxyCodeLine{00048\ \ \ \_\_IM\ uint32\_t\ \ \mbox{\hyperlink{struct_r_m_u___type_def_a7dcfb06cd5e2797eefd88d12028b9dcc}{RSTCAUSE}};\ }
+\DoxyCodeLine{00049\ \ \ \_\_OM\ uint32\_t\ \ \mbox{\hyperlink{struct_r_m_u___type_def_a1c299348d8f5791eefcc7cf0419b6605}{CMD}};\ \ \ \ \ \ }
+\DoxyCodeLine{00050\ \}\ \mbox{\hyperlink{struct_r_m_u___type_def}{RMU\_TypeDef}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00052\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00057\ \textcolor{comment}{/*\ Bit\ fields\ for\ RMU\ CTRL\ */}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#define\ \_RMU\_CTRL\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000002UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#define\ \_RMU\_CTRL\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000003UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#define\ RMU\_CTRL\_LOCKUPRDIS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#define\ \_RMU\_CTRL\_LOCKUPRDIS\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#define\ \_RMU\_CTRL\_LOCKUPRDIS\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#define\ \_RMU\_CTRL\_LOCKUPRDIS\_DEFAULT\ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#define\ RMU\_CTRL\_LOCKUPRDIS\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ (\_RMU\_CTRL\_LOCKUPRDIS\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#define\ RMU\_CTRL\_BURSTEN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#define\ \_RMU\_CTRL\_BURSTEN\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#define\ \_RMU\_CTRL\_BURSTEN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x2UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#define\ \_RMU\_CTRL\_BURSTEN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#define\ RMU\_CTRL\_BURSTEN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_RMU\_CTRL\_BURSTEN\_DEFAULT\ <<\ 1)\ \ \ \ }}
+\DoxyCodeLine{00071\ \textcolor{comment}{/*\ Bit\ fields\ for\ RMU\ RSTCAUSE\ */}}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#define\ \_RMU\_RSTCAUSE\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#define\ \_RMU\_RSTCAUSE\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0000FFFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#define\ RMU\_RSTCAUSE\_PORST\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#define\ \_RMU\_RSTCAUSE\_PORST\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#define\ \_RMU\_RSTCAUSE\_PORST\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#define\ \_RMU\_RSTCAUSE\_PORST\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#define\ RMU\_RSTCAUSE\_PORST\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ (\_RMU\_RSTCAUSE\_PORST\_DEFAULT\ <<\ 0)\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#define\ RMU\_RSTCAUSE\_BODUNREGRST\ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#define\ \_RMU\_RSTCAUSE\_BODUNREGRST\_SHIFT\ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#define\ \_RMU\_RSTCAUSE\_BODUNREGRST\_MASK\ \ \ \ \ \ \ \ 0x2UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#define\ \_RMU\_RSTCAUSE\_BODUNREGRST\_DEFAULT\ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#define\ RMU\_RSTCAUSE\_BODUNREGRST\_DEFAULT\ \ \ \ \ \ (\_RMU\_RSTCAUSE\_BODUNREGRST\_DEFAULT\ <<\ 1)\ \ \ }}
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#define\ RMU\_RSTCAUSE\_BODREGRST\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 2)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#define\ \_RMU\_RSTCAUSE\_BODREGRST\_SHIFT\ \ \ \ \ \ \ \ \ 2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#define\ \_RMU\_RSTCAUSE\_BODREGRST\_MASK\ \ \ \ \ \ \ \ \ \ 0x4UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#define\ \_RMU\_RSTCAUSE\_BODREGRST\_DEFAULT\ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#define\ RMU\_RSTCAUSE\_BODREGRST\_DEFAULT\ \ \ \ \ \ \ \ (\_RMU\_RSTCAUSE\_BODREGRST\_DEFAULT\ <<\ 2)\ \ \ \ \ }}
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#define\ RMU\_RSTCAUSE\_EXTRST\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 3)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#define\ \_RMU\_RSTCAUSE\_EXTRST\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ 3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#define\ \_RMU\_RSTCAUSE\_EXTRST\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ 0x8UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#define\ \_RMU\_RSTCAUSE\_EXTRST\_DEFAULT\ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#define\ RMU\_RSTCAUSE\_EXTRST\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ (\_RMU\_RSTCAUSE\_EXTRST\_DEFAULT\ <<\ 3)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\#define\ RMU\_RSTCAUSE\_WDOGRST\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 4)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#define\ \_RMU\_RSTCAUSE\_WDOGRST\_SHIFT\ \ \ \ \ \ \ \ \ \ \ 4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\#define\ \_RMU\_RSTCAUSE\_WDOGRST\_MASK\ \ \ \ \ \ \ \ \ \ \ \ 0x10UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\#define\ \_RMU\_RSTCAUSE\_WDOGRST\_DEFAULT\ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\#define\ RMU\_RSTCAUSE\_WDOGRST\_DEFAULT\ \ \ \ \ \ \ \ \ \ (\_RMU\_RSTCAUSE\_WDOGRST\_DEFAULT\ <<\ 4)\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#define\ RMU\_RSTCAUSE\_LOCKUPRST\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 5)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#define\ \_RMU\_RSTCAUSE\_LOCKUPRST\_SHIFT\ \ \ \ \ \ \ \ \ 5\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#define\ \_RMU\_RSTCAUSE\_LOCKUPRST\_MASK\ \ \ \ \ \ \ \ \ \ 0x20UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#define\ \_RMU\_RSTCAUSE\_LOCKUPRST\_DEFAULT\ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00103\ \textcolor{preprocessor}{\#define\ RMU\_RSTCAUSE\_LOCKUPRST\_DEFAULT\ \ \ \ \ \ \ \ (\_RMU\_RSTCAUSE\_LOCKUPRST\_DEFAULT\ <<\ 5)\ \ \ \ \ }}
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#define\ RMU\_RSTCAUSE\_SYSREQRST\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 6)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#define\ \_RMU\_RSTCAUSE\_SYSREQRST\_SHIFT\ \ \ \ \ \ \ \ \ 6\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\#define\ \_RMU\_RSTCAUSE\_SYSREQRST\_MASK\ \ \ \ \ \ \ \ \ \ 0x40UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00107\ \textcolor{preprocessor}{\#define\ \_RMU\_RSTCAUSE\_SYSREQRST\_DEFAULT\ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\#define\ RMU\_RSTCAUSE\_SYSREQRST\_DEFAULT\ \ \ \ \ \ \ \ (\_RMU\_RSTCAUSE\_SYSREQRST\_DEFAULT\ <<\ 6)\ \ \ \ \ }}
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\#define\ RMU\_RSTCAUSE\_EM4RST\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 7)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00110\ \textcolor{preprocessor}{\#define\ \_RMU\_RSTCAUSE\_EM4RST\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ 7\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\#define\ \_RMU\_RSTCAUSE\_EM4RST\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ 0x80UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#define\ \_RMU\_RSTCAUSE\_EM4RST\_DEFAULT\ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#define\ RMU\_RSTCAUSE\_EM4RST\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ (\_RMU\_RSTCAUSE\_EM4RST\_DEFAULT\ <<\ 7)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#define\ RMU\_RSTCAUSE\_EM4WURST\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 8)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\#define\ \_RMU\_RSTCAUSE\_EM4WURST\_SHIFT\ \ \ \ \ \ \ \ \ \ 8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#define\ \_RMU\_RSTCAUSE\_EM4WURST\_MASK\ \ \ \ \ \ \ \ \ \ \ 0x100UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00117\ \textcolor{preprocessor}{\#define\ \_RMU\_RSTCAUSE\_EM4WURST\_DEFAULT\ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00118\ \textcolor{preprocessor}{\#define\ RMU\_RSTCAUSE\_EM4WURST\_DEFAULT\ \ \ \ \ \ \ \ \ (\_RMU\_RSTCAUSE\_EM4WURST\_DEFAULT\ <<\ 8)\ \ \ \ \ \ }}
+\DoxyCodeLine{00119\ \textcolor{preprocessor}{\#define\ RMU\_RSTCAUSE\_BODAVDD0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 9)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00120\ \textcolor{preprocessor}{\#define\ \_RMU\_RSTCAUSE\_BODAVDD0\_SHIFT\ \ \ \ \ \ \ \ \ \ 9\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\#define\ \_RMU\_RSTCAUSE\_BODAVDD0\_MASK\ \ \ \ \ \ \ \ \ \ \ 0x200UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00122\ \textcolor{preprocessor}{\#define\ \_RMU\_RSTCAUSE\_BODAVDD0\_DEFAULT\ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\#define\ RMU\_RSTCAUSE\_BODAVDD0\_DEFAULT\ \ \ \ \ \ \ \ \ (\_RMU\_RSTCAUSE\_BODAVDD0\_DEFAULT\ <<\ 9)\ \ \ \ \ \ }}
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\#define\ RMU\_RSTCAUSE\_BODAVDD1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 10)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\#define\ \_RMU\_RSTCAUSE\_BODAVDD1\_SHIFT\ \ \ \ \ \ \ \ \ \ 10\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00126\ \textcolor{preprocessor}{\#define\ \_RMU\_RSTCAUSE\_BODAVDD1\_MASK\ \ \ \ \ \ \ \ \ \ \ 0x400UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\#define\ \_RMU\_RSTCAUSE\_BODAVDD1\_DEFAULT\ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\#define\ RMU\_RSTCAUSE\_BODAVDD1\_DEFAULT\ \ \ \ \ \ \ \ \ (\_RMU\_RSTCAUSE\_BODAVDD1\_DEFAULT\ <<\ 10)\ \ \ \ \ }}
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{\#define\ RMU\_RSTCAUSE\_BUBODVDDDREG\ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 11)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00130\ \textcolor{preprocessor}{\#define\ \_RMU\_RSTCAUSE\_BUBODVDDDREG\_SHIFT\ \ \ \ \ \ 11\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00131\ \textcolor{preprocessor}{\#define\ \_RMU\_RSTCAUSE\_BUBODVDDDREG\_MASK\ \ \ \ \ \ \ 0x800UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00132\ \textcolor{preprocessor}{\#define\ \_RMU\_RSTCAUSE\_BUBODVDDDREG\_DEFAULT\ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00133\ \textcolor{preprocessor}{\#define\ RMU\_RSTCAUSE\_BUBODVDDDREG\_DEFAULT\ \ \ \ \ (\_RMU\_RSTCAUSE\_BUBODVDDDREG\_DEFAULT\ <<\ 11)\ }}
+\DoxyCodeLine{00134\ \textcolor{preprocessor}{\#define\ RMU\_RSTCAUSE\_BUBODBUVIN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 12)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00135\ \textcolor{preprocessor}{\#define\ \_RMU\_RSTCAUSE\_BUBODBUVIN\_SHIFT\ \ \ \ \ \ \ \ 12\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00136\ \textcolor{preprocessor}{\#define\ \_RMU\_RSTCAUSE\_BUBODBUVIN\_MASK\ \ \ \ \ \ \ \ \ 0x1000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\#define\ \_RMU\_RSTCAUSE\_BUBODBUVIN\_DEFAULT\ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00138\ \textcolor{preprocessor}{\#define\ RMU\_RSTCAUSE\_BUBODBUVIN\_DEFAULT\ \ \ \ \ \ \ (\_RMU\_RSTCAUSE\_BUBODBUVIN\_DEFAULT\ <<\ 12)\ \ \ }}
+\DoxyCodeLine{00139\ \textcolor{preprocessor}{\#define\ RMU\_RSTCAUSE\_BUBODUNREG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 13)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00140\ \textcolor{preprocessor}{\#define\ \_RMU\_RSTCAUSE\_BUBODUNREG\_SHIFT\ \ \ \ \ \ \ \ 13\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00141\ \textcolor{preprocessor}{\#define\ \_RMU\_RSTCAUSE\_BUBODUNREG\_MASK\ \ \ \ \ \ \ \ \ 0x2000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00142\ \textcolor{preprocessor}{\#define\ \_RMU\_RSTCAUSE\_BUBODUNREG\_DEFAULT\ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00143\ \textcolor{preprocessor}{\#define\ RMU\_RSTCAUSE\_BUBODUNREG\_DEFAULT\ \ \ \ \ \ \ (\_RMU\_RSTCAUSE\_BUBODUNREG\_DEFAULT\ <<\ 13)\ \ \ }}
+\DoxyCodeLine{00144\ \textcolor{preprocessor}{\#define\ RMU\_RSTCAUSE\_BUBODREG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 14)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00145\ \textcolor{preprocessor}{\#define\ \_RMU\_RSTCAUSE\_BUBODREG\_SHIFT\ \ \ \ \ \ \ \ \ \ 14\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00146\ \textcolor{preprocessor}{\#define\ \_RMU\_RSTCAUSE\_BUBODREG\_MASK\ \ \ \ \ \ \ \ \ \ \ 0x4000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00147\ \textcolor{preprocessor}{\#define\ \_RMU\_RSTCAUSE\_BUBODREG\_DEFAULT\ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00148\ \textcolor{preprocessor}{\#define\ RMU\_RSTCAUSE\_BUBODREG\_DEFAULT\ \ \ \ \ \ \ \ \ (\_RMU\_RSTCAUSE\_BUBODREG\_DEFAULT\ <<\ 14)\ \ \ \ \ }}
+\DoxyCodeLine{00149\ \textcolor{preprocessor}{\#define\ RMU\_RSTCAUSE\_BUMODERST\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 15)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00150\ \textcolor{preprocessor}{\#define\ \_RMU\_RSTCAUSE\_BUMODERST\_SHIFT\ \ \ \ \ \ \ \ \ 15\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00151\ \textcolor{preprocessor}{\#define\ \_RMU\_RSTCAUSE\_BUMODERST\_MASK\ \ \ \ \ \ \ \ \ \ 0x8000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00152\ \textcolor{preprocessor}{\#define\ \_RMU\_RSTCAUSE\_BUMODERST\_DEFAULT\ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00153\ \textcolor{preprocessor}{\#define\ RMU\_RSTCAUSE\_BUMODERST\_DEFAULT\ \ \ \ \ \ \ \ (\_RMU\_RSTCAUSE\_BUMODERST\_DEFAULT\ <<\ 15)\ \ \ \ }}
+\DoxyCodeLine{00155\ \textcolor{comment}{/*\ Bit\ fields\ for\ RMU\ CMD\ */}}
+\DoxyCodeLine{00156\ \textcolor{preprocessor}{\#define\ \_RMU\_CMD\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00157\ \textcolor{preprocessor}{\#define\ \_RMU\_CMD\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00158\ \textcolor{preprocessor}{\#define\ RMU\_CMD\_RCCLR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00159\ \textcolor{preprocessor}{\#define\ \_RMU\_CMD\_RCCLR\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00160\ \textcolor{preprocessor}{\#define\ \_RMU\_CMD\_RCCLR\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00161\ \textcolor{preprocessor}{\#define\ \_RMU\_CMD\_RCCLR\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00162\ \textcolor{preprocessor}{\#define\ RMU\_CMD\_RCCLR\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_RMU\_CMD\_RCCLR\_DEFAULT\ <<\ 0)\ }}
+
+\end{DoxyCode}

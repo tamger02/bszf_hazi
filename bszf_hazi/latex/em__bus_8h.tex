@@ -1,0 +1,51 @@
+\doxysection{gecko\+\_\+sdk\+\_\+4.4.4/platform/emlib/inc/em\+\_\+bus.h File Reference}
+\hypertarget{em__bus_8h}{}\label{em__bus_8h}\index{gecko\_sdk\_4.4.4/platform/emlib/inc/em\_bus.h@{gecko\_sdk\_4.4.4/platform/emlib/inc/em\_bus.h}}
+
+
+RAM and peripheral bit-\/field set and clear API.  
+
+
+{\ttfamily \#include "{}sl\+\_\+assert.\+h"{}}\newline
+{\ttfamily \#include "{}em\+\_\+core.\+h"{}}\newline
+{\ttfamily \#include "{}em\+\_\+device.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group__bus_ga5db07d1f35d501e6de6891eaeae88ec7}{BUS\+\_\+\+Ram\+Bit\+Write}} (volatile uint32\+\_\+t \texorpdfstring{$\ast$}{*}addr, unsigned int bit, unsigned int val)
+\begin{DoxyCompactList}\small\item\em Perform a single-\/bit write operation on a 32-\/bit word in RAM. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE unsigned int \mbox{\hyperlink{group__bus_ga00e7633614955dd90f180acb07f83c8d}{BUS\+\_\+\+Ram\+Bit\+Read}} (volatile const uint32\+\_\+t \texorpdfstring{$\ast$}{*}addr, unsigned int bit)
+\begin{DoxyCompactList}\small\item\em Perform a single-\/bit read operation on a 32-\/bit word in RAM. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group__bus_gaf8574f14855448ecae32c5a9dd0c7164}{BUS\+\_\+\+Reg\+Bit\+Write}} (volatile uint32\+\_\+t \texorpdfstring{$\ast$}{*}addr, unsigned int bit, unsigned int val)
+\begin{DoxyCompactList}\small\item\em Perform a single-\/bit write operation on a peripheral register. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE unsigned int \mbox{\hyperlink{group__bus_gaca6b55014161f4c51c9daf4f707eeb7c}{BUS\+\_\+\+Reg\+Bit\+Read}} (volatile const uint32\+\_\+t \texorpdfstring{$\ast$}{*}addr, unsigned int bit)
+\begin{DoxyCompactList}\small\item\em Perform a single-\/bit read operation on a peripheral register. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group__bus_ga8225a5d4acac280abb182dc118e8df77}{BUS\+\_\+\+Reg\+Masked\+Set}} (volatile uint32\+\_\+t \texorpdfstring{$\ast$}{*}addr, uint32\+\_\+t mask)
+\begin{DoxyCompactList}\small\item\em Perform a masked set operation on a peripheral register address. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group__bus_gad226bfe478c81d51681539d935241758}{BUS\+\_\+\+Reg\+Masked\+Clear}} (volatile uint32\+\_\+t \texorpdfstring{$\ast$}{*}addr, uint32\+\_\+t mask)
+\begin{DoxyCompactList}\small\item\em Perform a masked clear operation on the peripheral register address. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE void \mbox{\hyperlink{group__bus_ga9e878ccba24fcbf97b5bcb8b53356e76}{BUS\+\_\+\+Reg\+Masked\+Write}} (volatile uint32\+\_\+t \texorpdfstring{$\ast$}{*}addr, uint32\+\_\+t mask, uint32\+\_\+t val)
+\begin{DoxyCompactList}\small\item\em Perform peripheral register masked write. \end{DoxyCompactList}\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint32\+\_\+t \mbox{\hyperlink{group__bus_gaec23c86f9b844b9e0e102ebff0b96ff4}{BUS\+\_\+\+Reg\+Masked\+Read}} (volatile const uint32\+\_\+t \texorpdfstring{$\ast$}{*}addr, uint32\+\_\+t mask)
+\begin{DoxyCompactList}\small\item\em Perform a peripheral register masked read. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+RAM and peripheral bit-\/field set and clear API. 
+
+\hypertarget{em__bus_8h_autotoc_md87}{}\doxysubsection{\texorpdfstring{License}{License}}\label{em__bus_8h_autotoc_md87}
+{\bfseries{Copyright 2018 Silicon Laboratories Inc. www.\+silabs.\+com}}
+
+SPDX-\/\+License-\/\+Identifier\+: Zlib
+
+The licensor of this software is Silicon Laboratories Inc.
+
+This software is provided \textquotesingle{}as-\/is\textquotesingle{}, without any express or implied warranty. In no event will the authors be held liable for any damages arising from the use of this software.
+
+Permission is granted to anyone to use this software for any purpose, including commercial applications, and to alter it and redistribute it freely, subject to the following restrictions\+:
+
+
+\begin{DoxyEnumerate}
+\item The origin of this software must not be misrepresented; you must not claim that you wrote the original software. If you use this software in a product, an acknowledgment in the product documentation would be appreciated but is not required.
+\item Altered source versions must be plainly marked as such, and must not be misrepresented as being the original software.
+\item This notice may not be removed or altered from any source distribution. 
+\end{DoxyEnumerate}

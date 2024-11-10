@@ -1,0 +1,327 @@
+\doxysection{efm32gg\+\_\+burtc.\+h}
+\hypertarget{efm32gg__burtc_8h_source}{}\label{efm32gg__burtc_8h_source}\index{gecko\_sdk\_4.4.4/platform/Device/SiliconLabs/EFM32GG/Include/efm32gg\_burtc.h@{gecko\_sdk\_4.4.4/platform/Device/SiliconLabs/EFM32GG/Include/efm32gg\_burtc.h}}
+\mbox{\hyperlink{efm32gg__burtc_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#if\ defined(\_\_ICCARM\_\_)}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#pragma\ system\_include\ \ \ \ \ \ \ }\textcolor{comment}{/*\ Treat\ file\ as\ system\ include\ file.\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#elif\ defined(\_\_ARMCC\_VERSION)\ \&\&\ (\_\_ARMCC\_VERSION\ >=\ 6010050)}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#pragma\ clang\ system\_header\ \ }\textcolor{comment}{/*\ Treat\ file\ as\ system\ include\ file.\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00041\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00046\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00047\ \ \ \_\_IOM\ uint32\_t\ \ \ \ \mbox{\hyperlink{struct_b_u_r_t_c___type_def_af3f300a4454419e1bed628add2d8132d}{CTRL}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00048\ \ \ \_\_IOM\ uint32\_t\ \ \ \ \mbox{\hyperlink{struct_b_u_r_t_c___type_def_a6548b4a98f15b8f2bf8f348a953e9232}{LPMODE}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00049\ \ \ \_\_IM\ uint32\_t\ \ \ \ \ \mbox{\hyperlink{struct_b_u_r_t_c___type_def_a395132557c29e660557168bdf34ebc1e}{CNT}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00050\ \ \ \_\_IOM\ uint32\_t\ \ \ \ \mbox{\hyperlink{struct_b_u_r_t_c___type_def_a7d1a3e29724de98e9485d8a39b2cd66d}{COMP0}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00051\ \ \ \_\_IM\ uint32\_t\ \ \ \ \ \mbox{\hyperlink{struct_b_u_r_t_c___type_def_a8c51bf990751a2b1131dec339135d110}{TIMESTAMP}};\ \ \ \ \ \ }
+\DoxyCodeLine{00052\ \ \ \_\_IOM\ uint32\_t\ \ \ \ \mbox{\hyperlink{struct_b_u_r_t_c___type_def_a55e3cf99a2d285ea6fcaf054ef227004}{LFXOFDET}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00053\ \ \ \_\_IM\ uint32\_t\ \ \ \ \ \mbox{\hyperlink{struct_b_u_r_t_c___type_def_afd238135fd38a2e7caea8791e57a5794}{STATUS}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00054\ \ \ \_\_IOM\ uint32\_t\ \ \ \ \mbox{\hyperlink{struct_b_u_r_t_c___type_def_a3c499ed13a8f72b5db8eddbfb55bd705}{CMD}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00055\ \ \ \_\_IOM\ uint32\_t\ \ \ \ \mbox{\hyperlink{struct_b_u_r_t_c___type_def_af916cd4655e1b83934a6fc9e16fd1de2}{POWERDOWN}};\ \ \ \ \ \ }
+\DoxyCodeLine{00056\ \ \ \_\_IOM\ uint32\_t\ \ \ \ \mbox{\hyperlink{struct_b_u_r_t_c___type_def_a1f6d3092530dcc36f6aaad009988f6a1}{LOCK}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00057\ \ \ \_\_IM\ uint32\_t\ \ \ \ \ \mbox{\hyperlink{struct_b_u_r_t_c___type_def_a376f357e06a6f9adaa31b12eb022bf70}{IF}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00058\ \ \ \_\_IOM\ uint32\_t\ \ \ \ \mbox{\hyperlink{struct_b_u_r_t_c___type_def_ab4c1f4c87b15ade910b33287f7e2a592}{IFS}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00059\ \ \ \_\_IOM\ uint32\_t\ \ \ \ \mbox{\hyperlink{struct_b_u_r_t_c___type_def_a16f30e218f3975d71c6cbc6686059d74}{IFC}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00060\ \ \ \_\_IOM\ uint32\_t\ \ \ \ \mbox{\hyperlink{struct_b_u_r_t_c___type_def_a89e8ae774b9b570842a3b6973571745a}{IEN}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00062\ \ \ \_\_IOM\ uint32\_t\ \ \ \ \mbox{\hyperlink{struct_b_u_r_t_c___type_def_a7228e573a2ce57d9e7992817373bc0b1}{FREEZE}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00063\ \ \ \_\_IM\ uint32\_t\ \ \ \ \ \mbox{\hyperlink{struct_b_u_r_t_c___type_def_a4a7ce125d523f16c476d27651eaf2f40}{SYNCBUSY}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00065\ \ \ uint32\_t\ \ \ \ \ \ \ \ \ \ RESERVED0[48U];\ }
+\DoxyCodeLine{00066\ \ \ \mbox{\hyperlink{struct_b_u_r_t_c___r_e_t___type_def}{BURTC\_RET\_TypeDef}}\ RET[128U];\ \ \ \ \ \ }
+\DoxyCodeLine{00067\ \}\ \mbox{\hyperlink{struct_b_u_r_t_c___type_def}{BURTC\_TypeDef}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00069\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00074\ \textcolor{comment}{/*\ Bit\ fields\ for\ BURTC\ CTRL\ */}}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#define\ \_BURTC\_CTRL\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000008UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#define\ \_BURTC\_CTRL\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x000077FFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#define\ \_BURTC\_CTRL\_MODE\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#define\ \_BURTC\_CTRL\_MODE\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x3UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#define\ \_BURTC\_CTRL\_MODE\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#define\ \_BURTC\_CTRL\_MODE\_DISABLE\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#define\ \_BURTC\_CTRL\_MODE\_EM2EN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#define\ \_BURTC\_CTRL\_MODE\_EM3EN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000002UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#define\ \_BURTC\_CTRL\_MODE\_EM4EN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000003UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#define\ BURTC\_CTRL\_MODE\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_BURTC\_CTRL\_MODE\_DEFAULT\ <<\ 0)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#define\ BURTC\_CTRL\_MODE\_DISABLE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_BURTC\_CTRL\_MODE\_DISABLE\ <<\ 0)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#define\ BURTC\_CTRL\_MODE\_EM2EN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_BURTC\_CTRL\_MODE\_EM2EN\ <<\ 0)\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#define\ BURTC\_CTRL\_MODE\_EM3EN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_BURTC\_CTRL\_MODE\_EM3EN\ <<\ 0)\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#define\ BURTC\_CTRL\_MODE\_EM4EN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_BURTC\_CTRL\_MODE\_EM4EN\ <<\ 0)\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#define\ BURTC\_CTRL\_DEBUGRUN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 2)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#define\ \_BURTC\_CTRL\_DEBUGRUN\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ 2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#define\ \_BURTC\_CTRL\_DEBUGRUN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ 0x4UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#define\ \_BURTC\_CTRL\_DEBUGRUN\_DEFAULT\ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#define\ BURTC\_CTRL\_DEBUGRUN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ (\_BURTC\_CTRL\_DEBUGRUN\_DEFAULT\ <<\ 2)\ \ \ \ }}
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\#define\ BURTC\_CTRL\_RSTEN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 3)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#define\ \_BURTC\_CTRL\_RSTEN\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\#define\ \_BURTC\_CTRL\_RSTEN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x8UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\#define\ \_BURTC\_CTRL\_RSTEN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\#define\ BURTC\_CTRL\_RSTEN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_BURTC\_CTRL\_RSTEN\_DEFAULT\ <<\ 3)\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#define\ BURTC\_CTRL\_COMP0TOP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 4)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#define\ \_BURTC\_CTRL\_COMP0TOP\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ 4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#define\ \_BURTC\_CTRL\_COMP0TOP\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ 0x10UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#define\ \_BURTC\_CTRL\_COMP0TOP\_DEFAULT\ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00103\ \textcolor{preprocessor}{\#define\ BURTC\_CTRL\_COMP0TOP\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ (\_BURTC\_CTRL\_COMP0TOP\_DEFAULT\ <<\ 4)\ \ \ \ }}
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#define\ \_BURTC\_CTRL\_LPCOMP\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 5\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#define\ \_BURTC\_CTRL\_LPCOMP\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xE0UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\#define\ \_BURTC\_CTRL\_LPCOMP\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00107\ \textcolor{preprocessor}{\#define\ \_BURTC\_CTRL\_LPCOMP\_IGN0LSB\ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\#define\ \_BURTC\_CTRL\_LPCOMP\_IGN1LSB\ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\#define\ \_BURTC\_CTRL\_LPCOMP\_IGN2LSB\ \ \ \ \ \ \ \ \ \ \ \ 0x00000002UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00110\ \textcolor{preprocessor}{\#define\ \_BURTC\_CTRL\_LPCOMP\_IGN3LSB\ \ \ \ \ \ \ \ \ \ \ \ 0x00000003UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\#define\ \_BURTC\_CTRL\_LPCOMP\_IGN4LSB\ \ \ \ \ \ \ \ \ \ \ \ 0x00000004UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#define\ \_BURTC\_CTRL\_LPCOMP\_IGN5LSB\ \ \ \ \ \ \ \ \ \ \ \ 0x00000005UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#define\ \_BURTC\_CTRL\_LPCOMP\_IGN6LSB\ \ \ \ \ \ \ \ \ \ \ \ 0x00000006UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#define\ \_BURTC\_CTRL\_LPCOMP\_IGN7LSB\ \ \ \ \ \ \ \ \ \ \ \ 0x00000007UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\#define\ BURTC\_CTRL\_LPCOMP\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ (\_BURTC\_CTRL\_LPCOMP\_DEFAULT\ <<\ 5)\ \ \ \ \ \ }}
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#define\ BURTC\_CTRL\_LPCOMP\_IGN0LSB\ \ \ \ \ \ \ \ \ \ \ \ \ (\_BURTC\_CTRL\_LPCOMP\_IGN0LSB\ <<\ 5)\ \ \ \ \ \ }}
+\DoxyCodeLine{00117\ \textcolor{preprocessor}{\#define\ BURTC\_CTRL\_LPCOMP\_IGN1LSB\ \ \ \ \ \ \ \ \ \ \ \ \ (\_BURTC\_CTRL\_LPCOMP\_IGN1LSB\ <<\ 5)\ \ \ \ \ \ }}
+\DoxyCodeLine{00118\ \textcolor{preprocessor}{\#define\ BURTC\_CTRL\_LPCOMP\_IGN2LSB\ \ \ \ \ \ \ \ \ \ \ \ \ (\_BURTC\_CTRL\_LPCOMP\_IGN2LSB\ <<\ 5)\ \ \ \ \ \ }}
+\DoxyCodeLine{00119\ \textcolor{preprocessor}{\#define\ BURTC\_CTRL\_LPCOMP\_IGN3LSB\ \ \ \ \ \ \ \ \ \ \ \ \ (\_BURTC\_CTRL\_LPCOMP\_IGN3LSB\ <<\ 5)\ \ \ \ \ \ }}
+\DoxyCodeLine{00120\ \textcolor{preprocessor}{\#define\ BURTC\_CTRL\_LPCOMP\_IGN4LSB\ \ \ \ \ \ \ \ \ \ \ \ \ (\_BURTC\_CTRL\_LPCOMP\_IGN4LSB\ <<\ 5)\ \ \ \ \ \ }}
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\#define\ BURTC\_CTRL\_LPCOMP\_IGN5LSB\ \ \ \ \ \ \ \ \ \ \ \ \ (\_BURTC\_CTRL\_LPCOMP\_IGN5LSB\ <<\ 5)\ \ \ \ \ \ }}
+\DoxyCodeLine{00122\ \textcolor{preprocessor}{\#define\ BURTC\_CTRL\_LPCOMP\_IGN6LSB\ \ \ \ \ \ \ \ \ \ \ \ \ (\_BURTC\_CTRL\_LPCOMP\_IGN6LSB\ <<\ 5)\ \ \ \ \ \ }}
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\#define\ BURTC\_CTRL\_LPCOMP\_IGN7LSB\ \ \ \ \ \ \ \ \ \ \ \ \ (\_BURTC\_CTRL\_LPCOMP\_IGN7LSB\ <<\ 5)\ \ \ \ \ \ }}
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\#define\ \_BURTC\_CTRL\_PRESC\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\#define\ \_BURTC\_CTRL\_PRESC\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x700UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00126\ \textcolor{preprocessor}{\#define\ \_BURTC\_CTRL\_PRESC\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\#define\ \_BURTC\_CTRL\_PRESC\_DIV1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\#define\ \_BURTC\_CTRL\_PRESC\_DIV2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{\#define\ \_BURTC\_CTRL\_PRESC\_DIV4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000002UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00130\ \textcolor{preprocessor}{\#define\ \_BURTC\_CTRL\_PRESC\_DIV8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000003UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00131\ \textcolor{preprocessor}{\#define\ \_BURTC\_CTRL\_PRESC\_DIV16\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000004UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00132\ \textcolor{preprocessor}{\#define\ \_BURTC\_CTRL\_PRESC\_DIV32\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000005UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00133\ \textcolor{preprocessor}{\#define\ \_BURTC\_CTRL\_PRESC\_DIV64\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000006UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00134\ \textcolor{preprocessor}{\#define\ \_BURTC\_CTRL\_PRESC\_DIV128\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000007UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00135\ \textcolor{preprocessor}{\#define\ BURTC\_CTRL\_PRESC\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_BURTC\_CTRL\_PRESC\_DEFAULT\ <<\ 8)\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00136\ \textcolor{preprocessor}{\#define\ BURTC\_CTRL\_PRESC\_DIV1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_BURTC\_CTRL\_PRESC\_DIV1\ <<\ 8)\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\#define\ BURTC\_CTRL\_PRESC\_DIV2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_BURTC\_CTRL\_PRESC\_DIV2\ <<\ 8)\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00138\ \textcolor{preprocessor}{\#define\ BURTC\_CTRL\_PRESC\_DIV4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_BURTC\_CTRL\_PRESC\_DIV4\ <<\ 8)\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00139\ \textcolor{preprocessor}{\#define\ BURTC\_CTRL\_PRESC\_DIV8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_BURTC\_CTRL\_PRESC\_DIV8\ <<\ 8)\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00140\ \textcolor{preprocessor}{\#define\ BURTC\_CTRL\_PRESC\_DIV16\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_BURTC\_CTRL\_PRESC\_DIV16\ <<\ 8)\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00141\ \textcolor{preprocessor}{\#define\ BURTC\_CTRL\_PRESC\_DIV32\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_BURTC\_CTRL\_PRESC\_DIV32\ <<\ 8)\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00142\ \textcolor{preprocessor}{\#define\ BURTC\_CTRL\_PRESC\_DIV64\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_BURTC\_CTRL\_PRESC\_DIV64\ <<\ 8)\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00143\ \textcolor{preprocessor}{\#define\ BURTC\_CTRL\_PRESC\_DIV128\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_BURTC\_CTRL\_PRESC\_DIV128\ <<\ 8)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00144\ \textcolor{preprocessor}{\#define\ \_BURTC\_CTRL\_CLKSEL\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 12\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00145\ \textcolor{preprocessor}{\#define\ \_BURTC\_CTRL\_CLKSEL\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x3000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00146\ \textcolor{preprocessor}{\#define\ \_BURTC\_CTRL\_CLKSEL\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00147\ \textcolor{preprocessor}{\#define\ \_BURTC\_CTRL\_CLKSEL\_NONE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00148\ \textcolor{preprocessor}{\#define\ \_BURTC\_CTRL\_CLKSEL\_LFRCO\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00149\ \textcolor{preprocessor}{\#define\ \_BURTC\_CTRL\_CLKSEL\_LFXO\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000002UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00150\ \textcolor{preprocessor}{\#define\ \_BURTC\_CTRL\_CLKSEL\_ULFRCO\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000003UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00151\ \textcolor{preprocessor}{\#define\ BURTC\_CTRL\_CLKSEL\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ (\_BURTC\_CTRL\_CLKSEL\_DEFAULT\ <<\ 12)\ \ \ \ \ }}
+\DoxyCodeLine{00152\ \textcolor{preprocessor}{\#define\ BURTC\_CTRL\_CLKSEL\_NONE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_BURTC\_CTRL\_CLKSEL\_NONE\ <<\ 12)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00153\ \textcolor{preprocessor}{\#define\ BURTC\_CTRL\_CLKSEL\_LFRCO\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_BURTC\_CTRL\_CLKSEL\_LFRCO\ <<\ 12)\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00154\ \textcolor{preprocessor}{\#define\ BURTC\_CTRL\_CLKSEL\_LFXO\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_BURTC\_CTRL\_CLKSEL\_LFXO\ <<\ 12)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00155\ \textcolor{preprocessor}{\#define\ BURTC\_CTRL\_CLKSEL\_ULFRCO\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_BURTC\_CTRL\_CLKSEL\_ULFRCO\ <<\ 12)\ \ \ \ \ \ }}
+\DoxyCodeLine{00156\ \textcolor{preprocessor}{\#define\ BURTC\_CTRL\_BUMODETSEN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 14)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00157\ \textcolor{preprocessor}{\#define\ \_BURTC\_CTRL\_BUMODETSEN\_SHIFT\ \ \ \ \ \ \ \ \ \ 14\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00158\ \textcolor{preprocessor}{\#define\ \_BURTC\_CTRL\_BUMODETSEN\_MASK\ \ \ \ \ \ \ \ \ \ \ 0x4000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00159\ \textcolor{preprocessor}{\#define\ \_BURTC\_CTRL\_BUMODETSEN\_DEFAULT\ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00160\ \textcolor{preprocessor}{\#define\ BURTC\_CTRL\_BUMODETSEN\_DEFAULT\ \ \ \ \ \ \ \ \ (\_BURTC\_CTRL\_BUMODETSEN\_DEFAULT\ <<\ 14)\ }}
+\DoxyCodeLine{00162\ \textcolor{comment}{/*\ Bit\ fields\ for\ BURTC\ LPMODE\ */}}
+\DoxyCodeLine{00163\ \textcolor{preprocessor}{\#define\ \_BURTC\_LPMODE\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00164\ \textcolor{preprocessor}{\#define\ \_BURTC\_LPMODE\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000003UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00165\ \textcolor{preprocessor}{\#define\ \_BURTC\_LPMODE\_LPMODE\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00166\ \textcolor{preprocessor}{\#define\ \_BURTC\_LPMODE\_LPMODE\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ 0x3UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00167\ \textcolor{preprocessor}{\#define\ \_BURTC\_LPMODE\_LPMODE\_DEFAULT\ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00168\ \textcolor{preprocessor}{\#define\ \_BURTC\_LPMODE\_LPMODE\_DISABLE\ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00169\ \textcolor{preprocessor}{\#define\ \_BURTC\_LPMODE\_LPMODE\_ENABLE\ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00170\ \textcolor{preprocessor}{\#define\ \_BURTC\_LPMODE\_LPMODE\_BUEN\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000002UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00171\ \textcolor{preprocessor}{\#define\ BURTC\_LPMODE\_LPMODE\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ (\_BURTC\_LPMODE\_LPMODE\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00172\ \textcolor{preprocessor}{\#define\ BURTC\_LPMODE\_LPMODE\_DISABLE\ \ \ \ \ \ \ \ \ \ \ (\_BURTC\_LPMODE\_LPMODE\_DISABLE\ <<\ 0)\ }}
+\DoxyCodeLine{00173\ \textcolor{preprocessor}{\#define\ BURTC\_LPMODE\_LPMODE\_ENABLE\ \ \ \ \ \ \ \ \ \ \ \ (\_BURTC\_LPMODE\_LPMODE\_ENABLE\ <<\ 0)\ \ }}
+\DoxyCodeLine{00174\ \textcolor{preprocessor}{\#define\ BURTC\_LPMODE\_LPMODE\_BUEN\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_BURTC\_LPMODE\_LPMODE\_BUEN\ <<\ 0)\ \ \ \ }}
+\DoxyCodeLine{00176\ \textcolor{comment}{/*\ Bit\ fields\ for\ BURTC\ CNT\ */}}
+\DoxyCodeLine{00177\ \textcolor{preprocessor}{\#define\ \_BURTC\_CNT\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00178\ \textcolor{preprocessor}{\#define\ \_BURTC\_CNT\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFFFFFFFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00179\ \textcolor{preprocessor}{\#define\ \_BURTC\_CNT\_CNT\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00180\ \textcolor{preprocessor}{\#define\ \_BURTC\_CNT\_CNT\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFFFFFFFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00181\ \textcolor{preprocessor}{\#define\ \_BURTC\_CNT\_CNT\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00182\ \textcolor{preprocessor}{\#define\ BURTC\_CNT\_CNT\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_BURTC\_CNT\_CNT\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00184\ \textcolor{comment}{/*\ Bit\ fields\ for\ BURTC\ COMP0\ */}}
+\DoxyCodeLine{00185\ \textcolor{preprocessor}{\#define\ \_BURTC\_COMP0\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00186\ \textcolor{preprocessor}{\#define\ \_BURTC\_COMP0\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFFFFFFFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00187\ \textcolor{preprocessor}{\#define\ \_BURTC\_COMP0\_COMP0\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00188\ \textcolor{preprocessor}{\#define\ \_BURTC\_COMP0\_COMP0\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFFFFFFFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00189\ \textcolor{preprocessor}{\#define\ \_BURTC\_COMP0\_COMP0\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00190\ \textcolor{preprocessor}{\#define\ BURTC\_COMP0\_COMP0\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ (\_BURTC\_COMP0\_COMP0\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00192\ \textcolor{comment}{/*\ Bit\ fields\ for\ BURTC\ TIMESTAMP\ */}}
+\DoxyCodeLine{00193\ \textcolor{preprocessor}{\#define\ \_BURTC\_TIMESTAMP\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00194\ \textcolor{preprocessor}{\#define\ \_BURTC\_TIMESTAMP\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFFFFFFFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00195\ \textcolor{preprocessor}{\#define\ \_BURTC\_TIMESTAMP\_TIMESTAMP\_SHIFT\ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00196\ \textcolor{preprocessor}{\#define\ \_BURTC\_TIMESTAMP\_TIMESTAMP\_MASK\ \ \ \ \ \ \ 0xFFFFFFFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00197\ \textcolor{preprocessor}{\#define\ \_BURTC\_TIMESTAMP\_TIMESTAMP\_DEFAULT\ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00198\ \textcolor{preprocessor}{\#define\ BURTC\_TIMESTAMP\_TIMESTAMP\_DEFAULT\ \ \ \ \ (\_BURTC\_TIMESTAMP\_TIMESTAMP\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00200\ \textcolor{comment}{/*\ Bit\ fields\ for\ BURTC\ LFXOFDET\ */}}
+\DoxyCodeLine{00201\ \textcolor{preprocessor}{\#define\ \_BURTC\_LFXOFDET\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00202\ \textcolor{preprocessor}{\#define\ \_BURTC\_LFXOFDET\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x000001F3UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00203\ \textcolor{preprocessor}{\#define\ \_BURTC\_LFXOFDET\_OSC\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00204\ \textcolor{preprocessor}{\#define\ \_BURTC\_LFXOFDET\_OSC\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x3UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00205\ \textcolor{preprocessor}{\#define\ \_BURTC\_LFXOFDET\_OSC\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00206\ \textcolor{preprocessor}{\#define\ \_BURTC\_LFXOFDET\_OSC\_DISABLE\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00207\ \textcolor{preprocessor}{\#define\ \_BURTC\_LFXOFDET\_OSC\_LFRCO\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00208\ \textcolor{preprocessor}{\#define\ \_BURTC\_LFXOFDET\_OSC\_ULFRCO\ \ \ \ \ \ \ \ \ \ \ \ 0x00000002UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00209\ \textcolor{preprocessor}{\#define\ BURTC\_LFXOFDET\_OSC\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ (\_BURTC\_LFXOFDET\_OSC\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00210\ \textcolor{preprocessor}{\#define\ BURTC\_LFXOFDET\_OSC\_DISABLE\ \ \ \ \ \ \ \ \ \ \ \ (\_BURTC\_LFXOFDET\_OSC\_DISABLE\ <<\ 0)\ }}
+\DoxyCodeLine{00211\ \textcolor{preprocessor}{\#define\ BURTC\_LFXOFDET\_OSC\_LFRCO\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_BURTC\_LFXOFDET\_OSC\_LFRCO\ <<\ 0)\ \ \ }}
+\DoxyCodeLine{00212\ \textcolor{preprocessor}{\#define\ BURTC\_LFXOFDET\_OSC\_ULFRCO\ \ \ \ \ \ \ \ \ \ \ \ \ (\_BURTC\_LFXOFDET\_OSC\_ULFRCO\ <<\ 0)\ \ }}
+\DoxyCodeLine{00213\ \textcolor{preprocessor}{\#define\ \_BURTC\_LFXOFDET\_TOP\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ 4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00214\ \textcolor{preprocessor}{\#define\ \_BURTC\_LFXOFDET\_TOP\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1F0UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00215\ \textcolor{preprocessor}{\#define\ \_BURTC\_LFXOFDET\_TOP\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00216\ \textcolor{preprocessor}{\#define\ BURTC\_LFXOFDET\_TOP\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ (\_BURTC\_LFXOFDET\_TOP\_DEFAULT\ <<\ 4)\ }}
+\DoxyCodeLine{00218\ \textcolor{comment}{/*\ Bit\ fields\ for\ BURTC\ STATUS\ */}}
+\DoxyCodeLine{00219\ \textcolor{preprocessor}{\#define\ \_BURTC\_STATUS\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00220\ \textcolor{preprocessor}{\#define\ \_BURTC\_STATUS\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000007UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00221\ \textcolor{preprocessor}{\#define\ BURTC\_STATUS\_LPMODEACT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00222\ \textcolor{preprocessor}{\#define\ \_BURTC\_STATUS\_LPMODEACT\_SHIFT\ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00223\ \textcolor{preprocessor}{\#define\ \_BURTC\_STATUS\_LPMODEACT\_MASK\ \ \ \ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00224\ \textcolor{preprocessor}{\#define\ \_BURTC\_STATUS\_LPMODEACT\_DEFAULT\ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00225\ \textcolor{preprocessor}{\#define\ BURTC\_STATUS\_LPMODEACT\_DEFAULT\ \ \ \ \ \ \ \ (\_BURTC\_STATUS\_LPMODEACT\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00226\ \textcolor{preprocessor}{\#define\ BURTC\_STATUS\_BUMODETS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00227\ \textcolor{preprocessor}{\#define\ \_BURTC\_STATUS\_BUMODETS\_SHIFT\ \ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00228\ \textcolor{preprocessor}{\#define\ \_BURTC\_STATUS\_BUMODETS\_MASK\ \ \ \ \ \ \ \ \ \ \ 0x2UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00229\ \textcolor{preprocessor}{\#define\ \_BURTC\_STATUS\_BUMODETS\_DEFAULT\ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00230\ \textcolor{preprocessor}{\#define\ BURTC\_STATUS\_BUMODETS\_DEFAULT\ \ \ \ \ \ \ \ \ (\_BURTC\_STATUS\_BUMODETS\_DEFAULT\ <<\ 1)\ \ }}
+\DoxyCodeLine{00231\ \textcolor{preprocessor}{\#define\ BURTC\_STATUS\_RAMWERR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 2)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00232\ \textcolor{preprocessor}{\#define\ \_BURTC\_STATUS\_RAMWERR\_SHIFT\ \ \ \ \ \ \ \ \ \ \ 2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00233\ \textcolor{preprocessor}{\#define\ \_BURTC\_STATUS\_RAMWERR\_MASK\ \ \ \ \ \ \ \ \ \ \ \ 0x4UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00234\ \textcolor{preprocessor}{\#define\ \_BURTC\_STATUS\_RAMWERR\_DEFAULT\ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00235\ \textcolor{preprocessor}{\#define\ BURTC\_STATUS\_RAMWERR\_DEFAULT\ \ \ \ \ \ \ \ \ \ (\_BURTC\_STATUS\_RAMWERR\_DEFAULT\ <<\ 2)\ \ \ }}
+\DoxyCodeLine{00237\ \textcolor{comment}{/*\ Bit\ fields\ for\ BURTC\ CMD\ */}}
+\DoxyCodeLine{00238\ \textcolor{preprocessor}{\#define\ \_BURTC\_CMD\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00239\ \textcolor{preprocessor}{\#define\ \_BURTC\_CMD\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00240\ \textcolor{preprocessor}{\#define\ BURTC\_CMD\_CLRSTATUS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00241\ \textcolor{preprocessor}{\#define\ \_BURTC\_CMD\_CLRSTATUS\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00242\ \textcolor{preprocessor}{\#define\ \_BURTC\_CMD\_CLRSTATUS\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00243\ \textcolor{preprocessor}{\#define\ \_BURTC\_CMD\_CLRSTATUS\_DEFAULT\ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00244\ \textcolor{preprocessor}{\#define\ BURTC\_CMD\_CLRSTATUS\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ (\_BURTC\_CMD\_CLRSTATUS\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00246\ \textcolor{comment}{/*\ Bit\ fields\ for\ BURTC\ POWERDOWN\ */}}
+\DoxyCodeLine{00247\ \textcolor{preprocessor}{\#define\ \_BURTC\_POWERDOWN\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00248\ \textcolor{preprocessor}{\#define\ \_BURTC\_POWERDOWN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00249\ \textcolor{preprocessor}{\#define\ BURTC\_POWERDOWN\_RAM\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00250\ \textcolor{preprocessor}{\#define\ \_BURTC\_POWERDOWN\_RAM\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00251\ \textcolor{preprocessor}{\#define\ \_BURTC\_POWERDOWN\_RAM\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00252\ \textcolor{preprocessor}{\#define\ \_BURTC\_POWERDOWN\_RAM\_DEFAULT\ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00253\ \textcolor{preprocessor}{\#define\ BURTC\_POWERDOWN\_RAM\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ (\_BURTC\_POWERDOWN\_RAM\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00255\ \textcolor{comment}{/*\ Bit\ fields\ for\ BURTC\ LOCK\ */}}
+\DoxyCodeLine{00256\ \textcolor{preprocessor}{\#define\ \_BURTC\_LOCK\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00257\ \textcolor{preprocessor}{\#define\ \_BURTC\_LOCK\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0000FFFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00258\ \textcolor{preprocessor}{\#define\ \_BURTC\_LOCK\_LOCKKEY\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00259\ \textcolor{preprocessor}{\#define\ \_BURTC\_LOCK\_LOCKKEY\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFFFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00260\ \textcolor{preprocessor}{\#define\ \_BURTC\_LOCK\_LOCKKEY\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00261\ \textcolor{preprocessor}{\#define\ \_BURTC\_LOCK\_LOCKKEY\_UNLOCKED\ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00262\ \textcolor{preprocessor}{\#define\ \_BURTC\_LOCK\_LOCKKEY\_LOCK\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00263\ \textcolor{preprocessor}{\#define\ \_BURTC\_LOCK\_LOCKKEY\_LOCKED\ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00264\ \textcolor{preprocessor}{\#define\ \_BURTC\_LOCK\_LOCKKEY\_UNLOCK\ \ \ \ \ \ \ \ \ \ \ \ 0x0000AEE8UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00265\ \textcolor{preprocessor}{\#define\ BURTC\_LOCK\_LOCKKEY\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ (\_BURTC\_LOCK\_LOCKKEY\_DEFAULT\ <<\ 0)\ \ }}
+\DoxyCodeLine{00266\ \textcolor{preprocessor}{\#define\ BURTC\_LOCK\_LOCKKEY\_UNLOCKED\ \ \ \ \ \ \ \ \ \ \ (\_BURTC\_LOCK\_LOCKKEY\_UNLOCKED\ <<\ 0)\ }}
+\DoxyCodeLine{00267\ \textcolor{preprocessor}{\#define\ BURTC\_LOCK\_LOCKKEY\_LOCK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_BURTC\_LOCK\_LOCKKEY\_LOCK\ <<\ 0)\ \ \ \ \ }}
+\DoxyCodeLine{00268\ \textcolor{preprocessor}{\#define\ BURTC\_LOCK\_LOCKKEY\_LOCKED\ \ \ \ \ \ \ \ \ \ \ \ \ (\_BURTC\_LOCK\_LOCKKEY\_LOCKED\ <<\ 0)\ \ \ }}
+\DoxyCodeLine{00269\ \textcolor{preprocessor}{\#define\ BURTC\_LOCK\_LOCKKEY\_UNLOCK\ \ \ \ \ \ \ \ \ \ \ \ \ (\_BURTC\_LOCK\_LOCKKEY\_UNLOCK\ <<\ 0)\ \ \ }}
+\DoxyCodeLine{00271\ \textcolor{comment}{/*\ Bit\ fields\ for\ BURTC\ IF\ */}}
+\DoxyCodeLine{00272\ \textcolor{preprocessor}{\#define\ \_BURTC\_IF\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00273\ \textcolor{preprocessor}{\#define\ \_BURTC\_IF\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000007UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00274\ \textcolor{preprocessor}{\#define\ BURTC\_IF\_OF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00275\ \textcolor{preprocessor}{\#define\ \_BURTC\_IF\_OF\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00276\ \textcolor{preprocessor}{\#define\ \_BURTC\_IF\_OF\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00277\ \textcolor{preprocessor}{\#define\ \_BURTC\_IF\_OF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00278\ \textcolor{preprocessor}{\#define\ BURTC\_IF\_OF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_BURTC\_IF\_OF\_DEFAULT\ <<\ 0)\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00279\ \textcolor{preprocessor}{\#define\ BURTC\_IF\_COMP0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00280\ \textcolor{preprocessor}{\#define\ \_BURTC\_IF\_COMP0\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00281\ \textcolor{preprocessor}{\#define\ \_BURTC\_IF\_COMP0\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x2UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00282\ \textcolor{preprocessor}{\#define\ \_BURTC\_IF\_COMP0\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00283\ \textcolor{preprocessor}{\#define\ BURTC\_IF\_COMP0\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_BURTC\_IF\_COMP0\_DEFAULT\ <<\ 1)\ \ \ \ }}
+\DoxyCodeLine{00284\ \textcolor{preprocessor}{\#define\ BURTC\_IF\_LFXOFAIL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 2)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00285\ \textcolor{preprocessor}{\#define\ \_BURTC\_IF\_LFXOFAIL\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00286\ \textcolor{preprocessor}{\#define\ \_BURTC\_IF\_LFXOFAIL\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x4UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00287\ \textcolor{preprocessor}{\#define\ \_BURTC\_IF\_LFXOFAIL\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00288\ \textcolor{preprocessor}{\#define\ BURTC\_IF\_LFXOFAIL\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ (\_BURTC\_IF\_LFXOFAIL\_DEFAULT\ <<\ 2)\ }}
+\DoxyCodeLine{00290\ \textcolor{comment}{/*\ Bit\ fields\ for\ BURTC\ IFS\ */}}
+\DoxyCodeLine{00291\ \textcolor{preprocessor}{\#define\ \_BURTC\_IFS\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00292\ \textcolor{preprocessor}{\#define\ \_BURTC\_IFS\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000007UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00293\ \textcolor{preprocessor}{\#define\ BURTC\_IFS\_OF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00294\ \textcolor{preprocessor}{\#define\ \_BURTC\_IFS\_OF\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00295\ \textcolor{preprocessor}{\#define\ \_BURTC\_IFS\_OF\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00296\ \textcolor{preprocessor}{\#define\ \_BURTC\_IFS\_OF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00297\ \textcolor{preprocessor}{\#define\ BURTC\_IFS\_OF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_BURTC\_IFS\_OF\_DEFAULT\ <<\ 0)\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00298\ \textcolor{preprocessor}{\#define\ BURTC\_IFS\_COMP0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00299\ \textcolor{preprocessor}{\#define\ \_BURTC\_IFS\_COMP0\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00300\ \textcolor{preprocessor}{\#define\ \_BURTC\_IFS\_COMP0\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x2UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00301\ \textcolor{preprocessor}{\#define\ \_BURTC\_IFS\_COMP0\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00302\ \textcolor{preprocessor}{\#define\ BURTC\_IFS\_COMP0\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_BURTC\_IFS\_COMP0\_DEFAULT\ <<\ 1)\ \ \ \ }}
+\DoxyCodeLine{00303\ \textcolor{preprocessor}{\#define\ BURTC\_IFS\_LFXOFAIL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 2)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00304\ \textcolor{preprocessor}{\#define\ \_BURTC\_IFS\_LFXOFAIL\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ 2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00305\ \textcolor{preprocessor}{\#define\ \_BURTC\_IFS\_LFXOFAIL\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x4UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00306\ \textcolor{preprocessor}{\#define\ \_BURTC\_IFS\_LFXOFAIL\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00307\ \textcolor{preprocessor}{\#define\ BURTC\_IFS\_LFXOFAIL\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ (\_BURTC\_IFS\_LFXOFAIL\_DEFAULT\ <<\ 2)\ }}
+\DoxyCodeLine{00309\ \textcolor{comment}{/*\ Bit\ fields\ for\ BURTC\ IFC\ */}}
+\DoxyCodeLine{00310\ \textcolor{preprocessor}{\#define\ \_BURTC\_IFC\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00311\ \textcolor{preprocessor}{\#define\ \_BURTC\_IFC\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000007UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00312\ \textcolor{preprocessor}{\#define\ BURTC\_IFC\_OF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00313\ \textcolor{preprocessor}{\#define\ \_BURTC\_IFC\_OF\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00314\ \textcolor{preprocessor}{\#define\ \_BURTC\_IFC\_OF\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00315\ \textcolor{preprocessor}{\#define\ \_BURTC\_IFC\_OF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00316\ \textcolor{preprocessor}{\#define\ BURTC\_IFC\_OF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_BURTC\_IFC\_OF\_DEFAULT\ <<\ 0)\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00317\ \textcolor{preprocessor}{\#define\ BURTC\_IFC\_COMP0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00318\ \textcolor{preprocessor}{\#define\ \_BURTC\_IFC\_COMP0\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00319\ \textcolor{preprocessor}{\#define\ \_BURTC\_IFC\_COMP0\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x2UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00320\ \textcolor{preprocessor}{\#define\ \_BURTC\_IFC\_COMP0\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00321\ \textcolor{preprocessor}{\#define\ BURTC\_IFC\_COMP0\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_BURTC\_IFC\_COMP0\_DEFAULT\ <<\ 1)\ \ \ \ }}
+\DoxyCodeLine{00322\ \textcolor{preprocessor}{\#define\ BURTC\_IFC\_LFXOFAIL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 2)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00323\ \textcolor{preprocessor}{\#define\ \_BURTC\_IFC\_LFXOFAIL\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ 2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00324\ \textcolor{preprocessor}{\#define\ \_BURTC\_IFC\_LFXOFAIL\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x4UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00325\ \textcolor{preprocessor}{\#define\ \_BURTC\_IFC\_LFXOFAIL\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00326\ \textcolor{preprocessor}{\#define\ BURTC\_IFC\_LFXOFAIL\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ (\_BURTC\_IFC\_LFXOFAIL\_DEFAULT\ <<\ 2)\ }}
+\DoxyCodeLine{00328\ \textcolor{comment}{/*\ Bit\ fields\ for\ BURTC\ IEN\ */}}
+\DoxyCodeLine{00329\ \textcolor{preprocessor}{\#define\ \_BURTC\_IEN\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00330\ \textcolor{preprocessor}{\#define\ \_BURTC\_IEN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000007UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00331\ \textcolor{preprocessor}{\#define\ BURTC\_IEN\_OF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00332\ \textcolor{preprocessor}{\#define\ \_BURTC\_IEN\_OF\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00333\ \textcolor{preprocessor}{\#define\ \_BURTC\_IEN\_OF\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00334\ \textcolor{preprocessor}{\#define\ \_BURTC\_IEN\_OF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00335\ \textcolor{preprocessor}{\#define\ BURTC\_IEN\_OF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_BURTC\_IEN\_OF\_DEFAULT\ <<\ 0)\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00336\ \textcolor{preprocessor}{\#define\ BURTC\_IEN\_COMP0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00337\ \textcolor{preprocessor}{\#define\ \_BURTC\_IEN\_COMP0\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00338\ \textcolor{preprocessor}{\#define\ \_BURTC\_IEN\_COMP0\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x2UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00339\ \textcolor{preprocessor}{\#define\ \_BURTC\_IEN\_COMP0\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00340\ \textcolor{preprocessor}{\#define\ BURTC\_IEN\_COMP0\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_BURTC\_IEN\_COMP0\_DEFAULT\ <<\ 1)\ \ \ \ }}
+\DoxyCodeLine{00341\ \textcolor{preprocessor}{\#define\ BURTC\_IEN\_LFXOFAIL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 2)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00342\ \textcolor{preprocessor}{\#define\ \_BURTC\_IEN\_LFXOFAIL\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ 2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00343\ \textcolor{preprocessor}{\#define\ \_BURTC\_IEN\_LFXOFAIL\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x4UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00344\ \textcolor{preprocessor}{\#define\ \_BURTC\_IEN\_LFXOFAIL\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00345\ \textcolor{preprocessor}{\#define\ BURTC\_IEN\_LFXOFAIL\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ (\_BURTC\_IEN\_LFXOFAIL\_DEFAULT\ <<\ 2)\ }}
+\DoxyCodeLine{00347\ \textcolor{comment}{/*\ Bit\ fields\ for\ BURTC\ FREEZE\ */}}
+\DoxyCodeLine{00348\ \textcolor{preprocessor}{\#define\ \_BURTC\_FREEZE\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00349\ \textcolor{preprocessor}{\#define\ \_BURTC\_FREEZE\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00350\ \textcolor{preprocessor}{\#define\ BURTC\_FREEZE\_REGFREEZE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00351\ \textcolor{preprocessor}{\#define\ \_BURTC\_FREEZE\_REGFREEZE\_SHIFT\ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00352\ \textcolor{preprocessor}{\#define\ \_BURTC\_FREEZE\_REGFREEZE\_MASK\ \ \ \ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00353\ \textcolor{preprocessor}{\#define\ \_BURTC\_FREEZE\_REGFREEZE\_DEFAULT\ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00354\ \textcolor{preprocessor}{\#define\ \_BURTC\_FREEZE\_REGFREEZE\_UPDATE\ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00355\ \textcolor{preprocessor}{\#define\ \_BURTC\_FREEZE\_REGFREEZE\_FREEZE\ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00356\ \textcolor{preprocessor}{\#define\ BURTC\_FREEZE\_REGFREEZE\_DEFAULT\ \ \ \ \ \ \ \ (\_BURTC\_FREEZE\_REGFREEZE\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00357\ \textcolor{preprocessor}{\#define\ BURTC\_FREEZE\_REGFREEZE\_UPDATE\ \ \ \ \ \ \ \ \ (\_BURTC\_FREEZE\_REGFREEZE\_UPDATE\ <<\ 0)\ \ }}
+\DoxyCodeLine{00358\ \textcolor{preprocessor}{\#define\ BURTC\_FREEZE\_REGFREEZE\_FREEZE\ \ \ \ \ \ \ \ \ (\_BURTC\_FREEZE\_REGFREEZE\_FREEZE\ <<\ 0)\ \ }}
+\DoxyCodeLine{00360\ \textcolor{comment}{/*\ Bit\ fields\ for\ BURTC\ SYNCBUSY\ */}}
+\DoxyCodeLine{00361\ \textcolor{preprocessor}{\#define\ \_BURTC\_SYNCBUSY\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00362\ \textcolor{preprocessor}{\#define\ \_BURTC\_SYNCBUSY\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000003UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00363\ \textcolor{preprocessor}{\#define\ BURTC\_SYNCBUSY\_LPMODE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00364\ \textcolor{preprocessor}{\#define\ \_BURTC\_SYNCBUSY\_LPMODE\_SHIFT\ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00365\ \textcolor{preprocessor}{\#define\ \_BURTC\_SYNCBUSY\_LPMODE\_MASK\ \ \ \ \ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00366\ \textcolor{preprocessor}{\#define\ \_BURTC\_SYNCBUSY\_LPMODE\_DEFAULT\ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00367\ \textcolor{preprocessor}{\#define\ BURTC\_SYNCBUSY\_LPMODE\_DEFAULT\ \ \ \ \ \ \ \ \ (\_BURTC\_SYNCBUSY\_LPMODE\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00368\ \textcolor{preprocessor}{\#define\ BURTC\_SYNCBUSY\_COMP0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00369\ \textcolor{preprocessor}{\#define\ \_BURTC\_SYNCBUSY\_COMP0\_SHIFT\ \ \ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00370\ \textcolor{preprocessor}{\#define\ \_BURTC\_SYNCBUSY\_COMP0\_MASK\ \ \ \ \ \ \ \ \ \ \ \ 0x2UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00371\ \textcolor{preprocessor}{\#define\ \_BURTC\_SYNCBUSY\_COMP0\_DEFAULT\ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00372\ \textcolor{preprocessor}{\#define\ BURTC\_SYNCBUSY\_COMP0\_DEFAULT\ \ \ \ \ \ \ \ \ \ (\_BURTC\_SYNCBUSY\_COMP0\_DEFAULT\ <<\ 1)\ \ }}
+\DoxyCodeLine{00374\ \textcolor{comment}{/*\ Bit\ fields\ for\ BURTC\ RET\_REG\ */}}
+\DoxyCodeLine{00375\ \textcolor{preprocessor}{\#define\ \_BURTC\_RET\_REG\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00376\ \textcolor{preprocessor}{\#define\ \_BURTC\_RET\_REG\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFFFFFFFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00377\ \textcolor{preprocessor}{\#define\ \_BURTC\_RET\_REG\_REG\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00378\ \textcolor{preprocessor}{\#define\ \_BURTC\_RET\_REG\_REG\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFFFFFFFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00379\ \textcolor{preprocessor}{\#define\ \_BURTC\_RET\_REG\_REG\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00380\ \textcolor{preprocessor}{\#define\ BURTC\_RET\_REG\_REG\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ (\_BURTC\_RET\_REG\_REG\_DEFAULT\ <<\ 0)\ }}
+
+\end{DoxyCode}

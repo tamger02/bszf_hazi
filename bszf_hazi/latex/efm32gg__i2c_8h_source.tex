@@ -1,0 +1,656 @@
+\doxysection{efm32gg\+\_\+i2c.\+h}
+\hypertarget{efm32gg__i2c_8h_source}{}\label{efm32gg__i2c_8h_source}\index{gecko\_sdk\_4.4.4/platform/Device/SiliconLabs/EFM32GG/Include/efm32gg\_i2c.h@{gecko\_sdk\_4.4.4/platform/Device/SiliconLabs/EFM32GG/Include/efm32gg\_i2c.h}}
+\mbox{\hyperlink{efm32gg__i2c_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#if\ defined(\_\_ICCARM\_\_)}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#pragma\ system\_include\ \ \ \ \ \ \ }\textcolor{comment}{/*\ Treat\ file\ as\ system\ include\ file.\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#elif\ defined(\_\_ARMCC\_VERSION)\ \&\&\ (\_\_ARMCC\_VERSION\ >=\ 6010050)}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#pragma\ clang\ system\_header\ \ }\textcolor{comment}{/*\ Treat\ file\ as\ system\ include\ file.\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00041\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00046\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00047\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_i2_c___type_def_ad18ca99556367ac789bf85db2d62dd5b}{CTRL}};\ \ \ \ \ \ }
+\DoxyCodeLine{00048\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_i2_c___type_def_a542f81a9a57a5a03cc50bb9eca97f6ed}{CMD}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00049\ \ \ \_\_IM\ uint32\_t\ \ \mbox{\hyperlink{struct_i2_c___type_def_a8e4db82ea389625ddddcecb7cacf4f59}{STATE}};\ \ \ \ \ }
+\DoxyCodeLine{00050\ \ \ \_\_IM\ uint32\_t\ \ \mbox{\hyperlink{struct_i2_c___type_def_ad04f6aa52e3a7d0d9e98097817ca3391}{STATUS}};\ \ \ \ }
+\DoxyCodeLine{00051\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_i2_c___type_def_a00fcd76c17164af693d987bbe695ecf2}{CLKDIV}};\ \ \ \ }
+\DoxyCodeLine{00052\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_i2_c___type_def_ac68f8b837ce82eb6a4c598696c9aabb9}{SADDR}};\ \ \ \ \ }
+\DoxyCodeLine{00053\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_i2_c___type_def_ab77d389c9b563309c17f9297f96b6f14}{SADDRMASK}};\ }
+\DoxyCodeLine{00054\ \ \ \_\_IM\ uint32\_t\ \ \mbox{\hyperlink{struct_i2_c___type_def_a846dd55f560e084da2e1b9136ae0b563}{RXDATA}};\ \ \ \ }
+\DoxyCodeLine{00055\ \ \ \_\_IM\ uint32\_t\ \ \mbox{\hyperlink{struct_i2_c___type_def_a248fbba9cb5e669447a8ac4ac39d2c24}{RXDATAP}};\ \ \ }
+\DoxyCodeLine{00056\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_i2_c___type_def_ab697847381c7e1a2fae88af207de8332}{TXDATA}};\ \ \ \ }
+\DoxyCodeLine{00057\ \ \ \_\_IM\ uint32\_t\ \ \mbox{\hyperlink{struct_i2_c___type_def_a8981ccfa10717927620d11e99fcaeaf6}{IF}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00058\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_i2_c___type_def_a101c9146c717e95e035c869aa085f006}{IFS}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00059\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_i2_c___type_def_ad21f9e723cad450f6f8f73a866a58249}{IFC}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00060\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_i2_c___type_def_a7315a9a73a062ebde79104e86a3bff2c}{IEN}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00061\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_i2_c___type_def_ae2558e4b26241d6c6c262d3df1ed8524}{ROUTE}};\ \ \ \ \ }
+\DoxyCodeLine{00062\ \}\ \mbox{\hyperlink{struct_i2_c___type_def}{I2C\_TypeDef}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00064\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00069\ \textcolor{comment}{/*\ Bit\ fields\ for\ I2C\ CTRL\ */}}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#define\ \_I2C\_CTRL\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#define\ \_I2C\_CTRL\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0007B37FUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#define\ I2C\_CTRL\_EN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#define\ \_I2C\_CTRL\_EN\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#define\ \_I2C\_CTRL\_EN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#define\ \_I2C\_CTRL\_EN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#define\ I2C\_CTRL\_EN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_CTRL\_EN\_DEFAULT\ <<\ 0)\ \ \ \ \ \ }}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#define\ I2C\_CTRL\_SLAVE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#define\ \_I2C\_CTRL\_SLAVE\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#define\ \_I2C\_CTRL\_SLAVE\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x2UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#define\ \_I2C\_CTRL\_SLAVE\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#define\ I2C\_CTRL\_SLAVE\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_CTRL\_SLAVE\_DEFAULT\ <<\ 1)\ \ \ }}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#define\ I2C\_CTRL\_AUTOACK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 2)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#define\ \_I2C\_CTRL\_AUTOACK\_SHIFT\ \ \ \ \ \ \ \ \ \ \ 2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#define\ \_I2C\_CTRL\_AUTOACK\_MASK\ \ \ \ \ \ \ \ \ \ \ \ 0x4UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#define\ \_I2C\_CTRL\_AUTOACK\_DEFAULT\ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#define\ I2C\_CTRL\_AUTOACK\_DEFAULT\ \ \ \ \ \ \ \ \ \ (\_I2C\_CTRL\_AUTOACK\_DEFAULT\ <<\ 2)\ }}
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#define\ I2C\_CTRL\_AUTOSE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 3)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#define\ \_I2C\_CTRL\_AUTOSE\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ 3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#define\ \_I2C\_CTRL\_AUTOSE\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ 0x8UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#define\ \_I2C\_CTRL\_AUTOSE\_DEFAULT\ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#define\ I2C\_CTRL\_AUTOSE\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ (\_I2C\_CTRL\_AUTOSE\_DEFAULT\ <<\ 3)\ \ }}
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#define\ I2C\_CTRL\_AUTOSN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 4)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#define\ \_I2C\_CTRL\_AUTOSN\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ 4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\#define\ \_I2C\_CTRL\_AUTOSN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ 0x10UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#define\ \_I2C\_CTRL\_AUTOSN\_DEFAULT\ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\#define\ I2C\_CTRL\_AUTOSN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ (\_I2C\_CTRL\_AUTOSN\_DEFAULT\ <<\ 4)\ \ }}
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\#define\ I2C\_CTRL\_ARBDIS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 5)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\#define\ \_I2C\_CTRL\_ARBDIS\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ 5\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#define\ \_I2C\_CTRL\_ARBDIS\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ 0x20UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#define\ \_I2C\_CTRL\_ARBDIS\_DEFAULT\ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#define\ I2C\_CTRL\_ARBDIS\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ (\_I2C\_CTRL\_ARBDIS\_DEFAULT\ <<\ 5)\ \ }}
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#define\ I2C\_CTRL\_GCAMEN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 6)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00103\ \textcolor{preprocessor}{\#define\ \_I2C\_CTRL\_GCAMEN\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ 6\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#define\ \_I2C\_CTRL\_GCAMEN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ 0x40UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#define\ \_I2C\_CTRL\_GCAMEN\_DEFAULT\ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\#define\ I2C\_CTRL\_GCAMEN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ (\_I2C\_CTRL\_GCAMEN\_DEFAULT\ <<\ 6)\ \ }}
+\DoxyCodeLine{00107\ \textcolor{preprocessor}{\#define\ \_I2C\_CTRL\_CLHR\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\#define\ \_I2C\_CTRL\_CLHR\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x300UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\#define\ \_I2C\_CTRL\_CLHR\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00110\ \textcolor{preprocessor}{\#define\ \_I2C\_CTRL\_CLHR\_STANDARD\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\#define\ \_I2C\_CTRL\_CLHR\_ASYMMETRIC\ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#define\ \_I2C\_CTRL\_CLHR\_FAST\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000002UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#define\ I2C\_CTRL\_CLHR\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_CTRL\_CLHR\_DEFAULT\ <<\ 8)\ \ \ \ }}
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#define\ I2C\_CTRL\_CLHR\_STANDARD\ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_CTRL\_CLHR\_STANDARD\ <<\ 8)\ \ \ }}
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\#define\ I2C\_CTRL\_CLHR\_ASYMMETRIC\ \ \ \ \ \ \ \ \ \ (\_I2C\_CTRL\_CLHR\_ASYMMETRIC\ <<\ 8)\ }}
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#define\ I2C\_CTRL\_CLHR\_FAST\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_CTRL\_CLHR\_FAST\ <<\ 8)\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00117\ \textcolor{preprocessor}{\#define\ \_I2C\_CTRL\_BITO\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 12\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00118\ \textcolor{preprocessor}{\#define\ \_I2C\_CTRL\_BITO\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x3000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00119\ \textcolor{preprocessor}{\#define\ \_I2C\_CTRL\_BITO\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00120\ \textcolor{preprocessor}{\#define\ \_I2C\_CTRL\_BITO\_OFF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\#define\ \_I2C\_CTRL\_BITO\_40PCC\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00122\ \textcolor{preprocessor}{\#define\ \_I2C\_CTRL\_BITO\_80PCC\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000002UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\#define\ \_I2C\_CTRL\_BITO\_160PCC\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000003UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\#define\ I2C\_CTRL\_BITO\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_CTRL\_BITO\_DEFAULT\ <<\ 12)\ \ \ }}
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\#define\ I2C\_CTRL\_BITO\_OFF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_CTRL\_BITO\_OFF\ <<\ 12)\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00126\ \textcolor{preprocessor}{\#define\ I2C\_CTRL\_BITO\_40PCC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_CTRL\_BITO\_40PCC\ <<\ 12)\ \ \ \ \ }}
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\#define\ I2C\_CTRL\_BITO\_80PCC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_CTRL\_BITO\_80PCC\ <<\ 12)\ \ \ \ \ }}
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\#define\ I2C\_CTRL\_BITO\_160PCC\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_CTRL\_BITO\_160PCC\ <<\ 12)\ \ \ \ }}
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{\#define\ I2C\_CTRL\_GIBITO\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 15)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00130\ \textcolor{preprocessor}{\#define\ \_I2C\_CTRL\_GIBITO\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ 15\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00131\ \textcolor{preprocessor}{\#define\ \_I2C\_CTRL\_GIBITO\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ 0x8000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00132\ \textcolor{preprocessor}{\#define\ \_I2C\_CTRL\_GIBITO\_DEFAULT\ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00133\ \textcolor{preprocessor}{\#define\ I2C\_CTRL\_GIBITO\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ (\_I2C\_CTRL\_GIBITO\_DEFAULT\ <<\ 15)\ }}
+\DoxyCodeLine{00134\ \textcolor{preprocessor}{\#define\ \_I2C\_CTRL\_CLTO\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 16\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00135\ \textcolor{preprocessor}{\#define\ \_I2C\_CTRL\_CLTO\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x70000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00136\ \textcolor{preprocessor}{\#define\ \_I2C\_CTRL\_CLTO\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\#define\ \_I2C\_CTRL\_CLTO\_OFF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00138\ \textcolor{preprocessor}{\#define\ \_I2C\_CTRL\_CLTO\_40PCC\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00139\ \textcolor{preprocessor}{\#define\ \_I2C\_CTRL\_CLTO\_80PCC\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000002UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00140\ \textcolor{preprocessor}{\#define\ \_I2C\_CTRL\_CLTO\_160PCC\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000003UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00141\ \textcolor{preprocessor}{\#define\ \_I2C\_CTRL\_CLTO\_320PPC\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000004UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00142\ \textcolor{preprocessor}{\#define\ \_I2C\_CTRL\_CLTO\_1024PPC\ \ \ \ \ \ \ \ \ \ \ \ 0x00000005UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00143\ \textcolor{preprocessor}{\#define\ I2C\_CTRL\_CLTO\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_CTRL\_CLTO\_DEFAULT\ <<\ 16)\ \ \ }}
+\DoxyCodeLine{00144\ \textcolor{preprocessor}{\#define\ I2C\_CTRL\_CLTO\_OFF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_CTRL\_CLTO\_OFF\ <<\ 16)\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00145\ \textcolor{preprocessor}{\#define\ I2C\_CTRL\_CLTO\_40PCC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_CTRL\_CLTO\_40PCC\ <<\ 16)\ \ \ \ \ }}
+\DoxyCodeLine{00146\ \textcolor{preprocessor}{\#define\ I2C\_CTRL\_CLTO\_80PCC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_CTRL\_CLTO\_80PCC\ <<\ 16)\ \ \ \ \ }}
+\DoxyCodeLine{00147\ \textcolor{preprocessor}{\#define\ I2C\_CTRL\_CLTO\_160PCC\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_CTRL\_CLTO\_160PCC\ <<\ 16)\ \ \ \ }}
+\DoxyCodeLine{00148\ \textcolor{preprocessor}{\#define\ I2C\_CTRL\_CLTO\_320PPC\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_CTRL\_CLTO\_320PPC\ <<\ 16)\ \ \ \ }}
+\DoxyCodeLine{00149\ \textcolor{preprocessor}{\#define\ I2C\_CTRL\_CLTO\_1024PPC\ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_CTRL\_CLTO\_1024PPC\ <<\ 16)\ \ \ }}
+\DoxyCodeLine{00151\ \textcolor{comment}{/*\ Bit\ fields\ for\ I2C\ CMD\ */}}
+\DoxyCodeLine{00152\ \textcolor{preprocessor}{\#define\ \_I2C\_CMD\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00153\ \textcolor{preprocessor}{\#define\ \_I2C\_CMD\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x000000FFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00154\ \textcolor{preprocessor}{\#define\ I2C\_CMD\_START\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00155\ \textcolor{preprocessor}{\#define\ \_I2C\_CMD\_START\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00156\ \textcolor{preprocessor}{\#define\ \_I2C\_CMD\_START\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00157\ \textcolor{preprocessor}{\#define\ \_I2C\_CMD\_START\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00158\ \textcolor{preprocessor}{\#define\ I2C\_CMD\_START\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_CMD\_START\_DEFAULT\ <<\ 0)\ \ \ }}
+\DoxyCodeLine{00159\ \textcolor{preprocessor}{\#define\ I2C\_CMD\_STOP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00160\ \textcolor{preprocessor}{\#define\ \_I2C\_CMD\_STOP\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00161\ \textcolor{preprocessor}{\#define\ \_I2C\_CMD\_STOP\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x2UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00162\ \textcolor{preprocessor}{\#define\ \_I2C\_CMD\_STOP\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00163\ \textcolor{preprocessor}{\#define\ I2C\_CMD\_STOP\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_CMD\_STOP\_DEFAULT\ <<\ 1)\ \ \ \ }}
+\DoxyCodeLine{00164\ \textcolor{preprocessor}{\#define\ I2C\_CMD\_ACK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 2)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00165\ \textcolor{preprocessor}{\#define\ \_I2C\_CMD\_ACK\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00166\ \textcolor{preprocessor}{\#define\ \_I2C\_CMD\_ACK\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x4UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00167\ \textcolor{preprocessor}{\#define\ \_I2C\_CMD\_ACK\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00168\ \textcolor{preprocessor}{\#define\ I2C\_CMD\_ACK\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_CMD\_ACK\_DEFAULT\ <<\ 2)\ \ \ \ \ }}
+\DoxyCodeLine{00169\ \textcolor{preprocessor}{\#define\ I2C\_CMD\_NACK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 3)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00170\ \textcolor{preprocessor}{\#define\ \_I2C\_CMD\_NACK\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00171\ \textcolor{preprocessor}{\#define\ \_I2C\_CMD\_NACK\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x8UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00172\ \textcolor{preprocessor}{\#define\ \_I2C\_CMD\_NACK\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00173\ \textcolor{preprocessor}{\#define\ I2C\_CMD\_NACK\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_CMD\_NACK\_DEFAULT\ <<\ 3)\ \ \ \ }}
+\DoxyCodeLine{00174\ \textcolor{preprocessor}{\#define\ I2C\_CMD\_CONT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 4)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00175\ \textcolor{preprocessor}{\#define\ \_I2C\_CMD\_CONT\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00176\ \textcolor{preprocessor}{\#define\ \_I2C\_CMD\_CONT\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x10UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00177\ \textcolor{preprocessor}{\#define\ \_I2C\_CMD\_CONT\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00178\ \textcolor{preprocessor}{\#define\ I2C\_CMD\_CONT\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_CMD\_CONT\_DEFAULT\ <<\ 4)\ \ \ \ }}
+\DoxyCodeLine{00179\ \textcolor{preprocessor}{\#define\ I2C\_CMD\_ABORT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 5)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00180\ \textcolor{preprocessor}{\#define\ \_I2C\_CMD\_ABORT\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 5\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00181\ \textcolor{preprocessor}{\#define\ \_I2C\_CMD\_ABORT\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x20UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00182\ \textcolor{preprocessor}{\#define\ \_I2C\_CMD\_ABORT\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00183\ \textcolor{preprocessor}{\#define\ I2C\_CMD\_ABORT\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_CMD\_ABORT\_DEFAULT\ <<\ 5)\ \ \ }}
+\DoxyCodeLine{00184\ \textcolor{preprocessor}{\#define\ I2C\_CMD\_CLEARTX\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 6)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00185\ \textcolor{preprocessor}{\#define\ \_I2C\_CMD\_CLEARTX\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ 6\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00186\ \textcolor{preprocessor}{\#define\ \_I2C\_CMD\_CLEARTX\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ 0x40UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00187\ \textcolor{preprocessor}{\#define\ \_I2C\_CMD\_CLEARTX\_DEFAULT\ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00188\ \textcolor{preprocessor}{\#define\ I2C\_CMD\_CLEARTX\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ (\_I2C\_CMD\_CLEARTX\_DEFAULT\ <<\ 6)\ }}
+\DoxyCodeLine{00189\ \textcolor{preprocessor}{\#define\ I2C\_CMD\_CLEARPC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 7)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00190\ \textcolor{preprocessor}{\#define\ \_I2C\_CMD\_CLEARPC\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ 7\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00191\ \textcolor{preprocessor}{\#define\ \_I2C\_CMD\_CLEARPC\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ 0x80UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00192\ \textcolor{preprocessor}{\#define\ \_I2C\_CMD\_CLEARPC\_DEFAULT\ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00193\ \textcolor{preprocessor}{\#define\ I2C\_CMD\_CLEARPC\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ (\_I2C\_CMD\_CLEARPC\_DEFAULT\ <<\ 7)\ }}
+\DoxyCodeLine{00195\ \textcolor{comment}{/*\ Bit\ fields\ for\ I2C\ STATE\ */}}
+\DoxyCodeLine{00196\ \textcolor{preprocessor}{\#define\ \_I2C\_STATE\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00197\ \textcolor{preprocessor}{\#define\ \_I2C\_STATE\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x000000FFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00198\ \textcolor{preprocessor}{\#define\ I2C\_STATE\_BUSY\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00199\ \textcolor{preprocessor}{\#define\ \_I2C\_STATE\_BUSY\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00200\ \textcolor{preprocessor}{\#define\ \_I2C\_STATE\_BUSY\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00201\ \textcolor{preprocessor}{\#define\ \_I2C\_STATE\_BUSY\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00202\ \textcolor{preprocessor}{\#define\ I2C\_STATE\_BUSY\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_STATE\_BUSY\_DEFAULT\ <<\ 0)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00203\ \textcolor{preprocessor}{\#define\ I2C\_STATE\_MASTER\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00204\ \textcolor{preprocessor}{\#define\ \_I2C\_STATE\_MASTER\_SHIFT\ \ \ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00205\ \textcolor{preprocessor}{\#define\ \_I2C\_STATE\_MASTER\_MASK\ \ \ \ \ \ \ \ \ \ \ \ 0x2UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00206\ \textcolor{preprocessor}{\#define\ \_I2C\_STATE\_MASTER\_DEFAULT\ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00207\ \textcolor{preprocessor}{\#define\ I2C\_STATE\_MASTER\_DEFAULT\ \ \ \ \ \ \ \ \ \ (\_I2C\_STATE\_MASTER\_DEFAULT\ <<\ 1)\ \ \ \ \ \ }}
+\DoxyCodeLine{00208\ \textcolor{preprocessor}{\#define\ I2C\_STATE\_TRANSMITTER\ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 2)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00209\ \textcolor{preprocessor}{\#define\ \_I2C\_STATE\_TRANSMITTER\_SHIFT\ \ \ \ \ \ 2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00210\ \textcolor{preprocessor}{\#define\ \_I2C\_STATE\_TRANSMITTER\_MASK\ \ \ \ \ \ \ 0x4UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00211\ \textcolor{preprocessor}{\#define\ \_I2C\_STATE\_TRANSMITTER\_DEFAULT\ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00212\ \textcolor{preprocessor}{\#define\ I2C\_STATE\_TRANSMITTER\_DEFAULT\ \ \ \ \ (\_I2C\_STATE\_TRANSMITTER\_DEFAULT\ <<\ 2)\ }}
+\DoxyCodeLine{00213\ \textcolor{preprocessor}{\#define\ I2C\_STATE\_NACKED\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 3)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00214\ \textcolor{preprocessor}{\#define\ \_I2C\_STATE\_NACKED\_SHIFT\ \ \ \ \ \ \ \ \ \ \ 3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00215\ \textcolor{preprocessor}{\#define\ \_I2C\_STATE\_NACKED\_MASK\ \ \ \ \ \ \ \ \ \ \ \ 0x8UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00216\ \textcolor{preprocessor}{\#define\ \_I2C\_STATE\_NACKED\_DEFAULT\ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00217\ \textcolor{preprocessor}{\#define\ I2C\_STATE\_NACKED\_DEFAULT\ \ \ \ \ \ \ \ \ \ (\_I2C\_STATE\_NACKED\_DEFAULT\ <<\ 3)\ \ \ \ \ \ }}
+\DoxyCodeLine{00218\ \textcolor{preprocessor}{\#define\ I2C\_STATE\_BUSHOLD\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 4)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00219\ \textcolor{preprocessor}{\#define\ \_I2C\_STATE\_BUSHOLD\_SHIFT\ \ \ \ \ \ \ \ \ \ 4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00220\ \textcolor{preprocessor}{\#define\ \_I2C\_STATE\_BUSHOLD\_MASK\ \ \ \ \ \ \ \ \ \ \ 0x10UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00221\ \textcolor{preprocessor}{\#define\ \_I2C\_STATE\_BUSHOLD\_DEFAULT\ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00222\ \textcolor{preprocessor}{\#define\ I2C\_STATE\_BUSHOLD\_DEFAULT\ \ \ \ \ \ \ \ \ (\_I2C\_STATE\_BUSHOLD\_DEFAULT\ <<\ 4)\ \ \ \ \ }}
+\DoxyCodeLine{00223\ \textcolor{preprocessor}{\#define\ \_I2C\_STATE\_STATE\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ 5\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00224\ \textcolor{preprocessor}{\#define\ \_I2C\_STATE\_STATE\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ 0xE0UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00225\ \textcolor{preprocessor}{\#define\ \_I2C\_STATE\_STATE\_DEFAULT\ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00226\ \textcolor{preprocessor}{\#define\ \_I2C\_STATE\_STATE\_IDLE\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00227\ \textcolor{preprocessor}{\#define\ \_I2C\_STATE\_STATE\_WAIT\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00228\ \textcolor{preprocessor}{\#define\ \_I2C\_STATE\_STATE\_START\ \ \ \ \ \ \ \ \ \ \ \ 0x00000002UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00229\ \textcolor{preprocessor}{\#define\ \_I2C\_STATE\_STATE\_ADDR\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000003UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00230\ \textcolor{preprocessor}{\#define\ \_I2C\_STATE\_STATE\_ADDRACK\ \ \ \ \ \ \ \ \ \ 0x00000004UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00231\ \textcolor{preprocessor}{\#define\ \_I2C\_STATE\_STATE\_DATA\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000005UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00232\ \textcolor{preprocessor}{\#define\ \_I2C\_STATE\_STATE\_DATAACK\ \ \ \ \ \ \ \ \ \ 0x00000006UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00233\ \textcolor{preprocessor}{\#define\ I2C\_STATE\_STATE\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ (\_I2C\_STATE\_STATE\_DEFAULT\ <<\ 5)\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00234\ \textcolor{preprocessor}{\#define\ I2C\_STATE\_STATE\_IDLE\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_STATE\_STATE\_IDLE\ <<\ 5)\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00235\ \textcolor{preprocessor}{\#define\ I2C\_STATE\_STATE\_WAIT\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_STATE\_STATE\_WAIT\ <<\ 5)\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00236\ \textcolor{preprocessor}{\#define\ I2C\_STATE\_STATE\_START\ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_STATE\_STATE\_START\ <<\ 5)\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00237\ \textcolor{preprocessor}{\#define\ I2C\_STATE\_STATE\_ADDR\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_STATE\_STATE\_ADDR\ <<\ 5)\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00238\ \textcolor{preprocessor}{\#define\ I2C\_STATE\_STATE\_ADDRACK\ \ \ \ \ \ \ \ \ \ \ (\_I2C\_STATE\_STATE\_ADDRACK\ <<\ 5)\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00239\ \textcolor{preprocessor}{\#define\ I2C\_STATE\_STATE\_DATA\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_STATE\_STATE\_DATA\ <<\ 5)\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00240\ \textcolor{preprocessor}{\#define\ I2C\_STATE\_STATE\_DATAACK\ \ \ \ \ \ \ \ \ \ \ (\_I2C\_STATE\_STATE\_DATAACK\ <<\ 5)\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00242\ \textcolor{comment}{/*\ Bit\ fields\ for\ I2C\ STATUS\ */}}
+\DoxyCodeLine{00243\ \textcolor{preprocessor}{\#define\ \_I2C\_STATUS\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ 0x00000080UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00244\ \textcolor{preprocessor}{\#define\ \_I2C\_STATUS\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x000001FFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00245\ \textcolor{preprocessor}{\#define\ I2C\_STATUS\_PSTART\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00246\ \textcolor{preprocessor}{\#define\ \_I2C\_STATUS\_PSTART\_SHIFT\ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00247\ \textcolor{preprocessor}{\#define\ \_I2C\_STATUS\_PSTART\_MASK\ \ \ \ \ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00248\ \textcolor{preprocessor}{\#define\ \_I2C\_STATUS\_PSTART\_DEFAULT\ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00249\ \textcolor{preprocessor}{\#define\ I2C\_STATUS\_PSTART\_DEFAULT\ \ \ \ \ \ \ \ \ (\_I2C\_STATUS\_PSTART\_DEFAULT\ <<\ 0)\ \ }}
+\DoxyCodeLine{00250\ \textcolor{preprocessor}{\#define\ I2C\_STATUS\_PSTOP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00251\ \textcolor{preprocessor}{\#define\ \_I2C\_STATUS\_PSTOP\_SHIFT\ \ \ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00252\ \textcolor{preprocessor}{\#define\ \_I2C\_STATUS\_PSTOP\_MASK\ \ \ \ \ \ \ \ \ \ \ \ 0x2UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00253\ \textcolor{preprocessor}{\#define\ \_I2C\_STATUS\_PSTOP\_DEFAULT\ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00254\ \textcolor{preprocessor}{\#define\ I2C\_STATUS\_PSTOP\_DEFAULT\ \ \ \ \ \ \ \ \ \ (\_I2C\_STATUS\_PSTOP\_DEFAULT\ <<\ 1)\ \ \ }}
+\DoxyCodeLine{00255\ \textcolor{preprocessor}{\#define\ I2C\_STATUS\_PACK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 2)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00256\ \textcolor{preprocessor}{\#define\ \_I2C\_STATUS\_PACK\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ 2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00257\ \textcolor{preprocessor}{\#define\ \_I2C\_STATUS\_PACK\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ 0x4UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00258\ \textcolor{preprocessor}{\#define\ \_I2C\_STATUS\_PACK\_DEFAULT\ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00259\ \textcolor{preprocessor}{\#define\ I2C\_STATUS\_PACK\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ (\_I2C\_STATUS\_PACK\_DEFAULT\ <<\ 2)\ \ \ \ }}
+\DoxyCodeLine{00260\ \textcolor{preprocessor}{\#define\ I2C\_STATUS\_PNACK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 3)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00261\ \textcolor{preprocessor}{\#define\ \_I2C\_STATUS\_PNACK\_SHIFT\ \ \ \ \ \ \ \ \ \ \ 3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00262\ \textcolor{preprocessor}{\#define\ \_I2C\_STATUS\_PNACK\_MASK\ \ \ \ \ \ \ \ \ \ \ \ 0x8UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00263\ \textcolor{preprocessor}{\#define\ \_I2C\_STATUS\_PNACK\_DEFAULT\ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00264\ \textcolor{preprocessor}{\#define\ I2C\_STATUS\_PNACK\_DEFAULT\ \ \ \ \ \ \ \ \ \ (\_I2C\_STATUS\_PNACK\_DEFAULT\ <<\ 3)\ \ \ }}
+\DoxyCodeLine{00265\ \textcolor{preprocessor}{\#define\ I2C\_STATUS\_PCONT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 4)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00266\ \textcolor{preprocessor}{\#define\ \_I2C\_STATUS\_PCONT\_SHIFT\ \ \ \ \ \ \ \ \ \ \ 4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00267\ \textcolor{preprocessor}{\#define\ \_I2C\_STATUS\_PCONT\_MASK\ \ \ \ \ \ \ \ \ \ \ \ 0x10UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00268\ \textcolor{preprocessor}{\#define\ \_I2C\_STATUS\_PCONT\_DEFAULT\ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00269\ \textcolor{preprocessor}{\#define\ I2C\_STATUS\_PCONT\_DEFAULT\ \ \ \ \ \ \ \ \ \ (\_I2C\_STATUS\_PCONT\_DEFAULT\ <<\ 4)\ \ \ }}
+\DoxyCodeLine{00270\ \textcolor{preprocessor}{\#define\ I2C\_STATUS\_PABORT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 5)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00271\ \textcolor{preprocessor}{\#define\ \_I2C\_STATUS\_PABORT\_SHIFT\ \ \ \ \ \ \ \ \ \ 5\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00272\ \textcolor{preprocessor}{\#define\ \_I2C\_STATUS\_PABORT\_MASK\ \ \ \ \ \ \ \ \ \ \ 0x20UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00273\ \textcolor{preprocessor}{\#define\ \_I2C\_STATUS\_PABORT\_DEFAULT\ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00274\ \textcolor{preprocessor}{\#define\ I2C\_STATUS\_PABORT\_DEFAULT\ \ \ \ \ \ \ \ \ (\_I2C\_STATUS\_PABORT\_DEFAULT\ <<\ 5)\ \ }}
+\DoxyCodeLine{00275\ \textcolor{preprocessor}{\#define\ I2C\_STATUS\_TXC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 6)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00276\ \textcolor{preprocessor}{\#define\ \_I2C\_STATUS\_TXC\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ 6\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00277\ \textcolor{preprocessor}{\#define\ \_I2C\_STATUS\_TXC\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x40UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00278\ \textcolor{preprocessor}{\#define\ \_I2C\_STATUS\_TXC\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00279\ \textcolor{preprocessor}{\#define\ I2C\_STATUS\_TXC\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_STATUS\_TXC\_DEFAULT\ <<\ 6)\ \ \ \ \ }}
+\DoxyCodeLine{00280\ \textcolor{preprocessor}{\#define\ I2C\_STATUS\_TXBL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 7)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00281\ \textcolor{preprocessor}{\#define\ \_I2C\_STATUS\_TXBL\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ 7\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00282\ \textcolor{preprocessor}{\#define\ \_I2C\_STATUS\_TXBL\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ 0x80UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00283\ \textcolor{preprocessor}{\#define\ \_I2C\_STATUS\_TXBL\_DEFAULT\ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00284\ \textcolor{preprocessor}{\#define\ I2C\_STATUS\_TXBL\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ (\_I2C\_STATUS\_TXBL\_DEFAULT\ <<\ 7)\ \ \ \ }}
+\DoxyCodeLine{00285\ \textcolor{preprocessor}{\#define\ I2C\_STATUS\_RXDATAV\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 8)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00286\ \textcolor{preprocessor}{\#define\ \_I2C\_STATUS\_RXDATAV\_SHIFT\ \ \ \ \ \ \ \ \ 8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00287\ \textcolor{preprocessor}{\#define\ \_I2C\_STATUS\_RXDATAV\_MASK\ \ \ \ \ \ \ \ \ \ 0x100UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00288\ \textcolor{preprocessor}{\#define\ \_I2C\_STATUS\_RXDATAV\_DEFAULT\ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00289\ \textcolor{preprocessor}{\#define\ I2C\_STATUS\_RXDATAV\_DEFAULT\ \ \ \ \ \ \ \ (\_I2C\_STATUS\_RXDATAV\_DEFAULT\ <<\ 8)\ }}
+\DoxyCodeLine{00291\ \textcolor{comment}{/*\ Bit\ fields\ for\ I2C\ CLKDIV\ */}}
+\DoxyCodeLine{00292\ \textcolor{preprocessor}{\#define\ \_I2C\_CLKDIV\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00293\ \textcolor{preprocessor}{\#define\ \_I2C\_CLKDIV\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x000001FFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00294\ \textcolor{preprocessor}{\#define\ \_I2C\_CLKDIV\_DIV\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00295\ \textcolor{preprocessor}{\#define\ \_I2C\_CLKDIV\_DIV\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1FFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00296\ \textcolor{preprocessor}{\#define\ \_I2C\_CLKDIV\_DIV\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00297\ \textcolor{preprocessor}{\#define\ I2C\_CLKDIV\_DIV\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_CLKDIV\_DIV\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00299\ \textcolor{comment}{/*\ Bit\ fields\ for\ I2C\ SADDR\ */}}
+\DoxyCodeLine{00300\ \textcolor{preprocessor}{\#define\ \_I2C\_SADDR\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00301\ \textcolor{preprocessor}{\#define\ \_I2C\_SADDR\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x000000FEUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00302\ \textcolor{preprocessor}{\#define\ \_I2C\_SADDR\_ADDR\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00303\ \textcolor{preprocessor}{\#define\ \_I2C\_SADDR\_ADDR\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFEUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00304\ \textcolor{preprocessor}{\#define\ \_I2C\_SADDR\_ADDR\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00305\ \textcolor{preprocessor}{\#define\ I2C\_SADDR\_ADDR\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_SADDR\_ADDR\_DEFAULT\ <<\ 1)\ }}
+\DoxyCodeLine{00307\ \textcolor{comment}{/*\ Bit\ fields\ for\ I2C\ SADDRMASK\ */}}
+\DoxyCodeLine{00308\ \textcolor{preprocessor}{\#define\ \_I2C\_SADDRMASK\_RESETVALUE\ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00309\ \textcolor{preprocessor}{\#define\ \_I2C\_SADDRMASK\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x000000FEUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00310\ \textcolor{preprocessor}{\#define\ \_I2C\_SADDRMASK\_MASK\_SHIFT\ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00311\ \textcolor{preprocessor}{\#define\ \_I2C\_SADDRMASK\_MASK\_MASK\ \ \ \ \ \ \ \ \ \ 0xFEUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00312\ \textcolor{preprocessor}{\#define\ \_I2C\_SADDRMASK\_MASK\_DEFAULT\ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00313\ \textcolor{preprocessor}{\#define\ I2C\_SADDRMASK\_MASK\_DEFAULT\ \ \ \ \ \ \ \ (\_I2C\_SADDRMASK\_MASK\_DEFAULT\ <<\ 1)\ }}
+\DoxyCodeLine{00315\ \textcolor{comment}{/*\ Bit\ fields\ for\ I2C\ RXDATA\ */}}
+\DoxyCodeLine{00316\ \textcolor{preprocessor}{\#define\ \_I2C\_RXDATA\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00317\ \textcolor{preprocessor}{\#define\ \_I2C\_RXDATA\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x000000FFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00318\ \textcolor{preprocessor}{\#define\ \_I2C\_RXDATA\_RXDATA\_SHIFT\ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00319\ \textcolor{preprocessor}{\#define\ \_I2C\_RXDATA\_RXDATA\_MASK\ \ \ \ \ \ \ \ \ \ \ 0xFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00320\ \textcolor{preprocessor}{\#define\ \_I2C\_RXDATA\_RXDATA\_DEFAULT\ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00321\ \textcolor{preprocessor}{\#define\ I2C\_RXDATA\_RXDATA\_DEFAULT\ \ \ \ \ \ \ \ \ (\_I2C\_RXDATA\_RXDATA\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00323\ \textcolor{comment}{/*\ Bit\ fields\ for\ I2C\ RXDATAP\ */}}
+\DoxyCodeLine{00324\ \textcolor{preprocessor}{\#define\ \_I2C\_RXDATAP\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00325\ \textcolor{preprocessor}{\#define\ \_I2C\_RXDATAP\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x000000FFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00326\ \textcolor{preprocessor}{\#define\ \_I2C\_RXDATAP\_RXDATAP\_SHIFT\ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00327\ \textcolor{preprocessor}{\#define\ \_I2C\_RXDATAP\_RXDATAP\_MASK\ \ \ \ \ \ \ \ \ 0xFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00328\ \textcolor{preprocessor}{\#define\ \_I2C\_RXDATAP\_RXDATAP\_DEFAULT\ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00329\ \textcolor{preprocessor}{\#define\ I2C\_RXDATAP\_RXDATAP\_DEFAULT\ \ \ \ \ \ \ (\_I2C\_RXDATAP\_RXDATAP\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00331\ \textcolor{comment}{/*\ Bit\ fields\ for\ I2C\ TXDATA\ */}}
+\DoxyCodeLine{00332\ \textcolor{preprocessor}{\#define\ \_I2C\_TXDATA\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00333\ \textcolor{preprocessor}{\#define\ \_I2C\_TXDATA\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x000000FFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00334\ \textcolor{preprocessor}{\#define\ \_I2C\_TXDATA\_TXDATA\_SHIFT\ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00335\ \textcolor{preprocessor}{\#define\ \_I2C\_TXDATA\_TXDATA\_MASK\ \ \ \ \ \ \ \ \ \ \ 0xFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00336\ \textcolor{preprocessor}{\#define\ \_I2C\_TXDATA\_TXDATA\_DEFAULT\ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00337\ \textcolor{preprocessor}{\#define\ I2C\_TXDATA\_TXDATA\_DEFAULT\ \ \ \ \ \ \ \ \ (\_I2C\_TXDATA\_TXDATA\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00339\ \textcolor{comment}{/*\ Bit\ fields\ for\ I2C\ IF\ */}}
+\DoxyCodeLine{00340\ \textcolor{preprocessor}{\#define\ \_I2C\_IF\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000010UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00341\ \textcolor{preprocessor}{\#define\ \_I2C\_IF\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0001FFFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00342\ \textcolor{preprocessor}{\#define\ I2C\_IF\_START\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00343\ \textcolor{preprocessor}{\#define\ \_I2C\_IF\_START\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00344\ \textcolor{preprocessor}{\#define\ \_I2C\_IF\_START\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00345\ \textcolor{preprocessor}{\#define\ \_I2C\_IF\_START\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00346\ \textcolor{preprocessor}{\#define\ I2C\_IF\_START\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_IF\_START\_DEFAULT\ <<\ 0)\ \ \ \ }}
+\DoxyCodeLine{00347\ \textcolor{preprocessor}{\#define\ I2C\_IF\_RSTART\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00348\ \textcolor{preprocessor}{\#define\ \_I2C\_IF\_RSTART\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00349\ \textcolor{preprocessor}{\#define\ \_I2C\_IF\_RSTART\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x2UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00350\ \textcolor{preprocessor}{\#define\ \_I2C\_IF\_RSTART\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00351\ \textcolor{preprocessor}{\#define\ I2C\_IF\_RSTART\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_IF\_RSTART\_DEFAULT\ <<\ 1)\ \ \ }}
+\DoxyCodeLine{00352\ \textcolor{preprocessor}{\#define\ I2C\_IF\_ADDR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 2)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00353\ \textcolor{preprocessor}{\#define\ \_I2C\_IF\_ADDR\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00354\ \textcolor{preprocessor}{\#define\ \_I2C\_IF\_ADDR\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x4UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00355\ \textcolor{preprocessor}{\#define\ \_I2C\_IF\_ADDR\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00356\ \textcolor{preprocessor}{\#define\ I2C\_IF\_ADDR\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_IF\_ADDR\_DEFAULT\ <<\ 2)\ \ \ \ \ }}
+\DoxyCodeLine{00357\ \textcolor{preprocessor}{\#define\ I2C\_IF\_TXC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 3)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00358\ \textcolor{preprocessor}{\#define\ \_I2C\_IF\_TXC\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00359\ \textcolor{preprocessor}{\#define\ \_I2C\_IF\_TXC\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x8UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00360\ \textcolor{preprocessor}{\#define\ \_I2C\_IF\_TXC\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00361\ \textcolor{preprocessor}{\#define\ I2C\_IF\_TXC\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_IF\_TXC\_DEFAULT\ <<\ 3)\ \ \ \ \ \ }}
+\DoxyCodeLine{00362\ \textcolor{preprocessor}{\#define\ I2C\_IF\_TXBL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 4)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00363\ \textcolor{preprocessor}{\#define\ \_I2C\_IF\_TXBL\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00364\ \textcolor{preprocessor}{\#define\ \_I2C\_IF\_TXBL\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x10UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00365\ \textcolor{preprocessor}{\#define\ \_I2C\_IF\_TXBL\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00366\ \textcolor{preprocessor}{\#define\ I2C\_IF\_TXBL\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_IF\_TXBL\_DEFAULT\ <<\ 4)\ \ \ \ \ }}
+\DoxyCodeLine{00367\ \textcolor{preprocessor}{\#define\ I2C\_IF\_RXDATAV\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 5)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00368\ \textcolor{preprocessor}{\#define\ \_I2C\_IF\_RXDATAV\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ 5\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00369\ \textcolor{preprocessor}{\#define\ \_I2C\_IF\_RXDATAV\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x20UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00370\ \textcolor{preprocessor}{\#define\ \_I2C\_IF\_RXDATAV\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00371\ \textcolor{preprocessor}{\#define\ I2C\_IF\_RXDATAV\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_IF\_RXDATAV\_DEFAULT\ <<\ 5)\ \ }}
+\DoxyCodeLine{00372\ \textcolor{preprocessor}{\#define\ I2C\_IF\_ACK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 6)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00373\ \textcolor{preprocessor}{\#define\ \_I2C\_IF\_ACK\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 6\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00374\ \textcolor{preprocessor}{\#define\ \_I2C\_IF\_ACK\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x40UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00375\ \textcolor{preprocessor}{\#define\ \_I2C\_IF\_ACK\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00376\ \textcolor{preprocessor}{\#define\ I2C\_IF\_ACK\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_IF\_ACK\_DEFAULT\ <<\ 6)\ \ \ \ \ \ }}
+\DoxyCodeLine{00377\ \textcolor{preprocessor}{\#define\ I2C\_IF\_NACK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 7)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00378\ \textcolor{preprocessor}{\#define\ \_I2C\_IF\_NACK\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 7\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00379\ \textcolor{preprocessor}{\#define\ \_I2C\_IF\_NACK\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x80UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00380\ \textcolor{preprocessor}{\#define\ \_I2C\_IF\_NACK\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00381\ \textcolor{preprocessor}{\#define\ I2C\_IF\_NACK\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_IF\_NACK\_DEFAULT\ <<\ 7)\ \ \ \ \ }}
+\DoxyCodeLine{00382\ \textcolor{preprocessor}{\#define\ I2C\_IF\_MSTOP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 8)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00383\ \textcolor{preprocessor}{\#define\ \_I2C\_IF\_MSTOP\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00384\ \textcolor{preprocessor}{\#define\ \_I2C\_IF\_MSTOP\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x100UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00385\ \textcolor{preprocessor}{\#define\ \_I2C\_IF\_MSTOP\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00386\ \textcolor{preprocessor}{\#define\ I2C\_IF\_MSTOP\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_IF\_MSTOP\_DEFAULT\ <<\ 8)\ \ \ \ }}
+\DoxyCodeLine{00387\ \textcolor{preprocessor}{\#define\ I2C\_IF\_ARBLOST\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 9)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00388\ \textcolor{preprocessor}{\#define\ \_I2C\_IF\_ARBLOST\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ 9\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00389\ \textcolor{preprocessor}{\#define\ \_I2C\_IF\_ARBLOST\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x200UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00390\ \textcolor{preprocessor}{\#define\ \_I2C\_IF\_ARBLOST\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00391\ \textcolor{preprocessor}{\#define\ I2C\_IF\_ARBLOST\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_IF\_ARBLOST\_DEFAULT\ <<\ 9)\ \ }}
+\DoxyCodeLine{00392\ \textcolor{preprocessor}{\#define\ I2C\_IF\_BUSERR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 10)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00393\ \textcolor{preprocessor}{\#define\ \_I2C\_IF\_BUSERR\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 10\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00394\ \textcolor{preprocessor}{\#define\ \_I2C\_IF\_BUSERR\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x400UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00395\ \textcolor{preprocessor}{\#define\ \_I2C\_IF\_BUSERR\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00396\ \textcolor{preprocessor}{\#define\ I2C\_IF\_BUSERR\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_IF\_BUSERR\_DEFAULT\ <<\ 10)\ \ }}
+\DoxyCodeLine{00397\ \textcolor{preprocessor}{\#define\ I2C\_IF\_BUSHOLD\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 11)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00398\ \textcolor{preprocessor}{\#define\ \_I2C\_IF\_BUSHOLD\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ 11\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00399\ \textcolor{preprocessor}{\#define\ \_I2C\_IF\_BUSHOLD\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x800UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00400\ \textcolor{preprocessor}{\#define\ \_I2C\_IF\_BUSHOLD\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00401\ \textcolor{preprocessor}{\#define\ I2C\_IF\_BUSHOLD\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_IF\_BUSHOLD\_DEFAULT\ <<\ 11)\ }}
+\DoxyCodeLine{00402\ \textcolor{preprocessor}{\#define\ I2C\_IF\_TXOF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 12)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00403\ \textcolor{preprocessor}{\#define\ \_I2C\_IF\_TXOF\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 12\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00404\ \textcolor{preprocessor}{\#define\ \_I2C\_IF\_TXOF\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00405\ \textcolor{preprocessor}{\#define\ \_I2C\_IF\_TXOF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00406\ \textcolor{preprocessor}{\#define\ I2C\_IF\_TXOF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_IF\_TXOF\_DEFAULT\ <<\ 12)\ \ \ \ }}
+\DoxyCodeLine{00407\ \textcolor{preprocessor}{\#define\ I2C\_IF\_RXUF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 13)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00408\ \textcolor{preprocessor}{\#define\ \_I2C\_IF\_RXUF\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 13\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00409\ \textcolor{preprocessor}{\#define\ \_I2C\_IF\_RXUF\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x2000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00410\ \textcolor{preprocessor}{\#define\ \_I2C\_IF\_RXUF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00411\ \textcolor{preprocessor}{\#define\ I2C\_IF\_RXUF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_IF\_RXUF\_DEFAULT\ <<\ 13)\ \ \ \ }}
+\DoxyCodeLine{00412\ \textcolor{preprocessor}{\#define\ I2C\_IF\_BITO\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 14)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00413\ \textcolor{preprocessor}{\#define\ \_I2C\_IF\_BITO\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 14\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00414\ \textcolor{preprocessor}{\#define\ \_I2C\_IF\_BITO\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x4000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00415\ \textcolor{preprocessor}{\#define\ \_I2C\_IF\_BITO\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00416\ \textcolor{preprocessor}{\#define\ I2C\_IF\_BITO\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_IF\_BITO\_DEFAULT\ <<\ 14)\ \ \ \ }}
+\DoxyCodeLine{00417\ \textcolor{preprocessor}{\#define\ I2C\_IF\_CLTO\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 15)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00418\ \textcolor{preprocessor}{\#define\ \_I2C\_IF\_CLTO\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 15\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00419\ \textcolor{preprocessor}{\#define\ \_I2C\_IF\_CLTO\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x8000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00420\ \textcolor{preprocessor}{\#define\ \_I2C\_IF\_CLTO\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00421\ \textcolor{preprocessor}{\#define\ I2C\_IF\_CLTO\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_IF\_CLTO\_DEFAULT\ <<\ 15)\ \ \ \ }}
+\DoxyCodeLine{00422\ \textcolor{preprocessor}{\#define\ I2C\_IF\_SSTOP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 16)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00423\ \textcolor{preprocessor}{\#define\ \_I2C\_IF\_SSTOP\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 16\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00424\ \textcolor{preprocessor}{\#define\ \_I2C\_IF\_SSTOP\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x10000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00425\ \textcolor{preprocessor}{\#define\ \_I2C\_IF\_SSTOP\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00426\ \textcolor{preprocessor}{\#define\ I2C\_IF\_SSTOP\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_IF\_SSTOP\_DEFAULT\ <<\ 16)\ \ \ }}
+\DoxyCodeLine{00428\ \textcolor{comment}{/*\ Bit\ fields\ for\ I2C\ IFS\ */}}
+\DoxyCodeLine{00429\ \textcolor{preprocessor}{\#define\ \_I2C\_IFS\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00430\ \textcolor{preprocessor}{\#define\ \_I2C\_IFS\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0001FFCFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00431\ \textcolor{preprocessor}{\#define\ I2C\_IFS\_START\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00432\ \textcolor{preprocessor}{\#define\ \_I2C\_IFS\_START\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00433\ \textcolor{preprocessor}{\#define\ \_I2C\_IFS\_START\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00434\ \textcolor{preprocessor}{\#define\ \_I2C\_IFS\_START\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00435\ \textcolor{preprocessor}{\#define\ I2C\_IFS\_START\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_IFS\_START\_DEFAULT\ <<\ 0)\ \ \ \ }}
+\DoxyCodeLine{00436\ \textcolor{preprocessor}{\#define\ I2C\_IFS\_RSTART\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00437\ \textcolor{preprocessor}{\#define\ \_I2C\_IFS\_RSTART\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00438\ \textcolor{preprocessor}{\#define\ \_I2C\_IFS\_RSTART\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x2UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00439\ \textcolor{preprocessor}{\#define\ \_I2C\_IFS\_RSTART\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00440\ \textcolor{preprocessor}{\#define\ I2C\_IFS\_RSTART\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_IFS\_RSTART\_DEFAULT\ <<\ 1)\ \ \ }}
+\DoxyCodeLine{00441\ \textcolor{preprocessor}{\#define\ I2C\_IFS\_ADDR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 2)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00442\ \textcolor{preprocessor}{\#define\ \_I2C\_IFS\_ADDR\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00443\ \textcolor{preprocessor}{\#define\ \_I2C\_IFS\_ADDR\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x4UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00444\ \textcolor{preprocessor}{\#define\ \_I2C\_IFS\_ADDR\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00445\ \textcolor{preprocessor}{\#define\ I2C\_IFS\_ADDR\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_IFS\_ADDR\_DEFAULT\ <<\ 2)\ \ \ \ \ }}
+\DoxyCodeLine{00446\ \textcolor{preprocessor}{\#define\ I2C\_IFS\_TXC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 3)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00447\ \textcolor{preprocessor}{\#define\ \_I2C\_IFS\_TXC\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00448\ \textcolor{preprocessor}{\#define\ \_I2C\_IFS\_TXC\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x8UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00449\ \textcolor{preprocessor}{\#define\ \_I2C\_IFS\_TXC\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00450\ \textcolor{preprocessor}{\#define\ I2C\_IFS\_TXC\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_IFS\_TXC\_DEFAULT\ <<\ 3)\ \ \ \ \ \ }}
+\DoxyCodeLine{00451\ \textcolor{preprocessor}{\#define\ I2C\_IFS\_ACK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 6)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00452\ \textcolor{preprocessor}{\#define\ \_I2C\_IFS\_ACK\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 6\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00453\ \textcolor{preprocessor}{\#define\ \_I2C\_IFS\_ACK\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x40UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00454\ \textcolor{preprocessor}{\#define\ \_I2C\_IFS\_ACK\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00455\ \textcolor{preprocessor}{\#define\ I2C\_IFS\_ACK\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_IFS\_ACK\_DEFAULT\ <<\ 6)\ \ \ \ \ \ }}
+\DoxyCodeLine{00456\ \textcolor{preprocessor}{\#define\ I2C\_IFS\_NACK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 7)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00457\ \textcolor{preprocessor}{\#define\ \_I2C\_IFS\_NACK\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 7\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00458\ \textcolor{preprocessor}{\#define\ \_I2C\_IFS\_NACK\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x80UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00459\ \textcolor{preprocessor}{\#define\ \_I2C\_IFS\_NACK\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00460\ \textcolor{preprocessor}{\#define\ I2C\_IFS\_NACK\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_IFS\_NACK\_DEFAULT\ <<\ 7)\ \ \ \ \ }}
+\DoxyCodeLine{00461\ \textcolor{preprocessor}{\#define\ I2C\_IFS\_MSTOP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 8)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00462\ \textcolor{preprocessor}{\#define\ \_I2C\_IFS\_MSTOP\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00463\ \textcolor{preprocessor}{\#define\ \_I2C\_IFS\_MSTOP\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x100UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00464\ \textcolor{preprocessor}{\#define\ \_I2C\_IFS\_MSTOP\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00465\ \textcolor{preprocessor}{\#define\ I2C\_IFS\_MSTOP\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_IFS\_MSTOP\_DEFAULT\ <<\ 8)\ \ \ \ }}
+\DoxyCodeLine{00466\ \textcolor{preprocessor}{\#define\ I2C\_IFS\_ARBLOST\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 9)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00467\ \textcolor{preprocessor}{\#define\ \_I2C\_IFS\_ARBLOST\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ 9\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00468\ \textcolor{preprocessor}{\#define\ \_I2C\_IFS\_ARBLOST\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ 0x200UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00469\ \textcolor{preprocessor}{\#define\ \_I2C\_IFS\_ARBLOST\_DEFAULT\ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00470\ \textcolor{preprocessor}{\#define\ I2C\_IFS\_ARBLOST\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ (\_I2C\_IFS\_ARBLOST\_DEFAULT\ <<\ 9)\ \ }}
+\DoxyCodeLine{00471\ \textcolor{preprocessor}{\#define\ I2C\_IFS\_BUSERR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 10)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00472\ \textcolor{preprocessor}{\#define\ \_I2C\_IFS\_BUSERR\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ 10\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00473\ \textcolor{preprocessor}{\#define\ \_I2C\_IFS\_BUSERR\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x400UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00474\ \textcolor{preprocessor}{\#define\ \_I2C\_IFS\_BUSERR\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00475\ \textcolor{preprocessor}{\#define\ I2C\_IFS\_BUSERR\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_IFS\_BUSERR\_DEFAULT\ <<\ 10)\ \ }}
+\DoxyCodeLine{00476\ \textcolor{preprocessor}{\#define\ I2C\_IFS\_BUSHOLD\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 11)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00477\ \textcolor{preprocessor}{\#define\ \_I2C\_IFS\_BUSHOLD\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ 11\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00478\ \textcolor{preprocessor}{\#define\ \_I2C\_IFS\_BUSHOLD\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ 0x800UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00479\ \textcolor{preprocessor}{\#define\ \_I2C\_IFS\_BUSHOLD\_DEFAULT\ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00480\ \textcolor{preprocessor}{\#define\ I2C\_IFS\_BUSHOLD\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ (\_I2C\_IFS\_BUSHOLD\_DEFAULT\ <<\ 11)\ }}
+\DoxyCodeLine{00481\ \textcolor{preprocessor}{\#define\ I2C\_IFS\_TXOF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 12)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00482\ \textcolor{preprocessor}{\#define\ \_I2C\_IFS\_TXOF\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 12\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00483\ \textcolor{preprocessor}{\#define\ \_I2C\_IFS\_TXOF\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00484\ \textcolor{preprocessor}{\#define\ \_I2C\_IFS\_TXOF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00485\ \textcolor{preprocessor}{\#define\ I2C\_IFS\_TXOF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_IFS\_TXOF\_DEFAULT\ <<\ 12)\ \ \ \ }}
+\DoxyCodeLine{00486\ \textcolor{preprocessor}{\#define\ I2C\_IFS\_RXUF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 13)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00487\ \textcolor{preprocessor}{\#define\ \_I2C\_IFS\_RXUF\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 13\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00488\ \textcolor{preprocessor}{\#define\ \_I2C\_IFS\_RXUF\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x2000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00489\ \textcolor{preprocessor}{\#define\ \_I2C\_IFS\_RXUF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00490\ \textcolor{preprocessor}{\#define\ I2C\_IFS\_RXUF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_IFS\_RXUF\_DEFAULT\ <<\ 13)\ \ \ \ }}
+\DoxyCodeLine{00491\ \textcolor{preprocessor}{\#define\ I2C\_IFS\_BITO\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 14)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00492\ \textcolor{preprocessor}{\#define\ \_I2C\_IFS\_BITO\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 14\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00493\ \textcolor{preprocessor}{\#define\ \_I2C\_IFS\_BITO\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x4000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00494\ \textcolor{preprocessor}{\#define\ \_I2C\_IFS\_BITO\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00495\ \textcolor{preprocessor}{\#define\ I2C\_IFS\_BITO\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_IFS\_BITO\_DEFAULT\ <<\ 14)\ \ \ \ }}
+\DoxyCodeLine{00496\ \textcolor{preprocessor}{\#define\ I2C\_IFS\_CLTO\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 15)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00497\ \textcolor{preprocessor}{\#define\ \_I2C\_IFS\_CLTO\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 15\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00498\ \textcolor{preprocessor}{\#define\ \_I2C\_IFS\_CLTO\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x8000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00499\ \textcolor{preprocessor}{\#define\ \_I2C\_IFS\_CLTO\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00500\ \textcolor{preprocessor}{\#define\ I2C\_IFS\_CLTO\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_IFS\_CLTO\_DEFAULT\ <<\ 15)\ \ \ \ }}
+\DoxyCodeLine{00501\ \textcolor{preprocessor}{\#define\ I2C\_IFS\_SSTOP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 16)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00502\ \textcolor{preprocessor}{\#define\ \_I2C\_IFS\_SSTOP\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 16\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00503\ \textcolor{preprocessor}{\#define\ \_I2C\_IFS\_SSTOP\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x10000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00504\ \textcolor{preprocessor}{\#define\ \_I2C\_IFS\_SSTOP\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00505\ \textcolor{preprocessor}{\#define\ I2C\_IFS\_SSTOP\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_IFS\_SSTOP\_DEFAULT\ <<\ 16)\ \ \ }}
+\DoxyCodeLine{00507\ \textcolor{comment}{/*\ Bit\ fields\ for\ I2C\ IFC\ */}}
+\DoxyCodeLine{00508\ \textcolor{preprocessor}{\#define\ \_I2C\_IFC\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00509\ \textcolor{preprocessor}{\#define\ \_I2C\_IFC\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0001FFCFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00510\ \textcolor{preprocessor}{\#define\ I2C\_IFC\_START\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00511\ \textcolor{preprocessor}{\#define\ \_I2C\_IFC\_START\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00512\ \textcolor{preprocessor}{\#define\ \_I2C\_IFC\_START\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00513\ \textcolor{preprocessor}{\#define\ \_I2C\_IFC\_START\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00514\ \textcolor{preprocessor}{\#define\ I2C\_IFC\_START\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_IFC\_START\_DEFAULT\ <<\ 0)\ \ \ \ }}
+\DoxyCodeLine{00515\ \textcolor{preprocessor}{\#define\ I2C\_IFC\_RSTART\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00516\ \textcolor{preprocessor}{\#define\ \_I2C\_IFC\_RSTART\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00517\ \textcolor{preprocessor}{\#define\ \_I2C\_IFC\_RSTART\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x2UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00518\ \textcolor{preprocessor}{\#define\ \_I2C\_IFC\_RSTART\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00519\ \textcolor{preprocessor}{\#define\ I2C\_IFC\_RSTART\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_IFC\_RSTART\_DEFAULT\ <<\ 1)\ \ \ }}
+\DoxyCodeLine{00520\ \textcolor{preprocessor}{\#define\ I2C\_IFC\_ADDR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 2)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00521\ \textcolor{preprocessor}{\#define\ \_I2C\_IFC\_ADDR\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00522\ \textcolor{preprocessor}{\#define\ \_I2C\_IFC\_ADDR\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x4UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00523\ \textcolor{preprocessor}{\#define\ \_I2C\_IFC\_ADDR\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00524\ \textcolor{preprocessor}{\#define\ I2C\_IFC\_ADDR\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_IFC\_ADDR\_DEFAULT\ <<\ 2)\ \ \ \ \ }}
+\DoxyCodeLine{00525\ \textcolor{preprocessor}{\#define\ I2C\_IFC\_TXC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 3)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00526\ \textcolor{preprocessor}{\#define\ \_I2C\_IFC\_TXC\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00527\ \textcolor{preprocessor}{\#define\ \_I2C\_IFC\_TXC\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x8UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00528\ \textcolor{preprocessor}{\#define\ \_I2C\_IFC\_TXC\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00529\ \textcolor{preprocessor}{\#define\ I2C\_IFC\_TXC\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_IFC\_TXC\_DEFAULT\ <<\ 3)\ \ \ \ \ \ }}
+\DoxyCodeLine{00530\ \textcolor{preprocessor}{\#define\ I2C\_IFC\_ACK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 6)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00531\ \textcolor{preprocessor}{\#define\ \_I2C\_IFC\_ACK\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 6\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00532\ \textcolor{preprocessor}{\#define\ \_I2C\_IFC\_ACK\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x40UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00533\ \textcolor{preprocessor}{\#define\ \_I2C\_IFC\_ACK\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00534\ \textcolor{preprocessor}{\#define\ I2C\_IFC\_ACK\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_IFC\_ACK\_DEFAULT\ <<\ 6)\ \ \ \ \ \ }}
+\DoxyCodeLine{00535\ \textcolor{preprocessor}{\#define\ I2C\_IFC\_NACK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 7)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00536\ \textcolor{preprocessor}{\#define\ \_I2C\_IFC\_NACK\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 7\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00537\ \textcolor{preprocessor}{\#define\ \_I2C\_IFC\_NACK\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x80UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00538\ \textcolor{preprocessor}{\#define\ \_I2C\_IFC\_NACK\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00539\ \textcolor{preprocessor}{\#define\ I2C\_IFC\_NACK\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_IFC\_NACK\_DEFAULT\ <<\ 7)\ \ \ \ \ }}
+\DoxyCodeLine{00540\ \textcolor{preprocessor}{\#define\ I2C\_IFC\_MSTOP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 8)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00541\ \textcolor{preprocessor}{\#define\ \_I2C\_IFC\_MSTOP\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00542\ \textcolor{preprocessor}{\#define\ \_I2C\_IFC\_MSTOP\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x100UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00543\ \textcolor{preprocessor}{\#define\ \_I2C\_IFC\_MSTOP\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00544\ \textcolor{preprocessor}{\#define\ I2C\_IFC\_MSTOP\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_IFC\_MSTOP\_DEFAULT\ <<\ 8)\ \ \ \ }}
+\DoxyCodeLine{00545\ \textcolor{preprocessor}{\#define\ I2C\_IFC\_ARBLOST\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 9)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00546\ \textcolor{preprocessor}{\#define\ \_I2C\_IFC\_ARBLOST\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ 9\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00547\ \textcolor{preprocessor}{\#define\ \_I2C\_IFC\_ARBLOST\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ 0x200UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00548\ \textcolor{preprocessor}{\#define\ \_I2C\_IFC\_ARBLOST\_DEFAULT\ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00549\ \textcolor{preprocessor}{\#define\ I2C\_IFC\_ARBLOST\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ (\_I2C\_IFC\_ARBLOST\_DEFAULT\ <<\ 9)\ \ }}
+\DoxyCodeLine{00550\ \textcolor{preprocessor}{\#define\ I2C\_IFC\_BUSERR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 10)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00551\ \textcolor{preprocessor}{\#define\ \_I2C\_IFC\_BUSERR\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ 10\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00552\ \textcolor{preprocessor}{\#define\ \_I2C\_IFC\_BUSERR\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x400UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00553\ \textcolor{preprocessor}{\#define\ \_I2C\_IFC\_BUSERR\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00554\ \textcolor{preprocessor}{\#define\ I2C\_IFC\_BUSERR\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_IFC\_BUSERR\_DEFAULT\ <<\ 10)\ \ }}
+\DoxyCodeLine{00555\ \textcolor{preprocessor}{\#define\ I2C\_IFC\_BUSHOLD\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 11)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00556\ \textcolor{preprocessor}{\#define\ \_I2C\_IFC\_BUSHOLD\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ 11\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00557\ \textcolor{preprocessor}{\#define\ \_I2C\_IFC\_BUSHOLD\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ 0x800UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00558\ \textcolor{preprocessor}{\#define\ \_I2C\_IFC\_BUSHOLD\_DEFAULT\ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00559\ \textcolor{preprocessor}{\#define\ I2C\_IFC\_BUSHOLD\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ (\_I2C\_IFC\_BUSHOLD\_DEFAULT\ <<\ 11)\ }}
+\DoxyCodeLine{00560\ \textcolor{preprocessor}{\#define\ I2C\_IFC\_TXOF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 12)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00561\ \textcolor{preprocessor}{\#define\ \_I2C\_IFC\_TXOF\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 12\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00562\ \textcolor{preprocessor}{\#define\ \_I2C\_IFC\_TXOF\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00563\ \textcolor{preprocessor}{\#define\ \_I2C\_IFC\_TXOF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00564\ \textcolor{preprocessor}{\#define\ I2C\_IFC\_TXOF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_IFC\_TXOF\_DEFAULT\ <<\ 12)\ \ \ \ }}
+\DoxyCodeLine{00565\ \textcolor{preprocessor}{\#define\ I2C\_IFC\_RXUF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 13)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00566\ \textcolor{preprocessor}{\#define\ \_I2C\_IFC\_RXUF\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 13\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00567\ \textcolor{preprocessor}{\#define\ \_I2C\_IFC\_RXUF\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x2000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00568\ \textcolor{preprocessor}{\#define\ \_I2C\_IFC\_RXUF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00569\ \textcolor{preprocessor}{\#define\ I2C\_IFC\_RXUF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_IFC\_RXUF\_DEFAULT\ <<\ 13)\ \ \ \ }}
+\DoxyCodeLine{00570\ \textcolor{preprocessor}{\#define\ I2C\_IFC\_BITO\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 14)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00571\ \textcolor{preprocessor}{\#define\ \_I2C\_IFC\_BITO\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 14\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00572\ \textcolor{preprocessor}{\#define\ \_I2C\_IFC\_BITO\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x4000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00573\ \textcolor{preprocessor}{\#define\ \_I2C\_IFC\_BITO\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00574\ \textcolor{preprocessor}{\#define\ I2C\_IFC\_BITO\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_IFC\_BITO\_DEFAULT\ <<\ 14)\ \ \ \ }}
+\DoxyCodeLine{00575\ \textcolor{preprocessor}{\#define\ I2C\_IFC\_CLTO\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 15)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00576\ \textcolor{preprocessor}{\#define\ \_I2C\_IFC\_CLTO\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 15\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00577\ \textcolor{preprocessor}{\#define\ \_I2C\_IFC\_CLTO\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x8000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00578\ \textcolor{preprocessor}{\#define\ \_I2C\_IFC\_CLTO\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00579\ \textcolor{preprocessor}{\#define\ I2C\_IFC\_CLTO\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_IFC\_CLTO\_DEFAULT\ <<\ 15)\ \ \ \ }}
+\DoxyCodeLine{00580\ \textcolor{preprocessor}{\#define\ I2C\_IFC\_SSTOP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 16)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00581\ \textcolor{preprocessor}{\#define\ \_I2C\_IFC\_SSTOP\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 16\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00582\ \textcolor{preprocessor}{\#define\ \_I2C\_IFC\_SSTOP\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x10000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00583\ \textcolor{preprocessor}{\#define\ \_I2C\_IFC\_SSTOP\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00584\ \textcolor{preprocessor}{\#define\ I2C\_IFC\_SSTOP\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_IFC\_SSTOP\_DEFAULT\ <<\ 16)\ \ \ }}
+\DoxyCodeLine{00586\ \textcolor{comment}{/*\ Bit\ fields\ for\ I2C\ IEN\ */}}
+\DoxyCodeLine{00587\ \textcolor{preprocessor}{\#define\ \_I2C\_IEN\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00588\ \textcolor{preprocessor}{\#define\ \_I2C\_IEN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0001FFFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00589\ \textcolor{preprocessor}{\#define\ I2C\_IEN\_START\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00590\ \textcolor{preprocessor}{\#define\ \_I2C\_IEN\_START\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00591\ \textcolor{preprocessor}{\#define\ \_I2C\_IEN\_START\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00592\ \textcolor{preprocessor}{\#define\ \_I2C\_IEN\_START\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00593\ \textcolor{preprocessor}{\#define\ I2C\_IEN\_START\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_IEN\_START\_DEFAULT\ <<\ 0)\ \ \ \ }}
+\DoxyCodeLine{00594\ \textcolor{preprocessor}{\#define\ I2C\_IEN\_RSTART\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00595\ \textcolor{preprocessor}{\#define\ \_I2C\_IEN\_RSTART\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00596\ \textcolor{preprocessor}{\#define\ \_I2C\_IEN\_RSTART\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x2UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00597\ \textcolor{preprocessor}{\#define\ \_I2C\_IEN\_RSTART\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00598\ \textcolor{preprocessor}{\#define\ I2C\_IEN\_RSTART\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_IEN\_RSTART\_DEFAULT\ <<\ 1)\ \ \ }}
+\DoxyCodeLine{00599\ \textcolor{preprocessor}{\#define\ I2C\_IEN\_ADDR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 2)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00600\ \textcolor{preprocessor}{\#define\ \_I2C\_IEN\_ADDR\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00601\ \textcolor{preprocessor}{\#define\ \_I2C\_IEN\_ADDR\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x4UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00602\ \textcolor{preprocessor}{\#define\ \_I2C\_IEN\_ADDR\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00603\ \textcolor{preprocessor}{\#define\ I2C\_IEN\_ADDR\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_IEN\_ADDR\_DEFAULT\ <<\ 2)\ \ \ \ \ }}
+\DoxyCodeLine{00604\ \textcolor{preprocessor}{\#define\ I2C\_IEN\_TXC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 3)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00605\ \textcolor{preprocessor}{\#define\ \_I2C\_IEN\_TXC\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00606\ \textcolor{preprocessor}{\#define\ \_I2C\_IEN\_TXC\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x8UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00607\ \textcolor{preprocessor}{\#define\ \_I2C\_IEN\_TXC\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00608\ \textcolor{preprocessor}{\#define\ I2C\_IEN\_TXC\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_IEN\_TXC\_DEFAULT\ <<\ 3)\ \ \ \ \ \ }}
+\DoxyCodeLine{00609\ \textcolor{preprocessor}{\#define\ I2C\_IEN\_TXBL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 4)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00610\ \textcolor{preprocessor}{\#define\ \_I2C\_IEN\_TXBL\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00611\ \textcolor{preprocessor}{\#define\ \_I2C\_IEN\_TXBL\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x10UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00612\ \textcolor{preprocessor}{\#define\ \_I2C\_IEN\_TXBL\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00613\ \textcolor{preprocessor}{\#define\ I2C\_IEN\_TXBL\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_IEN\_TXBL\_DEFAULT\ <<\ 4)\ \ \ \ \ }}
+\DoxyCodeLine{00614\ \textcolor{preprocessor}{\#define\ I2C\_IEN\_RXDATAV\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 5)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00615\ \textcolor{preprocessor}{\#define\ \_I2C\_IEN\_RXDATAV\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ 5\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00616\ \textcolor{preprocessor}{\#define\ \_I2C\_IEN\_RXDATAV\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ 0x20UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00617\ \textcolor{preprocessor}{\#define\ \_I2C\_IEN\_RXDATAV\_DEFAULT\ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00618\ \textcolor{preprocessor}{\#define\ I2C\_IEN\_RXDATAV\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ (\_I2C\_IEN\_RXDATAV\_DEFAULT\ <<\ 5)\ \ }}
+\DoxyCodeLine{00619\ \textcolor{preprocessor}{\#define\ I2C\_IEN\_ACK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 6)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00620\ \textcolor{preprocessor}{\#define\ \_I2C\_IEN\_ACK\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 6\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00621\ \textcolor{preprocessor}{\#define\ \_I2C\_IEN\_ACK\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x40UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00622\ \textcolor{preprocessor}{\#define\ \_I2C\_IEN\_ACK\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00623\ \textcolor{preprocessor}{\#define\ I2C\_IEN\_ACK\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_IEN\_ACK\_DEFAULT\ <<\ 6)\ \ \ \ \ \ }}
+\DoxyCodeLine{00624\ \textcolor{preprocessor}{\#define\ I2C\_IEN\_NACK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 7)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00625\ \textcolor{preprocessor}{\#define\ \_I2C\_IEN\_NACK\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 7\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00626\ \textcolor{preprocessor}{\#define\ \_I2C\_IEN\_NACK\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x80UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00627\ \textcolor{preprocessor}{\#define\ \_I2C\_IEN\_NACK\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00628\ \textcolor{preprocessor}{\#define\ I2C\_IEN\_NACK\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_IEN\_NACK\_DEFAULT\ <<\ 7)\ \ \ \ \ }}
+\DoxyCodeLine{00629\ \textcolor{preprocessor}{\#define\ I2C\_IEN\_MSTOP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 8)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00630\ \textcolor{preprocessor}{\#define\ \_I2C\_IEN\_MSTOP\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00631\ \textcolor{preprocessor}{\#define\ \_I2C\_IEN\_MSTOP\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x100UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00632\ \textcolor{preprocessor}{\#define\ \_I2C\_IEN\_MSTOP\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00633\ \textcolor{preprocessor}{\#define\ I2C\_IEN\_MSTOP\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_IEN\_MSTOP\_DEFAULT\ <<\ 8)\ \ \ \ }}
+\DoxyCodeLine{00634\ \textcolor{preprocessor}{\#define\ I2C\_IEN\_ARBLOST\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 9)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00635\ \textcolor{preprocessor}{\#define\ \_I2C\_IEN\_ARBLOST\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ 9\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00636\ \textcolor{preprocessor}{\#define\ \_I2C\_IEN\_ARBLOST\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ 0x200UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00637\ \textcolor{preprocessor}{\#define\ \_I2C\_IEN\_ARBLOST\_DEFAULT\ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00638\ \textcolor{preprocessor}{\#define\ I2C\_IEN\_ARBLOST\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ (\_I2C\_IEN\_ARBLOST\_DEFAULT\ <<\ 9)\ \ }}
+\DoxyCodeLine{00639\ \textcolor{preprocessor}{\#define\ I2C\_IEN\_BUSERR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 10)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00640\ \textcolor{preprocessor}{\#define\ \_I2C\_IEN\_BUSERR\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ 10\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00641\ \textcolor{preprocessor}{\#define\ \_I2C\_IEN\_BUSERR\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x400UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00642\ \textcolor{preprocessor}{\#define\ \_I2C\_IEN\_BUSERR\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00643\ \textcolor{preprocessor}{\#define\ I2C\_IEN\_BUSERR\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_IEN\_BUSERR\_DEFAULT\ <<\ 10)\ \ }}
+\DoxyCodeLine{00644\ \textcolor{preprocessor}{\#define\ I2C\_IEN\_BUSHOLD\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 11)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00645\ \textcolor{preprocessor}{\#define\ \_I2C\_IEN\_BUSHOLD\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ 11\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00646\ \textcolor{preprocessor}{\#define\ \_I2C\_IEN\_BUSHOLD\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ 0x800UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00647\ \textcolor{preprocessor}{\#define\ \_I2C\_IEN\_BUSHOLD\_DEFAULT\ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00648\ \textcolor{preprocessor}{\#define\ I2C\_IEN\_BUSHOLD\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ (\_I2C\_IEN\_BUSHOLD\_DEFAULT\ <<\ 11)\ }}
+\DoxyCodeLine{00649\ \textcolor{preprocessor}{\#define\ I2C\_IEN\_TXOF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 12)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00650\ \textcolor{preprocessor}{\#define\ \_I2C\_IEN\_TXOF\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 12\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00651\ \textcolor{preprocessor}{\#define\ \_I2C\_IEN\_TXOF\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00652\ \textcolor{preprocessor}{\#define\ \_I2C\_IEN\_TXOF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00653\ \textcolor{preprocessor}{\#define\ I2C\_IEN\_TXOF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_IEN\_TXOF\_DEFAULT\ <<\ 12)\ \ \ \ }}
+\DoxyCodeLine{00654\ \textcolor{preprocessor}{\#define\ I2C\_IEN\_RXUF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 13)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00655\ \textcolor{preprocessor}{\#define\ \_I2C\_IEN\_RXUF\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 13\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00656\ \textcolor{preprocessor}{\#define\ \_I2C\_IEN\_RXUF\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x2000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00657\ \textcolor{preprocessor}{\#define\ \_I2C\_IEN\_RXUF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00658\ \textcolor{preprocessor}{\#define\ I2C\_IEN\_RXUF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_IEN\_RXUF\_DEFAULT\ <<\ 13)\ \ \ \ }}
+\DoxyCodeLine{00659\ \textcolor{preprocessor}{\#define\ I2C\_IEN\_BITO\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 14)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00660\ \textcolor{preprocessor}{\#define\ \_I2C\_IEN\_BITO\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 14\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00661\ \textcolor{preprocessor}{\#define\ \_I2C\_IEN\_BITO\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x4000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00662\ \textcolor{preprocessor}{\#define\ \_I2C\_IEN\_BITO\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00663\ \textcolor{preprocessor}{\#define\ I2C\_IEN\_BITO\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_IEN\_BITO\_DEFAULT\ <<\ 14)\ \ \ \ }}
+\DoxyCodeLine{00664\ \textcolor{preprocessor}{\#define\ I2C\_IEN\_CLTO\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 15)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00665\ \textcolor{preprocessor}{\#define\ \_I2C\_IEN\_CLTO\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 15\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00666\ \textcolor{preprocessor}{\#define\ \_I2C\_IEN\_CLTO\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x8000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00667\ \textcolor{preprocessor}{\#define\ \_I2C\_IEN\_CLTO\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00668\ \textcolor{preprocessor}{\#define\ I2C\_IEN\_CLTO\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_IEN\_CLTO\_DEFAULT\ <<\ 15)\ \ \ \ }}
+\DoxyCodeLine{00669\ \textcolor{preprocessor}{\#define\ I2C\_IEN\_SSTOP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 16)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00670\ \textcolor{preprocessor}{\#define\ \_I2C\_IEN\_SSTOP\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 16\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00671\ \textcolor{preprocessor}{\#define\ \_I2C\_IEN\_SSTOP\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x10000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00672\ \textcolor{preprocessor}{\#define\ \_I2C\_IEN\_SSTOP\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00673\ \textcolor{preprocessor}{\#define\ I2C\_IEN\_SSTOP\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ (\_I2C\_IEN\_SSTOP\_DEFAULT\ <<\ 16)\ \ \ }}
+\DoxyCodeLine{00675\ \textcolor{comment}{/*\ Bit\ fields\ for\ I2C\ ROUTE\ */}}
+\DoxyCodeLine{00676\ \textcolor{preprocessor}{\#define\ \_I2C\_ROUTE\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00677\ \textcolor{preprocessor}{\#define\ \_I2C\_ROUTE\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000703UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00678\ \textcolor{preprocessor}{\#define\ I2C\_ROUTE\_SDAPEN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00679\ \textcolor{preprocessor}{\#define\ \_I2C\_ROUTE\_SDAPEN\_SHIFT\ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00680\ \textcolor{preprocessor}{\#define\ \_I2C\_ROUTE\_SDAPEN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00681\ \textcolor{preprocessor}{\#define\ \_I2C\_ROUTE\_SDAPEN\_DEFAULT\ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00682\ \textcolor{preprocessor}{\#define\ I2C\_ROUTE\_SDAPEN\_DEFAULT\ \ \ \ \ \ \ \ \ \ (\_I2C\_ROUTE\_SDAPEN\_DEFAULT\ <<\ 0)\ \ \ }}
+\DoxyCodeLine{00683\ \textcolor{preprocessor}{\#define\ I2C\_ROUTE\_SCLPEN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00684\ \textcolor{preprocessor}{\#define\ \_I2C\_ROUTE\_SCLPEN\_SHIFT\ \ \ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00685\ \textcolor{preprocessor}{\#define\ \_I2C\_ROUTE\_SCLPEN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ 0x2UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00686\ \textcolor{preprocessor}{\#define\ \_I2C\_ROUTE\_SCLPEN\_DEFAULT\ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00687\ \textcolor{preprocessor}{\#define\ I2C\_ROUTE\_SCLPEN\_DEFAULT\ \ \ \ \ \ \ \ \ \ (\_I2C\_ROUTE\_SCLPEN\_DEFAULT\ <<\ 1)\ \ \ }}
+\DoxyCodeLine{00688\ \textcolor{preprocessor}{\#define\ \_I2C\_ROUTE\_LOCATION\_SHIFT\ \ \ \ \ \ \ \ \ 8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00689\ \textcolor{preprocessor}{\#define\ \_I2C\_ROUTE\_LOCATION\_MASK\ \ \ \ \ \ \ \ \ \ 0x700UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00690\ \textcolor{preprocessor}{\#define\ \_I2C\_ROUTE\_LOCATION\_LOC0\ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00691\ \textcolor{preprocessor}{\#define\ \_I2C\_ROUTE\_LOCATION\_DEFAULT\ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00692\ \textcolor{preprocessor}{\#define\ \_I2C\_ROUTE\_LOCATION\_LOC1\ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00693\ \textcolor{preprocessor}{\#define\ \_I2C\_ROUTE\_LOCATION\_LOC2\ \ \ \ \ \ \ \ \ \ 0x00000002UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00694\ \textcolor{preprocessor}{\#define\ \_I2C\_ROUTE\_LOCATION\_LOC3\ \ \ \ \ \ \ \ \ \ 0x00000003UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00695\ \textcolor{preprocessor}{\#define\ \_I2C\_ROUTE\_LOCATION\_LOC4\ \ \ \ \ \ \ \ \ \ 0x00000004UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00696\ \textcolor{preprocessor}{\#define\ \_I2C\_ROUTE\_LOCATION\_LOC5\ \ \ \ \ \ \ \ \ \ 0x00000005UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00697\ \textcolor{preprocessor}{\#define\ \_I2C\_ROUTE\_LOCATION\_LOC6\ \ \ \ \ \ \ \ \ \ 0x00000006UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00698\ \textcolor{preprocessor}{\#define\ I2C\_ROUTE\_LOCATION\_LOC0\ \ \ \ \ \ \ \ \ \ \ (\_I2C\_ROUTE\_LOCATION\_LOC0\ <<\ 8)\ \ \ \ }}
+\DoxyCodeLine{00699\ \textcolor{preprocessor}{\#define\ I2C\_ROUTE\_LOCATION\_DEFAULT\ \ \ \ \ \ \ \ (\_I2C\_ROUTE\_LOCATION\_DEFAULT\ <<\ 8)\ }}
+\DoxyCodeLine{00700\ \textcolor{preprocessor}{\#define\ I2C\_ROUTE\_LOCATION\_LOC1\ \ \ \ \ \ \ \ \ \ \ (\_I2C\_ROUTE\_LOCATION\_LOC1\ <<\ 8)\ \ \ \ }}
+\DoxyCodeLine{00701\ \textcolor{preprocessor}{\#define\ I2C\_ROUTE\_LOCATION\_LOC2\ \ \ \ \ \ \ \ \ \ \ (\_I2C\_ROUTE\_LOCATION\_LOC2\ <<\ 8)\ \ \ \ }}
+\DoxyCodeLine{00702\ \textcolor{preprocessor}{\#define\ I2C\_ROUTE\_LOCATION\_LOC3\ \ \ \ \ \ \ \ \ \ \ (\_I2C\_ROUTE\_LOCATION\_LOC3\ <<\ 8)\ \ \ \ }}
+\DoxyCodeLine{00703\ \textcolor{preprocessor}{\#define\ I2C\_ROUTE\_LOCATION\_LOC4\ \ \ \ \ \ \ \ \ \ \ (\_I2C\_ROUTE\_LOCATION\_LOC4\ <<\ 8)\ \ \ \ }}
+\DoxyCodeLine{00704\ \textcolor{preprocessor}{\#define\ I2C\_ROUTE\_LOCATION\_LOC5\ \ \ \ \ \ \ \ \ \ \ (\_I2C\_ROUTE\_LOCATION\_LOC5\ <<\ 8)\ \ \ \ }}
+\DoxyCodeLine{00705\ \textcolor{preprocessor}{\#define\ I2C\_ROUTE\_LOCATION\_LOC6\ \ \ \ \ \ \ \ \ \ \ (\_I2C\_ROUTE\_LOCATION\_LOC6\ <<\ 8)\ \ \ \ }}
+
+\end{DoxyCode}

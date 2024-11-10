@@ -1,0 +1,103 @@
+\doxysection{sl\+\_\+uartdrv\+\_\+usart\+\_\+vcom\+\_\+config.\+h}
+\hypertarget{sl__uartdrv__usart__vcom__config_8h_source}{}\label{sl__uartdrv__usart__vcom__config_8h_source}\index{config/sl\_uartdrv\_usart\_vcom\_config.h@{config/sl\_uartdrv\_usart\_vcom\_config.h}}
+\mbox{\hyperlink{sl__uartdrv__usart__vcom__config_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#ifndef\ SL\_UARTDRV\_USART\_VCOM\_CONFIG\_H}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ SL\_UARTDRV\_USART\_VCOM\_CONFIG\_H}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{em__usart_8h}{em\_usart.h}}"{}}}
+\DoxyCodeLine{00035\ \textcolor{comment}{//\ <<<\ Use\ Configuration\ Wizard\ in\ Context\ Menu\ >>>}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{comment}{//\ <h>\ UART\ settings}}
+\DoxyCodeLine{00038\ \textcolor{comment}{//\ <o\ SL\_UARTDRV\_USART\_VCOM\_BAUDRATE>\ Baud\ rate}}
+\DoxyCodeLine{00039\ \textcolor{comment}{//\ <i>\ Default:\ 115200}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ SL\_UARTDRV\_USART\_VCOM\_BAUDRATE\ \ \ \ \ \ \ \ 115200}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{comment}{//\ <o\ SL\_UARTDRV\_USART\_VCOM\_PARITY>\ Parity\ mode\ to\ use}}
+\DoxyCodeLine{00043\ \textcolor{comment}{//\ <usartNoParity=>\ No\ Parity}}
+\DoxyCodeLine{00044\ \textcolor{comment}{//\ <usartEvenParity=>\ Even\ parity}}
+\DoxyCodeLine{00045\ \textcolor{comment}{//\ <usartOddParity=>\ Odd\ parity}}
+\DoxyCodeLine{00046\ \textcolor{comment}{//\ <i>\ Default:\ usartNoParity}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ SL\_UARTDRV\_USART\_VCOM\_PARITY\ \ \ \ \ \ \ \ \ \ usartNoParity}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{comment}{//\ <o\ SL\_UARTDRV\_USART\_VCOM\_STOP\_BITS>\ Number\ of\ stop\ bits\ to\ use.}}
+\DoxyCodeLine{00050\ \textcolor{comment}{//\ <usartStopbits0p5=>\ 0.5\ stop\ bits}}
+\DoxyCodeLine{00051\ \textcolor{comment}{//\ <usartStopbits1=>\ 1\ stop\ bits}}
+\DoxyCodeLine{00052\ \textcolor{comment}{//\ <usartStopbits1p5=>\ 1.5\ stop\ bits}}
+\DoxyCodeLine{00053\ \textcolor{comment}{//\ <usartStopbits2=>\ 2\ stop\ bits}}
+\DoxyCodeLine{00054\ \textcolor{comment}{//\ <i>\ Default:\ usartStopbits1}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#define\ SL\_UARTDRV\_USART\_VCOM\_STOP\_BITS\ \ \ \ \ \ \ usartStopbits1}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{comment}{//\ <o\ SL\_UARTDRV\_USART\_VCOM\_FLOW\_CONTROL\_TYPE>\ Flow\ control\ method}}
+\DoxyCodeLine{00058\ \textcolor{comment}{//\ <uartdrvFlowControlNone=>\ None}}
+\DoxyCodeLine{00059\ \textcolor{comment}{//\ <uartdrvFlowControlSw=>\ Software\ XON/XOFF}}
+\DoxyCodeLine{00060\ \textcolor{comment}{//\ <uartdrvFlowControlHw=>\ nRTS/nCTS\ hardware\ handshake}}
+\DoxyCodeLine{00061\ \textcolor{comment}{//\ <i>\ Default:\ uartdrvFlowControlHw}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#define\ SL\_UARTDRV\_USART\_VCOM\_FLOW\_CONTROL\_TYPE\ uartdrvFlowControlNone}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{comment}{//\ <o\ SL\_UARTDRV\_USART\_VCOM\_OVERSAMPLING>\ Oversampling\ selection}}
+\DoxyCodeLine{00065\ \textcolor{comment}{//\ <usartOVS16=>\ 16x\ oversampling}}
+\DoxyCodeLine{00066\ \textcolor{comment}{//\ <usartOVS8=>\ 8x\ oversampling}}
+\DoxyCodeLine{00067\ \textcolor{comment}{//\ <usartOVS6=>\ 6x\ oversampling}}
+\DoxyCodeLine{00068\ \textcolor{comment}{//\ <usartOVS4=>\ 4x\ oversampling}}
+\DoxyCodeLine{00069\ \textcolor{comment}{//\ <i>\ Default:\ usartOVS16}}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#define\ SL\_UARTDRV\_USART\_VCOM\_OVERSAMPLING\ \ \ \ \ \ usartOVS4}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{comment}{//\ <o\ SL\_UARTDRV\_USART\_VCOM\_MVDIS>\ Majority\ vote\ disable\ for\ 16x,\ 8x\ and\ 6x\ oversampling\ modes}}
+\DoxyCodeLine{00073\ \textcolor{comment}{//\ <true=>\ True}}
+\DoxyCodeLine{00074\ \textcolor{comment}{//\ <false=>\ False}}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#define\ SL\_UARTDRV\_USART\_VCOM\_MVDIS\ \ \ \ \ \ \ \ \ \ \ \ \ false}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{comment}{//\ <o\ SL\_UARTDRV\_USART\_VCOM\_RX\_BUFFER\_SIZE>\ Size\ of\ the\ receive\ operation\ queue}}
+\DoxyCodeLine{00078\ \textcolor{comment}{//\ <i>\ Default:\ 6}}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#define\ SL\_UARTDRV\_USART\_VCOM\_RX\_BUFFER\_SIZE\ \ 6}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \textcolor{comment}{//\ <o\ SL\_UARTDRV\_USART\_VCOM\_TX\_BUFFER\_SIZE>\ Size\ of\ the\ transmit\ operation\ queue}}
+\DoxyCodeLine{00082\ \textcolor{comment}{//\ <i>\ Default:\ 6}}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#define\ SL\_UARTDRV\_USART\_VCOM\_TX\_BUFFER\_SIZE\ 6}}
+\DoxyCodeLine{00084\ \textcolor{comment}{//\ </h>}}
+\DoxyCodeLine{00085\ \textcolor{comment}{//\ <<<\ end\ of\ configuration\ section\ >>>}}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \textcolor{comment}{//\ <<<\ sl:start\ pin\_tool\ >>>}}
+\DoxyCodeLine{00088\ \textcolor{comment}{//\ <usart\ signal=TX,RX>\ SL\_UARTDRV\_USART\_VCOM}}
+\DoxyCodeLine{00089\ \textcolor{comment}{//\ \$[USART\_SL\_UARTDRV\_USART\_VCOM]}}
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#ifndef\ SL\_UARTDRV\_USART\_VCOM\_PERIPHERAL\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#define\ SL\_UARTDRV\_USART\_VCOM\_PERIPHERAL\ \ \ \ \ \ \ \ \ UART0}}
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#ifndef\ SL\_UARTDRV\_USART\_VCOM\_PERIPHERAL\_NO\ \ \ \ \ }}
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\#define\ SL\_UARTDRV\_USART\_VCOM\_PERIPHERAL\_NO\ \ \ \ \ \ 0}}
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00096\ }
+\DoxyCodeLine{00097\ \textcolor{comment}{//\ UART0\ TX\ on\ PE0}}
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\#ifndef\ SL\_UARTDRV\_USART\_VCOM\_TX\_PORT\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#define\ SL\_UARTDRV\_USART\_VCOM\_TX\_PORT\ \ \ \ \ \ \ \ \ \ \ \ gpioPortE}}
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#ifndef\ SL\_UARTDRV\_USART\_VCOM\_TX\_PIN\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#define\ SL\_UARTDRV\_USART\_VCOM\_TX\_PIN\ \ \ \ \ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00103\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#ifndef\ SL\_UARTDRV\_USART\_VCOM\_ROUTE\_LOC\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#define\ SL\_UARTDRV\_USART\_VCOM\_ROUTE\_LOC\ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \textcolor{comment}{//\ UART0\ RX\ on\ PE1}}
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\#ifndef\ SL\_UARTDRV\_USART\_VCOM\_RX\_PORT\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00110\ \textcolor{preprocessor}{\#define\ SL\_UARTDRV\_USART\_VCOM\_RX\_PORT\ \ \ \ \ \ \ \ \ \ \ \ gpioPortE}}
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#ifndef\ SL\_UARTDRV\_USART\_VCOM\_RX\_PIN\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#define\ SL\_UARTDRV\_USART\_VCOM\_RX\_PIN\ \ \ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00115\ \textcolor{comment}{//\ [USART\_SL\_UARTDRV\_USART\_VCOM]\$}}
+\DoxyCodeLine{00116\ \textcolor{comment}{//\ <gpio>\ SL\_UARTDRV\_USART\_VCOM\_CTS}}
+\DoxyCodeLine{00117\ \textcolor{comment}{//\ \$[GPIO\_SL\_UARTDRV\_USART\_VCOM\_CTS]}}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00119\ \textcolor{comment}{//\ [GPIO\_SL\_UARTDRV\_USART\_VCOM\_CTS]\$}}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00121\ \textcolor{comment}{//\ <gpio>\ SL\_UARTDRV\_USART\_VCOM\_RTS}}
+\DoxyCodeLine{00122\ \textcolor{comment}{//\ \$[GPIO\_SL\_UARTDRV\_USART\_VCOM\_RTS]}}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \textcolor{comment}{//\ [GPIO\_SL\_UARTDRV\_USART\_VCOM\_RTS]\$}}
+\DoxyCodeLine{00125\ \textcolor{comment}{//\ <<<\ sl:end\ pin\_tool\ >>>}}
+\DoxyCodeLine{00126\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SL\_UARTDRV\_USART\_VCOM\_CONFIG\_H}}
+
+\end{DoxyCode}

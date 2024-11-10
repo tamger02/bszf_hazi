@@ -1,0 +1,26 @@
+\doxysection{dmadrv\+\_\+config.\+h}
+\hypertarget{dmadrv__config_8h_source}{}\label{dmadrv__config_8h_source}\index{config/dmadrv\_config.h@{config/dmadrv\_config.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ DMADRV\_CONFIG\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ DMADRV\_CONFIG\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{comment}{//\ <<<\ Use\ Configuration\ Wizard\ in\ Context\ Menu\ >>>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{comment}{//\ <o\ EMDRV\_DMADRV\_DMA\_IRQ\_PRIORITY>\ DMA\ interrupt\ priority\ <0-\/7>}}
+\DoxyCodeLine{00007\ \textcolor{comment}{//\ <i>\ Priority\ of\ the\ DMA\ interrupt.\ Smaller\ number\ equals\ higher\ priority.}}
+\DoxyCodeLine{00008\ \textcolor{comment}{//\ <i>\ Default:\ 4}}
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ EMDRV\_DMADRV\_DMA\_IRQ\_PRIORITY\ 4}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{comment}{//\ <o\ EMDRV\_DMADRV\_DMA\_CH\_COUNT>\ Number\ of\ available\ channels\ <1-\/12>}}
+\DoxyCodeLine{00012\ \textcolor{comment}{//\ <i>\ Number\ of\ DMA\ channels\ supported\ by\ the\ driver.\ A\ lower\ channel\ count}}
+\DoxyCodeLine{00013\ \textcolor{comment}{//\ <i>\ will\ reduce\ RAM\ memory\ footprint.\ The\ default\ is\ to\ support\ all\ channels}}
+\DoxyCodeLine{00014\ \textcolor{comment}{//\ <i>\ on\ the\ device.}}
+\DoxyCodeLine{00015\ \textcolor{comment}{//\ <i>\ Default:\ 12}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ EMDRV\_DMADRV\_DMA\_CH\_COUNT\ 12}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{comment}{//\ <<<\ end\ of\ configuration\ section\ >>>}}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ DMADRV\_CONFIG\_H}}
+
+\end{DoxyCode}

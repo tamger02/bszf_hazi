@@ -1,0 +1,1364 @@
+\doxysection{Sleep Timer}
+\hypertarget{group__sleeptimer}{}\label{group__sleeptimer}\index{Sleep Timer@{Sleep Timer}}
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structsl__sleeptimer__timer__handle}{sl\+\_\+sleeptimer\+\_\+timer\+\_\+handle}}
+\begin{DoxyCompactList}\small\item\em Timer structure for sleeptimer. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structtime__date}{time\+\_\+date}}
+\begin{DoxyCompactList}\small\item\em Time and Date structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{group__sleeptimer_gaf41c2bc4240e5b819fc7f285f62172a2}\label{group__sleeptimer_gaf41c2bc4240e5b819fc7f285f62172a2} 
+typedef uint32\+\_\+t {\bfseries sl\+\_\+sleeptimer\+\_\+timestamp\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Timestamp, wall clock time in seconds. \end{DoxyCompactList}\item 
+\Hypertarget{group__sleeptimer_ga5d4d9e5fe98012d2cffedb00caa9c91b}\label{group__sleeptimer_ga5d4d9e5fe98012d2cffedb00caa9c91b} 
+typedef uint64\+\_\+t {\bfseries sl\+\_\+sleeptimer\+\_\+timestamp\+\_\+64\+\_\+t}
+\begin{DoxyCompactList}\small\item\em sl sleeptimer timestamp 64 t \end{DoxyCompactList}\item 
+\Hypertarget{group__sleeptimer_ga27148a3d37b9f3728cbd18b56b4c9979}\label{group__sleeptimer_ga27148a3d37b9f3728cbd18b56b4c9979} 
+typedef int32\+\_\+t {\bfseries sl\+\_\+sleeptimer\+\_\+time\+\_\+zone\+\_\+offset\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Time zone offset from UTC(second). \end{DoxyCompactList}\item 
+\Hypertarget{group__sleeptimer_ga5a10efc34059ca887191fbb67ac064b4}\label{group__sleeptimer_ga5a10efc34059ca887191fbb67ac064b4} 
+typedef struct \mbox{\hyperlink{structsl__sleeptimer__timer__handle}{sl\+\_\+sleeptimer\+\_\+timer\+\_\+handle}} {\bfseries sl\+\_\+sleeptimer\+\_\+timer\+\_\+handle\+\_\+t}
+\item 
+typedef void(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__sleeptimer_ga9049589e4153204fb3e97cbe1ecda89b}{sl\+\_\+sleeptimer\+\_\+timer\+\_\+callback\+\_\+t}}) (\mbox{\hyperlink{structsl__sleeptimer__timer__handle}{sl\+\_\+sleeptimer\+\_\+timer\+\_\+handle\+\_\+t}} \texorpdfstring{$\ast$}{*}handle, void \texorpdfstring{$\ast$}{*}data)
+\item 
+\Hypertarget{group__sleeptimer_ga8b17c7e32e3ad35bb6b0a9c2001e8d64}\label{group__sleeptimer_ga8b17c7e32e3ad35bb6b0a9c2001e8d64} 
+typedef struct \mbox{\hyperlink{structtime__date}{time\+\_\+date}} {\bfseries sl\+\_\+sleeptimer\+\_\+date\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Time and Date structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{group__sleeptimer_ga147e840cf5d02d54a06e16bccb8e088d}\label{group__sleeptimer_ga147e840cf5d02d54a06e16bccb8e088d} 
+{\bfseries SLEEPTIMER\+\_\+\+ENUM} (sl\+\_\+sleeptimer\+\_\+month\+\_\+t)
+\begin{DoxyCompactList}\small\item\em Month enum. \end{DoxyCompactList}\item 
+\Hypertarget{group__sleeptimer_gae1c4c08acb9f670ceb295a6eca059d31}\label{group__sleeptimer_gae1c4c08acb9f670ceb295a6eca059d31} 
+{\bfseries SLEEPTIMER\+\_\+\+ENUM} (sl\+\_\+sleeptimer\+\_\+week\+Day\+\_\+t)
+\begin{DoxyCompactList}\small\item\em Week Day enum. \end{DoxyCompactList}\item 
+sl\+\_\+status\+\_\+t \mbox{\hyperlink{group__sleeptimer_gae661a78719a6acc014efa15216ae4a54}{sl\+\_\+sleeptimer\+\_\+init}} (void)
+\item 
+sl\+\_\+status\+\_\+t \mbox{\hyperlink{group__sleeptimer_ga43c32bdb2a9fcfbe279563a9fd689711}{sl\+\_\+sleeptimer\+\_\+start\+\_\+timer}} (\mbox{\hyperlink{structsl__sleeptimer__timer__handle}{sl\+\_\+sleeptimer\+\_\+timer\+\_\+handle\+\_\+t}} \texorpdfstring{$\ast$}{*}handle, uint32\+\_\+t timeout, \mbox{\hyperlink{group__sleeptimer_ga9049589e4153204fb3e97cbe1ecda89b}{sl\+\_\+sleeptimer\+\_\+timer\+\_\+callback\+\_\+t}} callback, void \texorpdfstring{$\ast$}{*}callback\+\_\+data, uint8\+\_\+t priority, uint16\+\_\+t option\+\_\+flags)
+\item 
+sl\+\_\+status\+\_\+t \mbox{\hyperlink{group__sleeptimer_gaacd5a666731a0ba4823107e552e23e69}{sl\+\_\+sleeptimer\+\_\+restart\+\_\+timer}} (\mbox{\hyperlink{structsl__sleeptimer__timer__handle}{sl\+\_\+sleeptimer\+\_\+timer\+\_\+handle\+\_\+t}} \texorpdfstring{$\ast$}{*}handle, uint32\+\_\+t timeout, \mbox{\hyperlink{group__sleeptimer_ga9049589e4153204fb3e97cbe1ecda89b}{sl\+\_\+sleeptimer\+\_\+timer\+\_\+callback\+\_\+t}} callback, void \texorpdfstring{$\ast$}{*}callback\+\_\+data, uint8\+\_\+t priority, uint16\+\_\+t option\+\_\+flags)
+\item 
+sl\+\_\+status\+\_\+t \mbox{\hyperlink{group__sleeptimer_ga2ceb1b76334902525dd32e937e90bb16}{sl\+\_\+sleeptimer\+\_\+start\+\_\+periodic\+\_\+timer}} (\mbox{\hyperlink{structsl__sleeptimer__timer__handle}{sl\+\_\+sleeptimer\+\_\+timer\+\_\+handle\+\_\+t}} \texorpdfstring{$\ast$}{*}handle, uint32\+\_\+t timeout, \mbox{\hyperlink{group__sleeptimer_ga9049589e4153204fb3e97cbe1ecda89b}{sl\+\_\+sleeptimer\+\_\+timer\+\_\+callback\+\_\+t}} callback, void \texorpdfstring{$\ast$}{*}callback\+\_\+data, uint8\+\_\+t priority, uint16\+\_\+t option\+\_\+flags)
+\item 
+sl\+\_\+status\+\_\+t \mbox{\hyperlink{group__sleeptimer_gaf54408a7f172b684de33d9a7f4e01be9}{sl\+\_\+sleeptimer\+\_\+restart\+\_\+periodic\+\_\+timer}} (\mbox{\hyperlink{structsl__sleeptimer__timer__handle}{sl\+\_\+sleeptimer\+\_\+timer\+\_\+handle\+\_\+t}} \texorpdfstring{$\ast$}{*}handle, uint32\+\_\+t timeout, \mbox{\hyperlink{group__sleeptimer_ga9049589e4153204fb3e97cbe1ecda89b}{sl\+\_\+sleeptimer\+\_\+timer\+\_\+callback\+\_\+t}} callback, void \texorpdfstring{$\ast$}{*}callback\+\_\+data, uint8\+\_\+t priority, uint16\+\_\+t option\+\_\+flags)
+\item 
+sl\+\_\+status\+\_\+t \mbox{\hyperlink{group__sleeptimer_ga1f4f25aa754cd35214dba9762450b0ca}{sl\+\_\+sleeptimer\+\_\+stop\+\_\+timer}} (\mbox{\hyperlink{structsl__sleeptimer__timer__handle}{sl\+\_\+sleeptimer\+\_\+timer\+\_\+handle\+\_\+t}} \texorpdfstring{$\ast$}{*}handle)
+\item 
+sl\+\_\+status\+\_\+t \mbox{\hyperlink{group__sleeptimer_gac0236c1c353317c41d577867e7429874}{sl\+\_\+sleeptimer\+\_\+is\+\_\+timer\+\_\+running}} (\mbox{\hyperlink{structsl__sleeptimer__timer__handle}{sl\+\_\+sleeptimer\+\_\+timer\+\_\+handle\+\_\+t}} \texorpdfstring{$\ast$}{*}handle, bool \texorpdfstring{$\ast$}{*}running)
+\item 
+sl\+\_\+status\+\_\+t \mbox{\hyperlink{group__sleeptimer_ga6a06acb331e2e3c0efeb83f42a4d9c16}{sl\+\_\+sleeptimer\+\_\+get\+\_\+timer\+\_\+time\+\_\+remaining}} (\mbox{\hyperlink{structsl__sleeptimer__timer__handle}{sl\+\_\+sleeptimer\+\_\+timer\+\_\+handle\+\_\+t}} \texorpdfstring{$\ast$}{*}handle, uint32\+\_\+t \texorpdfstring{$\ast$}{*}time)
+\item 
+sl\+\_\+status\+\_\+t \mbox{\hyperlink{group__sleeptimer_gaf96ccea3e4d1727dc2fd2fa98f94ccb1}{sl\+\_\+sleeptimer\+\_\+get\+\_\+remaining\+\_\+time\+\_\+of\+\_\+first\+\_\+timer}} (uint16\+\_\+t option\+\_\+flags, uint32\+\_\+t \texorpdfstring{$\ast$}{*}time\+\_\+remaining)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{group__sleeptimer_gae0397d420800b7c2d2afd5bbb9710067}{sl\+\_\+sleeptimer\+\_\+get\+\_\+tick\+\_\+count}} (void)
+\item 
+uint64\+\_\+t \mbox{\hyperlink{group__sleeptimer_gaaf928eeb3dad0d43098b3aed9049959a}{sl\+\_\+sleeptimer\+\_\+get\+\_\+tick\+\_\+count64}} (void)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{group__sleeptimer_ga69085e47b9cc43ac0cfdc08783c13aed}{sl\+\_\+sleeptimer\+\_\+get\+\_\+timer\+\_\+frequency}} (void)
+\item 
+sl\+\_\+status\+\_\+t \mbox{\hyperlink{group__sleeptimer_ga157d43fdb64cb0d4afc864155bcf9bc8}{sl\+\_\+sleeptimer\+\_\+convert\+\_\+time\+\_\+to\+\_\+date}} (\mbox{\hyperlink{group__sleeptimer_gaf41c2bc4240e5b819fc7f285f62172a2}{sl\+\_\+sleeptimer\+\_\+timestamp\+\_\+t}} time, \mbox{\hyperlink{group__sleeptimer_ga27148a3d37b9f3728cbd18b56b4c9979}{sl\+\_\+sleeptimer\+\_\+time\+\_\+zone\+\_\+offset\+\_\+t}} time\+\_\+zone, \mbox{\hyperlink{group__sleeptimer_ga8b17c7e32e3ad35bb6b0a9c2001e8d64}{sl\+\_\+sleeptimer\+\_\+date\+\_\+t}} \texorpdfstring{$\ast$}{*}date)
+\item 
+sl\+\_\+status\+\_\+t \mbox{\hyperlink{group__sleeptimer_gadc9658b94ee4e8f07912e6ad41ac0ad2}{sl\+\_\+sleeptimer\+\_\+convert\+\_\+time\+\_\+to\+\_\+date\+\_\+64}} (\mbox{\hyperlink{group__sleeptimer_ga5d4d9e5fe98012d2cffedb00caa9c91b}{sl\+\_\+sleeptimer\+\_\+timestamp\+\_\+64\+\_\+t}} time, \mbox{\hyperlink{group__sleeptimer_ga27148a3d37b9f3728cbd18b56b4c9979}{sl\+\_\+sleeptimer\+\_\+time\+\_\+zone\+\_\+offset\+\_\+t}} time\+\_\+zone, \mbox{\hyperlink{group__sleeptimer_ga8b17c7e32e3ad35bb6b0a9c2001e8d64}{sl\+\_\+sleeptimer\+\_\+date\+\_\+t}} \texorpdfstring{$\ast$}{*}date)
+\item 
+sl\+\_\+status\+\_\+t \mbox{\hyperlink{group__sleeptimer_gab3c762fbb3fed88f5f256d4c9a03fc67}{sl\+\_\+sleeptimer\+\_\+convert\+\_\+date\+\_\+to\+\_\+time}} (\mbox{\hyperlink{group__sleeptimer_ga8b17c7e32e3ad35bb6b0a9c2001e8d64}{sl\+\_\+sleeptimer\+\_\+date\+\_\+t}} \texorpdfstring{$\ast$}{*}date, \mbox{\hyperlink{group__sleeptimer_gaf41c2bc4240e5b819fc7f285f62172a2}{sl\+\_\+sleeptimer\+\_\+timestamp\+\_\+t}} \texorpdfstring{$\ast$}{*}time)
+\item 
+sl\+\_\+status\+\_\+t \mbox{\hyperlink{group__sleeptimer_ga600725ddd39a7ef36334f6eac0879001}{sl\+\_\+sleeptimer\+\_\+convert\+\_\+date\+\_\+to\+\_\+time\+\_\+64}} (\mbox{\hyperlink{group__sleeptimer_ga8b17c7e32e3ad35bb6b0a9c2001e8d64}{sl\+\_\+sleeptimer\+\_\+date\+\_\+t}} \texorpdfstring{$\ast$}{*}date, \mbox{\hyperlink{group__sleeptimer_ga5d4d9e5fe98012d2cffedb00caa9c91b}{sl\+\_\+sleeptimer\+\_\+timestamp\+\_\+64\+\_\+t}} \texorpdfstring{$\ast$}{*}time)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{group__sleeptimer_ga28561cd8d4b4e31153d3dc02e68f2645}{sl\+\_\+sleeptimer\+\_\+convert\+\_\+date\+\_\+to\+\_\+str}} (char \texorpdfstring{$\ast$}{*}str, size\+\_\+t size, const uint8\+\_\+t \texorpdfstring{$\ast$}{*}format, \mbox{\hyperlink{group__sleeptimer_ga8b17c7e32e3ad35bb6b0a9c2001e8d64}{sl\+\_\+sleeptimer\+\_\+date\+\_\+t}} \texorpdfstring{$\ast$}{*}date)
+\item 
+void \mbox{\hyperlink{group__sleeptimer_gafbd748d9a4654e9ae474a7020a5d9813}{sl\+\_\+sleeptimer\+\_\+set\+\_\+tz}} (\mbox{\hyperlink{group__sleeptimer_ga27148a3d37b9f3728cbd18b56b4c9979}{sl\+\_\+sleeptimer\+\_\+time\+\_\+zone\+\_\+offset\+\_\+t}} offset)
+\item 
+\mbox{\hyperlink{group__sleeptimer_ga27148a3d37b9f3728cbd18b56b4c9979}{sl\+\_\+sleeptimer\+\_\+time\+\_\+zone\+\_\+offset\+\_\+t}} \mbox{\hyperlink{group__sleeptimer_ga91ebac6960e114d933e1ef7c4f32294a}{sl\+\_\+sleeptimer\+\_\+get\+\_\+tz}} (void)
+\item 
+\mbox{\hyperlink{group__sleeptimer_gaf41c2bc4240e5b819fc7f285f62172a2}{sl\+\_\+sleeptimer\+\_\+timestamp\+\_\+t}} \mbox{\hyperlink{group__sleeptimer_ga4d79ef7aa10606814bcc21053bfca558}{sl\+\_\+sleeptimer\+\_\+get\+\_\+time}} (void)
+\item 
+\mbox{\hyperlink{group__sleeptimer_ga5d4d9e5fe98012d2cffedb00caa9c91b}{sl\+\_\+sleeptimer\+\_\+timestamp\+\_\+64\+\_\+t}} \mbox{\hyperlink{group__sleeptimer_ga8e99647fc3da11223cf4e65b7ad8c52d}{sl\+\_\+sleeptimer\+\_\+get\+\_\+time\+\_\+64}} (void)
+\item 
+sl\+\_\+status\+\_\+t \mbox{\hyperlink{group__sleeptimer_gafbd64c7fbf7b0dfb7947a6f7bf288dca}{sl\+\_\+sleeptimer\+\_\+set\+\_\+time}} (\mbox{\hyperlink{group__sleeptimer_gaf41c2bc4240e5b819fc7f285f62172a2}{sl\+\_\+sleeptimer\+\_\+timestamp\+\_\+t}} time)
+\item 
+sl\+\_\+status\+\_\+t \mbox{\hyperlink{group__sleeptimer_ga63a00c3c2b137b68f66d47ae77f0d26b}{sl\+\_\+sleeptimer\+\_\+set\+\_\+time\+\_\+64}} (\mbox{\hyperlink{group__sleeptimer_ga5d4d9e5fe98012d2cffedb00caa9c91b}{sl\+\_\+sleeptimer\+\_\+timestamp\+\_\+64\+\_\+t}} time)
+\item 
+sl\+\_\+status\+\_\+t \mbox{\hyperlink{group__sleeptimer_ga2955c70feb8e0082ba54e30d2629d840}{sl\+\_\+sleeptimer\+\_\+get\+\_\+datetime}} (\mbox{\hyperlink{group__sleeptimer_ga8b17c7e32e3ad35bb6b0a9c2001e8d64}{sl\+\_\+sleeptimer\+\_\+date\+\_\+t}} \texorpdfstring{$\ast$}{*}date)
+\item 
+sl\+\_\+status\+\_\+t \mbox{\hyperlink{group__sleeptimer_ga840c8ef8049b364a45899320a9f0c8bf}{sl\+\_\+sleeptimer\+\_\+set\+\_\+datetime}} (\mbox{\hyperlink{group__sleeptimer_ga8b17c7e32e3ad35bb6b0a9c2001e8d64}{sl\+\_\+sleeptimer\+\_\+date\+\_\+t}} \texorpdfstring{$\ast$}{*}date)
+\item 
+sl\+\_\+status\+\_\+t \mbox{\hyperlink{group__sleeptimer_ga726d2e276fbac02b2246a446c3dcf755}{sl\+\_\+sleeptimer\+\_\+build\+\_\+datetime}} (\mbox{\hyperlink{group__sleeptimer_ga8b17c7e32e3ad35bb6b0a9c2001e8d64}{sl\+\_\+sleeptimer\+\_\+date\+\_\+t}} \texorpdfstring{$\ast$}{*}date, uint16\+\_\+t year, sl\+\_\+sleeptimer\+\_\+month\+\_\+t month, uint8\+\_\+t month\+\_\+day, uint8\+\_\+t hour, uint8\+\_\+t min, uint8\+\_\+t sec, \mbox{\hyperlink{group__sleeptimer_ga27148a3d37b9f3728cbd18b56b4c9979}{sl\+\_\+sleeptimer\+\_\+time\+\_\+zone\+\_\+offset\+\_\+t}} tz\+Offset)
+\item 
+sl\+\_\+status\+\_\+t \mbox{\hyperlink{group__sleeptimer_ga7290544e59a3a9700a0dc4a808e014a3}{sl\+\_\+sleeptimer\+\_\+build\+\_\+datetime\+\_\+64}} (\mbox{\hyperlink{group__sleeptimer_ga8b17c7e32e3ad35bb6b0a9c2001e8d64}{sl\+\_\+sleeptimer\+\_\+date\+\_\+t}} \texorpdfstring{$\ast$}{*}date, uint16\+\_\+t year, sl\+\_\+sleeptimer\+\_\+month\+\_\+t month, uint8\+\_\+t month\+\_\+day, uint8\+\_\+t hour, uint8\+\_\+t min, uint8\+\_\+t sec, \mbox{\hyperlink{group__sleeptimer_ga27148a3d37b9f3728cbd18b56b4c9979}{sl\+\_\+sleeptimer\+\_\+time\+\_\+zone\+\_\+offset\+\_\+t}} tz\+Offset)
+\item 
+sl\+\_\+status\+\_\+t \mbox{\hyperlink{group__sleeptimer_gaf63bbad4e29c0b655b3d210bf3b3b086}{sl\+\_\+sleeptimer\+\_\+convert\+\_\+unix\+\_\+time\+\_\+to\+\_\+ntp}} (\mbox{\hyperlink{group__sleeptimer_gaf41c2bc4240e5b819fc7f285f62172a2}{sl\+\_\+sleeptimer\+\_\+timestamp\+\_\+t}} time, uint32\+\_\+t \texorpdfstring{$\ast$}{*}ntp\+\_\+time)
+\item 
+sl\+\_\+status\+\_\+t \mbox{\hyperlink{group__sleeptimer_gaff086ed922350c8a4cffeed024d03871}{sl\+\_\+sleeptimer\+\_\+convert\+\_\+ntp\+\_\+time\+\_\+to\+\_\+unix}} (uint32\+\_\+t ntp\+\_\+time, \mbox{\hyperlink{group__sleeptimer_gaf41c2bc4240e5b819fc7f285f62172a2}{sl\+\_\+sleeptimer\+\_\+timestamp\+\_\+t}} \texorpdfstring{$\ast$}{*}time)
+\item 
+sl\+\_\+status\+\_\+t \mbox{\hyperlink{group__sleeptimer_gaa73b94e0c15a1e2cf6b3cb0b37120ed4}{sl\+\_\+sleeptimer\+\_\+convert\+\_\+unix\+\_\+time\+\_\+to\+\_\+zigbee}} (\mbox{\hyperlink{group__sleeptimer_gaf41c2bc4240e5b819fc7f285f62172a2}{sl\+\_\+sleeptimer\+\_\+timestamp\+\_\+t}} time, uint32\+\_\+t \texorpdfstring{$\ast$}{*}zigbee\+\_\+time)
+\item 
+sl\+\_\+status\+\_\+t \mbox{\hyperlink{group__sleeptimer_gaab1267658b2ac5e4249e87412ce7dede}{sl\+\_\+sleeptimer\+\_\+convert\+\_\+zigbee\+\_\+time\+\_\+to\+\_\+unix}} (uint32\+\_\+t zigbee\+\_\+time, \mbox{\hyperlink{group__sleeptimer_gaf41c2bc4240e5b819fc7f285f62172a2}{sl\+\_\+sleeptimer\+\_\+timestamp\+\_\+t}} \texorpdfstring{$\ast$}{*}time)
+\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE \mbox{\hyperlink{group__sleeptimer_ga27148a3d37b9f3728cbd18b56b4c9979}{sl\+\_\+sleeptimer\+\_\+time\+\_\+zone\+\_\+offset\+\_\+t}} \mbox{\hyperlink{group__sleeptimer_ga173dc0338a7c53c13c73a4859158b901}{sl\+\_\+sleeptimer\+\_\+set\+\_\+tz\+\_\+ahead\+\_\+utc}} (uint8\+\_\+t hours, uint8\+\_\+t minutes)
+\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE \mbox{\hyperlink{group__sleeptimer_ga27148a3d37b9f3728cbd18b56b4c9979}{sl\+\_\+sleeptimer\+\_\+time\+\_\+zone\+\_\+offset\+\_\+t}} \mbox{\hyperlink{group__sleeptimer_gafd73a4283a8c257f8e9c74f410679073}{sl\+\_\+sleeptimer\+\_\+set\+\_\+tz\+\_\+behind\+\_\+utc}} (uint8\+\_\+t hours, uint8\+\_\+t minutes)
+\item 
+void \mbox{\hyperlink{group__sleeptimer_ga7d7c4ae596755e3e5e3c0c0aa5e749b3}{sl\+\_\+sleeptimer\+\_\+delay\+\_\+millisecond}} (uint16\+\_\+t time\+\_\+ms)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{group__sleeptimer_gadf3a3eb05b0f5adbc7ee488113299f61}{sl\+\_\+sleeptimer\+\_\+ms\+\_\+to\+\_\+tick}} (uint16\+\_\+t time\+\_\+ms)
+\item 
+sl\+\_\+status\+\_\+t \mbox{\hyperlink{group__sleeptimer_ga7484d4be4877b94a687f4410fccc6271}{sl\+\_\+sleeptimer\+\_\+ms32\+\_\+to\+\_\+tick}} (uint32\+\_\+t time\+\_\+ms, uint32\+\_\+t \texorpdfstring{$\ast$}{*}tick)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{group__sleeptimer_ga3218039eab8d09231cc092fdc2a1dba5}{sl\+\_\+sleeptimer\+\_\+get\+\_\+max\+\_\+ms32\+\_\+conversion}} (void)
+\item 
+uint32\+\_\+t \mbox{\hyperlink{group__sleeptimer_ga2c2a2a131e401894d3e09513442667b5}{sl\+\_\+sleeptimer\+\_\+tick\+\_\+to\+\_\+ms}} (uint32\+\_\+t tick)
+\item 
+sl\+\_\+status\+\_\+t \mbox{\hyperlink{group__sleeptimer_ga6882d0577137d8e20ec531be45678fba}{sl\+\_\+sleeptimer\+\_\+tick64\+\_\+to\+\_\+ms}} (uint64\+\_\+t tick, uint64\+\_\+t \texorpdfstring{$\ast$}{*}ms)
+\item 
+bool \mbox{\hyperlink{group__sleeptimer_ga0b38592836a9a01d6f315d417d3d6cd9}{sl\+\_\+sleeptimer\+\_\+is\+\_\+power\+\_\+manager\+\_\+early\+\_\+restore\+\_\+timer\+\_\+latest\+\_\+to\+\_\+expire}} (void)
+\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE sl\+\_\+status\+\_\+t \mbox{\hyperlink{group__sleeptimer_gadcb95c35f7307d91df1818e71f6540d2}{sl\+\_\+sleeptimer\+\_\+start\+\_\+timer\+\_\+ms}} (\mbox{\hyperlink{structsl__sleeptimer__timer__handle}{sl\+\_\+sleeptimer\+\_\+timer\+\_\+handle\+\_\+t}} \texorpdfstring{$\ast$}{*}handle, uint32\+\_\+t timeout\+\_\+ms, \mbox{\hyperlink{group__sleeptimer_ga9049589e4153204fb3e97cbe1ecda89b}{sl\+\_\+sleeptimer\+\_\+timer\+\_\+callback\+\_\+t}} callback, void \texorpdfstring{$\ast$}{*}callback\+\_\+data, uint8\+\_\+t priority, uint16\+\_\+t option\+\_\+flags)
+\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE sl\+\_\+status\+\_\+t \mbox{\hyperlink{group__sleeptimer_gab3da1641c9bae0857ba3cffcbc41f21a}{sl\+\_\+sleeptimer\+\_\+restart\+\_\+timer\+\_\+ms}} (\mbox{\hyperlink{structsl__sleeptimer__timer__handle}{sl\+\_\+sleeptimer\+\_\+timer\+\_\+handle\+\_\+t}} \texorpdfstring{$\ast$}{*}handle, uint32\+\_\+t timeout\+\_\+ms, \mbox{\hyperlink{group__sleeptimer_ga9049589e4153204fb3e97cbe1ecda89b}{sl\+\_\+sleeptimer\+\_\+timer\+\_\+callback\+\_\+t}} callback, void \texorpdfstring{$\ast$}{*}callback\+\_\+data, uint8\+\_\+t priority, uint16\+\_\+t option\+\_\+flags)
+\item 
+sl\+\_\+status\+\_\+t \mbox{\hyperlink{group__sleeptimer_gae4639653b4bf4ed68049b2a12a6c6d83}{sl\+\_\+sleeptimer\+\_\+start\+\_\+periodic\+\_\+timer\+\_\+ms}} (\mbox{\hyperlink{structsl__sleeptimer__timer__handle}{sl\+\_\+sleeptimer\+\_\+timer\+\_\+handle\+\_\+t}} \texorpdfstring{$\ast$}{*}handle, uint32\+\_\+t timeout\+\_\+ms, \mbox{\hyperlink{group__sleeptimer_ga9049589e4153204fb3e97cbe1ecda89b}{sl\+\_\+sleeptimer\+\_\+timer\+\_\+callback\+\_\+t}} callback, void \texorpdfstring{$\ast$}{*}callback\+\_\+data, uint8\+\_\+t priority, uint16\+\_\+t option\+\_\+flags)
+\item 
+sl\+\_\+status\+\_\+t \mbox{\hyperlink{group__sleeptimer_ga1a44174e7a8eccbabde499875cb8462a}{sl\+\_\+sleeptimer\+\_\+restart\+\_\+periodic\+\_\+timer\+\_\+ms}} (\mbox{\hyperlink{structsl__sleeptimer__timer__handle}{sl\+\_\+sleeptimer\+\_\+timer\+\_\+handle\+\_\+t}} \texorpdfstring{$\ast$}{*}handle, uint32\+\_\+t timeout\+\_\+ms, \mbox{\hyperlink{group__sleeptimer_ga9049589e4153204fb3e97cbe1ecda89b}{sl\+\_\+sleeptimer\+\_\+timer\+\_\+callback\+\_\+t}} callback, void \texorpdfstring{$\ast$}{*}callback\+\_\+data, uint8\+\_\+t priority, uint16\+\_\+t option\+\_\+flags)
+\item 
+uint16\+\_\+t \mbox{\hyperlink{group__sleeptimer_ga4c13ce5d0c1fc60a1596201932bb6b5f}{sl\+\_\+sleeptimer\+\_\+get\+\_\+clock\+\_\+accuracy}} (void)
+\begin{DoxyCompactList}\small\item\em Gets the precision (in PPM) of the sleeptimer\textquotesingle{}s clock. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Sleep Timer can be used for creating timers which are tightly integrated with power management. The Power Manager requires precision timing to have all clocks ready on time, so that wakeup happens a little bit earlier to prepare the system to be ready at the right time. Sleep Timer uses one Hardware Timer and creates multiple software timer instances. It is important to note that when sleeptimer is used with WTIMER/\+TIMER, the MCU cannot go to EM2 energy mode because WTIMER/\+TIMER uses a high frequency clock source which is not retained in low energy mode.
+
+The sleeptimer.\+c and sleeptimer.\+h source files for the SLEEPTIMER device driver library are in the service/sleeptimer folder.
+
+~\newline
+ \hypertarget{group__sleeptimer_sleeptimer_intro}{}\doxysubsection{\texorpdfstring{Introduction}{Introduction}}\label{group__sleeptimer_sleeptimer_intro}
+The Sleeptimer driver provides software timers, delays, timekeeping and date functionalities using a low-\/frequency real-\/time clock peripheral.
+
+All Silicon Labs microcontrollers equipped with the RTC or RTCC peripheral are currently supported. Only one instance of this driver can be initialized by the application.
+
+~\newline
+ \hypertarget{group__sleeptimer_sleeptimer_functionalities_overview}{}\doxysubsection{\texorpdfstring{Functionalities overview}{Functionalities overview}}\label{group__sleeptimer_sleeptimer_functionalities_overview}
+~\newline
+ \hypertarget{group__sleeptimer_software_timers}{}\doxysubsubsection{\texorpdfstring{Software Timers}{Software Timers}}\label{group__sleeptimer_software_timers}
+This functionality allows the user to create periodic and one shot timers. A user callback can be associated with a timer and is called when the timer expires.
+
+Timer structures must be allocated by the user. The function is called from within an interrupt handler with interrupts enabled.
+
+~\newline
+ \hypertarget{group__sleeptimer_timekeeping}{}\doxysubsubsection{\texorpdfstring{Timekeeping}{Timekeeping}}\label{group__sleeptimer_timekeeping}
+A 64-\/bits tick counter is accessible through the \begin{DoxyItemize}
+\item uint64\+\_\+t \doxylink{group__sleeptimer_gaaf928eeb3dad0d43098b3aed9049959a}{sl\+\_\+sleeptimer\+\_\+get\+\_\+tick\+\_\+count64(void)} API. It keeps the tick count since the initialization of the driver\end{DoxyItemize}
+The {\ttfamily SL\+\_\+\+SLEEPTIMER\+\_\+\+WALLCLOCK\+\_\+\+CONFIG} configuration enables a UNIX timestamp (seconds count since January 1, 1970, 00\+:00\+:00).
+
+This timestamp can be retrieved/modified using the following API\+:
+
+\begin{DoxyItemize}
+\item sl\+\_\+sleeptimer\+\_\+timestamp\+\_\+t \doxylink{group__sleeptimer_ga4d79ef7aa10606814bcc21053bfca558}{sl\+\_\+sleeptimer\+\_\+get\+\_\+time(void)}; \item sl\+\_\+status\+\_\+t \doxylink{group__sleeptimer_gafbd64c7fbf7b0dfb7947a6f7bf288dca}{sl\+\_\+sleeptimer\+\_\+set\+\_\+time(sl\+\_\+sleeptimer\+\_\+timestamp\+\_\+t time)};\end{DoxyItemize}
+Convenience conversion functions are provided to convert UNIX timestamp to/from NTP and Zigbee cluster format \+:
+
+\begin{DoxyItemize}
+\item sl\+\_\+status\+\_\+t \doxylink{group__sleeptimer_gaf63bbad4e29c0b655b3d210bf3b3b086}{sl\+\_\+sleeptimer\+\_\+convert\+\_\+unix\+\_\+time\+\_\+to\+\_\+ntp(sl\+\_\+sleeptimer\+\_\+timestamp\+\_\+t time, uint32\+\_\+t \texorpdfstring{$\ast$}{*}ntp\+\_\+time)}; \item sl\+\_\+status\+\_\+t \doxylink{group__sleeptimer_gaff086ed922350c8a4cffeed024d03871}{sl\+\_\+sleeptimer\+\_\+convert\+\_\+ntp\+\_\+time\+\_\+to\+\_\+unix(uint32\+\_\+t ntp\+\_\+time, sl\+\_\+sleeptimer\+\_\+timestamp\+\_\+t \texorpdfstring{$\ast$}{*}time)}; \item sl\+\_\+status\+\_\+t \doxylink{group__sleeptimer_gaa73b94e0c15a1e2cf6b3cb0b37120ed4}{sl\+\_\+sleeptimer\+\_\+convert\+\_\+unix\+\_\+time\+\_\+to\+\_\+zigbee(sl\+\_\+sleeptimer\+\_\+timestamp\+\_\+t time, uint32\+\_\+t \texorpdfstring{$\ast$}{*}zigbee\+\_\+time)}; \item sl\+\_\+status\+\_\+t \doxylink{group__sleeptimer_gaab1267658b2ac5e4249e87412ce7dede}{sl\+\_\+sleeptimer\+\_\+convert\+\_\+zigbee\+\_\+time\+\_\+to\+\_\+unix(uint32\+\_\+t zigbee\+\_\+time, sl\+\_\+sleeptimer\+\_\+timestamp\+\_\+t \texorpdfstring{$\ast$}{*}time)};\end{DoxyItemize}
+~\newline
+ \hypertarget{group__sleeptimer_date}{}\doxysubsubsection{\texorpdfstring{Date}{Date}}\label{group__sleeptimer_date}
+The previously described internal timestamp can also be retrieved/modified in a date format sl\+\_\+sleeptimer\+\_\+date\+\_\+t.
+
+~\newline
+ {\bfseries{API \+:}} ~\newline
+ \begin{DoxyItemize}
+\item sl\+\_\+status\+\_\+t \doxylink{group__sleeptimer_ga2955c70feb8e0082ba54e30d2629d840}{sl\+\_\+sleeptimer\+\_\+get\+\_\+datetime(sl\+\_\+sleeptimer\+\_\+date\+\_\+t \texorpdfstring{$\ast$}{*}date)}; \item sl\+\_\+status\+\_\+t \doxylink{group__sleeptimer_ga840c8ef8049b364a45899320a9f0c8bf}{sl\+\_\+sleeptimer\+\_\+set\+\_\+datetime(sl\+\_\+sleeptimer\+\_\+date\+\_\+t \texorpdfstring{$\ast$}{*}date)};\end{DoxyItemize}
+~\newline
+ \hypertarget{group__sleeptimer_frequency_setup}{}\doxysubsubsection{\texorpdfstring{Frequency Setup and Tick Count}{Frequency Setup and Tick Count}}\label{group__sleeptimer_frequency_setup}
+This driver works with a configurable time unit called tick.
+
+The frequency of the ticks is based on the clock source and the internal frequency divider.
+
+WTIMER/\+TIMER peripherals uses high frequency oscillator. To have a reasonable tick frequency, divider is set to maximum value (1024).
+
+One of the following clock sources must be enabled before initializing the sleeptimer\+:
+
+\begin{DoxyItemize}
+\item LFXO\+: external crystal oscillator. Typically running at 32.\+768 k\+Hz. \item LFRCO\+: internal oscillator running at 32.\+768 k\+Hz \item ULFRCO\+: Ultra low-\/frequency oscillator running at 1.\+000 k\+Hz \item HFXO\+: High Frequency Crystal Oscillator at 39 Mhz. HFXO is only needed when Sleeptimer runs on TIMER or WTIMER.\end{DoxyItemize}
+The frequency divider is selected with the {\ttfamily SL\+\_\+\+SLEEPTIMER\+\_\+\+FREQ\+\_\+\+DIVIDER} configuration. Its value must be a power of two within the range of 1 to 32. The number of ticks per second (sleeptimer frequency) is dictated by the following formula\+:
+
+Tick (seconds) = 1 / (clock\+\_\+frequency / frequency\+\_\+divider)
+
+The highest resolution for a tick is 30.\+5 us. It is achieved with a 32.\+768 k\+Hz clock and a divider of 1.
+
+~\newline
+ \hypertarget{group__sleeptimer_sleeptimer_getting_started}{}\doxysubsection{\texorpdfstring{Getting Started}{Getting Started}}\label{group__sleeptimer_sleeptimer_getting_started}
+~\newline
+ \hypertarget{group__sleeptimer_clock_selection}{}\doxysubsubsection{\texorpdfstring{Clock Selection}{Clock Selection}}\label{group__sleeptimer_clock_selection}
+The sleeptimer relies on the hardware timer to operate. The hardware timer peripheral must be properly clocked from the application. Selecting the appropriate timer is crucial for design considerations. Each timer can potentially be used as a sleeptimer and is also available to the user. However, note that if a timer is used by the sleeptimer, it can\textquotesingle{}t be used by the application and vice versa.
+
+For WTIMER/\+TIMER peripherals, the user must select the appropriate oscillator if it is not the default wanted clock source.
+
+When WTIMER/\+TIMER is selected, sleeptimer uses channel 0 and it is not possible to use other channels of the same instance for other purposes.
+
+~\newline
+ \hypertarget{group__sleeptimer_Clock}{}\doxysubsubsection{\texorpdfstring{Selection in a Project without Micrium OS}{Selection in a Project without Micrium OS}}\label{group__sleeptimer_Clock}
+When RTC, RTCC, or BURTC is selected, the clock source for the peripheral must be configured and enabled in the application before initializing the sleeptimer module or any communication stacks. Most of the time, it consists in enabling the desired oscillators and setting up the clock source for the peripheral, like in the following example\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{CMU\_ClockSelectSet(cmuClock\_LFE,\ cmuSelect\_LFRCO);}
+\DoxyCodeLine{CMU\_ClockEnable(cmuClock\_RTCC,\ \textcolor{keyword}{true});}
+
+\end{DoxyCode}
+
+
+~\newline
+ \hypertarget{group__sleeptimer_clock_branch_select}{}\doxysubsubsection{\texorpdfstring{Clock Branch Select}{Clock Branch Select}}\label{group__sleeptimer_clock_branch_select}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{4}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Clock   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Enum   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Frequency    }\\\cline{1-4}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Clock   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Enum   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Frequency    }\\\cline{1-4}
+\endhead
+LFXO   &{\bfseries{cmu\+Select\+\_\+\+LFXO}}   &Low-\/frequency crystal oscillator   &32.\+768 Khz    \\\cline{1-4}
+LFRCO   &{\bfseries{cmu\+Select\+\_\+\+LFRCO}}   &Low-\/frequency RC oscillator   &32.\+768 Khz    \\\cline{1-4}
+ULFRCO   &{\bfseries{cmu\+Select\+\_\+\+ULFRCO}}   &Ultra low-\/frequency RC oscillator   &1 Khz   \\\cline{1-4}
+\end{longtabu}
+
+
+~\newline
+ \hypertarget{group__sleeptimer_timer_clock_enable}{}\doxysubsubsection{\texorpdfstring{Timer Clock Enable}{Timer Clock Enable}}\label{group__sleeptimer_timer_clock_enable}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Module   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Enum   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description    }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Module   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Enum   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description    }\\\cline{1-3}
+\endhead
+RTCC   &{\bfseries{cmu\+Clock\+\_\+\+RTCC}}   &Real-\/time counter and calendar clock (LF E branch)    \\\cline{1-3}
+RTC   &{\bfseries{cmu\+Clock\+\_\+\+RTC}}   &Real time counter clock (LF A branch)    \\\cline{1-3}
+BURTC   &{\bfseries{cmu\+Clock\+\_\+\+BURTC}}   &BURTC clock (EM4 Group A branch)   \\\cline{1-3}
+\end{longtabu}
+
+
+When the Radio internal RTC (PRORTC) is selected, it is not necessary to configure the clock source for the peripheral. However, it is important to enable the desired oscillator before initializing the sleeptimer module or any communication stacks. The best oscillator available (LFXO being the first choice) will be used by the sleeptimer at initalization. The following example shows how the desired oscilator should be enabled\+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{CMU\_OscillatorEnable(cmuSelect\_LFXO,\ \textcolor{keyword}{true},\ \textcolor{keyword}{true});}
+
+\end{DoxyCode}
+
+
+~\newline
+ \hypertarget{group__sleeptimer_clock_micrium_os}{}\doxysubsubsection{\texorpdfstring{Clock Selection in a Project with Micrium OS}{Clock Selection in a Project with Micrium OS}}\label{group__sleeptimer_clock_micrium_os}
+When Micrium OS is used, a BSP (all instances) is provided that sets up some parts of the clock tree. The sleeptimer clock source will be enabled by this bsp. However, the desired oscillator remains configurable from the file {\bfseries{bsp\+\_\+cfg.\+h}}.
+
+The configuration {\ttfamily BSP\+\_\+\+LF\+\_\+\+CLK\+\_\+\+SEL} determines which oscillator will be used by the sleeptimer\textquotesingle{}s hardware timer peripheral. It can take the following values\+:
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Config   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Frequency    }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Config   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Frequency    }\\\cline{1-3}
+\endhead
+{\bfseries{BSP\+\_\+\+LF\+\_\+\+CLK\+\_\+\+LFXO}}   &Low-\/frequency crystal oscillator   &32.\+768 Khz    \\\cline{1-3}
+{\bfseries{BSP\+\_\+\+LF\+\_\+\+CLK\+\_\+\+LFRCO}}   &Low-\/frequency RC oscillator   &32.\+768 Khz    \\\cline{1-3}
+{\bfseries{BSP\+\_\+\+LF\+\_\+\+CLK\+\_\+\+ULFRCO}}   &Ultra low-\/frequency RC oscillator   &1 Khz   \\\cline{1-3}
+\end{longtabu}
+
+
+~\newline
+ \hypertarget{group__sleeptimer_sleeptimer_conf}{}\doxysubsection{\texorpdfstring{Configuration Options}{Configuration Options}}\label{group__sleeptimer_sleeptimer_conf}
+{\ttfamily SL\+\_\+\+SLEEPTIMER\+\_\+\+PERIPHERAL} can be set to one of the following values\+:
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Config   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Config   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description    }\\\cline{1-2}
+\endhead
+{\ttfamily SL\+\_\+\+SLEEPTIMER\+\_\+\+PERIPHERAL\+\_\+\+DEFAULT}   &Selects either RTC or RTCC, depending of what is available on the platform.    \\\cline{1-2}
+{\ttfamily SL\+\_\+\+SLEEPTIMER\+\_\+\+PERIPHERAL\+\_\+\+RTCC}   &Selects RTCC    \\\cline{1-2}
+{\ttfamily SL\+\_\+\+SLEEPTIMER\+\_\+\+PERIPHERAL\+\_\+\+RTC}   &Selects RTC    \\\cline{1-2}
+{\ttfamily SL\+\_\+\+SLEEPTIMER\+\_\+\+PERIPHERAL\+\_\+\+PRORTC}   &Selects Internal radio RTC. Available only on EFR32\+XG13, EFR32\+XG14, EFR32\+XG21 and EFR32\+XG22 families.    \\\cline{1-2}
+{\ttfamily SL\+\_\+\+SLEEPTIMER\+\_\+\+PERIPHERAL\+\_\+\+BURTC}   &Selects BURTC. Not available on Series 0 devices.   \\\cline{1-2}
+\end{longtabu}
+
+
+{\ttfamily SL\+\_\+\+SLEEPTIMER\+\_\+\+WALLCLOCK\+\_\+\+CONFIG} must be set to 1 to enable timestamp and date functionnalities.
+
+{\ttfamily SL\+\_\+\+SLEEPTIMER\+\_\+\+FREQ\+\_\+\+DIVIDER} must be a power of 2 within the range 1 to 32. When {\ttfamily SL\+\_\+\+SLEEPTIMER\+\_\+\+PERIPHERAL} is set to {\ttfamily SL\+\_\+\+SLEEPTIMER\+\_\+\+PERIPHERAL\+\_\+\+PRORTC}, {\ttfamily SL\+\_\+\+SLEEPTIMER\+\_\+\+FREQ\+\_\+\+DIVIDER} must be set to 1.
+
+{\ttfamily SL\+\_\+\+SLEEPTIMER\+\_\+\+PRORTC\+\_\+\+HAL\+\_\+\+OWNS\+\_\+\+IRQ\+\_\+\+HANDLER} is only meaningful when {\ttfamily SL\+\_\+\+SLEEPTIMER\+\_\+\+PERIPHERAL} is set to {\ttfamily SL\+\_\+\+SLEEPTIMER\+\_\+\+PERIPHERAL\+\_\+\+PRORTC}. Set to 1 if no communication stack is used in your project. Otherwise, must be set to 0.
+
+~\newline
+ \hypertarget{group__sleeptimer_sleeptimer_api}{}\doxysubsection{\texorpdfstring{The API}{The API}}\label{group__sleeptimer_sleeptimer_api}
+This section contains brief descriptions of the API functions. For more information about input and output parameters and return values, click on the hyperlinked function names. Most functions return an error code, {\ttfamily SL\+\_\+\+STATUS\+\_\+\+OK} is returned on success, see \doxylink{sl__status_8h_source}{sl\+\_\+status.\+h} for other error codes.
+
+The application code must include the {\itshape \doxylink{sl__sleeptimer_8h}{sl\+\_\+sleeptimer.\+h}} header file.
+
+All API functions can be called from within interrupt handlers.
+
+\doxylink{group__sleeptimer_gae661a78719a6acc014efa15216ae4a54}{sl\+\_\+sleeptimer\+\_\+init()} ~\newline
+ These functions initialize the sleeptimer driver. Typically, \doxylink{group__sleeptimer_gae661a78719a6acc014efa15216ae4a54}{sl\+\_\+sleeptimer\+\_\+init()} is called once in the startup code.
+
+\doxylink{group__sleeptimer_ga43c32bdb2a9fcfbe279563a9fd689711}{sl\+\_\+sleeptimer\+\_\+start\+\_\+timer()} ~\newline
+ Start a one shot 32 bits timer. When a timer expires, a user-\/supplied callback function is called. A pointer to this function is passed to \doxylink{group__sleeptimer_ga43c32bdb2a9fcfbe279563a9fd689711}{sl\+\_\+sleeptimer\+\_\+start\+\_\+timer()}. See \doxylink{group__sleeptimer_callback}{callback} for details of the callback prototype.
+
+\doxylink{group__sleeptimer_gaacd5a666731a0ba4823107e552e23e69}{sl\+\_\+sleeptimer\+\_\+restart\+\_\+timer()} ~\newline
+ Restart a one shot 32 bits timer. When a timer expires, a user-\/supplied callback function is called. A pointer to this function is passed to \doxylink{group__sleeptimer_ga43c32bdb2a9fcfbe279563a9fd689711}{sl\+\_\+sleeptimer\+\_\+start\+\_\+timer()}. See \doxylink{group__sleeptimer_callback}{callback} for details of the callback prototype.
+
+\doxylink{group__sleeptimer_ga2ceb1b76334902525dd32e937e90bb16}{sl\+\_\+sleeptimer\+\_\+start\+\_\+periodic\+\_\+timer()} ~\newline
+ Start a periodic 32 bits timer. When a timer expires, a user-\/supplied callback function is called. A pointer to this function is passed to \doxylink{group__sleeptimer_ga43c32bdb2a9fcfbe279563a9fd689711}{sl\+\_\+sleeptimer\+\_\+start\+\_\+timer()}. See \doxylink{group__sleeptimer_callback}{callback} for details of the callback prototype.
+
+\doxylink{group__sleeptimer_gaf54408a7f172b684de33d9a7f4e01be9}{sl\+\_\+sleeptimer\+\_\+restart\+\_\+periodic\+\_\+timer()} ~\newline
+ Restart a periodic 32 bits timer. When a timer expires, a user-\/supplied callback function is called. A pointer to this function is passed to \doxylink{group__sleeptimer_ga43c32bdb2a9fcfbe279563a9fd689711}{sl\+\_\+sleeptimer\+\_\+start\+\_\+timer()}. See \doxylink{group__sleeptimer_callback}{callback} for details of the callback prototype.
+
+\doxylink{group__sleeptimer_ga1f4f25aa754cd35214dba9762450b0ca}{sl\+\_\+sleeptimer\+\_\+stop\+\_\+timer()} ~\newline
+ Stop a timer.
+
+\doxylink{group__sleeptimer_ga6a06acb331e2e3c0efeb83f42a4d9c16}{sl\+\_\+sleeptimer\+\_\+get\+\_\+timer\+\_\+time\+\_\+remaining()} ~\newline
+ Get the time remaining before the timer expires.
+
+\doxylink{group__sleeptimer_ga7d7c4ae596755e3e5e3c0c0aa5e749b3}{sl\+\_\+sleeptimer\+\_\+delay\+\_\+millisecond()} ~\newline
+ Delay for the given number of milliseconds. This is an "{}active wait"{} delay function.
+
+\doxylink{group__sleeptimer_gac0236c1c353317c41d577867e7429874}{sl\+\_\+sleeptimer\+\_\+is\+\_\+timer\+\_\+running()} ~\newline
+ Check if a timer is running.
+
+\doxylink{group__sleeptimer_ga4d79ef7aa10606814bcc21053bfca558}{sl\+\_\+sleeptimer\+\_\+get\+\_\+time()}, \doxylink{group__sleeptimer_gafbd64c7fbf7b0dfb7947a6f7bf288dca}{sl\+\_\+sleeptimer\+\_\+set\+\_\+time()} ~\newline
+ Get or set wallclock time.
+
+\doxylink{group__sleeptimer_gadf3a3eb05b0f5adbc7ee488113299f61}{sl\+\_\+sleeptimer\+\_\+ms\+\_\+to\+\_\+tick()}, \doxylink{group__sleeptimer_ga7484d4be4877b94a687f4410fccc6271}{sl\+\_\+sleeptimer\+\_\+ms32\+\_\+to\+\_\+tick()}, \doxylink{group__sleeptimer_ga2c2a2a131e401894d3e09513442667b5}{sl\+\_\+sleeptimer\+\_\+tick\+\_\+to\+\_\+ms()}, \doxylink{group__sleeptimer_ga6882d0577137d8e20ec531be45678fba}{sl\+\_\+sleeptimer\+\_\+tick64\+\_\+to\+\_\+ms()} ~\newline
+ Convert between milliseconds and RTC/\+RTCC counter ticks.
+
+~\newline
+ \label{group__sleeptimer_callback}%
+\Hypertarget{group__sleeptimer_callback}%
+{\bfseries{The timer expiry callback function\+:}} ~\newline
+ The callback function, prototyped as \doxylink{group__sleeptimer_ga9049589e4153204fb3e97cbe1ecda89b}{sl\+\_\+sleeptimer\+\_\+timer\+\_\+callback\+\_\+t()}, is called from within the RTC peripheral interrupt handler on timer expiration. \doxylink{group__sleeptimer_ga9049589e4153204fb3e97cbe1ecda89b}{sl\+\_\+sleeptimer\+\_\+timer\+\_\+callback\+\_\+t(sl\+\_\+sleeptimer\+\_\+timer\+\_\+handle\+\_\+t \texorpdfstring{$\ast$}{*}handle, void \texorpdfstring{$\ast$}{*}data)}
+
+~\newline
+ \hypertarget{group__sleeptimer_sleeptimer_example}{}\doxysubsection{\texorpdfstring{Example}{Example}}\label{group__sleeptimer_sleeptimer_example}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{sl__sleeptimer_8h}{sl\_sleeptimer.h}}"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}\ my\_timer\_callback(\mbox{\hyperlink{structsl__sleeptimer__timer__handle}{sl\_sleeptimer\_timer\_handle\_t}}\ *handle,\ \textcolor{keywordtype}{void}\ *data)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \textcolor{comment}{//Code\ executed\ when\ the\ timer\ expire.}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ start\_timer(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ sl\_status\_t\ status;}
+\DoxyCodeLine{\ \ \mbox{\hyperlink{structsl__sleeptimer__timer__handle}{sl\_sleeptimer\_timer\_handle\_t}}\ my\_timer;}
+\DoxyCodeLine{\ \ uint32\_t\ timer\_timeout\ =\ 300;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \textcolor{comment}{//\ We\ assume\ the\ sleeptimer\ is\ initialized\ properly}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ status\ =\ \mbox{\hyperlink{group__sleeptimer_ga43c32bdb2a9fcfbe279563a9fd689711}{sl\_sleeptimer\_start\_timer}}(\&my\_timer,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ timer\_timeout,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ my\_timer\_callback,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\textcolor{keywordtype}{void}\ *)NULL,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0,}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0);}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{if}(status\ !=\ SL\_STATUS\_OK)\ \{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{\ \ \}}
+\DoxyCodeLine{\ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{group__sleeptimer_ga9049589e4153204fb3e97cbe1ecda89b}\index{Sleep Timer@{Sleep Timer}!sl\_sleeptimer\_timer\_callback\_t@{sl\_sleeptimer\_timer\_callback\_t}}
+\index{sl\_sleeptimer\_timer\_callback\_t@{sl\_sleeptimer\_timer\_callback\_t}!Sleep Timer@{Sleep Timer}}
+\doxysubsubsection{\texorpdfstring{sl\_sleeptimer\_timer\_callback\_t}{sl\_sleeptimer\_timer\_callback\_t}}
+{\footnotesize\ttfamily \label{group__sleeptimer_ga9049589e4153204fb3e97cbe1ecda89b} 
+typedef void(\texorpdfstring{$\ast$}{*} sl\+\_\+sleeptimer\+\_\+timer\+\_\+callback\+\_\+t) (\mbox{\hyperlink{structsl__sleeptimer__timer__handle}{sl\+\_\+sleeptimer\+\_\+timer\+\_\+handle\+\_\+t}} \texorpdfstring{$\ast$}{*}handle, void \texorpdfstring{$\ast$}{*}data)}
+
+Typedef for the user supplied callback function which is called when a timer expires.
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & The timer handle.\\
+\hline
+{\em data} & An extra parameter for the user application. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{group__sleeptimer_ga726d2e276fbac02b2246a446c3dcf755}\index{Sleep Timer@{Sleep Timer}!sl\_sleeptimer\_build\_datetime@{sl\_sleeptimer\_build\_datetime}}
+\index{sl\_sleeptimer\_build\_datetime@{sl\_sleeptimer\_build\_datetime}!Sleep Timer@{Sleep Timer}}
+\doxysubsubsection{\texorpdfstring{sl\_sleeptimer\_build\_datetime()}{sl\_sleeptimer\_build\_datetime()}}
+{\footnotesize\ttfamily \label{group__sleeptimer_ga726d2e276fbac02b2246a446c3dcf755} 
+sl\+\_\+status\+\_\+t sl\+\_\+sleeptimer\+\_\+build\+\_\+datetime (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__sleeptimer_ga8b17c7e32e3ad35bb6b0a9c2001e8d64}{sl\+\_\+sleeptimer\+\_\+date\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{date}{, }\item[{uint16\+\_\+t}]{year}{, }\item[{sl\+\_\+sleeptimer\+\_\+month\+\_\+t}]{month}{, }\item[{uint8\+\_\+t}]{month\+\_\+day}{, }\item[{uint8\+\_\+t}]{hour}{, }\item[{uint8\+\_\+t}]{min}{, }\item[{uint8\+\_\+t}]{sec}{, }\item[{\mbox{\hyperlink{group__sleeptimer_ga27148a3d37b9f3728cbd18b56b4c9979}{sl\+\_\+sleeptimer\+\_\+time\+\_\+zone\+\_\+offset\+\_\+t}}}]{tz\+Offset}{}\end{DoxyParamCaption})}
+
+Builds a date time structure based on the provided parameters, where the maximum supported date is 10\+:14\+:07 PM 01/18/2038.
+
+
+\begin{DoxyParams}{Parameters}
+{\em date} & Pointer to the structure to be populated. \\
+\hline
+{\em year} & Current year. May be provided based on a 0 Epoch or a 1900 Epoch. \\
+\hline
+{\em month} & Months since January. Expected value\+: 0-\/11. \\
+\hline
+{\em month\+\_\+day} & Day of the month. Expected value\+: 1-\/31. \\
+\hline
+{\em hour} & Hours since midnight. Expected value\+: 0-\/23. \\
+\hline
+{\em min} & Minutes after the hour. Expected value\+: 0-\/59. \\
+\hline
+{\em sec} & Seconds after the minute. Expected value\+: 0-\/59. \\
+\hline
+{\em tz\+Offset} & Offset, in seconds, from UTC.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Function definition is accessible only when SL\+\_\+\+SLEEPTIMER\+\_\+\+WALLCLOCK\+\_\+\+CONFIG is set to 1.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+0 if successful. Error code otherwise. 
+\end{DoxyReturn}
+\Hypertarget{group__sleeptimer_ga7290544e59a3a9700a0dc4a808e014a3}\index{Sleep Timer@{Sleep Timer}!sl\_sleeptimer\_build\_datetime\_64@{sl\_sleeptimer\_build\_datetime\_64}}
+\index{sl\_sleeptimer\_build\_datetime\_64@{sl\_sleeptimer\_build\_datetime\_64}!Sleep Timer@{Sleep Timer}}
+\doxysubsubsection{\texorpdfstring{sl\_sleeptimer\_build\_datetime\_64()}{sl\_sleeptimer\_build\_datetime\_64()}}
+{\footnotesize\ttfamily \label{group__sleeptimer_ga7290544e59a3a9700a0dc4a808e014a3} 
+sl\+\_\+status\+\_\+t sl\+\_\+sleeptimer\+\_\+build\+\_\+datetime\+\_\+64 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__sleeptimer_ga8b17c7e32e3ad35bb6b0a9c2001e8d64}{sl\+\_\+sleeptimer\+\_\+date\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{date}{, }\item[{uint16\+\_\+t}]{year}{, }\item[{sl\+\_\+sleeptimer\+\_\+month\+\_\+t}]{month}{, }\item[{uint8\+\_\+t}]{month\+\_\+day}{, }\item[{uint8\+\_\+t}]{hour}{, }\item[{uint8\+\_\+t}]{min}{, }\item[{uint8\+\_\+t}]{sec}{, }\item[{\mbox{\hyperlink{group__sleeptimer_ga27148a3d37b9f3728cbd18b56b4c9979}{sl\+\_\+sleeptimer\+\_\+time\+\_\+zone\+\_\+offset\+\_\+t}}}]{tz\+Offset}{}\end{DoxyParamCaption})}
+
+Builds a date time structure based on the provided parameters, where the maximum supported date is 11\+:59\+:59 PM 12/31/11899.
+
+
+\begin{DoxyParams}{Parameters}
+{\em date} & Pointer to the structure to be populated. \\
+\hline
+{\em year} & Current year based on 0 Epoch. \\
+\hline
+{\em month} & Months since January. Expected value\+: 0-\/11. \\
+\hline
+{\em month\+\_\+day} & Day of the month. Expected value\+: 1-\/31. \\
+\hline
+{\em hour} & Hours since midnight. Expected value\+: 0-\/23. \\
+\hline
+{\em min} & Minutes after the hour. Expected value\+: 0-\/59. \\
+\hline
+{\em sec} & Seconds after the minute. Expected value\+: 0-\/59. \\
+\hline
+{\em tz\+Offset} & Offset, in seconds, from UTC.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Resulting date structure\textquotesingle{}s year will be based on 1900 epoch
+
+Function definition is accessible only when SL\+\_\+\+SLEEPTIMER\+\_\+\+WALLCLOCK\+\_\+\+CONFIG is set to 1.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+0 if successful. Error code otherwise. 
+\end{DoxyReturn}
+\Hypertarget{group__sleeptimer_ga28561cd8d4b4e31153d3dc02e68f2645}\index{Sleep Timer@{Sleep Timer}!sl\_sleeptimer\_convert\_date\_to\_str@{sl\_sleeptimer\_convert\_date\_to\_str}}
+\index{sl\_sleeptimer\_convert\_date\_to\_str@{sl\_sleeptimer\_convert\_date\_to\_str}!Sleep Timer@{Sleep Timer}}
+\doxysubsubsection{\texorpdfstring{sl\_sleeptimer\_convert\_date\_to\_str()}{sl\_sleeptimer\_convert\_date\_to\_str()}}
+{\footnotesize\ttfamily \label{group__sleeptimer_ga28561cd8d4b4e31153d3dc02e68f2645} 
+uint32\+\_\+t sl\+\_\+sleeptimer\+\_\+convert\+\_\+date\+\_\+to\+\_\+str (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{str}{, }\item[{size\+\_\+t}]{size}{, }\item[{const uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{format}{, }\item[{\mbox{\hyperlink{group__sleeptimer_ga8b17c7e32e3ad35bb6b0a9c2001e8d64}{sl\+\_\+sleeptimer\+\_\+date\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{date}{}\end{DoxyParamCaption})}
+
+Convert date to string.
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & Output string. \\
+\hline
+{\em size} & Size of the input array. \\
+\hline
+{\em format} & The format specification character. \\
+\hline
+{\em date} & Pointer to date structure.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if error. Number of character in the output string.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Refer strftime() from UNIX. \href{http://man7.org/linux/man-pages/man3/strftime.3.html}{\texttt{ http\+://man7.\+org/linux/man-\/pages/man3/strftime.\+3.\+html}}
+
+Function definition is accessible only when SL\+\_\+\+SLEEPTIMER\+\_\+\+WALLCLOCK\+\_\+\+CONFIG is set to 1. 
+\end{DoxyNote}
+\Hypertarget{group__sleeptimer_gab3c762fbb3fed88f5f256d4c9a03fc67}\index{Sleep Timer@{Sleep Timer}!sl\_sleeptimer\_convert\_date\_to\_time@{sl\_sleeptimer\_convert\_date\_to\_time}}
+\index{sl\_sleeptimer\_convert\_date\_to\_time@{sl\_sleeptimer\_convert\_date\_to\_time}!Sleep Timer@{Sleep Timer}}
+\doxysubsubsection{\texorpdfstring{sl\_sleeptimer\_convert\_date\_to\_time()}{sl\_sleeptimer\_convert\_date\_to\_time()}}
+{\footnotesize\ttfamily \label{group__sleeptimer_gab3c762fbb3fed88f5f256d4c9a03fc67} 
+sl\+\_\+status\+\_\+t sl\+\_\+sleeptimer\+\_\+convert\+\_\+date\+\_\+to\+\_\+time (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__sleeptimer_ga8b17c7e32e3ad35bb6b0a9c2001e8d64}{sl\+\_\+sleeptimer\+\_\+date\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{date}{, }\item[{\mbox{\hyperlink{group__sleeptimer_gaf41c2bc4240e5b819fc7f285f62172a2}{sl\+\_\+sleeptimer\+\_\+timestamp\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{time}{}\end{DoxyParamCaption})}
+
+Converts a date into a Unix timestamp.
+
+
+\begin{DoxyParams}{Parameters}
+{\em date} & Pointer to date to convert. \\
+\hline
+{\em time} & Pointer to converted 32 bit Unix timestamp.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful. Error code otherwise.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Dates are based on the Unix time representation. Range of dates supported \+:
+\begin{DoxyItemize}
+\item January 1, 1970, 00\+:00\+:00 to January 19, 2038, 03\+:14\+:00
+\end{DoxyItemize}
+
+Function definition is accessible only when SL\+\_\+\+SLEEPTIMER\+\_\+\+WALLCLOCK\+\_\+\+CONFIG is set to 1. 
+\end{DoxyNote}
+\Hypertarget{group__sleeptimer_ga600725ddd39a7ef36334f6eac0879001}\index{Sleep Timer@{Sleep Timer}!sl\_sleeptimer\_convert\_date\_to\_time\_64@{sl\_sleeptimer\_convert\_date\_to\_time\_64}}
+\index{sl\_sleeptimer\_convert\_date\_to\_time\_64@{sl\_sleeptimer\_convert\_date\_to\_time\_64}!Sleep Timer@{Sleep Timer}}
+\doxysubsubsection{\texorpdfstring{sl\_sleeptimer\_convert\_date\_to\_time\_64()}{sl\_sleeptimer\_convert\_date\_to\_time\_64()}}
+{\footnotesize\ttfamily \label{group__sleeptimer_ga600725ddd39a7ef36334f6eac0879001} 
+sl\+\_\+status\+\_\+t sl\+\_\+sleeptimer\+\_\+convert\+\_\+date\+\_\+to\+\_\+time\+\_\+64 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__sleeptimer_ga8b17c7e32e3ad35bb6b0a9c2001e8d64}{sl\+\_\+sleeptimer\+\_\+date\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{date}{, }\item[{\mbox{\hyperlink{group__sleeptimer_ga5d4d9e5fe98012d2cffedb00caa9c91b}{sl\+\_\+sleeptimer\+\_\+timestamp\+\_\+64\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{time}{}\end{DoxyParamCaption})}
+
+Converts a date into a 64 bit timestamp.
+
+
+\begin{DoxyParams}{Parameters}
+{\em date} & Pointer to date to convert. \\
+\hline
+{\em time} & Pointer to converted 64 bit Unix timestamp.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful. Error code otherwise.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Dates are based on the 64 bit Unix time representation. Range of dates supported \+:
+\begin{DoxyItemize}
+\item January 1, 1900, 00\+:00\+:00 to December 31, 11899 23\+:59\+:59.
+\end{DoxyItemize}
+
+Function definition is accessible only when SL\+\_\+\+SLEEPTIMER\+\_\+\+WALLCLOCK\+\_\+\+CONFIG is set to 1. 
+\end{DoxyNote}
+\Hypertarget{group__sleeptimer_gaff086ed922350c8a4cffeed024d03871}\index{Sleep Timer@{Sleep Timer}!sl\_sleeptimer\_convert\_ntp\_time\_to\_unix@{sl\_sleeptimer\_convert\_ntp\_time\_to\_unix}}
+\index{sl\_sleeptimer\_convert\_ntp\_time\_to\_unix@{sl\_sleeptimer\_convert\_ntp\_time\_to\_unix}!Sleep Timer@{Sleep Timer}}
+\doxysubsubsection{\texorpdfstring{sl\_sleeptimer\_convert\_ntp\_time\_to\_unix()}{sl\_sleeptimer\_convert\_ntp\_time\_to\_unix()}}
+{\footnotesize\ttfamily \label{group__sleeptimer_gaff086ed922350c8a4cffeed024d03871} 
+sl\+\_\+status\+\_\+t sl\+\_\+sleeptimer\+\_\+convert\+\_\+ntp\+\_\+time\+\_\+to\+\_\+unix (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{ntp\+\_\+time}{, }\item[{\mbox{\hyperlink{group__sleeptimer_gaf41c2bc4240e5b819fc7f285f62172a2}{sl\+\_\+sleeptimer\+\_\+timestamp\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{time}{}\end{DoxyParamCaption})}
+
+Converts NTP timestamp into Unix timestamp.
+
+
+\begin{DoxyParams}{Parameters}
+{\em ntp\+\_\+time} & NTP Timestamp. \\
+\hline
+{\em time} & Pointer to Unix timestamp.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+NTP timestamp range supported \+: 0x83\+AA 7E80 to 0x\+FFFF FFFF ie. January 1, 1970, 00\+:00\+:00 to February 07, 2036, 06\+:28\+:15
+
+Function definition is accessible only when SL\+\_\+\+SLEEPTIMER\+\_\+\+WALLCLOCK\+\_\+\+CONFIG is set to 1.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+0 if successful. Error code otherwise. 
+\end{DoxyReturn}
+\Hypertarget{group__sleeptimer_ga157d43fdb64cb0d4afc864155bcf9bc8}\index{Sleep Timer@{Sleep Timer}!sl\_sleeptimer\_convert\_time\_to\_date@{sl\_sleeptimer\_convert\_time\_to\_date}}
+\index{sl\_sleeptimer\_convert\_time\_to\_date@{sl\_sleeptimer\_convert\_time\_to\_date}!Sleep Timer@{Sleep Timer}}
+\doxysubsubsection{\texorpdfstring{sl\_sleeptimer\_convert\_time\_to\_date()}{sl\_sleeptimer\_convert\_time\_to\_date()}}
+{\footnotesize\ttfamily \label{group__sleeptimer_ga157d43fdb64cb0d4afc864155bcf9bc8} 
+sl\+\_\+status\+\_\+t sl\+\_\+sleeptimer\+\_\+convert\+\_\+time\+\_\+to\+\_\+date (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__sleeptimer_gaf41c2bc4240e5b819fc7f285f62172a2}{sl\+\_\+sleeptimer\+\_\+timestamp\+\_\+t}}}]{time}{, }\item[{\mbox{\hyperlink{group__sleeptimer_ga27148a3d37b9f3728cbd18b56b4c9979}{sl\+\_\+sleeptimer\+\_\+time\+\_\+zone\+\_\+offset\+\_\+t}}}]{time\+\_\+zone}{, }\item[{\mbox{\hyperlink{group__sleeptimer_ga8b17c7e32e3ad35bb6b0a9c2001e8d64}{sl\+\_\+sleeptimer\+\_\+date\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{date}{}\end{DoxyParamCaption})}
+
+Converts a Unix timestamp into a date.
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & 32 bit Unix timestamp to convert. \\
+\hline
+{\em time\+\_\+zone} & Offset from UTC in second. \\
+\hline
+{\em date} & Pointer to converted date.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Time is in Standard Time.
+
+Function definition is accessible only when SL\+\_\+\+SLEEPTIMER\+\_\+\+WALLCLOCK\+\_\+\+CONFIG is set to 1.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+0 if successful. Error code otherwise. 
+\end{DoxyReturn}
+\Hypertarget{group__sleeptimer_gadc9658b94ee4e8f07912e6ad41ac0ad2}\index{Sleep Timer@{Sleep Timer}!sl\_sleeptimer\_convert\_time\_to\_date\_64@{sl\_sleeptimer\_convert\_time\_to\_date\_64}}
+\index{sl\_sleeptimer\_convert\_time\_to\_date\_64@{sl\_sleeptimer\_convert\_time\_to\_date\_64}!Sleep Timer@{Sleep Timer}}
+\doxysubsubsection{\texorpdfstring{sl\_sleeptimer\_convert\_time\_to\_date\_64()}{sl\_sleeptimer\_convert\_time\_to\_date\_64()}}
+{\footnotesize\ttfamily \label{group__sleeptimer_gadc9658b94ee4e8f07912e6ad41ac0ad2} 
+sl\+\_\+status\+\_\+t sl\+\_\+sleeptimer\+\_\+convert\+\_\+time\+\_\+to\+\_\+date\+\_\+64 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__sleeptimer_ga5d4d9e5fe98012d2cffedb00caa9c91b}{sl\+\_\+sleeptimer\+\_\+timestamp\+\_\+64\+\_\+t}}}]{time}{, }\item[{\mbox{\hyperlink{group__sleeptimer_ga27148a3d37b9f3728cbd18b56b4c9979}{sl\+\_\+sleeptimer\+\_\+time\+\_\+zone\+\_\+offset\+\_\+t}}}]{time\+\_\+zone}{, }\item[{\mbox{\hyperlink{group__sleeptimer_ga8b17c7e32e3ad35bb6b0a9c2001e8d64}{sl\+\_\+sleeptimer\+\_\+date\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{date}{}\end{DoxyParamCaption})}
+
+Converts a 64 bit Unix timestamp into a date.
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & 64 bit Unix timestamp to convert. \\
+\hline
+{\em time\+\_\+zone} & Offset from UTC in second. \\
+\hline
+{\em date} & Pointer to converted date.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Time is in Standard Time.
+
+Function definition is accessible only when SL\+\_\+\+SLEEPTIMER\+\_\+\+WALLCLOCK\+\_\+\+CONFIG is set to 1.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+0 if successful. Error code otherwise. 
+\end{DoxyReturn}
+\Hypertarget{group__sleeptimer_gaf63bbad4e29c0b655b3d210bf3b3b086}\index{Sleep Timer@{Sleep Timer}!sl\_sleeptimer\_convert\_unix\_time\_to\_ntp@{sl\_sleeptimer\_convert\_unix\_time\_to\_ntp}}
+\index{sl\_sleeptimer\_convert\_unix\_time\_to\_ntp@{sl\_sleeptimer\_convert\_unix\_time\_to\_ntp}!Sleep Timer@{Sleep Timer}}
+\doxysubsubsection{\texorpdfstring{sl\_sleeptimer\_convert\_unix\_time\_to\_ntp()}{sl\_sleeptimer\_convert\_unix\_time\_to\_ntp()}}
+{\footnotesize\ttfamily \label{group__sleeptimer_gaf63bbad4e29c0b655b3d210bf3b3b086} 
+sl\+\_\+status\+\_\+t sl\+\_\+sleeptimer\+\_\+convert\+\_\+unix\+\_\+time\+\_\+to\+\_\+ntp (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__sleeptimer_gaf41c2bc4240e5b819fc7f285f62172a2}{sl\+\_\+sleeptimer\+\_\+timestamp\+\_\+t}}}]{time}{, }\item[{uint32\+\_\+t \texorpdfstring{$\ast$}{*}}]{ntp\+\_\+time}{}\end{DoxyParamCaption})}
+
+Converts Unix timestamp into NTP timestamp.
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & Unix timestamp. \\
+\hline
+{\em ntp\+\_\+time} & Pointer to NTP Timestamp.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Unix timestamp range supported \+: 0x0 to 0x7\+C55 817F ie. January 1, 1970, 00\+:00\+:00 to February 07, 2036, 06\+:28\+:15
+
+Function definition is accessible only when SL\+\_\+\+SLEEPTIMER\+\_\+\+WALLCLOCK\+\_\+\+CONFIG is set to 1.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+0 if successful. Error code otherwise. 
+\end{DoxyReturn}
+\Hypertarget{group__sleeptimer_gaa73b94e0c15a1e2cf6b3cb0b37120ed4}\index{Sleep Timer@{Sleep Timer}!sl\_sleeptimer\_convert\_unix\_time\_to\_zigbee@{sl\_sleeptimer\_convert\_unix\_time\_to\_zigbee}}
+\index{sl\_sleeptimer\_convert\_unix\_time\_to\_zigbee@{sl\_sleeptimer\_convert\_unix\_time\_to\_zigbee}!Sleep Timer@{Sleep Timer}}
+\doxysubsubsection{\texorpdfstring{sl\_sleeptimer\_convert\_unix\_time\_to\_zigbee()}{sl\_sleeptimer\_convert\_unix\_time\_to\_zigbee()}}
+{\footnotesize\ttfamily \label{group__sleeptimer_gaa73b94e0c15a1e2cf6b3cb0b37120ed4} 
+sl\+\_\+status\+\_\+t sl\+\_\+sleeptimer\+\_\+convert\+\_\+unix\+\_\+time\+\_\+to\+\_\+zigbee (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__sleeptimer_gaf41c2bc4240e5b819fc7f285f62172a2}{sl\+\_\+sleeptimer\+\_\+timestamp\+\_\+t}}}]{time}{, }\item[{uint32\+\_\+t \texorpdfstring{$\ast$}{*}}]{zigbee\+\_\+time}{}\end{DoxyParamCaption})}
+
+Converts Unix timestamp into Zigbee timestamp.
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & Unix timestamp.\\
+\hline
+{\em zigbee\+\_\+time} & Pointer to NTP Timestamp.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Unix timestamp range supported \+: 0x386D 4380 to 0x7\+FFF FFFF ie. January 1, 2000, 00\+:00\+:0 to January 19, 2038, 03\+:14\+:00
+
+Function definition is accessible only when SL\+\_\+\+SLEEPTIMER\+\_\+\+WALLCLOCK\+\_\+\+CONFIG is set to 1.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+0 if successful. Error code otherwise. 
+\end{DoxyReturn}
+\Hypertarget{group__sleeptimer_gaab1267658b2ac5e4249e87412ce7dede}\index{Sleep Timer@{Sleep Timer}!sl\_sleeptimer\_convert\_zigbee\_time\_to\_unix@{sl\_sleeptimer\_convert\_zigbee\_time\_to\_unix}}
+\index{sl\_sleeptimer\_convert\_zigbee\_time\_to\_unix@{sl\_sleeptimer\_convert\_zigbee\_time\_to\_unix}!Sleep Timer@{Sleep Timer}}
+\doxysubsubsection{\texorpdfstring{sl\_sleeptimer\_convert\_zigbee\_time\_to\_unix()}{sl\_sleeptimer\_convert\_zigbee\_time\_to\_unix()}}
+{\footnotesize\ttfamily \label{group__sleeptimer_gaab1267658b2ac5e4249e87412ce7dede} 
+sl\+\_\+status\+\_\+t sl\+\_\+sleeptimer\+\_\+convert\+\_\+zigbee\+\_\+time\+\_\+to\+\_\+unix (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{zigbee\+\_\+time}{, }\item[{\mbox{\hyperlink{group__sleeptimer_gaf41c2bc4240e5b819fc7f285f62172a2}{sl\+\_\+sleeptimer\+\_\+timestamp\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{time}{}\end{DoxyParamCaption})}
+
+Converts Zigbee timestamp into Unix timestamp.
+
+
+\begin{DoxyParams}{Parameters}
+{\em zigbee\+\_\+time} & NTP Timestamp. \\
+\hline
+{\em time} & Pointer to Unix timestamp.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+ZIGBEE timestamp range supported \+: 0x0 to 0x4792 BC7F ie. January 1, 2000, 00\+:00\+:00 to January 19, 2038, 03\+:14\+:00
+
+Function definition is accessible only when SL\+\_\+\+SLEEPTIMER\+\_\+\+WALLCLOCK\+\_\+\+CONFIG is set to 1.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+0 if successful. Error code otherwise. 
+\end{DoxyReturn}
+\Hypertarget{group__sleeptimer_ga7d7c4ae596755e3e5e3c0c0aa5e749b3}\index{Sleep Timer@{Sleep Timer}!sl\_sleeptimer\_delay\_millisecond@{sl\_sleeptimer\_delay\_millisecond}}
+\index{sl\_sleeptimer\_delay\_millisecond@{sl\_sleeptimer\_delay\_millisecond}!Sleep Timer@{Sleep Timer}}
+\doxysubsubsection{\texorpdfstring{sl\_sleeptimer\_delay\_millisecond()}{sl\_sleeptimer\_delay\_millisecond()}}
+{\footnotesize\ttfamily \label{group__sleeptimer_ga7d7c4ae596755e3e5e3c0c0aa5e749b3} 
+void sl\+\_\+sleeptimer\+\_\+delay\+\_\+millisecond (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{time\+\_\+ms}{}\end{DoxyParamCaption})}
+
+Active delay.
+
+
+\begin{DoxyParams}{Parameters}
+{\em time\+\_\+ms} & Delay duration in milliseconds. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group__sleeptimer_ga4c13ce5d0c1fc60a1596201932bb6b5f}\index{Sleep Timer@{Sleep Timer}!sl\_sleeptimer\_get\_clock\_accuracy@{sl\_sleeptimer\_get\_clock\_accuracy}}
+\index{sl\_sleeptimer\_get\_clock\_accuracy@{sl\_sleeptimer\_get\_clock\_accuracy}!Sleep Timer@{Sleep Timer}}
+\doxysubsubsection{\texorpdfstring{sl\_sleeptimer\_get\_clock\_accuracy()}{sl\_sleeptimer\_get\_clock\_accuracy()}}
+{\footnotesize\ttfamily \label{group__sleeptimer_ga4c13ce5d0c1fc60a1596201932bb6b5f} 
+uint16\+\_\+t sl\+\_\+sleeptimer\+\_\+get\+\_\+clock\+\_\+accuracy (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the precision (in PPM) of the sleeptimer\textquotesingle{}s clock. 
+
+\begin{DoxyReturn}{Returns}
+Clock accuracy, in PPM. 
+\end{DoxyReturn}
+\Hypertarget{group__sleeptimer_ga2955c70feb8e0082ba54e30d2629d840}\index{Sleep Timer@{Sleep Timer}!sl\_sleeptimer\_get\_datetime@{sl\_sleeptimer\_get\_datetime}}
+\index{sl\_sleeptimer\_get\_datetime@{sl\_sleeptimer\_get\_datetime}!Sleep Timer@{Sleep Timer}}
+\doxysubsubsection{\texorpdfstring{sl\_sleeptimer\_get\_datetime()}{sl\_sleeptimer\_get\_datetime()}}
+{\footnotesize\ttfamily \label{group__sleeptimer_ga2955c70feb8e0082ba54e30d2629d840} 
+sl\+\_\+status\+\_\+t sl\+\_\+sleeptimer\+\_\+get\+\_\+datetime (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__sleeptimer_ga8b17c7e32e3ad35bb6b0a9c2001e8d64}{sl\+\_\+sleeptimer\+\_\+date\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{date}{}\end{DoxyParamCaption})}
+
+Gets current date.
+
+
+\begin{DoxyParams}{Parameters}
+{\em date} & Pointer to a sl\+\_\+sleeptimer\+\_\+date\+\_\+t structure.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Time is in Standard Time.
+
+Function definition is accessible only when SL\+\_\+\+SLEEPTIMER\+\_\+\+WALLCLOCK\+\_\+\+CONFIG is set to 1.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+0 if successful. Error code otherwise. 
+\end{DoxyReturn}
+\Hypertarget{group__sleeptimer_ga3218039eab8d09231cc092fdc2a1dba5}\index{Sleep Timer@{Sleep Timer}!sl\_sleeptimer\_get\_max\_ms32\_conversion@{sl\_sleeptimer\_get\_max\_ms32\_conversion}}
+\index{sl\_sleeptimer\_get\_max\_ms32\_conversion@{sl\_sleeptimer\_get\_max\_ms32\_conversion}!Sleep Timer@{Sleep Timer}}
+\doxysubsubsection{\texorpdfstring{sl\_sleeptimer\_get\_max\_ms32\_conversion()}{sl\_sleeptimer\_get\_max\_ms32\_conversion()}}
+{\footnotesize\ttfamily \label{group__sleeptimer_ga3218039eab8d09231cc092fdc2a1dba5} 
+uint32\+\_\+t sl\+\_\+sleeptimer\+\_\+get\+\_\+max\+\_\+ms32\+\_\+conversion (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+Gets the maximum value that can be passed to the functions that have a 32-\/bits time or timeout argument expressed in milliseconds.
+
+\begin{DoxyReturn}{Returns}
+Maximum time or timeout value in milliseconds.
+\end{DoxyReturn}
+Gets the maximum value that can be passed to the functions that have a 32-\/bits time or timeout argument expressed in milliseconds. \Hypertarget{group__sleeptimer_gaf96ccea3e4d1727dc2fd2fa98f94ccb1}\index{Sleep Timer@{Sleep Timer}!sl\_sleeptimer\_get\_remaining\_time\_of\_first\_timer@{sl\_sleeptimer\_get\_remaining\_time\_of\_first\_timer}}
+\index{sl\_sleeptimer\_get\_remaining\_time\_of\_first\_timer@{sl\_sleeptimer\_get\_remaining\_time\_of\_first\_timer}!Sleep Timer@{Sleep Timer}}
+\doxysubsubsection{\texorpdfstring{sl\_sleeptimer\_get\_remaining\_time\_of\_first\_timer()}{sl\_sleeptimer\_get\_remaining\_time\_of\_first\_timer()}}
+{\footnotesize\ttfamily \label{group__sleeptimer_gaf96ccea3e4d1727dc2fd2fa98f94ccb1} 
+sl\+\_\+status\+\_\+t sl\+\_\+sleeptimer\+\_\+get\+\_\+remaining\+\_\+time\+\_\+of\+\_\+first\+\_\+timer (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{option\+\_\+flags}{, }\item[{uint32\+\_\+t \texorpdfstring{$\ast$}{*}}]{time\+\_\+remaining}{}\end{DoxyParamCaption})}
+
+Gets the time remaining until the first timer with the matching set of flags expires.
+
+
+\begin{DoxyParams}{Parameters}
+{\em option\+\_\+flags} & Set of flags to match\+:
+\begin{DoxyItemize}
+\item SL\+\_\+\+SLEEPTIMER\+\_\+\+ANY\+\_\+\+TIMER\+\_\+\+FLAG
+\item SL\+\_\+\+SLEEPTIMER\+\_\+\+NO\+\_\+\+HIGH\+\_\+\+PRECISION\+\_\+\+HF\+\_\+\+CLOCKS\+\_\+\+REQUIRED\+\_\+\+FLAG
+\end{DoxyItemize}\\
+\hline
+{\em time\+\_\+remaining} & Time left in timer ticks.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful. Error code otherwise.
+\end{DoxyReturn}
+Gets the time remaining until the first timer with the matching set of flags expires. \Hypertarget{group__sleeptimer_gae0397d420800b7c2d2afd5bbb9710067}\index{Sleep Timer@{Sleep Timer}!sl\_sleeptimer\_get\_tick\_count@{sl\_sleeptimer\_get\_tick\_count}}
+\index{sl\_sleeptimer\_get\_tick\_count@{sl\_sleeptimer\_get\_tick\_count}!Sleep Timer@{Sleep Timer}}
+\doxysubsubsection{\texorpdfstring{sl\_sleeptimer\_get\_tick\_count()}{sl\_sleeptimer\_get\_tick\_count()}}
+{\footnotesize\ttfamily \label{group__sleeptimer_gae0397d420800b7c2d2afd5bbb9710067} 
+uint32\+\_\+t sl\+\_\+sleeptimer\+\_\+get\+\_\+tick\+\_\+count (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+Gets current 32 bits global tick count.
+
+\begin{DoxyReturn}{Returns}
+Current tick count.
+\end{DoxyReturn}
+Gets current 32 bits tick count. \Hypertarget{group__sleeptimer_gaaf928eeb3dad0d43098b3aed9049959a}\index{Sleep Timer@{Sleep Timer}!sl\_sleeptimer\_get\_tick\_count64@{sl\_sleeptimer\_get\_tick\_count64}}
+\index{sl\_sleeptimer\_get\_tick\_count64@{sl\_sleeptimer\_get\_tick\_count64}!Sleep Timer@{Sleep Timer}}
+\doxysubsubsection{\texorpdfstring{sl\_sleeptimer\_get\_tick\_count64()}{sl\_sleeptimer\_get\_tick\_count64()}}
+{\footnotesize\ttfamily \label{group__sleeptimer_gaaf928eeb3dad0d43098b3aed9049959a} 
+uint64\+\_\+t sl\+\_\+sleeptimer\+\_\+get\+\_\+tick\+\_\+count64 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+Gets current 64 bits global tick count.
+
+\begin{DoxyReturn}{Returns}
+Current tick count.
+\end{DoxyReturn}
+Gets current 64 bits tick count. \Hypertarget{group__sleeptimer_ga4d79ef7aa10606814bcc21053bfca558}\index{Sleep Timer@{Sleep Timer}!sl\_sleeptimer\_get\_time@{sl\_sleeptimer\_get\_time}}
+\index{sl\_sleeptimer\_get\_time@{sl\_sleeptimer\_get\_time}!Sleep Timer@{Sleep Timer}}
+\doxysubsubsection{\texorpdfstring{sl\_sleeptimer\_get\_time()}{sl\_sleeptimer\_get\_time()}}
+{\footnotesize\ttfamily \label{group__sleeptimer_ga4d79ef7aa10606814bcc21053bfca558} 
+\mbox{\hyperlink{group__sleeptimer_gaf41c2bc4240e5b819fc7f285f62172a2}{sl\+\_\+sleeptimer\+\_\+timestamp\+\_\+t}} sl\+\_\+sleeptimer\+\_\+get\+\_\+time (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+Retrieves current 32 bit time.
+
+\begin{DoxyNote}{Note}
+Function definition is accessible only when SL\+\_\+\+SLEEPTIMER\+\_\+\+WALLCLOCK\+\_\+\+CONFIG is set to 1.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Current timestamps in Unix format. 
+\end{DoxyReturn}
+\Hypertarget{group__sleeptimer_ga8e99647fc3da11223cf4e65b7ad8c52d}\index{Sleep Timer@{Sleep Timer}!sl\_sleeptimer\_get\_time\_64@{sl\_sleeptimer\_get\_time\_64}}
+\index{sl\_sleeptimer\_get\_time\_64@{sl\_sleeptimer\_get\_time\_64}!Sleep Timer@{Sleep Timer}}
+\doxysubsubsection{\texorpdfstring{sl\_sleeptimer\_get\_time\_64()}{sl\_sleeptimer\_get\_time\_64()}}
+{\footnotesize\ttfamily \label{group__sleeptimer_ga8e99647fc3da11223cf4e65b7ad8c52d} 
+\mbox{\hyperlink{group__sleeptimer_ga5d4d9e5fe98012d2cffedb00caa9c91b}{sl\+\_\+sleeptimer\+\_\+timestamp\+\_\+64\+\_\+t}} sl\+\_\+sleeptimer\+\_\+get\+\_\+time\+\_\+64 (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+Retrieves current 64 bit time.
+
+\begin{DoxyNote}{Note}
+Function definition is accessible only when SL\+\_\+\+SLEEPTIMER\+\_\+\+WALLCLOCK\+\_\+\+CONFIG is set to 1.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+Current timestamps in Unix format. 
+\end{DoxyReturn}
+\Hypertarget{group__sleeptimer_ga69085e47b9cc43ac0cfdc08783c13aed}\index{Sleep Timer@{Sleep Timer}!sl\_sleeptimer\_get\_timer\_frequency@{sl\_sleeptimer\_get\_timer\_frequency}}
+\index{sl\_sleeptimer\_get\_timer\_frequency@{sl\_sleeptimer\_get\_timer\_frequency}!Sleep Timer@{Sleep Timer}}
+\doxysubsubsection{\texorpdfstring{sl\_sleeptimer\_get\_timer\_frequency()}{sl\_sleeptimer\_get\_timer\_frequency()}}
+{\footnotesize\ttfamily \label{group__sleeptimer_ga69085e47b9cc43ac0cfdc08783c13aed} 
+uint32\+\_\+t sl\+\_\+sleeptimer\+\_\+get\+\_\+timer\+\_\+frequency (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+Get timer frequency.
+
+\begin{DoxyReturn}{Returns}
+0 if successful. Error code otherwise.
+\end{DoxyReturn}
+Get timer frequency. \Hypertarget{group__sleeptimer_ga6a06acb331e2e3c0efeb83f42a4d9c16}\index{Sleep Timer@{Sleep Timer}!sl\_sleeptimer\_get\_timer\_time\_remaining@{sl\_sleeptimer\_get\_timer\_time\_remaining}}
+\index{sl\_sleeptimer\_get\_timer\_time\_remaining@{sl\_sleeptimer\_get\_timer\_time\_remaining}!Sleep Timer@{Sleep Timer}}
+\doxysubsubsection{\texorpdfstring{sl\_sleeptimer\_get\_timer\_time\_remaining()}{sl\_sleeptimer\_get\_timer\_time\_remaining()}}
+{\footnotesize\ttfamily \label{group__sleeptimer_ga6a06acb331e2e3c0efeb83f42a4d9c16} 
+sl\+\_\+status\+\_\+t sl\+\_\+sleeptimer\+\_\+get\+\_\+timer\+\_\+time\+\_\+remaining (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structsl__sleeptimer__timer__handle}{sl\+\_\+sleeptimer\+\_\+timer\+\_\+handle\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{handle}{, }\item[{uint32\+\_\+t \texorpdfstring{$\ast$}{*}}]{time}{}\end{DoxyParamCaption})}
+
+Gets remaining time until timer expires.
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & Pointer to handle to timer. \\
+\hline
+{\em time} & Time left in timer ticks.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful. Error code otherwise.
+\end{DoxyReturn}
+Gets a 32 bits timer\textquotesingle{}s time remaining. \Hypertarget{group__sleeptimer_ga91ebac6960e114d933e1ef7c4f32294a}\index{Sleep Timer@{Sleep Timer}!sl\_sleeptimer\_get\_tz@{sl\_sleeptimer\_get\_tz}}
+\index{sl\_sleeptimer\_get\_tz@{sl\_sleeptimer\_get\_tz}!Sleep Timer@{Sleep Timer}}
+\doxysubsubsection{\texorpdfstring{sl\_sleeptimer\_get\_tz()}{sl\_sleeptimer\_get\_tz()}}
+{\footnotesize\ttfamily \label{group__sleeptimer_ga91ebac6960e114d933e1ef7c4f32294a} 
+\mbox{\hyperlink{group__sleeptimer_ga27148a3d37b9f3728cbd18b56b4c9979}{sl\+\_\+sleeptimer\+\_\+time\+\_\+zone\+\_\+offset\+\_\+t}} sl\+\_\+sleeptimer\+\_\+get\+\_\+tz (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+Gets time zone offset.
+
+\begin{DoxyReturn}{Returns}
+Time zone offset, in seconds. 
+\end{DoxyReturn}
+\Hypertarget{group__sleeptimer_gae661a78719a6acc014efa15216ae4a54}\index{Sleep Timer@{Sleep Timer}!sl\_sleeptimer\_init@{sl\_sleeptimer\_init}}
+\index{sl\_sleeptimer\_init@{sl\_sleeptimer\_init}!Sleep Timer@{Sleep Timer}}
+\doxysubsubsection{\texorpdfstring{sl\_sleeptimer\_init()}{sl\_sleeptimer\_init()}}
+{\footnotesize\ttfamily \label{group__sleeptimer_gae661a78719a6acc014efa15216ae4a54} 
+sl\+\_\+status\+\_\+t sl\+\_\+sleeptimer\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+Initializes the Sleeptimer.
+
+\begin{DoxyReturn}{Returns}
+0 if successful. Error code otherwise.
+\end{DoxyReturn}
+Initializes sleep timer. \Hypertarget{group__sleeptimer_ga0b38592836a9a01d6f315d417d3d6cd9}\index{Sleep Timer@{Sleep Timer}!sl\_sleeptimer\_is\_power\_manager\_early\_restore\_timer\_latest\_to\_expire@{sl\_sleeptimer\_is\_power\_manager\_early\_restore\_timer\_latest\_to\_expire}}
+\index{sl\_sleeptimer\_is\_power\_manager\_early\_restore\_timer\_latest\_to\_expire@{sl\_sleeptimer\_is\_power\_manager\_early\_restore\_timer\_latest\_to\_expire}!Sleep Timer@{Sleep Timer}}
+\doxysubsubsection{\texorpdfstring{sl\_sleeptimer\_is\_power\_manager\_early\_restore\_timer\_latest\_to\_expire()}{sl\_sleeptimer\_is\_power\_manager\_early\_restore\_timer\_latest\_to\_expire()}}
+{\footnotesize\ttfamily \label{group__sleeptimer_ga0b38592836a9a01d6f315d417d3d6cd9} 
+bool sl\+\_\+sleeptimer\+\_\+is\+\_\+power\+\_\+manager\+\_\+early\+\_\+restore\+\_\+timer\+\_\+latest\+\_\+to\+\_\+expire (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+Allow sleep after ISR exit.
+
+\begin{DoxyReturn}{Returns}
+true if sleep is allowed after ISR exit. False otherwise.
+\end{DoxyReturn}
+Determines if the power manager\textquotesingle{}s early wakeup expired during the last ISR and it was the only timer to expire in that period.
+
+\begin{DoxyReturn}{Returns}
+true if power manager sleep can return to sleep, false otherwise. 
+\end{DoxyReturn}
+\Hypertarget{group__sleeptimer_gac0236c1c353317c41d577867e7429874}\index{Sleep Timer@{Sleep Timer}!sl\_sleeptimer\_is\_timer\_running@{sl\_sleeptimer\_is\_timer\_running}}
+\index{sl\_sleeptimer\_is\_timer\_running@{sl\_sleeptimer\_is\_timer\_running}!Sleep Timer@{Sleep Timer}}
+\doxysubsubsection{\texorpdfstring{sl\_sleeptimer\_is\_timer\_running()}{sl\_sleeptimer\_is\_timer\_running()}}
+{\footnotesize\ttfamily \label{group__sleeptimer_gac0236c1c353317c41d577867e7429874} 
+sl\+\_\+status\+\_\+t sl\+\_\+sleeptimer\+\_\+is\+\_\+timer\+\_\+running (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structsl__sleeptimer__timer__handle}{sl\+\_\+sleeptimer\+\_\+timer\+\_\+handle\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{handle}{, }\item[{bool \texorpdfstring{$\ast$}{*}}]{running}{}\end{DoxyParamCaption})}
+
+Gets the status of a timer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & Pointer to handle to timer. \\
+\hline
+{\em running} & Pointer to the status of the timer.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+A non periodic timer is considered not running during its callback.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+0 if successful. Error code otherwise.
+\end{DoxyReturn}
+Gets the status of a timer. \Hypertarget{group__sleeptimer_ga7484d4be4877b94a687f4410fccc6271}\index{Sleep Timer@{Sleep Timer}!sl\_sleeptimer\_ms32\_to\_tick@{sl\_sleeptimer\_ms32\_to\_tick}}
+\index{sl\_sleeptimer\_ms32\_to\_tick@{sl\_sleeptimer\_ms32\_to\_tick}!Sleep Timer@{Sleep Timer}}
+\doxysubsubsection{\texorpdfstring{sl\_sleeptimer\_ms32\_to\_tick()}{sl\_sleeptimer\_ms32\_to\_tick()}}
+{\footnotesize\ttfamily \label{group__sleeptimer_ga7484d4be4877b94a687f4410fccc6271} 
+sl\+\_\+status\+\_\+t sl\+\_\+sleeptimer\+\_\+ms32\+\_\+to\+\_\+tick (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{time\+\_\+ms}{, }\item[{uint32\+\_\+t \texorpdfstring{$\ast$}{*}}]{tick}{}\end{DoxyParamCaption})}
+
+Converts 32-\/bits milliseconds in ticks.
+
+
+\begin{DoxyParams}{Parameters}
+{\em time\+\_\+ms} & Number of milliseconds. \\
+\hline
+{\em tick} & Pointer to the converted tick number.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful. Error code otherwise.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The result is "{}rounded"{} to the superior tick number. If possible the \doxylink{group__sleeptimer_gadf3a3eb05b0f5adbc7ee488113299f61}{sl\+\_\+sleeptimer\+\_\+ms\+\_\+to\+\_\+tick()} function should be used.
+
+This function converts the delay expressed in milliseconds to timer ticks (represented on 32 bits). This means that the value that can be passed to the argument \textquotesingle{}time\+\_\+ms\textquotesingle{} is limited. The maximum timeout value that can be passed to this function can be retrieved by calling \doxylink{group__sleeptimer_ga3218039eab8d09231cc092fdc2a1dba5}{sl\+\_\+sleeptimer\+\_\+get\+\_\+max\+\_\+ms32\+\_\+conversion()}. If the value passed to \textquotesingle{}time\+\_\+ms\textquotesingle{} is too large, SL\+\_\+\+STATUS\+\_\+\+INVALID\+\_\+\+PARAMETER will be returned. 
+\end{DoxyNote}
+\Hypertarget{group__sleeptimer_gadf3a3eb05b0f5adbc7ee488113299f61}\index{Sleep Timer@{Sleep Timer}!sl\_sleeptimer\_ms\_to\_tick@{sl\_sleeptimer\_ms\_to\_tick}}
+\index{sl\_sleeptimer\_ms\_to\_tick@{sl\_sleeptimer\_ms\_to\_tick}!Sleep Timer@{Sleep Timer}}
+\doxysubsubsection{\texorpdfstring{sl\_sleeptimer\_ms\_to\_tick()}{sl\_sleeptimer\_ms\_to\_tick()}}
+{\footnotesize\ttfamily \label{group__sleeptimer_gadf3a3eb05b0f5adbc7ee488113299f61} 
+uint32\+\_\+t sl\+\_\+sleeptimer\+\_\+ms\+\_\+to\+\_\+tick (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{time\+\_\+ms}{}\end{DoxyParamCaption})}
+
+Converts milliseconds in ticks.
+
+
+\begin{DoxyParams}{Parameters}
+{\em time\+\_\+ms} & Number of milliseconds.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Corresponding ticks number.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The result is "{}rounded"{} to the superior tick number. This function is light and cannot fail so it should be privilegied to perform a millisecond to tick conversion. 
+\end{DoxyNote}
+\Hypertarget{group__sleeptimer_gaf54408a7f172b684de33d9a7f4e01be9}\index{Sleep Timer@{Sleep Timer}!sl\_sleeptimer\_restart\_periodic\_timer@{sl\_sleeptimer\_restart\_periodic\_timer}}
+\index{sl\_sleeptimer\_restart\_periodic\_timer@{sl\_sleeptimer\_restart\_periodic\_timer}!Sleep Timer@{Sleep Timer}}
+\doxysubsubsection{\texorpdfstring{sl\_sleeptimer\_restart\_periodic\_timer()}{sl\_sleeptimer\_restart\_periodic\_timer()}}
+{\footnotesize\ttfamily \label{group__sleeptimer_gaf54408a7f172b684de33d9a7f4e01be9} 
+sl\+\_\+status\+\_\+t sl\+\_\+sleeptimer\+\_\+restart\+\_\+periodic\+\_\+timer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structsl__sleeptimer__timer__handle}{sl\+\_\+sleeptimer\+\_\+timer\+\_\+handle\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{handle}{, }\item[{uint32\+\_\+t}]{timeout}{, }\item[{\mbox{\hyperlink{group__sleeptimer_ga9049589e4153204fb3e97cbe1ecda89b}{sl\+\_\+sleeptimer\+\_\+timer\+\_\+callback\+\_\+t}}}]{callback}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{callback\+\_\+data}{, }\item[{uint8\+\_\+t}]{priority}{, }\item[{uint16\+\_\+t}]{option\+\_\+flags}{}\end{DoxyParamCaption})}
+
+Restarts a 32 bits periodic timer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & Pointer to handle to timer. \\
+\hline
+{\em timeout} & Timer periodic timeout, in timer ticks. \\
+\hline
+{\em callback} & Callback function that will be called when initial/periodic timeout expires. \\
+\hline
+{\em callback\+\_\+data} & Pointer to user data that will be passed to callback. \\
+\hline
+{\em priority} & Priority of callback. Useful in case multiple timer expire at the same time. 0 = highest priority. \\
+\hline
+{\em option\+\_\+flags} & Bit array of option flags for the timer. Valid bit-\/wise OR of one or more of the following\+:
+\begin{DoxyItemize}
+\item SL\+\_\+\+SLEEPTIMER\+\_\+\+NO\+\_\+\+HIGH\+\_\+\+PRECISION\+\_\+\+HF\+\_\+\+CLOCKS\+\_\+\+REQUIRED\+\_\+\+FLAG or 0 for not flags.
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful. Error code otherwise.
+\end{DoxyReturn}
+Restarts a 32 bits periodic timer. \Hypertarget{group__sleeptimer_ga1a44174e7a8eccbabde499875cb8462a}\index{Sleep Timer@{Sleep Timer}!sl\_sleeptimer\_restart\_periodic\_timer\_ms@{sl\_sleeptimer\_restart\_periodic\_timer\_ms}}
+\index{sl\_sleeptimer\_restart\_periodic\_timer\_ms@{sl\_sleeptimer\_restart\_periodic\_timer\_ms}!Sleep Timer@{Sleep Timer}}
+\doxysubsubsection{\texorpdfstring{sl\_sleeptimer\_restart\_periodic\_timer\_ms()}{sl\_sleeptimer\_restart\_periodic\_timer\_ms()}}
+{\footnotesize\ttfamily \label{group__sleeptimer_ga1a44174e7a8eccbabde499875cb8462a} 
+sl\+\_\+status\+\_\+t sl\+\_\+sleeptimer\+\_\+restart\+\_\+periodic\+\_\+timer\+\_\+ms (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structsl__sleeptimer__timer__handle}{sl\+\_\+sleeptimer\+\_\+timer\+\_\+handle\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{handle}{, }\item[{uint32\+\_\+t}]{timeout\+\_\+ms}{, }\item[{\mbox{\hyperlink{group__sleeptimer_ga9049589e4153204fb3e97cbe1ecda89b}{sl\+\_\+sleeptimer\+\_\+timer\+\_\+callback\+\_\+t}}}]{callback}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{callback\+\_\+data}{, }\item[{uint8\+\_\+t}]{priority}{, }\item[{uint16\+\_\+t}]{option\+\_\+flags}{}\end{DoxyParamCaption})}
+
+Restarts a 32 bits periodic timer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & Pointer to handle to timer. \\
+\hline
+{\em timeout\+\_\+ms} & Timer periodic timeout, in milliseconds. \\
+\hline
+{\em callback} & Callback function that will be called when initial/periodic timeout expires. \\
+\hline
+{\em callback\+\_\+data} & Pointer to user data that will be passed to callback. \\
+\hline
+{\em priority} & Priority of callback. Useful in case multiple timer expire at the same time. 0 = highest priority. \\
+\hline
+{\em option\+\_\+flags} & Bit array of option flags for the timer. Valid bit-\/wise OR of one or more of the following\+:
+\begin{DoxyItemize}
+\item SL\+\_\+\+SLEEPTIMER\+\_\+\+NO\+\_\+\+HIGH\+\_\+\+PRECISION\+\_\+\+HF\+\_\+\+CLOCKS\+\_\+\+REQUIRED\+\_\+\+FLAG or 0 for not flags.
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful. Error code otherwise.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+This function converts the delay expressed in milliseconds to timer ticks (represented on 32 bits). This means that the value that can be passed to the argument \textquotesingle{}timeout\+\_\+ms\textquotesingle{} is limited. The maximum timeout value that can be passed to this function can be retrieved by calling \doxylink{group__sleeptimer_ga3218039eab8d09231cc092fdc2a1dba5}{sl\+\_\+sleeptimer\+\_\+get\+\_\+max\+\_\+ms32\+\_\+conversion()}. If the value passed to \textquotesingle{}timeout\+\_\+ms\textquotesingle{} is too large, SL\+\_\+\+STATUS\+\_\+\+INVALID\+\_\+\+PARAMETER will be returned.
+\end{DoxyNote}
+Restarts a 32 bits periodic timer using milliseconds as the timebase. \Hypertarget{group__sleeptimer_gaacd5a666731a0ba4823107e552e23e69}\index{Sleep Timer@{Sleep Timer}!sl\_sleeptimer\_restart\_timer@{sl\_sleeptimer\_restart\_timer}}
+\index{sl\_sleeptimer\_restart\_timer@{sl\_sleeptimer\_restart\_timer}!Sleep Timer@{Sleep Timer}}
+\doxysubsubsection{\texorpdfstring{sl\_sleeptimer\_restart\_timer()}{sl\_sleeptimer\_restart\_timer()}}
+{\footnotesize\ttfamily \label{group__sleeptimer_gaacd5a666731a0ba4823107e552e23e69} 
+sl\+\_\+status\+\_\+t sl\+\_\+sleeptimer\+\_\+restart\+\_\+timer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structsl__sleeptimer__timer__handle}{sl\+\_\+sleeptimer\+\_\+timer\+\_\+handle\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{handle}{, }\item[{uint32\+\_\+t}]{timeout}{, }\item[{\mbox{\hyperlink{group__sleeptimer_ga9049589e4153204fb3e97cbe1ecda89b}{sl\+\_\+sleeptimer\+\_\+timer\+\_\+callback\+\_\+t}}}]{callback}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{callback\+\_\+data}{, }\item[{uint8\+\_\+t}]{priority}{, }\item[{uint16\+\_\+t}]{option\+\_\+flags}{}\end{DoxyParamCaption})}
+
+Restarts a 32 bits timer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & Pointer to handle to timer. \\
+\hline
+{\em timeout} & Timer timeout, in timer ticks. \\
+\hline
+{\em callback} & Callback function that will be called when initial/periodic timeout expires. \\
+\hline
+{\em callback\+\_\+data} & Pointer to user data that will be passed to callback. \\
+\hline
+{\em priority} & Priority of callback. Useful in case multiple timer expire at the same time. 0 = highest priority. \\
+\hline
+{\em option\+\_\+flags} & Bit array of option flags for the timer. Valid bit-\/wise OR of one or more of the following\+:
+\begin{DoxyItemize}
+\item SL\+\_\+\+SLEEPTIMER\+\_\+\+NO\+\_\+\+HIGH\+\_\+\+PRECISION\+\_\+\+HF\+\_\+\+CLOCKS\+\_\+\+REQUIRED\+\_\+\+FLAG or 0 for not flags.
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful. Error code otherwise.
+\end{DoxyReturn}
+Restarts a 32 bits timer. \Hypertarget{group__sleeptimer_gab3da1641c9bae0857ba3cffcbc41f21a}\index{Sleep Timer@{Sleep Timer}!sl\_sleeptimer\_restart\_timer\_ms@{sl\_sleeptimer\_restart\_timer\_ms}}
+\index{sl\_sleeptimer\_restart\_timer\_ms@{sl\_sleeptimer\_restart\_timer\_ms}!Sleep Timer@{Sleep Timer}}
+\doxysubsubsection{\texorpdfstring{sl\_sleeptimer\_restart\_timer\_ms()}{sl\_sleeptimer\_restart\_timer\_ms()}}
+{\footnotesize\ttfamily \label{group__sleeptimer_gab3da1641c9bae0857ba3cffcbc41f21a} 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE sl\+\_\+status\+\_\+t sl\+\_\+sleeptimer\+\_\+restart\+\_\+timer\+\_\+ms (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structsl__sleeptimer__timer__handle}{sl\+\_\+sleeptimer\+\_\+timer\+\_\+handle\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{handle}{, }\item[{uint32\+\_\+t}]{timeout\+\_\+ms}{, }\item[{\mbox{\hyperlink{group__sleeptimer_ga9049589e4153204fb3e97cbe1ecda89b}{sl\+\_\+sleeptimer\+\_\+timer\+\_\+callback\+\_\+t}}}]{callback}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{callback\+\_\+data}{, }\item[{uint8\+\_\+t}]{priority}{, }\item[{uint16\+\_\+t}]{option\+\_\+flags}{}\end{DoxyParamCaption})}
+
+Restarts a 32 bits timer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & Pointer to handle to timer. \\
+\hline
+{\em timeout\+\_\+ms} & Timer timeout, in milliseconds. \\
+\hline
+{\em callback} & Callback function that will be called when initial/periodic timeout expires. \\
+\hline
+{\em callback\+\_\+data} & Pointer to user data that will be passed to callback. \\
+\hline
+{\em priority} & Priority of callback. Useful in case multiple timer expire at the same time. 0 = highest priority. \\
+\hline
+{\em option\+\_\+flags} & Bit array of option flags for the timer. Valid bit-\/wise OR of one or more of the following\+:
+\begin{DoxyItemize}
+\item SL\+\_\+\+SLEEPTIMER\+\_\+\+NO\+\_\+\+HIGH\+\_\+\+PRECISION\+\_\+\+HF\+\_\+\+CLOCKS\+\_\+\+REQUIRED\+\_\+\+FLAG or 0 for not flags.
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful. Error code otherwise.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+This function converts the delay expressed in milliseconds to timer ticks (represented on 32 bits). This means that the value that can be passed to the argument \textquotesingle{}timeout\+\_\+ms\textquotesingle{} is limited. The maximum timeout value that can be passed to this function can be retrieved by calling \doxylink{group__sleeptimer_ga3218039eab8d09231cc092fdc2a1dba5}{sl\+\_\+sleeptimer\+\_\+get\+\_\+max\+\_\+ms32\+\_\+conversion()}. If the value passed to \textquotesingle{}timeout\+\_\+ms\textquotesingle{} is too large, SL\+\_\+\+STATUS\+\_\+\+INVALID\+\_\+\+PARAMETER will be returned. 
+\end{DoxyNote}
+\Hypertarget{group__sleeptimer_ga840c8ef8049b364a45899320a9f0c8bf}\index{Sleep Timer@{Sleep Timer}!sl\_sleeptimer\_set\_datetime@{sl\_sleeptimer\_set\_datetime}}
+\index{sl\_sleeptimer\_set\_datetime@{sl\_sleeptimer\_set\_datetime}!Sleep Timer@{Sleep Timer}}
+\doxysubsubsection{\texorpdfstring{sl\_sleeptimer\_set\_datetime()}{sl\_sleeptimer\_set\_datetime()}}
+{\footnotesize\ttfamily \label{group__sleeptimer_ga840c8ef8049b364a45899320a9f0c8bf} 
+sl\+\_\+status\+\_\+t sl\+\_\+sleeptimer\+\_\+set\+\_\+datetime (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__sleeptimer_ga8b17c7e32e3ad35bb6b0a9c2001e8d64}{sl\+\_\+sleeptimer\+\_\+date\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{date}{}\end{DoxyParamCaption})}
+
+Sets current time, in date format.
+
+
+\begin{DoxyParams}{Parameters}
+{\em date} & Pointer to current date.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Function definition is accessible only when SL\+\_\+\+SLEEPTIMER\+\_\+\+WALLCLOCK\+\_\+\+CONFIG is set to 1.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+0 if successful. Error code otherwise. 
+\end{DoxyReturn}
+\Hypertarget{group__sleeptimer_gafbd64c7fbf7b0dfb7947a6f7bf288dca}\index{Sleep Timer@{Sleep Timer}!sl\_sleeptimer\_set\_time@{sl\_sleeptimer\_set\_time}}
+\index{sl\_sleeptimer\_set\_time@{sl\_sleeptimer\_set\_time}!Sleep Timer@{Sleep Timer}}
+\doxysubsubsection{\texorpdfstring{sl\_sleeptimer\_set\_time()}{sl\_sleeptimer\_set\_time()}}
+{\footnotesize\ttfamily \label{group__sleeptimer_gafbd64c7fbf7b0dfb7947a6f7bf288dca} 
+sl\+\_\+status\+\_\+t sl\+\_\+sleeptimer\+\_\+set\+\_\+time (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__sleeptimer_gaf41c2bc4240e5b819fc7f285f62172a2}{sl\+\_\+sleeptimer\+\_\+timestamp\+\_\+t}}}]{time}{}\end{DoxyParamCaption})}
+
+Sets current time.
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & timestamp structure to set.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Function definition is accessible only when SL\+\_\+\+SLEEPTIMER\+\_\+\+WALLCLOCK\+\_\+\+CONFIG is set to 1.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+0 if successful. Error code otherwise. 
+\end{DoxyReturn}
+\Hypertarget{group__sleeptimer_ga63a00c3c2b137b68f66d47ae77f0d26b}\index{Sleep Timer@{Sleep Timer}!sl\_sleeptimer\_set\_time\_64@{sl\_sleeptimer\_set\_time\_64}}
+\index{sl\_sleeptimer\_set\_time\_64@{sl\_sleeptimer\_set\_time\_64}!Sleep Timer@{Sleep Timer}}
+\doxysubsubsection{\texorpdfstring{sl\_sleeptimer\_set\_time\_64()}{sl\_sleeptimer\_set\_time\_64()}}
+{\footnotesize\ttfamily \label{group__sleeptimer_ga63a00c3c2b137b68f66d47ae77f0d26b} 
+sl\+\_\+status\+\_\+t sl\+\_\+sleeptimer\+\_\+set\+\_\+time\+\_\+64 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__sleeptimer_ga5d4d9e5fe98012d2cffedb00caa9c91b}{sl\+\_\+sleeptimer\+\_\+timestamp\+\_\+64\+\_\+t}}}]{time}{}\end{DoxyParamCaption})}
+
+Sets current time.
+
+
+\begin{DoxyParams}{Parameters}
+{\em time} & timestamp structure to set.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Function definition is accessible only when SL\+\_\+\+SLEEPTIMER\+\_\+\+WALLCLOCK\+\_\+\+CONFIG is set to 1.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+0 if successful. Error code otherwise. 
+\end{DoxyReturn}
+\Hypertarget{group__sleeptimer_gafbd748d9a4654e9ae474a7020a5d9813}\index{Sleep Timer@{Sleep Timer}!sl\_sleeptimer\_set\_tz@{sl\_sleeptimer\_set\_tz}}
+\index{sl\_sleeptimer\_set\_tz@{sl\_sleeptimer\_set\_tz}!Sleep Timer@{Sleep Timer}}
+\doxysubsubsection{\texorpdfstring{sl\_sleeptimer\_set\_tz()}{sl\_sleeptimer\_set\_tz()}}
+{\footnotesize\ttfamily \label{group__sleeptimer_gafbd748d9a4654e9ae474a7020a5d9813} 
+void sl\+\_\+sleeptimer\+\_\+set\+\_\+tz (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{group__sleeptimer_ga27148a3d37b9f3728cbd18b56b4c9979}{sl\+\_\+sleeptimer\+\_\+time\+\_\+zone\+\_\+offset\+\_\+t}}}]{offset}{}\end{DoxyParamCaption})}
+
+Sets time zone offset.
+
+
+\begin{DoxyParams}{Parameters}
+{\em offset} & Time zone offset, in seconds.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Function definition is accessible only when SL\+\_\+\+SLEEPTIMER\+\_\+\+WALLCLOCK\+\_\+\+CONFIG is set to 1. 
+\end{DoxyNote}
+\Hypertarget{group__sleeptimer_ga173dc0338a7c53c13c73a4859158b901}\index{Sleep Timer@{Sleep Timer}!sl\_sleeptimer\_set\_tz\_ahead\_utc@{sl\_sleeptimer\_set\_tz\_ahead\_utc}}
+\index{sl\_sleeptimer\_set\_tz\_ahead\_utc@{sl\_sleeptimer\_set\_tz\_ahead\_utc}!Sleep Timer@{Sleep Timer}}
+\doxysubsubsection{\texorpdfstring{sl\_sleeptimer\_set\_tz\_ahead\_utc()}{sl\_sleeptimer\_set\_tz\_ahead\_utc()}}
+{\footnotesize\ttfamily \label{group__sleeptimer_ga173dc0338a7c53c13c73a4859158b901} 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE \mbox{\hyperlink{group__sleeptimer_ga27148a3d37b9f3728cbd18b56b4c9979}{sl\+\_\+sleeptimer\+\_\+time\+\_\+zone\+\_\+offset\+\_\+t}} sl\+\_\+sleeptimer\+\_\+set\+\_\+tz\+\_\+ahead\+\_\+utc (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{hours}{, }\item[{uint8\+\_\+t}]{minutes}{}\end{DoxyParamCaption})}
+
+Calculates offset for time zone after UTC-\/0.
+
+
+\begin{DoxyParams}{Parameters}
+{\em hours} & Number of hours from UTC-\/0. \\
+\hline
+{\em minutes} & Number of minutes from UTC-\/0.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The time zone offset in seconds. 
+\end{DoxyReturn}
+\Hypertarget{group__sleeptimer_gafd73a4283a8c257f8e9c74f410679073}\index{Sleep Timer@{Sleep Timer}!sl\_sleeptimer\_set\_tz\_behind\_utc@{sl\_sleeptimer\_set\_tz\_behind\_utc}}
+\index{sl\_sleeptimer\_set\_tz\_behind\_utc@{sl\_sleeptimer\_set\_tz\_behind\_utc}!Sleep Timer@{Sleep Timer}}
+\doxysubsubsection{\texorpdfstring{sl\_sleeptimer\_set\_tz\_behind\_utc()}{sl\_sleeptimer\_set\_tz\_behind\_utc()}}
+{\footnotesize\ttfamily \label{group__sleeptimer_gafd73a4283a8c257f8e9c74f410679073} 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE \mbox{\hyperlink{group__sleeptimer_ga27148a3d37b9f3728cbd18b56b4c9979}{sl\+\_\+sleeptimer\+\_\+time\+\_\+zone\+\_\+offset\+\_\+t}} sl\+\_\+sleeptimer\+\_\+set\+\_\+tz\+\_\+behind\+\_\+utc (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{hours}{, }\item[{uint8\+\_\+t}]{minutes}{}\end{DoxyParamCaption})}
+
+Calculates offset for time zone before UTC-\/0.
+
+
+\begin{DoxyParams}{Parameters}
+{\em hours} & Number of hours to UTC-\/0. \\
+\hline
+{\em minutes} & Number of minutes to UTC-\/0.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The time zone offset in seconds. 
+\end{DoxyReturn}
+\Hypertarget{group__sleeptimer_ga2ceb1b76334902525dd32e937e90bb16}\index{Sleep Timer@{Sleep Timer}!sl\_sleeptimer\_start\_periodic\_timer@{sl\_sleeptimer\_start\_periodic\_timer}}
+\index{sl\_sleeptimer\_start\_periodic\_timer@{sl\_sleeptimer\_start\_periodic\_timer}!Sleep Timer@{Sleep Timer}}
+\doxysubsubsection{\texorpdfstring{sl\_sleeptimer\_start\_periodic\_timer()}{sl\_sleeptimer\_start\_periodic\_timer()}}
+{\footnotesize\ttfamily \label{group__sleeptimer_ga2ceb1b76334902525dd32e937e90bb16} 
+sl\+\_\+status\+\_\+t sl\+\_\+sleeptimer\+\_\+start\+\_\+periodic\+\_\+timer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structsl__sleeptimer__timer__handle}{sl\+\_\+sleeptimer\+\_\+timer\+\_\+handle\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{handle}{, }\item[{uint32\+\_\+t}]{timeout}{, }\item[{\mbox{\hyperlink{group__sleeptimer_ga9049589e4153204fb3e97cbe1ecda89b}{sl\+\_\+sleeptimer\+\_\+timer\+\_\+callback\+\_\+t}}}]{callback}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{callback\+\_\+data}{, }\item[{uint8\+\_\+t}]{priority}{, }\item[{uint16\+\_\+t}]{option\+\_\+flags}{}\end{DoxyParamCaption})}
+
+Starts a 32 bits periodic timer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & Pointer to handle to timer. \\
+\hline
+{\em timeout} & Timer periodic timeout, in timer ticks. \\
+\hline
+{\em callback} & Callback function that will be called when initial/periodic timeout expires. \\
+\hline
+{\em callback\+\_\+data} & Pointer to user data that will be passed to callback. \\
+\hline
+{\em priority} & Priority of callback. Useful in case multiple timer expire at the same time. 0 = highest priority. \\
+\hline
+{\em option\+\_\+flags} & Bit array of option flags for the timer. Valid bit-\/wise OR of one or more of the following\+:
+\begin{DoxyItemize}
+\item SL\+\_\+\+SLEEPTIMER\+\_\+\+NO\+\_\+\+HIGH\+\_\+\+PRECISION\+\_\+\+HF\+\_\+\+CLOCKS\+\_\+\+REQUIRED\+\_\+\+FLAG or 0 for not flags.
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful. Error code otherwise.
+\end{DoxyReturn}
+Starts a 32 bits periodic timer. \Hypertarget{group__sleeptimer_gae4639653b4bf4ed68049b2a12a6c6d83}\index{Sleep Timer@{Sleep Timer}!sl\_sleeptimer\_start\_periodic\_timer\_ms@{sl\_sleeptimer\_start\_periodic\_timer\_ms}}
+\index{sl\_sleeptimer\_start\_periodic\_timer\_ms@{sl\_sleeptimer\_start\_periodic\_timer\_ms}!Sleep Timer@{Sleep Timer}}
+\doxysubsubsection{\texorpdfstring{sl\_sleeptimer\_start\_periodic\_timer\_ms()}{sl\_sleeptimer\_start\_periodic\_timer\_ms()}}
+{\footnotesize\ttfamily \label{group__sleeptimer_gae4639653b4bf4ed68049b2a12a6c6d83} 
+sl\+\_\+status\+\_\+t sl\+\_\+sleeptimer\+\_\+start\+\_\+periodic\+\_\+timer\+\_\+ms (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structsl__sleeptimer__timer__handle}{sl\+\_\+sleeptimer\+\_\+timer\+\_\+handle\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{handle}{, }\item[{uint32\+\_\+t}]{timeout\+\_\+ms}{, }\item[{\mbox{\hyperlink{group__sleeptimer_ga9049589e4153204fb3e97cbe1ecda89b}{sl\+\_\+sleeptimer\+\_\+timer\+\_\+callback\+\_\+t}}}]{callback}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{callback\+\_\+data}{, }\item[{uint8\+\_\+t}]{priority}{, }\item[{uint16\+\_\+t}]{option\+\_\+flags}{}\end{DoxyParamCaption})}
+
+Starts a 32 bits periodic timer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & Pointer to handle to timer. \\
+\hline
+{\em timeout\+\_\+ms} & Timer periodic timeout, in milliseconds. \\
+\hline
+{\em callback} & Callback function that will be called when initial/periodic timeout expires. \\
+\hline
+{\em callback\+\_\+data} & Pointer to user data that will be passed to callback. \\
+\hline
+{\em priority} & Priority of callback. Useful in case multiple timer expire at the same time. 0 = highest priority. \\
+\hline
+{\em option\+\_\+flags} & Bit array of option flags for the timer. Valid bit-\/wise OR of one or more of the following\+:
+\begin{DoxyItemize}
+\item SL\+\_\+\+SLEEPTIMER\+\_\+\+NO\+\_\+\+HIGH\+\_\+\+PRECISION\+\_\+\+HF\+\_\+\+CLOCKS\+\_\+\+REQUIRED\+\_\+\+FLAG or 0 for not flags.
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful. Error code otherwise.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+This function converts the delay expressed in milliseconds to timer ticks (represented on 32 bits). This means that the value that can be passed to the argument \textquotesingle{}timeout\+\_\+ms\textquotesingle{} is limited. The maximum timeout value that can be passed to this function can be retrieved by calling \doxylink{group__sleeptimer_ga3218039eab8d09231cc092fdc2a1dba5}{sl\+\_\+sleeptimer\+\_\+get\+\_\+max\+\_\+ms32\+\_\+conversion()}. If the value passed to \textquotesingle{}timeout\+\_\+ms\textquotesingle{} is too large, SL\+\_\+\+STATUS\+\_\+\+INVALID\+\_\+\+PARAMETER will be returned.
+\end{DoxyNote}
+Starts a 32 bits periodic timer using milliseconds as the timebase. \Hypertarget{group__sleeptimer_ga43c32bdb2a9fcfbe279563a9fd689711}\index{Sleep Timer@{Sleep Timer}!sl\_sleeptimer\_start\_timer@{sl\_sleeptimer\_start\_timer}}
+\index{sl\_sleeptimer\_start\_timer@{sl\_sleeptimer\_start\_timer}!Sleep Timer@{Sleep Timer}}
+\doxysubsubsection{\texorpdfstring{sl\_sleeptimer\_start\_timer()}{sl\_sleeptimer\_start\_timer()}}
+{\footnotesize\ttfamily \label{group__sleeptimer_ga43c32bdb2a9fcfbe279563a9fd689711} 
+sl\+\_\+status\+\_\+t sl\+\_\+sleeptimer\+\_\+start\+\_\+timer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structsl__sleeptimer__timer__handle}{sl\+\_\+sleeptimer\+\_\+timer\+\_\+handle\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{handle}{, }\item[{uint32\+\_\+t}]{timeout}{, }\item[{\mbox{\hyperlink{group__sleeptimer_ga9049589e4153204fb3e97cbe1ecda89b}{sl\+\_\+sleeptimer\+\_\+timer\+\_\+callback\+\_\+t}}}]{callback}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{callback\+\_\+data}{, }\item[{uint8\+\_\+t}]{priority}{, }\item[{uint16\+\_\+t}]{option\+\_\+flags}{}\end{DoxyParamCaption})}
+
+Starts a 32 bits timer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & Pointer to handle to timer. \\
+\hline
+{\em timeout} & Timer timeout, in timer ticks. \\
+\hline
+{\em callback} & Callback function that will be called when initial/periodic timeout expires. \\
+\hline
+{\em callback\+\_\+data} & Pointer to user data that will be passed to callback. \\
+\hline
+{\em priority} & Priority of callback. Useful in case multiple timer expire at the same time. 0 = highest priority. \\
+\hline
+{\em option\+\_\+flags} & Bit array of option flags for the timer. Valid bit-\/wise OR of one or more of the following\+:
+\begin{DoxyItemize}
+\item SL\+\_\+\+SLEEPTIMER\+\_\+\+NO\+\_\+\+HIGH\+\_\+\+PRECISION\+\_\+\+HF\+\_\+\+CLOCKS\+\_\+\+REQUIRED\+\_\+\+FLAG or 0 for not flags.
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful. Error code otherwise.
+\end{DoxyReturn}
+Starts a 32 bits timer. \Hypertarget{group__sleeptimer_gadcb95c35f7307d91df1818e71f6540d2}\index{Sleep Timer@{Sleep Timer}!sl\_sleeptimer\_start\_timer\_ms@{sl\_sleeptimer\_start\_timer\_ms}}
+\index{sl\_sleeptimer\_start\_timer\_ms@{sl\_sleeptimer\_start\_timer\_ms}!Sleep Timer@{Sleep Timer}}
+\doxysubsubsection{\texorpdfstring{sl\_sleeptimer\_start\_timer\_ms()}{sl\_sleeptimer\_start\_timer\_ms()}}
+{\footnotesize\ttfamily \label{group__sleeptimer_gadcb95c35f7307d91df1818e71f6540d2} 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE sl\+\_\+status\+\_\+t sl\+\_\+sleeptimer\+\_\+start\+\_\+timer\+\_\+ms (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structsl__sleeptimer__timer__handle}{sl\+\_\+sleeptimer\+\_\+timer\+\_\+handle\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{handle}{, }\item[{uint32\+\_\+t}]{timeout\+\_\+ms}{, }\item[{\mbox{\hyperlink{group__sleeptimer_ga9049589e4153204fb3e97cbe1ecda89b}{sl\+\_\+sleeptimer\+\_\+timer\+\_\+callback\+\_\+t}}}]{callback}{, }\item[{void \texorpdfstring{$\ast$}{*}}]{callback\+\_\+data}{, }\item[{uint8\+\_\+t}]{priority}{, }\item[{uint16\+\_\+t}]{option\+\_\+flags}{}\end{DoxyParamCaption})}
+
+Starts a 32 bits timer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & Pointer to handle to timer. \\
+\hline
+{\em timeout\+\_\+ms} & Timer timeout, in milliseconds. \\
+\hline
+{\em callback} & Callback function that will be called when initial/periodic timeout expires. \\
+\hline
+{\em callback\+\_\+data} & Pointer to user data that will be passed to callback. \\
+\hline
+{\em priority} & Priority of callback. Useful in case multiple timer expire at the same time. 0 = highest priority. \\
+\hline
+{\em option\+\_\+flags} & Bit array of option flags for the timer. Valid bit-\/wise OR of one or more of the following\+:
+\begin{DoxyItemize}
+\item SL\+\_\+\+SLEEPTIMER\+\_\+\+NO\+\_\+\+HIGH\+\_\+\+PRECISION\+\_\+\+HF\+\_\+\+CLOCKS\+\_\+\+REQUIRED\+\_\+\+FLAG or 0 for not flags.
+\end{DoxyItemize}\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful. Error code otherwise.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+This function converts the delay expressed in milliseconds to timer ticks (represented on 32 bits). This means that the value that can be passed to the argument \textquotesingle{}timeout\+\_\+ms\textquotesingle{} is limited. The maximum timeout value that can be passed to this function can be retrieved by calling \doxylink{group__sleeptimer_ga3218039eab8d09231cc092fdc2a1dba5}{sl\+\_\+sleeptimer\+\_\+get\+\_\+max\+\_\+ms32\+\_\+conversion()}. If the value passed to \textquotesingle{}timeout\+\_\+ms\textquotesingle{} is too large, SL\+\_\+\+STATUS\+\_\+\+INVALID\+\_\+\+PARAMETER will be returned. 
+\end{DoxyNote}
+\Hypertarget{group__sleeptimer_ga1f4f25aa754cd35214dba9762450b0ca}\index{Sleep Timer@{Sleep Timer}!sl\_sleeptimer\_stop\_timer@{sl\_sleeptimer\_stop\_timer}}
+\index{sl\_sleeptimer\_stop\_timer@{sl\_sleeptimer\_stop\_timer}!Sleep Timer@{Sleep Timer}}
+\doxysubsubsection{\texorpdfstring{sl\_sleeptimer\_stop\_timer()}{sl\_sleeptimer\_stop\_timer()}}
+{\footnotesize\ttfamily \label{group__sleeptimer_ga1f4f25aa754cd35214dba9762450b0ca} 
+sl\+\_\+status\+\_\+t sl\+\_\+sleeptimer\+\_\+stop\+\_\+timer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structsl__sleeptimer__timer__handle}{sl\+\_\+sleeptimer\+\_\+timer\+\_\+handle\+\_\+t}} \texorpdfstring{$\ast$}{*}}]{handle}{}\end{DoxyParamCaption})}
+
+Stops a timer.
+
+
+\begin{DoxyParams}{Parameters}
+{\em handle} & Pointer to handle to timer.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+Stops a 32 bits timer. \Hypertarget{group__sleeptimer_ga6882d0577137d8e20ec531be45678fba}\index{Sleep Timer@{Sleep Timer}!sl\_sleeptimer\_tick64\_to\_ms@{sl\_sleeptimer\_tick64\_to\_ms}}
+\index{sl\_sleeptimer\_tick64\_to\_ms@{sl\_sleeptimer\_tick64\_to\_ms}!Sleep Timer@{Sleep Timer}}
+\doxysubsubsection{\texorpdfstring{sl\_sleeptimer\_tick64\_to\_ms()}{sl\_sleeptimer\_tick64\_to\_ms()}}
+{\footnotesize\ttfamily \label{group__sleeptimer_ga6882d0577137d8e20ec531be45678fba} 
+sl\+\_\+status\+\_\+t sl\+\_\+sleeptimer\+\_\+tick64\+\_\+to\+\_\+ms (\begin{DoxyParamCaption}\item[{uint64\+\_\+t}]{tick}{, }\item[{uint64\+\_\+t \texorpdfstring{$\ast$}{*}}]{ms}{}\end{DoxyParamCaption})}
+
+Converts 64-\/bit ticks in milliseconds.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tick} & Number of tick. \\
+\hline
+{\em ms} & Pointer to the converted milliseconds number.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if successful. Error code otherwise.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The result is rounded to the inferior millisecond. 
+\end{DoxyNote}
+\Hypertarget{group__sleeptimer_ga2c2a2a131e401894d3e09513442667b5}\index{Sleep Timer@{Sleep Timer}!sl\_sleeptimer\_tick\_to\_ms@{sl\_sleeptimer\_tick\_to\_ms}}
+\index{sl\_sleeptimer\_tick\_to\_ms@{sl\_sleeptimer\_tick\_to\_ms}!Sleep Timer@{Sleep Timer}}
+\doxysubsubsection{\texorpdfstring{sl\_sleeptimer\_tick\_to\_ms()}{sl\_sleeptimer\_tick\_to\_ms()}}
+{\footnotesize\ttfamily \label{group__sleeptimer_ga2c2a2a131e401894d3e09513442667b5} 
+uint32\+\_\+t sl\+\_\+sleeptimer\+\_\+tick\+\_\+to\+\_\+ms (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{tick}{}\end{DoxyParamCaption})}
+
+Converts ticks in milliseconds.
+
+
+\begin{DoxyParams}{Parameters}
+{\em tick} & Number of tick.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Corresponding milliseconds number.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+The result is rounded to the inferior millisecond. 
+\end{DoxyNote}

@@ -1,0 +1,90 @@
+\doxysection{gecko\+\_\+sdk\+\_\+4.4.4/platform/emdrv/dmadrv/inc/dmadrv.h File Reference}
+\hypertarget{dmadrv_8h}{}\label{dmadrv_8h}\index{gecko\_sdk\_4.4.4/platform/emdrv/dmadrv/inc/dmadrv.h@{gecko\_sdk\_4.4.4/platform/emdrv/dmadrv/inc/dmadrv.h}}
+
+
+DMADRV API definition.  
+
+
+{\ttfamily \#include "{}em\+\_\+device.\+h"{}}\newline
+{\ttfamily \#include "{}ecode.\+h"{}}\newline
+{\ttfamily \#include "{}sl\+\_\+enum.\+h"{}}\newline
+{\ttfamily \#include "{}dmadrv\+\_\+config.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries ECODE\+\_\+\+EMDRV\+\_\+\+DMADRV\+\_\+\+OK}~(\mbox{\hyperlink{group__ecode_gad59417e7951d81dfc15ec2757f08148e}{ECODE\+\_\+\+OK}})
+\begin{DoxyCompactList}\small\item\em A successful return value. \end{DoxyCompactList}\item 
+\#define {\bfseries ECODE\+\_\+\+EMDRV\+\_\+\+DMADRV\+\_\+\+PARAM\+\_\+\+ERROR}~(\mbox{\hyperlink{group__ecode_gaf42696e8f3ccd7165e59feea571189b4}{ECODE\+\_\+\+EMDRV\+\_\+\+DMADRV\+\_\+\+BASE}} \texorpdfstring{$\vert$}{|} 0x00000001)
+\begin{DoxyCompactList}\small\item\em An illegal input parameter. \end{DoxyCompactList}\item 
+\#define {\bfseries ECODE\+\_\+\+EMDRV\+\_\+\+DMADRV\+\_\+\+NOT\+\_\+\+INITIALIZED}~(\mbox{\hyperlink{group__ecode_gaf42696e8f3ccd7165e59feea571189b4}{ECODE\+\_\+\+EMDRV\+\_\+\+DMADRV\+\_\+\+BASE}} \texorpdfstring{$\vert$}{|} 0x00000002)
+\begin{DoxyCompactList}\small\item\em DMA is not initialized. \end{DoxyCompactList}\item 
+\#define {\bfseries ECODE\+\_\+\+EMDRV\+\_\+\+DMADRV\+\_\+\+ALREADY\+\_\+\+INITIALIZED}~(\mbox{\hyperlink{group__ecode_gaf42696e8f3ccd7165e59feea571189b4}{ECODE\+\_\+\+EMDRV\+\_\+\+DMADRV\+\_\+\+BASE}} \texorpdfstring{$\vert$}{|} 0x00000003)
+\begin{DoxyCompactList}\small\item\em DMA has already been initialized. \end{DoxyCompactList}\item 
+\#define {\bfseries ECODE\+\_\+\+EMDRV\+\_\+\+DMADRV\+\_\+\+CHANNELS\+\_\+\+EXHAUSTED}~(\mbox{\hyperlink{group__ecode_gaf42696e8f3ccd7165e59feea571189b4}{ECODE\+\_\+\+EMDRV\+\_\+\+DMADRV\+\_\+\+BASE}} \texorpdfstring{$\vert$}{|} 0x00000004)
+\begin{DoxyCompactList}\small\item\em No DMA channels available. \end{DoxyCompactList}\item 
+\#define {\bfseries ECODE\+\_\+\+EMDRV\+\_\+\+DMADRV\+\_\+\+IN\+\_\+\+USE}~(\mbox{\hyperlink{group__ecode_gaf42696e8f3ccd7165e59feea571189b4}{ECODE\+\_\+\+EMDRV\+\_\+\+DMADRV\+\_\+\+BASE}} \texorpdfstring{$\vert$}{|} 0x00000005)
+\begin{DoxyCompactList}\small\item\em DMA is in use. \end{DoxyCompactList}\item 
+\#define {\bfseries ECODE\+\_\+\+EMDRV\+\_\+\+DMADRV\+\_\+\+ALREADY\+\_\+\+FREED}~(\mbox{\hyperlink{group__ecode_gaf42696e8f3ccd7165e59feea571189b4}{ECODE\+\_\+\+EMDRV\+\_\+\+DMADRV\+\_\+\+BASE}} \texorpdfstring{$\vert$}{|} 0x00000006)
+\begin{DoxyCompactList}\small\item\em A DMA channel was free. \end{DoxyCompactList}\item 
+\#define {\bfseries ECODE\+\_\+\+EMDRV\+\_\+\+DMADRV\+\_\+\+CH\+\_\+\+NOT\+\_\+\+ALLOCATED}~(\mbox{\hyperlink{group__ecode_gaf42696e8f3ccd7165e59feea571189b4}{ECODE\+\_\+\+EMDRV\+\_\+\+DMADRV\+\_\+\+BASE}} \texorpdfstring{$\vert$}{|} 0x00000007)
+\begin{DoxyCompactList}\small\item\em A channel is not reserved. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef bool(\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__dmadrv_gab478bc82d26f7d79f11a63a3c90943ae}{DMADRV\+\_\+\+Callback\+\_\+t}}) (unsigned int channel, unsigned int sequence\+No, void \texorpdfstring{$\ast$}{*}user\+Param)
+\begin{DoxyCompactList}\small\item\em DMADRV transfer completion callback function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__ecode_ga7bf5621660c5ba69ac4dd3044173d35c}{Ecode\+\_\+t}} \mbox{\hyperlink{group__dmadrv_gab503e066820cd13fd612f4365d4d07b2}{DMADRV\+\_\+\+Allocate\+Channel}} (unsigned int \texorpdfstring{$\ast$}{*}channel\+Id, void \texorpdfstring{$\ast$}{*}capabilities)
+\begin{DoxyCompactList}\small\item\em Allocate (reserve) a DMA channel. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__ecode_ga7bf5621660c5ba69ac4dd3044173d35c}{Ecode\+\_\+t}} \mbox{\hyperlink{group__dmadrv_ga73633db63cfd99ba01a68b05c24094ec}{DMADRV\+\_\+\+De\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Deinitialize DMADRV. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__ecode_ga7bf5621660c5ba69ac4dd3044173d35c}{Ecode\+\_\+t}} \mbox{\hyperlink{group__dmadrv_gab4453539f4d22aa650324685a9f197e3}{DMADRV\+\_\+\+Free\+Channel}} (unsigned int channel\+Id)
+\begin{DoxyCompactList}\small\item\em Free an allocated (reserved) DMA channel. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__ecode_ga7bf5621660c5ba69ac4dd3044173d35c}{Ecode\+\_\+t}} \mbox{\hyperlink{group__dmadrv_ga43d0052d81f16e72914f85248a8554b1}{DMADRV\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize DMADRV. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__ecode_ga7bf5621660c5ba69ac4dd3044173d35c}{Ecode\+\_\+t}} \mbox{\hyperlink{group__dmadrv_gab1506de1a628ac908b2f8fe93e370578}{DMADRV\+\_\+\+Memory\+Peripheral}} (unsigned int channel\+Id, DMADRV\+\_\+\+Peripheral\+Signal\+\_\+t peripheral\+Signal, void \texorpdfstring{$\ast$}{*}dst, void \texorpdfstring{$\ast$}{*}src, bool src\+Inc, int len, DMADRV\+\_\+\+Data\+Size\+\_\+t size, \mbox{\hyperlink{group__dmadrv_gab478bc82d26f7d79f11a63a3c90943ae}{DMADRV\+\_\+\+Callback\+\_\+t}} callback, void \texorpdfstring{$\ast$}{*}cb\+User\+Param)
+\begin{DoxyCompactList}\small\item\em Start a memory to a peripheral DMA transfer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__ecode_ga7bf5621660c5ba69ac4dd3044173d35c}{Ecode\+\_\+t}} \mbox{\hyperlink{group__dmadrv_gaef226beb40700660728baf2cb509a2c4}{DMADRV\+\_\+\+Peripheral\+Memory}} (unsigned int channel\+Id, DMADRV\+\_\+\+Peripheral\+Signal\+\_\+t peripheral\+Signal, void \texorpdfstring{$\ast$}{*}dst, void \texorpdfstring{$\ast$}{*}src, bool dst\+Inc, int len, DMADRV\+\_\+\+Data\+Size\+\_\+t size, \mbox{\hyperlink{group__dmadrv_gab478bc82d26f7d79f11a63a3c90943ae}{DMADRV\+\_\+\+Callback\+\_\+t}} callback, void \texorpdfstring{$\ast$}{*}cb\+User\+Param)
+\begin{DoxyCompactList}\small\item\em Start a peripheral to memory DMA transfer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__ecode_ga7bf5621660c5ba69ac4dd3044173d35c}{Ecode\+\_\+t}} \mbox{\hyperlink{group__dmadrv_ga887d429df9893aef3b421e2fdd8f8641}{DMADRV\+\_\+\+Memory\+Peripheral\+Ping\+Pong}} (unsigned int channel\+Id, DMADRV\+\_\+\+Peripheral\+Signal\+\_\+t peripheral\+Signal, void \texorpdfstring{$\ast$}{*}dst, void \texorpdfstring{$\ast$}{*}src0, void \texorpdfstring{$\ast$}{*}src1, bool src\+Inc, int len, DMADRV\+\_\+\+Data\+Size\+\_\+t size, \mbox{\hyperlink{group__dmadrv_gab478bc82d26f7d79f11a63a3c90943ae}{DMADRV\+\_\+\+Callback\+\_\+t}} callback, void \texorpdfstring{$\ast$}{*}cb\+User\+Param)
+\begin{DoxyCompactList}\small\item\em Start a memory to a peripheral ping-\/pong DMA transfer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__ecode_ga7bf5621660c5ba69ac4dd3044173d35c}{Ecode\+\_\+t}} \mbox{\hyperlink{group__dmadrv_gafcabf314184e7d8f82d2164365f36bef}{DMADRV\+\_\+\+Peripheral\+Memory\+Ping\+Pong}} (unsigned int channel\+Id, DMADRV\+\_\+\+Peripheral\+Signal\+\_\+t peripheral\+Signal, void \texorpdfstring{$\ast$}{*}dst0, void \texorpdfstring{$\ast$}{*}dst1, void \texorpdfstring{$\ast$}{*}src, bool dst\+Inc, int len, DMADRV\+\_\+\+Data\+Size\+\_\+t size, \mbox{\hyperlink{group__dmadrv_gab478bc82d26f7d79f11a63a3c90943ae}{DMADRV\+\_\+\+Callback\+\_\+t}} callback, void \texorpdfstring{$\ast$}{*}cb\+User\+Param)
+\begin{DoxyCompactList}\small\item\em Start a peripheral to memory ping-\/pong DMA transfer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__ecode_ga7bf5621660c5ba69ac4dd3044173d35c}{Ecode\+\_\+t}} \mbox{\hyperlink{group__dmadrv_ga3f27a6cff5b646b0faf3eb070ea1393f}{DMADRV\+\_\+\+Pause\+Transfer}} (unsigned int channel\+Id)
+\begin{DoxyCompactList}\small\item\em Pause an ongoing DMA transfer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__ecode_ga7bf5621660c5ba69ac4dd3044173d35c}{Ecode\+\_\+t}} \mbox{\hyperlink{group__dmadrv_ga4ad4c5b5eff525183a726002afbce071}{DMADRV\+\_\+\+Resume\+Transfer}} (unsigned int channel\+Id)
+\begin{DoxyCompactList}\small\item\em Resume an ongoing DMA transfer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__ecode_ga7bf5621660c5ba69ac4dd3044173d35c}{Ecode\+\_\+t}} \mbox{\hyperlink{group__dmadrv_ga3a04cb3aa30ec2fd955281f55538028d}{DMADRV\+\_\+\+Stop\+Transfer}} (unsigned int channel\+Id)
+\begin{DoxyCompactList}\small\item\em Stop an ongoing DMA transfer. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__ecode_ga7bf5621660c5ba69ac4dd3044173d35c}{Ecode\+\_\+t}} \mbox{\hyperlink{group__dmadrv_ga1a42965073322a9c2b1f8ebb8a67e846}{DMADRV\+\_\+\+Transfer\+Active}} (unsigned int channel\+Id, bool \texorpdfstring{$\ast$}{*}active)
+\begin{DoxyCompactList}\small\item\em Check if a transfer is running. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__ecode_ga7bf5621660c5ba69ac4dd3044173d35c}{Ecode\+\_\+t}} \mbox{\hyperlink{group__dmadrv_gae6b5ec49230e4f15b78c31c57bfa3967}{DMADRV\+\_\+\+Transfer\+Complete\+Pending}} (unsigned int channel\+Id, bool \texorpdfstring{$\ast$}{*}pending)
+\begin{DoxyCompactList}\small\item\em Check if a transfer complete is pending. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__ecode_ga7bf5621660c5ba69ac4dd3044173d35c}{Ecode\+\_\+t}} \mbox{\hyperlink{group__dmadrv_gaa46714c6a19608cff3058c386f1e4c03}{DMADRV\+\_\+\+Transfer\+Done}} (unsigned int channel\+Id, bool \texorpdfstring{$\ast$}{*}done)
+\begin{DoxyCompactList}\small\item\em Check if a transfer has completed. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__ecode_ga7bf5621660c5ba69ac4dd3044173d35c}{Ecode\+\_\+t}} \mbox{\hyperlink{group__dmadrv_ga9a253b47872d205a76b6f1b7b486194d}{DMADRV\+\_\+\+Transfer\+Remaining\+Count}} (unsigned int channel\+Id, int \texorpdfstring{$\ast$}{*}remaining)
+\begin{DoxyCompactList}\small\item\em Get number of items remaining in a transfer. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+DMADRV API definition. 
+
+\hypertarget{dmadrv_8h_autotoc_md79}{}\doxysubsection{\texorpdfstring{License}{License}}\label{dmadrv_8h_autotoc_md79}
+{\bfseries{Copyright 2018 Silicon Laboratories Inc. www.\+silabs.\+com}}
+
+SPDX-\/\+License-\/\+Identifier\+: Zlib
+
+The licensor of this software is Silicon Laboratories Inc.
+
+This software is provided \textquotesingle{}as-\/is\textquotesingle{}, without any express or implied warranty. In no event will the authors be held liable for any damages arising from the use of this software.
+
+Permission is granted to anyone to use this software for any purpose, including commercial applications, and to alter it and redistribute it freely, subject to the following restrictions\+:
+
+
+\begin{DoxyEnumerate}
+\item The origin of this software must not be misrepresented; you must not claim that you wrote the original software. If you use this software in a product, an acknowledgment in the product documentation would be appreciated but is not required.
+\item Altered source versions must be plainly marked as such, and must not be misrepresented as being the original software.
+\item This notice may not be removed or altered from any source distribution. 
+\end{DoxyEnumerate}

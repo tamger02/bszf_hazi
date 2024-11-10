@@ -1,0 +1,96 @@
+\doxysection{gecko\+\_\+sdk\+\_\+4.4.4/platform/emlib/inc/em\+\_\+core.h File Reference}
+\hypertarget{em__core_8h}{}\label{em__core_8h}\index{gecko\_sdk\_4.4.4/platform/emlib/inc/em\_core.h@{gecko\_sdk\_4.4.4/platform/emlib/inc/em\_core.h}}
+
+
+Core interrupt handling API (Device Specific)  
+
+
+{\ttfamily \#include "{}em\+\_\+device.\+h"{}}\newline
+{\ttfamily \#include "{}em\+\_\+core\+\_\+generic.\+h"{}}\newline
+{\ttfamily \#include "{}sl\+\_\+common.\+h"{}}\newline
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_c_o_r_e__nvic_mask__t}{CORE\+\_\+nvic\+Mask\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{em__core_8h_afb395c84f5b021273930cbb0301dbfb5}\label{em__core_8h_afb395c84f5b021273930cbb0301dbfb5} 
+\#define {\bfseries SL\+\_\+\+EMLIB\+\_\+\+CORE\+\_\+\+ENABLE\+\_\+\+INTERRUPT\+\_\+\+DISABLED\+\_\+\+TIMING}~0
+\item 
+\#define \mbox{\hyperlink{group__core_ga507bd4d5cc348a56722265d6b45994f2}{CORE\+\_\+\+NVIC\+\_\+\+REG\+\_\+\+WORDS}}~((\mbox{\hyperlink{group___e_f_m32_g_g990_f1024___part_ga1f5541236b626715663b8cc3ec32e50d}{EXT\+\_\+\+IRQ\+\_\+\+COUNT}} + 31) / 32)
+\item 
+\#define \mbox{\hyperlink{group__core_ga7e6140d4c99fe9fb63c6575e063d8e52}{CORE\+\_\+\+DEFAULT\+\_\+\+VECTOR\+\_\+\+TABLE\+\_\+\+ENTRIES}}~(\mbox{\hyperlink{group___e_f_m32_g_g990_f1024___part_ga1f5541236b626715663b8cc3ec32e50d}{EXT\+\_\+\+IRQ\+\_\+\+COUNT}} + 16)
+\item 
+\#define \mbox{\hyperlink{group__core_ga3a3362b0f3a8415dcae958dfda16b8e2}{CORE\+\_\+\+ATOMIC\+\_\+\+METHOD}}~\mbox{\hyperlink{group__core_gaeba348aed5c4f0007a030f1c8820ee60}{CORE\+\_\+\+ATOMIC\+\_\+\+METHOD\+\_\+\+PRIMASK}}
+\item 
+\#define \mbox{\hyperlink{group__core_ga48fa5531aa876b474dcb262d883a49fb}{CORE\+\_\+\+DECLARE\+\_\+\+NVIC\+\_\+\+STATE}}~\mbox{\hyperlink{struct_c_o_r_e__nvic_mask__t}{CORE\+\_\+nvic\+Mask\+\_\+t}} nvic\+State
+\item 
+\#define \mbox{\hyperlink{group__core_gabf5d86fd0839a5d2d5e663540e0e8910}{CORE\+\_\+\+DECLARE\+\_\+\+NVIC\+\_\+\+MASK}}(x)
+\item 
+\#define \mbox{\hyperlink{group__core_ga116f3ebd47a391ed8f3eeccdc7b644bc}{CORE\+\_\+\+DECLARE\+\_\+\+NVIC\+\_\+\+ZEROMASK}}(x)
+\item 
+\#define \mbox{\hyperlink{group__core_ga352f474d43218c41285a671e8664b6a7}{CORE\+\_\+\+NVIC\+\_\+\+DISABLE}}(mask)
+\item 
+\#define \mbox{\hyperlink{group__core_ga98ba92d6787a8f8b36d91954354e887f}{CORE\+\_\+\+NVIC\+\_\+\+ENABLE}}(mask)
+\item 
+\#define \mbox{\hyperlink{group__core_ga8d8bb1ba3793bf2a876db528ce4fa38c}{CORE\+\_\+\+NVIC\+\_\+\+SECTION}}(mask,  yourcode)
+\item 
+\#define \mbox{\hyperlink{group__core_gaed344c90cda4ba26bc1753621404ef3f}{CORE\+\_\+\+ENTER\+\_\+\+NVIC}}(disable)
+\item 
+\#define \mbox{\hyperlink{group__core_ga65a6e410088e47a9da533583371ac598}{CORE\+\_\+\+EXIT\+\_\+\+NVIC}}()
+\item 
+\#define \mbox{\hyperlink{group__core_ga74cf9d908f5d967239a33467c40a7a14}{CORE\+\_\+\+YIELD\+\_\+\+NVIC}}(enable)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{group__core_gafbb1265e4740eb07f50b8207c72e94f8}{CORE\+\_\+\+Irq\+Is\+Blocked}} (\mbox{\hyperlink{group___e_f_m32_g_g990_f1024_ga4a0206df9604302e0741c1aa4ca1ded3}{IRQn\+\_\+\+Type}} irqN)
+\begin{DoxyCompactList}\small\item\em Check if a specific interrupt is disabled or blocked. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__core_gaaa32f111ee6cdd5e854b489a04a79b68}{CORE\+\_\+\+Get\+Nvic\+Enabled\+Mask}} (\mbox{\hyperlink{struct_c_o_r_e__nvic_mask__t}{CORE\+\_\+nvic\+Mask\+\_\+t}} \texorpdfstring{$\ast$}{*}mask)
+\begin{DoxyCompactList}\small\item\em Get the current NVIC enable mask state. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__core_gaadb9b9a49a92a6857c600cffb4a8b384}{CORE\+\_\+\+Get\+Nvic\+Mask\+Disable\+State}} (const \mbox{\hyperlink{struct_c_o_r_e__nvic_mask__t}{CORE\+\_\+nvic\+Mask\+\_\+t}} \texorpdfstring{$\ast$}{*}mask)
+\begin{DoxyCompactList}\small\item\em Get NVIC disable state for a given mask. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__core_ga510268c9357cb2cffddd9dd75ddf7fab}{CORE\+\_\+\+Enter\+Nvic\+Mask}} (\mbox{\hyperlink{struct_c_o_r_e__nvic_mask__t}{CORE\+\_\+nvic\+Mask\+\_\+t}} \texorpdfstring{$\ast$}{*}nvic\+State, const \mbox{\hyperlink{struct_c_o_r_e__nvic_mask__t}{CORE\+\_\+nvic\+Mask\+\_\+t}} \texorpdfstring{$\ast$}{*}disable)
+\begin{DoxyCompactList}\small\item\em Enter a NVIC mask section. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__core_ga818266df617b6e900b124d30f4cf7db4}{CORE\+\_\+\+Nvic\+Disable\+Mask}} (const \mbox{\hyperlink{struct_c_o_r_e__nvic_mask__t}{CORE\+\_\+nvic\+Mask\+\_\+t}} \texorpdfstring{$\ast$}{*}disable)
+\begin{DoxyCompactList}\small\item\em Disable NVIC interrupts. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__core_gafd594b0671e10977a3655f289439af09}{CORE\+\_\+\+Nvic\+Enable\+Mask}} (const \mbox{\hyperlink{struct_c_o_r_e__nvic_mask__t}{CORE\+\_\+nvic\+Mask\+\_\+t}} \texorpdfstring{$\ast$}{*}enable)
+\begin{DoxyCompactList}\small\item\em Set current NVIC interrupt enable mask. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__core_ga3c84177a6c8922b997d9a0bb94ec0ff9}{CORE\+\_\+\+Yield\+Nvic\+Mask}} (const \mbox{\hyperlink{struct_c_o_r_e__nvic_mask__t}{CORE\+\_\+nvic\+Mask\+\_\+t}} \texorpdfstring{$\ast$}{*}enable)
+\begin{DoxyCompactList}\small\item\em Brief NVIC interrupt enable/disable sequence to allow handling of pending interrupts. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__core_ga74cc1f2c3a9c786f1108eba8305b4a02}{CORE\+\_\+\+Nvic\+Mask\+Set\+IRQ}} (\mbox{\hyperlink{group___e_f_m32_g_g990_f1024_ga4a0206df9604302e0741c1aa4ca1ded3}{IRQn\+\_\+\+Type}} irqN, \mbox{\hyperlink{struct_c_o_r_e__nvic_mask__t}{CORE\+\_\+nvic\+Mask\+\_\+t}} \texorpdfstring{$\ast$}{*}mask)
+\begin{DoxyCompactList}\small\item\em Utility function to set an IRQn bit in a NVIC enable/disable mask. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__core_ga9cf82cce035328e4558db771ecfe8720}{CORE\+\_\+\+Nvic\+Mask\+Clear\+IRQ}} (\mbox{\hyperlink{group___e_f_m32_g_g990_f1024_ga4a0206df9604302e0741c1aa4ca1ded3}{IRQn\+\_\+\+Type}} irqN, \mbox{\hyperlink{struct_c_o_r_e__nvic_mask__t}{CORE\+\_\+nvic\+Mask\+\_\+t}} \texorpdfstring{$\ast$}{*}mask)
+\begin{DoxyCompactList}\small\item\em Utility function to clear an IRQn bit in a NVIC enable/disable mask. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{group__core_ga788fc3ea8bf0a931e5b3c9266a543c25}{CORE\+\_\+\+Nvic\+IRQDisabled}} (\mbox{\hyperlink{group___e_f_m32_g_g990_f1024_ga4a0206df9604302e0741c1aa4ca1ded3}{IRQn\+\_\+\+Type}} irqN)
+\begin{DoxyCompactList}\small\item\em Check if an NVIC interrupt is disabled. \end{DoxyCompactList}\item 
+void \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{group__core_ga68c6a016bb6c8b59618aa256a718e8f0}{CORE\+\_\+\+Get\+Nvic\+Ram\+Table\+Handler}} (\mbox{\hyperlink{group___e_f_m32_g_g990_f1024_ga4a0206df9604302e0741c1aa4ca1ded3}{IRQn\+\_\+\+Type}} irqN)
+\begin{DoxyCompactList}\small\item\em Utility function to get the handler for a specific interrupt. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__core_gaff18df16b51922db178fed08846f2814}{CORE\+\_\+\+Set\+Nvic\+Ram\+Table\+Handler}} (\mbox{\hyperlink{group___e_f_m32_g_g990_f1024_ga4a0206df9604302e0741c1aa4ca1ded3}{IRQn\+\_\+\+Type}} irqN, void \texorpdfstring{$\ast$}{*}handler)
+\begin{DoxyCompactList}\small\item\em Utility function to set the handler for a specific interrupt. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__core_gaea8eb75f2f2a86503a47bf96c76ae332}{CORE\+\_\+\+Init\+Nvic\+Vector\+Table}} (uint32\+\_\+t \texorpdfstring{$\ast$}{*}source\+Table, uint32\+\_\+t source\+Size, uint32\+\_\+t \texorpdfstring{$\ast$}{*}target\+Table, uint32\+\_\+t target\+Size, void \texorpdfstring{$\ast$}{*}default\+Handler, bool overwrite\+Active)
+\begin{DoxyCompactList}\small\item\em Initialize an interrupt vector table by copying table entries from a source to a target table. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Core interrupt handling API (Device Specific) 
+
+\hypertarget{em__core_8h_autotoc_md92}{}\doxysubsection{\texorpdfstring{License}{License}}\label{em__core_8h_autotoc_md92}
+{\bfseries{Copyright 2018 Silicon Laboratories Inc. www.\+silabs.\+com}}
+
+SPDX-\/\+License-\/\+Identifier\+: Zlib
+
+The licensor of this software is Silicon Laboratories Inc.
+
+This software is provided \textquotesingle{}as-\/is\textquotesingle{}, without any express or implied warranty. In no event will the authors be held liable for any damages arising from the use of this software.
+
+Permission is granted to anyone to use this software for any purpose, including commercial applications, and to alter it and redistribute it freely, subject to the following restrictions\+:
+
+
+\begin{DoxyEnumerate}
+\item The origin of this software must not be misrepresented; you must not claim that you wrote the original software. If you use this software in a product, an acknowledgment in the product documentation would be appreciated but is not required.
+\item Altered source versions must be plainly marked as such, and must not be misrepresented as being the original software.
+\item This notice may not be removed or altered from any source distribution. 
+\end{DoxyEnumerate}

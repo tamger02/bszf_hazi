@@ -1,0 +1,70 @@
+\doxysection{gpiointerrupt.\+h}
+\hypertarget{gpiointerrupt_8h_source}{}\label{gpiointerrupt_8h_source}\index{gecko\_sdk\_4.4.4/platform/emdrv/gpiointerrupt/inc/gpiointerrupt.h@{gecko\_sdk\_4.4.4/platform/emdrv/gpiointerrupt/inc/gpiointerrupt.h}}
+\mbox{\hyperlink{gpiointerrupt_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#ifndef\ GPIOINTERRUPT\_H}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ GPIOINTERRUPT\_H}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{em__device_8h}{em\_device.h}}"{}}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{em__gpio_8h}{em\_gpio.h}}"{}}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00038\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00045\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{00046\ \textcolor{comment}{\ *****************************\ \ \ DEFINITIONS\ \ \ *********************************}}
+\DoxyCodeLine{00047\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ INTERRUPT\_UNAVAILABLE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0xFF)\ }}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{00052\ \textcolor{comment}{\ *******************************\ \ \ TYPEDEFS\ \ \ **********************************}}
+\DoxyCodeLine{00053\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00062\ \textcolor{keyword}{typedef}\ void\ (*\mbox{\hyperlink{group__gpioint_ga6293171ef21400e53df1dc1a5fe47612}{GPIOINT\_IrqCallbackPtr\_t}})(uint8\_t\ intNo);}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00072\ \textcolor{keyword}{typedef}\ void\ (*\mbox{\hyperlink{group__gpioint_ga55f5c9053c20dd1a99d38f559db96666}{GPIOINT\_IrqCallbackPtrExt\_t}})(uint8\_t\ intNo,\ \textcolor{keywordtype}{void}\ *ctx);}
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{00075\ \textcolor{comment}{\ ******************************\ \ \ PROTOTYPES\ \ \ *********************************}}
+\DoxyCodeLine{00076\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00077\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__gpioint_gac93e5702d7693ab3efbbccd9782b22e0}{GPIOINT\_Init}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00078\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__gpioint_gab84256df4197d4115fade5fc26a37258}{GPIOINT\_CallbackRegister}}(uint8\_t\ intNo,\ \mbox{\hyperlink{group__gpioint_ga6293171ef21400e53df1dc1a5fe47612}{GPIOINT\_IrqCallbackPtr\_t}}\ callbackPtr);}
+\DoxyCodeLine{00079\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group__gpioint_ga3681eeca09700438e23f477689905c5f}{GPIOINT\_CallbackRegisterExt}}(uint8\_t\ pin,\ \mbox{\hyperlink{group__gpioint_ga55f5c9053c20dd1a99d38f559db96666}{GPIOINT\_IrqCallbackPtrExt\_t}}\ callbackPtr,\ \textcolor{keywordtype}{void}\ *callbackCtx);}
+\DoxyCodeLine{00080\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__gpioint_ga0c9b18a9be41c7f35a51d2f1efc4f456}{GPIOINT\_CallbackUnRegister}}(uint8\_t\ intNo);}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#if\ defined(\_SILICON\_LABS\_32B\_SERIES\_2)}}
+\DoxyCodeLine{00083\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ GPIOINT\_EM4WUCallbackRegisterExt(GPIO\_Port\_TypeDef\ port,}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint8\_t\ pin,}
+\DoxyCodeLine{00085\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{group__gpioint_ga55f5c9053c20dd1a99d38f559db96666}{GPIOINT\_IrqCallbackPtrExt\_t}}\ callbackPtr,}
+\DoxyCodeLine{00086\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ *callbackCtx);}
+\DoxyCodeLine{00087\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ GPIOINT\_EM4WUCallbackUnRegister(uint8\_t\ intNo);}
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00089\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00100\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group__gpioint_ga0c9b18a9be41c7f35a51d2f1efc4f456}{GPIOINT\_CallbackUnRegister}}(uint8\_t\ intNo)}
+\DoxyCodeLine{00101\ \{}
+\DoxyCodeLine{00102\ \ \ \mbox{\hyperlink{group__gpioint_gab84256df4197d4115fade5fc26a37258}{GPIOINT\_CallbackRegister}}(intNo,\ 0);}
+\DoxyCodeLine{00103\ \}}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#if\ defined(\_SILICON\_LABS\_32B\_SERIES\_2)}}
+\DoxyCodeLine{00106\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00117\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ GPIOINT\_EM4WUCallbackUnRegister(uint8\_t\ intNo)}
+\DoxyCodeLine{00118\ \{}
+\DoxyCodeLine{00119\ \textcolor{preprocessor}{\#if\ defined(\_GPIO\_IEN\_EM4WUIEN\_SHIFT)}}
+\DoxyCodeLine{00120\ \ \ \mbox{\hyperlink{group__gpioint_gab84256df4197d4115fade5fc26a37258}{GPIOINT\_CallbackRegister}}(\_GPIO\_IEN\_EM4WUIEN\_SHIFT\ +\ intNo,\ 0);}
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00122\ \ \ \mbox{\hyperlink{group__gpioint_gab84256df4197d4115fade5fc26a37258}{GPIOINT\_CallbackRegister}}(\_GPIO\_IEN\_EM4WUIEN0\_SHIFT\ +\ intNo,\ 0);}
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00124\ \}}
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00129\ \}}
+\DoxyCodeLine{00130\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00131\ }
+\DoxyCodeLine{00132\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ GPIOINTERRUPT\_H\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

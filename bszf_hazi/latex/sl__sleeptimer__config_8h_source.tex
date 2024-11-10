@@ -1,0 +1,59 @@
+\doxysection{sl\+\_\+sleeptimer\+\_\+config.\+h}
+\hypertarget{sl__sleeptimer__config_8h_source}{}\label{sl__sleeptimer__config_8h_source}\index{config/sl\_sleeptimer\_config.h@{config/sl\_sleeptimer\_config.h}}
+\mbox{\hyperlink{sl__sleeptimer__config_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00031\ \textcolor{comment}{//\ <<<\ Use\ Configuration\ Wizard\ in\ Context\ Menu\ >>>}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#ifndef\ SL\_SLEEPTIMER\_CONFIG\_H}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#define\ SL\_SLEEPTIMER\_CONFIG\_H}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ SL\_SLEEPTIMER\_PERIPHERAL\_DEFAULT\ 0}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ SL\_SLEEPTIMER\_PERIPHERAL\_RTCC\ \ \ \ 1}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ SL\_SLEEPTIMER\_PERIPHERAL\_PRORTC\ \ 2}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ SL\_SLEEPTIMER\_PERIPHERAL\_RTC\ \ \ \ \ 3}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ SL\_SLEEPTIMER\_PERIPHERAL\_SYSRTC\ \ 4}}
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ SL\_SLEEPTIMER\_PERIPHERAL\_BURTC\ \ \ 5}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ SL\_SLEEPTIMER\_PERIPHERAL\_WTIMER\ \ 6}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ SL\_SLEEPTIMER\_PERIPHERAL\_TIMER\ \ \ 7}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{comment}{//\ <o\ SL\_SLEEPTIMER\_PERIPHERAL>\ Timer\ Peripheral\ Used\ by\ Sleeptimer}}
+\DoxyCodeLine{00046\ \textcolor{comment}{//\ \ \ <SL\_SLEEPTIMER\_PERIPHERAL\_DEFAULT=>\ Default\ (auto\ select)}}
+\DoxyCodeLine{00047\ \textcolor{comment}{//\ \ \ <SL\_SLEEPTIMER\_PERIPHERAL\_RTCC=>\ RTCC}}
+\DoxyCodeLine{00048\ \textcolor{comment}{//\ \ \ <SL\_SLEEPTIMER\_PERIPHERAL\_PRORTC=>\ Radio\ internal\ RTC\ (PRORTC)}}
+\DoxyCodeLine{00049\ \textcolor{comment}{//\ \ \ <SL\_SLEEPTIMER\_PERIPHERAL\_RTC=>\ RTC}}
+\DoxyCodeLine{00050\ \textcolor{comment}{//\ \ \ <SL\_SLEEPTIMER\_PERIPHERAL\_SYSRTC=>\ SYSRTC}}
+\DoxyCodeLine{00051\ \textcolor{comment}{//\ \ \ <SL\_SLEEPTIMER\_PERIPHERAL\_BURTC=>\ Back-\/Up\ RTC\ (BURTC)}}
+\DoxyCodeLine{00052\ \textcolor{comment}{//\ \ \ <SL\_SLEEPTIMER\_PERIPHERAL\_WTIMER=>\ WTIMER}}
+\DoxyCodeLine{00053\ \textcolor{comment}{//\ \ \ <SL\_SLEEPTIMER\_PERIPHERAL\_TIMER=>\ TIMER}}
+\DoxyCodeLine{00054\ \textcolor{comment}{//\ <i>\ Selection\ of\ the\ Timer\ Peripheral\ Used\ by\ the\ Sleeptimer}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#define\ SL\_SLEEPTIMER\_PERIPHERAL\ \ SL\_SLEEPTIMER\_PERIPHERAL\_DEFAULT}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{comment}{//\ <o\ SL\_SLEEPTIMER\_TIMER\_INSTANCE>\ TIMER/WTIMER\ Instance\ Used\ by\ Sleeptimer\ (not\ applicable\ for\ other\ peripherals)}}
+\DoxyCodeLine{00058\ \textcolor{comment}{//\ <i>\ Make\ sure\ TIMER\ instance\ size\ is\ 32bits.\ Check\ datasheet\ for\ 32bits\ TIMERs.}}
+\DoxyCodeLine{00059\ \textcolor{comment}{//\ <i>\ Default:\ 0}}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#define\ SL\_SLEEPTIMER\_TIMER\_INSTANCE\ \ 0}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \textcolor{comment}{//\ <q\ SL\_SLEEPTIMER\_WALLCLOCK\_CONFIG>\ Enable\ wallclock\ functionality}}
+\DoxyCodeLine{00063\ \textcolor{comment}{//\ <i>\ Enable\ or\ disable\ wallclock\ functionalities\ (get\_time,\ get\_date,\ etc).}}
+\DoxyCodeLine{00064\ \textcolor{comment}{//\ <i>\ Default:\ 0}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#define\ SL\_SLEEPTIMER\_WALLCLOCK\_CONFIG\ \ 0}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{comment}{//\ <o\ SL\_SLEEPTIMER\_FREQ\_DIVIDER>\ Timer\ frequency\ divider\ (not\ applicable\ for\ WTIMER/TIMER)}}
+\DoxyCodeLine{00068\ \textcolor{comment}{//\ <i>\ WTIMER/TIMER\ peripherals\ are\ always\ prescaled\ to\ 1024.}}
+\DoxyCodeLine{00069\ \textcolor{comment}{//\ <i>\ Default:\ 1}}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#define\ SL\_SLEEPTIMER\_FREQ\_DIVIDER\ \ 1}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{comment}{//\ <q\ SL\_SLEEPTIMER\_PRORTC\_HAL\_OWNS\_IRQ\_HANDLER>\ If\ Radio\ internal\ RTC\ (PRORTC)\ HAL\ is\ used,\ determines\ if\ it\ owns\ the\ IRQ\ handler.\ Enable,\ if\ no\ wireless\ stack\ is\ used.}}
+\DoxyCodeLine{00073\ \textcolor{comment}{//\ <i>\ Default:\ 0}}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#define\ SL\_SLEEPTIMER\_PRORTC\_HAL\_OWNS\_IRQ\_HANDLER\ \ 0}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \textcolor{comment}{//\ <q\ SL\_SLEEPTIMER\_DEBUGRUN>\ Enable\ DEBUGRUN\ functionality\ on\ hardware\ RTC.}}
+\DoxyCodeLine{00077\ \textcolor{comment}{//\ <i>\ Default:\ 0}}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#define\ SL\_SLEEPTIMER\_DEBUGRUN\ \ 0}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ SLEEPTIMER\_CONFIG\_H\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{comment}{//\ <<<\ end\ of\ configuration\ section\ >>>}}
+
+\end{DoxyCode}

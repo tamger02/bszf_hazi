@@ -1,0 +1,712 @@
+\doxysection{efm32gg\+\_\+etm.\+h}
+\hypertarget{efm32gg__etm_8h_source}{}\label{efm32gg__etm_8h_source}\index{gecko\_sdk\_4.4.4/platform/Device/SiliconLabs/EFM32GG/Include/efm32gg\_etm.h@{gecko\_sdk\_4.4.4/platform/Device/SiliconLabs/EFM32GG/Include/efm32gg\_etm.h}}
+\mbox{\hyperlink{efm32gg__etm_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#if\ defined(\_\_ICCARM\_\_)}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#pragma\ system\_include\ \ \ \ \ \ \ }\textcolor{comment}{/*\ Treat\ file\ as\ system\ include\ file.\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#elif\ defined(\_\_ARMCC\_VERSION)\ \&\&\ (\_\_ARMCC\_VERSION\ >=\ 6010050)}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#pragma\ clang\ system\_header\ \ }\textcolor{comment}{/*\ Treat\ file\ as\ system\ include\ file.\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00041\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00046\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00047\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_e_t_m___type_def_a3ad93192d04acf4918077dfc35d7006f}{ETMCR}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00048\ \ \ \_\_IM\ uint32\_t\ \ \mbox{\hyperlink{struct_e_t_m___type_def_ad8a5fb438c5ac6ef91aacecafd05cf9e}{ETMCCR}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00049\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_e_t_m___type_def_a9a6c52a203ad214d01562b800cc0a39d}{ETMTRIGGER}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00050\ \ \ uint32\_t\ \ \ \ \ \ \ RESERVED0[1U];\ \ \ \ }
+\DoxyCodeLine{00051\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_e_t_m___type_def_a7498c2eb8da38610ca932f6141c0230a}{ETMSR}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00052\ \ \ \_\_IM\ uint32\_t\ \ \mbox{\hyperlink{struct_e_t_m___type_def_af75941825791939814af472e0810329b}{ETMSCR}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00053\ \ \ uint32\_t\ \ \ \ \ \ \ RESERVED1[2U];\ \ \ \ }
+\DoxyCodeLine{00054\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_e_t_m___type_def_a2a1e66c1db54be650ef89005eb944cce}{ETMTEEVR}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00055\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_e_t_m___type_def_a5c5b1ddc5e9e3befbd26cc88898e7d4d}{ETMTECR1}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00056\ \ \ uint32\_t\ \ \ \ \ \ \ RESERVED2[1U];\ \ \ \ }
+\DoxyCodeLine{00057\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_e_t_m___type_def_a9c7c51bfa1277ddeedfe9662bddccdd0}{ETMFFLR}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00058\ \ \ uint32\_t\ \ \ \ \ \ \ RESERVED3[68U];\ \ \ }
+\DoxyCodeLine{00059\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_e_t_m___type_def_a055d75e959b74c5d15585a05a3e15ee9}{ETMCNTRLDVR1}};\ \ \ \ \ }
+\DoxyCodeLine{00060\ \ \ uint32\_t\ \ \ \ \ \ \ RESERVED4[39U];\ \ \ }
+\DoxyCodeLine{00061\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_e_t_m___type_def_aec2c081b33132cf6d5db9d524d93b212}{ETMSYNCFR}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00062\ \ \ \_\_IM\ uint32\_t\ \ \mbox{\hyperlink{struct_e_t_m___type_def_af4195483d6702c2041a5668eac4a81c3}{ETMIDR}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00063\ \ \ \_\_IM\ uint32\_t\ \ \mbox{\hyperlink{struct_e_t_m___type_def_a7811a2381b7c2b4bc9182b2e8fd7b76e}{ETMCCER}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00064\ \ \ uint32\_t\ \ \ \ \ \ \ RESERVED5[1U];\ \ \ \ }
+\DoxyCodeLine{00065\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_e_t_m___type_def_aacb0a46e1ca6b2d89bbf3db447ebc2b5}{ETMTESSEICR}};\ \ \ \ \ \ }
+\DoxyCodeLine{00066\ \ \ uint32\_t\ \ \ \ \ \ \ RESERVED6[1U];\ \ \ \ }
+\DoxyCodeLine{00067\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_e_t_m___type_def_ad39f3f7bfb89415ccf8c8ebad15835b7}{ETMTSEVR}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00068\ \ \ uint32\_t\ \ \ \ \ \ \ RESERVED7[1U];\ \ \ \ }
+\DoxyCodeLine{00069\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_e_t_m___type_def_a7f5a92cdbb97680d0dceb4608cf7660c}{ETMTRACEIDR}};\ \ \ \ \ \ }
+\DoxyCodeLine{00070\ \ \ uint32\_t\ \ \ \ \ \ \ RESERVED8[1U];\ \ \ \ }
+\DoxyCodeLine{00071\ \ \ \_\_IM\ uint32\_t\ \ \mbox{\hyperlink{struct_e_t_m___type_def_af81fcaa2c4efc297cf58d34bc39e009a}{ETMIDR2}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00072\ \ \ uint32\_t\ \ \ \ \ \ \ RESERVED9[66U];\ \ \ }
+\DoxyCodeLine{00073\ \ \ \_\_IM\ uint32\_t\ \ \mbox{\hyperlink{struct_e_t_m___type_def_a8f16fe374d07b0201f8460bbc0bc5b0e}{ETMPDSR}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00074\ \ \ uint32\_t\ \ \ \ \ \ \ RESERVED10[754U];\ }
+\DoxyCodeLine{00075\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_e_t_m___type_def_a619459352002b07b8c6ab73a4bd8a0e2}{ETMISCIN}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00076\ \ \ uint32\_t\ \ \ \ \ \ \ RESERVED11[1U];\ \ \ }
+\DoxyCodeLine{00077\ \ \ \_\_OM\ uint32\_t\ \ \mbox{\hyperlink{struct_e_t_m___type_def_a3871465f9efc31346c01026a3135b4bd}{ITTRIGOUT}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00078\ \ \ uint32\_t\ \ \ \ \ \ \ RESERVED12[1U];\ \ \ }
+\DoxyCodeLine{00079\ \ \ \_\_IM\ uint32\_t\ \ \mbox{\hyperlink{struct_e_t_m___type_def_af8f6f6441f6170250a913c64d5157faa}{ETMITATBCTR2}};\ \ \ \ \ }
+\DoxyCodeLine{00080\ \ \ uint32\_t\ \ \ \ \ \ \ RESERVED13[1U];\ \ \ }
+\DoxyCodeLine{00081\ \ \ \_\_OM\ uint32\_t\ \ \mbox{\hyperlink{struct_e_t_m___type_def_a6cc3026a6c75fc922165fda6e3cad2b5}{ETMITATBCTR0}};\ \ \ \ \ }
+\DoxyCodeLine{00082\ \ \ uint32\_t\ \ \ \ \ \ \ RESERVED14[1U];\ \ \ }
+\DoxyCodeLine{00083\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_e_t_m___type_def_a9cd37b8b9c611008ee545268e5c13822}{ETMITCTRL}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00084\ \ \ uint32\_t\ \ \ \ \ \ \ RESERVED15[39U];\ \ }
+\DoxyCodeLine{00085\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_e_t_m___type_def_ad0fbf8a4a0089f1d9c66ee84f80fedee}{ETMCLAIMSET}};\ \ \ \ \ \ }
+\DoxyCodeLine{00086\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_e_t_m___type_def_a27e1b97c96ae2bb6dc09a7c72435064d}{ETMCLAIMCLR}};\ \ \ \ \ \ }
+\DoxyCodeLine{00087\ \ \ uint32\_t\ \ \ \ \ \ \ RESERVED16[2U];\ \ \ }
+\DoxyCodeLine{00088\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_e_t_m___type_def_a3104dd3f5283e822f4fd949aea0ed82e}{ETMLAR}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00089\ \ \ \_\_IM\ uint32\_t\ \ \mbox{\hyperlink{struct_e_t_m___type_def_a41215f6ff49bd5f497eebfa0ccbcb3e7}{ETMLSR}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00090\ \ \ \_\_IM\ uint32\_t\ \ \mbox{\hyperlink{struct_e_t_m___type_def_a250039f02cbbb8c513504384a62d15f8}{ETMAUTHSTATUS}};\ \ \ \ }
+\DoxyCodeLine{00091\ \ \ uint32\_t\ \ \ \ \ \ \ RESERVED17[4U];\ \ \ }
+\DoxyCodeLine{00092\ \ \ \_\_IM\ uint32\_t\ \ \mbox{\hyperlink{struct_e_t_m___type_def_ac33e05e91729b65d8d6ace6f978b90e6}{ETMDEVTYPE}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00093\ \ \ \_\_IM\ uint32\_t\ \ \mbox{\hyperlink{struct_e_t_m___type_def_a433b334ce29258d5c2015677a32c3163}{ETMPIDR4}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00094\ \ \ \_\_OM\ uint32\_t\ \ \mbox{\hyperlink{struct_e_t_m___type_def_a17cc7b346160886cade066daf604b5cf}{ETMPIDR5}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00095\ \ \ \_\_OM\ uint32\_t\ \ \mbox{\hyperlink{struct_e_t_m___type_def_a07a34077abbb8bb4d80c63237f33a3a1}{ETMPIDR6}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00096\ \ \ \_\_OM\ uint32\_t\ \ \mbox{\hyperlink{struct_e_t_m___type_def_a82bf4d8edda13dade381b38f183d6212}{ETMPIDR7}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00097\ \ \ \_\_IM\ uint32\_t\ \ \mbox{\hyperlink{struct_e_t_m___type_def_a555f35f05303fbb4e2d5ae238eb1c095}{ETMPIDR0}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00098\ \ \ \_\_IM\ uint32\_t\ \ \mbox{\hyperlink{struct_e_t_m___type_def_a5188ee0d0af02dd43a8a5b59edaa2449}{ETMPIDR1}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00099\ \ \ \_\_IM\ uint32\_t\ \ \mbox{\hyperlink{struct_e_t_m___type_def_a0a02906f1ba5287f82d1a44361438f37}{ETMPIDR2}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00100\ \ \ \_\_IM\ uint32\_t\ \ \mbox{\hyperlink{struct_e_t_m___type_def_a5484c5236e60e4fab53fb0bd3388f5b5}{ETMPIDR3}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00101\ \ \ \_\_IM\ uint32\_t\ \ \mbox{\hyperlink{struct_e_t_m___type_def_ae676920dcd52021bed55b18ea1c86f94}{ETMCIDR0}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00102\ \ \ \_\_IM\ uint32\_t\ \ \mbox{\hyperlink{struct_e_t_m___type_def_ae230fd21e03220b6ad746d9ebd362d25}{ETMCIDR1}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00103\ \ \ \_\_IM\ uint32\_t\ \ \mbox{\hyperlink{struct_e_t_m___type_def_ad48807fd35092cc548f6802343522a34}{ETMCIDR2}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00104\ \ \ \_\_IM\ uint32\_t\ \ \mbox{\hyperlink{struct_e_t_m___type_def_a9d3926b01bf54b8abc5560fa4187fbe7}{ETMCIDR3}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00105\ \}\ \mbox{\hyperlink{struct_e_t_m___type_def}{ETM\_TypeDef}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00107\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00112\ \textcolor{comment}{/*\ Bit\ fields\ for\ ETM\ ETMCR\ */}}
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCR\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000411UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCR\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x10632FF1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\#define\ ETM\_ETMCR\_POWERDWN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCR\_POWERDWN\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00117\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCR\_POWERDWN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00118\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCR\_POWERDWN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00119\ \textcolor{preprocessor}{\#define\ ETM\_ETMCR\_POWERDWN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMCR\_POWERDWN\_DEFAULT\ <<\ 0)\ \ \ \ \ }}
+\DoxyCodeLine{00120\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCR\_PORTSIZE\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCR\_PORTSIZE\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x70UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00122\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCR\_PORTSIZE\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\#define\ ETM\_ETMCR\_PORTSIZE\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMCR\_PORTSIZE\_DEFAULT\ <<\ 4)\ \ \ \ \ }}
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\#define\ ETM\_ETMCR\_STALL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 7)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCR\_STALL\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 7\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00126\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCR\_STALL\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x80UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCR\_STALL\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\#define\ ETM\_ETMCR\_STALL\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMCR\_STALL\_DEFAULT\ <<\ 7)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{\#define\ ETM\_ETMCR\_BRANCHOUTPUT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 8)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00130\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCR\_BRANCHOUTPUT\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00131\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCR\_BRANCHOUTPUT\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x100UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00132\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCR\_BRANCHOUTPUT\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00133\ \textcolor{preprocessor}{\#define\ ETM\_ETMCR\_BRANCHOUTPUT\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMCR\_BRANCHOUTPUT\_DEFAULT\ <<\ 8)\ }}
+\DoxyCodeLine{00134\ \textcolor{preprocessor}{\#define\ ETM\_ETMCR\_DBGREQCTRL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 9)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00135\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCR\_DBGREQCTRL\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 9\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00136\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCR\_DBGREQCTRL\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x200UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCR\_DBGREQCTRL\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00138\ \textcolor{preprocessor}{\#define\ ETM\_ETMCR\_DBGREQCTRL\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMCR\_DBGREQCTRL\_DEFAULT\ <<\ 9)\ \ \ }}
+\DoxyCodeLine{00139\ \textcolor{preprocessor}{\#define\ ETM\_ETMCR\_ETMPROG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 10)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00140\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCR\_ETMPROG\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 10\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00141\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCR\_ETMPROG\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x400UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00142\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCR\_ETMPROG\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00143\ \textcolor{preprocessor}{\#define\ ETM\_ETMCR\_ETMPROG\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMCR\_ETMPROG\_DEFAULT\ <<\ 10)\ \ \ \ \ }}
+\DoxyCodeLine{00144\ \textcolor{preprocessor}{\#define\ ETM\_ETMCR\_ETMPORTSEL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 11)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00145\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCR\_ETMPORTSEL\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 11\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00146\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCR\_ETMPORTSEL\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x800UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00147\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCR\_ETMPORTSEL\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00148\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCR\_ETMPORTSEL\_ETMLOW\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00149\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCR\_ETMPORTSEL\_ETMHIGH\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00150\ \textcolor{preprocessor}{\#define\ ETM\_ETMCR\_ETMPORTSEL\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMCR\_ETMPORTSEL\_DEFAULT\ <<\ 11)\ \ }}
+\DoxyCodeLine{00151\ \textcolor{preprocessor}{\#define\ ETM\_ETMCR\_ETMPORTSEL\_ETMLOW\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMCR\_ETMPORTSEL\_ETMLOW\ <<\ 11)\ \ \ }}
+\DoxyCodeLine{00152\ \textcolor{preprocessor}{\#define\ ETM\_ETMCR\_ETMPORTSEL\_ETMHIGH\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMCR\_ETMPORTSEL\_ETMHIGH\ <<\ 11)\ \ }}
+\DoxyCodeLine{00153\ \textcolor{preprocessor}{\#define\ ETM\_ETMCR\_PORTMODE2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 13)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00154\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCR\_PORTMODE2\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 13\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00155\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCR\_PORTMODE2\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x2000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00156\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCR\_PORTMODE2\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00157\ \textcolor{preprocessor}{\#define\ ETM\_ETMCR\_PORTMODE2\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMCR\_PORTMODE2\_DEFAULT\ <<\ 13)\ \ \ }}
+\DoxyCodeLine{00158\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCR\_PORTMODE\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 16\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00159\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCR\_PORTMODE\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x30000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00160\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCR\_PORTMODE\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00161\ \textcolor{preprocessor}{\#define\ ETM\_ETMCR\_PORTMODE\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMCR\_PORTMODE\_DEFAULT\ <<\ 16)\ \ \ \ }}
+\DoxyCodeLine{00162\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCR\_EPORTSIZE\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 21\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00163\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCR\_EPORTSIZE\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x600000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00164\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCR\_EPORTSIZE\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00165\ \textcolor{preprocessor}{\#define\ ETM\_ETMCR\_EPORTSIZE\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMCR\_EPORTSIZE\_DEFAULT\ <<\ 21)\ \ \ }}
+\DoxyCodeLine{00166\ \textcolor{preprocessor}{\#define\ ETM\_ETMCR\_TSTAMPEN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 28)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00167\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCR\_TSTAMPEN\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 28\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00168\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCR\_TSTAMPEN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x10000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00169\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCR\_TSTAMPEN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00170\ \textcolor{preprocessor}{\#define\ ETM\_ETMCR\_TSTAMPEN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMCR\_TSTAMPEN\_DEFAULT\ <<\ 28)\ \ \ \ }}
+\DoxyCodeLine{00172\ \textcolor{comment}{/*\ Bit\ fields\ for\ ETM\ ETMCCR\ */}}
+\DoxyCodeLine{00173\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCR\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x8C802000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00174\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCR\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x8FFFFFFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00175\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCR\_ADRCMPPAIR\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00176\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCR\_ADRCMPPAIR\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00177\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCR\_ADRCMPPAIR\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00178\ \textcolor{preprocessor}{\#define\ ETM\_ETMCCR\_ADRCMPPAIR\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMCCR\_ADRCMPPAIR\_DEFAULT\ <<\ 0)\ \ \ \ }}
+\DoxyCodeLine{00179\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCR\_DATACMPNUM\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00180\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCR\_DATACMPNUM\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xF0UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00181\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCR\_DATACMPNUM\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00182\ \textcolor{preprocessor}{\#define\ ETM\_ETMCCR\_DATACMPNUM\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMCCR\_DATACMPNUM\_DEFAULT\ <<\ 4)\ \ \ \ }}
+\DoxyCodeLine{00183\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCR\_MMDECCNT\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00184\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCR\_MMDECCNT\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1F00UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00185\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCR\_MMDECCNT\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00186\ \textcolor{preprocessor}{\#define\ ETM\_ETMCCR\_MMDECCNT\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMCCR\_MMDECCNT\_DEFAULT\ <<\ 8)\ \ \ \ \ \ }}
+\DoxyCodeLine{00187\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCR\_COUNTNUM\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 13\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00188\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCR\_COUNTNUM\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xE000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00189\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCR\_COUNTNUM\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00190\ \textcolor{preprocessor}{\#define\ ETM\_ETMCCR\_COUNTNUM\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMCCR\_COUNTNUM\_DEFAULT\ <<\ 13)\ \ \ \ \ }}
+\DoxyCodeLine{00191\ \textcolor{preprocessor}{\#define\ ETM\_ETMCCR\_SEQPRES\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 16)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00192\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCR\_SEQPRES\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 16\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00193\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCR\_SEQPRES\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x10000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00194\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCR\_SEQPRES\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00195\ \textcolor{preprocessor}{\#define\ ETM\_ETMCCR\_SEQPRES\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMCCR\_SEQPRES\_DEFAULT\ <<\ 16)\ \ \ \ \ \ }}
+\DoxyCodeLine{00196\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCR\_EXTINPNUM\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 17\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00197\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCR\_EXTINPNUM\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xE0000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00198\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCR\_EXTINPNUM\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00199\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCR\_EXTINPNUM\_ZERO\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00200\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCR\_EXTINPNUM\_ONE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00201\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCR\_EXTINPNUM\_TWO\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000002UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00202\ \textcolor{preprocessor}{\#define\ ETM\_ETMCCR\_EXTINPNUM\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMCCR\_EXTINPNUM\_DEFAULT\ <<\ 17)\ \ \ \ }}
+\DoxyCodeLine{00203\ \textcolor{preprocessor}{\#define\ ETM\_ETMCCR\_EXTINPNUM\_ZERO\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMCCR\_EXTINPNUM\_ZERO\ <<\ 17)\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00204\ \textcolor{preprocessor}{\#define\ ETM\_ETMCCR\_EXTINPNUM\_ONE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMCCR\_EXTINPNUM\_ONE\ <<\ 17)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00205\ \textcolor{preprocessor}{\#define\ ETM\_ETMCCR\_EXTINPNUM\_TWO\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMCCR\_EXTINPNUM\_TWO\ <<\ 17)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00206\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCR\_EXTOUTNUM\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 20\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00207\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCR\_EXTOUTNUM\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x700000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00208\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCR\_EXTOUTNUM\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00209\ \textcolor{preprocessor}{\#define\ ETM\_ETMCCR\_EXTOUTNUM\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMCCR\_EXTOUTNUM\_DEFAULT\ <<\ 20)\ \ \ \ }}
+\DoxyCodeLine{00210\ \textcolor{preprocessor}{\#define\ ETM\_ETMCCR\_FIFOFULLPRES\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 23)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00211\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCR\_FIFOFULLPRES\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 23\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00212\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCR\_FIFOFULLPRES\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x800000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00213\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCR\_FIFOFULLPRES\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00214\ \textcolor{preprocessor}{\#define\ ETM\_ETMCCR\_FIFOFULLPRES\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMCCR\_FIFOFULLPRES\_DEFAULT\ <<\ 23)\ }}
+\DoxyCodeLine{00215\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCR\_IDCOMPNUM\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 24\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00216\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCR\_IDCOMPNUM\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x3000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00217\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCR\_IDCOMPNUM\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00218\ \textcolor{preprocessor}{\#define\ ETM\_ETMCCR\_IDCOMPNUM\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMCCR\_IDCOMPNUM\_DEFAULT\ <<\ 24)\ \ \ \ }}
+\DoxyCodeLine{00219\ \textcolor{preprocessor}{\#define\ ETM\_ETMCCR\_TRACESS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 26)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00220\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCR\_TRACESS\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 26\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00221\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCR\_TRACESS\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x4000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00222\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCR\_TRACESS\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00223\ \textcolor{preprocessor}{\#define\ ETM\_ETMCCR\_TRACESS\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMCCR\_TRACESS\_DEFAULT\ <<\ 26)\ \ \ \ \ \ }}
+\DoxyCodeLine{00224\ \textcolor{preprocessor}{\#define\ ETM\_ETMCCR\_MMACCESS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 27)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00225\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCR\_MMACCESS\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 27\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00226\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCR\_MMACCESS\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x8000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00227\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCR\_MMACCESS\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00228\ \textcolor{preprocessor}{\#define\ ETM\_ETMCCR\_MMACCESS\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMCCR\_MMACCESS\_DEFAULT\ <<\ 27)\ \ \ \ \ }}
+\DoxyCodeLine{00229\ \textcolor{preprocessor}{\#define\ ETM\_ETMCCR\_ETMID\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 31)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00230\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCR\_ETMID\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 31\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00231\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCR\_ETMID\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x80000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00232\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCR\_ETMID\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00233\ \textcolor{preprocessor}{\#define\ ETM\_ETMCCR\_ETMID\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMCCR\_ETMID\_DEFAULT\ <<\ 31)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00235\ \textcolor{comment}{/*\ Bit\ fields\ for\ ETM\ ETMTRIGGER\ */}}
+\DoxyCodeLine{00236\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMTRIGGER\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00237\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMTRIGGER\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0001FFFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00238\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMTRIGGER\_RESA\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00239\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMTRIGGER\_RESA\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x7FUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00240\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMTRIGGER\_RESA\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00241\ \textcolor{preprocessor}{\#define\ ETM\_ETMTRIGGER\_RESA\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMTRIGGER\_RESA\_DEFAULT\ <<\ 0)\ \ \ \ }}
+\DoxyCodeLine{00242\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMTRIGGER\_RESB\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 7\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00243\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMTRIGGER\_RESB\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x3F80UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00244\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMTRIGGER\_RESB\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00245\ \textcolor{preprocessor}{\#define\ ETM\_ETMTRIGGER\_RESB\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMTRIGGER\_RESB\_DEFAULT\ <<\ 7)\ \ \ \ }}
+\DoxyCodeLine{00246\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMTRIGGER\_ETMFCN\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 14\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00247\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMTRIGGER\_ETMFCN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1C000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00248\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMTRIGGER\_ETMFCN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00249\ \textcolor{preprocessor}{\#define\ ETM\_ETMTRIGGER\_ETMFCN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMTRIGGER\_ETMFCN\_DEFAULT\ <<\ 14)\ }}
+\DoxyCodeLine{00251\ \textcolor{comment}{/*\ Bit\ fields\ for\ ETM\ ETMSR\ */}}
+\DoxyCodeLine{00252\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMSR\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000002UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00253\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMSR\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0000000FUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00254\ \textcolor{preprocessor}{\#define\ ETM\_ETMSR\_ETHOF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00255\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMSR\_ETHOF\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00256\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMSR\_ETHOF\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00257\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMSR\_ETHOF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00258\ \textcolor{preprocessor}{\#define\ ETM\_ETMSR\_ETHOF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMSR\_ETHOF\_DEFAULT\ <<\ 0)\ \ \ \ \ \ }}
+\DoxyCodeLine{00259\ \textcolor{preprocessor}{\#define\ ETM\_ETMSR\_ETMPROGBIT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00260\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMSR\_ETMPROGBIT\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00261\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMSR\_ETMPROGBIT\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x2UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00262\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMSR\_ETMPROGBIT\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00263\ \textcolor{preprocessor}{\#define\ ETM\_ETMSR\_ETMPROGBIT\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMSR\_ETMPROGBIT\_DEFAULT\ <<\ 1)\ }}
+\DoxyCodeLine{00264\ \textcolor{preprocessor}{\#define\ ETM\_ETMSR\_TRACESTAT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 2)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00265\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMSR\_TRACESTAT\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00266\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMSR\_TRACESTAT\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x4UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00267\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMSR\_TRACESTAT\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00268\ \textcolor{preprocessor}{\#define\ ETM\_ETMSR\_TRACESTAT\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMSR\_TRACESTAT\_DEFAULT\ <<\ 2)\ \ }}
+\DoxyCodeLine{00269\ \textcolor{preprocessor}{\#define\ ETM\_ETMSR\_TRIGBIT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 3)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00270\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMSR\_TRIGBIT\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00271\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMSR\_TRIGBIT\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x8UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00272\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMSR\_TRIGBIT\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00273\ \textcolor{preprocessor}{\#define\ ETM\_ETMSR\_TRIGBIT\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMSR\_TRIGBIT\_DEFAULT\ <<\ 3)\ \ \ \ }}
+\DoxyCodeLine{00275\ \textcolor{comment}{/*\ Bit\ fields\ for\ ETM\ ETMSCR\ */}}
+\DoxyCodeLine{00276\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMSCR\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00020D09UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00277\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMSCR\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00027F0FUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00278\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMSCR\_MAXPORTSIZE\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00279\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMSCR\_MAXPORTSIZE\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x7UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00280\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMSCR\_MAXPORTSIZE\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00281\ \textcolor{preprocessor}{\#define\ ETM\_ETMSCR\_MAXPORTSIZE\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMSCR\_MAXPORTSIZE\_DEFAULT\ <<\ 0)\ \ }}
+\DoxyCodeLine{00282\ \textcolor{preprocessor}{\#define\ ETM\_ETMSCR\_Reserved\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 3)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00283\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMSCR\_Reserved\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00284\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMSCR\_Reserved\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x8UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00285\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMSCR\_Reserved\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00286\ \textcolor{preprocessor}{\#define\ ETM\_ETMSCR\_Reserved\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMSCR\_Reserved\_DEFAULT\ <<\ 3)\ \ \ \ \ }}
+\DoxyCodeLine{00287\ \textcolor{preprocessor}{\#define\ ETM\_ETMSCR\_FIFOFULL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 8)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00288\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMSCR\_FIFOFULL\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00289\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMSCR\_FIFOFULL\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x100UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00290\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMSCR\_FIFOFULL\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00291\ \textcolor{preprocessor}{\#define\ ETM\_ETMSCR\_FIFOFULL\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMSCR\_FIFOFULL\_DEFAULT\ <<\ 8)\ \ \ \ \ }}
+\DoxyCodeLine{00292\ \textcolor{preprocessor}{\#define\ ETM\_ETMSCR\_MAXPORTSIZE3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 9)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00293\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMSCR\_MAXPORTSIZE3\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 9\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00294\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMSCR\_MAXPORTSIZE3\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x200UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00295\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMSCR\_MAXPORTSIZE3\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00296\ \textcolor{preprocessor}{\#define\ ETM\_ETMSCR\_MAXPORTSIZE3\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMSCR\_MAXPORTSIZE3\_DEFAULT\ <<\ 9)\ }}
+\DoxyCodeLine{00297\ \textcolor{preprocessor}{\#define\ ETM\_ETMSCR\_PORTSIZE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 10)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00298\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMSCR\_PORTSIZE\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 10\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00299\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMSCR\_PORTSIZE\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x400UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00300\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMSCR\_PORTSIZE\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00301\ \textcolor{preprocessor}{\#define\ ETM\_ETMSCR\_PORTSIZE\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMSCR\_PORTSIZE\_DEFAULT\ <<\ 10)\ \ \ \ }}
+\DoxyCodeLine{00302\ \textcolor{preprocessor}{\#define\ ETM\_ETMSCR\_PORTMODE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 11)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00303\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMSCR\_PORTMODE\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 11\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00304\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMSCR\_PORTMODE\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x800UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00305\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMSCR\_PORTMODE\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00306\ \textcolor{preprocessor}{\#define\ ETM\_ETMSCR\_PORTMODE\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMSCR\_PORTMODE\_DEFAULT\ <<\ 11)\ \ \ \ }}
+\DoxyCodeLine{00307\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMSCR\_PROCNUM\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 12\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00308\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMSCR\_PROCNUM\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x7000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00309\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMSCR\_PROCNUM\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00310\ \textcolor{preprocessor}{\#define\ ETM\_ETMSCR\_PROCNUM\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMSCR\_PROCNUM\_DEFAULT\ <<\ 12)\ \ \ \ \ }}
+\DoxyCodeLine{00311\ \textcolor{preprocessor}{\#define\ ETM\_ETMSCR\_NOFETCHCOMP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 17)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00312\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMSCR\_NOFETCHCOMP\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 17\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00313\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMSCR\_NOFETCHCOMP\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x20000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00314\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMSCR\_NOFETCHCOMP\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00315\ \textcolor{preprocessor}{\#define\ ETM\_ETMSCR\_NOFETCHCOMP\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMSCR\_NOFETCHCOMP\_DEFAULT\ <<\ 17)\ }}
+\DoxyCodeLine{00317\ \textcolor{comment}{/*\ Bit\ fields\ for\ ETM\ ETMTEEVR\ */}}
+\DoxyCodeLine{00318\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMTEEVR\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00319\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMTEEVR\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0001FFFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00320\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMTEEVR\_RESA\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00321\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMTEEVR\_RESA\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x7FUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00322\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMTEEVR\_RESA\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00323\ \textcolor{preprocessor}{\#define\ ETM\_ETMTEEVR\_RESA\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMTEEVR\_RESA\_DEFAULT\ <<\ 0)\ \ \ \ \ \ }}
+\DoxyCodeLine{00324\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMTEEVR\_RESB\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 7\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00325\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMTEEVR\_RESB\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x3F80UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00326\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMTEEVR\_RESB\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00327\ \textcolor{preprocessor}{\#define\ ETM\_ETMTEEVR\_RESB\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMTEEVR\_RESB\_DEFAULT\ <<\ 7)\ \ \ \ \ \ }}
+\DoxyCodeLine{00328\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMTEEVR\_ETMFCNEN\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 14\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00329\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMTEEVR\_ETMFCNEN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1C000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00330\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMTEEVR\_ETMFCNEN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00331\ \textcolor{preprocessor}{\#define\ ETM\_ETMTEEVR\_ETMFCNEN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMTEEVR\_ETMFCNEN\_DEFAULT\ <<\ 14)\ }}
+\DoxyCodeLine{00333\ \textcolor{comment}{/*\ Bit\ fields\ for\ ETM\ ETMTECR1\ */}}
+\DoxyCodeLine{00334\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMTECR1\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00335\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMTECR1\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x03FFFFFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00336\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMTECR1\_ADRCMP\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00337\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMTECR1\_ADRCMP\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00338\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMTECR1\_ADRCMP\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00339\ \textcolor{preprocessor}{\#define\ ETM\_ETMTECR1\_ADRCMP\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMTECR1\_ADRCMP\_DEFAULT\ <<\ 0)\ \ \ \ }}
+\DoxyCodeLine{00340\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMTECR1\_MEMMAP\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00341\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMTECR1\_MEMMAP\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFFFF00UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00342\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMTECR1\_MEMMAP\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00343\ \textcolor{preprocessor}{\#define\ ETM\_ETMTECR1\_MEMMAP\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMTECR1\_MEMMAP\_DEFAULT\ <<\ 8)\ \ \ \ }}
+\DoxyCodeLine{00344\ \textcolor{preprocessor}{\#define\ ETM\_ETMTECR1\_INCEXCTL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 24)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00345\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMTECR1\_INCEXCTL\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 24\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00346\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMTECR1\_INCEXCTL\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00347\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMTECR1\_INCEXCTL\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00348\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMTECR1\_INCEXCTL\_INC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00349\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMTECR1\_INCEXCTL\_EXC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00350\ \textcolor{preprocessor}{\#define\ ETM\_ETMTECR1\_INCEXCTL\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMTECR1\_INCEXCTL\_DEFAULT\ <<\ 24)\ }}
+\DoxyCodeLine{00351\ \textcolor{preprocessor}{\#define\ ETM\_ETMTECR1\_INCEXCTL\_INC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMTECR1\_INCEXCTL\_INC\ <<\ 24)\ \ \ \ \ }}
+\DoxyCodeLine{00352\ \textcolor{preprocessor}{\#define\ ETM\_ETMTECR1\_INCEXCTL\_EXC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMTECR1\_INCEXCTL\_EXC\ <<\ 24)\ \ \ \ \ }}
+\DoxyCodeLine{00353\ \textcolor{preprocessor}{\#define\ ETM\_ETMTECR1\_TCE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 25)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00354\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMTECR1\_TCE\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 25\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00355\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMTECR1\_TCE\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x2000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00356\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMTECR1\_TCE\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00357\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMTECR1\_TCE\_EN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00358\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMTECR1\_TCE\_DIS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00359\ \textcolor{preprocessor}{\#define\ ETM\_ETMTECR1\_TCE\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMTECR1\_TCE\_DEFAULT\ <<\ 25)\ \ \ \ \ \ }}
+\DoxyCodeLine{00360\ \textcolor{preprocessor}{\#define\ ETM\_ETMTECR1\_TCE\_EN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMTECR1\_TCE\_EN\ <<\ 25)\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00361\ \textcolor{preprocessor}{\#define\ ETM\_ETMTECR1\_TCE\_DIS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMTECR1\_TCE\_DIS\ <<\ 25)\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00363\ \textcolor{comment}{/*\ Bit\ fields\ for\ ETM\ ETMFFLR\ */}}
+\DoxyCodeLine{00364\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMFFLR\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00365\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMFFLR\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x000000FFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00366\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMFFLR\_BYTENUM\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00367\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMFFLR\_BYTENUM\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00368\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMFFLR\_BYTENUM\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00369\ \textcolor{preprocessor}{\#define\ ETM\_ETMFFLR\_BYTENUM\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMFFLR\_BYTENUM\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00371\ \textcolor{comment}{/*\ Bit\ fields\ for\ ETM\ ETMCNTRLDVR1\ */}}
+\DoxyCodeLine{00372\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCNTRLDVR1\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00373\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCNTRLDVR1\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0000FFFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00374\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCNTRLDVR1\_COUNT\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00375\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCNTRLDVR1\_COUNT\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFFFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00376\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCNTRLDVR1\_COUNT\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00377\ \textcolor{preprocessor}{\#define\ ETM\_ETMCNTRLDVR1\_COUNT\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMCNTRLDVR1\_COUNT\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00379\ \textcolor{comment}{/*\ Bit\ fields\ for\ ETM\ ETMSYNCFR\ */}}
+\DoxyCodeLine{00380\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMSYNCFR\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000400UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00381\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMSYNCFR\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000FFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00382\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMSYNCFR\_FREQ\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00383\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMSYNCFR\_FREQ\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00384\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMSYNCFR\_FREQ\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000400UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00385\ \textcolor{preprocessor}{\#define\ ETM\_ETMSYNCFR\_FREQ\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMSYNCFR\_FREQ\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00387\ \textcolor{comment}{/*\ Bit\ fields\ for\ ETM\ ETMIDR\ */}}
+\DoxyCodeLine{00388\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMIDR\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x4114F253UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00389\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMIDR\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFF1DFFFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00390\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMIDR\_IMPVER\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00391\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMIDR\_IMPVER\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00392\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMIDR\_IMPVER\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000003UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00393\ \textcolor{preprocessor}{\#define\ ETM\_ETMIDR\_IMPVER\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMIDR\_IMPVER\_DEFAULT\ <<\ 0)\ \ \ \ }}
+\DoxyCodeLine{00394\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMIDR\_ETMMINVER\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00395\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMIDR\_ETMMINVER\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xF0UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00396\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMIDR\_ETMMINVER\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000005UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00397\ \textcolor{preprocessor}{\#define\ ETM\_ETMIDR\_ETMMINVER\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMIDR\_ETMMINVER\_DEFAULT\ <<\ 4)\ }}
+\DoxyCodeLine{00398\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMIDR\_ETMMAJVER\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00399\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMIDR\_ETMMAJVER\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xF00UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00400\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMIDR\_ETMMAJVER\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000002UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00401\ \textcolor{preprocessor}{\#define\ ETM\_ETMIDR\_ETMMAJVER\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMIDR\_ETMMAJVER\_DEFAULT\ <<\ 8)\ }}
+\DoxyCodeLine{00402\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMIDR\_PROCFAM\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 12\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00403\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMIDR\_PROCFAM\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xF000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00404\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMIDR\_PROCFAM\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0000000FUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00405\ \textcolor{preprocessor}{\#define\ ETM\_ETMIDR\_PROCFAM\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMIDR\_PROCFAM\_DEFAULT\ <<\ 12)\ \ }}
+\DoxyCodeLine{00406\ \textcolor{preprocessor}{\#define\ ETM\_ETMIDR\_LPCF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 16)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00407\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMIDR\_LPCF\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 16\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00408\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMIDR\_LPCF\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x10000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00409\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMIDR\_LPCF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00410\ \textcolor{preprocessor}{\#define\ ETM\_ETMIDR\_LPCF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMIDR\_LPCF\_DEFAULT\ <<\ 16)\ \ \ \ \ }}
+\DoxyCodeLine{00411\ \textcolor{preprocessor}{\#define\ ETM\_ETMIDR\_THUMBT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 18)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00412\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMIDR\_THUMBT\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 18\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00413\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMIDR\_THUMBT\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x40000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00414\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMIDR\_THUMBT\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00415\ \textcolor{preprocessor}{\#define\ ETM\_ETMIDR\_THUMBT\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMIDR\_THUMBT\_DEFAULT\ <<\ 18)\ \ \ }}
+\DoxyCodeLine{00416\ \textcolor{preprocessor}{\#define\ ETM\_ETMIDR\_SECEXT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 19)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00417\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMIDR\_SECEXT\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 19\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00418\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMIDR\_SECEXT\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x80000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00419\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMIDR\_SECEXT\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00420\ \textcolor{preprocessor}{\#define\ ETM\_ETMIDR\_SECEXT\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMIDR\_SECEXT\_DEFAULT\ <<\ 19)\ \ \ }}
+\DoxyCodeLine{00421\ \textcolor{preprocessor}{\#define\ ETM\_ETMIDR\_BPE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 20)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00422\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMIDR\_BPE\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 20\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00423\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMIDR\_BPE\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x100000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00424\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMIDR\_BPE\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00425\ \textcolor{preprocessor}{\#define\ ETM\_ETMIDR\_BPE\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMIDR\_BPE\_DEFAULT\ <<\ 20)\ \ \ \ \ \ }}
+\DoxyCodeLine{00426\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMIDR\_IMPCODE\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 24\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00427\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMIDR\_IMPCODE\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFF000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00428\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMIDR\_IMPCODE\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000041UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00429\ \textcolor{preprocessor}{\#define\ ETM\_ETMIDR\_IMPCODE\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMIDR\_IMPCODE\_DEFAULT\ <<\ 24)\ \ }}
+\DoxyCodeLine{00431\ \textcolor{comment}{/*\ Bit\ fields\ for\ ETM\ ETMCCER\ */}}
+\DoxyCodeLine{00432\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCER\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x18541800UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00433\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCER\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x387FFFFBUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00434\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCER\_EXTINPSEL\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00435\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCER\_EXTINPSEL\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x3UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00436\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCER\_EXTINPSEL\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00437\ \textcolor{preprocessor}{\#define\ ETM\_ETMCCER\_EXTINPSEL\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMCCER\_EXTINPSEL\_DEFAULT\ <<\ 0)\ \ }}
+\DoxyCodeLine{00438\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCER\_EXTINPBUS\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00439\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCER\_EXTINPBUS\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x7F8UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00440\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCER\_EXTINPBUS\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00441\ \textcolor{preprocessor}{\#define\ ETM\_ETMCCER\_EXTINPBUS\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMCCER\_EXTINPBUS\_DEFAULT\ <<\ 3)\ \ }}
+\DoxyCodeLine{00442\ \textcolor{preprocessor}{\#define\ ETM\_ETMCCER\_READREGS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 11)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00443\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCER\_READREGS\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 11\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00444\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCER\_READREGS\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x800UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00445\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCER\_READREGS\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00446\ \textcolor{preprocessor}{\#define\ ETM\_ETMCCER\_READREGS\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMCCER\_READREGS\_DEFAULT\ <<\ 11)\ \ }}
+\DoxyCodeLine{00447\ \textcolor{preprocessor}{\#define\ ETM\_ETMCCER\_DADDRCMP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 12)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00448\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCER\_DADDRCMP\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 12\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00449\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCER\_DADDRCMP\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00450\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCER\_DADDRCMP\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00451\ \textcolor{preprocessor}{\#define\ ETM\_ETMCCER\_DADDRCMP\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMCCER\_DADDRCMP\_DEFAULT\ <<\ 12)\ \ }}
+\DoxyCodeLine{00452\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCER\_INSTRES\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 13\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00453\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCER\_INSTRES\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xE000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00454\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCER\_INSTRES\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00455\ \textcolor{preprocessor}{\#define\ ETM\_ETMCCER\_INSTRES\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMCCER\_INSTRES\_DEFAULT\ <<\ 13)\ \ \ }}
+\DoxyCodeLine{00456\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCER\_EICEWPNT\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 16\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00457\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCER\_EICEWPNT\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xF0000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00458\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCER\_EICEWPNT\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000004UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00459\ \textcolor{preprocessor}{\#define\ ETM\_ETMCCER\_EICEWPNT\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMCCER\_EICEWPNT\_DEFAULT\ <<\ 16)\ \ }}
+\DoxyCodeLine{00460\ \textcolor{preprocessor}{\#define\ ETM\_ETMCCER\_TEICEWPNT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 20)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00461\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCER\_TEICEWPNT\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 20\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00462\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCER\_TEICEWPNT\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x100000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00463\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCER\_TEICEWPNT\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00464\ \textcolor{preprocessor}{\#define\ ETM\_ETMCCER\_TEICEWPNT\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMCCER\_TEICEWPNT\_DEFAULT\ <<\ 20)\ }}
+\DoxyCodeLine{00465\ \textcolor{preprocessor}{\#define\ ETM\_ETMCCER\_EICEIMP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 21)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00466\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCER\_EICEIMP\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 21\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00467\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCER\_EICEIMP\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x200000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00468\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCER\_EICEIMP\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00469\ \textcolor{preprocessor}{\#define\ ETM\_ETMCCER\_EICEIMP\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMCCER\_EICEIMP\_DEFAULT\ <<\ 21)\ \ \ }}
+\DoxyCodeLine{00470\ \textcolor{preprocessor}{\#define\ ETM\_ETMCCER\_TIMP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 22)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00471\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCER\_TIMP\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 22\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00472\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCER\_TIMP\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x400000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00473\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCER\_TIMP\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00474\ \textcolor{preprocessor}{\#define\ ETM\_ETMCCER\_TIMP\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMCCER\_TIMP\_DEFAULT\ <<\ 22)\ \ \ \ \ \ }}
+\DoxyCodeLine{00475\ \textcolor{preprocessor}{\#define\ ETM\_ETMCCER\_RFCNT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 27)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00476\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCER\_RFCNT\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 27\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00477\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCER\_RFCNT\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x8000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00478\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCER\_RFCNT\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00479\ \textcolor{preprocessor}{\#define\ ETM\_ETMCCER\_RFCNT\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMCCER\_RFCNT\_DEFAULT\ <<\ 27)\ \ \ \ \ }}
+\DoxyCodeLine{00480\ \textcolor{preprocessor}{\#define\ ETM\_ETMCCER\_TENC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 28)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00481\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCER\_TENC\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 28\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00482\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCER\_TENC\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x10000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00483\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCER\_TENC\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00484\ \textcolor{preprocessor}{\#define\ ETM\_ETMCCER\_TENC\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMCCER\_TENC\_DEFAULT\ <<\ 28)\ \ \ \ \ \ }}
+\DoxyCodeLine{00485\ \textcolor{preprocessor}{\#define\ ETM\_ETMCCER\_TSIZE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 29)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00486\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCER\_TSIZE\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 29\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00487\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCER\_TSIZE\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x20000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00488\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCCER\_TSIZE\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00489\ \textcolor{preprocessor}{\#define\ ETM\_ETMCCER\_TSIZE\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMCCER\_TSIZE\_DEFAULT\ <<\ 29)\ \ \ \ \ }}
+\DoxyCodeLine{00491\ \textcolor{comment}{/*\ Bit\ fields\ for\ ETM\ ETMTESSEICR\ */}}
+\DoxyCodeLine{00492\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMTESSEICR\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00493\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMTESSEICR\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x000F000FUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00494\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMTESSEICR\_STARTRSEL\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00495\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMTESSEICR\_STARTRSEL\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00496\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMTESSEICR\_STARTRSEL\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00497\ \textcolor{preprocessor}{\#define\ ETM\_ETMTESSEICR\_STARTRSEL\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMTESSEICR\_STARTRSEL\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00498\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMTESSEICR\_STOPRSEL\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 16\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00499\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMTESSEICR\_STOPRSEL\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xF0000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00500\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMTESSEICR\_STOPRSEL\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00501\ \textcolor{preprocessor}{\#define\ ETM\_ETMTESSEICR\_STOPRSEL\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMTESSEICR\_STOPRSEL\_DEFAULT\ <<\ 16)\ }}
+\DoxyCodeLine{00503\ \textcolor{comment}{/*\ Bit\ fields\ for\ ETM\ ETMTSEVR\ */}}
+\DoxyCodeLine{00504\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMTSEVR\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00505\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMTSEVR\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0001FFFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00506\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMTSEVR\_RESAEVT\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00507\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMTSEVR\_RESAEVT\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x7FUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00508\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMTSEVR\_RESAEVT\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00509\ \textcolor{preprocessor}{\#define\ ETM\_ETMTSEVR\_RESAEVT\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMTSEVR\_RESAEVT\_DEFAULT\ <<\ 0)\ \ \ \ }}
+\DoxyCodeLine{00510\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMTSEVR\_RESBEVT\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 7\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00511\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMTSEVR\_RESBEVT\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x3F80UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00512\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMTSEVR\_RESBEVT\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00513\ \textcolor{preprocessor}{\#define\ ETM\_ETMTSEVR\_RESBEVT\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMTSEVR\_RESBEVT\_DEFAULT\ <<\ 7)\ \ \ \ }}
+\DoxyCodeLine{00514\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMTSEVR\_ETMFCNEVT\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 14\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00515\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMTSEVR\_ETMFCNEVT\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1C000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00516\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMTSEVR\_ETMFCNEVT\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00517\ \textcolor{preprocessor}{\#define\ ETM\_ETMTSEVR\_ETMFCNEVT\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMTSEVR\_ETMFCNEVT\_DEFAULT\ <<\ 14)\ }}
+\DoxyCodeLine{00519\ \textcolor{comment}{/*\ Bit\ fields\ for\ ETM\ ETMTRACEIDR\ */}}
+\DoxyCodeLine{00520\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMTRACEIDR\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00521\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMTRACEIDR\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0000007FUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00522\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMTRACEIDR\_TRACEID\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00523\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMTRACEIDR\_TRACEID\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x7FUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00524\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMTRACEIDR\_TRACEID\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00525\ \textcolor{preprocessor}{\#define\ ETM\_ETMTRACEIDR\_TRACEID\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMTRACEIDR\_TRACEID\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00527\ \textcolor{comment}{/*\ Bit\ fields\ for\ ETM\ ETMIDR2\ */}}
+\DoxyCodeLine{00528\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMIDR2\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00529\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMIDR2\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000003UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00530\ \textcolor{preprocessor}{\#define\ ETM\_ETMIDR2\_RFE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00531\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMIDR2\_RFE\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00532\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMIDR2\_RFE\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00533\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMIDR2\_RFE\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00534\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMIDR2\_RFE\_PC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00535\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMIDR2\_RFE\_CPSR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00536\ \textcolor{preprocessor}{\#define\ ETM\_ETMIDR2\_RFE\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMIDR2\_RFE\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00537\ \textcolor{preprocessor}{\#define\ ETM\_ETMIDR2\_RFE\_PC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMIDR2\_RFE\_PC\ <<\ 0)\ \ \ \ \ \ }}
+\DoxyCodeLine{00538\ \textcolor{preprocessor}{\#define\ ETM\_ETMIDR2\_RFE\_CPSR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMIDR2\_RFE\_CPSR\ <<\ 0)\ \ \ \ }}
+\DoxyCodeLine{00539\ \textcolor{preprocessor}{\#define\ ETM\_ETMIDR2\_SWP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00540\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMIDR2\_SWP\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00541\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMIDR2\_SWP\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x2UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00542\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMIDR2\_SWP\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00543\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMIDR2\_SWP\_LOAD\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00544\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMIDR2\_SWP\_STORE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00545\ \textcolor{preprocessor}{\#define\ ETM\_ETMIDR2\_SWP\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMIDR2\_SWP\_DEFAULT\ <<\ 1)\ }}
+\DoxyCodeLine{00546\ \textcolor{preprocessor}{\#define\ ETM\_ETMIDR2\_SWP\_LOAD\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMIDR2\_SWP\_LOAD\ <<\ 1)\ \ \ \ }}
+\DoxyCodeLine{00547\ \textcolor{preprocessor}{\#define\ ETM\_ETMIDR2\_SWP\_STORE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMIDR2\_SWP\_STORE\ <<\ 1)\ \ \ }}
+\DoxyCodeLine{00549\ \textcolor{comment}{/*\ Bit\ fields\ for\ ETM\ ETMPDSR\ */}}
+\DoxyCodeLine{00550\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMPDSR\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00551\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMPDSR\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00552\ \textcolor{preprocessor}{\#define\ ETM\_ETMPDSR\_ETMUP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00553\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMPDSR\_ETMUP\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00554\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMPDSR\_ETMUP\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00555\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMPDSR\_ETMUP\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00556\ \textcolor{preprocessor}{\#define\ ETM\_ETMPDSR\_ETMUP\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMPDSR\_ETMUP\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00558\ \textcolor{comment}{/*\ Bit\ fields\ for\ ETM\ ETMISCIN\ */}}
+\DoxyCodeLine{00559\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMISCIN\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00560\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMISCIN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000013UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00561\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMISCIN\_EXTIN\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00562\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMISCIN\_EXTIN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x3UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00563\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMISCIN\_EXTIN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00564\ \textcolor{preprocessor}{\#define\ ETM\_ETMISCIN\_EXTIN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMISCIN\_EXTIN\_DEFAULT\ <<\ 0)\ \ \ \ }}
+\DoxyCodeLine{00565\ \textcolor{preprocessor}{\#define\ ETM\_ETMISCIN\_COREHALT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 4)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00566\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMISCIN\_COREHALT\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00567\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMISCIN\_COREHALT\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x10UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00568\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMISCIN\_COREHALT\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00569\ \textcolor{preprocessor}{\#define\ ETM\_ETMISCIN\_COREHALT\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMISCIN\_COREHALT\_DEFAULT\ <<\ 4)\ }}
+\DoxyCodeLine{00571\ \textcolor{comment}{/*\ Bit\ fields\ for\ ETM\ ITTRIGOUT\ */}}
+\DoxyCodeLine{00572\ \textcolor{preprocessor}{\#define\ \_ETM\_ITTRIGOUT\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00573\ \textcolor{preprocessor}{\#define\ \_ETM\_ITTRIGOUT\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00574\ \textcolor{preprocessor}{\#define\ ETM\_ITTRIGOUT\_TRIGGEROUT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00575\ \textcolor{preprocessor}{\#define\ \_ETM\_ITTRIGOUT\_TRIGGEROUT\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00576\ \textcolor{preprocessor}{\#define\ \_ETM\_ITTRIGOUT\_TRIGGEROUT\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00577\ \textcolor{preprocessor}{\#define\ \_ETM\_ITTRIGOUT\_TRIGGEROUT\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00578\ \textcolor{preprocessor}{\#define\ ETM\_ITTRIGOUT\_TRIGGEROUT\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ITTRIGOUT\_TRIGGEROUT\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00580\ \textcolor{comment}{/*\ Bit\ fields\ for\ ETM\ ETMITATBCTR2\ */}}
+\DoxyCodeLine{00581\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMITATBCTR2\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00582\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMITATBCTR2\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00583\ \textcolor{preprocessor}{\#define\ ETM\_ETMITATBCTR2\_ATREADY\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00584\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMITATBCTR2\_ATREADY\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00585\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMITATBCTR2\_ATREADY\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00586\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMITATBCTR2\_ATREADY\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00587\ \textcolor{preprocessor}{\#define\ ETM\_ETMITATBCTR2\_ATREADY\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMITATBCTR2\_ATREADY\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00589\ \textcolor{comment}{/*\ Bit\ fields\ for\ ETM\ ETMITATBCTR0\ */}}
+\DoxyCodeLine{00590\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMITATBCTR0\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00591\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMITATBCTR0\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00592\ \textcolor{preprocessor}{\#define\ ETM\_ETMITATBCTR0\_ATVALID\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00593\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMITATBCTR0\_ATVALID\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00594\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMITATBCTR0\_ATVALID\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00595\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMITATBCTR0\_ATVALID\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00596\ \textcolor{preprocessor}{\#define\ ETM\_ETMITATBCTR0\_ATVALID\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMITATBCTR0\_ATVALID\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00598\ \textcolor{comment}{/*\ Bit\ fields\ for\ ETM\ ETMITCTRL\ */}}
+\DoxyCodeLine{00599\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMITCTRL\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00600\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMITCTRL\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00601\ \textcolor{preprocessor}{\#define\ ETM\_ETMITCTRL\_ITEN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00602\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMITCTRL\_ITEN\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00603\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMITCTRL\_ITEN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00604\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMITCTRL\_ITEN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00605\ \textcolor{preprocessor}{\#define\ ETM\_ETMITCTRL\_ITEN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMITCTRL\_ITEN\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00607\ \textcolor{comment}{/*\ Bit\ fields\ for\ ETM\ ETMCLAIMSET\ */}}
+\DoxyCodeLine{00608\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCLAIMSET\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0000000FUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00609\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCLAIMSET\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x000000FFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00610\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCLAIMSET\_SETTAG\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00611\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCLAIMSET\_SETTAG\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00612\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCLAIMSET\_SETTAG\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0000000FUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00613\ \textcolor{preprocessor}{\#define\ ETM\_ETMCLAIMSET\_SETTAG\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMCLAIMSET\_SETTAG\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00615\ \textcolor{comment}{/*\ Bit\ fields\ for\ ETM\ ETMCLAIMCLR\ */}}
+\DoxyCodeLine{00616\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCLAIMCLR\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00617\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCLAIMCLR\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00618\ \textcolor{preprocessor}{\#define\ ETM\_ETMCLAIMCLR\_CLRTAG\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00619\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCLAIMCLR\_CLRTAG\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00620\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCLAIMCLR\_CLRTAG\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00621\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCLAIMCLR\_CLRTAG\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00622\ \textcolor{preprocessor}{\#define\ ETM\_ETMCLAIMCLR\_CLRTAG\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMCLAIMCLR\_CLRTAG\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00624\ \textcolor{comment}{/*\ Bit\ fields\ for\ ETM\ ETMLAR\ */}}
+\DoxyCodeLine{00625\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMLAR\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00626\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMLAR\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00627\ \textcolor{preprocessor}{\#define\ ETM\_ETMLAR\_KEY\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00628\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMLAR\_KEY\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00629\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMLAR\_KEY\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00630\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMLAR\_KEY\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00631\ \textcolor{preprocessor}{\#define\ ETM\_ETMLAR\_KEY\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMLAR\_KEY\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00633\ \textcolor{comment}{/*\ Bit\ fields\ for\ ETM\ ETMLSR\ */}}
+\DoxyCodeLine{00634\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMLSR\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000003UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00635\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMLSR\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000003UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00636\ \textcolor{preprocessor}{\#define\ ETM\_ETMLSR\_LOCKIMP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00637\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMLSR\_LOCKIMP\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00638\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMLSR\_LOCKIMP\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00639\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMLSR\_LOCKIMP\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00640\ \textcolor{preprocessor}{\#define\ ETM\_ETMLSR\_LOCKIMP\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMLSR\_LOCKIMP\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00641\ \textcolor{preprocessor}{\#define\ ETM\_ETMLSR\_LOCKED\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00642\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMLSR\_LOCKED\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00643\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMLSR\_LOCKED\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x2UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00644\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMLSR\_LOCKED\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00645\ \textcolor{preprocessor}{\#define\ ETM\_ETMLSR\_LOCKED\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMLSR\_LOCKED\_DEFAULT\ <<\ 1)\ \ }}
+\DoxyCodeLine{00647\ \textcolor{comment}{/*\ Bit\ fields\ for\ ETM\ ETMAUTHSTATUS\ */}}
+\DoxyCodeLine{00648\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMAUTHSTATUS\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x000000C0UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00649\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMAUTHSTATUS\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x000000FFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00650\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMAUTHSTATUS\_NONSECINVDBG\_SHIFT\ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00651\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMAUTHSTATUS\_NONSECINVDBG\_MASK\ \ \ \ \ \ \ \ \ \ 0x3UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00652\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMAUTHSTATUS\_NONSECINVDBG\_DEFAULT\ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00653\ \textcolor{preprocessor}{\#define\ ETM\_ETMAUTHSTATUS\_NONSECINVDBG\_DEFAULT\ \ \ \ \ \ \ \ (\_ETM\_ETMAUTHSTATUS\_NONSECINVDBG\_DEFAULT\ <<\ 0)\ \ \ \ }}
+\DoxyCodeLine{00654\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMAUTHSTATUS\_NONSECNONINVDBG\_SHIFT\ \ \ \ \ \ 2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00655\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMAUTHSTATUS\_NONSECNONINVDBG\_MASK\ \ \ \ \ \ \ 0xCUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00656\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMAUTHSTATUS\_NONSECNONINVDBG\_DEFAULT\ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00657\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMAUTHSTATUS\_NONSECNONINVDBG\_DISABLE\ \ \ \ 0x00000002UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00658\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMAUTHSTATUS\_NONSECNONINVDBG\_ENABLE\ \ \ \ \ 0x00000003UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00659\ \textcolor{preprocessor}{\#define\ ETM\_ETMAUTHSTATUS\_NONSECNONINVDBG\_DEFAULT\ \ \ \ \ (\_ETM\_ETMAUTHSTATUS\_NONSECNONINVDBG\_DEFAULT\ <<\ 2)\ }}
+\DoxyCodeLine{00660\ \textcolor{preprocessor}{\#define\ ETM\_ETMAUTHSTATUS\_NONSECNONINVDBG\_DISABLE\ \ \ \ \ (\_ETM\_ETMAUTHSTATUS\_NONSECNONINVDBG\_DISABLE\ <<\ 2)\ }}
+\DoxyCodeLine{00661\ \textcolor{preprocessor}{\#define\ ETM\_ETMAUTHSTATUS\_NONSECNONINVDBG\_ENABLE\ \ \ \ \ \ (\_ETM\_ETMAUTHSTATUS\_NONSECNONINVDBG\_ENABLE\ <<\ 2)\ \ }}
+\DoxyCodeLine{00662\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMAUTHSTATUS\_SECINVDBG\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ 4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00663\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMAUTHSTATUS\_SECINVDBG\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ 0x30UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00664\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMAUTHSTATUS\_SECINVDBG\_DEFAULT\ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00665\ \textcolor{preprocessor}{\#define\ ETM\_ETMAUTHSTATUS\_SECINVDBG\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMAUTHSTATUS\_SECINVDBG\_DEFAULT\ <<\ 4)\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00666\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMAUTHSTATUS\_SECNONINVDBG\_SHIFT\ \ \ \ \ \ \ \ \ 6\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00667\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMAUTHSTATUS\_SECNONINVDBG\_MASK\ \ \ \ \ \ \ \ \ \ 0xC0UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00668\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMAUTHSTATUS\_SECNONINVDBG\_DEFAULT\ \ \ \ \ \ \ 0x00000003UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00669\ \textcolor{preprocessor}{\#define\ ETM\_ETMAUTHSTATUS\_SECNONINVDBG\_DEFAULT\ \ \ \ \ \ \ \ (\_ETM\_ETMAUTHSTATUS\_SECNONINVDBG\_DEFAULT\ <<\ 6)\ \ \ \ }}
+\DoxyCodeLine{00671\ \textcolor{comment}{/*\ Bit\ fields\ for\ ETM\ ETMDEVTYPE\ */}}
+\DoxyCodeLine{00672\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMDEVTYPE\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000013UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00673\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMDEVTYPE\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x000000FFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00674\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMDEVTYPE\_TRACESRC\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00675\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMDEVTYPE\_TRACESRC\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00676\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMDEVTYPE\_TRACESRC\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000003UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00677\ \textcolor{preprocessor}{\#define\ ETM\_ETMDEVTYPE\_TRACESRC\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMDEVTYPE\_TRACESRC\_DEFAULT\ <<\ 0)\ \ }}
+\DoxyCodeLine{00678\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMDEVTYPE\_PROCTRACE\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00679\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMDEVTYPE\_PROCTRACE\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xF0UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00680\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMDEVTYPE\_PROCTRACE\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00681\ \textcolor{preprocessor}{\#define\ ETM\_ETMDEVTYPE\_PROCTRACE\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMDEVTYPE\_PROCTRACE\_DEFAULT\ <<\ 4)\ }}
+\DoxyCodeLine{00683\ \textcolor{comment}{/*\ Bit\ fields\ for\ ETM\ ETMPIDR4\ */}}
+\DoxyCodeLine{00684\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMPIDR4\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000004UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00685\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMPIDR4\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x000000FFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00686\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMPIDR4\_CONTCODE\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00687\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMPIDR4\_CONTCODE\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00688\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMPIDR4\_CONTCODE\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000004UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00689\ \textcolor{preprocessor}{\#define\ ETM\_ETMPIDR4\_CONTCODE\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMPIDR4\_CONTCODE\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00690\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMPIDR4\_COUNT\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00691\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMPIDR4\_COUNT\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xF0UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00692\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMPIDR4\_COUNT\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00693\ \textcolor{preprocessor}{\#define\ ETM\_ETMPIDR4\_COUNT\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMPIDR4\_COUNT\_DEFAULT\ <<\ 4)\ \ \ \ }}
+\DoxyCodeLine{00695\ \textcolor{comment}{/*\ Bit\ fields\ for\ ETM\ ETMPIDR5\ */}}
+\DoxyCodeLine{00696\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMPIDR5\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ }}
+\DoxyCodeLine{00697\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMPIDR5\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ }}
+\DoxyCodeLine{00699\ \textcolor{comment}{/*\ Bit\ fields\ for\ ETM\ ETMPIDR6\ */}}
+\DoxyCodeLine{00700\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMPIDR6\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ }}
+\DoxyCodeLine{00701\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMPIDR6\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ }}
+\DoxyCodeLine{00703\ \textcolor{comment}{/*\ Bit\ fields\ for\ ETM\ ETMPIDR7\ */}}
+\DoxyCodeLine{00704\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMPIDR7\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ }}
+\DoxyCodeLine{00705\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMPIDR7\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ }}
+\DoxyCodeLine{00707\ \textcolor{comment}{/*\ Bit\ fields\ for\ ETM\ ETMPIDR0\ */}}
+\DoxyCodeLine{00708\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMPIDR0\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000024UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00709\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMPIDR0\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x000000FFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00710\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMPIDR0\_PARTNUM\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00711\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMPIDR0\_PARTNUM\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00712\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMPIDR0\_PARTNUM\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000024UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00713\ \textcolor{preprocessor}{\#define\ ETM\_ETMPIDR0\_PARTNUM\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMPIDR0\_PARTNUM\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00715\ \textcolor{comment}{/*\ Bit\ fields\ for\ ETM\ ETMPIDR1\ */}}
+\DoxyCodeLine{00716\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMPIDR1\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x000000B9UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00717\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMPIDR1\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x000000FFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00718\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMPIDR1\_PARTNUM\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00719\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMPIDR1\_PARTNUM\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00720\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMPIDR1\_PARTNUM\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000009UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00721\ \textcolor{preprocessor}{\#define\ ETM\_ETMPIDR1\_PARTNUM\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMPIDR1\_PARTNUM\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00722\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMPIDR1\_IDCODE\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00723\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMPIDR1\_IDCODE\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xF0UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00724\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMPIDR1\_IDCODE\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0000000BUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00725\ \textcolor{preprocessor}{\#define\ ETM\_ETMPIDR1\_IDCODE\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMPIDR1\_IDCODE\_DEFAULT\ <<\ 4)\ \ }}
+\DoxyCodeLine{00727\ \textcolor{comment}{/*\ Bit\ fields\ for\ ETM\ ETMPIDR2\ */}}
+\DoxyCodeLine{00728\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMPIDR2\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0000003BUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00729\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMPIDR2\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x000000FFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00730\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMPIDR2\_IDCODE\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00731\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMPIDR2\_IDCODE\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x7UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00732\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMPIDR2\_IDCODE\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000003UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00733\ \textcolor{preprocessor}{\#define\ ETM\_ETMPIDR2\_IDCODE\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMPIDR2\_IDCODE\_DEFAULT\ <<\ 0)\ \ }}
+\DoxyCodeLine{00734\ \textcolor{preprocessor}{\#define\ ETM\_ETMPIDR2\_ALWAYS1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 3)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00735\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMPIDR2\_ALWAYS1\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00736\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMPIDR2\_ALWAYS1\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x8UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00737\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMPIDR2\_ALWAYS1\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00738\ \textcolor{preprocessor}{\#define\ ETM\_ETMPIDR2\_ALWAYS1\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMPIDR2\_ALWAYS1\_DEFAULT\ <<\ 3)\ }}
+\DoxyCodeLine{00739\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMPIDR2\_REV\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00740\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMPIDR2\_REV\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xF0UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00741\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMPIDR2\_REV\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000003UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00742\ \textcolor{preprocessor}{\#define\ ETM\_ETMPIDR2\_REV\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMPIDR2\_REV\_DEFAULT\ <<\ 4)\ \ \ \ \ }}
+\DoxyCodeLine{00744\ \textcolor{comment}{/*\ Bit\ fields\ for\ ETM\ ETMPIDR3\ */}}
+\DoxyCodeLine{00745\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMPIDR3\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00746\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMPIDR3\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x000000FFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00747\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMPIDR3\_CUSTMOD\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00748\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMPIDR3\_CUSTMOD\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00749\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMPIDR3\_CUSTMOD\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00750\ \textcolor{preprocessor}{\#define\ ETM\_ETMPIDR3\_CUSTMOD\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMPIDR3\_CUSTMOD\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00751\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMPIDR3\_REVAND\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00752\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMPIDR3\_REVAND\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xF0UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00753\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMPIDR3\_REVAND\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00754\ \textcolor{preprocessor}{\#define\ ETM\_ETMPIDR3\_REVAND\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMPIDR3\_REVAND\_DEFAULT\ <<\ 4)\ \ }}
+\DoxyCodeLine{00756\ \textcolor{comment}{/*\ Bit\ fields\ for\ ETM\ ETMCIDR0\ */}}
+\DoxyCodeLine{00757\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCIDR0\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0000000DUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00758\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCIDR0\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x000000FFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00759\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCIDR0\_PREAMB\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00760\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCIDR0\_PREAMB\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00761\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCIDR0\_PREAMB\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0000000DUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00762\ \textcolor{preprocessor}{\#define\ ETM\_ETMCIDR0\_PREAMB\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMCIDR0\_PREAMB\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00764\ \textcolor{comment}{/*\ Bit\ fields\ for\ ETM\ ETMCIDR1\ */}}
+\DoxyCodeLine{00765\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCIDR1\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000090UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00766\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCIDR1\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x000000FFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00767\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCIDR1\_PREAMB\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00768\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCIDR1\_PREAMB\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00769\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCIDR1\_PREAMB\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000090UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00770\ \textcolor{preprocessor}{\#define\ ETM\_ETMCIDR1\_PREAMB\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMCIDR1\_PREAMB\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00772\ \textcolor{comment}{/*\ Bit\ fields\ for\ ETM\ ETMCIDR2\ */}}
+\DoxyCodeLine{00773\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCIDR2\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000005UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00774\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCIDR2\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x000000FFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00775\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCIDR2\_PREAMB\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00776\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCIDR2\_PREAMB\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00777\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCIDR2\_PREAMB\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000005UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00778\ \textcolor{preprocessor}{\#define\ ETM\_ETMCIDR2\_PREAMB\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMCIDR2\_PREAMB\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00780\ \textcolor{comment}{/*\ Bit\ fields\ for\ ETM\ ETMCIDR3\ */}}
+\DoxyCodeLine{00781\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCIDR3\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x000000B1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00782\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCIDR3\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x000000FFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00783\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCIDR3\_PREAMB\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00784\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCIDR3\_PREAMB\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00785\ \textcolor{preprocessor}{\#define\ \_ETM\_ETMCIDR3\_PREAMB\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x000000B1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00786\ \textcolor{preprocessor}{\#define\ ETM\_ETMCIDR3\_PREAMB\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_ETM\_ETMCIDR3\_PREAMB\_DEFAULT\ <<\ 0)\ }}
+
+\end{DoxyCode}
