@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['kitdrv_0',['Kitdrv',['../group__kitdrv.html',1,'']]]
+  ['feladat_3a_0',['Feladat:',['../index.html#autotoc_md9',1,'']]]
 ];
