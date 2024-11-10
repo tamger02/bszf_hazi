@@ -1,0 +1,80 @@
+\doxysection{segmentlcd\+\_\+individual.\+h}
+\hypertarget{segmentlcd__individual_8h_source}{}\label{segmentlcd__individual_8h_source}\mbox{\hyperlink{segmentlcd__individual_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#ifndef\ SRC\_SEGMENTLCD\_INDIVIDUAL\_H\_}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ SRC\_SEGMENTLCD\_INDIVIDUAL\_H\_}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ \ INCLUDES}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ \ DEFINES}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \textcolor{comment}{/**************************************************************************/}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ SEGMENT\_LCD\_NUM\_OF\_UPPER\_CHARS\ 4}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{comment}{/**************************************************************************/}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ SEGMENT\_LCD\_NUM\_OF\_LOWER\_CHARS\ 7}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ *\ \ TYPEDEFS}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ *\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{comment}{/**************************************************************************/}}
+\DoxyCodeLine{00069\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{union}}
+\DoxyCodeLine{00070\ \{}
+\DoxyCodeLine{00071\ \ \ \ uint8\_t\ raw;}
+\DoxyCodeLine{00072\ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00073\ \ \ \ uint8\_t\ a\ :\ 1;}
+\DoxyCodeLine{00074\ \ \ \ uint8\_t\ b\ :\ 1;}
+\DoxyCodeLine{00075\ \ \ \ uint8\_t\ c\ :\ 1;}
+\DoxyCodeLine{00076\ \ \ \ uint8\_t\ d\ :\ 1;}
+\DoxyCodeLine{00077\ \ \ \ uint8\_t\ e\ :\ 1;}
+\DoxyCodeLine{00078\ \ \ \ uint8\_t\ f\ :\ 1;}
+\DoxyCodeLine{00079\ \ \ \ uint8\_t\ g\ :\ 1;}
+\DoxyCodeLine{00080\ \ \ \ \};}
+\DoxyCodeLine{00081\ \}\ \mbox{\hyperlink{union_segment_l_c_d___upper_char_segments___type_def}{SegmentLCD\_UpperCharSegments\_TypeDef}};}
+\DoxyCodeLine{00082\ }
+\DoxyCodeLine{00083\ \textcolor{comment}{/**************************************************************************/}}
+\DoxyCodeLine{00113\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{union}}
+\DoxyCodeLine{00114\ \{}
+\DoxyCodeLine{00115\ \ \ \ uint16\_t\ raw;}
+\DoxyCodeLine{00116\ \ \ \ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00117\ \ \ \ uint16\_t\ a\ :\ 1;}
+\DoxyCodeLine{00118\ \ \ \ uint16\_t\ b\ :\ 1;}
+\DoxyCodeLine{00119\ \ \ \ uint16\_t\ c\ :\ 1;}
+\DoxyCodeLine{00120\ \ \ \ uint16\_t\ d\ :\ 1;}
+\DoxyCodeLine{00121\ \ \ \ uint16\_t\ e\ :\ 1;}
+\DoxyCodeLine{00122\ \ \ \ uint16\_t\ f\ :\ 1;}
+\DoxyCodeLine{00123\ \ \ \ uint16\_t\ g\ :\ 1;}
+\DoxyCodeLine{00124\ \ \ \ uint16\_t\ h\ :\ 1;}
+\DoxyCodeLine{00125\ \ \ \ uint16\_t\ j\ :\ 1;}
+\DoxyCodeLine{00126\ \ \ \ uint16\_t\ k\ :\ 1;}
+\DoxyCodeLine{00127\ \ \ \ uint16\_t\ m\ :\ 1;}
+\DoxyCodeLine{00128\ \ \ \ uint16\_t\ n\ :\ 1;}
+\DoxyCodeLine{00129\ \ \ \ uint16\_t\ p\ :\ 1;}
+\DoxyCodeLine{00130\ \ \ \ uint16\_t\ q\ :\ 1;}
+\DoxyCodeLine{00131\ \ \ \ \};}
+\DoxyCodeLine{00132\ \}\ \mbox{\hyperlink{union_segment_l_c_d___lower_char_segments___type_def}{SegmentLCD\_LowerCharSegments\_TypeDef}};}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \textcolor{comment}{/*\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{00135\ \textcolor{comment}{\ *\ \ FUNCTION\ PROTOTYPES}}
+\DoxyCodeLine{00136\ \textcolor{comment}{\ *\ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\ */}}
+\DoxyCodeLine{00137\ }
+\DoxyCodeLine{00138\ \textcolor{comment}{/**************************************************************************/}}
+\DoxyCodeLine{00153\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{segmentlcd__individual_8h_ac047cda42eefaba5c0fbd5ac57d0727b}{SegmentLCD\_UpperSegments}}(}
+\DoxyCodeLine{00154\ \ \ \ \ \ \ \mbox{\hyperlink{union_segment_l_c_d___upper_char_segments___type_def}{SegmentLCD\_UpperCharSegments\_TypeDef}}\ upperCharSegments[\mbox{\hyperlink{segmentlcd__individual_8h_a96eff7fac342abef2ef54f473ed36471}{SEGMENT\_LCD\_NUM\_OF\_UPPER\_CHARS}}]}
+\DoxyCodeLine{00155\ );}
+\DoxyCodeLine{00156\ }
+\DoxyCodeLine{00157\ \textcolor{comment}{/**************************************************************************/}}
+\DoxyCodeLine{00173\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{segmentlcd__individual_8h_a8ba60d720e9ba38639831e190c903514}{SegmentLCD\_LowerSegments}}(}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \mbox{\hyperlink{union_segment_l_c_d___lower_char_segments___type_def}{SegmentLCD\_LowerCharSegments\_TypeDef}}\ lowerCharSegments[\mbox{\hyperlink{segmentlcd__individual_8h_a29896aab68558ec5cae32b5e5b4ee6a6}{SEGMENT\_LCD\_NUM\_OF\_LOWER\_CHARS}}]}
+\DoxyCodeLine{00175\ );}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00177\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ SRC\_SEGMENTLCD\_INDIVIDUAL\_H\_\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

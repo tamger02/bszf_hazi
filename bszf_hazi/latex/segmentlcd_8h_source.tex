@@ -1,0 +1,80 @@
+\doxysection{segmentlcd.\+h}
+\hypertarget{segmentlcd_8h_source}{}\label{segmentlcd_8h_source}\mbox{\hyperlink{segmentlcd_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#ifndef\ SEGMENTLCD\_H}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ SEGMENTLCD\_H}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{segmentlcdconfig_8h}{segmentlcdconfig.h}}"{}}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00041\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00047\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{00051\ \textcolor{comment}{\ *******************************\ \ \ DEFINES\ \ \ ***********************************}}
+\DoxyCodeLine{00052\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ SEGMENT\_LCD\_BLOCK\_MODE\_BLANK\ \ \ \ \ \ \ \ \ \ 0}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#define\ SEGMENT\_LCD\_BLOCK\_MODE\_FILL\ \ \ \ \ \ \ \ \ \ \ 1}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#define\ SEGMENT\_LCD\_BLOCK\_MODE\_OUTLINE\ \ \ \ \ \ \ \ 2}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#define\ SEGMENT\_LCD\_BLOCK\_MODE\_OUTLINE\_FILL\ \ \ 3}}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#define\ SEGMENT\_LCD\_NUM\_BLOCK\_COLUMNS\ \ \ \ \ \ \ \ \ 7}}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{00062\ \textcolor{comment}{\ ********************************\ \ \ ENUMS\ \ \ ************************************}}
+\DoxyCodeLine{00063\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00066\ \ \ \mbox{\hyperlink{group___segment_lcd_ggafbcfe27efe1304334520446550824d87ad70c39af2cb278c150921cbbd7f56210}{segmentLCDBlockModeBlank}}\ =\ SEGMENT\_LCD\_BLOCK\_MODE\_BLANK,\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00067\ \ \ \mbox{\hyperlink{group___segment_lcd_ggafbcfe27efe1304334520446550824d87acca3f6a670a8172783bb95e64eccbc0a}{segmentLCDBlockModeFill}}\ =\ SEGMENT\_LCD\_BLOCK\_MODE\_FILL,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00068\ \ \ \mbox{\hyperlink{group___segment_lcd_ggafbcfe27efe1304334520446550824d87a4d5db2a24c4eac104c3d50f8a2900014}{segmentLCDBlockModeOutline}}\ =\ SEGMENT\_LCD\_BLOCK\_MODE\_OUTLINE,\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00069\ \ \ \mbox{\hyperlink{group___segment_lcd_ggafbcfe27efe1304334520446550824d87a81cb5a22827018014e8e6133daf3d5ae}{segmentLCDBlockModeOutlineFill}}\ =\ SEGMENT\_LCD\_BLOCK\_MODE\_OUTLINE\_FILL,\ }
+\DoxyCodeLine{00070\ \}\ \mbox{\hyperlink{group___segment_lcd_gafbcfe27efe1304334520446550824d87}{SegmentLCD\_BlockMode\_TypeDef}};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{00073\ \textcolor{comment}{\ *******************************\ \ FUNCTIONS\ \ ***********************************}}
+\DoxyCodeLine{00074\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00075\ }
+\DoxyCodeLine{00076\ \textcolor{comment}{/*\ Regular\ functions\ */}}
+\DoxyCodeLine{00077\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___segment_lcd_ga67d05be8d95aca955843805bdcc286fa}{SegmentLCD\_AllOff}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00078\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___segment_lcd_gaa901f5ce7dbfd2416c3a15383f234b10}{SegmentLCD\_AllOn}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00079\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___segment_lcd_ga19fe655661c0ffdba952864c9e28cb0c}{SegmentLCD\_AlphaNumberOff}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00080\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___segment_lcd_gaa6396568a708435511368037db1a39a5}{SegmentLCD\_Disable}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00081\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___segment_lcd_ga0818c866cead74ab3902753a770eb4c4}{SegmentLCD\_Init}}(\textcolor{keywordtype}{bool}\ useBoost);}
+\DoxyCodeLine{00082\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___segment_lcd_ga245fe077c9db4b869d98144d58a94656}{SegmentLCD\_LowerHex}}(uint32\_t\ num);}
+\DoxyCodeLine{00083\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___segment_lcd_gaa77f1f04af621a6ffe0d3ce40d67ab8a}{SegmentLCD\_LowerNumber}}(\textcolor{keywordtype}{int}\ num);}
+\DoxyCodeLine{00084\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___segment_lcd_gab0279981a6246cd3e6b375b4c90a704b}{SegmentLCD\_Number}}(\textcolor{keywordtype}{int}\ value);}
+\DoxyCodeLine{00085\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___segment_lcd_gae01d6e9804544e78b4362a7ed04f3895}{SegmentLCD\_NumberOff}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00086\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___segment_lcd_ga9c02dec45dfa5339da028c046b7e1a36}{SegmentLCD\_Symbol}}(\mbox{\hyperlink{segmentlcdconfig_8h_ac2c9c608938ac875edfcfec5c75737e4}{lcdSymbol}}\ s,\ \textcolor{keywordtype}{int}\ on);}
+\DoxyCodeLine{00087\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___segment_lcd_gaa3bc2f2e951ca4fa0363ceac3f3c3ec3}{SegmentLCD\_UnsignedHex}}(uint32\_t\ value);}
+\DoxyCodeLine{00088\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___segment_lcd_gad22a3c06bcbb0ed501b6343c0cd62f86}{SegmentLCD\_Write}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\textcolor{keywordtype}{string});}
+\DoxyCodeLine{00089\ \textcolor{keywordtype}{void}\ SegmentLCD\_Block(}
+\DoxyCodeLine{00090\ \ \ \mbox{\hyperlink{group___segment_lcd_gafbcfe27efe1304334520446550824d87}{SegmentLCD\_BlockMode\_TypeDef}}\ topMode[SEGMENT\_LCD\_NUM\_BLOCK\_COLUMNS],}
+\DoxyCodeLine{00091\ \ \ \mbox{\hyperlink{group___segment_lcd_gafbcfe27efe1304334520446550824d87}{SegmentLCD\_BlockMode\_TypeDef}}\ botMode[SEGMENT\_LCD\_NUM\_BLOCK\_COLUMNS]);}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#if\ defined(\_SILICON\_LABS\_32B\_SERIES\_1)}}
+\DoxyCodeLine{00094\ \textcolor{comment}{//\ Dynamic\ charge\ redistribution}}
+\DoxyCodeLine{00095\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{group___segment_lcd_ga9a34495c59ae21eb2ccec4fc9ac376a5}{SegmentLCD\_segCnt}}(\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ segdl,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int}\ segdh);}
+\DoxyCodeLine{00096\ \textcolor{keywordtype}{void}\ SegmentLCD\_chargeRedistributionEnable(\textcolor{keywordtype}{bool}\ enable);}
+\DoxyCodeLine{00097\ \textcolor{keywordtype}{void}\ SegmentLCD\_updateCHGRDST(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#if\ defined(LCD\_MODULE\_CE322\_1001)}}
+\DoxyCodeLine{00101\ \textcolor{keywordtype}{void}\ SegmentLCD\_Array(\textcolor{keywordtype}{int}\ element,\ \textcolor{keywordtype}{bool}\ on);}
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00103\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___segment_lcd_ga7c4b35ea06dab845d3733f6a118e2206}{SegmentLCD\_ARing}}(\textcolor{keywordtype}{int}\ anum,\ \textcolor{keywordtype}{int}\ on);}
+\DoxyCodeLine{00104\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___segment_lcd_ga8e10bb9c31d3b8efe0273940a507e889}{SegmentLCD\_Battery}}(\textcolor{keywordtype}{int}\ batteryLevel);}
+\DoxyCodeLine{00105\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{group___segment_lcd_ga7849f40616f3c310576a083d2956410a}{SegmentLCD\_EnergyMode}}(\textcolor{keywordtype}{int}\ em,\ \textcolor{keywordtype}{int}\ on);}
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00107\ }
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00109\ \}}
+\DoxyCodeLine{00110\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

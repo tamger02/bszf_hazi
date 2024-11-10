@@ -1,0 +1,50 @@
+\doxysection{caplesense.\+h File Reference}
+\hypertarget{caplesense_8h}{}\label{caplesense_8h}\index{caplesense.h@{caplesense.h}}
+
+
+Capacitive sense driver.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+{\ttfamily \#include $<$stdbool.\+h$>$}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{group___cap_sense_ga12a48c026fef4a6e55dde2c51a05e30b}{CAPLESENSE\+\_\+get\+Segment\+Channel}} (uint8\+\_\+t cap\+Segment)
+\begin{DoxyCompactList}\small\item\em Get the channel\+Value for a sensor segment. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___cap_sense_ga09b7ae59bd532ff2b699038f38fe98df}{CAPLESENSE\+\_\+get\+Val}} (uint8\+\_\+t channel)
+\begin{DoxyCompactList}\small\item\em Get the current channel\+Value for a channel. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group___cap_sense_ga143a5684f9e650fbf7bd90a524a59b97}{CAPLESENSE\+\_\+get\+Normalized\+Val}} (uint8\+\_\+t channel)
+\begin{DoxyCompactList}\small\item\em Get the current normalized channel\+Value for a channel. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{group___cap_sense_gab2b10d3e366d96fed607b9a642748778}{CAPLESENSE\+\_\+get\+Slider\+Position}} (void)
+\begin{DoxyCompactList}\small\item\em Get the position of the slider. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___cap_sense_ga4a9a1233a70703ca91a6bc9fcf05ec19}{CAPLESENSE\+\_\+\+Init}} (bool sleep)
+\begin{DoxyCompactList}\small\item\em Initializes the capacative sense system without LESENSE. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___cap_sense_ga9cf779d965cc198a603d60d01225b993}{CAPLESENSE\+\_\+setup\+LESENSE}} (bool sleep)
+\begin{DoxyCompactList}\small\item\em Setup the LESENSE for capavitive sensing. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___cap_sense_ga8e36f3ae32acf53db76f463f5b8b4d69}{CAPLESENSE\+\_\+setup\+Callbacks}} (void(\texorpdfstring{$\ast$}{*}scan\+Cb)(void), void(\texorpdfstring{$\ast$}{*}ch\+Cb)(void))
+\begin{DoxyCompactList}\small\item\em LESENSE callback setup. \end{DoxyCompactList}\item 
+void {\bfseries CAPLESENSE\+\_\+\+Sleep} (void)
+\begin{DoxyCompactList}\small\item\em Send the capacative sense system to sleep mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Capacitive sense driver. 
+
+\hypertarget{caplesense_8h_autotoc_md2}{}\doxysubsection{\texorpdfstring{License}{License}}\label{caplesense_8h_autotoc_md2}
+{\bfseries{Copyright 2018 Silicon Laboratories Inc. www.\+silabs.\+com}}
+
+SPDX-\/\+License-\/\+Identifier\+: Zlib
+
+The licensor of this software is Silicon Laboratories Inc.
+
+This software is provided \textquotesingle{}as-\/is\textquotesingle{}, without any express or implied warranty. In no event will the authors be held liable for any damages arising from the use of this software.
+
+Permission is granted to anyone to use this software for any purpose, including commercial applications, and to alter it and redistribute it freely, subject to the following restrictions\+:
+
+
+\begin{DoxyEnumerate}
+\item The origin of this software must not be misrepresented; you must not claim that you wrote the original software. If you use this software in a product, an acknowledgment in the product documentation would be appreciated but is not required.
+\item Altered source versions must be plainly marked as such, and must not be misrepresented as being the original software.
+\item This notice may not be removed or altered from any source distribution. 
+\end{DoxyEnumerate}

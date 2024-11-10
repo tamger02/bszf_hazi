@@ -1,0 +1,159 @@
+\doxysection{caplesenseconfig.\+h}
+\hypertarget{caplesenseconfig_8h_source}{}\label{caplesenseconfig_8h_source}\mbox{\hyperlink{caplesenseconfig_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ "{}em\_lesense.h"{}}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00038\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00044\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \textcolor{comment}{/**************************************************************************/}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ CAPLESENSE\_SENSITIVITY\_OFFS\ \ \ \ 1U}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#define\ CAPLESENSE\_NUMOF\_SLIDERS\ \ \ \ \ \ \ 4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ CAPLESENSE\_ACMP\_VDD\_SCALE\ \ \ \ \ \ LESENSE\_ACMP\_VDD\_SCALE\ \ \ \ \ }}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ CAPLESENSE\_SLIDER\_PORT0\ \ \ \ \ \ \ \ gpioPortC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#define\ CAPLESENSE\_SLIDER0\_PORT\ \ \ \ \ \ \ \ CAPLESENSE\_SLIDER\_PORT0\ \ \ \ \ \ }}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#define\ CAPLESENSE\_SLIDER0\_PIN\ \ \ \ \ \ \ \ \ 8UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#define\ CAPLESENSE\_SLIDER1\_PORT\ \ \ \ \ \ \ \ CAPLESENSE\_SLIDER\_PORT0\ \ \ \ \ \ }}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#define\ CAPLESENSE\_SLIDER1\_PIN\ \ \ \ \ \ \ \ \ 9UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#define\ CAPLESENSE\_SLIDER2\_PORT\ \ \ \ \ \ \ \ CAPLESENSE\_SLIDER\_PORT0\ \ \ \ \ \ }}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#define\ CAPLESENSE\_SLIDER2\_PIN\ \ \ \ \ \ \ \ \ 10UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#define\ CAPLESENSE\_SLIDER3\_PORT\ \ \ \ \ \ \ \ CAPLESENSE\_SLIDER\_PORT0\ \ \ \ \ \ }}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#define\ CAPLESENSE\_SLIDER3\_PIN\ \ \ \ \ \ \ \ \ 11UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#define\ CAPLESENSE\_CHANNEL\_INT\ \ \ \ \ \ \ \ (LESENSE\_IF\_CH8\ |\ LESENSE\_IF\_CH9\ |\ LESENSE\_IF\_CH10\ |\ LESENSE\_IF\_CH11)}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#define\ LESENSE\_CHANNELS\ \ \ \ \ \ \ \ 16\ \ }}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#define\ SLIDER\_PART0\_CHANNEL\ \ \ \ 8\ \ \ }}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#define\ SLIDER\_PART1\_CHANNEL\ \ \ \ 9\ \ \ }}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#define\ SLIDER\_PART2\_CHANNEL\ \ \ \ 10\ \ }}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#define\ SLIDER\_PART3\_CHANNEL\ \ \ \ 11\ \ }}
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#define\ LESENSE\_ACMP\_VDD\_SCALE\ \ \ \ 0x37U}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#define\ LESENSE\_CAPSENSE\_CH\_IN\_USE\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{}\textcolor{comment}{/*\ \ Ch0,\ \ \ Ch1,\ \ \ Ch2,\ \ \ Ch3,\ \ \ Ch4,\ \ \ Ch5,\ \ \ Ch6,\ \ \ Ch7\ \ \ \ */}\textcolor{preprocessor}{\ \(\backslash\)}}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\ \ \ \ false,\ false,\ false,\ false,\ false,\ false,\ false,\ false,\ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{}\textcolor{comment}{/*\ \ Ch8,\ \ \ Ch9,\ \ \ Ch10,\ \ Ch11,\ \ Ch12,\ \ Ch13,\ \ Ch14,\ \ Ch15\ \ \ */}\textcolor{preprocessor}{\ \(\backslash\)}}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\ \ \ \ true,\ true,\ true,\ true,\ false,\ false,\ false,\ false\ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\}}}
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#define\ LESENSE\_CAPSENSE\_CH\_CONF\_SENSE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\ \ \ \ true,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Enable\ scan\ channel.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\ \ \ \ true,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Enable\ the\ assigned\ pin\ on\ scan\ channel.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\ \ \ \ false,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Disable\ interrupts\ on\ channel.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\ \ \ \ lesenseChPinExDis,\ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ GPIO\ pin\ is\ disabled\ during\ the\ excitation\ period.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\ \ \ \ lesenseChPinIdleDis,\ \ \ \ \ \ }\textcolor{comment}{/*\ GPIO\ pin\ is\ disabled\ during\ the\ idle\ period.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\ \ \ \ false,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Don't\ use\ alternate\ excitation\ pins\ for\ excitation.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\ \ \ \ false,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Disabled\ to\ shift\ results\ from\ this\ channel\ to\ the\ decoder\ register.\ */}\textcolor{preprocessor}{\ \(\backslash\)}}
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\ \ \ \ false,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Disabled\ to\ invert\ the\ scan\ result\ bit.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\ \ \ \ true,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Enabled\ to\ store\ counter\ value\ in\ the\ result\ buffer.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\ \ \ \ lesenseClkLF,\ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Use\ the\ LF\ clock\ for\ excitation\ timing.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\ \ \ \ lesenseClkLF,\ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Use\ the\ LF\ clock\ for\ sample\ timing.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\ \ \ \ 0x00U,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Excitation\ time\ is\ set\ to\ 0\ excitation\ clock\ cycles.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\ \ \ \ 0x0FU,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Sample\ delay\ is\ set\ to\ 15(+1)\ sample\ clock\ cycles.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\ \ \ \ 0x00U,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Measure\ delay\ is\ set\ to\ 0\ excitation\ clock\ cycles.*/}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\ \ \ \ LESENSE\_ACMP\_VDD\_SCALE,\ \ \ }\textcolor{comment}{/*\ ACMP\ threshold\ has\ been\ set\ to\ LESENSE\_ACMP\_VDD\_SCALE.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\ \ \ \ lesenseSampleModeCounter,\ }\textcolor{comment}{/*\ ACMP\ will\ be\ used\ in\ comparison.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\ \ \ \ lesenseSetIntLevel,\ \ \ \ \ \ \ }\textcolor{comment}{/*\ Interrupt\ is\ generated\ if\ the\ sensor\ triggers.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\ \ \ \ 0x00U,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Counter\ threshold\ has\ been\ set\ to\ 0x00.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00103\ \textcolor{preprocessor}{\ \ \ \ lesenseCompModeLess\ \ \ \ \ \ \ }\textcolor{comment}{/*\ Compare\ mode\ has\ been\ set\ to\ trigger\ interrupt\ on\ "{}less"{}.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\ \ \}}}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00107\ \textcolor{preprocessor}{\#define\ LESENSE\_CAPSENSE\_CH\_CONF\_SLEEP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\ \ \ \ true,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Enable\ scan\ channel.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00110\ \textcolor{preprocessor}{\ \ \ \ true,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Enable\ the\ assigned\ pin\ on\ scan\ channel.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\ \ \ \ true,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Enable\ interrupts\ on\ channel.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\ \ \ \ lesenseChPinExDis,\ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ GPIO\ pin\ is\ disabled\ during\ the\ excitation\ period.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\ \ \ \ lesenseChPinIdleDis,\ \ \ \ \ \ }\textcolor{comment}{/*\ GPIO\ pin\ is\ disabled\ during\ the\ idle\ period.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\ \ \ \ false,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Don't\ use\ alternate\ excitation\ pins\ for\ excitation.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\ \ \ \ false,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Disabled\ to\ shift\ results\ from\ this\ channel\ to\ the\ decoder\ register.\ */}\textcolor{preprocessor}{\ \(\backslash\)}}
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\ \ \ \ false,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Disabled\ to\ invert\ the\ scan\ result\ bit.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00117\ \textcolor{preprocessor}{\ \ \ \ true,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Enabled\ to\ store\ counter\ value\ in\ the\ result\ buffer.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00118\ \textcolor{preprocessor}{\ \ \ \ lesenseClkLF,\ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Use\ the\ LF\ clock\ for\ excitation\ timing.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00119\ \textcolor{preprocessor}{\ \ \ \ lesenseClkLF,\ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Use\ the\ LF\ clock\ for\ sample\ timing.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00120\ \textcolor{preprocessor}{\ \ \ \ 0x00U,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Excitation\ time\ is\ set\ to\ 0\ excitation\ clock\ cycles.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\ \ \ \ 0x01U,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Sample\ delay\ is\ set\ to\ 1(+1)\ sample\ clock\ cycles.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00122\ \textcolor{preprocessor}{\ \ \ \ 0x00U,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Measure\ delay\ is\ set\ to\ 0\ excitation\ clock\ cycles.*/}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\ \ \ \ LESENSE\_ACMP\_VDD\_SCALE,\ \ \ }\textcolor{comment}{/*\ ACMP\ threshold\ has\ been\ set\ to\ LESENSE\_ACMP\_VDD\_SCALE.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\ \ \ \ lesenseSampleModeCounter,\ }\textcolor{comment}{/*\ Counter\ will\ be\ used\ in\ comparison.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\ \ \ \ lesenseSetIntLevel,\ \ \ \ \ \ \ }\textcolor{comment}{/*\ Interrupt\ is\ generated\ if\ the\ sensor\ triggers.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00126\ \textcolor{preprocessor}{\ \ \ \ 0x0EU,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Counter\ threshold\ has\ been\ set\ to\ 0x0E.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\ \ \ \ lesenseCompModeLess\ \ \ \ \ \ \ }\textcolor{comment}{/*\ Compare\ mode\ has\ been\ set\ to\ trigger\ interrupt\ on\ "{}less"{}.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\ \ \}}}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00131\ \textcolor{preprocessor}{\#define\ LESENSE\_DISABLED\_CH\_CONF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00132\ \textcolor{preprocessor}{\ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00133\ \textcolor{preprocessor}{\ \ \ \ false,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Disable\ scan\ channel.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00134\ \textcolor{preprocessor}{\ \ \ \ false,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Disable\ the\ assigned\ pin\ on\ scan\ channel.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00135\ \textcolor{preprocessor}{\ \ \ \ false,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Disable\ interrupts\ on\ channel.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00136\ \textcolor{preprocessor}{\ \ \ \ lesenseChPinExDis,\ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ GPIO\ pin\ is\ disabled\ during\ the\ excitation\ period.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\ \ \ \ lesenseChPinIdleDis,\ \ \ \ \ \ }\textcolor{comment}{/*\ GPIO\ pin\ is\ disabled\ during\ the\ idle\ period.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00138\ \textcolor{preprocessor}{\ \ \ \ false,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Don't\ use\ alternate\ excitation\ pins\ for\ excitation.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00139\ \textcolor{preprocessor}{\ \ \ \ false,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Disabled\ to\ shift\ results\ from\ this\ channel\ to\ the\ decoder\ register.\ */}\textcolor{preprocessor}{\ \(\backslash\)}}
+\DoxyCodeLine{00140\ \textcolor{preprocessor}{\ \ \ \ false,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Disabled\ to\ invert\ the\ scan\ result\ bit.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00141\ \textcolor{preprocessor}{\ \ \ \ false,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Disabled\ to\ store\ counter\ value\ in\ the\ result\ buffer.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00142\ \textcolor{preprocessor}{\ \ \ \ lesenseClkLF,\ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Use\ the\ LF\ clock\ for\ excitation\ timing.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00143\ \textcolor{preprocessor}{\ \ \ \ lesenseClkLF,\ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Use\ the\ LF\ clock\ for\ sample\ timing.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00144\ \textcolor{preprocessor}{\ \ \ \ 0x00U,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Excitation\ time\ is\ set\ to\ 5(+1)\ excitation\ clock\ cycles.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00145\ \textcolor{preprocessor}{\ \ \ \ 0x00U,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Sample\ delay\ is\ set\ to\ 7(+1)\ sample\ clock\ cycles.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00146\ \textcolor{preprocessor}{\ \ \ \ 0x00U,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Measure\ delay\ is\ set\ to\ 0\ excitation\ clock\ cycles.*/}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00147\ \textcolor{preprocessor}{\ \ \ \ 0x00U,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ ACMP\ threshold\ has\ been\ set\ to\ 0.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00148\ \textcolor{preprocessor}{\ \ \ \ lesenseSampleModeCounter,\ }\textcolor{comment}{/*\ ACMP\ output\ will\ be\ used\ in\ comparison.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00149\ \textcolor{preprocessor}{\ \ \ \ lesenseSetIntNone,\ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ No\ interrupt\ is\ generated\ by\ the\ channel.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00150\ \textcolor{preprocessor}{\ \ \ \ 0x00U,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Counter\ threshold\ has\ been\ set\ to\ 0x01.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00151\ \textcolor{preprocessor}{\ \ \ \ lesenseCompModeLess\ \ \ \ \ \ \ }\textcolor{comment}{/*\ Compare\ mode\ has\ been\ set\ to\ trigger\ interrupt\ on\ "{}less"{}.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00152\ \textcolor{preprocessor}{\ \ \}}}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00155\ \textcolor{preprocessor}{\#define\ LESENSE\_CAPSENSE\_SCAN\_CONF\_SENSE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00156\ \textcolor{preprocessor}{\ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00157\ \textcolor{preprocessor}{\ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00158\ \textcolor{preprocessor}{\ \ \ \ \ \ LESENSE\_DISABLED\_CH\_CONF,\ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Channel\ 0.\ */}\textcolor{preprocessor}{\ \ \(\backslash\)}}
+\DoxyCodeLine{00159\ \textcolor{preprocessor}{\ \ \ \ \ \ LESENSE\_DISABLED\_CH\_CONF,\ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Channel\ 1.\ */}\textcolor{preprocessor}{\ \ \(\backslash\)}}
+\DoxyCodeLine{00160\ \textcolor{preprocessor}{\ \ \ \ \ \ LESENSE\_DISABLED\_CH\_CONF,\ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Channel\ 2.\ */}\textcolor{preprocessor}{\ \ \(\backslash\)}}
+\DoxyCodeLine{00161\ \textcolor{preprocessor}{\ \ \ \ \ \ LESENSE\_DISABLED\_CH\_CONF,\ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Channel\ 3.\ */}\textcolor{preprocessor}{\ \ \(\backslash\)}}
+\DoxyCodeLine{00162\ \textcolor{preprocessor}{\ \ \ \ \ \ LESENSE\_DISABLED\_CH\_CONF,\ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Channel\ 4.\ */}\textcolor{preprocessor}{\ \ \(\backslash\)}}
+\DoxyCodeLine{00163\ \textcolor{preprocessor}{\ \ \ \ \ \ LESENSE\_DISABLED\_CH\_CONF,\ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Channel\ 5.\ */}\textcolor{preprocessor}{\ \ \(\backslash\)}}
+\DoxyCodeLine{00164\ \textcolor{preprocessor}{\ \ \ \ \ \ LESENSE\_DISABLED\_CH\_CONF,\ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Channel\ 6.\ */}\textcolor{preprocessor}{\ \ \(\backslash\)}}
+\DoxyCodeLine{00165\ \textcolor{preprocessor}{\ \ \ \ \ \ LESENSE\_DISABLED\_CH\_CONF,\ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Channel\ 7.\ */}\textcolor{preprocessor}{\ \ \(\backslash\)}}
+\DoxyCodeLine{00166\ \textcolor{preprocessor}{\ \ \ \ \ \ LESENSE\_CAPSENSE\_CH\_CONF\_SENSE,\ \ }\textcolor{comment}{/*\ Channel\ 8.\ */}\textcolor{preprocessor}{\ \ \(\backslash\)}}
+\DoxyCodeLine{00167\ \textcolor{preprocessor}{\ \ \ \ \ \ LESENSE\_CAPSENSE\_CH\_CONF\_SENSE,\ \ }\textcolor{comment}{/*\ Channel\ 9.\ */}\textcolor{preprocessor}{\ \ \(\backslash\)}}
+\DoxyCodeLine{00168\ \textcolor{preprocessor}{\ \ \ \ \ \ LESENSE\_CAPSENSE\_CH\_CONF\_SENSE,\ \ }\textcolor{comment}{/*\ Channel\ 10.\ */}\textcolor{preprocessor}{\ \(\backslash\)}}
+\DoxyCodeLine{00169\ \textcolor{preprocessor}{\ \ \ \ \ \ LESENSE\_CAPSENSE\_CH\_CONF\_SENSE,\ \ }\textcolor{comment}{/*\ Channel\ 11.\ */}\textcolor{preprocessor}{\ \(\backslash\)}}
+\DoxyCodeLine{00170\ \textcolor{preprocessor}{\ \ \ \ \ \ LESENSE\_DISABLED\_CH\_CONF,\ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Channel\ 12.\ */}\textcolor{preprocessor}{\ \(\backslash\)}}
+\DoxyCodeLine{00171\ \textcolor{preprocessor}{\ \ \ \ \ \ LESENSE\_DISABLED\_CH\_CONF,\ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Channel\ 13.\ */}\textcolor{preprocessor}{\ \(\backslash\)}}
+\DoxyCodeLine{00172\ \textcolor{preprocessor}{\ \ \ \ \ \ LESENSE\_DISABLED\_CH\_CONF,\ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Channel\ 14.\ */}\textcolor{preprocessor}{\ \(\backslash\)}}
+\DoxyCodeLine{00173\ \textcolor{preprocessor}{\ \ \ \ \ \ LESENSE\_DISABLED\_CH\_CONF\ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Channel\ 15.\ */}\textcolor{preprocessor}{\ \(\backslash\)}}
+\DoxyCodeLine{00174\ \textcolor{preprocessor}{\ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00175\ \textcolor{preprocessor}{\ \ \}}}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00178\ \textcolor{preprocessor}{\#define\ LESENSE\_CAPSENSE\_SCAN\_CONF\_SLEEP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00179\ \textcolor{preprocessor}{\ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00180\ \textcolor{preprocessor}{\ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00181\ \textcolor{preprocessor}{\ \ \ \ \ \ LESENSE\_DISABLED\_CH\_CONF,\ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Channel\ 0.\ */}\textcolor{preprocessor}{\ \ \(\backslash\)}}
+\DoxyCodeLine{00182\ \textcolor{preprocessor}{\ \ \ \ \ \ LESENSE\_DISABLED\_CH\_CONF,\ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Channel\ 1.\ */}\textcolor{preprocessor}{\ \ \(\backslash\)}}
+\DoxyCodeLine{00183\ \textcolor{preprocessor}{\ \ \ \ \ \ LESENSE\_DISABLED\_CH\_CONF,\ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Channel\ 2.\ */}\textcolor{preprocessor}{\ \ \(\backslash\)}}
+\DoxyCodeLine{00184\ \textcolor{preprocessor}{\ \ \ \ \ \ LESENSE\_DISABLED\_CH\_CONF,\ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Channel\ 3.\ */}\textcolor{preprocessor}{\ \ \(\backslash\)}}
+\DoxyCodeLine{00185\ \textcolor{preprocessor}{\ \ \ \ \ \ LESENSE\_DISABLED\_CH\_CONF,\ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Channel\ 4.\ */}\textcolor{preprocessor}{\ \ \(\backslash\)}}
+\DoxyCodeLine{00186\ \textcolor{preprocessor}{\ \ \ \ \ \ LESENSE\_DISABLED\_CH\_CONF,\ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Channel\ 5.\ */}\textcolor{preprocessor}{\ \ \(\backslash\)}}
+\DoxyCodeLine{00187\ \textcolor{preprocessor}{\ \ \ \ \ \ LESENSE\_DISABLED\_CH\_CONF,\ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Channel\ 6.\ */}\textcolor{preprocessor}{\ \ \(\backslash\)}}
+\DoxyCodeLine{00188\ \textcolor{preprocessor}{\ \ \ \ \ \ LESENSE\_DISABLED\_CH\_CONF,\ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Channel\ 7.\ */}\textcolor{preprocessor}{\ \ \(\backslash\)}}
+\DoxyCodeLine{00189\ \textcolor{preprocessor}{\ \ \ \ \ \ LESENSE\_CAPSENSE\_CH\_CONF\_SLEEP,\ \ }\textcolor{comment}{/*\ Channel\ 8.\ */}\textcolor{preprocessor}{\ \ \(\backslash\)}}
+\DoxyCodeLine{00190\ \textcolor{preprocessor}{\ \ \ \ \ \ LESENSE\_CAPSENSE\_CH\_CONF\_SLEEP,\ \ }\textcolor{comment}{/*\ Channel\ 9.\ */}\textcolor{preprocessor}{\ \ \(\backslash\)}}
+\DoxyCodeLine{00191\ \textcolor{preprocessor}{\ \ \ \ \ \ LESENSE\_CAPSENSE\_CH\_CONF\_SLEEP,\ \ }\textcolor{comment}{/*\ Channel\ 10.\ */}\textcolor{preprocessor}{\ \(\backslash\)}}
+\DoxyCodeLine{00192\ \textcolor{preprocessor}{\ \ \ \ \ \ LESENSE\_CAPSENSE\_CH\_CONF\_SLEEP,\ \ }\textcolor{comment}{/*\ Channel\ 11.\ */}\textcolor{preprocessor}{\ \(\backslash\)}}
+\DoxyCodeLine{00193\ \textcolor{preprocessor}{\ \ \ \ \ \ LESENSE\_DISABLED\_CH\_CONF,\ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Channel\ 12.\ */}\textcolor{preprocessor}{\ \(\backslash\)}}
+\DoxyCodeLine{00194\ \textcolor{preprocessor}{\ \ \ \ \ \ LESENSE\_DISABLED\_CH\_CONF,\ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Channel\ 13.\ */}\textcolor{preprocessor}{\ \(\backslash\)}}
+\DoxyCodeLine{00195\ \textcolor{preprocessor}{\ \ \ \ \ \ LESENSE\_DISABLED\_CH\_CONF,\ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Channel\ 14.\ */}\textcolor{preprocessor}{\ \(\backslash\)}}
+\DoxyCodeLine{00196\ \textcolor{preprocessor}{\ \ \ \ \ \ LESENSE\_DISABLED\_CH\_CONF\ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Channel\ 15.\ */}\textcolor{preprocessor}{\ \(\backslash\)}}
+\DoxyCodeLine{00197\ \textcolor{preprocessor}{\ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00198\ \textcolor{preprocessor}{\ \ \}}}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00200\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00201\ \}}
+\DoxyCodeLine{00202\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00203\ }
+
+\end{DoxyCode}

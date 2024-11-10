@@ -1,0 +1,51 @@
+\doxysection{Segment\+LCD\+\_\+\+Upper\+Char\+Segments\+\_\+\+Type\+Def Union Reference}
+\hypertarget{union_segment_l_c_d___upper_char_segments___type_def}{}\label{union_segment_l_c_d___upper_char_segments___type_def}\index{SegmentLCD\_UpperCharSegments\_TypeDef@{SegmentLCD\_UpperCharSegments\_TypeDef}}
+
+
+Typedef to store the segment data of a 7-\/segment digit.  
+
+
+
+
+{\ttfamily \#include $<$segmentlcd\+\_\+individual.\+h$>$}
+
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{union_segment_l_c_d___upper_char_segments___type_def_a4d56d630e939db9b2dac88a5a1465fd8}\label{union_segment_l_c_d___upper_char_segments___type_def_a4d56d630e939db9b2dac88a5a1465fd8} 
+uint8\+\_\+t {\bfseries raw}
+\item 
+\Hypertarget{union_segment_l_c_d___upper_char_segments___type_def_ab55225200b4c23ab87806dfc1ff4bf27}\label{union_segment_l_c_d___upper_char_segments___type_def_ab55225200b4c23ab87806dfc1ff4bf27} 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>uint8\_t {\bfseries a}: 1\\
+\>uint8\_t {\bfseries b}: 1\\
+\>uint8\_t {\bfseries c}: 1\\
+\>uint8\_t {\bfseries d}: 1\\
+\>uint8\_t {\bfseries e}: 1\\
+\>uint8\_t {\bfseries f}: 1\\
+\>uint8\_t {\bfseries g}: 1\\
+\}; \\
+
+\end{tabbing}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Typedef to store the segment data of a 7-\/segment digit. 
+
+The typedef uses an 8 bit integer to store the data. As we need only 7 segments, the MSB is unused. The bits are mapped to the segments in the following way\+:
+
+--- 0 (a) --- \texorpdfstring{$\vert$}{|} \texorpdfstring{$\vert$}{|} \texorpdfstring{$\vert$}{|}5 (f) \texorpdfstring{$\vert$}{|}1 (b) \texorpdfstring{$\vert$}{|} \texorpdfstring{$\vert$}{|} --- 6 (g) --- \texorpdfstring{$\vert$}{|} \texorpdfstring{$\vert$}{|} \texorpdfstring{$\vert$}{|}4 (e) \texorpdfstring{$\vert$}{|}2 (c) \texorpdfstring{$\vert$}{|} \texorpdfstring{$\vert$}{|} --- 3 (d) ---
+
+The bits can be accessed in two ways\+:
+
+
+\begin{DoxyEnumerate}
+\item Using a single, 8 bit value (raw).
+\item Accessing individual bits using bit fields (a..g). 
+\end{DoxyEnumerate}
+
+The documentation for this union was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{segmentlcd__individual_8h}{segmentlcd\+\_\+individual.\+h}}\end{DoxyCompactItemize}

@@ -1,0 +1,62 @@
+\doxysection{Block\+\_\+\+Type\+Def Struct Reference}
+\hypertarget{struct_block___type_def}{}\label{struct_block___type_def}\index{Block\_TypeDef@{Block\_TypeDef}}
+
+
+Defines segment COM and BIT fields for top and bottom row blocks. The bit pattern shown above for characters can be split into upper and lower portions for animation purposes. There are separate COM and BIT numbers which together represent a set of stacked blocks which can be shown on two rows in the segmented LCD screen.  
+
+
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{struct_block___type_def_af34032998cdf4863969fadc383455c6b}{com}} \mbox{[}8\mbox{]}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{struct_block___type_def_a233391ea1e345de71d0ee0c33fd79492}{bit}} \mbox{[}8\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines segment COM and BIT fields for top and bottom row blocks. The bit pattern shown above for characters can be split into upper and lower portions for animation purposes. There are separate COM and BIT numbers which together represent a set of stacked blocks which can be shown on two rows in the segmented LCD screen. 
+
+There are four blocks shown on the top row\+: \begin{DoxyVerb}*  -------0------
+*
+* |   \5  |6  /7 |
+* |2   \  |  /   |1
+*
+*  --3---  ---4--
+* \end{DoxyVerb}
+
+
+There are four blocks shown on the bottom row \+: \begin{DoxyVerb}*  --3---  ---4--
+*
+* |    /  |  \5  |
+* |2  /7  |6  \  |0
+*
+*  -------1------
+* \end{DoxyVerb}
+
+
+The upper row has four blocks which are placed directly above the four blocks on the lower row. Each block can be in one of three states\+: blank -\/ outer five segments off, inner three segments off outer -\/ outer five segments on, inner three segments off inner -\/ outer five segments off, inner three segments on full -\/ outer five segments on, inner three segments on
+
+\begin{DoxyVerb}* Top row:    0 1 2 3 4 5 6 7
+* Bottom row: 0 1 2 3 4 5 6 7
+* \end{DoxyVerb}
+ 
+
+\doxysubsection{Field Documentation}
+\Hypertarget{struct_block___type_def_a233391ea1e345de71d0ee0c33fd79492}\index{Block\_TypeDef@{Block\_TypeDef}!bit@{bit}}
+\index{bit@{bit}!Block\_TypeDef@{Block\_TypeDef}}
+\doxysubsubsection{\texorpdfstring{bit}{bit}}
+{\footnotesize\ttfamily \label{struct_block___type_def_a233391ea1e345de71d0ee0c33fd79492} 
+uint8\+\_\+t Block\+\_\+\+Type\+Def\+::bit\mbox{[}8\mbox{]}}
+
+LCD bit number \Hypertarget{struct_block___type_def_af34032998cdf4863969fadc383455c6b}\index{Block\_TypeDef@{Block\_TypeDef}!com@{com}}
+\index{com@{com}!Block\_TypeDef@{Block\_TypeDef}}
+\doxysubsubsection{\texorpdfstring{com}{com}}
+{\footnotesize\ttfamily \label{struct_block___type_def_af34032998cdf4863969fadc383455c6b} 
+uint8\+\_\+t Block\+\_\+\+Type\+Def\+::com\mbox{[}8\mbox{]}}
+
+LCD COM line (for multiplexing) 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{segmentlcd_8c}{segmentlcd.\+c}}\end{DoxyCompactItemize}

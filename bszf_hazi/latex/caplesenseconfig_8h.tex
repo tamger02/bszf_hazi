@@ -1,0 +1,83 @@
+\doxysection{caplesenseconfig.\+h File Reference}
+\hypertarget{caplesenseconfig_8h}{}\label{caplesenseconfig_8h}\index{caplesenseconfig.h@{caplesenseconfig.h}}
+
+
+Low Energy Sensor (LESENSE) example configuration file.  
+
+
+{\ttfamily \#include "{}em\+\_\+lesense.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group___cap_sense_ga1ab7428228d021b52a5c6f806051163f}{CAPLESENSE\+\_\+\+SENSITIVITY\+\_\+\+OFFS}}~1U
+\item 
+\#define \mbox{\hyperlink{group___cap_sense_gade83a812c1f9f07926903c105e804aa4}{CAPLESENSE\+\_\+\+NUMOF\+\_\+\+SLIDERS}}~4
+\item 
+\#define \mbox{\hyperlink{group___cap_sense_gac707e84f81c0b0415c5ef1f5b7bad47e}{CAPLESENSE\+\_\+\+ACMP\+\_\+\+VDD\+\_\+\+SCALE}}~\mbox{\hyperlink{group___cap_sense_ga84dc37b458b8ab17d082c513b7693106}{LESENSE\+\_\+\+ACMP\+\_\+\+VDD\+\_\+\+SCALE}}
+\item 
+\#define \mbox{\hyperlink{group___cap_sense_ga561ee9bfa6e4d4e349ef9dca009b709d}{CAPLESENSE\+\_\+\+SLIDER\+\_\+\+PORT0}}~gpio\+PortC
+\item 
+\#define \mbox{\hyperlink{group___cap_sense_ga1811f39ffbd5a3f6efbf8edb43a9385c}{CAPLESENSE\+\_\+\+SLIDER0\+\_\+\+PORT}}~\mbox{\hyperlink{group___cap_sense_ga561ee9bfa6e4d4e349ef9dca009b709d}{CAPLESENSE\+\_\+\+SLIDER\+\_\+\+PORT0}}
+\item 
+\#define \mbox{\hyperlink{group___cap_sense_ga1127a24d0ac0a5ce19d1f9135afffd36}{CAPLESENSE\+\_\+\+SLIDER0\+\_\+\+PIN}}~8UL
+\item 
+\#define \mbox{\hyperlink{group___cap_sense_ga3aecb5f501ec06752728b82305a6b2ee}{CAPLESENSE\+\_\+\+SLIDER1\+\_\+\+PORT}}~\mbox{\hyperlink{group___cap_sense_ga561ee9bfa6e4d4e349ef9dca009b709d}{CAPLESENSE\+\_\+\+SLIDER\+\_\+\+PORT0}}
+\item 
+\#define \mbox{\hyperlink{group___cap_sense_gaf3fa4c03a6df23264bd68dded9285eb3}{CAPLESENSE\+\_\+\+SLIDER1\+\_\+\+PIN}}~9UL
+\item 
+\#define \mbox{\hyperlink{group___cap_sense_ga68b5a58b7baf3311f298344f2de13232}{CAPLESENSE\+\_\+\+SLIDER2\+\_\+\+PORT}}~\mbox{\hyperlink{group___cap_sense_ga561ee9bfa6e4d4e349ef9dca009b709d}{CAPLESENSE\+\_\+\+SLIDER\+\_\+\+PORT0}}
+\item 
+\#define \mbox{\hyperlink{group___cap_sense_gafa95994797192972d68b4f5f00397e53}{CAPLESENSE\+\_\+\+SLIDER2\+\_\+\+PIN}}~10\+UL
+\item 
+\#define \mbox{\hyperlink{group___cap_sense_ga94596e9dcd87ff35ffbe2c39b4f31fcc}{CAPLESENSE\+\_\+\+SLIDER3\+\_\+\+PORT}}~\mbox{\hyperlink{group___cap_sense_ga561ee9bfa6e4d4e349ef9dca009b709d}{CAPLESENSE\+\_\+\+SLIDER\+\_\+\+PORT0}}
+\item 
+\#define \mbox{\hyperlink{group___cap_sense_gadff13db71789e6fd1681d476cf2bf33d}{CAPLESENSE\+\_\+\+SLIDER3\+\_\+\+PIN}}~11UL
+\item 
+\#define {\bfseries CAPLESENSE\+\_\+\+CHANNEL\+\_\+\+INT}~(LESENSE\+\_\+\+IF\+\_\+\+CH8 \texorpdfstring{$\vert$}{|} LESENSE\+\_\+\+IF\+\_\+\+CH9 \texorpdfstring{$\vert$}{|} LESENSE\+\_\+\+IF\+\_\+\+CH10 \texorpdfstring{$\vert$}{|} LESENSE\+\_\+\+IF\+\_\+\+CH11)
+\item 
+\#define \mbox{\hyperlink{group___cap_sense_gadd40ed0bb61df6a1ee53bb244dc3e16f}{LESENSE\+\_\+\+CHANNELS}}~16
+\item 
+\#define \mbox{\hyperlink{group___cap_sense_ga998f3e65f78a4dac4bb1bd7c5baac808}{SLIDER\+\_\+\+PART0\+\_\+\+CHANNEL}}~8
+\item 
+\#define \mbox{\hyperlink{group___cap_sense_ga5262ec5fc5478e45cd1bcad018b405b8}{SLIDER\+\_\+\+PART1\+\_\+\+CHANNEL}}~9
+\item 
+\#define \mbox{\hyperlink{group___cap_sense_ga4d71f219feaedd7f4fe109fa367cc5e2}{SLIDER\+\_\+\+PART2\+\_\+\+CHANNEL}}~10
+\item 
+\#define \mbox{\hyperlink{group___cap_sense_ga5f1bf7b627552cb0a1650b08e88833fe}{SLIDER\+\_\+\+PART3\+\_\+\+CHANNEL}}~11
+\item 
+\#define \mbox{\hyperlink{group___cap_sense_ga84dc37b458b8ab17d082c513b7693106}{LESENSE\+\_\+\+ACMP\+\_\+\+VDD\+\_\+\+SCALE}}~0x37U
+\item 
+\#define \mbox{\hyperlink{group___cap_sense_ga662600b5708166301c03fbf2a62dfc6e}{LESENSE\+\_\+\+CAPSENSE\+\_\+\+CH\+\_\+\+IN\+\_\+\+USE}}
+\item 
+\#define \mbox{\hyperlink{group___cap_sense_ga86d8eedbf8676c98c414efd553c2e870}{LESENSE\+\_\+\+CAPSENSE\+\_\+\+CH\+\_\+\+CONF\+\_\+\+SENSE}}
+\item 
+\#define \mbox{\hyperlink{group___cap_sense_ga04559af7ec627b7fa66f597fc2f32845}{LESENSE\+\_\+\+CAPSENSE\+\_\+\+CH\+\_\+\+CONF\+\_\+\+SLEEP}}
+\item 
+\#define \mbox{\hyperlink{group___cap_sense_ga187dc3455a585fce7d8727dd3b92b94a}{LESENSE\+\_\+\+DISABLED\+\_\+\+CH\+\_\+\+CONF}}
+\item 
+\#define \mbox{\hyperlink{group___cap_sense_ga4d2f295646b913a80087174bce1fe5c5}{LESENSE\+\_\+\+CAPSENSE\+\_\+\+SCAN\+\_\+\+CONF\+\_\+\+SENSE}}
+\item 
+\#define \mbox{\hyperlink{group___cap_sense_gac6fe6069bc921a05722bced2ea972ae2}{LESENSE\+\_\+\+CAPSENSE\+\_\+\+SCAN\+\_\+\+CONF\+\_\+\+SLEEP}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Low Energy Sensor (LESENSE) example configuration file. 
+
+\hypertarget{caplesenseconfig_8h_autotoc_md3}{}\doxysubsection{\texorpdfstring{License}{License}}\label{caplesenseconfig_8h_autotoc_md3}
+{\bfseries{Copyright 2018 Silicon Laboratories Inc. www.\+silabs.\+com}}
+
+SPDX-\/\+License-\/\+Identifier\+: Zlib
+
+The licensor of this software is Silicon Laboratories Inc.
+
+This software is provided \textquotesingle{}as-\/is\textquotesingle{}, without any express or implied warranty. In no event will the authors be held liable for any damages arising from the use of this software.
+
+Permission is granted to anyone to use this software for any purpose, including commercial applications, and to alter it and redistribute it freely, subject to the following restrictions\+:
+
+
+\begin{DoxyEnumerate}
+\item The origin of this software must not be misrepresented; you must not claim that you wrote the original software. If you use this software in a product, an acknowledgment in the product documentation would be appreciated but is not required.
+\item Altered source versions must be plainly marked as such, and must not be misrepresented as being the original software.
+\item This notice may not be removed or altered from any source distribution. 
+\end{DoxyEnumerate}

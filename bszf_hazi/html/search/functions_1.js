@@ -1,0 +1,14 @@
+var searchData=
+[
+  ['caplesense_5fgetnormalizedval_0',['CAPLESENSE_getNormalizedVal',['../group___cap_sense.html#ga143a5684f9e650fbf7bd90a524a59b97',1,'CAPLESENSE_getNormalizedVal(uint8_t channel):&#160;caplesense.c'],['../group___cap_sense.html#ga143a5684f9e650fbf7bd90a524a59b97',1,'CAPLESENSE_getNormalizedVal(uint8_t channel):&#160;caplesense.c']]],
+  ['caplesense_5fgetsegmentchannel_1',['CAPLESENSE_getSegmentChannel',['../group___cap_sense.html#ga12a48c026fef4a6e55dde2c51a05e30b',1,'CAPLESENSE_getSegmentChannel(uint8_t capSegment):&#160;caplesense.c'],['../group___cap_sense.html#ga12a48c026fef4a6e55dde2c51a05e30b',1,'CAPLESENSE_getSegmentChannel(uint8_t capSegment):&#160;caplesense.c']]],
+  ['caplesense_5fgetsliderposition_2',['CAPLESENSE_getSliderPosition',['../group___cap_sense.html#gab2b10d3e366d96fed607b9a642748778',1,'CAPLESENSE_getSliderPosition(void):&#160;caplesense.c'],['../group___cap_sense.html#gab2b10d3e366d96fed607b9a642748778',1,'CAPLESENSE_getSliderPosition(void):&#160;caplesense.c']]],
+  ['caplesense_5fgetval_3',['CAPLESENSE_getVal',['../group___cap_sense.html#ga09b7ae59bd532ff2b699038f38fe98df',1,'CAPLESENSE_getVal(uint8_t channel):&#160;caplesense.c'],['../group___cap_sense.html#ga09b7ae59bd532ff2b699038f38fe98df',1,'CAPLESENSE_getVal(uint8_t channel):&#160;caplesense.c']]],
+  ['caplesense_5finit_4',['CAPLESENSE_Init',['../group___cap_sense.html#ga4a9a1233a70703ca91a6bc9fcf05ec19',1,'CAPLESENSE_Init(bool sleep):&#160;caplesense.c'],['../group___cap_sense.html#ga4a9a1233a70703ca91a6bc9fcf05ec19',1,'CAPLESENSE_Init(bool sleep):&#160;caplesense.c']]],
+  ['caplesense_5fsetupacmp_5',['CAPLESENSE_setupACMP',['../caplesense_8c.html#a78388fdc0a453879163ff3de37c6a6ec',1,'caplesense.c']]],
+  ['caplesense_5fsetupcallbacks_6',['CAPLESENSE_setupCallbacks',['../group___cap_sense.html#ga8e36f3ae32acf53db76f463f5b8b4d69',1,'CAPLESENSE_setupCallbacks(void(*scanCb)(void), void(*chCb)(void)):&#160;caplesense.c'],['../group___cap_sense.html#ga8e36f3ae32acf53db76f463f5b8b4d69',1,'CAPLESENSE_setupCallbacks(void(*scanCb)(void), void(*chCb)(void)):&#160;caplesense.c']]],
+  ['caplesense_5fsetupcmu_7',['CAPLESENSE_setupCMU',['../caplesense_8c.html#a2e4ba8079a4db025c71de23fd97211cc',1,'caplesense.c']]],
+  ['caplesense_5fsetupgpio_8',['CAPLESENSE_setupGPIO',['../caplesense_8c.html#a396cd017e7532802444b258813ee331b',1,'caplesense.c']]],
+  ['caplesense_5fsetuplesense_9',['CAPLESENSE_setupLESENSE',['../group___cap_sense.html#ga9cf779d965cc198a603d60d01225b993',1,'CAPLESENSE_setupLESENSE(bool sleep):&#160;caplesense.c'],['../group___cap_sense.html#ga9cf779d965cc198a603d60d01225b993',1,'CAPLESENSE_setupLESENSE(bool sleep):&#160;caplesense.c']]],
+  ['caplesense_5fsleep_10',['CAPLESENSE_Sleep',['../group___cap_sense.html#gadbafc1379b79f5eb37389529afb74a1b',1,'CAPLESENSE_Sleep(void):&#160;caplesense.c'],['../group___cap_sense.html#gadbafc1379b79f5eb37389529afb74a1b',1,'CAPLESENSE_Sleep(void):&#160;caplesense.c']]]
+];
