@@ -1,0 +1,68 @@
+\doxysection{sl\+\_\+enum.\+h}
+\hypertarget{sl__enum_8h_source}{}\label{sl__enum_8h_source}\index{snake/gecko\_sdk\_4.4.4/platform/common/inc/sl\_enum.h@{snake/gecko\_sdk\_4.4.4/platform/common/inc/sl\_enum.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{00002\ \textcolor{comment}{\ *\ @file}}
+\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ @brief\ SL\_ENUM\ Implementation}}
+\DoxyCodeLine{00004\ \textcolor{comment}{\ *******************************************************************************}}
+\DoxyCodeLine{00005\ \textcolor{comment}{\ *\ \#\ License}}
+\DoxyCodeLine{00006\ \textcolor{comment}{\ *\ <b>Copyright\ 2019\ Silicon\ Laboratories\ Inc.\ www.silabs.com</b>}}
+\DoxyCodeLine{00007\ \textcolor{comment}{\ *******************************************************************************}}
+\DoxyCodeLine{00008\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00009\ \textcolor{comment}{\ *\ SPDX-\/License-\/Identifier:\ Zlib}}
+\DoxyCodeLine{00010\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00011\ \textcolor{comment}{\ *\ The\ licensor\ of\ this\ software\ is\ Silicon\ Laboratories\ Inc.}}
+\DoxyCodeLine{00012\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00013\ \textcolor{comment}{\ *\ This\ software\ is\ provided\ 'as-\/is',\ without\ any\ express\ or\ implied}}
+\DoxyCodeLine{00014\ \textcolor{comment}{\ *\ warranty.\ In\ no\ event\ will\ the\ authors\ be\ held\ liable\ for\ any\ damages}}
+\DoxyCodeLine{00015\ \textcolor{comment}{\ *\ arising\ from\ the\ use\ of\ this\ software.}}
+\DoxyCodeLine{00016\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00017\ \textcolor{comment}{\ *\ Permission\ is\ granted\ to\ anyone\ to\ use\ this\ software\ for\ any\ purpose,}}
+\DoxyCodeLine{00018\ \textcolor{comment}{\ *\ including\ commercial\ applications,\ and\ to\ alter\ it\ and\ redistribute\ it}}
+\DoxyCodeLine{00019\ \textcolor{comment}{\ *\ freely,\ subject\ to\ the\ following\ restrictions:}}
+\DoxyCodeLine{00020\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00021\ \textcolor{comment}{\ *\ 1.\ The\ origin\ of\ this\ software\ must\ not\ be\ misrepresented;\ you\ must\ not}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\ *\ \ \ \ claim\ that\ you\ wrote\ the\ original\ software.\ If\ you\ use\ this\ software}}
+\DoxyCodeLine{00023\ \textcolor{comment}{\ *\ \ \ \ in\ a\ product,\ an\ acknowledgment\ in\ the\ product\ documentation\ would\ be}}
+\DoxyCodeLine{00024\ \textcolor{comment}{\ *\ \ \ \ appreciated\ but\ is\ not\ required.}}
+\DoxyCodeLine{00025\ \textcolor{comment}{\ *\ 2.\ Altered\ source\ versions\ must\ be\ plainly\ marked\ as\ such,\ and\ must\ not\ be}}
+\DoxyCodeLine{00026\ \textcolor{comment}{\ *\ \ \ \ misrepresented\ as\ being\ the\ original\ software.}}
+\DoxyCodeLine{00027\ \textcolor{comment}{\ *\ 3.\ This\ notice\ may\ not\ be\ removed\ or\ altered\ from\ any\ source\ distribution.}}
+\DoxyCodeLine{00028\ \textcolor{comment}{\ *}}
+\DoxyCodeLine{00029\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#ifndef\ SL\_ENUM\_H}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ SL\_ENUM\_H}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{00034\ \textcolor{comment}{\ *\ @addtogroup\ enum\ Enumerations}}
+\DoxyCodeLine{00035\ \textcolor{comment}{\ *\ @brief\ Enumerations\ with\ stable\ binary\ representation}}
+\DoxyCodeLine{00036\ \textcolor{comment}{\ *\ @details}}
+\DoxyCodeLine{00037\ \textcolor{comment}{\ *\ Silicon\ Labs\ libraries\ do\ not\ use\ enumerations\ because\ the\ ARM\ EABI\ leaves}}
+\DoxyCodeLine{00038\ \textcolor{comment}{\ *\ their\ size\ ambiguous,\ which\ causes\ problems\ if\ the\ application\ is\ built}}
+\DoxyCodeLine{00039\ \textcolor{comment}{\ *\ with\ different\ flags\ than\ the\ library.\ Instead,\ uint8\_t\ typedefs}}
+\DoxyCodeLine{00040\ \textcolor{comment}{\ *\ are\ used\ in\ compiled\ code\ for\ all\ enumerations.\ For\ documentation\ purposes,}}
+\DoxyCodeLine{00041\ \textcolor{comment}{\ *\ this\ is\ converted\ to\ an\ actual\ enumeration\ in\ documentation.}}
+\DoxyCodeLine{00042\ \textcolor{comment}{\ *\ @\{}}
+\DoxyCodeLine{00043\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#ifdef\ DOXYGEN}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ SL\_ENUM(name)\ enum\ name}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ SL\_ENUM\_GENERIC(name,\ type)\ enum\ name}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00051\ \textcolor{comment}{//\ NOTE:\ The\ following\ macros\ might\ cause\ MISRA\ warnings\ because}}
+\DoxyCodeLine{00052\ \textcolor{comment}{//\ \ \ \ \ \ \ Macro\ parameters\ need\ to\ be\ enclosed\ in\ parentheses.}}
+\DoxyCodeLine{00053\ \textcolor{comment}{//\ \ \ \ \ \ \ However,\ it\ is\ not\ possible\ in\ C\ to\ enclose\ declaration}}
+\DoxyCodeLine{00054\ \textcolor{comment}{//\ \ \ \ \ \ \ identifiers\ in\ parentheses.\ For\ example:}}
+\DoxyCodeLine{00055\ \textcolor{comment}{//\ \ \ \ \ \ \ \ \ typedef\ uint8\_t\ (some\_identifier);}}
+\DoxyCodeLine{00056\ \textcolor{comment}{//\ \ \ \ \ \ \ is\ not\ syntactically\ correct\ in\ the\ C\ language\ (C99).}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#define\ SL\_ENUM(name)\ typedef\ uint8\_t\ name;\ enum\ name\#\#\_enum}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#define\ SL\_ENUM\_GENERIC(name,\ type)\ typedef\ type\ name;\ enum\ name\#\#\_enum}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{comment}{//\ For\ debugging,\ use\ the\ following\ define\ to\ turn\ this\ back\ into\ a\ proper\ enumeration}}
+\DoxyCodeLine{00061\ \textcolor{comment}{//\ \#define\ SL\_ENUM(name)\ typedef\ enum\ name\#\#\_enum\ name;\ enum\ name\#\#\_enum}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SL\_ENUM\_H}}
+
+\end{DoxyCode}

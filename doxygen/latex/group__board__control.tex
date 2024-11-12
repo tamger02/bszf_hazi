@@ -1,0 +1,381 @@
+\doxysection{Board Control}
+\hypertarget{group__board__control}{}\label{group__board__control}\index{Board Control@{Board Control}}
+
+
+Functions to control Silicon Labs board features.  
+
+
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__board__control_ga45b9fb9180add96e6d2edab66c6490a9}{SL\+\_\+\+ENUM\+\_\+\+GENERIC}} (sl\+\_\+board\+\_\+sensor\+\_\+t, int)
+\begin{DoxyCompactList}\small\item\em Board Sensor Type. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__board__control_gab98c1b0fc53d76959cebd599824c5e40}{SL\+\_\+\+ENUM\+\_\+\+GENERIC}} (sl\+\_\+board\+\_\+memory\+\_\+t, int)
+\begin{DoxyCompactList}\small\item\em Board Memory Type. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__board__control_ga1ae05271581c90cd7798d281371d94e0}{SL\+\_\+\+ENUM\+\_\+\+GENERIC}} (sl\+\_\+board\+\_\+oscillator\+\_\+t, int)
+\begin{DoxyCompactList}\small\item\em Board Oscillator Type. \end{DoxyCompactList}\item 
+sl\+\_\+status\+\_\+t \mbox{\hyperlink{group__board__control_ga1449a877d448ea9538321059991d3edf}{sl\+\_\+board\+\_\+configure\+\_\+vcom}} (void)
+\begin{DoxyCompactList}\small\item\em Configure Virtual COM UART. \end{DoxyCompactList}\item 
+sl\+\_\+status\+\_\+t \mbox{\hyperlink{group__board__control_gae4c6a50b88571b5e145e60f7db014a6e}{sl\+\_\+board\+\_\+enable\+\_\+vcom}} (void)
+\begin{DoxyCompactList}\small\item\em Enable Virtual COM UART. \end{DoxyCompactList}\item 
+sl\+\_\+status\+\_\+t \mbox{\hyperlink{group__board__control_ga5b0698ffd1d278a51a64572acf28be7c}{sl\+\_\+board\+\_\+disable\+\_\+vcom}} (void)
+\begin{DoxyCompactList}\small\item\em Disable Virtual COM UART. \end{DoxyCompactList}\item 
+sl\+\_\+status\+\_\+t \mbox{\hyperlink{group__board__control_ga0ecbaaa53fdbf5ddcf9acae20d6ece8d}{sl\+\_\+board\+\_\+enable\+\_\+sensor}} (sl\+\_\+board\+\_\+sensor\+\_\+t sensor)
+\begin{DoxyCompactList}\small\item\em Enable a sensor. \end{DoxyCompactList}\item 
+sl\+\_\+status\+\_\+t \mbox{\hyperlink{group__board__control_gaf43bae7efacf1e6c673f193e6d9cbc6a}{sl\+\_\+board\+\_\+disable\+\_\+sensor}} (sl\+\_\+board\+\_\+sensor\+\_\+t sensor)
+\begin{DoxyCompactList}\small\item\em Disable a sensor. \end{DoxyCompactList}\item 
+sl\+\_\+status\+\_\+t \mbox{\hyperlink{group__board__control_ga923ec83eb72c91576f85f13de257e3b3}{sl\+\_\+board\+\_\+enable\+\_\+display}} (void)
+\begin{DoxyCompactList}\small\item\em Enable display. \end{DoxyCompactList}\item 
+sl\+\_\+status\+\_\+t \mbox{\hyperlink{group__board__control_ga984258a4ad1bd1b5de70fe24b07b2ab8}{sl\+\_\+board\+\_\+disable\+\_\+display}} (void)
+\begin{DoxyCompactList}\small\item\em Disable display. \end{DoxyCompactList}\item 
+sl\+\_\+status\+\_\+t \mbox{\hyperlink{group__board__control_ga02e07e545c7a3e7af8ee971eefcaedce}{sl\+\_\+board\+\_\+enable\+\_\+memory}} (sl\+\_\+board\+\_\+memory\+\_\+t memory)
+\begin{DoxyCompactList}\small\item\em Enable memory. \end{DoxyCompactList}\item 
+sl\+\_\+status\+\_\+t \mbox{\hyperlink{group__board__control_gaa30fa3a5498b7a608677f560fb498a1f}{sl\+\_\+board\+\_\+disable\+\_\+memory}} (sl\+\_\+board\+\_\+memory\+\_\+t memory)
+\begin{DoxyCompactList}\small\item\em Disable memory. \end{DoxyCompactList}\item 
+sl\+\_\+status\+\_\+t \mbox{\hyperlink{group__board__control_gaaaafad1a24f9352dbf522c01b1fe92a1}{sl\+\_\+board\+\_\+enable\+\_\+oscillator}} (sl\+\_\+board\+\_\+oscillator\+\_\+t oscillator)
+\begin{DoxyCompactList}\small\item\em Enable an oscillator. \end{DoxyCompactList}\item 
+sl\+\_\+status\+\_\+t \mbox{\hyperlink{group__board__control_ga1a6cfe36e6f924fa998cb553b804e72e}{sl\+\_\+board\+\_\+disable\+\_\+oscillator}} (sl\+\_\+board\+\_\+oscillator\+\_\+t oscillator)
+\begin{DoxyCompactList}\small\item\em Disable a oscillator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Functions to control Silicon Labs board features. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{group__board__control_ga1449a877d448ea9538321059991d3edf}\index{Board Control@{Board Control}!sl\_board\_configure\_vcom@{sl\_board\_configure\_vcom}}
+\index{sl\_board\_configure\_vcom@{sl\_board\_configure\_vcom}!Board Control@{Board Control}}
+\doxysubsubsection{\texorpdfstring{sl\_board\_configure\_vcom()}{sl\_board\_configure\_vcom()}}
+{\footnotesize\ttfamily \label{group__board__control_ga1449a877d448ea9538321059991d3edf} 
+sl\+\_\+status\+\_\+t sl\+\_\+board\+\_\+configure\+\_\+vcom (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Configure Virtual COM UART. 
+
+\begin{DoxyReturn}{Returns}
+Status code 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em SL\+\_\+\+STATUS\+\_\+\+OK} & VCOM was successfully enabled \\
+\hline
+{\em SL\+\_\+\+STATUS\+\_\+\+FAIL} & Enabling VCOM failed \\
+\hline
+{\em SL\+\_\+\+STATUS\+\_\+\+NOT\+\_\+\+AVAILABLE} & VCOM control is not available on this board \\
+\hline
+{\em SL\+\_\+\+STATUS\+\_\+\+NOT\+\_\+\+SUPPORTED} & VCOM enabled was not configured \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group__board__control_ga984258a4ad1bd1b5de70fe24b07b2ab8}\index{Board Control@{Board Control}!sl\_board\_disable\_display@{sl\_board\_disable\_display}}
+\index{sl\_board\_disable\_display@{sl\_board\_disable\_display}!Board Control@{Board Control}}
+\doxysubsubsection{\texorpdfstring{sl\_board\_disable\_display()}{sl\_board\_disable\_display()}}
+{\footnotesize\ttfamily \label{group__board__control_ga984258a4ad1bd1b5de70fe24b07b2ab8} 
+sl\+\_\+status\+\_\+t sl\+\_\+board\+\_\+disable\+\_\+display (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Disable display. 
+
+\begin{DoxyReturn}{Returns}
+Status code 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em SL\+\_\+\+STATUS\+\_\+\+OK} & Display was successfully disabled \\
+\hline
+{\em SL\+\_\+\+STATUS\+\_\+\+FAIL} & Disabling display failed \\
+\hline
+{\em SL\+\_\+\+STATUS\+\_\+\+NOT\+\_\+\+AVAILABLE} & Display control is not available on this board \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group__board__control_gaa30fa3a5498b7a608677f560fb498a1f}\index{Board Control@{Board Control}!sl\_board\_disable\_memory@{sl\_board\_disable\_memory}}
+\index{sl\_board\_disable\_memory@{sl\_board\_disable\_memory}!Board Control@{Board Control}}
+\doxysubsubsection{\texorpdfstring{sl\_board\_disable\_memory()}{sl\_board\_disable\_memory()}}
+{\footnotesize\ttfamily \label{group__board__control_gaa30fa3a5498b7a608677f560fb498a1f} 
+sl\+\_\+status\+\_\+t sl\+\_\+board\+\_\+disable\+\_\+memory (\begin{DoxyParamCaption}\item[{sl\+\_\+board\+\_\+memory\+\_\+t}]{memory}{}\end{DoxyParamCaption})}
+
+
+
+Disable memory. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em memory} & Memory to disable\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status code 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em SL\+\_\+\+STATUS\+\_\+\+OK} & Memory was successfully disabled \\
+\hline
+{\em SL\+\_\+\+STATUS\+\_\+\+FAIL} & Disabling memory failed \\
+\hline
+{\em SL\+\_\+\+STATUS\+\_\+\+NOT\+\_\+\+AVAILABLE} & Memory control is not available on this board \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group__board__control_ga1a6cfe36e6f924fa998cb553b804e72e}\index{Board Control@{Board Control}!sl\_board\_disable\_oscillator@{sl\_board\_disable\_oscillator}}
+\index{sl\_board\_disable\_oscillator@{sl\_board\_disable\_oscillator}!Board Control@{Board Control}}
+\doxysubsubsection{\texorpdfstring{sl\_board\_disable\_oscillator()}{sl\_board\_disable\_oscillator()}}
+{\footnotesize\ttfamily \label{group__board__control_ga1a6cfe36e6f924fa998cb553b804e72e} 
+sl\+\_\+status\+\_\+t sl\+\_\+board\+\_\+disable\+\_\+oscillator (\begin{DoxyParamCaption}\item[{sl\+\_\+board\+\_\+oscillator\+\_\+t}]{oscillator}{}\end{DoxyParamCaption})}
+
+
+
+Disable a oscillator. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em oscillator} & Oscillator to disable\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status code 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em SL\+\_\+\+STATUS\+\_\+\+OK} & Oscillator was successfully disabled \\
+\hline
+{\em SL\+\_\+\+STATUS\+\_\+\+FAIL} & Disabling oscillator failed \\
+\hline
+{\em SL\+\_\+\+STATUS\+\_\+\+NOT\+\_\+\+AVAILABLE} & Oscillator control is not available on this board \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group__board__control_gaf43bae7efacf1e6c673f193e6d9cbc6a}\index{Board Control@{Board Control}!sl\_board\_disable\_sensor@{sl\_board\_disable\_sensor}}
+\index{sl\_board\_disable\_sensor@{sl\_board\_disable\_sensor}!Board Control@{Board Control}}
+\doxysubsubsection{\texorpdfstring{sl\_board\_disable\_sensor()}{sl\_board\_disable\_sensor()}}
+{\footnotesize\ttfamily \label{group__board__control_gaf43bae7efacf1e6c673f193e6d9cbc6a} 
+sl\+\_\+status\+\_\+t sl\+\_\+board\+\_\+disable\+\_\+sensor (\begin{DoxyParamCaption}\item[{sl\+\_\+board\+\_\+sensor\+\_\+t}]{sensor}{}\end{DoxyParamCaption})}
+
+
+
+Disable a sensor. 
+
+\begin{DoxyWarning}{Warning}
+On boards 4166A, 4184A, and 4184B sensors
+\begin{DoxyItemize}
+\item Pressure Sensor, RH/\+Temp Sensor, and UV/\+Ambient Light Sensor;
+\item UV/\+Ambient Light Sensor, Hall-\/effect Sensor, and RH/\+Temp Sensor;
+\item Ambient Light Sensor, Hall-\/effect Sensor, and RH/\+Temp Sensor respectively, are tied to the same enable pin. Calling the enable function for only one of these sensors has the side-\/effect of enabling all three; and calling the disable function for only one of them has the side-\/effect of disabling all three. The latter scenario seems less than desirable.
+\end{DoxyItemize}
+\end{DoxyWarning}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em sensor} & Sensors to disable\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status code 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em SL\+\_\+\+STATUS\+\_\+\+OK} & Sensor was successfully disabled \\
+\hline
+{\em SL\+\_\+\+STATUS\+\_\+\+FAIL} & Disabling sensor failed \\
+\hline
+{\em SL\+\_\+\+STATUS\+\_\+\+NOT\+\_\+\+AVAILABLE} & Sensor control is not available on this board \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group__board__control_ga5b0698ffd1d278a51a64572acf28be7c}\index{Board Control@{Board Control}!sl\_board\_disable\_vcom@{sl\_board\_disable\_vcom}}
+\index{sl\_board\_disable\_vcom@{sl\_board\_disable\_vcom}!Board Control@{Board Control}}
+\doxysubsubsection{\texorpdfstring{sl\_board\_disable\_vcom()}{sl\_board\_disable\_vcom()}}
+{\footnotesize\ttfamily \label{group__board__control_ga5b0698ffd1d278a51a64572acf28be7c} 
+sl\+\_\+status\+\_\+t sl\+\_\+board\+\_\+disable\+\_\+vcom (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Disable Virtual COM UART. 
+
+\begin{DoxyReturn}{Returns}
+Status code 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em SL\+\_\+\+STATUS\+\_\+\+OK} & VCOM was successfully disabled \\
+\hline
+{\em SL\+\_\+\+STATUS\+\_\+\+FAIL} & Disabling VCOM failed \\
+\hline
+{\em SL\+\_\+\+STATUS\+\_\+\+NOT\+\_\+\+AVAILABLE} & VCOM control is not available on this board \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group__board__control_ga923ec83eb72c91576f85f13de257e3b3}\index{Board Control@{Board Control}!sl\_board\_enable\_display@{sl\_board\_enable\_display}}
+\index{sl\_board\_enable\_display@{sl\_board\_enable\_display}!Board Control@{Board Control}}
+\doxysubsubsection{\texorpdfstring{sl\_board\_enable\_display()}{sl\_board\_enable\_display()}}
+{\footnotesize\ttfamily \label{group__board__control_ga923ec83eb72c91576f85f13de257e3b3} 
+sl\+\_\+status\+\_\+t sl\+\_\+board\+\_\+enable\+\_\+display (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Enable display. 
+
+\begin{DoxyReturn}{Returns}
+Status code 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em SL\+\_\+\+STATUS\+\_\+\+OK} & Display was successfully enabled \\
+\hline
+{\em SL\+\_\+\+STATUS\+\_\+\+FAIL} & Enabling display failed \\
+\hline
+{\em SL\+\_\+\+STATUS\+\_\+\+NOT\+\_\+\+AVAILABLE} & Display control is not available on this board \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group__board__control_ga02e07e545c7a3e7af8ee971eefcaedce}\index{Board Control@{Board Control}!sl\_board\_enable\_memory@{sl\_board\_enable\_memory}}
+\index{sl\_board\_enable\_memory@{sl\_board\_enable\_memory}!Board Control@{Board Control}}
+\doxysubsubsection{\texorpdfstring{sl\_board\_enable\_memory()}{sl\_board\_enable\_memory()}}
+{\footnotesize\ttfamily \label{group__board__control_ga02e07e545c7a3e7af8ee971eefcaedce} 
+sl\+\_\+status\+\_\+t sl\+\_\+board\+\_\+enable\+\_\+memory (\begin{DoxyParamCaption}\item[{sl\+\_\+board\+\_\+memory\+\_\+t}]{memory}{}\end{DoxyParamCaption})}
+
+
+
+Enable memory. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em memory} & Memory to enable\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status code 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em SL\+\_\+\+STATUS\+\_\+\+OK} & Memory was successfully enabled \\
+\hline
+{\em SL\+\_\+\+STATUS\+\_\+\+FAIL} & Enabling memory failed \\
+\hline
+{\em SL\+\_\+\+STATUS\+\_\+\+NOT\+\_\+\+AVAILABLE} & Memory control is not available on this board \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group__board__control_gaaaafad1a24f9352dbf522c01b1fe92a1}\index{Board Control@{Board Control}!sl\_board\_enable\_oscillator@{sl\_board\_enable\_oscillator}}
+\index{sl\_board\_enable\_oscillator@{sl\_board\_enable\_oscillator}!Board Control@{Board Control}}
+\doxysubsubsection{\texorpdfstring{sl\_board\_enable\_oscillator()}{sl\_board\_enable\_oscillator()}}
+{\footnotesize\ttfamily \label{group__board__control_gaaaafad1a24f9352dbf522c01b1fe92a1} 
+sl\+\_\+status\+\_\+t sl\+\_\+board\+\_\+enable\+\_\+oscillator (\begin{DoxyParamCaption}\item[{sl\+\_\+board\+\_\+oscillator\+\_\+t}]{oscillator}{}\end{DoxyParamCaption})}
+
+
+
+Enable an oscillator. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em oscillator} & Oscillator to enable\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status code 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em SL\+\_\+\+STATUS\+\_\+\+OK} & Oscillator was successfully enabled \\
+\hline
+{\em SL\+\_\+\+STATUS\+\_\+\+FAIL} & Enabling oscillator failed \\
+\hline
+{\em SL\+\_\+\+STATUS\+\_\+\+NOT\+\_\+\+AVAILABLE} & Oscillator control is not available on this board \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group__board__control_ga0ecbaaa53fdbf5ddcf9acae20d6ece8d}\index{Board Control@{Board Control}!sl\_board\_enable\_sensor@{sl\_board\_enable\_sensor}}
+\index{sl\_board\_enable\_sensor@{sl\_board\_enable\_sensor}!Board Control@{Board Control}}
+\doxysubsubsection{\texorpdfstring{sl\_board\_enable\_sensor()}{sl\_board\_enable\_sensor()}}
+{\footnotesize\ttfamily \label{group__board__control_ga0ecbaaa53fdbf5ddcf9acae20d6ece8d} 
+sl\+\_\+status\+\_\+t sl\+\_\+board\+\_\+enable\+\_\+sensor (\begin{DoxyParamCaption}\item[{sl\+\_\+board\+\_\+sensor\+\_\+t}]{sensor}{}\end{DoxyParamCaption})}
+
+
+
+Enable a sensor. 
+
+\begin{DoxyWarning}{Warning}
+On boards 4166A, 4184A, and 4184B sensors
+\begin{DoxyItemize}
+\item Pressure Sensor, RH/\+Temp Sensor, and UV/\+Ambient Light Sensor;
+\item UV/\+Ambient Light Sensor, Hall-\/effect Sensor, and RH/\+Temp Sensor;
+\item Ambient Light Sensor, Hall-\/effect Sensor, and RH/\+Temp Sensor respectively, are tied to the same enable pin. Calling the enable function for only one of these sensors has the side-\/effect of enabling all three; and calling the disable function for only one of them has the side-\/effect of disabling all three. The latter scenario seems less than desirable.
+\end{DoxyItemize}
+\end{DoxyWarning}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em sensor} & Sensor to enable\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Status code 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em SL\+\_\+\+STATUS\+\_\+\+OK} & Sensor was successfully enabled \\
+\hline
+{\em SL\+\_\+\+STATUS\+\_\+\+FAIL} & Enabling sensor failed \\
+\hline
+{\em SL\+\_\+\+STATUS\+\_\+\+NOT\+\_\+\+AVAILABLE} & Sensor control is not available on this board \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group__board__control_gae4c6a50b88571b5e145e60f7db014a6e}\index{Board Control@{Board Control}!sl\_board\_enable\_vcom@{sl\_board\_enable\_vcom}}
+\index{sl\_board\_enable\_vcom@{sl\_board\_enable\_vcom}!Board Control@{Board Control}}
+\doxysubsubsection{\texorpdfstring{sl\_board\_enable\_vcom()}{sl\_board\_enable\_vcom()}}
+{\footnotesize\ttfamily \label{group__board__control_gae4c6a50b88571b5e145e60f7db014a6e} 
+sl\+\_\+status\+\_\+t sl\+\_\+board\+\_\+enable\+\_\+vcom (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Enable Virtual COM UART. 
+
+\begin{DoxyReturn}{Returns}
+Status code 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em SL\+\_\+\+STATUS\+\_\+\+OK} & VCOM was successfully enabled \\
+\hline
+{\em SL\+\_\+\+STATUS\+\_\+\+FAIL} & Enabling VCOM failed \\
+\hline
+{\em SL\+\_\+\+STATUS\+\_\+\+NOT\+\_\+\+AVAILABLE} & VCOM control is not available on this board \\
+\hline
+\end{DoxyRetVals}
+\Hypertarget{group__board__control_gab98c1b0fc53d76959cebd599824c5e40}\index{Board Control@{Board Control}!SL\_ENUM\_GENERIC@{SL\_ENUM\_GENERIC}}
+\index{SL\_ENUM\_GENERIC@{SL\_ENUM\_GENERIC}!Board Control@{Board Control}}
+\doxysubsubsection{\texorpdfstring{SL\_ENUM\_GENERIC()}{SL\_ENUM\_GENERIC()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{group__board__control_gab98c1b0fc53d76959cebd599824c5e40} 
+SL\+\_\+\+ENUM\+\_\+\+GENERIC (\begin{DoxyParamCaption}\item[{sl\+\_\+board\+\_\+memory\+\_\+t}]{}{, }\item[{int}]{}{}\end{DoxyParamCaption})}
+
+
+
+Board Memory Type. 
+
+\texorpdfstring{$<$}{<} SD Card
+
+\texorpdfstring{$<$}{<} Quad SPI Flash\Hypertarget{group__board__control_ga1ae05271581c90cd7798d281371d94e0}\index{Board Control@{Board Control}!SL\_ENUM\_GENERIC@{SL\_ENUM\_GENERIC}}
+\index{SL\_ENUM\_GENERIC@{SL\_ENUM\_GENERIC}!Board Control@{Board Control}}
+\doxysubsubsection{\texorpdfstring{SL\_ENUM\_GENERIC()}{SL\_ENUM\_GENERIC()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{group__board__control_ga1ae05271581c90cd7798d281371d94e0} 
+SL\+\_\+\+ENUM\+\_\+\+GENERIC (\begin{DoxyParamCaption}\item[{sl\+\_\+board\+\_\+oscillator\+\_\+t}]{}{, }\item[{int}]{}{}\end{DoxyParamCaption})}
+
+
+
+Board Oscillator Type. 
+
+\texorpdfstring{$<$}{<} TCXO\Hypertarget{group__board__control_ga45b9fb9180add96e6d2edab66c6490a9}\index{Board Control@{Board Control}!SL\_ENUM\_GENERIC@{SL\_ENUM\_GENERIC}}
+\index{SL\_ENUM\_GENERIC@{SL\_ENUM\_GENERIC}!Board Control@{Board Control}}
+\doxysubsubsection{\texorpdfstring{SL\_ENUM\_GENERIC()}{SL\_ENUM\_GENERIC()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{group__board__control_ga45b9fb9180add96e6d2edab66c6490a9} 
+SL\+\_\+\+ENUM\+\_\+\+GENERIC (\begin{DoxyParamCaption}\item[{sl\+\_\+board\+\_\+sensor\+\_\+t}]{}{, }\item[{int}]{}{}\end{DoxyParamCaption})}
+
+
+
+Board Sensor Type. 
+
+\texorpdfstring{$<$}{<} Relative Humidity and Temperature Sensor
+
+\texorpdfstring{$<$}{<} UV Index and Ambient Light Sensor
+
+\texorpdfstring{$<$}{<} Barometric Pressure Sensor
+
+\texorpdfstring{$<$}{<} Hall Effect Sensor
+
+\texorpdfstring{$<$}{<} Gas Sensor
+
+\texorpdfstring{$<$}{<} Inertial Measurement Unit (Accelerometer/\+Gyroscope)
+
+\texorpdfstring{$<$}{<} Microphone

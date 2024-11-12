@@ -1,0 +1,74 @@
+\doxysection{em\+\_\+ramfunc.\+h}
+\hypertarget{em__ramfunc_8h_source}{}\label{em__ramfunc_8h_source}\index{snake/gecko\_sdk\_4.4.4/platform/emlib/inc/em\_ramfunc.h@{snake/gecko\_sdk\_4.4.4/platform/emlib/inc/em\_ramfunc.h}}
+\mbox{\hyperlink{em__ramfunc_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#ifndef\ EM\_RAMFUNC\_H}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ EM\_RAMFUNC\_H}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00035\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{comment}{/*\ *INDENT-\/OFF*\ */}}
+\DoxyCodeLine{00039\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00093\ \textcolor{comment}{/*\ *INDENT-\/ON*\ */}}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{00096\ \textcolor{comment}{\ ******************************\ \ \ DEFINES\ \ \ \ ***********************************}}
+\DoxyCodeLine{00097\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\#if\ defined(DOXY\_DOC\_ONLY)}}
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\#define\ SL\_RAMFUNC\_DISABLE}}
+\DoxyCodeLine{00110\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#if\ defined(SL\_RAMFUNC\_DISABLE)}}
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#define\ SL\_RAMFUNC\_DECLARATOR}}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00117\ \textcolor{preprocessor}{\#define\ SL\_RAMFUNC\_DEFINITION\_BEGIN}}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00120\ \textcolor{preprocessor}{\#define\ SL\_RAMFUNC\_DEFINITION\_END}}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \textcolor{preprocessor}{\#elif\ defined(\_\_CC\_ARM)}}
+\DoxyCodeLine{00123\ \textcolor{comment}{/*\ MDK-\/ARM\ compiler\ */}}
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\#define\ SL\_RAMFUNC\_DECLARATOR}}
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\#define\ SL\_RAMFUNC\_DEFINITION\_BEGIN\ \ \ \ \_Pragma("{}arm\ section\ code=\(\backslash\)"{}ram\_code\(\backslash\)"{}"{})}}
+\DoxyCodeLine{00126\ \textcolor{preprocessor}{\#define\ SL\_RAMFUNC\_DEFINITION\_END\ \ \ \ \ \ \_Pragma("{}arm\ section\ code"{})}}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\#elif\ defined(\_\_ICCARM\_\_)}}
+\DoxyCodeLine{00129\ \textcolor{comment}{/*\ IAR\ Embedded\ Workbench\ */}}
+\DoxyCodeLine{00130\ \textcolor{preprocessor}{\#define\ SL\_RAMFUNC\_DECLARATOR\ \ \ \ \ \ \ \ \ \ \_\_ramfunc}}
+\DoxyCodeLine{00131\ \textcolor{preprocessor}{\#define\ SL\_RAMFUNC\_DEFINITION\_BEGIN\ \ \ \ SL\_RAMFUNC\_DECLARATOR}}
+\DoxyCodeLine{00132\ \textcolor{preprocessor}{\#define\ SL\_RAMFUNC\_DEFINITION\_END}}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \textcolor{preprocessor}{\#elif\ defined(\_\_GNUC\_\_)\ \&\&\ (defined(\_\_CROSSWORKS\_ARM)\ ||\ defined(\_\_SES\_ARM))}}
+\DoxyCodeLine{00135\ \textcolor{comment}{/*\ Rowley\ Crossworks\ and\ Segger\ Embedded\ Studio\ */}}
+\DoxyCodeLine{00136\ \textcolor{preprocessor}{\#define\ SL\_RAMFUNC\_DECLARATOR\ \ \ \ \ \ \ \ \ \ \_\_attribute\_\_\ ((section("{}.fast"{})))}}
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\#define\ SL\_RAMFUNC\_DEFINITION\_BEGIN\ \ \ \ SL\_RAMFUNC\_DECLARATOR}}
+\DoxyCodeLine{00138\ \textcolor{preprocessor}{\#define\ SL\_RAMFUNC\_DEFINITION\_END}}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \textcolor{preprocessor}{\#elif\ defined(\_\_GNUC\_\_)\ \&\&\ defined(CONFIG\_SOC\_FAMILY\_EXX32)}}
+\DoxyCodeLine{00141\ \textcolor{comment}{/*\ Zephyr\ environment\ */}}
+\DoxyCodeLine{00142\ \textcolor{preprocessor}{\#define\ SL\_RAMFUNC\_DECLARATOR\ \ \ \ \ \ \ \ \ \ \_\_attribute\_\_\ ((section("{}.ramfunc"{})))}}
+\DoxyCodeLine{00143\ \textcolor{preprocessor}{\#define\ SL\_RAMFUNC\_DEFINITION\_BEGIN\ \ \ \ SL\_RAMFUNC\_DECLARATOR}}
+\DoxyCodeLine{00144\ \textcolor{preprocessor}{\#define\ SL\_RAMFUNC\_DEFINITION\_END}}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \textcolor{preprocessor}{\#elif\ defined(\_\_GNUC\_\_)}}
+\DoxyCodeLine{00147\ \textcolor{comment}{/*\ Simplicity\ Studio,\ Atollic\ and\ Vanilla\ armgcc\ */}}
+\DoxyCodeLine{00148\ \textcolor{preprocessor}{\#define\ SL\_RAMFUNC\_DECLARATOR\ \ \ \ \ \ \ \ \ \ \_\_attribute\_\_\ ((section("{}.ram"{})))}}
+\DoxyCodeLine{00149\ \textcolor{preprocessor}{\#define\ SL\_RAMFUNC\_DEFINITION\_BEGIN\ \ \ \ SL\_RAMFUNC\_DECLARATOR}}
+\DoxyCodeLine{00150\ \textcolor{preprocessor}{\#define\ SL\_RAMFUNC\_DEFINITION\_END}}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00155\ \textcolor{comment}{/*\ Deprecated\ macro\ names\ */}}
+\DoxyCodeLine{00156\ \textcolor{preprocessor}{\#define\ RAMFUNC\_DECLARATOR\ \ \ \ \ \ \ \ \ \ SL\_RAMFUNC\_DECLARATOR}}
+\DoxyCodeLine{00157\ \textcolor{preprocessor}{\#define\ RAMFUNC\_DEFINITION\_BEGIN\ \ \ \ SL\_RAMFUNC\_DEFINITION\_BEGIN}}
+\DoxyCodeLine{00158\ \textcolor{preprocessor}{\#define\ RAMFUNC\_DEFINITION\_END\ \ \ \ \ \ SL\_RAMFUNC\_DEFINITION\_END}}
+\DoxyCodeLine{00163\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00164\ \}}
+\DoxyCodeLine{00165\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00166\ }
+\DoxyCodeLine{00167\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ EM\_RAMFUNC\_H\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

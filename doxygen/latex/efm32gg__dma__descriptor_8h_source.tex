@@ -1,0 +1,23 @@
+\doxysection{efm32gg\+\_\+dma\+\_\+descriptor.\+h}
+\hypertarget{efm32gg__dma__descriptor_8h_source}{}\label{efm32gg__dma__descriptor_8h_source}\index{snake/gecko\_sdk\_4.4.4/platform/Device/SiliconLabs/EFM32GG/Include/efm32gg\_dma\_descriptor.h@{snake/gecko\_sdk\_4.4.4/platform/Device/SiliconLabs/EFM32GG/Include/efm32gg\_dma\_descriptor.h}}
+\mbox{\hyperlink{efm32gg__dma__descriptor_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#if\ defined(\_\_ICCARM\_\_)}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#pragma\ system\_include\ \ \ \ \ \ \ }\textcolor{comment}{/*\ Treat\ file\ as\ system\ include\ file.\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#elif\ defined(\_\_ARMCC\_VERSION)\ \&\&\ (\_\_ARMCC\_VERSION\ >=\ 6010050)}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#pragma\ clang\ system\_header\ \ }\textcolor{comment}{/*\ Treat\ file\ as\ system\ include\ file.\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00041\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00045\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00046\ \ \ \textcolor{comment}{/*\ Note!\ Use\ of\ double\ \_\_IOM\ (volatile)\ qualifier\ to\ ensure\ that\ both\ */}}
+\DoxyCodeLine{00047\ \ \ \textcolor{comment}{/*\ pointer\ and\ referenced\ memory\ are\ declared\ volatile.\ */}}
+\DoxyCodeLine{00048\ \ \ \_\_IOM\ \textcolor{keywordtype}{void}\ *\ \_\_IOM\ \mbox{\hyperlink{struct_d_m_a___d_e_s_c_r_i_p_t_o_r___type_def_af9b9a56ee217269df715c20c69505495}{SRCEND}};\ \ \ }
+\DoxyCodeLine{00049\ \ \ \_\_IOM\ \textcolor{keywordtype}{void}\ *\ \_\_IOM\ \mbox{\hyperlink{struct_d_m_a___d_e_s_c_r_i_p_t_o_r___type_def_a11b380df74d0c41e7e9dd82ee03b2c85}{DSTEND}};\ \ \ }
+\DoxyCodeLine{00050\ \ \ \_\_IOM\ uint32\_t\ \ \ \ \ \mbox{\hyperlink{struct_d_m_a___d_e_s_c_r_i_p_t_o_r___type_def_afa34eed41d18b89292e46f58eb7e8244}{CTRL}};\ \ \ \ \ }
+\DoxyCodeLine{00051\ \ \ \_\_IOM\ uint32\_t\ \ \ \ \ \mbox{\hyperlink{struct_d_m_a___d_e_s_c_r_i_p_t_o_r___type_def_ac59f4a979eb4f3eac7204af103cf8bea}{USER}};\ \ \ \ \ }
+\DoxyCodeLine{00052\ \}\ \mbox{\hyperlink{struct_d_m_a___d_e_s_c_r_i_p_t_o_r___type_def}{DMA\_DESCRIPTOR\_TypeDef}};\ \ \ \ \ \ }
+
+\end{DoxyCode}

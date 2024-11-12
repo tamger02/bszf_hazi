@@ -1,0 +1,1330 @@
+\doxysection{em\+\_\+emu.\+h}
+\hypertarget{em__emu_8h_source}{}\label{em__emu_8h_source}\index{snake/gecko\_sdk\_4.4.4/platform/emlib/inc/em\_emu.h@{snake/gecko\_sdk\_4.4.4/platform/emlib/inc/em\_emu.h}}
+\mbox{\hyperlink{em__emu_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#ifndef\ EM\_EMU\_H}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ EM\_EMU\_H}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{em__device_8h}{em\_device.h}}"{}}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ "{}sl\_status.h"{}}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#if\ defined(EMU\_PRESENT)}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{em__bus_8h}{em\_bus.h}}"{}}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{sl__common_8h}{sl\_common.h}}"{}}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00043\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00051\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{00052\ \textcolor{comment}{\ *******************************\ \ \ DEFINES\ \ \ ***********************************}}
+\DoxyCodeLine{00053\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#if\ (defined(\_EMU\_STATUS\_VSCALE\_MASK)\ ||\ defined(\_EMU\_CTRL\_EM23VSCALE\_MASK))\ \(\backslash\)}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\ \ \&\&\ !defined(\_SILICON\_LABS\_GECKO\_INTERNAL\_SDID\_200)}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#define\ EMU\_VSCALE\_PRESENT}}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#if\ !defined(\_SILICON\_LABS\_32B\_SERIES\_2\_CONFIG\_5)}}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#define\ EMU\_VSCALE\_EM01\_PRESENT}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_DCDCCTRL\_MASK)}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#define\ EMU\_SERIES1\_DCDC\_BUCK\_PRESENT}}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#if\ defined(\_SILICON\_LABS\_DCDC\_FEATURE)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\ \ \&\&\ ((\_SILICON\_LABS\_DCDC\_FEATURE\ ==\ \_SILICON\_LABS\_DCDC\_FEATURE\_DCDC\_BUCK)\ \(\backslash\)}}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\ \ ||\ (\_SILICON\_LABS\_DCDC\_FEATURE\ ==\ \_SILICON\_LABS\_DCDC\_FEATURE\_DCDC\_BOB))}}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#define\ EMU\_SERIES2\_DCDC\_BUCK\_PRESENT}}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#if\ defined(\_SILICON\_LABS\_DCDC\_FEATURE)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\ \ \&\&\ ((\_SILICON\_LABS\_DCDC\_FEATURE\ ==\ \_SILICON\_LABS\_DCDC\_FEATURE\_DCDC\_BOOST)\ \(\backslash\)}}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\ \ ||\ (\_SILICON\_LABS\_DCDC\_FEATURE\ ==\ \_SILICON\_LABS\_DCDC\_FEATURE\_DCDC\_BOB))}}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#define\ EMU\_SERIES2\_DCDC\_BOOST\_PRESENT}}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{00085\ \textcolor{comment}{\ ********************************\ \ \ ENUMS\ \ \ ************************************}}
+\DoxyCodeLine{00086\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_EM4CONF\_OSC\_MASK)}}
+\DoxyCodeLine{00090\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00092\ \ \ emuEM4Osc\_ULFRCO\ =\ \mbox{\hyperlink{group___e_f_m32_g_g___e_m_u___bit_fields_ga2776e17ca46e75f9260792507502f798}{EMU\_EM4CONF\_OSC\_ULFRCO}},}
+\DoxyCodeLine{00094\ \ \ emuEM4Osc\_LFXO\ =\ \mbox{\hyperlink{group___e_f_m32_g_g___e_m_u___bit_fields_ga6b5f335392b8ecdb0d0b6d171a150268}{EMU\_EM4CONF\_OSC\_LFXO}},}
+\DoxyCodeLine{00096\ \ \ emuEM4Osc\_LFRCO\ =\ \mbox{\hyperlink{group___e_f_m32_g_g___e_m_u___bit_fields_ga2f66334ef9ac0e5abbbcd45685fbb93b}{EMU\_EM4CONF\_OSC\_LFRCO}}}
+\DoxyCodeLine{00097\ \}\ EMU\_EM4Osc\_TypeDef;}
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_BUCTRL\_PROBE\_MASK)}}
+\DoxyCodeLine{00102\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00104\ \ \ emuProbe\_Disable\ =\ \mbox{\hyperlink{group___e_f_m32_g_g___e_m_u___bit_fields_ga2748aba9a4dc86647ebfad2d25bd4792}{EMU\_BUCTRL\_PROBE\_DISABLE}},}
+\DoxyCodeLine{00106\ \ \ emuProbe\_VDDDReg\ =\ \mbox{\hyperlink{group___e_f_m32_g_g___e_m_u___bit_fields_gac9e2fdf9fe098a3b1bf3c421a0e85333}{EMU\_BUCTRL\_PROBE\_VDDDREG}},}
+\DoxyCodeLine{00108\ \ \ emuProbe\_BUIN\ \ \ \ =\ \mbox{\hyperlink{group___e_f_m32_g_g___e_m_u___bit_fields_ga8da7897329dbd63fee1621b43fa01868}{EMU\_BUCTRL\_PROBE\_BUIN}},}
+\DoxyCodeLine{00110\ \ \ emuProbe\_BUOUT\ \ \ =\ \mbox{\hyperlink{group___e_f_m32_g_g___e_m_u___bit_fields_ga0af9e77261e7240b1ad174d2d96a2378}{EMU\_BUCTRL\_PROBE\_BUOUT}}}
+\DoxyCodeLine{00111\ \}\ EMU\_Probe\_TypeDef;}
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_PWRCONF\_PWRRES\_MASK)}}
+\DoxyCodeLine{00116\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00118\ \ \ emuRes\_Res0\ =\ \mbox{\hyperlink{group___e_f_m32_g_g___e_m_u___bit_fields_gae7ffcc5c16e5246ae39720c603b4124d}{EMU\_PWRCONF\_PWRRES\_RES0}},}
+\DoxyCodeLine{00120\ \ \ emuRes\_Res1\ =\ \mbox{\hyperlink{group___e_f_m32_g_g___e_m_u___bit_fields_ga9649b38000a7f859d412542e190734d9}{EMU\_PWRCONF\_PWRRES\_RES1}},}
+\DoxyCodeLine{00122\ \ \ emuRes\_Res2\ =\ \mbox{\hyperlink{group___e_f_m32_g_g___e_m_u___bit_fields_ga0aa1d3775f2a4a99b027f6050e722d03}{EMU\_PWRCONF\_PWRRES\_RES2}},}
+\DoxyCodeLine{00124\ \ \ emuRes\_Res3\ =\ \mbox{\hyperlink{group___e_f_m32_g_g___e_m_u___bit_fields_ga27a0e69cefaa53f7c06d11e8d65a943f}{EMU\_PWRCONF\_PWRRES\_RES3}},}
+\DoxyCodeLine{00125\ \}\ EMU\_Resistor\_TypeDef;}
+\DoxyCodeLine{00126\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\#if\ defined(BU\_PRESENT)\ \&\&\ defined(\_SILICON\_LABS\_32B\_SERIES\_0)}}
+\DoxyCodeLine{00130\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00132\ \ \ emuPower\_None\ =\ \mbox{\hyperlink{group___e_f_m32_g_g___e_m_u___bit_fields_gabc517db7bfd9d454de3fba2169fb90a9}{EMU\_BUINACT\_PWRCON\_NONE}},}
+\DoxyCodeLine{00135\ \ \ emuPower\_BUMain\ =\ \mbox{\hyperlink{group___e_f_m32_g_g___e_m_u___bit_fields_gaa2b0ae322b3d97ead9daa5ff6cc29a01}{EMU\_BUINACT\_PWRCON\_BUMAIN}},}
+\DoxyCodeLine{00138\ \ \ emuPower\_MainBU\ =\ \mbox{\hyperlink{group___e_f_m32_g_g___e_m_u___bit_fields_ga5c54e959ab8eccb03512f381d67e2762}{EMU\_BUINACT\_PWRCON\_MAINBU}},}
+\DoxyCodeLine{00140\ \ \ emuPower\_NoDiode\ =\ \mbox{\hyperlink{group___e_f_m32_g_g___e_m_u___bit_fields_ga6a23dbe8897e5c097789e26ee2381894}{EMU\_BUINACT\_PWRCON\_NODIODE}},}
+\DoxyCodeLine{00141\ \}\ EMU\_Power\_TypeDef;}
+\DoxyCodeLine{00142\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_BUCTRL\_BUINACTPWRCON\_MASK)}}
+\DoxyCodeLine{00146\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00148\ \ \ emuBuBuInactPwrCon\_None\ \ \ \ =\ EMU\_BUCTRL\_BUINACTPWRCON\_NONE,}
+\DoxyCodeLine{00150\ \ \ emuBuBuInactPwrCon\_MainBu\ \ =\ EMU\_BUCTRL\_BUINACTPWRCON\_MAINBU,}
+\DoxyCodeLine{00152\ \ \ emuBuBuInactPwrCon\_BuMain\ \ =\ EMU\_BUCTRL\_BUINACTPWRCON\_BUMAIN,}
+\DoxyCodeLine{00154\ \ \ emuBuBuInactPwrCon\_NoDiode\ =\ EMU\_BUCTRL\_BUINACTPWRCON\_NODIODE,}
+\DoxyCodeLine{00155\ \}\ EMU\_BUBuInactPwrCon\_TypeDef;}
+\DoxyCodeLine{00156\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_BUCTRL\_BUACTPWRCON\_MASK)}}
+\DoxyCodeLine{00160\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00162\ \ \ emuBuBuActPwrCon\_None\ \ \ \ =\ EMU\_BUCTRL\_BUACTPWRCON\_NONE,}
+\DoxyCodeLine{00164\ \ \ emuBuBuActPwrCon\_MainBu\ \ =\ EMU\_BUCTRL\_BUACTPWRCON\_MAINBU,}
+\DoxyCodeLine{00166\ \ \ emuBuBuActPwrCon\_BuMain\ \ =\ EMU\_BUCTRL\_BUACTPWRCON\_BUMAIN,}
+\DoxyCodeLine{00168\ \ \ emuBuBuActPwrCon\_NoDiode\ =\ EMU\_BUCTRL\_BUACTPWRCON\_NODIODE,}
+\DoxyCodeLine{00169\ \}\ EMU\_BUBuActPwrCon\_TypeDef;}
+\DoxyCodeLine{00170\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00172\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_BUCTRL\_PWRRES\_MASK)}}
+\DoxyCodeLine{00174\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00176\ \ \ emuBuPwrRes\_Res0\ =\ EMU\_BUCTRL\_PWRRES\_RES0,}
+\DoxyCodeLine{00178\ \ \ emuBuPwrRes\_Res1\ =\ EMU\_BUCTRL\_PWRRES\_RES1,}
+\DoxyCodeLine{00180\ \ \ emuBuPwrRes\_Res2\ =\ EMU\_BUCTRL\_PWRRES\_RES2,}
+\DoxyCodeLine{00182\ \ \ emuBuPwrRes\_Res3\ =\ EMU\_BUCTRL\_PWRRES\_RES3,}
+\DoxyCodeLine{00183\ \}\ EMU\_BUPwrRes\_TypeDef;}
+\DoxyCodeLine{00184\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00185\ }
+\DoxyCodeLine{00186\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_BUCTRL\_VOUTRES\_MASK)}}
+\DoxyCodeLine{00188\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00190\ \ \ emuBuVoutRes\_Dis\ =\ EMU\_BUCTRL\_VOUTRES\_DIS,}
+\DoxyCodeLine{00192\ \ \ emuBuVoutRes\_Weak\ =\ EMU\_BUCTRL\_VOUTRES\_WEAK,}
+\DoxyCodeLine{00194\ \ \ emuBuVoutRes\_Med\ =\ EMU\_BUCTRL\_VOUTRES\_MED,}
+\DoxyCodeLine{00196\ \ \ emuBuVoutRes\_Strong\ =\ EMU\_BUCTRL\_VOUTRES\_STRONG,}
+\DoxyCodeLine{00197\ \}\ EMU\_BUVoutRes\_TypeDef;}
+\DoxyCodeLine{00198\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00199\ }
+\DoxyCodeLine{00201\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00203\ \ \ emuBODMode\_Active,}
+\DoxyCodeLine{00205\ \ \ emuBODMode\_Inactive,}
+\DoxyCodeLine{00206\ \}\ EMU\_BODMode\_TypeDef;}
+\DoxyCodeLine{00207\ }
+\DoxyCodeLine{00209\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00211\ \ \ emuEM4Shutoff\ \ \ =\ 0,}
+\DoxyCodeLine{00213\ \ \ emuEM4Hibernate\ =\ 1,}
+\DoxyCodeLine{00214\ \}\ EMU\_EM4State\_TypeDef;}
+\DoxyCodeLine{00215\ }
+\DoxyCodeLine{00216\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_EM4CTRL\_EM4IORETMODE\_MASK)}}
+\DoxyCodeLine{00218\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00220\ \ \ emuPinRetentionDisable\ =\ EMU\_EM4CTRL\_EM4IORETMODE\_DISABLE,}
+\DoxyCodeLine{00222\ \ \ emuPinRetentionEm4Exit\ =\ EMU\_EM4CTRL\_EM4IORETMODE\_EM4EXIT,}
+\DoxyCodeLine{00225\ \ \ emuPinRetentionLatch\ \ \ =\ EMU\_EM4CTRL\_EM4IORETMODE\_SWUNLATCH,}
+\DoxyCodeLine{00226\ \}\ EMU\_EM4PinRetention\_TypeDef;}
+\DoxyCodeLine{00227\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00228\ }
+\DoxyCodeLine{00230\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00232\ \ \ emuPowerConfig\_DcdcToDvdd,}
+\DoxyCodeLine{00233\ \}\ EMU\_PowerConfig\_TypeDef;}
+\DoxyCodeLine{00234\ }
+\DoxyCodeLine{00235\ \textcolor{preprocessor}{\#if\ defined(EMU\_SERIES1\_DCDC\_BUCK\_PRESENT)}}
+\DoxyCodeLine{00237\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00239\ \ \ emuDcdcMode\_Bypass\ =\ EMU\_DCDCCTRL\_DCDCMODE\_BYPASS,}
+\DoxyCodeLine{00241\ \ \ emuDcdcMode\_LowNoise\ =\ EMU\_DCDCCTRL\_DCDCMODE\_LOWNOISE,}
+\DoxyCodeLine{00242\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_DCDCLPEM01CFG\_MASK)}}
+\DoxyCodeLine{00244\ \ \ emuDcdcMode\_LowPower\ =\ EMU\_DCDCCTRL\_DCDCMODE\_LOWPOWER,}
+\DoxyCodeLine{00245\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00246\ \}\ EMU\_DcdcMode\_TypeDef;}
+\DoxyCodeLine{00247\ }
+\DoxyCodeLine{00249\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00251\ \ \ emuDcdcModeEM23\_LowPower\ =\ EMU\_DCDCCTRL\_DCDCMODEEM23\_EM23LOWPOWER,}
+\DoxyCodeLine{00253\ \ \ emuDcdcModeEM23\_Sw\ =\ EMU\_DCDCCTRL\_DCDCMODEEM23\_EM23SW,}
+\DoxyCodeLine{00254\ \}\ EMU\_DcdcModeEM23\_TypeDef;}
+\DoxyCodeLine{00255\ }
+\DoxyCodeLine{00256\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00257\ }
+\DoxyCodeLine{00258\ \textcolor{preprocessor}{\#if\ defined(EMU\_SERIES1\_DCDC\_BUCK\_PRESENT)}}
+\DoxyCodeLine{00260\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00263\ \ \ emuDcdcConductionMode\_ContinuousLN,}
+\DoxyCodeLine{00266\ \ \ emuDcdcConductionMode\_DiscontinuousLN,}
+\DoxyCodeLine{00267\ \}\ EMU\_DcdcConductionMode\_TypeDef;}
+\DoxyCodeLine{00268\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00269\ }
+\DoxyCodeLine{00270\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_PWRCTRL\_MASK)}}
+\DoxyCodeLine{00272\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00274\ \ \ emuDcdcAnaPeripheralPower\_AVDD\ =\ EMU\_PWRCTRL\_ANASW\_AVDD,}
+\DoxyCodeLine{00276\ \ \ emuDcdcAnaPeripheralPower\_DCDC\ =\ EMU\_PWRCTRL\_ANASW\_DVDD}
+\DoxyCodeLine{00277\ \}\ EMU\_DcdcAnaPeripheralPower\_TypeDef;}
+\DoxyCodeLine{00278\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00279\ }
+\DoxyCodeLine{00280\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_DCDCMISCCTRL\_MASK)}}
+\DoxyCodeLine{00282\ \textcolor{keyword}{typedef}\ int16\_t\ EMU\_DcdcLnReverseCurrentControl\_TypeDef;}
+\DoxyCodeLine{00283\ }
+\DoxyCodeLine{00285\ \textcolor{preprocessor}{\#define\ emuDcdcLnHighEfficiency\ \ \ \ \ \ \ -\/1}}
+\DoxyCodeLine{00286\ }
+\DoxyCodeLine{00288\ \textcolor{preprocessor}{\#define\ emuDcdcLnFastTransient\ \ \ \ \ \ \ \ \ 160}}
+\DoxyCodeLine{00289\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00290\ }
+\DoxyCodeLine{00291\ \textcolor{preprocessor}{\#if\ defined(EMU\_SERIES1\_DCDC\_BUCK\_PRESENT)}}
+\DoxyCodeLine{00293\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00295\ \ \ emuDcdcLnRcoBand\_3MHz\ =\ 0,}
+\DoxyCodeLine{00297\ \ \ emuDcdcLnRcoBand\_4MHz\ =\ 1,}
+\DoxyCodeLine{00299\ \ \ emuDcdcLnRcoBand\_5MHz\ =\ 2,}
+\DoxyCodeLine{00301\ \ \ emuDcdcLnRcoBand\_6MHz\ =\ 3,}
+\DoxyCodeLine{00303\ \ \ emuDcdcLnRcoBand\_7MHz\ =\ 4,}
+\DoxyCodeLine{00305\ \ \ emuDcdcLnRcoBand\_8MHz\ =\ 5,}
+\DoxyCodeLine{00307\ \ \ emuDcdcLnRcoBand\_9MHz\ =\ 6,}
+\DoxyCodeLine{00309\ \ \ emuDcdcLnRcoBand\_10MHz\ =\ 7,}
+\DoxyCodeLine{00310\ \}\ EMU\_DcdcLnRcoBand\_TypeDef;}
+\DoxyCodeLine{00311\ }
+\DoxyCodeLine{00313\ \textcolor{comment}{/*\ Deprecated.\ */}}
+\DoxyCodeLine{00314\ \textcolor{preprocessor}{\#define\ EMU\_DcdcLnRcoBand\_3MHz\ \ \ \ \ \ \ \ \ \ emuDcdcLnRcoBand\_3MHz}}
+\DoxyCodeLine{00315\ \textcolor{preprocessor}{\#define\ EMU\_DcdcLnRcoBand\_4MHz\ \ \ \ \ \ \ \ \ \ emuDcdcLnRcoBand\_4MHz}}
+\DoxyCodeLine{00316\ \textcolor{preprocessor}{\#define\ EMU\_DcdcLnRcoBand\_5MHz\ \ \ \ \ \ \ \ \ \ emuDcdcLnRcoBand\_5MHz}}
+\DoxyCodeLine{00317\ \textcolor{preprocessor}{\#define\ EMU\_DcdcLnRcoBand\_6MHz\ \ \ \ \ \ \ \ \ \ emuDcdcLnRcoBand\_6MHz}}
+\DoxyCodeLine{00318\ \textcolor{preprocessor}{\#define\ EMU\_DcdcLnRcoBand\_7MHz\ \ \ \ \ \ \ \ \ \ emuDcdcLnRcoBand\_7MHz}}
+\DoxyCodeLine{00319\ \textcolor{preprocessor}{\#define\ EMU\_DcdcLnRcoBand\_8MHz\ \ \ \ \ \ \ \ \ \ emuDcdcLnRcoBand\_8MHz}}
+\DoxyCodeLine{00320\ \textcolor{preprocessor}{\#define\ EMU\_DcdcLnRcoBand\_9MHz\ \ \ \ \ \ \ \ \ \ emuDcdcLnRcoBand\_9MHz}}
+\DoxyCodeLine{00321\ \textcolor{preprocessor}{\#define\ EMU\_DcdcLnRcoBand\_10MHz\ \ \ \ \ \ \ \ \ emuDcdcLnRcoBand\_10MHz}}
+\DoxyCodeLine{00325\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00327\ \ \ emuDcdcLnCompCtrl\_1u0F,}
+\DoxyCodeLine{00329\ \ \ emuDcdcLnCompCtrl\_4u7F,}
+\DoxyCodeLine{00330\ \}\ EMU\_DcdcLnCompCtrl\_TypeDef;}
+\DoxyCodeLine{00331\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ EMU\_SERIES1\_DCDC\_BUCK\_PRESENT\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00332\ }
+\DoxyCodeLine{00333\ \textcolor{preprocessor}{\#if\ defined(EMU\_SERIES2\_DCDC\_BUCK\_PRESENT)\ \(\backslash\)}}
+\DoxyCodeLine{00334\ \textcolor{preprocessor}{\ \ ||\ defined(EMU\_SERIES2\_DCDC\_BOOST\_PRESENT)}}
+\DoxyCodeLine{00335\ }
+\DoxyCodeLine{00337\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00338\ \ \ emuDcdcMode\_Bypass\ \ \ \ \ =\ \_DCDC\_CTRL\_MODE\_BYPASS,\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00339\ \ \ emuDcdcMode\_Regulation\ =\ \_DCDC\_CTRL\_MODE\_DCDCREGULATION\ \ \ \ \ }
+\DoxyCodeLine{00340\ \}\ EMU\_DcdcMode\_TypeDef;}
+\DoxyCodeLine{00341\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00342\ }
+\DoxyCodeLine{00343\ \textcolor{preprocessor}{\#if\ defined(EMU\_SERIES2\_DCDC\_BUCK\_PRESENT)}}
+\DoxyCodeLine{00345\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00346\ \ \ emuVreginCmpThreshold\_2v0\ =\ 0,\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00347\ \ \ emuVreginCmpThreshold\_2v1\ =\ 1,\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00348\ \ \ emuVreginCmpThreshold\_2v2\ =\ 2,\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00349\ \ \ emuVreginCmpThreshold\_2v3\ =\ 3\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00350\ \}\ EMU\_VreginCmpThreshold\_TypeDef;}
+\DoxyCodeLine{00351\ }
+\DoxyCodeLine{00353\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00354\ \textcolor{preprocessor}{\#if\ (defined(\_SILICON\_LABS\_32B\_SERIES\_2\_CONFIG\_2)\ \(\backslash\)}}
+\DoxyCodeLine{00355\ \textcolor{preprocessor}{\ \ ||\ defined(\_SILICON\_LABS\_32B\_SERIES\_2\_CONFIG\_7))}}
+\DoxyCodeLine{00356\ \ \ emuDcdcTonMaxTimeout\_Off\ \ \ \ =\ \_DCDC\_CTRL\_IPKTMAXCTRL\_OFF,\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00357\ \ \ emuDcdcTonMaxTimeout\_0P35us\ =\ \_DCDC\_CTRL\_IPKTMAXCTRL\_TMAX\_0P35us,\ }
+\DoxyCodeLine{00358\ \ \ emuDcdcTonMaxTimeout\_0P63us\ =\ \_DCDC\_CTRL\_IPKTMAXCTRL\_TMAX\_0P63us,\ }
+\DoxyCodeLine{00359\ \ \ emuDcdcTonMaxTimeout\_0P91us\ =\ \_DCDC\_CTRL\_IPKTMAXCTRL\_TMAX\_0P91us,\ }
+\DoxyCodeLine{00360\ \ \ emuDcdcTonMaxTimeout\_1P19us\ =\ \_DCDC\_CTRL\_IPKTMAXCTRL\_TMAX\_1P19us,\ }
+\DoxyCodeLine{00361\ \ \ emuDcdcTonMaxTimeout\_1P47us\ =\ \_DCDC\_CTRL\_IPKTMAXCTRL\_TMAX\_1P47us,\ }
+\DoxyCodeLine{00362\ \ \ emuDcdcTonMaxTimeout\_1P75us\ =\ \_DCDC\_CTRL\_IPKTMAXCTRL\_TMAX\_1P75us,\ }
+\DoxyCodeLine{00363\ \ \ emuDcdcTonMaxTimeout\_2P03us\ =\ \_DCDC\_CTRL\_IPKTMAXCTRL\_TMAX\_2P03us\ \ }
+\DoxyCodeLine{00364\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00365\ \ \ emuDcdcTonMaxTimeout\_Off\ \ \ \ =\ 0,\ }
+\DoxyCodeLine{00366\ \ \ emuDcdcTonMaxTimeout\_0P14us\ =\ 1,\ }
+\DoxyCodeLine{00367\ \ \ emuDcdcTonMaxTimeout\_0P21us\ =\ 2,\ }
+\DoxyCodeLine{00368\ \ \ emuDcdcTonMaxTimeout\_0P28us\ =\ 3,\ }
+\DoxyCodeLine{00369\ \ \ emuDcdcTonMaxTimeout\_0P35us\ =\ 4,\ }
+\DoxyCodeLine{00370\ \ \ emuDcdcTonMaxTimeout\_0P42us\ =\ 5,\ }
+\DoxyCodeLine{00371\ \ \ emuDcdcTonMaxTimeout\_0P49us\ =\ 6,\ }
+\DoxyCodeLine{00372\ \ \ emuDcdcTonMaxTimeout\_0P56us\ =\ 7,\ }
+\DoxyCodeLine{00373\ \ \ emuDcdcTonMaxTimeout\_0P63us\ =\ 8,\ }
+\DoxyCodeLine{00374\ \ \ emuDcdcTonMaxTimeout\_0P70us\ =\ 9,\ }
+\DoxyCodeLine{00375\ \ \ emuDcdcTonMaxTimeout\_0P77us\ =\ 10,\ }
+\DoxyCodeLine{00376\ \ \ emuDcdcTonMaxTimeout\_0P84us\ =\ 11,\ }
+\DoxyCodeLine{00377\ \ \ emuDcdcTonMaxTimeout\_0P91us\ =\ 12,\ }
+\DoxyCodeLine{00378\ \ \ emuDcdcTonMaxTimeout\_0P98us\ =\ 13,\ }
+\DoxyCodeLine{00379\ \ \ emuDcdcTonMaxTimeout\_1P05us\ =\ 14,\ }
+\DoxyCodeLine{00380\ \ \ emuDcdcTonMaxTimeout\_1P12us\ =\ 15,\ }
+\DoxyCodeLine{00381\ \ \ emuDcdcTonMaxTimeout\_1P19us\ =\ 16,\ }
+\DoxyCodeLine{00382\ \ \ emuDcdcTonMaxTimeout\_1P26us\ =\ 17,\ }
+\DoxyCodeLine{00383\ \ \ emuDcdcTonMaxTimeout\_1P33us\ =\ 18,\ }
+\DoxyCodeLine{00384\ \ \ emuDcdcTonMaxTimeout\_1P40us\ =\ 19,\ }
+\DoxyCodeLine{00385\ \ \ emuDcdcTonMaxTimeout\_1P47us\ =\ 20,\ }
+\DoxyCodeLine{00386\ \ \ emuDcdcTonMaxTimeout\_1P54us\ =\ 21,\ }
+\DoxyCodeLine{00387\ \ \ emuDcdcTonMaxTimeout\_1P61us\ =\ 22,\ }
+\DoxyCodeLine{00388\ \ \ emuDcdcTonMaxTimeout\_1P68us\ =\ 23,\ }
+\DoxyCodeLine{00389\ \ \ emuDcdcTonMaxTimeout\_1P75us\ =\ 24,\ }
+\DoxyCodeLine{00390\ \ \ emuDcdcTonMaxTimeout\_1P82us\ =\ 25,\ }
+\DoxyCodeLine{00391\ \ \ emuDcdcTonMaxTimeout\_1P89us\ =\ 26,\ }
+\DoxyCodeLine{00392\ \ \ emuDcdcTonMaxTimeout\_1P96us\ =\ 27,\ }
+\DoxyCodeLine{00393\ \ \ emuDcdcTonMaxTimeout\_2P03us\ =\ 28,\ }
+\DoxyCodeLine{00394\ \ \ emuDcdcTonMaxTimeout\_2P10us\ =\ 29,\ }
+\DoxyCodeLine{00395\ \ \ emuDcdcTonMaxTimeout\_2P17us\ =\ 30,\ }
+\DoxyCodeLine{00396\ \ \ emuDcdcTonMaxTimeout\_2P24us\ =\ 31\ \ }
+\DoxyCodeLine{00397\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00398\ \}\ EMU\_DcdcTonMaxTimeout\_TypeDef;}
+\DoxyCodeLine{00399\ }
+\DoxyCodeLine{00401\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00402\ \ \ emuDcdcDriveSpeed\_BestEmi\ \ \ \ \ \ \ \ =\ \_DCDC\_EM01CTRL0\_DRVSPEED\_DEFAULT\_SETTING,\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00403\ \ \ emuDcdcDriveSpeed\_Default\ \ \ \ \ \ \ \ =\ \_DCDC\_EM01CTRL0\_DRVSPEED\_DEFAULT\_SETTING,\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00404\ \ \ emuDcdcDriveSpeed\_Intermediate\ \ \ =\ \_DCDC\_EM01CTRL0\_DRVSPEED\_DEFAULT\_SETTING,\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00405\ \ \ emuDcdcDriveSpeed\_BestEfficiency\ =\ \_DCDC\_EM01CTRL0\_DRVSPEED\_DEFAULT\_SETTING\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00406\ \}\ EMU\_DcdcDriveSpeed\_TypeDef;}
+\DoxyCodeLine{00407\ }
+\DoxyCodeLine{00409\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00410\ \textcolor{preprocessor}{\#if\ defined(\_DCDC\_EM23CTRL0\_IPKVAL\_Load5mA)}}
+\DoxyCodeLine{00411\ \ \ emuDcdcPeakCurrent\_Load5mA\ \ =\ \_DCDC\_EM23CTRL0\_IPKVAL\_Load5mA,\ \ }
+\DoxyCodeLine{00412\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00413\ \textcolor{preprocessor}{\#if\ defined(\_DCDC\_EM23CTRL0\_IPKVAL\_LOAD5MA)}}
+\DoxyCodeLine{00414\ \ \ emuDcdcPeakCurrent\_Load5mA\ \ =\ \_DCDC\_EM23CTRL0\_IPKVAL\_LOAD5MA,\ \ }
+\DoxyCodeLine{00415\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00416\ \textcolor{preprocessor}{\#if\ defined(\_DCDC\_EM23CTRL0\_IPKVAL\_Load10mA)}}
+\DoxyCodeLine{00417\ \ \ emuDcdcPeakCurrent\_Load10mA\ =\ \_DCDC\_EM23CTRL0\_IPKVAL\_Load10mA,\ }
+\DoxyCodeLine{00418\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00419\ \textcolor{preprocessor}{\#if\ defined(\_DCDC\_EM23CTRL0\_IPKVAL\_LOAD10MA)}}
+\DoxyCodeLine{00420\ \ \ emuDcdcPeakCurrent\_Load10mA\ =\ \_DCDC\_EM23CTRL0\_IPKVAL\_LOAD10MA,\ }
+\DoxyCodeLine{00421\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00422\ \textcolor{preprocessor}{\#if\ defined(\_DCDC\_EM01CTRL0\_IPKVAL\_Load28mA)}}
+\DoxyCodeLine{00423\ \ \ emuDcdcPeakCurrent\_Load28mA\ =\ \_DCDC\_EM01CTRL0\_IPKVAL\_Load28mA,\ }
+\DoxyCodeLine{00424\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00425\ \textcolor{preprocessor}{\#if\ defined(\_DCDC\_EM01CTRL0\_IPKVAL\_Load32mA)}}
+\DoxyCodeLine{00426\ \ \ emuDcdcPeakCurrent\_Load32mA\ =\ \_DCDC\_EM01CTRL0\_IPKVAL\_Load32mA,\ }
+\DoxyCodeLine{00427\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00428\ \textcolor{preprocessor}{\#if\ defined(\_DCDC\_EM01CTRL0\_IPKVAL\_Load36mA)}}
+\DoxyCodeLine{00429\ \ \ emuDcdcPeakCurrent\_Load36mA\ =\ \_DCDC\_EM01CTRL0\_IPKVAL\_Load36mA,\ }
+\DoxyCodeLine{00430\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00431\ \ \ emuDcdcPeakCurrent\_Load40mA\ =\ \_DCDC\_EM01CTRL0\_IPKVAL\_Load40mA,\ }
+\DoxyCodeLine{00432\ \ \ emuDcdcPeakCurrent\_Load44mA\ =\ \_DCDC\_EM01CTRL0\_IPKVAL\_Load44mA,\ }
+\DoxyCodeLine{00433\ \ \ emuDcdcPeakCurrent\_Load48mA\ =\ \_DCDC\_EM01CTRL0\_IPKVAL\_Load48mA,\ }
+\DoxyCodeLine{00434\ \ \ emuDcdcPeakCurrent\_Load52mA\ =\ \_DCDC\_EM01CTRL0\_IPKVAL\_Load52mA,\ }
+\DoxyCodeLine{00435\ \ \ emuDcdcPeakCurrent\_Load56mA\ =\ \_DCDC\_EM01CTRL0\_IPKVAL\_Load56mA,\ }
+\DoxyCodeLine{00436\ \ \ emuDcdcPeakCurrent\_Load60mA\ =\ \_DCDC\_EM01CTRL0\_IPKVAL\_Load60mA,\ }
+\DoxyCodeLine{00437\ \textcolor{preprocessor}{\#if\ defined(\_DCDC\_EM01CTRL0\_IPKVAL\_Load64mA)}}
+\DoxyCodeLine{00438\ \ \ emuDcdcPeakCurrent\_Load64mA\ =\ \_DCDC\_EM01CTRL0\_IPKVAL\_Load64mA,\ }
+\DoxyCodeLine{00439\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00440\ \textcolor{preprocessor}{\#if\ defined(\_DCDC\_EM01CTRL0\_IPKVAL\_Load68mA)}}
+\DoxyCodeLine{00441\ \ \ emuDcdcPeakCurrent\_Load68mA\ =\ \_DCDC\_EM01CTRL0\_IPKVAL\_Load68mA,\ }
+\DoxyCodeLine{00442\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00443\ \textcolor{preprocessor}{\#if\ defined(\_DCDC\_EM01CTRL0\_IPKVAL\_Load72mA)}}
+\DoxyCodeLine{00444\ \ \ emuDcdcPeakCurrent\_Load72mA\ =\ \_DCDC\_EM01CTRL0\_IPKVAL\_Load72mA,\ }
+\DoxyCodeLine{00445\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00446\ \textcolor{preprocessor}{\#if\ defined(\_DCDC\_EM01CTRL0\_IPKVAL\_Load76mA)}}
+\DoxyCodeLine{00447\ \ \ emuDcdcPeakCurrent\_Load76mA\ =\ \_DCDC\_EM01CTRL0\_IPKVAL\_Load76mA,\ }
+\DoxyCodeLine{00448\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00449\ \textcolor{preprocessor}{\#if\ defined(\_DCDC\_EM01CTRL0\_IPKVAL\_Load80mA)}}
+\DoxyCodeLine{00450\ \ \ emuDcdcPeakCurrent\_Load80mA\ =\ \_DCDC\_EM01CTRL0\_IPKVAL\_Load80mA\ \ }
+\DoxyCodeLine{00451\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00452\ \}\ EMU\_DcdcPeakCurrent\_TypeDef;}
+\DoxyCodeLine{00453\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ EMU\_SERIES2\_DCDC\_BUCK\_PRESENT\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00454\ }
+\DoxyCodeLine{00455\ \textcolor{preprocessor}{\#if\ defined(EMU\_SERIES2\_DCDC\_BOOST\_PRESENT)}}
+\DoxyCodeLine{00457\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00458\ \ \ emuDcdcBoostDriveSpeed\_BestEmi\ \ \ \ \ \ \ \ =\ \_DCDC\_BSTEM01CTRL\_DRVSPEED\_DEFAULT\_SETTING,\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00459\ \ \ emuDcdcBoostDriveSpeed\_Default\ \ \ \ \ \ \ \ =\ \_DCDC\_BSTEM01CTRL\_DRVSPEED\_DEFAULT\_SETTING,\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00460\ \ \ emuDcdcBoostDriveSpeed\_Intermediate\ \ \ =\ \_DCDC\_BSTEM01CTRL\_DRVSPEED\_DEFAULT\_SETTING,\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00461\ \ \ emuDcdcBoostDriveSpeed\_BestEfficiency\ =\ \_DCDC\_BSTEM01CTRL\_DRVSPEED\_DEFAULT\_SETTING\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00462\ \}\ EMU\_DcdcBoostDriveSpeed\_TypeDef;}
+\DoxyCodeLine{00463\ }
+\DoxyCodeLine{00465\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00466\ \ \ emuDcdcBoostEM01PeakCurrent\_Load10mA\ =\ \_DCDC\_BSTEM01CTRL\_IPKVAL\_Load10mA,\ }
+\DoxyCodeLine{00467\ \ \ emuDcdcBoostEM01PeakCurrent\_Load11mA\ =\ \_DCDC\_BSTEM01CTRL\_IPKVAL\_Load11mA,\ }
+\DoxyCodeLine{00468\ \ \ emuDcdcBoostEM01PeakCurrent\_Load13mA\ =\ \_DCDC\_BSTEM01CTRL\_IPKVAL\_Load13mA,\ }
+\DoxyCodeLine{00469\ \ \ emuDcdcBoostEM01PeakCurrent\_Load15mA\ =\ \_DCDC\_BSTEM01CTRL\_IPKVAL\_Load15mA,\ }
+\DoxyCodeLine{00470\ \ \ emuDcdcBoostEM01PeakCurrent\_Load16mA\ =\ \_DCDC\_BSTEM01CTRL\_IPKVAL\_Load16mA,\ }
+\DoxyCodeLine{00471\ \ \ emuDcdcBoostEM01PeakCurrent\_Load18mA\ =\ \_DCDC\_BSTEM01CTRL\_IPKVAL\_Load18mA,\ }
+\DoxyCodeLine{00472\ \ \ emuDcdcBoostEM01PeakCurrent\_Load20mA\ =\ \_DCDC\_BSTEM01CTRL\_IPKVAL\_Load20mA,\ }
+\DoxyCodeLine{00473\ \ \ emuDcdcBoostEM01PeakCurrent\_Load21mA\ =\ \_DCDC\_BSTEM01CTRL\_IPKVAL\_Load21mA,\ }
+\DoxyCodeLine{00474\ \ \ emuDcdcBoostEM01PeakCurrent\_Load23mA\ =\ \_DCDC\_BSTEM01CTRL\_IPKVAL\_Load23mA,\ }
+\DoxyCodeLine{00475\ \ \ emuDcdcBoostEM01PeakCurrent\_Load25mA\ =\ \_DCDC\_BSTEM01CTRL\_IPKVAL\_Load25mA,\ }
+\DoxyCodeLine{00476\ \}\ EMU\_DcdcBoostEM01PeakCurrent\_TypeDef;}
+\DoxyCodeLine{00477\ }
+\DoxyCodeLine{00479\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00480\ \ \ emuDcdcBoostToffMaxTimeout\_Off\ \ \ \ =\ \_DCDC\_BSTCTRL\_BSTTOFFMAX\_OFF,\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00481\ \ \ emuDcdcBoostToffMaxTimeout\_0P35us\ =\ \_DCDC\_BSTCTRL\_BSTTOFFMAX\_TMAX\_0P35us,\ }
+\DoxyCodeLine{00482\ \ \ emuDcdcBoostToffMaxTimeout\_0P63us\ =\ \_DCDC\_BSTCTRL\_BSTTOFFMAX\_TMAX\_0P63us,\ }
+\DoxyCodeLine{00483\ \ \ emuDcdcBoostToffMaxTimeout\_0P91us\ =\ \_DCDC\_BSTCTRL\_BSTTOFFMAX\_TMAX\_0P91us,\ }
+\DoxyCodeLine{00484\ \ \ emuDcdcBoostToffMaxTimeout\_1P19us\ =\ \_DCDC\_BSTCTRL\_BSTTOFFMAX\_TMAX\_1P19us,\ }
+\DoxyCodeLine{00485\ \ \ emuDcdcBoostToffMaxTimeout\_1P47us\ =\ \_DCDC\_BSTCTRL\_BSTTOFFMAX\_TMAX\_1P47us,\ }
+\DoxyCodeLine{00486\ \ \ emuDcdcBoostToffMaxTimeout\_1P75us\ =\ \_DCDC\_BSTCTRL\_BSTTOFFMAX\_TMAX\_1P75us,\ }
+\DoxyCodeLine{00487\ \ \ emuDcdcBoostToffMaxTimeout\_2P03us\ =\ \_DCDC\_BSTCTRL\_BSTTOFFMAX\_TMAX\_2P03us,\ }
+\DoxyCodeLine{00488\ \}\ EMU\_DcdcBoostToffMaxTimeout\_TypeDef;}
+\DoxyCodeLine{00489\ }
+\DoxyCodeLine{00491\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00492\ \ \ emuDcdcBoostTonMaxTimeout\_Off\ \ \ \ =\ \_DCDC\_BSTCTRL\_IPKTMAXCTRL\_OFF,\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00493\ \ \ emuDcdcBoostTonMaxTimeout\_0P35us\ =\ \_DCDC\_BSTCTRL\_IPKTMAXCTRL\_TMAX\_0P35us,\ }
+\DoxyCodeLine{00494\ \ \ emuDcdcBoostTonMaxTimeout\_0P63us\ =\ \_DCDC\_BSTCTRL\_IPKTMAXCTRL\_TMAX\_0P63us,\ }
+\DoxyCodeLine{00495\ \ \ emuDcdcBoostTonMaxTimeout\_0P91us\ =\ \_DCDC\_BSTCTRL\_IPKTMAXCTRL\_TMAX\_0P91us,\ }
+\DoxyCodeLine{00496\ \ \ emuDcdcBoostTonMaxTimeout\_1P19us\ =\ \_DCDC\_BSTCTRL\_IPKTMAXCTRL\_TMAX\_1P19us,\ }
+\DoxyCodeLine{00497\ \ \ emuDcdcBoostTonMaxTimeout\_1P47us\ =\ \_DCDC\_BSTCTRL\_IPKTMAXCTRL\_TMAX\_1P47us,\ }
+\DoxyCodeLine{00498\ \ \ emuDcdcBoostTonMaxTimeout\_1P75us\ =\ \_DCDC\_BSTCTRL\_IPKTMAXCTRL\_TMAX\_1P75us,\ }
+\DoxyCodeLine{00499\ \ \ emuDcdcBoostTonMaxTimeout\_2P03us\ =\ \_DCDC\_BSTCTRL\_IPKTMAXCTRL\_TMAX\_2P03us,\ }
+\DoxyCodeLine{00500\ \}\ EMU\_DcdcBoostTonMaxTimeout\_TypeDef;}
+\DoxyCodeLine{00501\ }
+\DoxyCodeLine{00503\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00504\ \ \ emuDcdcBoostEM23PeakCurrent\_Load10mA\ =\ \_DCDC\_BSTEM23CTRL\_IPKVAL\_Load10mA,\ }
+\DoxyCodeLine{00505\ \}\ EMU\_DcdcBoostEM23PeakCurrent\_TypeDef;}
+\DoxyCodeLine{00506\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ EMU\_SERIES2\_DCDC\_BOOST\_PRESENT)\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00507\ }
+\DoxyCodeLine{00508\ \textcolor{preprocessor}{\#if\ defined(EMU\_STATUS\_VMONRDY)}}
+\DoxyCodeLine{00510\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00511\ \ \ emuVmonChannel\_AVDD,}
+\DoxyCodeLine{00512\ \ \ emuVmonChannel\_ALTAVDD,}
+\DoxyCodeLine{00513\ \ \ emuVmonChannel\_DVDD,}
+\DoxyCodeLine{00514\ \ \ emuVmonChannel\_IOVDD0,}
+\DoxyCodeLine{00515\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_VMONIO1CTRL\_EN\_MASK)}}
+\DoxyCodeLine{00516\ \ \ emuVmonChannel\_IOVDD1,}
+\DoxyCodeLine{00517\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00518\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_VMONBUVDDCTRL\_EN\_MASK)}}
+\DoxyCodeLine{00519\ \ \ emuVmonChannel\_BUVDD,}
+\DoxyCodeLine{00520\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00521\ \}\ EMU\_VmonChannel\_TypeDef;}
+\DoxyCodeLine{00522\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ EMU\_STATUS\_VMONRDY\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00523\ }
+\DoxyCodeLine{00524\ \textcolor{preprocessor}{\#if\ defined(\_SILICON\_LABS\_GECKO\_INTERNAL\_SDID\_80)}}
+\DoxyCodeLine{00526\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00527\ \ \ emuBiasMode\_1KHz,}
+\DoxyCodeLine{00528\ \ \ emuBiasMode\_4KHz,}
+\DoxyCodeLine{00529\ \ \ emuBiasMode\_Continuous}
+\DoxyCodeLine{00530\ \}\ EMU\_BiasMode\_TypeDef;}
+\DoxyCodeLine{00531\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00532\ }
+\DoxyCodeLine{00533\ \textcolor{preprocessor}{\#if\ defined(EMU\_VSCALE\_EM01\_PRESENT)}}
+\DoxyCodeLine{00535\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00537\ \ \ emuVScaleEM01\_HighPerformance\ =\ \_EMU\_STATUS\_VSCALE\_VSCALE2,}
+\DoxyCodeLine{00543\ \textcolor{preprocessor}{\#if\ defined(\_SILICON\_LABS\_32B\_SERIES\_2)}}
+\DoxyCodeLine{00545\ \ \ emuVScaleEM01\_LowPower\ \ \ \ \ \ \ \ =\ \_EMU\_STATUS\_VSCALE\_VSCALE1,}
+\DoxyCodeLine{00546\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00547\ \ \ emuVScaleEM01\_LowPower\ \ \ \ \ \ \ \ =\ \_EMU\_STATUS\_VSCALE\_VSCALE0,}
+\DoxyCodeLine{00548\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00549\ \}\ EMU\_VScaleEM01\_TypeDef;}
+\DoxyCodeLine{00550\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00551\ }
+\DoxyCodeLine{00552\ \textcolor{preprocessor}{\#if\ defined(EMU\_VSCALE\_PRESENT)}}
+\DoxyCodeLine{00554\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00556\ \ \ emuVScaleEM23\_FastWakeup\ \ \ \ \ \ =\ \_EMU\_CTRL\_EM23VSCALE\_VSCALE2,}
+\DoxyCodeLine{00560\ \ \ emuVScaleEM23\_LowPower\ \ \ \ \ \ \ \ =\ \_EMU\_CTRL\_EM23VSCALE\_VSCALE0,}
+\DoxyCodeLine{00561\ \}\ EMU\_VScaleEM23\_TypeDef;}
+\DoxyCodeLine{00562\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00563\ }
+\DoxyCodeLine{00564\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_CTRL\_EM4HVSCALE\_MASK)}}
+\DoxyCodeLine{00566\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00568\ \ \ emuVScaleEM4H\_FastWakeup\ \ \ \ \ \ =\ \_EMU\_CTRL\_EM4HVSCALE\_VSCALE2,}
+\DoxyCodeLine{00572\ \ \ emuVScaleEM4H\_LowPower\ \ \ \ \ \ \ \ =\ \_EMU\_CTRL\_EM4HVSCALE\_VSCALE0,}
+\DoxyCodeLine{00573\ \}\ EMU\_VScaleEM4H\_TypeDef;}
+\DoxyCodeLine{00574\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00575\ }
+\DoxyCodeLine{00576\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_EM23PERNORETAINCTRL\_MASK)}}
+\DoxyCodeLine{00578\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00579\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_EM23PERNORETAINCTRL\_USBDIS\_MASK)}}
+\DoxyCodeLine{00580\ \ \ emuPeripheralRetention\_USB\ \ \ \ \ \ =\ \_EMU\_EM23PERNORETAINCTRL\_USBDIS\_MASK,\ \ \ \ \ \ \ }
+\DoxyCodeLine{00581\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00582\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_EM23PERNORETAINCTRL\_RTCDIS\_MASK)}}
+\DoxyCodeLine{00583\ \ \ emuPeripheralRetention\_RTC\ \ \ \ \ \ =\ \_EMU\_EM23PERNORETAINCTRL\_RTCDIS\_MASK,\ \ \ \ \ \ \ }
+\DoxyCodeLine{00584\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00585\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_EM23PERNORETAINCTRL\_ACMP3DIS\_MASK)}}
+\DoxyCodeLine{00586\ \ \ emuPeripheralRetention\_ACMP3\ \ \ \ =\ \_EMU\_EM23PERNORETAINCTRL\_ACMP3DIS\_MASK,\ \ \ \ \ }
+\DoxyCodeLine{00587\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00588\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_EM23PERNORETAINCTRL\_ACMP2DIS\_MASK)}}
+\DoxyCodeLine{00589\ \ \ emuPeripheralRetention\_ACMP2\ \ \ \ =\ \_EMU\_EM23PERNORETAINCTRL\_ACMP2DIS\_MASK,\ \ \ \ \ }
+\DoxyCodeLine{00590\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00591\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_EM23PERNORETAINCTRL\_ADC1DIS\_MASK)}}
+\DoxyCodeLine{00592\ \ \ emuPeripheralRetention\_ADC1\ \ \ \ \ =\ \_EMU\_EM23PERNORETAINCTRL\_ADC1DIS\_MASK,\ \ \ \ \ \ }
+\DoxyCodeLine{00593\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00594\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_EM23PERNORETAINCTRL\_I2C2DIS\_MASK)}}
+\DoxyCodeLine{00595\ \ \ emuPeripheralRetention\_I2C2\ \ \ \ \ =\ \_EMU\_EM23PERNORETAINCTRL\_I2C2DIS\_MASK,\ \ \ \ \ \ }
+\DoxyCodeLine{00596\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00597\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_EM23PERNORETAINCTRL\_LETIMER1DIS\_MASK)}}
+\DoxyCodeLine{00598\ \ \ emuPeripheralRetention\_LETIMER1\ =\ \_EMU\_EM23PERNORETAINCTRL\_LETIMER1DIS\_MASK,\ \ }
+\DoxyCodeLine{00599\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00600\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_EM23PERNORETAINCTRL\_LCDDIS\_MASK)}}
+\DoxyCodeLine{00601\ \ \ emuPeripheralRetention\_LCD\ \ \ \ \ \ =\ \_EMU\_EM23PERNORETAINCTRL\_LCDDIS\_MASK,\ \ \ \ \ \ \ }
+\DoxyCodeLine{00602\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00603\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_EM23PERNORETAINCTRL\_LEUART1DIS\_MASK)}}
+\DoxyCodeLine{00604\ \ \ emuPeripheralRetention\_LEUART1\ \ =\ \_EMU\_EM23PERNORETAINCTRL\_LEUART1DIS\_MASK,\ \ \ }
+\DoxyCodeLine{00605\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00606\ \ \ emuPeripheralRetention\_LEUART0\ \ =\ \_EMU\_EM23PERNORETAINCTRL\_LEUART0DIS\_MASK,\ \ \ }
+\DoxyCodeLine{00607\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_EM23PERNORETAINCTRL\_CSENDIS\_MASK)}}
+\DoxyCodeLine{00608\ \ \ emuPeripheralRetention\_CSEN\ \ \ \ \ =\ \_EMU\_EM23PERNORETAINCTRL\_CSENDIS\_MASK,\ \ \ \ \ \ }
+\DoxyCodeLine{00609\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00610\ \ \ emuPeripheralRetention\_LESENSE0\ =\ \_EMU\_EM23PERNORETAINCTRL\_LESENSE0DIS\_MASK,\ \ }
+\DoxyCodeLine{00611\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_EM23PERNORETAINCTRL\_WDOG1DIS\_MASK)}}
+\DoxyCodeLine{00612\ \ \ emuPeripheralRetention\_WDOG1\ \ \ \ =\ \_EMU\_EM23PERNORETAINCTRL\_WDOG1DIS\_MASK,\ \ \ \ \ }
+\DoxyCodeLine{00613\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00614\ \ \ emuPeripheralRetention\_WDOG0\ \ \ \ =\ \_EMU\_EM23PERNORETAINCTRL\_WDOG0DIS\_MASK,\ \ \ \ \ }
+\DoxyCodeLine{00615\ \ \ emuPeripheralRetention\_LETIMER0\ =\ \_EMU\_EM23PERNORETAINCTRL\_LETIMER0DIS\_MASK,\ \ }
+\DoxyCodeLine{00616\ \ \ emuPeripheralRetention\_ADC0\ \ \ \ \ =\ \_EMU\_EM23PERNORETAINCTRL\_ADC0DIS\_MASK,\ \ \ \ \ \ }
+\DoxyCodeLine{00617\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_EM23PERNORETAINCTRL\_IDAC0DIS\_MASK)}}
+\DoxyCodeLine{00618\ \ \ emuPeripheralRetention\_IDAC0\ \ \ \ =\ \_EMU\_EM23PERNORETAINCTRL\_IDAC0DIS\_MASK,\ \ \ \ \ }
+\DoxyCodeLine{00619\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00620\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_EM23PERNORETAINCTRL\_VDAC0DIS\_MASK)}}
+\DoxyCodeLine{00621\ \ \ emuPeripheralRetention\_VDAC0\ \ \ \ =\ \_EMU\_EM23PERNORETAINCTRL\_VDAC0DIS\_MASK,\ \ \ \ \ }
+\DoxyCodeLine{00622\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00623\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_EM23PERNORETAINCTRL\_I2C1DIS\_MASK)}}
+\DoxyCodeLine{00624\ \ \ emuPeripheralRetention\_I2C1\ \ \ \ \ =\ \_EMU\_EM23PERNORETAINCTRL\_I2C1DIS\_MASK,\ \ \ \ \ \ }
+\DoxyCodeLine{00625\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00626\ \ \ emuPeripheralRetention\_I2C0\ \ \ \ \ =\ \_EMU\_EM23PERNORETAINCTRL\_I2C0DIS\_MASK,\ \ \ \ \ \ }
+\DoxyCodeLine{00627\ \ \ emuPeripheralRetention\_ACMP1\ \ \ \ =\ \_EMU\_EM23PERNORETAINCTRL\_ACMP1DIS\_MASK,\ \ \ \ \ }
+\DoxyCodeLine{00628\ \ \ emuPeripheralRetention\_ACMP0\ \ \ \ =\ \_EMU\_EM23PERNORETAINCTRL\_ACMP0DIS\_MASK,\ \ \ \ \ }
+\DoxyCodeLine{00629\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_EM23PERNORETAINCTRL\_PCNT1DIS\_MASK)}}
+\DoxyCodeLine{00630\ \ \ emuPeripheralRetention\_PCNT2\ \ \ \ =\ \_EMU\_EM23PERNORETAINCTRL\_PCNT2DIS\_MASK,\ \ \ \ \ }
+\DoxyCodeLine{00631\ \ \ emuPeripheralRetention\_PCNT1\ \ \ \ =\ \_EMU\_EM23PERNORETAINCTRL\_PCNT1DIS\_MASK,\ \ \ \ \ }
+\DoxyCodeLine{00632\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00633\ \ \ emuPeripheralRetention\_PCNT0\ \ \ \ =\ \_EMU\_EM23PERNORETAINCTRL\_PCNT0DIS\_MASK,\ \ \ \ \ }
+\DoxyCodeLine{00635\ \ \ emuPeripheralRetention\_D1\ \ \ \ \ \ \ =\ \_EMU\_EM23PERNORETAINCTRL\_LETIMER0DIS\_MASK}
+\DoxyCodeLine{00636\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\ \_EMU\_EM23PERNORETAINCTRL\_PCNT0DIS\_MASK}
+\DoxyCodeLine{00637\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\ \_EMU\_EM23PERNORETAINCTRL\_ADC0DIS\_MASK}
+\DoxyCodeLine{00638\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\ \_EMU\_EM23PERNORETAINCTRL\_ACMP0DIS\_MASK}
+\DoxyCodeLine{00639\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\ \_EMU\_EM23PERNORETAINCTRL\_LESENSE0DIS\_MASK,}
+\DoxyCodeLine{00640\ \ \ emuPeripheralRetention\_D2\ \ \ \ \ \ \ =\ \_EMU\_EM23PERNORETAINCTRL\_ACMP1DIS\_MASK}
+\DoxyCodeLine{00641\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_EM23PERNORETAINCTRL\_IDAC0DIS\_MASK)}}
+\DoxyCodeLine{00642\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\ \_EMU\_EM23PERNORETAINCTRL\_IDAC0DIS\_MASK}
+\DoxyCodeLine{00643\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00644\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_EM23PERNORETAINCTRL\_VDAC0DIS\_MASK)}}
+\DoxyCodeLine{00645\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\ \_EMU\_EM23PERNORETAINCTRL\_VDAC0DIS\_MASK}
+\DoxyCodeLine{00646\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00647\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_EM23PERNORETAINCTRL\_CSENDIS\_MASK)}}
+\DoxyCodeLine{00648\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\ \_EMU\_EM23PERNORETAINCTRL\_CSENDIS\_MASK}
+\DoxyCodeLine{00649\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00650\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\ \_EMU\_EM23PERNORETAINCTRL\_LEUART0DIS\_MASK}
+\DoxyCodeLine{00651\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_EM23PERNORETAINCTRL\_USBDIS\_MASK)}}
+\DoxyCodeLine{00652\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\ \_EMU\_EM23PERNORETAINCTRL\_USBDIS\_MASK}
+\DoxyCodeLine{00653\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00654\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_EM23PERNORETAINCTRL\_RTCDIS\_MASK)}}
+\DoxyCodeLine{00655\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\ \_EMU\_EM23PERNORETAINCTRL\_RTCDIS\_MASK}
+\DoxyCodeLine{00656\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00657\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_EM23PERNORETAINCTRL\_ACMP3DIS\_MASK)}}
+\DoxyCodeLine{00658\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\ \_EMU\_EM23PERNORETAINCTRL\_ACMP3DIS\_MASK}
+\DoxyCodeLine{00659\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00660\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_EM23PERNORETAINCTRL\_ACMP2DIS\_MASK)}}
+\DoxyCodeLine{00661\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\ \_EMU\_EM23PERNORETAINCTRL\_ACMP2DIS\_MASK}
+\DoxyCodeLine{00662\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00663\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_EM23PERNORETAINCTRL\_ADC1DIS\_MASK)}}
+\DoxyCodeLine{00664\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\ \_EMU\_EM23PERNORETAINCTRL\_ADC1DIS\_MASK}
+\DoxyCodeLine{00665\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00666\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_EM23PERNORETAINCTRL\_I2C2DIS\_MASK)}}
+\DoxyCodeLine{00667\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\ \_EMU\_EM23PERNORETAINCTRL\_I2C2DIS\_MASK}
+\DoxyCodeLine{00668\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00669\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_EM23PERNORETAINCTRL\_LETIMER1DIS\_MASK)}}
+\DoxyCodeLine{00670\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\ \_EMU\_EM23PERNORETAINCTRL\_LETIMER1DIS\_MASK}
+\DoxyCodeLine{00671\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00672\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_EM23PERNORETAINCTRL\_LCDDIS\_MASK)}}
+\DoxyCodeLine{00673\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\ \_EMU\_EM23PERNORETAINCTRL\_LCDDIS\_MASK}
+\DoxyCodeLine{00674\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00675\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_EM23PERNORETAINCTRL\_LEUART1DIS\_MASK)}}
+\DoxyCodeLine{00676\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\ \_EMU\_EM23PERNORETAINCTRL\_LEUART1DIS\_MASK}
+\DoxyCodeLine{00677\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00678\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_EM23PERNORETAINCTRL\_PCNT1DIS\_MASK)}}
+\DoxyCodeLine{00679\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\ \_EMU\_EM23PERNORETAINCTRL\_PCNT1DIS\_MASK}
+\DoxyCodeLine{00680\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\ \_EMU\_EM23PERNORETAINCTRL\_PCNT2DIS\_MASK}
+\DoxyCodeLine{00681\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00682\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_EM23PERNORETAINCTRL\_I2C1DIS\_MASK)}}
+\DoxyCodeLine{00683\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\ \_EMU\_EM23PERNORETAINCTRL\_I2C1DIS\_MASK\ \ \ \ }
+\DoxyCodeLine{00684\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00685\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\ \_EMU\_EM23PERNORETAINCTRL\_I2C0DIS\_MASK,}
+\DoxyCodeLine{00686\ \ \ emuPeripheralRetention\_ALL\ \ \ \ \ \ \ =\ emuPeripheralRetention\_D1}
+\DoxyCodeLine{00687\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\ emuPeripheralRetention\_D2}
+\DoxyCodeLine{00688\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_EM23PERNORETAINCTRL\_WDOG1DIS\_MASK)}}
+\DoxyCodeLine{00689\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\ emuPeripheralRetention\_WDOG1}
+\DoxyCodeLine{00690\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00691\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |\ emuPeripheralRetention\_WDOG0,\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00692\ \}\ EMU\_PeripheralRetention\_TypeDef;}
+\DoxyCodeLine{00693\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00694\ }
+\DoxyCodeLine{00695\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_TEMP\_TEMPAVG\_MASK)}}
+\DoxyCodeLine{00697\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00699\ \ \ emuTempAvgNum\_16\ \ \ \ \ \ =\ \_EMU\_CTRL\_TEMPAVGNUM\_N16,}
+\DoxyCodeLine{00701\ \ \ emuTempAvgNum\_64\ \ \ \ \ \ =\ \_EMU\_CTRL\_TEMPAVGNUM\_N64,}
+\DoxyCodeLine{00702\ \}\ EMU\_TempAvgNum\_TypeDef;}
+\DoxyCodeLine{00703\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00704\ }
+\DoxyCodeLine{00705\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{00706\ \textcolor{comment}{\ *******************************\ \ \ STRUCTS\ \ \ ***********************************}}
+\DoxyCodeLine{00707\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00708\ }
+\DoxyCodeLine{00709\ \textcolor{preprocessor}{\#if\ defined(EMU\_VSCALE\_EM01\_PRESENT)}}
+\DoxyCodeLine{00713\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00714\ \ \ \textcolor{keywordtype}{bool}\ \ vScaleEM01LowPowerVoltageEnable;\ }
+\DoxyCodeLine{00715\ \}\ EMU\_EM01Init\_TypeDef;}
+\DoxyCodeLine{00716\ }
+\DoxyCodeLine{00718\ \textcolor{preprocessor}{\#define\ EMU\_EM01INIT\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00719\ \textcolor{preprocessor}{\ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00720\ \textcolor{preprocessor}{\ \ \ \ false\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Do\ not\ scale\ down\ in\ EM0/1.*/}\textcolor{preprocessor}{\ \(\backslash\)}}
+\DoxyCodeLine{00721\ \textcolor{preprocessor}{\ \ \}}}
+\DoxyCodeLine{00722\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00723\ }
+\DoxyCodeLine{00725\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00726\ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ em23VregFullEn;\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00727\ \textcolor{preprocessor}{\#if\ defined(EMU\_VSCALE\_PRESENT)}}
+\DoxyCodeLine{00728\ \ \ EMU\_VScaleEM23\_TypeDef\ \ \ \ \ \ \ \ vScaleEM23Voltage;\ \ \ \ \ \ }
+\DoxyCodeLine{00729\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00730\ \}\ EMU\_EM23Init\_TypeDef;}
+\DoxyCodeLine{00731\ }
+\DoxyCodeLine{00733\ \textcolor{preprocessor}{\#if\ defined(EMU\_VSCALE\_PRESENT)}}
+\DoxyCodeLine{00734\ \textcolor{preprocessor}{\#define\ EMU\_EM23INIT\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00735\ \textcolor{preprocessor}{\ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00736\ \textcolor{preprocessor}{\ \ \ \ false,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Reduced\ voltage\ regulator\ drive\ strength\ in\ EM2/3.*/}\textcolor{preprocessor}{\ \(\backslash\)}}
+\DoxyCodeLine{00737\ \textcolor{preprocessor}{\ \ \ \ emuVScaleEM23\_FastWakeup,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Do\ not\ scale\ down\ in\ EM2/3.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00738\ \textcolor{preprocessor}{\ \ \}}}
+\DoxyCodeLine{00739\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00740\ \textcolor{preprocessor}{\#define\ EMU\_EM23INIT\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00741\ \textcolor{preprocessor}{\ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00742\ \textcolor{preprocessor}{\ \ \ \ false,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Reduced\ voltage\ regulator\ drive\ strength\ in\ EM2/3.*/}\textcolor{preprocessor}{\ \(\backslash\)}}
+\DoxyCodeLine{00743\ \textcolor{preprocessor}{\ \ \}}}
+\DoxyCodeLine{00744\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00745\ }
+\DoxyCodeLine{00746\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_EM4CONF\_MASK)\ ||\ defined(\_EMU\_EM4CTRL\_MASK)}}
+\DoxyCodeLine{00748\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00749\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_EM4CONF\_MASK)}}
+\DoxyCodeLine{00750\ \ \ \textcolor{comment}{/*\ Initialization\ parameters\ for\ platforms\ with\ EMU-\/>EM4CONF\ register\ (Series\ 0).\ */}}
+\DoxyCodeLine{00751\ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ lockConfig;\ \ \ \ \ \ \ }
+\DoxyCodeLine{00752\ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ buBodRstDis;\ \ \ \ \ \ }
+\DoxyCodeLine{00753\ \ \ EMU\_EM4Osc\_TypeDef\ \ \ \ \ \ \ \ \ \ osc;\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00754\ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ buRtcWakeup;\ \ \ \ \ \ }
+\DoxyCodeLine{00755\ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ vreg;\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00756\ \textcolor{preprocessor}{\#elif\ defined(\_EMU\_EM4CTRL\_MASK)}}
+\DoxyCodeLine{00757\ \ \ \textcolor{comment}{/*\ Initialization\ parameters\ for\ platforms\ with\ EMU-\/>EM4CTRL\ register\ (Series\ 1).\ */}}
+\DoxyCodeLine{00758\ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ retainLfxo;\ \ \ \ \ \ \ }
+\DoxyCodeLine{00759\ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ retainLfrco;\ \ \ \ \ \ }
+\DoxyCodeLine{00760\ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ retainUlfrco;\ \ \ \ \ }
+\DoxyCodeLine{00761\ \ \ EMU\_EM4State\_TypeDef\ \ \ \ \ \ \ \ em4State;\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00762\ \ \ EMU\_EM4PinRetention\_TypeDef\ pinRetentionMode;\ }
+\DoxyCodeLine{00763\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00764\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_CTRL\_EM4HVSCALE\_MASK)}}
+\DoxyCodeLine{00765\ \ \ EMU\_VScaleEM4H\_TypeDef\ \ \ \ \ \ vScaleEM4HVoltage;}
+\DoxyCodeLine{00766\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00767\ \}\ EMU\_EM4Init\_TypeDef;}
+\DoxyCodeLine{00768\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00769\ }
+\DoxyCodeLine{00770\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_EM4CONF\_MASK)}}
+\DoxyCodeLine{00772\ \textcolor{preprocessor}{\#define\ EMU\_EM4INIT\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00773\ \textcolor{preprocessor}{\ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00774\ \textcolor{preprocessor}{\ \ \ \ false,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Do\ not\ lock\ configuration\ after\ it's\ been\ set.\ */}\textcolor{preprocessor}{\ \(\backslash\)}}
+\DoxyCodeLine{00775\ \textcolor{preprocessor}{\ \ \ \ false,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ No\ reset\ will\ be\ asserted\ due\ to\ BOD\ in\ EM4.\ */}\textcolor{preprocessor}{\ \ \ \(\backslash\)}}
+\DoxyCodeLine{00776\ \textcolor{preprocessor}{\ \ \ \ emuEM4Osc\_ULFRCO,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Use\ default\ ULFRCO\ oscillator.\ \ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00777\ \textcolor{preprocessor}{\ \ \ \ true,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Wake\ up\ on\ EM4\ BURTC\ interrupt.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00778\ \textcolor{preprocessor}{\ \ \ \ true,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Enable\ VREG.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00779\ \textcolor{preprocessor}{\ \ \}}}
+\DoxyCodeLine{00780\ }
+\DoxyCodeLine{00781\ \textcolor{preprocessor}{\#elif\ defined(\_EMU\_CTRL\_EM4HVSCALE\_MASK)}}
+\DoxyCodeLine{00783\ \textcolor{preprocessor}{\#define\ EMU\_EM4INIT\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00784\ \textcolor{preprocessor}{\ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00785\ \textcolor{preprocessor}{\ \ \ \ false,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Retain\ LFXO\ configuration\ upon\ EM4\ entry.\ */}\textcolor{preprocessor}{\ \ \ \(\backslash\)}}
+\DoxyCodeLine{00786\ \textcolor{preprocessor}{\ \ \ \ false,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Retain\ LFRCO\ configuration\ upon\ EM4\ entry.\ */}\textcolor{preprocessor}{\ \ \(\backslash\)}}
+\DoxyCodeLine{00787\ \textcolor{preprocessor}{\ \ \ \ false,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Retain\ ULFRCO\ configuration\ upon\ EM4\ entry.\ */}\textcolor{preprocessor}{\ \(\backslash\)}}
+\DoxyCodeLine{00788\ \textcolor{preprocessor}{\ \ \ \ emuEM4Shutoff,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Use\ EM4\ shutoff\ state.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00789\ \textcolor{preprocessor}{\ \ \ \ emuPinRetentionDisable,\ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Do\ not\ retain\ pins\ in\ EM4.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00790\ \textcolor{preprocessor}{\ \ \ \ emuVScaleEM4H\_FastWakeup,\ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Do\ not\ scale\ down\ in\ EM4H.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00791\ \textcolor{preprocessor}{\ \ \}}}
+\DoxyCodeLine{00792\ }
+\DoxyCodeLine{00793\ \textcolor{preprocessor}{\#elif\ defined(\_EMU\_EM4CTRL\_MASK)}}
+\DoxyCodeLine{00795\ \textcolor{preprocessor}{\#define\ EMU\_EM4INIT\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00796\ \textcolor{preprocessor}{\ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00797\ \textcolor{preprocessor}{\ \ \ \ false,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Retain\ LFXO\ configuration\ upon\ EM4\ entry.\ */}\textcolor{preprocessor}{\ \ \ \(\backslash\)}}
+\DoxyCodeLine{00798\ \textcolor{preprocessor}{\ \ \ \ false,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Retain\ LFRCO\ configuration\ upon\ EM4\ entry.\ */}\textcolor{preprocessor}{\ \ \(\backslash\)}}
+\DoxyCodeLine{00799\ \textcolor{preprocessor}{\ \ \ \ false,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Retain\ ULFRCO\ configuration\ upon\ EM4\ entry.\ */}\textcolor{preprocessor}{\ \(\backslash\)}}
+\DoxyCodeLine{00800\ \textcolor{preprocessor}{\ \ \ \ emuEM4Shutoff,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Use\ EM4\ shutoff\ state.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00801\ \textcolor{preprocessor}{\ \ \ \ emuPinRetentionDisable,\ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Do\ not\ retain\ pins\ in\ EM4.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00802\ \textcolor{preprocessor}{\ \ \}}}
+\DoxyCodeLine{00803\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00804\ }
+\DoxyCodeLine{00805\ \textcolor{preprocessor}{\#if\ defined(BU\_PRESENT)\ \&\&\ defined(\_SILICON\_LABS\_32B\_SERIES\_0)}}
+\DoxyCodeLine{00807\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00808\ \ \ \textcolor{comment}{/*\ Backup\ Power\ Domain\ power\ configuration.\ */}}
+\DoxyCodeLine{00809\ }
+\DoxyCodeLine{00811\ \ \ EMU\_Probe\_TypeDef\ \ \ \ \ probe;}
+\DoxyCodeLine{00813\ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ bodCal;}
+\DoxyCodeLine{00815\ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ statusPinEnable;}
+\DoxyCodeLine{00816\ }
+\DoxyCodeLine{00817\ \ \ \textcolor{comment}{/*\ Backup\ Power\ Domain\ connection\ configuration.\ */}}
+\DoxyCodeLine{00819\ \ \ EMU\_Resistor\_TypeDef\ \ resistor;}
+\DoxyCodeLine{00821\ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ voutStrong;}
+\DoxyCodeLine{00823\ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ voutMed;}
+\DoxyCodeLine{00825\ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ voutWeak;}
+\DoxyCodeLine{00827\ \ \ EMU\_Power\_TypeDef\ \ inactivePower;}
+\DoxyCodeLine{00829\ \ \ EMU\_Power\_TypeDef\ \ \ \ \ activePower;}
+\DoxyCodeLine{00831\ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ enable;}
+\DoxyCodeLine{00832\ \}\ EMU\_BUPDInit\_TypeDef;}
+\DoxyCodeLine{00833\ }
+\DoxyCodeLine{00835\ \textcolor{preprocessor}{\#define\ EMU\_BUPDINIT\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00836\ \textcolor{preprocessor}{\ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00837\ \textcolor{preprocessor}{\ \ \ \ emuProbe\_Disable,\ }\textcolor{comment}{/*\ Do\ not\ enable\ voltage\ probe.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00838\ \textcolor{preprocessor}{\ \ \ \ false,\ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Disable\ BOD\ calibration\ mode.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00839\ \textcolor{preprocessor}{\ \ \ \ false,\ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Disable\ BU\_STAT\ pin\ for\ backup\ mode\ indication.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00840\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00841\ \textcolor{preprocessor}{\ \ \ \ emuRes\_Res0,\ \ \ \ }\textcolor{comment}{/*\ RES0\ series\ resistance\ between\ main\ and\ backup\ power.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00842\ \textcolor{preprocessor}{\ \ \ \ false,\ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Do\ not\ enable\ strong\ switch.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00843\ \textcolor{preprocessor}{\ \ \ \ false,\ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Do\ not\ enable\ medium\ switch.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00844\ \textcolor{preprocessor}{\ \ \ \ false,\ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Do\ not\ enable\ weak\ switch.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00845\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00846\ \textcolor{preprocessor}{\ \ \ \ emuPower\_None,\ \ }\textcolor{comment}{/*\ No\ connection\ between\ main\ and\ backup\ power.\ (inactive\ mode)\ */}\textcolor{preprocessor}{\ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00847\ \textcolor{preprocessor}{\ \ \ \ emuPower\_None,\ \ }\textcolor{comment}{/*\ No\ connection\ between\ main\ and\ backup\ power.\ (active\ mode)\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00848\ \textcolor{preprocessor}{\ \ \ \ true\ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Enable\ BUPD\ enter\ on\ BOD,\ enable\ BU\_VIN\ pin,\ release\ BU\ reset.\ \ */}\textcolor{preprocessor}{\ \(\backslash\)}}
+\DoxyCodeLine{00849\ \textcolor{preprocessor}{\ \ \}}}
+\DoxyCodeLine{00850\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00851\ }
+\DoxyCodeLine{00852\ \textcolor{preprocessor}{\#if\ defined(BU\_PRESENT)\ \&\&\ defined(\_SILICON\_LABS\_32B\_SERIES\_1)}}
+\DoxyCodeLine{00854\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00855\ \ \ \textcolor{keywordtype}{bool}\ disMaxComp;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00856\ \ \ EMU\_BUBuInactPwrCon\_TypeDef\ inactivePwrCon;\ }
+\DoxyCodeLine{00857\ \ \ EMU\_BUBuActPwrCon\_TypeDef\ activePwrCon;\ \ \ \ \ }
+\DoxyCodeLine{00858\ \ \ EMU\_BUPwrRes\_TypeDef\ pwrRes;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00859\ \ \ EMU\_BUVoutRes\_TypeDef\ voutRes;\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00860\ \ \ \textcolor{keywordtype}{bool}\ buVinProbeEn;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00861\ \ \ \textcolor{keywordtype}{bool}\ staEn;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00862\ \ \ \textcolor{keywordtype}{bool}\ enable;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00863\ \}\ EMU\_BUInit\_TypeDef;}
+\DoxyCodeLine{00864\ }
+\DoxyCodeLine{00866\ \textcolor{preprocessor}{\#define\ EMU\_BUINIT\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00867\ \textcolor{preprocessor}{\ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00868\ \textcolor{preprocessor}{\ \ \ \ false,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ MAIN-\/BU\ Comparator\ is\ not\ disabled\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00869\ \textcolor{preprocessor}{\ \ \ \ emuBuBuInactPwrCon\_None,\ }\textcolor{comment}{/*\ No\ power\ connection\ wen\ not\ in\ backup\ mode\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00870\ \textcolor{preprocessor}{\ \ \ \ emuBuBuActPwrCon\_None,\ \ \ }\textcolor{comment}{/*\ No\ power\ connection\ when\ in\ backup\ mode\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00871\ \textcolor{preprocessor}{\ \ \ \ emuBuPwrRes\_Res0,\ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ RES0\ series\ resistance\ between\ main\ and\ backup\ power.\ */}\textcolor{preprocessor}{\ \(\backslash\)}}
+\DoxyCodeLine{00872\ \textcolor{preprocessor}{\ \ \ \ emuBuVoutRes\_Dis,\ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Vout\ resistor\ is\ set\ to\ not\ connected\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00873\ \textcolor{preprocessor}{\ \ \ \ false,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ BU\_VIN\ probe\ is\ disabled\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00874\ \textcolor{preprocessor}{\ \ \ \ false,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Status\ export\ is\ disabled\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00875\ \textcolor{preprocessor}{\ \ \ \ true\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Enable\ backup\ mode\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00876\ \textcolor{preprocessor}{\ \ \}}}
+\DoxyCodeLine{00877\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00878\ }
+\DoxyCodeLine{00879\ \textcolor{preprocessor}{\#if\ defined(EMU\_SERIES2\_DCDC\_BOOST\_PRESENT)}}
+\DoxyCodeLine{00881\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00882\ \ \ EMU\_DcdcBoostTonMaxTimeout\_TypeDef\ \ \ \ tonMax;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00883\ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ externalShutdownEn;\ \ \ \ \ }
+\DoxyCodeLine{00884\ \ \ EMU\_DcdcBoostDriveSpeed\_TypeDef\ \ \ \ \ \ \ driveSpeedEM01;\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00885\ \ \ EMU\_DcdcBoostDriveSpeed\_TypeDef\ \ \ \ \ \ \ driveSpeedEM23;\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00886\ \ \ EMU\_DcdcBoostEM01PeakCurrent\_TypeDef\ \ peakCurrentEM01;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00887\ \ \ EMU\_DcdcBoostEM23PeakCurrent\_TypeDef\ \ peakCurrentEM23;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00888\ \}\ EMU\_DCDCBoostInit\_TypeDef;}
+\DoxyCodeLine{00889\ }
+\DoxyCodeLine{00891\ \textcolor{preprocessor}{\#define\ EMU\_DCDCBOOSTINIT\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00892\ \textcolor{preprocessor}{\ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00893\ \textcolor{preprocessor}{\ \ \ \ emuDcdcBoostTonMaxTimeout\_1P19us,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00894\ \textcolor{preprocessor}{\ \ \ \ true,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00895\ \textcolor{preprocessor}{\ \ \ \ emuDcdcBoostDriveSpeed\_Default,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00896\ \textcolor{preprocessor}{\ \ \ \ emuDcdcBoostDriveSpeed\_Default,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00897\ \textcolor{preprocessor}{\ \ \ \ emuDcdcBoostEM01PeakCurrent\_Load25mA,\ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00898\ \textcolor{preprocessor}{\ \ \ \ emuDcdcBoostEM23PeakCurrent\_Load10mA\ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00899\ \textcolor{preprocessor}{\ \ \}}}
+\DoxyCodeLine{00900\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ EMU\_SERIES2\_DCDC\_BOOST\_PRESENT\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00901\ }
+\DoxyCodeLine{00902\ \textcolor{preprocessor}{\#if\ defined(EMU\_SERIES2\_DCDC\_BUCK\_PRESENT)}}
+\DoxyCodeLine{00904\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00905\ \ \ EMU\_DcdcMode\_TypeDef\ \ \ \ \ \ \ \ \ \ \ \ mode;\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00906\ \ \ EMU\_VreginCmpThreshold\_TypeDef\ \ cmpThreshold;\ \ \ \ \ }
+\DoxyCodeLine{00907\ \ \ EMU\_DcdcTonMaxTimeout\_TypeDef\ \ \ tonMax;\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00908\ \textcolor{preprocessor}{\#if\ defined(\_DCDC\_CTRL\_DCMONLYEN\_MASK)}}
+\DoxyCodeLine{00909\ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ dcmOnlyEn;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00910\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00911\ \ \ EMU\_DcdcDriveSpeed\_TypeDef\ \ \ \ \ \ driveSpeedEM01;\ \ \ }
+\DoxyCodeLine{00912\ \ \ EMU\_DcdcDriveSpeed\_TypeDef\ \ \ \ \ \ driveSpeedEM23;\ \ \ }
+\DoxyCodeLine{00913\ \ \ EMU\_DcdcPeakCurrent\_TypeDef\ \ \ \ \ peakCurrentEM01;\ \ }
+\DoxyCodeLine{00914\ \ \ EMU\_DcdcPeakCurrent\_TypeDef\ \ \ \ \ peakCurrentEM23;\ \ }
+\DoxyCodeLine{00915\ \}\ EMU\_DCDCInit\_TypeDef;}
+\DoxyCodeLine{00916\ }
+\DoxyCodeLine{00918\ \textcolor{preprocessor}{\#if\ defined(\_SILICON\_LABS\_32B\_SERIES\_2\_CONFIG\_2)}}
+\DoxyCodeLine{00919\ \textcolor{preprocessor}{\#define\ EMU\_DCDCINIT\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00920\ \textcolor{preprocessor}{\ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00921\ \textcolor{preprocessor}{\ \ \ \ emuDcdcMode\_Regulation,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00922\ \textcolor{preprocessor}{\ \ \ \ emuVreginCmpThreshold\_2v3,\ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00923\ \textcolor{preprocessor}{\ \ \ \ emuDcdcTonMaxTimeout\_1P19us,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00924\ \textcolor{preprocessor}{\ \ \ \ true,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00925\ \textcolor{preprocessor}{\ \ \ \ emuDcdcDriveSpeed\_Default,\ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00926\ \textcolor{preprocessor}{\ \ \ \ emuDcdcDriveSpeed\_Default,\ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00927\ \textcolor{preprocessor}{\ \ \ \ emuDcdcPeakCurrent\_Load60mA,\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00928\ \textcolor{preprocessor}{\ \ \ \ emuDcdcPeakCurrent\_Load5mA\ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00929\ \textcolor{preprocessor}{\ \ \}}}
+\DoxyCodeLine{00930\ \textcolor{preprocessor}{\#elif\ defined(\_SILICON\_LABS\_32B\_SERIES\_2\_CONFIG\_3)\ \(\backslash\)}}
+\DoxyCodeLine{00931\ \textcolor{preprocessor}{\ \ ||\ defined(\_SILICON\_LABS\_32B\_SERIES\_2\_CONFIG\_4)\ \ \(\backslash\)}}
+\DoxyCodeLine{00932\ \textcolor{preprocessor}{\ \ ||\ defined(\_SILICON\_LABS\_32B\_SERIES\_2\_CONFIG\_5)\ \ \(\backslash\)}}
+\DoxyCodeLine{00933\ \textcolor{preprocessor}{\ \ ||\ defined(\_SILICON\_LABS\_32B\_SERIES\_2\_CONFIG\_6)\ \ \(\backslash\)}}
+\DoxyCodeLine{00934\ \textcolor{preprocessor}{\ \ ||\ defined(\_SILICON\_LABS\_32B\_SERIES\_2\_CONFIG\_7)\ \ \(\backslash\)}}
+\DoxyCodeLine{00935\ \textcolor{preprocessor}{\ \ ||\ defined(\_SILICON\_LABS\_32B\_SERIES\_2\_CONFIG\_8)}}
+\DoxyCodeLine{00936\ \textcolor{preprocessor}{\#define\ EMU\_DCDCINIT\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00937\ \textcolor{preprocessor}{\ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00938\ \textcolor{preprocessor}{\ \ \ \ emuDcdcMode\_Regulation,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00939\ \textcolor{preprocessor}{\ \ \ \ emuVreginCmpThreshold\_2v3,\ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00940\ \textcolor{preprocessor}{\ \ \ \ emuDcdcTonMaxTimeout\_1P19us,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00941\ \textcolor{preprocessor}{\ \ \ \ emuDcdcDriveSpeed\_Default,\ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00942\ \textcolor{preprocessor}{\ \ \ \ emuDcdcDriveSpeed\_Default,\ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00943\ \textcolor{preprocessor}{\ \ \ \ emuDcdcPeakCurrent\_Load60mA,\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00944\ \textcolor{preprocessor}{\ \ \ \ emuDcdcPeakCurrent\_Load5mA\ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00945\ \textcolor{preprocessor}{\ \ \}}}
+\DoxyCodeLine{00946\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00947\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ SERIES2\_DCDC\_BUCK\_PRESENT\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00948\ }
+\DoxyCodeLine{00949\ \textcolor{preprocessor}{\#if\ defined(EMU\_SERIES1\_DCDC\_BUCK\_PRESENT)}}
+\DoxyCodeLine{00951\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00952\ \ \ EMU\_PowerConfig\_TypeDef\ powerConfig;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00954\ \ \ EMU\_DcdcMode\_TypeDef\ dcdcMode;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00955\ \ \ uint16\_t\ mVout;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00956\ \ \ uint16\_t\ em01LoadCurrent\_mA;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00960\ \ \ uint16\_t\ em234LoadCurrent\_uA;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00964\ \ \ uint16\_t\ maxCurrent\_mA;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00967\ \ \ EMU\_DcdcAnaPeripheralPower\_TypeDef}
+\DoxyCodeLine{00968\ \ \ \ \ anaPeripheralPower;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00969\ \ \ EMU\_DcdcLnReverseCurrentControl\_TypeDef}
+\DoxyCodeLine{00970\ \ \ \ \ reverseCurrentControl;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00975\ \ \ EMU\_DcdcLnCompCtrl\_TypeDef\ dcdcLnCompCtrl;\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00976\ \}\ EMU\_DCDCInit\_TypeDef;}
+\DoxyCodeLine{00977\ }
+\DoxyCodeLine{00979\ \textcolor{preprocessor}{\#if\ defined(\_EFM\_DEVICE)}}
+\DoxyCodeLine{00980\ \textcolor{preprocessor}{\#if\ defined(\_SILICON\_LABS\_GECKO\_INTERNAL\_SDID\_80)}}
+\DoxyCodeLine{00981\ \textcolor{preprocessor}{\#define\ EMU\_DCDCINIT\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00982\ \textcolor{preprocessor}{\ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00983\ \textcolor{preprocessor}{\ \ \ \ emuPowerConfig\_DcdcToDvdd,\ \ \ }\textcolor{comment}{/*\ DCDC\ to\ DVDD.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00984\ \textcolor{preprocessor}{\ \ \ \ emuDcdcMode\_LowNoise,\ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Low-\/noise\ mode\ in\ EM0.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00985\ \textcolor{preprocessor}{\ \ \ \ 1800,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Nominal\ output\ voltage\ for\ DVDD\ mode,\ 1.8V.\ \ */}\textcolor{preprocessor}{\ \ \(\backslash\)}}
+\DoxyCodeLine{00986\ \textcolor{preprocessor}{\ \ \ \ 5,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Nominal\ EM0/1\ load\ current\ of\ less\ than\ 5mA.\ */}\textcolor{preprocessor}{\ \ \(\backslash\)}}
+\DoxyCodeLine{00987\ \textcolor{preprocessor}{\ \ \ \ 10,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Nominal\ EM2/3/4\ load\ current\ less\ than\ 10uA.\ \ */}\textcolor{preprocessor}{\ \(\backslash\)}}
+\DoxyCodeLine{00988\ \textcolor{preprocessor}{\ \ \ \ 200,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Maximum\ average\ current\ of\ 200mA}}
+\DoxyCodeLine{00989\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (assume\ strong\ battery\ or\ other\ power\ source).\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00990\ \textcolor{preprocessor}{\ \ \ \ emuDcdcAnaPeripheralPower\_DCDC,}\textcolor{comment}{/*\ Select\ DCDC\ as\ analog\ power\ supply\ (lower\ power).\ */}\textcolor{preprocessor}{\ \(\backslash\)}}
+\DoxyCodeLine{00991\ \textcolor{preprocessor}{\ \ \ \ emuDcdcLnHighEfficiency,\ \ \ \ \ }\textcolor{comment}{/*\ Use\ high-\/efficiency\ mode.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00992\ \textcolor{preprocessor}{\ \ \ \ emuDcdcLnCompCtrl\_1u0F,\ \ \ \ \ \ }\textcolor{comment}{/*\ 1uF\ DCDC\ capacitor.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00993\ \textcolor{preprocessor}{\ \ \}}}
+\DoxyCodeLine{00994\ \textcolor{preprocessor}{\#elif\ defined(WGM160PX22KGA2)}}
+\DoxyCodeLine{00995\ \textcolor{preprocessor}{\#define\ EMU\_DCDCINIT\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00996\ \textcolor{preprocessor}{\ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00997\ \textcolor{preprocessor}{\ \ \ \ emuPowerConfig\_DcdcToDvdd,\ \ \ }\textcolor{comment}{/*\ DCDC\ to\ DVDD.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00998\ \textcolor{preprocessor}{\ \ \ \ emuDcdcMode\_LowNoise,\ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Low-\/noise\ mode\ in\ EM0.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00999\ \textcolor{preprocessor}{\ \ \ \ 1800,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Nominal\ output\ voltage\ for\ DVDD\ mode,\ 1.8V.\ \ */}\textcolor{preprocessor}{\ \ \(\backslash\)}}
+\DoxyCodeLine{01000\ \textcolor{preprocessor}{\ \ \ \ 5,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Nominal\ EM0/1\ load\ current\ of\ less\ than\ 5mA.\ */}\textcolor{preprocessor}{\ \ \(\backslash\)}}
+\DoxyCodeLine{01001\ \textcolor{preprocessor}{\ \ \ \ 10,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Nominal\ EM2/3/4\ load\ current\ less\ than\ 10uA.\ \ */}\textcolor{preprocessor}{\ \(\backslash\)}}
+\DoxyCodeLine{01002\ \textcolor{preprocessor}{\ \ \ \ 200,\ }\textcolor{comment}{/*\ Maximum\ average\ current\ of\ 200mA}}
+\DoxyCodeLine{01003\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ (assume\ strong\ battery\ or\ other\ power\ source).\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{01004\ \textcolor{preprocessor}{\ \ \ \ emuDcdcAnaPeripheralPower\_AVDD,}\textcolor{comment}{/*\ Select\ AVDD\ as\ analog\ power\ supply).\ */}\textcolor{preprocessor}{\ \(\backslash\)}}
+\DoxyCodeLine{01005\ \textcolor{preprocessor}{\ \ \ \ emuDcdcLnHighEfficiency,\ \ \ \ \ }\textcolor{comment}{/*\ Use\ high-\/efficiency\ mode.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{01006\ \textcolor{preprocessor}{\ \ \ \ emuDcdcLnCompCtrl\_4u7F,\ \ \ \ \ \ }\textcolor{comment}{/*\ 4.7uF\ DCDC\ capacitor.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{01007\ \textcolor{preprocessor}{\ \ \}}}
+\DoxyCodeLine{01008\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{01009\ \textcolor{preprocessor}{\#define\ EMU\_DCDCINIT\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{01010\ \textcolor{preprocessor}{\ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{01011\ \textcolor{preprocessor}{\ \ \ \ emuPowerConfig\_DcdcToDvdd,\ \ \ }\textcolor{comment}{/*\ DCDC\ to\ DVDD.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{01012\ \textcolor{preprocessor}{\ \ \ \ emuDcdcMode\_LowPower,\ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Low-\/power\ mode\ in\ EM0.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{01013\ \textcolor{preprocessor}{\ \ \ \ 1800,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Nominal\ output\ voltage\ for\ DVDD\ mode,\ 1.8V.\ \ */}\textcolor{preprocessor}{\ \ \(\backslash\)}}
+\DoxyCodeLine{01014\ \textcolor{preprocessor}{\ \ \ \ 5,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Nominal\ EM0/1\ load\ current\ of\ less\ than\ 5mA.\ */}\textcolor{preprocessor}{\ \ \(\backslash\)}}
+\DoxyCodeLine{01015\ \textcolor{preprocessor}{\ \ \ \ 10,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Nominal\ EM2/3/4\ load\ current\ less\ than\ 10uA.\ \ */}\textcolor{preprocessor}{\ \(\backslash\)}}
+\DoxyCodeLine{01016\ \textcolor{preprocessor}{\ \ \ \ 200,\ }\textcolor{comment}{/*\ Maximum\ average\ current\ of\ 200mA}}
+\DoxyCodeLine{01017\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ (assume\ strong\ battery\ or\ other\ power\ source).\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{01018\ \textcolor{preprocessor}{\ \ \ \ emuDcdcAnaPeripheralPower\_AVDD,}\textcolor{comment}{/*\ Select\ AVDD\ as\ analog\ power\ supply).\ */}\textcolor{preprocessor}{\ \(\backslash\)}}
+\DoxyCodeLine{01019\ \textcolor{preprocessor}{\ \ \ \ emuDcdcLnHighEfficiency,\ \ \ \ \ }\textcolor{comment}{/*\ Use\ high-\/efficiency\ mode.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{01020\ \textcolor{preprocessor}{\ \ \ \ emuDcdcLnCompCtrl\_4u7F,\ \ \ \ \ \ }\textcolor{comment}{/*\ 4.7uF\ DCDC\ capacitor.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{01021\ \textcolor{preprocessor}{\ \ \}}}
+\DoxyCodeLine{01022\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01023\ }
+\DoxyCodeLine{01024\ \textcolor{preprocessor}{\#else\ }\textcolor{comment}{/*\ EFR32\ device.\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{01025\ \textcolor{preprocessor}{\#if\ defined(\_SILICON\_LABS\_GECKO\_INTERNAL\_SDID\_80)}}
+\DoxyCodeLine{01026\ \textcolor{preprocessor}{\#define\ EMU\_DCDCINIT\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{01027\ \textcolor{preprocessor}{\ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{01028\ \textcolor{preprocessor}{\ \ \ \ emuPowerConfig\_DcdcToDvdd,\ \ \ }\textcolor{comment}{/*\ DCDC\ to\ DVDD.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{01029\ \textcolor{preprocessor}{\ \ \ \ emuDcdcMode\_LowNoise,\ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Low-\/noise\ mode\ in\ EM0.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{01030\ \textcolor{preprocessor}{\ \ \ \ 1800,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Nominal\ output\ voltage\ for\ DVDD\ mode,\ 1.8V.\ \ */}\textcolor{preprocessor}{\ \ \(\backslash\)}}
+\DoxyCodeLine{01031\ \textcolor{preprocessor}{\ \ \ \ 15,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Nominal\ EM0/1\ load\ current\ of\ less\ than\ 15mA.\ */}\textcolor{preprocessor}{\ \(\backslash\)}}
+\DoxyCodeLine{01032\ \textcolor{preprocessor}{\ \ \ \ 10,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Nominal\ EM2/3/4\ load\ current\ less\ than\ 10uA.\ \ */}\textcolor{preprocessor}{\ \(\backslash\)}}
+\DoxyCodeLine{01033\ \textcolor{preprocessor}{\ \ \ \ 200,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Maximum\ average\ current\ of\ 200mA}}
+\DoxyCodeLine{01034\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (assume\ strong\ battery\ or\ other\ power\ source).\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{01035\ \textcolor{preprocessor}{\ \ \ \ emuDcdcAnaPeripheralPower\_DCDC,}\textcolor{comment}{/*\ Select\ DCDC\ as\ analog\ power\ supply\ (lower\ power).\ */}\textcolor{preprocessor}{\ \(\backslash\)}}
+\DoxyCodeLine{01036\ \textcolor{preprocessor}{\ \ \ \ 160,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Maximum\ reverse\ current\ of\ 160mA.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{01037\ \textcolor{preprocessor}{\ \ \ \ emuDcdcLnCompCtrl\_1u0F,\ \ \ \ \ \ }\textcolor{comment}{/*\ 1uF\ DCDC\ capacitor.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{01038\ \textcolor{preprocessor}{\ \ \}}}
+\DoxyCodeLine{01039\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{01040\ \textcolor{preprocessor}{\#define\ EMU\_DCDCINIT\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{01041\ \textcolor{preprocessor}{\ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{01042\ \textcolor{preprocessor}{\ \ \ \ emuPowerConfig\_DcdcToDvdd,\ \ \ }\textcolor{comment}{/*\ DCDC\ to\ DVDD.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{01043\ \textcolor{preprocessor}{\ \ \ \ emuDcdcMode\_LowNoise,\ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Low-\/noise\ mode\ in\ EM0.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{01044\ \textcolor{preprocessor}{\ \ \ \ 1800,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Nominal\ output\ voltage\ for\ DVDD\ mode,\ 1.8V.\ \ */}\textcolor{preprocessor}{\ \ \(\backslash\)}}
+\DoxyCodeLine{01045\ \textcolor{preprocessor}{\ \ \ \ 15,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Nominal\ EM0/1\ load\ current\ of\ less\ than\ 15mA.\ */}\textcolor{preprocessor}{\ \(\backslash\)}}
+\DoxyCodeLine{01046\ \textcolor{preprocessor}{\ \ \ \ 10,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Nominal\ EM2/3/4\ load\ current\ less\ than\ 10uA.\ \ */}\textcolor{preprocessor}{\ \(\backslash\)}}
+\DoxyCodeLine{01047\ \textcolor{preprocessor}{\ \ \ \ 200,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Maximum\ average\ current\ of\ 200mA}}
+\DoxyCodeLine{01048\ \textcolor{comment}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (assume\ strong\ battery\ or\ other\ power\ source).\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{01049\ \textcolor{preprocessor}{\ \ \ \ emuDcdcAnaPeripheralPower\_DCDC,}\textcolor{comment}{/*\ Select\ DCDC\ as\ analog\ power\ supply\ (lower\ power).\ */}\textcolor{preprocessor}{\ \(\backslash\)}}
+\DoxyCodeLine{01050\ \textcolor{preprocessor}{\ \ \ \ 160,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Maximum\ reverse\ current\ of\ 160mA.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{01051\ \textcolor{preprocessor}{\ \ \ \ emuDcdcLnCompCtrl\_4u7F,\ \ \ \ \ \ }\textcolor{comment}{/*\ 4.7uF\ DCDC\ capacitor.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{01052\ \textcolor{preprocessor}{\ \ \}}}
+\DoxyCodeLine{01053\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01054\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01055\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01056\ }
+\DoxyCodeLine{01057\ \textcolor{preprocessor}{\#if\ defined(EMU\_STATUS\_VMONRDY)}}
+\DoxyCodeLine{01059\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{01060\ \ \ EMU\_VmonChannel\_TypeDef\ channel;\ \ \ \ \ \ }
+\DoxyCodeLine{01061\ \ \ \textcolor{keywordtype}{int}\ threshold;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{01062\ \ \ \textcolor{keywordtype}{bool}\ riseWakeup;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{01063\ \ \ \textcolor{keywordtype}{bool}\ fallWakeup;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{01064\ \ \ \textcolor{keywordtype}{bool}\ enable;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{01065\ \ \ \textcolor{keywordtype}{bool}\ retDisable;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{01066\ \}\ EMU\_VmonInit\_TypeDef;}
+\DoxyCodeLine{01067\ }
+\DoxyCodeLine{01069\ \textcolor{preprocessor}{\#define\ EMU\_VMONINIT\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{01070\ \textcolor{preprocessor}{\ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{01071\ \textcolor{preprocessor}{\ \ \ \ emuVmonChannel\_AVDD,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ AVDD\ VMON\ channel.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{01072\ \textcolor{preprocessor}{\ \ \ \ 3200,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ 3.2\ V\ threshold.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{01073\ \textcolor{preprocessor}{\ \ \ \ false,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Do\ not\ wake\ from\ EM4H\ on\ rising\ edge.\ */}\textcolor{preprocessor}{\ \ \(\backslash\)}}
+\DoxyCodeLine{01074\ \textcolor{preprocessor}{\ \ \ \ false,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Do\ not\ wake\ from\ EM4H\ on\ falling\ edge.\ */}\textcolor{preprocessor}{\ \(\backslash\)}}
+\DoxyCodeLine{01075\ \textcolor{preprocessor}{\ \ \ \ true,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Enable\ VMON\ channel.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{01076\ \textcolor{preprocessor}{\ \ \ \ false\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Do\ not\ disable\ IO0\ retention\ \ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{01077\ \textcolor{preprocessor}{\ \ \}}}
+\DoxyCodeLine{01078\ }
+\DoxyCodeLine{01080\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{01081\ \ \ EMU\_VmonChannel\_TypeDef\ channel;\ \ \ \ \ \ }
+\DoxyCodeLine{01082\ \ \ \textcolor{keywordtype}{int}\ riseThreshold;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{01083\ \ \ \textcolor{keywordtype}{int}\ fallThreshold;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{01084\ \ \ \textcolor{keywordtype}{bool}\ riseWakeup;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{01085\ \ \ \textcolor{keywordtype}{bool}\ fallWakeup;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{01086\ \ \ \textcolor{keywordtype}{bool}\ enable;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{01087\ \}\ EMU\_VmonHystInit\_TypeDef;}
+\DoxyCodeLine{01088\ }
+\DoxyCodeLine{01090\ \textcolor{preprocessor}{\#define\ EMU\_VMONHYSTINIT\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{01091\ \textcolor{preprocessor}{\ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{01092\ \textcolor{preprocessor}{\ \ \ \ emuVmonChannel\_AVDD,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ AVDD\ VMON\ channel.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{01093\ \textcolor{preprocessor}{\ \ \ \ 3200,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ 3.2\ V\ rise\ threshold.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{01094\ \textcolor{preprocessor}{\ \ \ \ 3200,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ 3.2\ V\ fall\ threshold.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{01095\ \textcolor{preprocessor}{\ \ \ \ false,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Do\ not\ wake\ from\ EM4H\ on\ rising\ edge.\ */}\textcolor{preprocessor}{\ \ \(\backslash\)}}
+\DoxyCodeLine{01096\ \textcolor{preprocessor}{\ \ \ \ false,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Do\ not\ wake\ from\ EM4H\ on\ falling\ edge.\ */}\textcolor{preprocessor}{\ \(\backslash\)}}
+\DoxyCodeLine{01097\ \textcolor{preprocessor}{\ \ \ \ true\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }\textcolor{comment}{/*\ Enable\ VMON\ channel.\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{01098\ \textcolor{preprocessor}{\ \ \}}}
+\DoxyCodeLine{01099\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ EMU\_STATUS\_VMONRDY\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{01100\ }
+\DoxyCodeLine{01101\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{01102\ \textcolor{comment}{\ *****************************\ \ \ PROTOTYPES\ \ \ **********************************}}
+\DoxyCodeLine{01103\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{01104\ }
+\DoxyCodeLine{01105\ \textcolor{preprocessor}{\#if\ defined(EMU\_VSCALE\_EM01\_PRESENT)}}
+\DoxyCodeLine{01106\ \textcolor{keywordtype}{void}\ EMU\_EM01Init(\textcolor{keyword}{const}\ EMU\_EM01Init\_TypeDef\ *em01Init);}
+\DoxyCodeLine{01107\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01108\ \textcolor{keywordtype}{void}\ EMU\_EM23Init(\textcolor{keyword}{const}\ EMU\_EM23Init\_TypeDef\ *em23Init);}
+\DoxyCodeLine{01109\ \textcolor{keywordtype}{void}\ EMU\_EM23PresleepHook(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{01110\ \textcolor{keywordtype}{void}\ EMU\_EM23PostsleepHook(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{01111\ \textcolor{keywordtype}{void}\ EMU\_EFPEM23PresleepHook(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{01112\ \textcolor{keywordtype}{void}\ EMU\_EFPEM23PostsleepHook(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{01113\ \textcolor{keywordtype}{void}\ EMU\_EnterEM2(\textcolor{keywordtype}{bool}\ restore);}
+\DoxyCodeLine{01114\ \textcolor{keywordtype}{void}\ EMU\_EnterEM3(\textcolor{keywordtype}{bool}\ restore);}
+\DoxyCodeLine{01115\ \textcolor{keywordtype}{void}\ EMU\_Save(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{01116\ \textcolor{keywordtype}{void}\ EMU\_Restore(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{01117\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_EM4CONF\_MASK)\ ||\ defined(\_EMU\_EM4CTRL\_MASK)}}
+\DoxyCodeLine{01118\ \textcolor{keywordtype}{void}\ EMU\_EM4Init(\textcolor{keyword}{const}\ EMU\_EM4Init\_TypeDef\ *em4Init);}
+\DoxyCodeLine{01119\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01120\ \textcolor{keywordtype}{void}\ EMU\_EM4PresleepHook(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{01121\ \textcolor{keywordtype}{void}\ EMU\_EFPEM4PresleepHook(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{01122\ \textcolor{keywordtype}{void}\ EMU\_EnterEM4(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{01123\ \textcolor{keywordtype}{void}\ EMU\_EnterEM4Wait(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{01124\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_EM4CTRL\_MASK)}}
+\DoxyCodeLine{01125\ \textcolor{keywordtype}{void}\ EMU\_EnterEM4H(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{01126\ \textcolor{keywordtype}{void}\ EMU\_EnterEM4S(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{01127\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01128\ \textcolor{keywordtype}{void}\ EMU\_MemPwrDown(uint32\_t\ blocks)\ SL\_DEPRECATED\_API\_SDK\_4\_1;}
+\DoxyCodeLine{01129\ \textcolor{keywordtype}{void}\ EMU\_RamPowerDown(uint32\_t\ start,\ uint32\_t\ end);}
+\DoxyCodeLine{01130\ \textcolor{keywordtype}{void}\ EMU\_RamPowerUp(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{01131\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_EM23PERNORETAINCTRL\_MASK)}}
+\DoxyCodeLine{01132\ \textcolor{keywordtype}{void}\ EMU\_PeripheralRetention(EMU\_PeripheralRetention\_TypeDef\ periMask,\ \textcolor{keywordtype}{bool}\ enable);}
+\DoxyCodeLine{01133\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01134\ \textcolor{keywordtype}{void}\ EMU\_UpdateOscConfig(\textcolor{keywordtype}{void})\ SL\_DEPRECATED\_API\_SDK\_4\_1;}
+\DoxyCodeLine{01135\ \textcolor{preprocessor}{\#if\ defined(EMU\_VSCALE\_EM01\_PRESENT)}}
+\DoxyCodeLine{01136\ \textcolor{preprocessor}{\#if\ defined(\_SILICON\_LABS\_32B\_SERIES\_2)}}
+\DoxyCodeLine{01137\ \textcolor{keywordtype}{void}\ EMU\_EFPEM01VScale(EMU\_VScaleEM01\_TypeDef\ voltage);}
+\DoxyCodeLine{01138\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01139\ \textcolor{keywordtype}{void}\ EMU\_VScaleEM01ByClock(uint32\_t\ clockFrequency,\ \textcolor{keywordtype}{bool}\ wait);}
+\DoxyCodeLine{01140\ \textcolor{keywordtype}{void}\ EMU\_VScaleEM01(EMU\_VScaleEM01\_TypeDef\ voltage,\ \textcolor{keywordtype}{bool}\ wait);}
+\DoxyCodeLine{01141\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01142\ \textcolor{preprocessor}{\#if\ defined(BU\_PRESENT)\ \&\&\ defined(\_SILICON\_LABS\_32B\_SERIES\_0)}}
+\DoxyCodeLine{01143\ \textcolor{keywordtype}{void}\ EMU\_BUPDInit(\textcolor{keyword}{const}\ EMU\_BUPDInit\_TypeDef\ *bupdInit);}
+\DoxyCodeLine{01144\ \textcolor{keywordtype}{void}\ EMU\_BUThresholdSet(EMU\_BODMode\_TypeDef\ mode,\ uint32\_t\ value);}
+\DoxyCodeLine{01145\ \textcolor{keywordtype}{void}\ EMU\_BUThresRangeSet(EMU\_BODMode\_TypeDef\ mode,\ uint32\_t\ value);}
+\DoxyCodeLine{01146\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01147\ \textcolor{preprocessor}{\#if\ defined(BU\_PRESENT)\ \&\&\ defined(\_SILICON\_LABS\_32B\_SERIES\_1)}}
+\DoxyCodeLine{01148\ \textcolor{keywordtype}{void}\ EMU\_BUInit(\textcolor{keyword}{const}\ EMU\_BUInit\_TypeDef\ *buInit);}
+\DoxyCodeLine{01149\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01150\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_BUCTRL\_DISMAXCOMP\_MASK)}}
+\DoxyCodeLine{01151\ \textcolor{keywordtype}{void}\ EMU\_BUDisMaxCompSet(\textcolor{keywordtype}{bool}\ disableMainBuComparator);}
+\DoxyCodeLine{01152\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01153\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_BUCTRL\_BUINACTPWRCON\_MASK)}}
+\DoxyCodeLine{01154\ \textcolor{keywordtype}{void}\ EMU\_BUBuInactPwrConSet(EMU\_BUBuInactPwrCon\_TypeDef\ inactPwrCon);}
+\DoxyCodeLine{01155\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01156\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_BUCTRL\_BUACTPWRCON\_MASK)}}
+\DoxyCodeLine{01157\ \textcolor{keywordtype}{void}\ EMU\_BUBuActPwrConSet(EMU\_BUBuActPwrCon\_TypeDef\ actPwrCon);}
+\DoxyCodeLine{01158\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01159\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_BUCTRL\_PWRRES\_MASK)}}
+\DoxyCodeLine{01160\ \textcolor{keywordtype}{void}\ EMU\_BUPwrResSet(EMU\_BUPwrRes\_TypeDef\ pwrRes);}
+\DoxyCodeLine{01161\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01162\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_BUCTRL\_VOUTRES\_MASK)}}
+\DoxyCodeLine{01163\ \textcolor{keywordtype}{void}\ EMU\_BUVoutResSet(EMU\_BUVoutRes\_TypeDef\ resistorSel);}
+\DoxyCodeLine{01164\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01165\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_BUCTRL\_BUVINPROBEEN\_MASK)}}
+\DoxyCodeLine{01166\ \textcolor{keywordtype}{void}\ EMU\_BUBuVinProbeEnSet(\textcolor{keywordtype}{bool}\ enable);}
+\DoxyCodeLine{01167\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01168\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_BUCTRL\_STATEN\_MASK)}}
+\DoxyCodeLine{01169\ \textcolor{keywordtype}{void}\ EMU\_BUStatEnSet(\textcolor{keywordtype}{bool}\ enable);}
+\DoxyCodeLine{01170\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01171\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_BUCTRL\_EN\_MASK)}}
+\DoxyCodeLine{01172\ \textcolor{keywordtype}{void}\ EMU\_BUEnableSet(\textcolor{keywordtype}{bool}\ enable);}
+\DoxyCodeLine{01173\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01174\ }
+\DoxyCodeLine{01175\ \textcolor{preprocessor}{\#if\ defined(EMU\_SERIES1\_DCDC\_BUCK\_PRESENT)}}
+\DoxyCodeLine{01176\ \textcolor{keywordtype}{void}\ EMU\_DCDCModeSet(EMU\_DcdcMode\_TypeDef\ dcdcMode);}
+\DoxyCodeLine{01177\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01178\ }
+\DoxyCodeLine{01179\ \textcolor{preprocessor}{\#if\ (defined(EMU\_SERIES2\_DCDC\_BUCK\_PRESENT)\ \(\backslash\)}}
+\DoxyCodeLine{01180\ \textcolor{preprocessor}{\ \ ||\ defined(EMU\_SERIES2\_DCDC\_BOOST\_PRESENT))}}
+\DoxyCodeLine{01181\ sl\_status\_t\ EMU\_DCDCModeSet(EMU\_DcdcMode\_TypeDef\ dcdcMode);}
+\DoxyCodeLine{01182\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01183\ }
+\DoxyCodeLine{01184\ \textcolor{preprocessor}{\#if\ defined(EMU\_SERIES2\_DCDC\_BUCK\_PRESENT)\ \(\backslash\)}}
+\DoxyCodeLine{01185\ \textcolor{preprocessor}{\ \ ||\ defined(EMU\_SERIES2\_DCDC\_BOOST\_PRESENT)}}
+\DoxyCodeLine{01186\ \textcolor{keywordtype}{void}\ EMU\_DCDCUpdatedHook(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{01187\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01188\ }
+\DoxyCodeLine{01189\ \textcolor{preprocessor}{\#if\ defined(EMU\_SERIES2\_DCDC\_BOOST\_PRESENT)}}
+\DoxyCodeLine{01190\ \textcolor{keywordtype}{bool}\ EMU\_DCDCBoostInit(\textcolor{keyword}{const}\ EMU\_DCDCBoostInit\_TypeDef\ *dcdcBoostInit);}
+\DoxyCodeLine{01191\ \textcolor{keywordtype}{void}\ EMU\_EM01BoostPeakCurrentSet(\textcolor{keyword}{const}\ EMU\_DcdcBoostEM01PeakCurrent\_TypeDef\ boostPeakCurrentEM01);}
+\DoxyCodeLine{01192\ \textcolor{keywordtype}{void}\ EMU\_BoostExternalShutdownEnable(\textcolor{keywordtype}{bool}\ enable);}
+\DoxyCodeLine{01193\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01194\ }
+\DoxyCodeLine{01195\ \textcolor{preprocessor}{\#if\ defined(EMU\_SERIES1\_DCDC\_BUCK\_PRESENT)\ \(\backslash\)}}
+\DoxyCodeLine{01196\ \textcolor{preprocessor}{\ \ ||\ defined(EMU\_SERIES2\_DCDC\_BUCK\_PRESENT)}}
+\DoxyCodeLine{01197\ \textcolor{keywordtype}{bool}\ EMU\_DCDCInit(\textcolor{keyword}{const}\ EMU\_DCDCInit\_TypeDef\ *dcdcInit);}
+\DoxyCodeLine{01198\ \textcolor{keywordtype}{bool}\ EMU\_DCDCPowerOff(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{01199\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01200\ }
+\DoxyCodeLine{01201\ \textcolor{preprocessor}{\#if\ defined(EMU\_SERIES2\_DCDC\_BUCK\_PRESENT)}}
+\DoxyCodeLine{01202\ \textcolor{keywordtype}{void}\ EMU\_EM01PeakCurrentSet(\textcolor{keyword}{const}\ EMU\_DcdcPeakCurrent\_TypeDef\ peakCurrentEM01);}
+\DoxyCodeLine{01203\ \textcolor{preprocessor}{\#if\ defined(\_DCDC\_PFMXCTRL\_IPKVAL\_MASK)}}
+\DoxyCodeLine{01204\ \textcolor{keywordtype}{void}\ EMU\_DCDCSetPFMXModePeakCurrent(uint32\_t\ value);}
+\DoxyCodeLine{01205\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01206\ \textcolor{preprocessor}{\#if\ defined(\_DCDC\_PFMXCTRL\_IPKTMAXCTRL\_MASK)}}
+\DoxyCodeLine{01207\ \textcolor{keywordtype}{void}\ EMU\_DCDCSetPFMXTimeoutMaxCtrl(EMU\_DcdcTonMaxTimeout\_TypeDef\ value);}
+\DoxyCodeLine{01208\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01209\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ EMU\_SERIES2\_DCDC\_BUCK\_PRESENT\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{01210\ }
+\DoxyCodeLine{01211\ \textcolor{preprocessor}{\#if\ defined(EMU\_SERIES1\_DCDC\_BUCK\_PRESENT)}}
+\DoxyCodeLine{01212\ \textcolor{preprocessor}{\#if\ defined(EMU\_DCDCCTRL\_DCDCMODEEM23)}}
+\DoxyCodeLine{01213\ \textcolor{keywordtype}{void}\ EMU\_DCDCModeEM23Set(EMU\_DcdcModeEM23\_TypeDef\ dcdcModeEM23);}
+\DoxyCodeLine{01214\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01215\ \textcolor{keywordtype}{void}\ EMU\_DCDCConductionModeSet(EMU\_DcdcConductionMode\_TypeDef\ conductionMode,\ \textcolor{keywordtype}{bool}\ rcoDefaultSet);}
+\DoxyCodeLine{01216\ \textcolor{keywordtype}{bool}\ EMU\_DCDCOutputVoltageSet(uint32\_t\ mV,\ \textcolor{keywordtype}{bool}\ setLpVoltage,\ \textcolor{keywordtype}{bool}\ setLnVoltage);}
+\DoxyCodeLine{01217\ \textcolor{keywordtype}{void}\ EMU\_DCDCOptimizeSlice(uint32\_t\ em0LoadCurrentmA);}
+\DoxyCodeLine{01218\ \textcolor{keywordtype}{void}\ EMU\_DCDCLnRcoBandSet(EMU\_DcdcLnRcoBand\_TypeDef\ band);}
+\DoxyCodeLine{01219\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ EMU\_SERIES1\_DCDC\_BUCK\_PRESENT\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{01220\ }
+\DoxyCodeLine{01221\ \textcolor{preprocessor}{\#if\ defined(EMU\_STATUS\_VMONRDY)}}
+\DoxyCodeLine{01222\ \textcolor{keywordtype}{void}\ EMU\_VmonInit(\textcolor{keyword}{const}\ EMU\_VmonInit\_TypeDef\ *vmonInit);}
+\DoxyCodeLine{01223\ \textcolor{keywordtype}{void}\ EMU\_VmonHystInit(\textcolor{keyword}{const}\ EMU\_VmonHystInit\_TypeDef\ *vmonInit);}
+\DoxyCodeLine{01224\ \textcolor{keywordtype}{void}\ EMU\_VmonEnable(EMU\_VmonChannel\_TypeDef\ channel,\ \textcolor{keywordtype}{bool}\ enable);}
+\DoxyCodeLine{01225\ \textcolor{keywordtype}{bool}\ EMU\_VmonChannelStatusGet(EMU\_VmonChannel\_TypeDef\ channel);}
+\DoxyCodeLine{01226\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01227\ \textcolor{preprocessor}{\#if\ defined(\_SILICON\_LABS\_GECKO\_INTERNAL\_SDID\_80)}}
+\DoxyCodeLine{01228\ \textcolor{keywordtype}{void}\ EMU\_SetBiasMode(EMU\_BiasMode\_TypeDef\ mode);}
+\DoxyCodeLine{01229\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01230\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_TEMP\_TEMP\_MASK)}}
+\DoxyCodeLine{01231\ \textcolor{keywordtype}{float}\ EMU\_TemperatureGet(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{01232\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01233\ \textcolor{preprocessor}{\#if\ defined(EMU\_CTRL\_EFPDIRECTMODEEN)}}
+\DoxyCodeLine{01234\ \textcolor{keywordtype}{void}\ EMU\_EFPDirectModeEnable(\textcolor{keywordtype}{bool}\ enable);}
+\DoxyCodeLine{01235\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01236\ \textcolor{preprocessor}{\#if\ defined(EMU\_CTRL\_EFPDRVDECOUPLE)}}
+\DoxyCodeLine{01237\ \textcolor{keywordtype}{void}\ EMU\_EFPDriveDecoupleSet(\textcolor{keywordtype}{bool}\ enable);}
+\DoxyCodeLine{01238\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01239\ \textcolor{preprocessor}{\#if\ defined(EMU\_CTRL\_EFPDRVDVDD)}}
+\DoxyCodeLine{01240\ \textcolor{keywordtype}{void}\ EMU\_EFPDriveDvddSet(\textcolor{keywordtype}{bool}\ enable);}
+\DoxyCodeLine{01241\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01242\ }
+\DoxyCodeLine{01243\ \textcolor{preprocessor}{\#if\ defined(\_DCDC\_CTRL\_MASK)}}
+\DoxyCodeLine{01244\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{01249\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ EMU\_DCDCLock(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{01250\ \{}
+\DoxyCodeLine{01251\ \ \ DCDC-\/>LOCK\ =\ \string~DCDC\_LOCK\_LOCKKEY\_UNLOCKKEY;}
+\DoxyCodeLine{01252\ \}}
+\DoxyCodeLine{01253\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01254\ }
+\DoxyCodeLine{01255\ \textcolor{preprocessor}{\#if\ defined(\_DCDC\_CTRL\_MASK)}}
+\DoxyCodeLine{01256\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{01260\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ EMU\_DCDCUnlock(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{01261\ \{}
+\DoxyCodeLine{01262\ \ \ DCDC-\/>LOCK\ =\ DCDC\_LOCK\_LOCKKEY\_UNLOCKKEY;}
+\DoxyCodeLine{01263\ \}}
+\DoxyCodeLine{01264\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01265\ }
+\DoxyCodeLine{01266\ \textcolor{preprocessor}{\#if\ defined(\_DCDC\_SYNCBUSY\_MASK)}}
+\DoxyCodeLine{01267\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{01275\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ EMU\_DCDCSync(uint32\_t\ mask)}
+\DoxyCodeLine{01276\ \{}
+\DoxyCodeLine{01277\ \ \ \textcolor{keywordflow}{while}\ (0UL\ !=\ (DCDC-\/>SYNCBUSY\ \&\ mask))\ \{}
+\DoxyCodeLine{01278\ \ \ \ \ \textcolor{comment}{/*\ Wait\ for\ previous\ synchronization\ to\ finish\ */}}
+\DoxyCodeLine{01279\ \ \ \}}
+\DoxyCodeLine{01280\ \}}
+\DoxyCodeLine{01281\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01282\ }
+\DoxyCodeLine{01283\ \textcolor{preprocessor}{\#if\ defined(\_SILICON\_LABS\_32B\_SERIES\_1)}}
+\DoxyCodeLine{01284\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{01291\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{bool}\ EMU\_LDOStatusGet(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{01292\ \{}
+\DoxyCodeLine{01293\ \ \ \textcolor{keywordflow}{if}\ ((*(\textcolor{keyword}{volatile}\ uint32\_t*)0x400E303C\ \&\ 0x00000040UL)\ ==\ 0UL)\ \{}
+\DoxyCodeLine{01294\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{01295\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{01296\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{01297\ \ \ \}}
+\DoxyCodeLine{01298\ \}}
+\DoxyCodeLine{01299\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01300\ }
+\DoxyCodeLine{01301\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{01311\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ EMU\_EnterEM1(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{01312\ \{}
+\DoxyCodeLine{01313\ \ \ \textcolor{comment}{/*\ Enter\ sleep\ mode.\ */}}
+\DoxyCodeLine{01314\ \ \ \mbox{\hyperlink{group___c_m_s_i_s__core__base_gaaaf6477c2bde2f00f99e3c2fd1060b01}{SCB}}-\/>SCR\ \&=\ \string~SCB\_SCR\_SLEEPDEEP\_Msk;}
+\DoxyCodeLine{01315\ \ \ \mbox{\hyperlink{group___c_m_s_i_s___core___instruction_interface_gab28e2b328c4cf23c917ab18a23194f8e}{\_\_WFI}}();}
+\DoxyCodeLine{01316\ \}}
+\DoxyCodeLine{01317\ }
+\DoxyCodeLine{01318\ \textcolor{preprocessor}{\#if\ defined(EMU\_VSCALE\_EM01\_PRESENT)}}
+\DoxyCodeLine{01319\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{01323\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ EMU\_VScaleWait(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{01324\ \{}
+\DoxyCodeLine{01325\ \textcolor{preprocessor}{\#if\ defined(\_SILICON\_LABS\_32B\_SERIES\_1)}}
+\DoxyCodeLine{01326\ \ \ \textcolor{keywordflow}{if}\ (EMU\_LDOStatusGet()\ ==\ \textcolor{keyword}{false})\ \{}
+\DoxyCodeLine{01327\ \ \ \ \ \textcolor{comment}{/*\ Skip\ waiting\ if\ the\ LDO\ regulator\ is\ turned\ off.\ */}}
+\DoxyCodeLine{01328\ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{01329\ \ \ \}}
+\DoxyCodeLine{01330\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01331\ }
+\DoxyCodeLine{01332\ \ \ \textcolor{keywordflow}{while}\ (\mbox{\hyperlink{group__bus_gaca6b55014161f4c51c9daf4f707eeb7c}{BUS\_RegBitRead}}(\&\mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_ga15d2c2b1e853b541f1d74797b62c8ac0}{EMU}}-\/>STATUS,\ \_EMU\_STATUS\_VSCALEBUSY\_SHIFT)\ !=\ 0U)\ \{}
+\DoxyCodeLine{01333\ \ \ \}}
+\DoxyCodeLine{01334\ \}}
+\DoxyCodeLine{01335\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01336\ }
+\DoxyCodeLine{01337\ \textcolor{preprocessor}{\#if\ defined(EMU\_VSCALE\_EM01\_PRESENT)}}
+\DoxyCodeLine{01338\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{01345\ \_\_STATIC\_INLINE\ EMU\_VScaleEM01\_TypeDef\ EMU\_VScaleGet(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{01346\ \{}
+\DoxyCodeLine{01347\ \ \ EMU\_VScaleWait();}
+\DoxyCodeLine{01348\ \ \ \textcolor{keywordflow}{return}\ (EMU\_VScaleEM01\_TypeDef)((uint32\_t)}
+\DoxyCodeLine{01349\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((\mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_ga15d2c2b1e853b541f1d74797b62c8ac0}{EMU}}-\/>STATUS\ \&\ \_EMU\_STATUS\_VSCALE\_MASK)}
+\DoxyCodeLine{01350\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ >>\ \_EMU\_STATUS\_VSCALE\_SHIFT));}
+\DoxyCodeLine{01351\ \}}
+\DoxyCodeLine{01352\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01353\ }
+\DoxyCodeLine{01354\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_STATUS\_VMONRDY\_MASK)}}
+\DoxyCodeLine{01355\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{01363\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{bool}\ EMU\_VmonStatusGet(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{01364\ \{}
+\DoxyCodeLine{01365\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{group__bus_gaca6b55014161f4c51c9daf4f707eeb7c}{BUS\_RegBitRead}}(\&\mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_ga15d2c2b1e853b541f1d74797b62c8ac0}{EMU}}-\/>STATUS,\ \_EMU\_STATUS\_VMONRDY\_SHIFT)\ !=\ 0U;}
+\DoxyCodeLine{01366\ \}}
+\DoxyCodeLine{01367\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_EMU\_STATUS\_VMONRDY\_MASK\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{01368\ }
+\DoxyCodeLine{01369\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_IF\_MASK)}}
+\DoxyCodeLine{01370\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{01378\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ EMU\_IntClear(uint32\_t\ flags)}
+\DoxyCodeLine{01379\ \{}
+\DoxyCodeLine{01380\ \textcolor{preprocessor}{\#if\ defined(EMU\_HAS\_SET\_CLEAR)}}
+\DoxyCodeLine{01381\ \ \ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_ga15d2c2b1e853b541f1d74797b62c8ac0}{EMU}}-\/>IF\_CLR\ =\ flags;}
+\DoxyCodeLine{01382\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{01383\ \ \ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_ga15d2c2b1e853b541f1d74797b62c8ac0}{EMU}}-\/>IFC\ =\ flags;}
+\DoxyCodeLine{01384\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01385\ \}}
+\DoxyCodeLine{01386\ }
+\DoxyCodeLine{01387\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{01395\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ EMU\_IntDisable(uint32\_t\ flags)}
+\DoxyCodeLine{01396\ \{}
+\DoxyCodeLine{01397\ \textcolor{preprocessor}{\#if\ defined(EMU\_HAS\_SET\_CLEAR)}}
+\DoxyCodeLine{01398\ \ \ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_ga15d2c2b1e853b541f1d74797b62c8ac0}{EMU}}-\/>IEN\_CLR\ =\ flags;}
+\DoxyCodeLine{01399\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{01400\ \ \ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_ga15d2c2b1e853b541f1d74797b62c8ac0}{EMU}}-\/>IEN\ \&=\ \string~flags;}
+\DoxyCodeLine{01401\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01402\ \}}
+\DoxyCodeLine{01403\ }
+\DoxyCodeLine{01404\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{01417\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ EMU\_IntEnable(uint32\_t\ flags)}
+\DoxyCodeLine{01418\ \{}
+\DoxyCodeLine{01419\ \textcolor{preprocessor}{\#if\ defined(EMU\_HAS\_SET\_CLEAR)}}
+\DoxyCodeLine{01420\ \ \ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_ga15d2c2b1e853b541f1d74797b62c8ac0}{EMU}}-\/>IEN\_SET\ =\ flags;}
+\DoxyCodeLine{01421\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{01422\ \ \ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_ga15d2c2b1e853b541f1d74797b62c8ac0}{EMU}}-\/>IEN\ |=\ flags;}
+\DoxyCodeLine{01423\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01424\ \}}
+\DoxyCodeLine{01425\ }
+\DoxyCodeLine{01426\ \textcolor{preprocessor}{\#if\ defined(EMU\_CTRL\_EFPDRVDVDD)}}
+\DoxyCodeLine{01427\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{01435\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ EMU\_EFPIntDisable(uint32\_t\ flags)}
+\DoxyCodeLine{01436\ \{}
+\DoxyCodeLine{01437\ \ \ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_ga15d2c2b1e853b541f1d74797b62c8ac0}{EMU}}-\/>EFPIEN\_CLR\ =\ flags;}
+\DoxyCodeLine{01438\ \}}
+\DoxyCodeLine{01439\ }
+\DoxyCodeLine{01440\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{01448\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ EMU\_EFPIntEnable(uint32\_t\ flags)}
+\DoxyCodeLine{01449\ \{}
+\DoxyCodeLine{01450\ \ \ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_ga15d2c2b1e853b541f1d74797b62c8ac0}{EMU}}-\/>EFPIEN\_SET\ =\ flags;}
+\DoxyCodeLine{01451\ \}}
+\DoxyCodeLine{01452\ }
+\DoxyCodeLine{01453\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{01463\ \_\_STATIC\_INLINE\ uint32\_t\ EMU\_EFPIntGet(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{01464\ \{}
+\DoxyCodeLine{01465\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_ga15d2c2b1e853b541f1d74797b62c8ac0}{EMU}}-\/>EFPIF;}
+\DoxyCodeLine{01466\ \}}
+\DoxyCodeLine{01467\ }
+\DoxyCodeLine{01468\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{01482\ \_\_STATIC\_INLINE\ uint32\_t\ EMU\_EFPIntGetEnabled(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{01483\ \{}
+\DoxyCodeLine{01484\ \ \ uint32\_t\ ien;}
+\DoxyCodeLine{01485\ }
+\DoxyCodeLine{01486\ \ \ ien\ =\ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_ga15d2c2b1e853b541f1d74797b62c8ac0}{EMU}}-\/>EFPIEN;}
+\DoxyCodeLine{01487\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_ga15d2c2b1e853b541f1d74797b62c8ac0}{EMU}}-\/>EFPIF\ \&\ ien;}
+\DoxyCodeLine{01488\ \}}
+\DoxyCodeLine{01489\ }
+\DoxyCodeLine{01490\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{01498\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ EMU\_EFPIntSet(uint32\_t\ flags)}
+\DoxyCodeLine{01499\ \{}
+\DoxyCodeLine{01500\ \ \ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_ga15d2c2b1e853b541f1d74797b62c8ac0}{EMU}}-\/>EFPIF\_SET\ =\ flags;}
+\DoxyCodeLine{01501\ \}}
+\DoxyCodeLine{01502\ }
+\DoxyCodeLine{01503\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{01511\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ EMU\_EFPIntClear(uint32\_t\ flags)}
+\DoxyCodeLine{01512\ \{}
+\DoxyCodeLine{01513\ \ \ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_ga15d2c2b1e853b541f1d74797b62c8ac0}{EMU}}-\/>EFPIF\_CLR\ =\ flags;}
+\DoxyCodeLine{01514\ \}}
+\DoxyCodeLine{01515\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01516\ }
+\DoxyCodeLine{01517\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{01528\ \_\_STATIC\_INLINE\ uint32\_t\ EMU\_IntGet(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{01529\ \{}
+\DoxyCodeLine{01530\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_ga15d2c2b1e853b541f1d74797b62c8ac0}{EMU}}-\/>IF;}
+\DoxyCodeLine{01531\ \}}
+\DoxyCodeLine{01532\ }
+\DoxyCodeLine{01533\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{01547\ \_\_STATIC\_INLINE\ uint32\_t\ EMU\_IntGetEnabled(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{01548\ \{}
+\DoxyCodeLine{01549\ \ \ uint32\_t\ ien;}
+\DoxyCodeLine{01550\ }
+\DoxyCodeLine{01551\ \ \ ien\ =\ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_ga15d2c2b1e853b541f1d74797b62c8ac0}{EMU}}-\/>IEN;}
+\DoxyCodeLine{01552\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_ga15d2c2b1e853b541f1d74797b62c8ac0}{EMU}}-\/>IF\ \&\ ien;}
+\DoxyCodeLine{01553\ \}}
+\DoxyCodeLine{01554\ }
+\DoxyCodeLine{01555\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{01563\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ EMU\_IntSet(uint32\_t\ flags)}
+\DoxyCodeLine{01564\ \{}
+\DoxyCodeLine{01565\ \textcolor{preprocessor}{\#if\ defined(EMU\_HAS\_SET\_CLEAR)}}
+\DoxyCodeLine{01566\ \ \ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_ga15d2c2b1e853b541f1d74797b62c8ac0}{EMU}}-\/>IF\_SET\ =\ flags;}
+\DoxyCodeLine{01567\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{01568\ \ \ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_ga15d2c2b1e853b541f1d74797b62c8ac0}{EMU}}-\/>IFS\ =\ flags;}
+\DoxyCodeLine{01569\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01570\ \}}
+\DoxyCodeLine{01571\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_EMU\_IF\_MASK\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{01572\ }
+\DoxyCodeLine{01573\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_EM4CONF\_LOCKCONF\_MASK)}}
+\DoxyCodeLine{01574\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{01580\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ EMU\_EM4Lock(\textcolor{keywordtype}{bool}\ enable)}
+\DoxyCodeLine{01581\ \{}
+\DoxyCodeLine{01582\ \ \ \mbox{\hyperlink{group__bus_gaf8574f14855448ecae32c5a9dd0c7164}{BUS\_RegBitWrite}}(\&(\mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_ga15d2c2b1e853b541f1d74797b62c8ac0}{EMU}}-\/>EM4CONF),\ \mbox{\hyperlink{group___e_f_m32_g_g___e_m_u___bit_fields_gabbd322ea5f26af93b32268a0008f9f3c}{\_EMU\_EM4CONF\_LOCKCONF\_SHIFT}},\ enable);}
+\DoxyCodeLine{01583\ \}}
+\DoxyCodeLine{01584\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01585\ }
+\DoxyCodeLine{01586\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_STATUS\_BURDY\_MASK)}}
+\DoxyCodeLine{01587\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{01591\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ EMU\_BUReady(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{01592\ \{}
+\DoxyCodeLine{01593\ \ \ \textcolor{keywordflow}{while}\ (!(\mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_ga15d2c2b1e853b541f1d74797b62c8ac0}{EMU}}-\/>STATUS\ \&\ \mbox{\hyperlink{group___e_f_m32_g_g___e_m_u___bit_fields_ga3bf9cc22278d9cbd3cffee4d675c15a0}{EMU\_STATUS\_BURDY}}))}
+\DoxyCodeLine{01594\ \ \ \ \ ;}
+\DoxyCodeLine{01595\ \}}
+\DoxyCodeLine{01596\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01597\ }
+\DoxyCodeLine{01598\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_ROUTE\_BUVINPEN\_MASK)}}
+\DoxyCodeLine{01599\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{01605\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ EMU\_BUPinEnable(\textcolor{keywordtype}{bool}\ enable)}
+\DoxyCodeLine{01606\ \{}
+\DoxyCodeLine{01607\ \ \ \mbox{\hyperlink{group__bus_gaf8574f14855448ecae32c5a9dd0c7164}{BUS\_RegBitWrite}}(\&(\mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_ga15d2c2b1e853b541f1d74797b62c8ac0}{EMU}}-\/>ROUTE),\ \mbox{\hyperlink{group___e_f_m32_g_g___e_m_u___bit_fields_ga14d08014db5ee06ef6409d5f9b77e87d}{\_EMU\_ROUTE\_BUVINPEN\_SHIFT}},\ enable);}
+\DoxyCodeLine{01608\ \}}
+\DoxyCodeLine{01609\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01610\ }
+\DoxyCodeLine{01611\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{01623\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ EMU\_Lock(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{01624\ \{}
+\DoxyCodeLine{01625\ \ \ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_ga15d2c2b1e853b541f1d74797b62c8ac0}{EMU}}-\/>LOCK\ =\ 0x0;}
+\DoxyCodeLine{01626\ \}}
+\DoxyCodeLine{01627\ }
+\DoxyCodeLine{01628\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{01632\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ EMU\_Unlock(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{01633\ \{}
+\DoxyCodeLine{01634\ \ \ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_ga15d2c2b1e853b541f1d74797b62c8ac0}{EMU}}-\/>LOCK\ =\ \mbox{\hyperlink{group___e_f_m32_g_g___e_m_u___bit_fields_gab15970618edce7afd7a7bb2c1871e2d1}{EMU\_LOCK\_LOCKKEY\_UNLOCK}};}
+\DoxyCodeLine{01635\ \}}
+\DoxyCodeLine{01636\ }
+\DoxyCodeLine{01637\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_PWRLOCK\_MASK)}}
+\DoxyCodeLine{01638\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{01643\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ EMU\_PowerLock(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{01644\ \{}
+\DoxyCodeLine{01645\ \ \ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_ga15d2c2b1e853b541f1d74797b62c8ac0}{EMU}}-\/>PWRLOCK\ =\ EMU\_PWRLOCK\_LOCKKEY\_LOCK;}
+\DoxyCodeLine{01646\ \}}
+\DoxyCodeLine{01647\ }
+\DoxyCodeLine{01648\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{01653\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ EMU\_PowerUnlock(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{01654\ \{}
+\DoxyCodeLine{01655\ \ \ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_ga15d2c2b1e853b541f1d74797b62c8ac0}{EMU}}-\/>PWRLOCK\ =\ EMU\_PWRLOCK\_LOCKKEY\_UNLOCK;}
+\DoxyCodeLine{01656\ \}}
+\DoxyCodeLine{01657\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01658\ }
+\DoxyCodeLine{01659\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_CTRL\_EM2BLOCK\_MASK)}}
+\DoxyCodeLine{01660\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{01664\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ EMU\_EM2Block(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{01665\ \{}
+\DoxyCodeLine{01666\ \ \ \mbox{\hyperlink{group__bus_gaf8574f14855448ecae32c5a9dd0c7164}{BUS\_RegBitWrite}}(\&\mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_ga15d2c2b1e853b541f1d74797b62c8ac0}{EMU}}-\/>CTRL,\ \mbox{\hyperlink{group___e_f_m32_g_g___e_m_u___bit_fields_ga5cb735f8008638ab74319c60d9b9ea38}{\_EMU\_CTRL\_EM2BLOCK\_SHIFT}},\ 1U);}
+\DoxyCodeLine{01667\ \}}
+\DoxyCodeLine{01668\ }
+\DoxyCodeLine{01669\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{01673\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ EMU\_EM2UnBlock(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{01674\ \{}
+\DoxyCodeLine{01675\ \ \ \mbox{\hyperlink{group__bus_gaf8574f14855448ecae32c5a9dd0c7164}{BUS\_RegBitWrite}}(\&\mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_ga15d2c2b1e853b541f1d74797b62c8ac0}{EMU}}-\/>CTRL,\ \mbox{\hyperlink{group___e_f_m32_g_g___e_m_u___bit_fields_ga5cb735f8008638ab74319c60d9b9ea38}{\_EMU\_CTRL\_EM2BLOCK\_SHIFT}},\ 0U);}
+\DoxyCodeLine{01676\ \}}
+\DoxyCodeLine{01677\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01678\ }
+\DoxyCodeLine{01679\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_EM4CTRL\_EM4IORETMODE\_MASK)}}
+\DoxyCodeLine{01680\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{01688\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ EMU\_UnlatchPinRetention(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{01689\ \{}
+\DoxyCodeLine{01690\ \ \ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_ga15d2c2b1e853b541f1d74797b62c8ac0}{EMU}}-\/>CMD\ =\ EMU\_CMD\_EM4UNLATCH;}
+\DoxyCodeLine{01691\ \}}
+\DoxyCodeLine{01692\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01693\ }
+\DoxyCodeLine{01694\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_TEMP\_TEMP\_MASK)}}
+\DoxyCodeLine{01696\ \textcolor{preprocessor}{\#define\ EMU\_TEMP\_ZERO\_C\_IN\_KELVIN\ (273.15f)}}
+\DoxyCodeLine{01697\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{01704\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{bool}\ EMU\_TemperatureReady(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{01705\ \{}
+\DoxyCodeLine{01706\ \textcolor{preprocessor}{\#if\ defined(EMU\_STATUS\_FIRSTTEMPDONE)}}
+\DoxyCodeLine{01707\ \ \ \textcolor{keywordflow}{return}\ (0UL\ !=\ (\mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_ga15d2c2b1e853b541f1d74797b62c8ac0}{EMU}}-\/>STATUS\ \&\ EMU\_STATUS\_FIRSTTEMPDONE));}
+\DoxyCodeLine{01708\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{01709\ \ \ \textcolor{keywordflow}{return}\ !((\mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_ga15d2c2b1e853b541f1d74797b62c8ac0}{EMU}}-\/>TEMP\ \&\ \_EMU\_TEMP\_TEMP\_MASK)\ ==\ 0u);}
+\DoxyCodeLine{01710\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01711\ \}}
+\DoxyCodeLine{01712\ }
+\DoxyCodeLine{01713\ \textcolor{preprocessor}{\#if\ defined(\_EMU\_TEMP\_TEMPAVG\_MASK)}}
+\DoxyCodeLine{01714\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{01726\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{float}\ EMU\_TemperatureAvgGet(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{01727\ \{}
+\DoxyCodeLine{01728\ \ \ uint32\_t\ tmp\ =\ ((\mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_ga15d2c2b1e853b541f1d74797b62c8ac0}{EMU}}-\/>TEMP\ \&\ \_EMU\_TEMP\_TEMPAVG\_MASK)}
+\DoxyCodeLine{01729\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ >>\ \_EMU\_TEMP\_TEMPAVG\_SHIFT);}
+\DoxyCodeLine{01730\ \ \ \textcolor{keywordflow}{return}\ (\textcolor{keywordtype}{float})tmp\ /\ 4.0f\ -\/\ EMU\_TEMP\_ZERO\_C\_IN\_KELVIN;}
+\DoxyCodeLine{01731\ \}}
+\DoxyCodeLine{01732\ }
+\DoxyCodeLine{01733\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{01744\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ EMU\_TemperatureAvgRequest(EMU\_TempAvgNum\_TypeDef\ numSamples)}
+\DoxyCodeLine{01745\ \{}
+\DoxyCodeLine{01746\ \ \ \mbox{\hyperlink{group__bus_gaf8574f14855448ecae32c5a9dd0c7164}{BUS\_RegBitWrite}}(\&\mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_ga15d2c2b1e853b541f1d74797b62c8ac0}{EMU}}-\/>CTRL,\ \_EMU\_CTRL\_TEMPAVGNUM\_SHIFT,\ (\textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{int})numSamples);}
+\DoxyCodeLine{01747\ \ \ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_ga15d2c2b1e853b541f1d74797b62c8ac0}{EMU}}-\/>CMD\ =\ 1u\ <<\ \_EMU\_CMD\_TEMPAVGREQ\_SHIFT;}
+\DoxyCodeLine{01748\ \}}
+\DoxyCodeLine{01749\ }
+\DoxyCodeLine{01750\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//defined(\_EMU\_TEMP\_TEMPAVG\_MASK)}}
+\DoxyCodeLine{01751\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//defined(\_EMU\_TEMP\_TEMP\_MASK)}}
+\DoxyCodeLine{01752\ }
+\DoxyCodeLine{01755\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{01756\ \}}
+\DoxyCodeLine{01757\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{01758\ }
+\DoxyCodeLine{01759\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ defined(\ EMU\_PRESENT\ )\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{01760\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ EM\_EMU\_H\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

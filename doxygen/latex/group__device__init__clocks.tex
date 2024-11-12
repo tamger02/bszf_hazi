@@ -1,0 +1,45 @@
+\doxysubsection{Clock Initialization}
+\hypertarget{group__device__init__clocks}{}\label{group__device__init__clocks}\index{Clock Initialization@{Clock Initialization}}
+
+
+Initialize the clock tree.  
+
+
+\doxysubsubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+sl\+\_\+status\+\_\+t \mbox{\hyperlink{group__device__init__clocks_gae4fceb073d8c86204be4ebe71f4cd44e}{sl\+\_\+device\+\_\+init\+\_\+clocks}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+Initialize the clock tree. 
+
+Automatically configures the clock tree to use the appropriate high-\/ and low-\/frequency clock sources depending on which other device initialization components are present.\hypertarget{group__device__init__clocks_autotoc_md97}{}\doxysubsubsubsubsection{\texorpdfstring{High Frequency Clocks}{High Frequency Clocks}}\label{group__device__init__clocks_autotoc_md97}
+If the {\bfseries{DPLL}} or {\bfseries{HFRCO}} device init components are present, the {\bfseries{HFRCO}} oscillator is used as the clock source for high frequency clock trees. Otherwise, if the {\bfseries{HFXO}} device init component is present, the {\bfseries{HFXO}} oscillator is used. If no high frequency oscillator device init component is present, the {\bfseries{HFRCO}} oscillator is used with its default settings.\hypertarget{group__device__init__clocks_autotoc_md98}{}\doxysubsubsubsubsection{\texorpdfstring{Low Frequency Clocks}{Low Frequency Clocks}}\label{group__device__init__clocks_autotoc_md98}
+If the {\bfseries{LFXO}} device init component is present, the {\bfseries{LFXO}} oscillator is used as the clock source for low frequency clock trees. Otherwise, the {\bfseries{LFRCO}} oscillator is used.
+
+\begin{DoxyNote}{Note}
+This module has a limited configurability. Users can override the code based on the project ask. 
+\end{DoxyNote}
+
+
+\doxysubsubsection{Function Documentation}
+\Hypertarget{group__device__init__clocks_gae4fceb073d8c86204be4ebe71f4cd44e}\index{Clock Initialization@{Clock Initialization}!sl\_device\_init\_clocks@{sl\_device\_init\_clocks}}
+\index{sl\_device\_init\_clocks@{sl\_device\_init\_clocks}!Clock Initialization@{Clock Initialization}}
+\doxysubsubsubsection{\texorpdfstring{sl\_device\_init\_clocks()}{sl\_device\_init\_clocks()}}
+{\footnotesize\ttfamily \label{group__device__init__clocks_gae4fceb073d8c86204be4ebe71f4cd44e} 
+sl\+\_\+status\+\_\+t sl\+\_\+device\+\_\+init\+\_\+clocks (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+Configure the clock tree and enable clocks
+
+Automatically configures the clock tree to use the appropriate HF and LF clock sources depending on which other device initialization components are present.
+
+\begin{DoxyReturn}{Returns}
+Status code 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+{\em SL\+\_\+\+STATUS\+\_\+\+OK} & Clock tree configured successfully \\
+\hline
+\end{DoxyRetVals}

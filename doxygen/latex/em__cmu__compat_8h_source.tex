@@ -1,0 +1,161 @@
+\doxysection{em\+\_\+cmu\+\_\+compat.\+h}
+\hypertarget{em__cmu__compat_8h_source}{}\label{em__cmu__compat_8h_source}\index{snake/gecko\_sdk\_4.4.4/platform/emlib/inc/em\_cmu\_compat.h@{snake/gecko\_sdk\_4.4.4/platform/emlib/inc/em\_cmu\_compat.h}}
+\mbox{\hyperlink{em__cmu__compat_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#ifndef\ EM\_CMU\_COMPAT\_H}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ EM\_CMU\_COMPAT\_H}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#if\ defined(\_SILICON\_LABS\_32B\_SERIES\_2\_CONFIG\_2)}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#define\ CMU\_IF\_CALRDYIF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CMU\_IF\_CALRDY}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#define\ \_CMU\_IF\_CALRDYIF\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_CMU\_IF\_CALRDY\_SHIFT}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#define\ \_CMU\_IF\_CALRDYIF\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_CMU\_IF\_CALRDY\_MASK}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#define\ \_CMU\_IF\_CALRDYIF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_CMU\_IF\_CALRDY\_DEFAULT}}
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#define\ CMU\_IF\_CALRDYIF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CMU\_IF\_CALRDY\_DEFAULT}}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ CMU\_IF\_CALOFIF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CMU\_IF\_CALOF}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ \_CMU\_IF\_CALOFIF\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_CMU\_IF\_CALOF\_SHIFT}}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#define\ \_CMU\_IF\_CALOFIF\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_CMU\_IF\_CALOF\_MASK}}
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#define\ \_CMU\_IF\_CALOFIF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_CMU\_IF\_CALOF\_DEFAULT}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ CMU\_IF\_CALOFIF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CMU\_IF\_CALOF\_DEFAULT}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ CMU\_IEN\_CALRDYIEN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CMU\_IEN\_CALRDY}}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ \_CMU\_IEN\_CALRDYIEN\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_CMU\_IEN\_CALRDY\_SHIFT}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ \_CMU\_IEN\_CALRDYIEN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_CMU\_IEN\_CALRDY\_MASK}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#define\ \_CMU\_IEN\_CALRDYIEN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \_CMU\_IEN\_CALRDY\_DEFAULT}}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ CMU\_IEN\_CALRDYIEN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CMU\_IEN\_CALRDY\_DEFAULT}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ CMU\_IEN\_CALOFIEN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CMU\_IEN\_CALOF}}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#define\ \_CMU\_IEN\_CALOFIEN\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_CMU\_IEN\_CALOF\_SHIFT}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#define\ \_CMU\_IEN\_CALOFIEN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_CMU\_IEN\_CALOF\_MASK}}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#define\ \_CMU\_IEN\_CALOFIEN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_CMU\_IEN\_CALOF\_DEFAULT}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#define\ CMU\_IEN\_CALOFIEN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ CMU\_IEN\_CALOF\_DEFAULT}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#define\ HFRCO\_IF\_RDYIF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ HFRCO\_IF\_RDY}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#define\ \_HFRCO\_IF\_RDYIF\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_HFRCO\_IF\_RDY\_SHIFT}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#define\ \_HFRCO\_IF\_RDYIF\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_HFRCO\_IF\_RDY\_MASK}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#define\ \_HFRCO\_IF\_RDYIF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_HFRCO\_IF\_RDY\_DEFAULT}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#define\ HFRCO\_IF\_RDYIF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ HFRCO\_IF\_RDY\_DEFAULT}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#define\ HFRCO\_IEN\_RDYIEN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ HFRCO\_IEN\_RDY}}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#define\ \_HFRCO\_IEN\_RDYIEN\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_HFRCO\_IEN\_RDY\_SHIFT}}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#define\ \_HFRCO\_IEN\_RDYIEN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_HFRCO\_IEN\_RDY\_MASK}}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#define\ \_HFRCO\_IEN\_RDYIEN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_HFRCO\_IEN\_RDY\_DEFAULT}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#define\ HFRCO\_IEN\_RDYIEN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ HFRCO\_IEN\_RDY\_DEFAULT}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ }
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#define\ LFRCO\_IF\_RDYIF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LFRCO\_IF\_RDY}}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#define\ \_LFRCO\_IF\_RDYIF\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_LFRCO\_IF\_RDY\_SHIFT}}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#define\ \_LFRCO\_IF\_RDYIF\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_LFRCO\_IF\_RDY\_MASK}}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#define\ \_LFRCO\_IF\_RDYIF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_LFRCO\_IF\_RDY\_DEFAULT}}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#define\ LFRCO\_IF\_RDYIF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LFRCO\_IF\_RDY\_DEFAULT}}
+\DoxyCodeLine{00079\ }
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#define\ LFRCO\_IF\_POSEDGEIF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LFRCO\_IF\_POSEDGE}}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#define\ \_LFRCO\_IF\_POSEDGEIF\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_LFRCO\_IF\_POSEDGE\_SHIFT}}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#define\ \_LFRCO\_IF\_POSEDGEIF\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_LFRCO\_IF\_POSEDGE\_MASK}}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#define\ \_LFRCO\_IF\_POSEDGEIF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \_LFRCO\_IF\_POSEDGE\_DEFAULT}}
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#define\ LFRCO\_IF\_POSEDGEIF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ LFRCO\_IF\_POSEDGE\_DEFAULT}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#define\ LFRCO\_IF\_NEGEDGEIF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LFRCO\_IF\_NEGEDGE}}
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#define\ \_LFRCO\_IF\_NEGEDGEIF\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_LFRCO\_IF\_NEGEDGE\_SHIFT}}
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#define\ \_LFRCO\_IF\_NEGEDGEIF\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_LFRCO\_IF\_NEGEDGE\_MASK}}
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#define\ \_LFRCO\_IF\_NEGEDGEIF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \_LFRCO\_IF\_NEGEDGE\_DEFAULT}}
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#define\ LFRCO\_IF\_NEGEDGEIF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ LFRCO\_IF\_NEGEDGE\_DEFAULT}}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#define\ LFRCO\_IF\_TCDONEIF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LFRCO\_IF\_TCDONE}}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#define\ \_LFRCO\_IF\_TCDONEIF\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_LFRCO\_IF\_TCDONE\_SHIFT}}
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\#define\ \_LFRCO\_IF\_TCDONEIF\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_LFRCO\_IF\_TCDONE\_MASK}}
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#define\ \_LFRCO\_IF\_TCDONEIF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \_LFRCO\_IF\_TCDONE\_DEFAULT}}
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\#define\ LFRCO\_IF\_TCDONEIF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LFRCO\_IF\_TCDONE\_DEFAULT}}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\#define\ LFRCO\_IF\_CALDONEIF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LFRCO\_IF\_CALDONE}}
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#define\ \_LFRCO\_IF\_CALDONEIF\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_LFRCO\_IF\_CALDONE\_SHIFT}}
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#define\ \_LFRCO\_IF\_CALDONEIF\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_LFRCO\_IF\_CALDONE\_MASK}}
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#define\ \_LFRCO\_IF\_CALDONEIF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \_LFRCO\_IF\_CALDONE\_DEFAULT}}
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#define\ LFRCO\_IF\_CALDONEIF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ LFRCO\_IF\_CALDONE\_DEFAULT}}
+\DoxyCodeLine{00103\ }
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#define\ LFRCO\_IF\_TEMPCHANGEIF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LFRCO\_IF\_TEMPCHANGE}}
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#define\ \_LFRCO\_IF\_TEMPCHANGEIF\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \_LFRCO\_IF\_TEMPCHANGE\_SHIFT}}
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\#define\ \_LFRCO\_IF\_TEMPCHANGEIF\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \_LFRCO\_IF\_TEMPCHANGE\_MASK}}
+\DoxyCodeLine{00107\ \textcolor{preprocessor}{\#define\ \_LFRCO\_IF\_TEMPCHANGEIF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \_LFRCO\_IF\_TEMPCHANGE\_DEFAULT}}
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\#define\ LFRCO\_IF\_TEMPCHANGEIF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ LFRCO\_IF\_TEMPCHANGE\_DEFAULT}}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \textcolor{preprocessor}{\#define\ LFRCO\_IF\_SCHEDERRIF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LFRCO\_IF\_SCHEDERR}}
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\#define\ \_LFRCO\_IF\_SCHEDERRIF\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \_LFRCO\_IF\_SCHEDERR\_SHIFT}}
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#define\ \_LFRCO\_IF\_SCHEDERRIF\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_LFRCO\_IF\_SCHEDERR\_MASK}}
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#define\ \_LFRCO\_IF\_SCHEDERRIF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \_LFRCO\_IF\_SCHEDERR\_DEFAULT}}
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#define\ LFRCO\_IF\_SCHEDERRIF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ LFRCO\_IF\_SCHEDERR\_DEFAULT}}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#define\ LFRCO\_IF\_TCOORIF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LFRCO\_IF\_TCOOR}}
+\DoxyCodeLine{00117\ \textcolor{preprocessor}{\#define\ \_LFRCO\_IF\_TCOORIF\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_LFRCO\_IF\_TCOOR\_SHIFT}}
+\DoxyCodeLine{00118\ \textcolor{preprocessor}{\#define\ \_LFRCO\_IF\_TCOORIF\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_LFRCO\_IF\_TCOOR\_MASK}}
+\DoxyCodeLine{00119\ \textcolor{preprocessor}{\#define\ \_LFRCO\_IF\_TCOORIF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_LFRCO\_IF\_TCOOR\_DEFAULT}}
+\DoxyCodeLine{00120\ \textcolor{preprocessor}{\#define\ LFRCO\_IF\_TCOORIF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LFRCO\_IF\_TCOOR\_DEFAULT}}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \textcolor{preprocessor}{\#define\ LFRCO\_IF\_CALOORIF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LFRCO\_IF\_CALOOR}}
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\#define\ \_LFRCO\_IF\_CALOORIF\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_LFRCO\_IF\_CALOOR\_SHIFT}}
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\#define\ \_LFRCO\_IF\_CALOORIF\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_LFRCO\_IF\_CALOOR\_MASK}}
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\#define\ \_LFRCO\_IF\_CALOORIF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \_LFRCO\_IF\_CALOOR\_DEFAULT}}
+\DoxyCodeLine{00126\ \textcolor{preprocessor}{\#define\ LFRCO\_IF\_CALOORIF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LFRCO\_IF\_CALOOR\_DEFAULT}}
+\DoxyCodeLine{00127\ }
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\#define\ LFRCO\_IEN\_RDYIEN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LFRCO\_IEN\_RDY}}
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{\#define\ \_LFRCO\_IEN\_RDYIEN\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_LFRCO\_IEN\_RDY\_SHIFT}}
+\DoxyCodeLine{00130\ \textcolor{preprocessor}{\#define\ \_LFRCO\_IEN\_RDYIEN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_LFRCO\_IEN\_RDY\_MASK}}
+\DoxyCodeLine{00131\ \textcolor{preprocessor}{\#define\ \_LFRCO\_IEN\_RDYIEN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_LFRCO\_IEN\_RDY\_DEFAULT}}
+\DoxyCodeLine{00132\ \textcolor{preprocessor}{\#define\ LFRCO\_IEN\_RDYIEN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LFRCO\_IEN\_RDY\_DEFAULT}}
+\DoxyCodeLine{00133\ }
+\DoxyCodeLine{00134\ \textcolor{preprocessor}{\#define\ LFRCO\_IEN\_POSEDGEIEN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LFRCO\_IEN\_POSEDGE}}
+\DoxyCodeLine{00135\ \textcolor{preprocessor}{\#define\ \_LFRCO\_IEN\_POSEDGEIEN\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \_LFRCO\_IEN\_POSEDGE\_SHIFT}}
+\DoxyCodeLine{00136\ \textcolor{preprocessor}{\#define\ \_LFRCO\_IEN\_POSEDGEIEN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \_LFRCO\_IEN\_POSEDGE\_MASK}}
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\#define\ \_LFRCO\_IEN\_POSEDGEIEN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \_LFRCO\_IEN\_POSEDGE\_DEFAULT}}
+\DoxyCodeLine{00138\ \textcolor{preprocessor}{\#define\ LFRCO\_IEN\_POSEDGEIEN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ LFRCO\_IEN\_POSEDGE\_DEFAULT}}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00140\ \textcolor{preprocessor}{\#define\ LFRCO\_IEN\_NEGEDGEIEN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LFRCO\_IEN\_NEGEDGE}}
+\DoxyCodeLine{00141\ \textcolor{preprocessor}{\#define\ \_LFRCO\_IEN\_NEGEDGEIEN\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \_LFRCO\_IEN\_NEGEDGE\_SHIFT}}
+\DoxyCodeLine{00142\ \textcolor{preprocessor}{\#define\ \_LFRCO\_IEN\_NEGEDGEIEN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \_LFRCO\_IEN\_NEGEDGE\_MASK}}
+\DoxyCodeLine{00143\ \textcolor{preprocessor}{\#define\ \_LFRCO\_IEN\_NEGEDGEIEN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \_LFRCO\_IEN\_NEGEDGE\_DEFAULT}}
+\DoxyCodeLine{00144\ \textcolor{preprocessor}{\#define\ LFRCO\_IEN\_NEGEDGEIEN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ LFRCO\_IEN\_NEGEDGE\_DEFAULT}}
+\DoxyCodeLine{00145\ }
+\DoxyCodeLine{00146\ \textcolor{preprocessor}{\#define\ LFRCO\_IEN\_TCDONEIEN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LFRCO\_IEN\_TCDONE}}
+\DoxyCodeLine{00147\ \textcolor{preprocessor}{\#define\ \_LFRCO\_IEN\_TCDONEIEN\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \_LFRCO\_IEN\_TCDONE\_SHIFT}}
+\DoxyCodeLine{00148\ \textcolor{preprocessor}{\#define\ \_LFRCO\_IEN\_TCDONEIEN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_LFRCO\_IEN\_TCDONE\_MASK}}
+\DoxyCodeLine{00149\ \textcolor{preprocessor}{\#define\ \_LFRCO\_IEN\_TCDONEIEN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \_LFRCO\_IEN\_TCDONE\_DEFAULT}}
+\DoxyCodeLine{00150\ \textcolor{preprocessor}{\#define\ LFRCO\_IEN\_TCDONEIEN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ LFRCO\_IEN\_TCDONE\_DEFAULT}}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00152\ \textcolor{preprocessor}{\#define\ LFRCO\_IEN\_CALDONEIEN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LFRCO\_IEN\_CALDONE}}
+\DoxyCodeLine{00153\ \textcolor{preprocessor}{\#define\ \_LFRCO\_IEN\_CALDONEIEN\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \_LFRCO\_IEN\_CALDONE\_SHIFT}}
+\DoxyCodeLine{00154\ \textcolor{preprocessor}{\#define\ \_LFRCO\_IEN\_CALDONEIEN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \_LFRCO\_IEN\_CALDONE\_MASK}}
+\DoxyCodeLine{00155\ \textcolor{preprocessor}{\#define\ \_LFRCO\_IEN\_CALDONEIEN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \_LFRCO\_IEN\_CALDONE\_DEFAULT}}
+\DoxyCodeLine{00156\ \textcolor{preprocessor}{\#define\ LFRCO\_IEN\_CALDONEIEN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ LFRCO\_IEN\_CALDONE\_DEFAULT}}
+\DoxyCodeLine{00157\ }
+\DoxyCodeLine{00158\ \textcolor{preprocessor}{\#define\ LFRCO\_IEN\_TEMPCHANGEIEN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LFRCO\_IEN\_TEMPCHANGE}}
+\DoxyCodeLine{00159\ \textcolor{preprocessor}{\#define\ \_LFRCO\_IEN\_TEMPCHANGEIEN\_SHIFT\ \ \ \ \ \ \ \ \ \ \_LFRCO\_IEN\_TEMPCHANGE\_SHIFT}}
+\DoxyCodeLine{00160\ \textcolor{preprocessor}{\#define\ \_LFRCO\_IEN\_TEMPCHANGEIEN\_MASK\ \ \ \ \ \ \ \ \ \ \ \_LFRCO\_IEN\_TEMPCHANGE\_MASK}}
+\DoxyCodeLine{00161\ \textcolor{preprocessor}{\#define\ \_LFRCO\_IEN\_TEMPCHANGEIEN\_DEFAULT\ \ \ \ \ \ \ \ \_LFRCO\_IEN\_TEMPCHANGE\_DEFAULT}}
+\DoxyCodeLine{00162\ \textcolor{preprocessor}{\#define\ LFRCO\_IEN\_TEMPCHANGEIEN\_DEFAULT\ \ \ \ \ \ \ \ \ LFRCO\_IEN\_TEMPCHANGE\_DEFAULT}}
+\DoxyCodeLine{00163\ }
+\DoxyCodeLine{00164\ \textcolor{preprocessor}{\#define\ LFRCO\_IEN\_SCHEDERRIEN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LFRCO\_IEN\_SCHEDERR}}
+\DoxyCodeLine{00165\ \textcolor{preprocessor}{\#define\ \_LFRCO\_IEN\_SCHEDERRIEN\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \_LFRCO\_IEN\_SCHEDERR\_SHIFT}}
+\DoxyCodeLine{00166\ \textcolor{preprocessor}{\#define\ \_LFRCO\_IEN\_SCHEDERRIEN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \_LFRCO\_IEN\_SCHEDERR\_MASK}}
+\DoxyCodeLine{00167\ \textcolor{preprocessor}{\#define\ \_LFRCO\_IEN\_SCHEDERRIEN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \_LFRCO\_IEN\_SCHEDERR\_DEFAULT}}
+\DoxyCodeLine{00168\ \textcolor{preprocessor}{\#define\ LFRCO\_IEN\_SCHEDERRIEN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ LFRCO\_IEN\_SCHEDERR\_DEFAULT}}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00170\ \textcolor{preprocessor}{\#define\ LFRCO\_IEN\_TCOORIEN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LFRCO\_IEN\_TCOOR}}
+\DoxyCodeLine{00171\ \textcolor{preprocessor}{\#define\ \_LFRCO\_IEN\_TCOORIEN\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_LFRCO\_IEN\_TCOOR\_SHIFT}}
+\DoxyCodeLine{00172\ \textcolor{preprocessor}{\#define\ \_LFRCO\_IEN\_TCOORIEN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_LFRCO\_IEN\_TCOOR\_MASK}}
+\DoxyCodeLine{00173\ \textcolor{preprocessor}{\#define\ \_LFRCO\_IEN\_TCOORIEN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \_LFRCO\_IEN\_TCOOR\_DEFAULT}}
+\DoxyCodeLine{00174\ \textcolor{preprocessor}{\#define\ LFRCO\_IEN\_TCOORIEN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ LFRCO\_IEN\_TCOOR\_DEFAULT}}
+\DoxyCodeLine{00175\ }
+\DoxyCodeLine{00176\ \textcolor{preprocessor}{\#define\ LFRCO\_IEN\_CALOORIEN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ LFRCO\_IEN\_CALOOR}}
+\DoxyCodeLine{00177\ \textcolor{preprocessor}{\#define\ \_LFRCO\_IEN\_CALOORIEN\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \_LFRCO\_IEN\_CALOOR\_SHIFT}}
+\DoxyCodeLine{00178\ \textcolor{preprocessor}{\#define\ \_LFRCO\_IEN\_CALOORIEN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \_LFRCO\_IEN\_CALOOR\_MASK}}
+\DoxyCodeLine{00179\ \textcolor{preprocessor}{\#define\ \_LFRCO\_IEN\_CALOORIEN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \_LFRCO\_IEN\_CALOOR\_DEFAULT}}
+\DoxyCodeLine{00180\ \textcolor{preprocessor}{\#define\ LFRCO\_IEN\_CALOORIEN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ LFRCO\_IEN\_CALOOR\_DEFAULT}}
+\DoxyCodeLine{00181\ }
+\DoxyCodeLine{00182\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ \_SILICON\_LABS\_32B\_SERIES\_2\_CONFIG\_2\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00184\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

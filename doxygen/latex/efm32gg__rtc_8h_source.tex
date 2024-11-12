@@ -1,0 +1,173 @@
+\doxysection{efm32gg\+\_\+rtc.\+h}
+\hypertarget{efm32gg__rtc_8h_source}{}\label{efm32gg__rtc_8h_source}\index{snake/gecko\_sdk\_4.4.4/platform/Device/SiliconLabs/EFM32GG/Include/efm32gg\_rtc.h@{snake/gecko\_sdk\_4.4.4/platform/Device/SiliconLabs/EFM32GG/Include/efm32gg\_rtc.h}}
+\mbox{\hyperlink{efm32gg__rtc_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#if\ defined(\_\_ICCARM\_\_)}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#pragma\ system\_include\ \ \ \ \ \ \ }\textcolor{comment}{/*\ Treat\ file\ as\ system\ include\ file.\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#elif\ defined(\_\_ARMCC\_VERSION)\ \&\&\ (\_\_ARMCC\_VERSION\ >=\ 6010050)}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#pragma\ clang\ system\_header\ \ }\textcolor{comment}{/*\ Treat\ file\ as\ system\ include\ file.\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00041\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00046\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00047\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_r_t_c___type_def_ab2a1ad68d234e272ad2684d282055463}{CTRL}};\ \ \ \ \ }
+\DoxyCodeLine{00048\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_r_t_c___type_def_a966483004e4b48110c1843f2a70a29d5}{CNT}};\ \ \ \ \ \ }
+\DoxyCodeLine{00049\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_r_t_c___type_def_a4ac764b36f5b57b32df2e277d50483be}{COMP0}};\ \ \ \ }
+\DoxyCodeLine{00050\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_r_t_c___type_def_a35a8ac0621a25cdc531621009442f869}{COMP1}};\ \ \ \ }
+\DoxyCodeLine{00051\ \ \ \_\_IM\ uint32\_t\ \ \mbox{\hyperlink{struct_r_t_c___type_def_a81f6af1888c133d0808926632d05518c}{IF}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00052\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_r_t_c___type_def_a343e945de9ac5d8861588f863d0f6318}{IFS}};\ \ \ \ \ \ }
+\DoxyCodeLine{00053\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_r_t_c___type_def_ac36e7577459854c26f930aea6d1792bd}{IFC}};\ \ \ \ \ \ }
+\DoxyCodeLine{00054\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_r_t_c___type_def_aa57f72e707c444f53a5bc0875afebfb1}{IEN}};\ \ \ \ \ \ }
+\DoxyCodeLine{00056\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_r_t_c___type_def_af6a142013a1065f53fe06c840829af5a}{FREEZE}};\ \ \ }
+\DoxyCodeLine{00057\ \ \ \_\_IM\ uint32\_t\ \ \mbox{\hyperlink{struct_r_t_c___type_def_a4762a349a4611f36f55747c42393bc8f}{SYNCBUSY}};\ }
+\DoxyCodeLine{00058\ \}\ \mbox{\hyperlink{struct_r_t_c___type_def}{RTC\_TypeDef}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00060\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00065\ \textcolor{comment}{/*\ Bit\ fields\ for\ RTC\ CTRL\ */}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#define\ \_RTC\_CTRL\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#define\ \_RTC\_CTRL\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000007UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#define\ RTC\_CTRL\_EN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#define\ \_RTC\_CTRL\_EN\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#define\ \_RTC\_CTRL\_EN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#define\ \_RTC\_CTRL\_EN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#define\ RTC\_CTRL\_EN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_RTC\_CTRL\_EN\_DEFAULT\ <<\ 0)\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#define\ RTC\_CTRL\_DEBUGRUN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#define\ \_RTC\_CTRL\_DEBUGRUN\_SHIFT\ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#define\ \_RTC\_CTRL\_DEBUGRUN\_MASK\ \ \ \ \ \ \ \ \ \ 0x2UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#define\ \_RTC\_CTRL\_DEBUGRUN\_DEFAULT\ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#define\ RTC\_CTRL\_DEBUGRUN\_DEFAULT\ \ \ \ \ \ \ \ (\_RTC\_CTRL\_DEBUGRUN\_DEFAULT\ <<\ 1)\ }}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#define\ RTC\_CTRL\_COMP0TOP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 2)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#define\ \_RTC\_CTRL\_COMP0TOP\_SHIFT\ \ \ \ \ \ \ \ \ 2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#define\ \_RTC\_CTRL\_COMP0TOP\_MASK\ \ \ \ \ \ \ \ \ \ 0x4UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#define\ \_RTC\_CTRL\_COMP0TOP\_DEFAULT\ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#define\ \_RTC\_CTRL\_COMP0TOP\_DISABLE\ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#define\ \_RTC\_CTRL\_COMP0TOP\_ENABLE\ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#define\ RTC\_CTRL\_COMP0TOP\_DEFAULT\ \ \ \ \ \ \ \ (\_RTC\_CTRL\_COMP0TOP\_DEFAULT\ <<\ 2)\ }}
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#define\ RTC\_CTRL\_COMP0TOP\_DISABLE\ \ \ \ \ \ \ \ (\_RTC\_CTRL\_COMP0TOP\_DISABLE\ <<\ 2)\ }}
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#define\ RTC\_CTRL\_COMP0TOP\_ENABLE\ \ \ \ \ \ \ \ \ (\_RTC\_CTRL\_COMP0TOP\_ENABLE\ <<\ 2)\ \ }}
+\DoxyCodeLine{00088\ \textcolor{comment}{/*\ Bit\ fields\ for\ RTC\ CNT\ */}}
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#define\ \_RTC\_CNT\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#define\ \_RTC\_CNT\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00FFFFFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#define\ \_RTC\_CNT\_CNT\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#define\ \_RTC\_CNT\_CNT\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFFFFFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#define\ \_RTC\_CNT\_CNT\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\#define\ RTC\_CNT\_CNT\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_RTC\_CNT\_CNT\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00096\ \textcolor{comment}{/*\ Bit\ fields\ for\ RTC\ COMP0\ */}}
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\#define\ \_RTC\_COMP0\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\#define\ \_RTC\_COMP0\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00FFFFFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#define\ \_RTC\_COMP0\_COMP0\_SHIFT\ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#define\ \_RTC\_COMP0\_COMP0\_MASK\ \ \ \ \ \ \ \ \ \ \ \ 0xFFFFFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#define\ \_RTC\_COMP0\_COMP0\_DEFAULT\ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#define\ RTC\_COMP0\_COMP0\_DEFAULT\ \ \ \ \ \ \ \ \ \ (\_RTC\_COMP0\_COMP0\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00104\ \textcolor{comment}{/*\ Bit\ fields\ for\ RTC\ COMP1\ */}}
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#define\ \_RTC\_COMP1\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\#define\ \_RTC\_COMP1\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00FFFFFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00107\ \textcolor{preprocessor}{\#define\ \_RTC\_COMP1\_COMP1\_SHIFT\ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\#define\ \_RTC\_COMP1\_COMP1\_MASK\ \ \ \ \ \ \ \ \ \ \ \ 0xFFFFFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\#define\ \_RTC\_COMP1\_COMP1\_DEFAULT\ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00110\ \textcolor{preprocessor}{\#define\ RTC\_COMP1\_COMP1\_DEFAULT\ \ \ \ \ \ \ \ \ \ (\_RTC\_COMP1\_COMP1\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00112\ \textcolor{comment}{/*\ Bit\ fields\ for\ RTC\ IF\ */}}
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#define\ \_RTC\_IF\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#define\ \_RTC\_IF\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000007UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\#define\ RTC\_IF\_OF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#define\ \_RTC\_IF\_OF\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00117\ \textcolor{preprocessor}{\#define\ \_RTC\_IF\_OF\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00118\ \textcolor{preprocessor}{\#define\ \_RTC\_IF\_OF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00119\ \textcolor{preprocessor}{\#define\ RTC\_IF\_OF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_RTC\_IF\_OF\_DEFAULT\ <<\ 0)\ \ \ \ }}
+\DoxyCodeLine{00120\ \textcolor{preprocessor}{\#define\ RTC\_IF\_COMP0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\#define\ \_RTC\_IF\_COMP0\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00122\ \textcolor{preprocessor}{\#define\ \_RTC\_IF\_COMP0\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x2UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\#define\ \_RTC\_IF\_COMP0\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\#define\ RTC\_IF\_COMP0\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ (\_RTC\_IF\_COMP0\_DEFAULT\ <<\ 1)\ }}
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\#define\ RTC\_IF\_COMP1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 2)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00126\ \textcolor{preprocessor}{\#define\ \_RTC\_IF\_COMP1\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\#define\ \_RTC\_IF\_COMP1\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x4UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\#define\ \_RTC\_IF\_COMP1\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{\#define\ RTC\_IF\_COMP1\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ (\_RTC\_IF\_COMP1\_DEFAULT\ <<\ 2)\ }}
+\DoxyCodeLine{00131\ \textcolor{comment}{/*\ Bit\ fields\ for\ RTC\ IFS\ */}}
+\DoxyCodeLine{00132\ \textcolor{preprocessor}{\#define\ \_RTC\_IFS\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00133\ \textcolor{preprocessor}{\#define\ \_RTC\_IFS\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000007UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00134\ \textcolor{preprocessor}{\#define\ RTC\_IFS\_OF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00135\ \textcolor{preprocessor}{\#define\ \_RTC\_IFS\_OF\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00136\ \textcolor{preprocessor}{\#define\ \_RTC\_IFS\_OF\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\#define\ \_RTC\_IFS\_OF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00138\ \textcolor{preprocessor}{\#define\ RTC\_IFS\_OF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_RTC\_IFS\_OF\_DEFAULT\ <<\ 0)\ \ \ \ }}
+\DoxyCodeLine{00139\ \textcolor{preprocessor}{\#define\ RTC\_IFS\_COMP0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00140\ \textcolor{preprocessor}{\#define\ \_RTC\_IFS\_COMP0\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00141\ \textcolor{preprocessor}{\#define\ \_RTC\_IFS\_COMP0\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x2UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00142\ \textcolor{preprocessor}{\#define\ \_RTC\_IFS\_COMP0\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00143\ \textcolor{preprocessor}{\#define\ RTC\_IFS\_COMP0\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ (\_RTC\_IFS\_COMP0\_DEFAULT\ <<\ 1)\ }}
+\DoxyCodeLine{00144\ \textcolor{preprocessor}{\#define\ RTC\_IFS\_COMP1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 2)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00145\ \textcolor{preprocessor}{\#define\ \_RTC\_IFS\_COMP1\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ 2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00146\ \textcolor{preprocessor}{\#define\ \_RTC\_IFS\_COMP1\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x4UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00147\ \textcolor{preprocessor}{\#define\ \_RTC\_IFS\_COMP1\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00148\ \textcolor{preprocessor}{\#define\ RTC\_IFS\_COMP1\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ (\_RTC\_IFS\_COMP1\_DEFAULT\ <<\ 2)\ }}
+\DoxyCodeLine{00150\ \textcolor{comment}{/*\ Bit\ fields\ for\ RTC\ IFC\ */}}
+\DoxyCodeLine{00151\ \textcolor{preprocessor}{\#define\ \_RTC\_IFC\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00152\ \textcolor{preprocessor}{\#define\ \_RTC\_IFC\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000007UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00153\ \textcolor{preprocessor}{\#define\ RTC\_IFC\_OF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00154\ \textcolor{preprocessor}{\#define\ \_RTC\_IFC\_OF\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00155\ \textcolor{preprocessor}{\#define\ \_RTC\_IFC\_OF\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00156\ \textcolor{preprocessor}{\#define\ \_RTC\_IFC\_OF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00157\ \textcolor{preprocessor}{\#define\ RTC\_IFC\_OF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_RTC\_IFC\_OF\_DEFAULT\ <<\ 0)\ \ \ \ }}
+\DoxyCodeLine{00158\ \textcolor{preprocessor}{\#define\ RTC\_IFC\_COMP0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00159\ \textcolor{preprocessor}{\#define\ \_RTC\_IFC\_COMP0\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00160\ \textcolor{preprocessor}{\#define\ \_RTC\_IFC\_COMP0\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x2UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00161\ \textcolor{preprocessor}{\#define\ \_RTC\_IFC\_COMP0\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00162\ \textcolor{preprocessor}{\#define\ RTC\_IFC\_COMP0\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ (\_RTC\_IFC\_COMP0\_DEFAULT\ <<\ 1)\ }}
+\DoxyCodeLine{00163\ \textcolor{preprocessor}{\#define\ RTC\_IFC\_COMP1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 2)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00164\ \textcolor{preprocessor}{\#define\ \_RTC\_IFC\_COMP1\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ 2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00165\ \textcolor{preprocessor}{\#define\ \_RTC\_IFC\_COMP1\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x4UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00166\ \textcolor{preprocessor}{\#define\ \_RTC\_IFC\_COMP1\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00167\ \textcolor{preprocessor}{\#define\ RTC\_IFC\_COMP1\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ (\_RTC\_IFC\_COMP1\_DEFAULT\ <<\ 2)\ }}
+\DoxyCodeLine{00169\ \textcolor{comment}{/*\ Bit\ fields\ for\ RTC\ IEN\ */}}
+\DoxyCodeLine{00170\ \textcolor{preprocessor}{\#define\ \_RTC\_IEN\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00171\ \textcolor{preprocessor}{\#define\ \_RTC\_IEN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000007UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00172\ \textcolor{preprocessor}{\#define\ RTC\_IEN\_OF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00173\ \textcolor{preprocessor}{\#define\ \_RTC\_IEN\_OF\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00174\ \textcolor{preprocessor}{\#define\ \_RTC\_IEN\_OF\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00175\ \textcolor{preprocessor}{\#define\ \_RTC\_IEN\_OF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00176\ \textcolor{preprocessor}{\#define\ RTC\_IEN\_OF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_RTC\_IEN\_OF\_DEFAULT\ <<\ 0)\ \ \ \ }}
+\DoxyCodeLine{00177\ \textcolor{preprocessor}{\#define\ RTC\_IEN\_COMP0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00178\ \textcolor{preprocessor}{\#define\ \_RTC\_IEN\_COMP0\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00179\ \textcolor{preprocessor}{\#define\ \_RTC\_IEN\_COMP0\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x2UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00180\ \textcolor{preprocessor}{\#define\ \_RTC\_IEN\_COMP0\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00181\ \textcolor{preprocessor}{\#define\ RTC\_IEN\_COMP0\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ (\_RTC\_IEN\_COMP0\_DEFAULT\ <<\ 1)\ }}
+\DoxyCodeLine{00182\ \textcolor{preprocessor}{\#define\ RTC\_IEN\_COMP1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 2)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00183\ \textcolor{preprocessor}{\#define\ \_RTC\_IEN\_COMP1\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ 2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00184\ \textcolor{preprocessor}{\#define\ \_RTC\_IEN\_COMP1\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x4UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00185\ \textcolor{preprocessor}{\#define\ \_RTC\_IEN\_COMP1\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00186\ \textcolor{preprocessor}{\#define\ RTC\_IEN\_COMP1\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ (\_RTC\_IEN\_COMP1\_DEFAULT\ <<\ 2)\ }}
+\DoxyCodeLine{00188\ \textcolor{comment}{/*\ Bit\ fields\ for\ RTC\ FREEZE\ */}}
+\DoxyCodeLine{00189\ \textcolor{preprocessor}{\#define\ \_RTC\_FREEZE\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00190\ \textcolor{preprocessor}{\#define\ \_RTC\_FREEZE\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00191\ \textcolor{preprocessor}{\#define\ RTC\_FREEZE\_REGFREEZE\ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00192\ \textcolor{preprocessor}{\#define\ \_RTC\_FREEZE\_REGFREEZE\_SHIFT\ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00193\ \textcolor{preprocessor}{\#define\ \_RTC\_FREEZE\_REGFREEZE\_MASK\ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00194\ \textcolor{preprocessor}{\#define\ \_RTC\_FREEZE\_REGFREEZE\_DEFAULT\ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00195\ \textcolor{preprocessor}{\#define\ \_RTC\_FREEZE\_REGFREEZE\_UPDATE\ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00196\ \textcolor{preprocessor}{\#define\ \_RTC\_FREEZE\_REGFREEZE\_FREEZE\ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00197\ \textcolor{preprocessor}{\#define\ RTC\_FREEZE\_REGFREEZE\_DEFAULT\ \ \ \ \ (\_RTC\_FREEZE\_REGFREEZE\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00198\ \textcolor{preprocessor}{\#define\ RTC\_FREEZE\_REGFREEZE\_UPDATE\ \ \ \ \ \ (\_RTC\_FREEZE\_REGFREEZE\_UPDATE\ <<\ 0)\ \ }}
+\DoxyCodeLine{00199\ \textcolor{preprocessor}{\#define\ RTC\_FREEZE\_REGFREEZE\_FREEZE\ \ \ \ \ \ (\_RTC\_FREEZE\_REGFREEZE\_FREEZE\ <<\ 0)\ \ }}
+\DoxyCodeLine{00201\ \textcolor{comment}{/*\ Bit\ fields\ for\ RTC\ SYNCBUSY\ */}}
+\DoxyCodeLine{00202\ \textcolor{preprocessor}{\#define\ \_RTC\_SYNCBUSY\_RESETVALUE\ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00203\ \textcolor{preprocessor}{\#define\ \_RTC\_SYNCBUSY\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000007UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00204\ \textcolor{preprocessor}{\#define\ RTC\_SYNCBUSY\_CTRL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00205\ \textcolor{preprocessor}{\#define\ \_RTC\_SYNCBUSY\_CTRL\_SHIFT\ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00206\ \textcolor{preprocessor}{\#define\ \_RTC\_SYNCBUSY\_CTRL\_MASK\ \ \ \ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00207\ \textcolor{preprocessor}{\#define\ \_RTC\_SYNCBUSY\_CTRL\_DEFAULT\ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00208\ \textcolor{preprocessor}{\#define\ RTC\_SYNCBUSY\_CTRL\_DEFAULT\ \ \ \ \ \ \ \ (\_RTC\_SYNCBUSY\_CTRL\_DEFAULT\ <<\ 0)\ \ }}
+\DoxyCodeLine{00209\ \textcolor{preprocessor}{\#define\ RTC\_SYNCBUSY\_COMP0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00210\ \textcolor{preprocessor}{\#define\ \_RTC\_SYNCBUSY\_COMP0\_SHIFT\ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00211\ \textcolor{preprocessor}{\#define\ \_RTC\_SYNCBUSY\_COMP0\_MASK\ \ \ \ \ \ \ \ \ 0x2UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00212\ \textcolor{preprocessor}{\#define\ \_RTC\_SYNCBUSY\_COMP0\_DEFAULT\ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00213\ \textcolor{preprocessor}{\#define\ RTC\_SYNCBUSY\_COMP0\_DEFAULT\ \ \ \ \ \ \ (\_RTC\_SYNCBUSY\_COMP0\_DEFAULT\ <<\ 1)\ }}
+\DoxyCodeLine{00214\ \textcolor{preprocessor}{\#define\ RTC\_SYNCBUSY\_COMP1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 2)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00215\ \textcolor{preprocessor}{\#define\ \_RTC\_SYNCBUSY\_COMP1\_SHIFT\ \ \ \ \ \ \ \ 2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00216\ \textcolor{preprocessor}{\#define\ \_RTC\_SYNCBUSY\_COMP1\_MASK\ \ \ \ \ \ \ \ \ 0x4UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00217\ \textcolor{preprocessor}{\#define\ \_RTC\_SYNCBUSY\_COMP1\_DEFAULT\ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00218\ \textcolor{preprocessor}{\#define\ RTC\_SYNCBUSY\_COMP1\_DEFAULT\ \ \ \ \ \ \ (\_RTC\_SYNCBUSY\_COMP1\_DEFAULT\ <<\ 2)\ }}
+
+\end{DoxyCode}

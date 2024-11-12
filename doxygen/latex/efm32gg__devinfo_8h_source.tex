@@ -1,0 +1,138 @@
+\doxysection{efm32gg\+\_\+devinfo.\+h}
+\hypertarget{efm32gg__devinfo_8h_source}{}\label{efm32gg__devinfo_8h_source}\index{snake/gecko\_sdk\_4.4.4/platform/Device/SiliconLabs/EFM32GG/Include/efm32gg\_devinfo.h@{snake/gecko\_sdk\_4.4.4/platform/Device/SiliconLabs/EFM32GG/Include/efm32gg\_devinfo.h}}
+\mbox{\hyperlink{efm32gg__devinfo_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#if\ defined(\_\_ICCARM\_\_)}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#pragma\ system\_include\ \ \ \ \ \ \ }\textcolor{comment}{/*\ Treat\ file\ as\ system\ include\ file.\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#elif\ defined(\_\_ARMCC\_VERSION)\ \&\&\ (\_\_ARMCC\_VERSION\ >=\ 6010050)}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#pragma\ clang\ system\_header\ \ }\textcolor{comment}{/*\ Treat\ file\ as\ system\ include\ file.\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00041\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00045\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00046\ \ \ \_\_IM\ uint32\_t\ \mbox{\hyperlink{struct_d_e_v_i_n_f_o___type_def_a15302230acc9fbd8d9d0aa9307907748}{CAL}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00047\ \ \ \_\_IM\ uint32\_t\ \mbox{\hyperlink{struct_d_e_v_i_n_f_o___type_def_a333f69dff837b4690daab94d757eb427}{ADC0CAL0}};\ \ \ \ \ \ }
+\DoxyCodeLine{00048\ \ \ \_\_IM\ uint32\_t\ \mbox{\hyperlink{struct_d_e_v_i_n_f_o___type_def_a2c2d83b38b9b7137f0c52f38fe9b8e60}{ADC0CAL1}};\ \ \ \ \ \ }
+\DoxyCodeLine{00049\ \ \ \_\_IM\ uint32\_t\ \mbox{\hyperlink{struct_d_e_v_i_n_f_o___type_def_ad5c8a962cd8d5113ea1122288c1ff40d}{ADC0CAL2}};\ \ \ \ \ \ }
+\DoxyCodeLine{00050\ \ \ uint32\_t\ \ \ \ \ \ RESERVED0[2U];\ }
+\DoxyCodeLine{00051\ \ \ \_\_IM\ uint32\_t\ \mbox{\hyperlink{struct_d_e_v_i_n_f_o___type_def_a5d081e12b4a6670adc1cedb08aba549f}{DAC0CAL0}};\ \ \ \ \ \ }
+\DoxyCodeLine{00052\ \ \ \_\_IM\ uint32\_t\ \mbox{\hyperlink{struct_d_e_v_i_n_f_o___type_def_a9f9d0a8d00b67d2adad22f776575aa46}{DAC0CAL1}};\ \ \ \ \ \ }
+\DoxyCodeLine{00053\ \ \ \_\_IM\ uint32\_t\ \mbox{\hyperlink{struct_d_e_v_i_n_f_o___type_def_adaaa0729a1c8fa1de8c3cbad0c14852d}{DAC0CAL2}};\ \ \ \ \ \ }
+\DoxyCodeLine{00054\ \ \ \_\_IM\ uint32\_t\ \mbox{\hyperlink{struct_d_e_v_i_n_f_o___type_def_a54673cb8ff83d8a428688f92e17838dc}{AUXHFRCOCAL0}};\ \ }
+\DoxyCodeLine{00055\ \ \ \_\_IM\ uint32\_t\ \mbox{\hyperlink{struct_d_e_v_i_n_f_o___type_def_ac14a86482616b4a9859427d0e3794057}{AUXHFRCOCAL1}};\ \ }
+\DoxyCodeLine{00056\ \ \ \_\_IM\ uint32\_t\ \mbox{\hyperlink{struct_d_e_v_i_n_f_o___type_def_a86fc0e2b0fd6148ad27907d0af2e73cb}{HFRCOCAL0}};\ \ \ \ \ }
+\DoxyCodeLine{00057\ \ \ \_\_IM\ uint32\_t\ \mbox{\hyperlink{struct_d_e_v_i_n_f_o___type_def_a0bf343435750c982fb0900ac436d3f0b}{HFRCOCAL1}};\ \ \ \ \ }
+\DoxyCodeLine{00058\ \ \ \_\_IM\ uint32\_t\ \mbox{\hyperlink{struct_d_e_v_i_n_f_o___type_def_a5faa5045e9f2b871950f109cc0d31c32}{MEMINFO}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00059\ \ \ uint32\_t\ \ \ \ \ \ RESERVED2[2U];\ }
+\DoxyCodeLine{00060\ \ \ \_\_IM\ uint32\_t\ \mbox{\hyperlink{struct_d_e_v_i_n_f_o___type_def_adeb0c331ca40b8495c827039409fbffd}{UNIQUEL}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00061\ \ \ \_\_IM\ uint32\_t\ \mbox{\hyperlink{struct_d_e_v_i_n_f_o___type_def_a884e030f1388fc930dff9033d448f303}{UNIQUEH}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00062\ \ \ \_\_IM\ uint32\_t\ \mbox{\hyperlink{struct_d_e_v_i_n_f_o___type_def_abc8044aa1e1663ae7c94f103d55af449}{MSIZE}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00063\ \ \ \_\_IM\ uint32\_t\ \mbox{\hyperlink{struct_d_e_v_i_n_f_o___type_def_a997f95ac122bc60790dec96d251bf7d3}{PART}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00064\ \}\ \mbox{\hyperlink{struct_d_e_v_i_n_f_o___type_def}{DEVINFO\_TypeDef}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00066\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00070\ \textcolor{comment}{/*\ Bit\ fields\ for\ EFM32GG\_DEVINFO\ */}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_CAL\_CRC\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0000FFFFUL\ }}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_CAL\_CRC\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_CAL\_TEMP\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00FF0000UL\ }}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_CAL\_TEMP\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 16\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_ADC0CAL0\_1V25\_GAIN\_MASK\ \ \ \ \ \ \ \ \ \ \ 0x00007F00UL\ }}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_ADC0CAL0\_1V25\_GAIN\_SHIFT\ \ \ \ \ \ \ \ \ \ 8\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_ADC0CAL0\_1V25\_OFFSET\_MASK\ \ \ \ \ \ \ \ \ 0x0000007FUL\ }}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_ADC0CAL0\_1V25\_OFFSET\_SHIFT\ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_ADC0CAL0\_2V5\_GAIN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ 0x7F000000UL\ }}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_ADC0CAL0\_2V5\_GAIN\_SHIFT\ \ \ \ \ \ \ \ \ \ \ 24\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_ADC0CAL0\_2V5\_OFFSET\_MASK\ \ \ \ \ \ \ \ \ \ 0x007F0000UL\ }}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_ADC0CAL0\_2V5\_OFFSET\_SHIFT\ \ \ \ \ \ \ \ \ 16\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_ADC0CAL1\_VDD\_GAIN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ 0x00007F00UL\ }}
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_ADC0CAL1\_VDD\_GAIN\_SHIFT\ \ \ \ \ \ \ \ \ \ \ 8\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_ADC0CAL1\_VDD\_OFFSET\_MASK\ \ \ \ \ \ \ \ \ \ 0x0000007FUL\ }}
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_ADC0CAL1\_VDD\_OFFSET\_SHIFT\ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_ADC0CAL1\_5VDIFF\_GAIN\_MASK\ \ \ \ \ \ \ \ \ 0x7F000000UL\ }}
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_ADC0CAL1\_5VDIFF\_GAIN\_SHIFT\ \ \ \ \ \ \ \ 24\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_ADC0CAL1\_5VDIFF\_OFFSET\_MASK\ \ \ \ \ \ \ 0x007F0000UL\ }}
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_ADC0CAL1\_5VDIFF\_OFFSET\_SHIFT\ \ \ \ \ \ 16\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_ADC0CAL2\_2XVDDVSS\_OFFSET\_MASK\ \ \ \ \ 0x0000007FUL\ }}
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_ADC0CAL2\_2XVDDVSS\_OFFSET\_SHIFT\ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_ADC0CAL2\_TEMP1V25\_MASK\ \ \ \ \ \ \ \ \ \ \ \ 0xFFF00000UL\ }}
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_ADC0CAL2\_TEMP1V25\_SHIFT\ \ \ \ \ \ \ \ \ \ \ 20\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_DAC0CAL0\_1V25\_GAIN\_MASK\ \ \ \ \ \ \ \ \ \ \ 0x007F0000UL\ }}
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_DAC0CAL0\_1V25\_GAIN\_SHIFT\ \ \ \ \ \ \ \ \ \ 16\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_DAC0CAL0\_1V25\_CH1\_OFFSET\_MASK\ \ \ \ \ 0x00003F00UL\ }}
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_DAC0CAL0\_1V25\_CH1\_OFFSET\_SHIFT\ \ \ \ 8\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_DAC0CAL0\_1V25\_CH0\_OFFSET\_MASK\ \ \ \ \ 0x0000003FUL\ }}
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_DAC0CAL0\_1V25\_CH0\_OFFSET\_SHIFT\ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_DAC0CAL1\_2V5\_GAIN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ 0x007F0000UL\ }}
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_DAC0CAL1\_2V5\_GAIN\_SHIFT\ \ \ \ \ \ \ \ \ \ \ 16\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00103\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_DAC0CAL1\_2V5\_CH1\_OFFSET\_MASK\ \ \ \ \ \ 0x00003F00UL\ }}
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_DAC0CAL1\_2V5\_CH1\_OFFSET\_SHIFT\ \ \ \ \ 8\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_DAC0CAL1\_2V5\_CH0\_OFFSET\_MASK\ \ \ \ \ \ 0x0000003FUL\ }}
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_DAC0CAL1\_2V5\_CH0\_OFFSET\_SHIFT\ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00107\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_DAC0CAL2\_VDD\_GAIN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ 0x007F0000UL\ }}
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_DAC0CAL2\_VDD\_GAIN\_SHIFT\ \ \ \ \ \ \ \ \ \ \ 16\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_DAC0CAL2\_VDD\_CH1\_OFFSET\_MASK\ \ \ \ \ \ 0x00003F00UL\ }}
+\DoxyCodeLine{00110\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_DAC0CAL2\_VDD\_CH1\_OFFSET\_SHIFT\ \ \ \ \ 8\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_DAC0CAL2\_VDD\_CH0\_OFFSET\_MASK\ \ \ \ \ \ 0x0000003FUL\ }}
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_DAC0CAL2\_VDD\_CH0\_OFFSET\_SHIFT\ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_AUXHFRCOCAL0\_BAND1\_MASK\ \ \ \ \ \ \ \ \ \ \ 0x000000FFUL\ }}
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_AUXHFRCOCAL0\_BAND1\_SHIFT\ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_AUXHFRCOCAL0\_BAND7\_MASK\ \ \ \ \ \ \ \ \ \ \ 0x0000FF00UL\ }}
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_AUXHFRCOCAL0\_BAND7\_SHIFT\ \ \ \ \ \ \ \ \ \ 8\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00117\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_AUXHFRCOCAL0\_BAND11\_MASK\ \ \ \ \ \ \ \ \ \ 0x00FF0000UL\ }}
+\DoxyCodeLine{00118\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_AUXHFRCOCAL0\_BAND11\_SHIFT\ \ \ \ \ \ \ \ \ 16\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00119\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_AUXHFRCOCAL0\_BAND14\_MASK\ \ \ \ \ \ \ \ \ \ 0xFF000000UL\ }}
+\DoxyCodeLine{00120\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_AUXHFRCOCAL0\_BAND14\_SHIFT\ \ \ \ \ \ \ \ \ 24\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_AUXHFRCOCAL1\_BAND21\_MASK\ \ \ \ \ \ \ \ \ \ 0x000000FFUL\ }}
+\DoxyCodeLine{00122\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_AUXHFRCOCAL1\_BAND21\_SHIFT\ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_AUXHFRCOCAL1\_BAND28\_MASK\ \ \ \ \ \ \ \ \ \ 0x0000FF00UL\ }}
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_AUXHFRCOCAL1\_BAND28\_SHIFT\ \ \ \ \ \ \ \ \ 8\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_HFRCOCAL0\_BAND1\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x000000FFUL\ }}
+\DoxyCodeLine{00126\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_HFRCOCAL0\_BAND1\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_HFRCOCAL0\_BAND7\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0000FF00UL\ }}
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_HFRCOCAL0\_BAND7\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ 8\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_HFRCOCAL0\_BAND11\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00FF0000UL\ }}
+\DoxyCodeLine{00130\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_HFRCOCAL0\_BAND11\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ 16\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00131\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_HFRCOCAL0\_BAND14\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ 0xFF000000UL\ }}
+\DoxyCodeLine{00132\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_HFRCOCAL0\_BAND14\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ 24\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00133\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_HFRCOCAL1\_BAND21\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ 0x000000FFUL\ }}
+\DoxyCodeLine{00134\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_HFRCOCAL1\_BAND21\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00135\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_HFRCOCAL1\_BAND28\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ 0x0000FF00UL\ }}
+\DoxyCodeLine{00136\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_HFRCOCAL1\_BAND28\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ 8\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_MEMINFO\_FLASH\_PAGE\_SIZE\_MASK\ \ \ \ \ \ 0xFF000000UL\ }}
+\DoxyCodeLine{00138\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_MEMINFO\_FLASH\_PAGE\_SIZE\_SHIFT\ \ \ \ \ 24\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00139\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_UNIQUEL\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFFFFFFFFUL\ }}
+\DoxyCodeLine{00140\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_UNIQUEL\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00141\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_UNIQUEH\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFFFFFFFFUL\ }}
+\DoxyCodeLine{00142\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_UNIQUEH\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00143\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_MSIZE\_SRAM\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFFFF0000UL\ }}
+\DoxyCodeLine{00144\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_MSIZE\_SRAM\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 16\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00145\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_MSIZE\_FLASH\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0000FFFFUL\ }}
+\DoxyCodeLine{00146\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_MSIZE\_FLASH\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00147\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_PART\_PROD\_REV\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFF000000UL\ }}
+\DoxyCodeLine{00148\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_PART\_PROD\_REV\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 24\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00149\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_PART\_DEVICE\_FAMILY\_MASK\ \ \ \ \ \ \ \ \ \ \ 0x00FF0000UL\ }}
+\DoxyCodeLine{00150\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_PART\_DEVICE\_FAMILY\_SHIFT\ \ \ \ \ \ \ \ \ \ 16\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00151\ \textcolor{comment}{/*\ Legacy\ family\ \#defines\ */}}
+\DoxyCodeLine{00152\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_PART\_DEVICE\_FAMILY\_G\ \ \ \ \ \ \ \ \ \ \ \ \ \ 71\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00153\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_PART\_DEVICE\_FAMILY\_GG\ \ \ \ \ \ \ \ \ \ \ \ \ 72\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00154\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_PART\_DEVICE\_FAMILY\_TG\ \ \ \ \ \ \ \ \ \ \ \ \ 73\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00155\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_PART\_DEVICE\_FAMILY\_LG\ \ \ \ \ \ \ \ \ \ \ \ \ 74\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00156\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_PART\_DEVICE\_FAMILY\_WG\ \ \ \ \ \ \ \ \ \ \ \ \ 75\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00157\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_PART\_DEVICE\_FAMILY\_ZG\ \ \ \ \ \ \ \ \ \ \ \ \ 76\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00158\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_PART\_DEVICE\_FAMILY\_HG\ \ \ \ \ \ \ \ \ \ \ \ \ 77\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00159\ \textcolor{comment}{/*\ New\ style\ family\ \#defines\ */}}
+\DoxyCodeLine{00160\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_PART\_DEVICE\_FAMILY\_EFM32G\ \ \ \ \ \ \ \ \ 71\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00161\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_PART\_DEVICE\_FAMILY\_EFM32GG\ \ \ \ \ \ \ \ 72\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00162\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_PART\_DEVICE\_FAMILY\_EFM32TG\ \ \ \ \ \ \ \ 73\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00163\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_PART\_DEVICE\_FAMILY\_EFM32LG\ \ \ \ \ \ \ \ 74\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00164\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_PART\_DEVICE\_FAMILY\_EFM32WG\ \ \ \ \ \ \ \ 75\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00165\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_PART\_DEVICE\_FAMILY\_EFM32ZG\ \ \ \ \ \ \ \ 76\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00166\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_PART\_DEVICE\_FAMILY\_EFM32HG\ \ \ \ \ \ \ \ 77\ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00167\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_PART\_DEVICE\_FAMILY\_EZR32WG\ \ \ \ \ \ \ \ 120\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00168\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_PART\_DEVICE\_FAMILY\_EZR32LG\ \ \ \ \ \ \ \ 121\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00169\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_PART\_DEVICE\_FAMILY\_EZR32HG\ \ \ \ \ \ \ \ 122\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00170\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_PART\_DEVICE\_NUMBER\_MASK\ \ \ \ \ \ \ \ \ \ \ 0x0000FFFFUL\ }}
+\DoxyCodeLine{00171\ \textcolor{preprocessor}{\#define\ \_DEVINFO\_PART\_DEVICE\_NUMBER\_SHIFT\ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ }}
+
+\end{DoxyCode}

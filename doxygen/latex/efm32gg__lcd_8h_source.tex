@@ -1,0 +1,533 @@
+\doxysection{efm32gg\+\_\+lcd.\+h}
+\hypertarget{efm32gg__lcd_8h_source}{}\label{efm32gg__lcd_8h_source}\index{snake/gecko\_sdk\_4.4.4/platform/Device/SiliconLabs/EFM32GG/Include/efm32gg\_lcd.h@{snake/gecko\_sdk\_4.4.4/platform/Device/SiliconLabs/EFM32GG/Include/efm32gg\_lcd.h}}
+\mbox{\hyperlink{efm32gg__lcd_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#if\ defined(\_\_ICCARM\_\_)}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#pragma\ system\_include\ \ \ \ \ \ \ }\textcolor{comment}{/*\ Treat\ file\ as\ system\ include\ file.\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#elif\ defined(\_\_ARMCC\_VERSION)\ \&\&\ (\_\_ARMCC\_VERSION\ >=\ 6010050)}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#pragma\ clang\ system\_header\ \ }\textcolor{comment}{/*\ Treat\ file\ as\ system\ include\ file.\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00041\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00046\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00047\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_l_c_d___type_def_a6e2d397764c38cb8f3913d85d24c886d}{CTRL}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00048\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_l_c_d___type_def_a9a506b09954620674f6aa1048b508a10}{DISPCTRL}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00049\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_l_c_d___type_def_a1c6d2f5d87b4e9a4148966d7c7456dd6}{SEGEN}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00050\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_l_c_d___type_def_a9667ba7ba45eaad5ba9c5fed69606097}{BACTRL}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00051\ \ \ \_\_IM\ uint32\_t\ \ \mbox{\hyperlink{struct_l_c_d___type_def_a89e3cae975e80e37e2c0474c0deba934}{STATUS}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00052\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_l_c_d___type_def_aa22bc2db3dc5f9b72e255a3859c2de53}{AREGA}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00053\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_l_c_d___type_def_a5c4d837a4c404d55fe6eb2ee79ac29c6}{AREGB}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00054\ \ \ \_\_IM\ uint32\_t\ \ \mbox{\hyperlink{struct_l_c_d___type_def_ad65983543be312432b93e97ba5202bd2}{IF}};\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00055\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_l_c_d___type_def_a8636176f0989d387bfdbd316acef2702}{IFS}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00056\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_l_c_d___type_def_a2af4957d21462ade7d01f3cd00b11891}{IFC}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00057\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_l_c_d___type_def_ab94b136d3a44fea4f2a034b24b470419}{IEN}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00059\ \ \ uint32\_t\ \ \ \ \ \ \ RESERVED0[5U];\ \ }
+\DoxyCodeLine{00060\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_l_c_d___type_def_a44a63b0d4c1be3a036d84fef70cbda23}{SEGD0L}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00061\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_l_c_d___type_def_aa57598a6d9090a40e6ef4902c94563a9}{SEGD1L}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00062\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_l_c_d___type_def_a7e4e3326dec14464f6a2297ebd201c2e}{SEGD2L}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00063\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_l_c_d___type_def_a10762fe0c5e78f712e826d1ea02b6eef}{SEGD3L}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00064\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_l_c_d___type_def_a1ca8a856fbcce8c38d2304d92ddecd73}{SEGD0H}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00065\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_l_c_d___type_def_a3b2ba40be5480a76a7872231341765b0}{SEGD1H}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00066\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_l_c_d___type_def_acd27a8114f931bb2dab3f746080c70bf}{SEGD2H}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00067\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_l_c_d___type_def_ab76343f14836bb535bd779dee7244137}{SEGD3H}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00069\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_l_c_d___type_def_a2f60b6c928c3181cfa649645d81ddabd}{FREEZE}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00070\ \ \ \_\_IM\ uint32\_t\ \ \mbox{\hyperlink{struct_l_c_d___type_def_acecab3dd222c5234215139d68b2b16c1}{SYNCBUSY}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00072\ \ \ uint32\_t\ \ \ \ \ \ \ RESERVED1[19U];\ }
+\DoxyCodeLine{00073\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_l_c_d___type_def_ad0bfbd8d336339df14a467b0f758af2e}{SEGD4H}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00074\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_l_c_d___type_def_ae35779cedec1ccd1b48a40c6c61a412d}{SEGD5H}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00075\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_l_c_d___type_def_a9faf7c3d166fdafb4b34b3b00dce17c1}{SEGD6H}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00076\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_l_c_d___type_def_adf403b7105462667a913210d2538cfae}{SEGD7H}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00077\ \ \ uint32\_t\ \ \ \ \ \ \ RESERVED2[2U];\ \ }
+\DoxyCodeLine{00078\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_l_c_d___type_def_a0519724b37a6c85d1704e32ca909688b}{SEGD4L}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00079\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_l_c_d___type_def_a13e79bf3b554a5b0289b57aeb3d95f1a}{SEGD5L}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00080\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_l_c_d___type_def_aa29dfcde12e19d742574b4cc549b8202}{SEGD6L}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00081\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_l_c_d___type_def_ac6ffebc3fa34399c9d0017c177ac8fb8}{SEGD7L}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00082\ \}\ \mbox{\hyperlink{struct_l_c_d___type_def}{LCD\_TypeDef}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00084\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00089\ \textcolor{comment}{/*\ Bit\ fields\ for\ LCD\ CTRL\ */}}
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#define\ \_LCD\_CTRL\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#define\ \_LCD\_CTRL\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00800007UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#define\ LCD\_CTRL\_EN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#define\ \_LCD\_CTRL\_EN\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\#define\ \_LCD\_CTRL\_EN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#define\ \_LCD\_CTRL\_EN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\#define\ LCD\_CTRL\_EN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_LCD\_CTRL\_EN\_DEFAULT\ <<\ 0)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\#define\ \_LCD\_CTRL\_UDCTRL\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\#define\ \_LCD\_CTRL\_UDCTRL\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x6UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#define\ \_LCD\_CTRL\_UDCTRL\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#define\ \_LCD\_CTRL\_UDCTRL\_REGULAR\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#define\ \_LCD\_CTRL\_UDCTRL\_FCEVENT\ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#define\ \_LCD\_CTRL\_UDCTRL\_FRAMESTART\ \ \ \ \ \ \ \ 0x00000002UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00103\ \textcolor{preprocessor}{\#define\ LCD\_CTRL\_UDCTRL\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ (\_LCD\_CTRL\_UDCTRL\_DEFAULT\ <<\ 1)\ \ \ \ }}
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#define\ LCD\_CTRL\_UDCTRL\_REGULAR\ \ \ \ \ \ \ \ \ \ \ \ (\_LCD\_CTRL\_UDCTRL\_REGULAR\ <<\ 1)\ \ \ \ }}
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#define\ LCD\_CTRL\_UDCTRL\_FCEVENT\ \ \ \ \ \ \ \ \ \ \ \ (\_LCD\_CTRL\_UDCTRL\_FCEVENT\ <<\ 1)\ \ \ \ }}
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\#define\ LCD\_CTRL\_UDCTRL\_FRAMESTART\ \ \ \ \ \ \ \ \ (\_LCD\_CTRL\_UDCTRL\_FRAMESTART\ <<\ 1)\ }}
+\DoxyCodeLine{00107\ \textcolor{preprocessor}{\#define\ LCD\_CTRL\_DSC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 23)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\#define\ \_LCD\_CTRL\_DSC\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 23\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\#define\ \_LCD\_CTRL\_DSC\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x800000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00110\ \textcolor{preprocessor}{\#define\ \_LCD\_CTRL\_DSC\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\#define\ LCD\_CTRL\_DSC\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_LCD\_CTRL\_DSC\_DEFAULT\ <<\ 23)\ \ \ \ \ \ }}
+\DoxyCodeLine{00113\ \textcolor{comment}{/*\ Bit\ fields\ for\ LCD\ DISPCTRL\ */}}
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#define\ \_LCD\_DISPCTRL\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ 0x000C1F00UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\#define\ \_LCD\_DISPCTRL\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x005D9F1FUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#define\ \_LCD\_DISPCTRL\_MUX\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00117\ \textcolor{preprocessor}{\#define\ \_LCD\_DISPCTRL\_MUX\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ 0x3UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00118\ \textcolor{preprocessor}{\#define\ \_LCD\_DISPCTRL\_MUX\_DEFAULT\ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00119\ \textcolor{preprocessor}{\#define\ \_LCD\_DISPCTRL\_MUX\_STATIC\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00120\ \textcolor{preprocessor}{\#define\ \_LCD\_DISPCTRL\_MUX\_DUPLEX\ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\#define\ \_LCD\_DISPCTRL\_MUX\_TRIPLEX\ \ \ \ \ \ \ \ \ \ 0x00000002UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00122\ \textcolor{preprocessor}{\#define\ \_LCD\_DISPCTRL\_MUX\_QUADRUPLEX\ \ \ \ \ \ \ 0x00000003UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\#define\ LCD\_DISPCTRL\_MUX\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ (\_LCD\_DISPCTRL\_MUX\_DEFAULT\ <<\ 0)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\#define\ LCD\_DISPCTRL\_MUX\_STATIC\ \ \ \ \ \ \ \ \ \ \ \ (\_LCD\_DISPCTRL\_MUX\_STATIC\ <<\ 0)\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\#define\ LCD\_DISPCTRL\_MUX\_DUPLEX\ \ \ \ \ \ \ \ \ \ \ \ (\_LCD\_DISPCTRL\_MUX\_DUPLEX\ <<\ 0)\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00126\ \textcolor{preprocessor}{\#define\ LCD\_DISPCTRL\_MUX\_TRIPLEX\ \ \ \ \ \ \ \ \ \ \ (\_LCD\_DISPCTRL\_MUX\_TRIPLEX\ <<\ 0)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\#define\ LCD\_DISPCTRL\_MUX\_QUADRUPLEX\ \ \ \ \ \ \ \ (\_LCD\_DISPCTRL\_MUX\_QUADRUPLEX\ <<\ 0)\ \ \ \ \ }}
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\#define\ \_LCD\_DISPCTRL\_BIAS\_SHIFT\ \ \ \ \ \ \ \ \ \ \ 2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{\#define\ \_LCD\_DISPCTRL\_BIAS\_MASK\ \ \ \ \ \ \ \ \ \ \ \ 0xCUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00130\ \textcolor{preprocessor}{\#define\ \_LCD\_DISPCTRL\_BIAS\_DEFAULT\ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00131\ \textcolor{preprocessor}{\#define\ \_LCD\_DISPCTRL\_BIAS\_STATIC\ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00132\ \textcolor{preprocessor}{\#define\ \_LCD\_DISPCTRL\_BIAS\_ONEHALF\ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00133\ \textcolor{preprocessor}{\#define\ \_LCD\_DISPCTRL\_BIAS\_ONETHIRD\ \ \ \ \ \ \ \ 0x00000002UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00134\ \textcolor{preprocessor}{\#define\ \_LCD\_DISPCTRL\_BIAS\_ONEFOURTH\ \ \ \ \ \ \ 0x00000003UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00135\ \textcolor{preprocessor}{\#define\ LCD\_DISPCTRL\_BIAS\_DEFAULT\ \ \ \ \ \ \ \ \ \ (\_LCD\_DISPCTRL\_BIAS\_DEFAULT\ <<\ 2)\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00136\ \textcolor{preprocessor}{\#define\ LCD\_DISPCTRL\_BIAS\_STATIC\ \ \ \ \ \ \ \ \ \ \ (\_LCD\_DISPCTRL\_BIAS\_STATIC\ <<\ 2)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\#define\ LCD\_DISPCTRL\_BIAS\_ONEHALF\ \ \ \ \ \ \ \ \ \ (\_LCD\_DISPCTRL\_BIAS\_ONEHALF\ <<\ 2)\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00138\ \textcolor{preprocessor}{\#define\ LCD\_DISPCTRL\_BIAS\_ONETHIRD\ \ \ \ \ \ \ \ \ (\_LCD\_DISPCTRL\_BIAS\_ONETHIRD\ <<\ 2)\ \ \ \ \ \ }}
+\DoxyCodeLine{00139\ \textcolor{preprocessor}{\#define\ LCD\_DISPCTRL\_BIAS\_ONEFOURTH\ \ \ \ \ \ \ \ (\_LCD\_DISPCTRL\_BIAS\_ONEFOURTH\ <<\ 2)\ \ \ \ \ }}
+\DoxyCodeLine{00140\ \textcolor{preprocessor}{\#define\ LCD\_DISPCTRL\_WAVE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 4)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00141\ \textcolor{preprocessor}{\#define\ \_LCD\_DISPCTRL\_WAVE\_SHIFT\ \ \ \ \ \ \ \ \ \ \ 4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00142\ \textcolor{preprocessor}{\#define\ \_LCD\_DISPCTRL\_WAVE\_MASK\ \ \ \ \ \ \ \ \ \ \ \ 0x10UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00143\ \textcolor{preprocessor}{\#define\ \_LCD\_DISPCTRL\_WAVE\_DEFAULT\ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00144\ \textcolor{preprocessor}{\#define\ \_LCD\_DISPCTRL\_WAVE\_LOWPOWER\ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00145\ \textcolor{preprocessor}{\#define\ \_LCD\_DISPCTRL\_WAVE\_NORMAL\ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00146\ \textcolor{preprocessor}{\#define\ LCD\_DISPCTRL\_WAVE\_DEFAULT\ \ \ \ \ \ \ \ \ \ (\_LCD\_DISPCTRL\_WAVE\_DEFAULT\ <<\ 4)\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00147\ \textcolor{preprocessor}{\#define\ LCD\_DISPCTRL\_WAVE\_LOWPOWER\ \ \ \ \ \ \ \ \ (\_LCD\_DISPCTRL\_WAVE\_LOWPOWER\ <<\ 4)\ \ \ \ \ \ }}
+\DoxyCodeLine{00148\ \textcolor{preprocessor}{\#define\ LCD\_DISPCTRL\_WAVE\_NORMAL\ \ \ \ \ \ \ \ \ \ \ (\_LCD\_DISPCTRL\_WAVE\_NORMAL\ <<\ 4)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00149\ \textcolor{preprocessor}{\#define\ \_LCD\_DISPCTRL\_CONLEV\_SHIFT\ \ \ \ \ \ \ \ \ 8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00150\ \textcolor{preprocessor}{\#define\ \_LCD\_DISPCTRL\_CONLEV\_MASK\ \ \ \ \ \ \ \ \ \ 0x1F00UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00151\ \textcolor{preprocessor}{\#define\ \_LCD\_DISPCTRL\_CONLEV\_MIN\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00152\ \textcolor{preprocessor}{\#define\ \_LCD\_DISPCTRL\_CONLEV\_DEFAULT\ \ \ \ \ \ \ 0x0000001FUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00153\ \textcolor{preprocessor}{\#define\ \_LCD\_DISPCTRL\_CONLEV\_MAX\ \ \ \ \ \ \ \ \ \ \ 0x0000001FUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00154\ \textcolor{preprocessor}{\#define\ LCD\_DISPCTRL\_CONLEV\_MIN\ \ \ \ \ \ \ \ \ \ \ \ (\_LCD\_DISPCTRL\_CONLEV\_MIN\ <<\ 8)\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00155\ \textcolor{preprocessor}{\#define\ LCD\_DISPCTRL\_CONLEV\_DEFAULT\ \ \ \ \ \ \ \ (\_LCD\_DISPCTRL\_CONLEV\_DEFAULT\ <<\ 8)\ \ \ \ \ }}
+\DoxyCodeLine{00156\ \textcolor{preprocessor}{\#define\ LCD\_DISPCTRL\_CONLEV\_MAX\ \ \ \ \ \ \ \ \ \ \ \ (\_LCD\_DISPCTRL\_CONLEV\_MAX\ <<\ 8)\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00157\ \textcolor{preprocessor}{\#define\ LCD\_DISPCTRL\_CONCONF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 15)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00158\ \textcolor{preprocessor}{\#define\ \_LCD\_DISPCTRL\_CONCONF\_SHIFT\ \ \ \ \ \ \ \ 15\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00159\ \textcolor{preprocessor}{\#define\ \_LCD\_DISPCTRL\_CONCONF\_MASK\ \ \ \ \ \ \ \ \ 0x8000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00160\ \textcolor{preprocessor}{\#define\ \_LCD\_DISPCTRL\_CONCONF\_DEFAULT\ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00161\ \textcolor{preprocessor}{\#define\ \_LCD\_DISPCTRL\_CONCONF\_VLCD\ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00162\ \textcolor{preprocessor}{\#define\ \_LCD\_DISPCTRL\_CONCONF\_GND\ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00163\ \textcolor{preprocessor}{\#define\ LCD\_DISPCTRL\_CONCONF\_DEFAULT\ \ \ \ \ \ \ (\_LCD\_DISPCTRL\_CONCONF\_DEFAULT\ <<\ 15)\ \ \ }}
+\DoxyCodeLine{00164\ \textcolor{preprocessor}{\#define\ LCD\_DISPCTRL\_CONCONF\_VLCD\ \ \ \ \ \ \ \ \ \ (\_LCD\_DISPCTRL\_CONCONF\_VLCD\ <<\ 15)\ \ \ \ \ \ }}
+\DoxyCodeLine{00165\ \textcolor{preprocessor}{\#define\ LCD\_DISPCTRL\_CONCONF\_GND\ \ \ \ \ \ \ \ \ \ \ (\_LCD\_DISPCTRL\_CONCONF\_GND\ <<\ 15)\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00166\ \textcolor{preprocessor}{\#define\ LCD\_DISPCTRL\_VLCDSEL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 16)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00167\ \textcolor{preprocessor}{\#define\ \_LCD\_DISPCTRL\_VLCDSEL\_SHIFT\ \ \ \ \ \ \ \ 16\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00168\ \textcolor{preprocessor}{\#define\ \_LCD\_DISPCTRL\_VLCDSEL\_MASK\ \ \ \ \ \ \ \ \ 0x10000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00169\ \textcolor{preprocessor}{\#define\ \_LCD\_DISPCTRL\_VLCDSEL\_DEFAULT\ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00170\ \textcolor{preprocessor}{\#define\ \_LCD\_DISPCTRL\_VLCDSEL\_VDD\ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00171\ \textcolor{preprocessor}{\#define\ \_LCD\_DISPCTRL\_VLCDSEL\_VEXTBOOST\ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00172\ \textcolor{preprocessor}{\#define\ LCD\_DISPCTRL\_VLCDSEL\_DEFAULT\ \ \ \ \ \ \ (\_LCD\_DISPCTRL\_VLCDSEL\_DEFAULT\ <<\ 16)\ \ \ }}
+\DoxyCodeLine{00173\ \textcolor{preprocessor}{\#define\ LCD\_DISPCTRL\_VLCDSEL\_VDD\ \ \ \ \ \ \ \ \ \ \ (\_LCD\_DISPCTRL\_VLCDSEL\_VDD\ <<\ 16)\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00174\ \textcolor{preprocessor}{\#define\ LCD\_DISPCTRL\_VLCDSEL\_VEXTBOOST\ \ \ \ \ (\_LCD\_DISPCTRL\_VLCDSEL\_VEXTBOOST\ <<\ 16)\ }}
+\DoxyCodeLine{00175\ \textcolor{preprocessor}{\#define\ \_LCD\_DISPCTRL\_VBLEV\_SHIFT\ \ \ \ \ \ \ \ \ \ 18\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00176\ \textcolor{preprocessor}{\#define\ \_LCD\_DISPCTRL\_VBLEV\_MASK\ \ \ \ \ \ \ \ \ \ \ 0x1C0000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00177\ \textcolor{preprocessor}{\#define\ \_LCD\_DISPCTRL\_VBLEV\_LEVEL0\ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00178\ \textcolor{preprocessor}{\#define\ \_LCD\_DISPCTRL\_VBLEV\_LEVEL1\ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00179\ \textcolor{preprocessor}{\#define\ \_LCD\_DISPCTRL\_VBLEV\_LEVEL2\ \ \ \ \ \ \ \ \ 0x00000002UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00180\ \textcolor{preprocessor}{\#define\ \_LCD\_DISPCTRL\_VBLEV\_DEFAULT\ \ \ \ \ \ \ \ 0x00000003UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00181\ \textcolor{preprocessor}{\#define\ \_LCD\_DISPCTRL\_VBLEV\_LEVEL3\ \ \ \ \ \ \ \ \ 0x00000003UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00182\ \textcolor{preprocessor}{\#define\ \_LCD\_DISPCTRL\_VBLEV\_LEVEL4\ \ \ \ \ \ \ \ \ 0x00000004UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00183\ \textcolor{preprocessor}{\#define\ \_LCD\_DISPCTRL\_VBLEV\_LEVEL5\ \ \ \ \ \ \ \ \ 0x00000005UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00184\ \textcolor{preprocessor}{\#define\ \_LCD\_DISPCTRL\_VBLEV\_LEVEL6\ \ \ \ \ \ \ \ \ 0x00000006UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00185\ \textcolor{preprocessor}{\#define\ \_LCD\_DISPCTRL\_VBLEV\_LEVEL7\ \ \ \ \ \ \ \ \ 0x00000007UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00186\ \textcolor{preprocessor}{\#define\ LCD\_DISPCTRL\_VBLEV\_LEVEL0\ \ \ \ \ \ \ \ \ \ (\_LCD\_DISPCTRL\_VBLEV\_LEVEL0\ <<\ 18)\ \ \ \ \ \ }}
+\DoxyCodeLine{00187\ \textcolor{preprocessor}{\#define\ LCD\_DISPCTRL\_VBLEV\_LEVEL1\ \ \ \ \ \ \ \ \ \ (\_LCD\_DISPCTRL\_VBLEV\_LEVEL1\ <<\ 18)\ \ \ \ \ \ }}
+\DoxyCodeLine{00188\ \textcolor{preprocessor}{\#define\ LCD\_DISPCTRL\_VBLEV\_LEVEL2\ \ \ \ \ \ \ \ \ \ (\_LCD\_DISPCTRL\_VBLEV\_LEVEL2\ <<\ 18)\ \ \ \ \ \ }}
+\DoxyCodeLine{00189\ \textcolor{preprocessor}{\#define\ LCD\_DISPCTRL\_VBLEV\_DEFAULT\ \ \ \ \ \ \ \ \ (\_LCD\_DISPCTRL\_VBLEV\_DEFAULT\ <<\ 18)\ \ \ \ \ }}
+\DoxyCodeLine{00190\ \textcolor{preprocessor}{\#define\ LCD\_DISPCTRL\_VBLEV\_LEVEL3\ \ \ \ \ \ \ \ \ \ (\_LCD\_DISPCTRL\_VBLEV\_LEVEL3\ <<\ 18)\ \ \ \ \ \ }}
+\DoxyCodeLine{00191\ \textcolor{preprocessor}{\#define\ LCD\_DISPCTRL\_VBLEV\_LEVEL4\ \ \ \ \ \ \ \ \ \ (\_LCD\_DISPCTRL\_VBLEV\_LEVEL4\ <<\ 18)\ \ \ \ \ \ }}
+\DoxyCodeLine{00192\ \textcolor{preprocessor}{\#define\ LCD\_DISPCTRL\_VBLEV\_LEVEL5\ \ \ \ \ \ \ \ \ \ (\_LCD\_DISPCTRL\_VBLEV\_LEVEL5\ <<\ 18)\ \ \ \ \ \ }}
+\DoxyCodeLine{00193\ \textcolor{preprocessor}{\#define\ LCD\_DISPCTRL\_VBLEV\_LEVEL6\ \ \ \ \ \ \ \ \ \ (\_LCD\_DISPCTRL\_VBLEV\_LEVEL6\ <<\ 18)\ \ \ \ \ \ }}
+\DoxyCodeLine{00194\ \textcolor{preprocessor}{\#define\ LCD\_DISPCTRL\_VBLEV\_LEVEL7\ \ \ \ \ \ \ \ \ \ (\_LCD\_DISPCTRL\_VBLEV\_LEVEL7\ <<\ 18)\ \ \ \ \ \ }}
+\DoxyCodeLine{00195\ \textcolor{preprocessor}{\#define\ LCD\_DISPCTRL\_MUXE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 22)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00196\ \textcolor{preprocessor}{\#define\ \_LCD\_DISPCTRL\_MUXE\_SHIFT\ \ \ \ \ \ \ \ \ \ \ 22\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00197\ \textcolor{preprocessor}{\#define\ \_LCD\_DISPCTRL\_MUXE\_MASK\ \ \ \ \ \ \ \ \ \ \ \ 0x400000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00198\ \textcolor{preprocessor}{\#define\ \_LCD\_DISPCTRL\_MUXE\_DEFAULT\ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00199\ \textcolor{preprocessor}{\#define\ \_LCD\_DISPCTRL\_MUXE\_MUX\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00200\ \textcolor{preprocessor}{\#define\ \_LCD\_DISPCTRL\_MUXE\_MUXE\ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00201\ \textcolor{preprocessor}{\#define\ LCD\_DISPCTRL\_MUXE\_DEFAULT\ \ \ \ \ \ \ \ \ \ (\_LCD\_DISPCTRL\_MUXE\_DEFAULT\ <<\ 22)\ \ \ \ \ \ }}
+\DoxyCodeLine{00202\ \textcolor{preprocessor}{\#define\ LCD\_DISPCTRL\_MUXE\_MUX\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_LCD\_DISPCTRL\_MUXE\_MUX\ <<\ 22)\ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00203\ \textcolor{preprocessor}{\#define\ LCD\_DISPCTRL\_MUXE\_MUXE\ \ \ \ \ \ \ \ \ \ \ \ \ (\_LCD\_DISPCTRL\_MUXE\_MUXE\ <<\ 22)\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00205\ \textcolor{comment}{/*\ Bit\ fields\ for\ LCD\ SEGEN\ */}}
+\DoxyCodeLine{00206\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGEN\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00207\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGEN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x000003FFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00208\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGEN\_SEGEN\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00209\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGEN\_SEGEN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x3FFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00210\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGEN\_SEGEN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00211\ \textcolor{preprocessor}{\#define\ LCD\_SEGEN\_SEGEN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ (\_LCD\_SEGEN\_SEGEN\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00213\ \textcolor{comment}{/*\ Bit\ fields\ for\ LCD\ BACTRL\ */}}
+\DoxyCodeLine{00214\ \textcolor{preprocessor}{\#define\ \_LCD\_BACTRL\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00215\ \textcolor{preprocessor}{\#define\ \_LCD\_BACTRL\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x10FF01FFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00216\ \textcolor{preprocessor}{\#define\ LCD\_BACTRL\_BLINKEN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00217\ \textcolor{preprocessor}{\#define\ \_LCD\_BACTRL\_BLINKEN\_SHIFT\ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00218\ \textcolor{preprocessor}{\#define\ \_LCD\_BACTRL\_BLINKEN\_MASK\ \ \ \ \ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00219\ \textcolor{preprocessor}{\#define\ \_LCD\_BACTRL\_BLINKEN\_DEFAULT\ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00220\ \textcolor{preprocessor}{\#define\ LCD\_BACTRL\_BLINKEN\_DEFAULT\ \ \ \ \ \ \ \ \ (\_LCD\_BACTRL\_BLINKEN\_DEFAULT\ <<\ 0)\ \ \ \ }}
+\DoxyCodeLine{00221\ \textcolor{preprocessor}{\#define\ LCD\_BACTRL\_BLANK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00222\ \textcolor{preprocessor}{\#define\ \_LCD\_BACTRL\_BLANK\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00223\ \textcolor{preprocessor}{\#define\ \_LCD\_BACTRL\_BLANK\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ 0x2UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00224\ \textcolor{preprocessor}{\#define\ \_LCD\_BACTRL\_BLANK\_DEFAULT\ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00225\ \textcolor{preprocessor}{\#define\ LCD\_BACTRL\_BLANK\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ (\_LCD\_BACTRL\_BLANK\_DEFAULT\ <<\ 1)\ \ \ \ \ \ }}
+\DoxyCodeLine{00226\ \textcolor{preprocessor}{\#define\ LCD\_BACTRL\_AEN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 2)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00227\ \textcolor{preprocessor}{\#define\ \_LCD\_BACTRL\_AEN\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00228\ \textcolor{preprocessor}{\#define\ \_LCD\_BACTRL\_AEN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x4UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00229\ \textcolor{preprocessor}{\#define\ \_LCD\_BACTRL\_AEN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00230\ \textcolor{preprocessor}{\#define\ LCD\_BACTRL\_AEN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ (\_LCD\_BACTRL\_AEN\_DEFAULT\ <<\ 2)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00231\ \textcolor{preprocessor}{\#define\ \_LCD\_BACTRL\_AREGASC\_SHIFT\ \ \ \ \ \ \ \ \ \ 3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00232\ \textcolor{preprocessor}{\#define\ \_LCD\_BACTRL\_AREGASC\_MASK\ \ \ \ \ \ \ \ \ \ \ 0x18UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00233\ \textcolor{preprocessor}{\#define\ \_LCD\_BACTRL\_AREGASC\_DEFAULT\ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00234\ \textcolor{preprocessor}{\#define\ \_LCD\_BACTRL\_AREGASC\_NOSHIFT\ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00235\ \textcolor{preprocessor}{\#define\ \_LCD\_BACTRL\_AREGASC\_SHIFTLEFT\ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00236\ \textcolor{preprocessor}{\#define\ \_LCD\_BACTRL\_AREGASC\_SHIFTRIGHT\ \ \ \ \ 0x00000002UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00237\ \textcolor{preprocessor}{\#define\ LCD\_BACTRL\_AREGASC\_DEFAULT\ \ \ \ \ \ \ \ \ (\_LCD\_BACTRL\_AREGASC\_DEFAULT\ <<\ 3)\ \ \ \ }}
+\DoxyCodeLine{00238\ \textcolor{preprocessor}{\#define\ LCD\_BACTRL\_AREGASC\_NOSHIFT\ \ \ \ \ \ \ \ \ (\_LCD\_BACTRL\_AREGASC\_NOSHIFT\ <<\ 3)\ \ \ \ }}
+\DoxyCodeLine{00239\ \textcolor{preprocessor}{\#define\ LCD\_BACTRL\_AREGASC\_SHIFTLEFT\ \ \ \ \ \ \ (\_LCD\_BACTRL\_AREGASC\_SHIFTLEFT\ <<\ 3)\ \ }}
+\DoxyCodeLine{00240\ \textcolor{preprocessor}{\#define\ LCD\_BACTRL\_AREGASC\_SHIFTRIGHT\ \ \ \ \ \ (\_LCD\_BACTRL\_AREGASC\_SHIFTRIGHT\ <<\ 3)\ }}
+\DoxyCodeLine{00241\ \textcolor{preprocessor}{\#define\ \_LCD\_BACTRL\_AREGBSC\_SHIFT\ \ \ \ \ \ \ \ \ \ 5\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00242\ \textcolor{preprocessor}{\#define\ \_LCD\_BACTRL\_AREGBSC\_MASK\ \ \ \ \ \ \ \ \ \ \ 0x60UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00243\ \textcolor{preprocessor}{\#define\ \_LCD\_BACTRL\_AREGBSC\_DEFAULT\ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00244\ \textcolor{preprocessor}{\#define\ \_LCD\_BACTRL\_AREGBSC\_NOSHIFT\ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00245\ \textcolor{preprocessor}{\#define\ \_LCD\_BACTRL\_AREGBSC\_SHIFTLEFT\ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00246\ \textcolor{preprocessor}{\#define\ \_LCD\_BACTRL\_AREGBSC\_SHIFTRIGHT\ \ \ \ \ 0x00000002UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00247\ \textcolor{preprocessor}{\#define\ LCD\_BACTRL\_AREGBSC\_DEFAULT\ \ \ \ \ \ \ \ \ (\_LCD\_BACTRL\_AREGBSC\_DEFAULT\ <<\ 5)\ \ \ \ }}
+\DoxyCodeLine{00248\ \textcolor{preprocessor}{\#define\ LCD\_BACTRL\_AREGBSC\_NOSHIFT\ \ \ \ \ \ \ \ \ (\_LCD\_BACTRL\_AREGBSC\_NOSHIFT\ <<\ 5)\ \ \ \ }}
+\DoxyCodeLine{00249\ \textcolor{preprocessor}{\#define\ LCD\_BACTRL\_AREGBSC\_SHIFTLEFT\ \ \ \ \ \ \ (\_LCD\_BACTRL\_AREGBSC\_SHIFTLEFT\ <<\ 5)\ \ }}
+\DoxyCodeLine{00250\ \textcolor{preprocessor}{\#define\ LCD\_BACTRL\_AREGBSC\_SHIFTRIGHT\ \ \ \ \ \ (\_LCD\_BACTRL\_AREGBSC\_SHIFTRIGHT\ <<\ 5)\ }}
+\DoxyCodeLine{00251\ \textcolor{preprocessor}{\#define\ LCD\_BACTRL\_ALOGSEL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 7)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00252\ \textcolor{preprocessor}{\#define\ \_LCD\_BACTRL\_ALOGSEL\_SHIFT\ \ \ \ \ \ \ \ \ \ 7\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00253\ \textcolor{preprocessor}{\#define\ \_LCD\_BACTRL\_ALOGSEL\_MASK\ \ \ \ \ \ \ \ \ \ \ 0x80UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00254\ \textcolor{preprocessor}{\#define\ \_LCD\_BACTRL\_ALOGSEL\_DEFAULT\ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00255\ \textcolor{preprocessor}{\#define\ \_LCD\_BACTRL\_ALOGSEL\_AND\ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00256\ \textcolor{preprocessor}{\#define\ \_LCD\_BACTRL\_ALOGSEL\_OR\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00257\ \textcolor{preprocessor}{\#define\ LCD\_BACTRL\_ALOGSEL\_DEFAULT\ \ \ \ \ \ \ \ \ (\_LCD\_BACTRL\_ALOGSEL\_DEFAULT\ <<\ 7)\ \ \ \ }}
+\DoxyCodeLine{00258\ \textcolor{preprocessor}{\#define\ LCD\_BACTRL\_ALOGSEL\_AND\ \ \ \ \ \ \ \ \ \ \ \ \ (\_LCD\_BACTRL\_ALOGSEL\_AND\ <<\ 7)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00259\ \textcolor{preprocessor}{\#define\ LCD\_BACTRL\_ALOGSEL\_OR\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_LCD\_BACTRL\_ALOGSEL\_OR\ <<\ 7)\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00260\ \textcolor{preprocessor}{\#define\ LCD\_BACTRL\_FCEN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 8)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00261\ \textcolor{preprocessor}{\#define\ \_LCD\_BACTRL\_FCEN\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ 8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00262\ \textcolor{preprocessor}{\#define\ \_LCD\_BACTRL\_FCEN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x100UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00263\ \textcolor{preprocessor}{\#define\ \_LCD\_BACTRL\_FCEN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00264\ \textcolor{preprocessor}{\#define\ LCD\_BACTRL\_FCEN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ (\_LCD\_BACTRL\_FCEN\_DEFAULT\ <<\ 8)\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00265\ \textcolor{preprocessor}{\#define\ \_LCD\_BACTRL\_FCPRESC\_SHIFT\ \ \ \ \ \ \ \ \ \ 16\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00266\ \textcolor{preprocessor}{\#define\ \_LCD\_BACTRL\_FCPRESC\_MASK\ \ \ \ \ \ \ \ \ \ \ 0x30000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00267\ \textcolor{preprocessor}{\#define\ \_LCD\_BACTRL\_FCPRESC\_DEFAULT\ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00268\ \textcolor{preprocessor}{\#define\ \_LCD\_BACTRL\_FCPRESC\_DIV1\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00269\ \textcolor{preprocessor}{\#define\ \_LCD\_BACTRL\_FCPRESC\_DIV2\ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00270\ \textcolor{preprocessor}{\#define\ \_LCD\_BACTRL\_FCPRESC\_DIV4\ \ \ \ \ \ \ \ \ \ \ 0x00000002UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00271\ \textcolor{preprocessor}{\#define\ \_LCD\_BACTRL\_FCPRESC\_DIV8\ \ \ \ \ \ \ \ \ \ \ 0x00000003UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00272\ \textcolor{preprocessor}{\#define\ LCD\_BACTRL\_FCPRESC\_DEFAULT\ \ \ \ \ \ \ \ \ (\_LCD\_BACTRL\_FCPRESC\_DEFAULT\ <<\ 16)\ \ \ }}
+\DoxyCodeLine{00273\ \textcolor{preprocessor}{\#define\ LCD\_BACTRL\_FCPRESC\_DIV1\ \ \ \ \ \ \ \ \ \ \ \ (\_LCD\_BACTRL\_FCPRESC\_DIV1\ <<\ 16)\ \ \ \ \ \ }}
+\DoxyCodeLine{00274\ \textcolor{preprocessor}{\#define\ LCD\_BACTRL\_FCPRESC\_DIV2\ \ \ \ \ \ \ \ \ \ \ \ (\_LCD\_BACTRL\_FCPRESC\_DIV2\ <<\ 16)\ \ \ \ \ \ }}
+\DoxyCodeLine{00275\ \textcolor{preprocessor}{\#define\ LCD\_BACTRL\_FCPRESC\_DIV4\ \ \ \ \ \ \ \ \ \ \ \ (\_LCD\_BACTRL\_FCPRESC\_DIV4\ <<\ 16)\ \ \ \ \ \ }}
+\DoxyCodeLine{00276\ \textcolor{preprocessor}{\#define\ LCD\_BACTRL\_FCPRESC\_DIV8\ \ \ \ \ \ \ \ \ \ \ \ (\_LCD\_BACTRL\_FCPRESC\_DIV8\ <<\ 16)\ \ \ \ \ \ }}
+\DoxyCodeLine{00277\ \textcolor{preprocessor}{\#define\ \_LCD\_BACTRL\_FCTOP\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ 18\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00278\ \textcolor{preprocessor}{\#define\ \_LCD\_BACTRL\_FCTOP\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ 0xFC0000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00279\ \textcolor{preprocessor}{\#define\ \_LCD\_BACTRL\_FCTOP\_DEFAULT\ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00280\ \textcolor{preprocessor}{\#define\ LCD\_BACTRL\_FCTOP\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ (\_LCD\_BACTRL\_FCTOP\_DEFAULT\ <<\ 18)\ \ \ \ \ }}
+\DoxyCodeLine{00281\ \textcolor{preprocessor}{\#define\ LCD\_BACTRL\_ALOC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 28)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00282\ \textcolor{preprocessor}{\#define\ \_LCD\_BACTRL\_ALOC\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ 28\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00283\ \textcolor{preprocessor}{\#define\ \_LCD\_BACTRL\_ALOC\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x10000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00284\ \textcolor{preprocessor}{\#define\ \_LCD\_BACTRL\_ALOC\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00285\ \textcolor{preprocessor}{\#define\ \_LCD\_BACTRL\_ALOC\_SEG0TO7\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00286\ \textcolor{preprocessor}{\#define\ \_LCD\_BACTRL\_ALOC\_SEG8TO15\ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00287\ \textcolor{preprocessor}{\#define\ LCD\_BACTRL\_ALOC\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ (\_LCD\_BACTRL\_ALOC\_DEFAULT\ <<\ 28)\ \ \ \ \ \ }}
+\DoxyCodeLine{00288\ \textcolor{preprocessor}{\#define\ LCD\_BACTRL\_ALOC\_SEG0TO7\ \ \ \ \ \ \ \ \ \ \ \ (\_LCD\_BACTRL\_ALOC\_SEG0TO7\ <<\ 28)\ \ \ \ \ \ }}
+\DoxyCodeLine{00289\ \textcolor{preprocessor}{\#define\ LCD\_BACTRL\_ALOC\_SEG8TO15\ \ \ \ \ \ \ \ \ \ \ (\_LCD\_BACTRL\_ALOC\_SEG8TO15\ <<\ 28)\ \ \ \ \ }}
+\DoxyCodeLine{00291\ \textcolor{comment}{/*\ Bit\ fields\ for\ LCD\ STATUS\ */}}
+\DoxyCodeLine{00292\ \textcolor{preprocessor}{\#define\ \_LCD\_STATUS\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00293\ \textcolor{preprocessor}{\#define\ \_LCD\_STATUS\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0000010FUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00294\ \textcolor{preprocessor}{\#define\ \_LCD\_STATUS\_ASTATE\_SHIFT\ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00295\ \textcolor{preprocessor}{\#define\ \_LCD\_STATUS\_ASTATE\_MASK\ \ \ \ \ \ \ \ \ \ \ \ 0xFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00296\ \textcolor{preprocessor}{\#define\ \_LCD\_STATUS\_ASTATE\_DEFAULT\ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00297\ \textcolor{preprocessor}{\#define\ LCD\_STATUS\_ASTATE\_DEFAULT\ \ \ \ \ \ \ \ \ \ (\_LCD\_STATUS\_ASTATE\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00298\ \textcolor{preprocessor}{\#define\ LCD\_STATUS\_BLINK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 8)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00299\ \textcolor{preprocessor}{\#define\ \_LCD\_STATUS\_BLINK\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ 8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00300\ \textcolor{preprocessor}{\#define\ \_LCD\_STATUS\_BLINK\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ 0x100UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00301\ \textcolor{preprocessor}{\#define\ \_LCD\_STATUS\_BLINK\_DEFAULT\ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00302\ \textcolor{preprocessor}{\#define\ LCD\_STATUS\_BLINK\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ (\_LCD\_STATUS\_BLINK\_DEFAULT\ <<\ 8)\ \ }}
+\DoxyCodeLine{00304\ \textcolor{comment}{/*\ Bit\ fields\ for\ LCD\ AREGA\ */}}
+\DoxyCodeLine{00305\ \textcolor{preprocessor}{\#define\ \_LCD\_AREGA\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00306\ \textcolor{preprocessor}{\#define\ \_LCD\_AREGA\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x000000FFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00307\ \textcolor{preprocessor}{\#define\ \_LCD\_AREGA\_AREGA\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00308\ \textcolor{preprocessor}{\#define\ \_LCD\_AREGA\_AREGA\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00309\ \textcolor{preprocessor}{\#define\ \_LCD\_AREGA\_AREGA\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00310\ \textcolor{preprocessor}{\#define\ LCD\_AREGA\_AREGA\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ (\_LCD\_AREGA\_AREGA\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00312\ \textcolor{comment}{/*\ Bit\ fields\ for\ LCD\ AREGB\ */}}
+\DoxyCodeLine{00313\ \textcolor{preprocessor}{\#define\ \_LCD\_AREGB\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00314\ \textcolor{preprocessor}{\#define\ \_LCD\_AREGB\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x000000FFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00315\ \textcolor{preprocessor}{\#define\ \_LCD\_AREGB\_AREGB\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00316\ \textcolor{preprocessor}{\#define\ \_LCD\_AREGB\_AREGB\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00317\ \textcolor{preprocessor}{\#define\ \_LCD\_AREGB\_AREGB\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00318\ \textcolor{preprocessor}{\#define\ LCD\_AREGB\_AREGB\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ (\_LCD\_AREGB\_AREGB\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00320\ \textcolor{comment}{/*\ Bit\ fields\ for\ LCD\ IF\ */}}
+\DoxyCodeLine{00321\ \textcolor{preprocessor}{\#define\ \_LCD\_IF\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00322\ \textcolor{preprocessor}{\#define\ \_LCD\_IF\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00323\ \textcolor{preprocessor}{\#define\ LCD\_IF\_FC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00324\ \textcolor{preprocessor}{\#define\ \_LCD\_IF\_FC\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00325\ \textcolor{preprocessor}{\#define\ \_LCD\_IF\_FC\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00326\ \textcolor{preprocessor}{\#define\ \_LCD\_IF\_FC\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00327\ \textcolor{preprocessor}{\#define\ LCD\_IF\_FC\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_LCD\_IF\_FC\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00329\ \textcolor{comment}{/*\ Bit\ fields\ for\ LCD\ IFS\ */}}
+\DoxyCodeLine{00330\ \textcolor{preprocessor}{\#define\ \_LCD\_IFS\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00331\ \textcolor{preprocessor}{\#define\ \_LCD\_IFS\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00332\ \textcolor{preprocessor}{\#define\ LCD\_IFS\_FC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00333\ \textcolor{preprocessor}{\#define\ \_LCD\_IFS\_FC\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00334\ \textcolor{preprocessor}{\#define\ \_LCD\_IFS\_FC\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00335\ \textcolor{preprocessor}{\#define\ \_LCD\_IFS\_FC\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00336\ \textcolor{preprocessor}{\#define\ LCD\_IFS\_FC\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_LCD\_IFS\_FC\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00338\ \textcolor{comment}{/*\ Bit\ fields\ for\ LCD\ IFC\ */}}
+\DoxyCodeLine{00339\ \textcolor{preprocessor}{\#define\ \_LCD\_IFC\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00340\ \textcolor{preprocessor}{\#define\ \_LCD\_IFC\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00341\ \textcolor{preprocessor}{\#define\ LCD\_IFC\_FC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00342\ \textcolor{preprocessor}{\#define\ \_LCD\_IFC\_FC\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00343\ \textcolor{preprocessor}{\#define\ \_LCD\_IFC\_FC\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00344\ \textcolor{preprocessor}{\#define\ \_LCD\_IFC\_FC\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00345\ \textcolor{preprocessor}{\#define\ LCD\_IFC\_FC\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_LCD\_IFC\_FC\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00347\ \textcolor{comment}{/*\ Bit\ fields\ for\ LCD\ IEN\ */}}
+\DoxyCodeLine{00348\ \textcolor{preprocessor}{\#define\ \_LCD\_IEN\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00349\ \textcolor{preprocessor}{\#define\ \_LCD\_IEN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00350\ \textcolor{preprocessor}{\#define\ LCD\_IEN\_FC\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00351\ \textcolor{preprocessor}{\#define\ \_LCD\_IEN\_FC\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00352\ \textcolor{preprocessor}{\#define\ \_LCD\_IEN\_FC\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00353\ \textcolor{preprocessor}{\#define\ \_LCD\_IEN\_FC\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00354\ \textcolor{preprocessor}{\#define\ LCD\_IEN\_FC\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_LCD\_IEN\_FC\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00356\ \textcolor{comment}{/*\ Bit\ fields\ for\ LCD\ SEGD0L\ */}}
+\DoxyCodeLine{00357\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD0L\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00358\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD0L\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFFFFFFFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00359\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD0L\_SEGD0L\_SHIFT\ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00360\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD0L\_SEGD0L\_MASK\ \ \ \ \ \ \ \ \ \ \ \ 0xFFFFFFFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00361\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD0L\_SEGD0L\_DEFAULT\ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00362\ \textcolor{preprocessor}{\#define\ LCD\_SEGD0L\_SEGD0L\_DEFAULT\ \ \ \ \ \ \ \ \ \ (\_LCD\_SEGD0L\_SEGD0L\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00364\ \textcolor{comment}{/*\ Bit\ fields\ for\ LCD\ SEGD1L\ */}}
+\DoxyCodeLine{00365\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD1L\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00366\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD1L\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFFFFFFFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00367\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD1L\_SEGD1L\_SHIFT\ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00368\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD1L\_SEGD1L\_MASK\ \ \ \ \ \ \ \ \ \ \ \ 0xFFFFFFFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00369\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD1L\_SEGD1L\_DEFAULT\ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00370\ \textcolor{preprocessor}{\#define\ LCD\_SEGD1L\_SEGD1L\_DEFAULT\ \ \ \ \ \ \ \ \ \ (\_LCD\_SEGD1L\_SEGD1L\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00372\ \textcolor{comment}{/*\ Bit\ fields\ for\ LCD\ SEGD2L\ */}}
+\DoxyCodeLine{00373\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD2L\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00374\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD2L\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFFFFFFFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00375\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD2L\_SEGD2L\_SHIFT\ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00376\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD2L\_SEGD2L\_MASK\ \ \ \ \ \ \ \ \ \ \ \ 0xFFFFFFFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00377\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD2L\_SEGD2L\_DEFAULT\ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00378\ \textcolor{preprocessor}{\#define\ LCD\_SEGD2L\_SEGD2L\_DEFAULT\ \ \ \ \ \ \ \ \ \ (\_LCD\_SEGD2L\_SEGD2L\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00380\ \textcolor{comment}{/*\ Bit\ fields\ for\ LCD\ SEGD3L\ */}}
+\DoxyCodeLine{00381\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD3L\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00382\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD3L\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFFFFFFFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00383\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD3L\_SEGD3L\_SHIFT\ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00384\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD3L\_SEGD3L\_MASK\ \ \ \ \ \ \ \ \ \ \ \ 0xFFFFFFFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00385\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD3L\_SEGD3L\_DEFAULT\ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00386\ \textcolor{preprocessor}{\#define\ LCD\_SEGD3L\_SEGD3L\_DEFAULT\ \ \ \ \ \ \ \ \ \ (\_LCD\_SEGD3L\_SEGD3L\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00388\ \textcolor{comment}{/*\ Bit\ fields\ for\ LCD\ SEGD0H\ */}}
+\DoxyCodeLine{00389\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD0H\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00390\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD0H\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x000000FFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00391\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD0H\_SEGD0H\_SHIFT\ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00392\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD0H\_SEGD0H\_MASK\ \ \ \ \ \ \ \ \ \ \ \ 0xFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00393\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD0H\_SEGD0H\_DEFAULT\ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00394\ \textcolor{preprocessor}{\#define\ LCD\_SEGD0H\_SEGD0H\_DEFAULT\ \ \ \ \ \ \ \ \ \ (\_LCD\_SEGD0H\_SEGD0H\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00396\ \textcolor{comment}{/*\ Bit\ fields\ for\ LCD\ SEGD1H\ */}}
+\DoxyCodeLine{00397\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD1H\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00398\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD1H\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x000000FFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00399\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD1H\_SEGD1H\_SHIFT\ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00400\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD1H\_SEGD1H\_MASK\ \ \ \ \ \ \ \ \ \ \ \ 0xFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00401\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD1H\_SEGD1H\_DEFAULT\ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00402\ \textcolor{preprocessor}{\#define\ LCD\_SEGD1H\_SEGD1H\_DEFAULT\ \ \ \ \ \ \ \ \ \ (\_LCD\_SEGD1H\_SEGD1H\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00404\ \textcolor{comment}{/*\ Bit\ fields\ for\ LCD\ SEGD2H\ */}}
+\DoxyCodeLine{00405\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD2H\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00406\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD2H\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x000000FFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00407\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD2H\_SEGD2H\_SHIFT\ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00408\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD2H\_SEGD2H\_MASK\ \ \ \ \ \ \ \ \ \ \ \ 0xFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00409\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD2H\_SEGD2H\_DEFAULT\ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00410\ \textcolor{preprocessor}{\#define\ LCD\_SEGD2H\_SEGD2H\_DEFAULT\ \ \ \ \ \ \ \ \ \ (\_LCD\_SEGD2H\_SEGD2H\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00412\ \textcolor{comment}{/*\ Bit\ fields\ for\ LCD\ SEGD3H\ */}}
+\DoxyCodeLine{00413\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD3H\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00414\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD3H\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x000000FFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00415\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD3H\_SEGD3H\_SHIFT\ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00416\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD3H\_SEGD3H\_MASK\ \ \ \ \ \ \ \ \ \ \ \ 0xFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00417\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD3H\_SEGD3H\_DEFAULT\ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00418\ \textcolor{preprocessor}{\#define\ LCD\_SEGD3H\_SEGD3H\_DEFAULT\ \ \ \ \ \ \ \ \ \ (\_LCD\_SEGD3H\_SEGD3H\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00420\ \textcolor{comment}{/*\ Bit\ fields\ for\ LCD\ FREEZE\ */}}
+\DoxyCodeLine{00421\ \textcolor{preprocessor}{\#define\ \_LCD\_FREEZE\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00422\ \textcolor{preprocessor}{\#define\ \_LCD\_FREEZE\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00423\ \textcolor{preprocessor}{\#define\ LCD\_FREEZE\_REGFREEZE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00424\ \textcolor{preprocessor}{\#define\ \_LCD\_FREEZE\_REGFREEZE\_SHIFT\ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00425\ \textcolor{preprocessor}{\#define\ \_LCD\_FREEZE\_REGFREEZE\_MASK\ \ \ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00426\ \textcolor{preprocessor}{\#define\ \_LCD\_FREEZE\_REGFREEZE\_DEFAULT\ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00427\ \textcolor{preprocessor}{\#define\ \_LCD\_FREEZE\_REGFREEZE\_UPDATE\ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00428\ \textcolor{preprocessor}{\#define\ \_LCD\_FREEZE\_REGFREEZE\_FREEZE\ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00429\ \textcolor{preprocessor}{\#define\ LCD\_FREEZE\_REGFREEZE\_DEFAULT\ \ \ \ \ \ \ (\_LCD\_FREEZE\_REGFREEZE\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00430\ \textcolor{preprocessor}{\#define\ LCD\_FREEZE\_REGFREEZE\_UPDATE\ \ \ \ \ \ \ \ (\_LCD\_FREEZE\_REGFREEZE\_UPDATE\ <<\ 0)\ \ }}
+\DoxyCodeLine{00431\ \textcolor{preprocessor}{\#define\ LCD\_FREEZE\_REGFREEZE\_FREEZE\ \ \ \ \ \ \ \ (\_LCD\_FREEZE\_REGFREEZE\_FREEZE\ <<\ 0)\ \ }}
+\DoxyCodeLine{00433\ \textcolor{comment}{/*\ Bit\ fields\ for\ LCD\ SYNCBUSY\ */}}
+\DoxyCodeLine{00434\ \textcolor{preprocessor}{\#define\ \_LCD\_SYNCBUSY\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00435\ \textcolor{preprocessor}{\#define\ \_LCD\_SYNCBUSY\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x000FFFFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00436\ \textcolor{preprocessor}{\#define\ LCD\_SYNCBUSY\_CTRL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00437\ \textcolor{preprocessor}{\#define\ \_LCD\_SYNCBUSY\_CTRL\_SHIFT\ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00438\ \textcolor{preprocessor}{\#define\ \_LCD\_SYNCBUSY\_CTRL\_MASK\ \ \ \ \ \ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00439\ \textcolor{preprocessor}{\#define\ \_LCD\_SYNCBUSY\_CTRL\_DEFAULT\ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00440\ \textcolor{preprocessor}{\#define\ LCD\_SYNCBUSY\_CTRL\_DEFAULT\ \ \ \ \ \ \ \ \ \ (\_LCD\_SYNCBUSY\_CTRL\_DEFAULT\ <<\ 0)\ \ \ \ }}
+\DoxyCodeLine{00441\ \textcolor{preprocessor}{\#define\ LCD\_SYNCBUSY\_BACTRL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00442\ \textcolor{preprocessor}{\#define\ \_LCD\_SYNCBUSY\_BACTRL\_SHIFT\ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00443\ \textcolor{preprocessor}{\#define\ \_LCD\_SYNCBUSY\_BACTRL\_MASK\ \ \ \ \ \ \ \ \ \ 0x2UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00444\ \textcolor{preprocessor}{\#define\ \_LCD\_SYNCBUSY\_BACTRL\_DEFAULT\ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00445\ \textcolor{preprocessor}{\#define\ LCD\_SYNCBUSY\_BACTRL\_DEFAULT\ \ \ \ \ \ \ \ (\_LCD\_SYNCBUSY\_BACTRL\_DEFAULT\ <<\ 1)\ \ }}
+\DoxyCodeLine{00446\ \textcolor{preprocessor}{\#define\ LCD\_SYNCBUSY\_AREGA\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 2)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00447\ \textcolor{preprocessor}{\#define\ \_LCD\_SYNCBUSY\_AREGA\_SHIFT\ \ \ \ \ \ \ \ \ \ 2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00448\ \textcolor{preprocessor}{\#define\ \_LCD\_SYNCBUSY\_AREGA\_MASK\ \ \ \ \ \ \ \ \ \ \ 0x4UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00449\ \textcolor{preprocessor}{\#define\ \_LCD\_SYNCBUSY\_AREGA\_DEFAULT\ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00450\ \textcolor{preprocessor}{\#define\ LCD\_SYNCBUSY\_AREGA\_DEFAULT\ \ \ \ \ \ \ \ \ (\_LCD\_SYNCBUSY\_AREGA\_DEFAULT\ <<\ 2)\ \ \ }}
+\DoxyCodeLine{00451\ \textcolor{preprocessor}{\#define\ LCD\_SYNCBUSY\_AREGB\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 3)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00452\ \textcolor{preprocessor}{\#define\ \_LCD\_SYNCBUSY\_AREGB\_SHIFT\ \ \ \ \ \ \ \ \ \ 3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00453\ \textcolor{preprocessor}{\#define\ \_LCD\_SYNCBUSY\_AREGB\_MASK\ \ \ \ \ \ \ \ \ \ \ 0x8UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00454\ \textcolor{preprocessor}{\#define\ \_LCD\_SYNCBUSY\_AREGB\_DEFAULT\ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00455\ \textcolor{preprocessor}{\#define\ LCD\_SYNCBUSY\_AREGB\_DEFAULT\ \ \ \ \ \ \ \ \ (\_LCD\_SYNCBUSY\_AREGB\_DEFAULT\ <<\ 3)\ \ \ }}
+\DoxyCodeLine{00456\ \textcolor{preprocessor}{\#define\ LCD\_SYNCBUSY\_SEGD0L\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 4)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00457\ \textcolor{preprocessor}{\#define\ \_LCD\_SYNCBUSY\_SEGD0L\_SHIFT\ \ \ \ \ \ \ \ \ 4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00458\ \textcolor{preprocessor}{\#define\ \_LCD\_SYNCBUSY\_SEGD0L\_MASK\ \ \ \ \ \ \ \ \ \ 0x10UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00459\ \textcolor{preprocessor}{\#define\ \_LCD\_SYNCBUSY\_SEGD0L\_DEFAULT\ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00460\ \textcolor{preprocessor}{\#define\ LCD\_SYNCBUSY\_SEGD0L\_DEFAULT\ \ \ \ \ \ \ \ (\_LCD\_SYNCBUSY\_SEGD0L\_DEFAULT\ <<\ 4)\ \ }}
+\DoxyCodeLine{00461\ \textcolor{preprocessor}{\#define\ LCD\_SYNCBUSY\_SEGD1L\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 5)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00462\ \textcolor{preprocessor}{\#define\ \_LCD\_SYNCBUSY\_SEGD1L\_SHIFT\ \ \ \ \ \ \ \ \ 5\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00463\ \textcolor{preprocessor}{\#define\ \_LCD\_SYNCBUSY\_SEGD1L\_MASK\ \ \ \ \ \ \ \ \ \ 0x20UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00464\ \textcolor{preprocessor}{\#define\ \_LCD\_SYNCBUSY\_SEGD1L\_DEFAULT\ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00465\ \textcolor{preprocessor}{\#define\ LCD\_SYNCBUSY\_SEGD1L\_DEFAULT\ \ \ \ \ \ \ \ (\_LCD\_SYNCBUSY\_SEGD1L\_DEFAULT\ <<\ 5)\ \ }}
+\DoxyCodeLine{00466\ \textcolor{preprocessor}{\#define\ LCD\_SYNCBUSY\_SEGD2L\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 6)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00467\ \textcolor{preprocessor}{\#define\ \_LCD\_SYNCBUSY\_SEGD2L\_SHIFT\ \ \ \ \ \ \ \ \ 6\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00468\ \textcolor{preprocessor}{\#define\ \_LCD\_SYNCBUSY\_SEGD2L\_MASK\ \ \ \ \ \ \ \ \ \ 0x40UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00469\ \textcolor{preprocessor}{\#define\ \_LCD\_SYNCBUSY\_SEGD2L\_DEFAULT\ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00470\ \textcolor{preprocessor}{\#define\ LCD\_SYNCBUSY\_SEGD2L\_DEFAULT\ \ \ \ \ \ \ \ (\_LCD\_SYNCBUSY\_SEGD2L\_DEFAULT\ <<\ 6)\ \ }}
+\DoxyCodeLine{00471\ \textcolor{preprocessor}{\#define\ LCD\_SYNCBUSY\_SEGD3L\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 7)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00472\ \textcolor{preprocessor}{\#define\ \_LCD\_SYNCBUSY\_SEGD3L\_SHIFT\ \ \ \ \ \ \ \ \ 7\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00473\ \textcolor{preprocessor}{\#define\ \_LCD\_SYNCBUSY\_SEGD3L\_MASK\ \ \ \ \ \ \ \ \ \ 0x80UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00474\ \textcolor{preprocessor}{\#define\ \_LCD\_SYNCBUSY\_SEGD3L\_DEFAULT\ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00475\ \textcolor{preprocessor}{\#define\ LCD\_SYNCBUSY\_SEGD3L\_DEFAULT\ \ \ \ \ \ \ \ (\_LCD\_SYNCBUSY\_SEGD3L\_DEFAULT\ <<\ 7)\ \ }}
+\DoxyCodeLine{00476\ \textcolor{preprocessor}{\#define\ LCD\_SYNCBUSY\_SEGD0H\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 8)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00477\ \textcolor{preprocessor}{\#define\ \_LCD\_SYNCBUSY\_SEGD0H\_SHIFT\ \ \ \ \ \ \ \ \ 8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00478\ \textcolor{preprocessor}{\#define\ \_LCD\_SYNCBUSY\_SEGD0H\_MASK\ \ \ \ \ \ \ \ \ \ 0x100UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00479\ \textcolor{preprocessor}{\#define\ \_LCD\_SYNCBUSY\_SEGD0H\_DEFAULT\ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00480\ \textcolor{preprocessor}{\#define\ LCD\_SYNCBUSY\_SEGD0H\_DEFAULT\ \ \ \ \ \ \ \ (\_LCD\_SYNCBUSY\_SEGD0H\_DEFAULT\ <<\ 8)\ \ }}
+\DoxyCodeLine{00481\ \textcolor{preprocessor}{\#define\ LCD\_SYNCBUSY\_SEGD1H\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 9)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00482\ \textcolor{preprocessor}{\#define\ \_LCD\_SYNCBUSY\_SEGD1H\_SHIFT\ \ \ \ \ \ \ \ \ 9\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00483\ \textcolor{preprocessor}{\#define\ \_LCD\_SYNCBUSY\_SEGD1H\_MASK\ \ \ \ \ \ \ \ \ \ 0x200UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00484\ \textcolor{preprocessor}{\#define\ \_LCD\_SYNCBUSY\_SEGD1H\_DEFAULT\ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00485\ \textcolor{preprocessor}{\#define\ LCD\_SYNCBUSY\_SEGD1H\_DEFAULT\ \ \ \ \ \ \ \ (\_LCD\_SYNCBUSY\_SEGD1H\_DEFAULT\ <<\ 9)\ \ }}
+\DoxyCodeLine{00486\ \textcolor{preprocessor}{\#define\ LCD\_SYNCBUSY\_SEGD2H\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 10)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00487\ \textcolor{preprocessor}{\#define\ \_LCD\_SYNCBUSY\_SEGD2H\_SHIFT\ \ \ \ \ \ \ \ \ 10\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00488\ \textcolor{preprocessor}{\#define\ \_LCD\_SYNCBUSY\_SEGD2H\_MASK\ \ \ \ \ \ \ \ \ \ 0x400UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00489\ \textcolor{preprocessor}{\#define\ \_LCD\_SYNCBUSY\_SEGD2H\_DEFAULT\ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00490\ \textcolor{preprocessor}{\#define\ LCD\_SYNCBUSY\_SEGD2H\_DEFAULT\ \ \ \ \ \ \ \ (\_LCD\_SYNCBUSY\_SEGD2H\_DEFAULT\ <<\ 10)\ }}
+\DoxyCodeLine{00491\ \textcolor{preprocessor}{\#define\ LCD\_SYNCBUSY\_SEGD3H\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 11)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00492\ \textcolor{preprocessor}{\#define\ \_LCD\_SYNCBUSY\_SEGD3H\_SHIFT\ \ \ \ \ \ \ \ \ 11\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00493\ \textcolor{preprocessor}{\#define\ \_LCD\_SYNCBUSY\_SEGD3H\_MASK\ \ \ \ \ \ \ \ \ \ 0x800UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00494\ \textcolor{preprocessor}{\#define\ \_LCD\_SYNCBUSY\_SEGD3H\_DEFAULT\ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00495\ \textcolor{preprocessor}{\#define\ LCD\_SYNCBUSY\_SEGD3H\_DEFAULT\ \ \ \ \ \ \ \ (\_LCD\_SYNCBUSY\_SEGD3H\_DEFAULT\ <<\ 11)\ }}
+\DoxyCodeLine{00496\ \textcolor{preprocessor}{\#define\ LCD\_SYNCBUSY\_SEGD4H\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 12)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00497\ \textcolor{preprocessor}{\#define\ \_LCD\_SYNCBUSY\_SEGD4H\_SHIFT\ \ \ \ \ \ \ \ \ 12\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00498\ \textcolor{preprocessor}{\#define\ \_LCD\_SYNCBUSY\_SEGD4H\_MASK\ \ \ \ \ \ \ \ \ \ 0x1000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00499\ \textcolor{preprocessor}{\#define\ \_LCD\_SYNCBUSY\_SEGD4H\_DEFAULT\ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00500\ \textcolor{preprocessor}{\#define\ LCD\_SYNCBUSY\_SEGD4H\_DEFAULT\ \ \ \ \ \ \ \ (\_LCD\_SYNCBUSY\_SEGD4H\_DEFAULT\ <<\ 12)\ }}
+\DoxyCodeLine{00501\ \textcolor{preprocessor}{\#define\ LCD\_SYNCBUSY\_SEGD5H\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 13)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00502\ \textcolor{preprocessor}{\#define\ \_LCD\_SYNCBUSY\_SEGD5H\_SHIFT\ \ \ \ \ \ \ \ \ 13\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00503\ \textcolor{preprocessor}{\#define\ \_LCD\_SYNCBUSY\_SEGD5H\_MASK\ \ \ \ \ \ \ \ \ \ 0x2000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00504\ \textcolor{preprocessor}{\#define\ \_LCD\_SYNCBUSY\_SEGD5H\_DEFAULT\ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00505\ \textcolor{preprocessor}{\#define\ LCD\_SYNCBUSY\_SEGD5H\_DEFAULT\ \ \ \ \ \ \ \ (\_LCD\_SYNCBUSY\_SEGD5H\_DEFAULT\ <<\ 13)\ }}
+\DoxyCodeLine{00506\ \textcolor{preprocessor}{\#define\ LCD\_SYNCBUSY\_SEGD6H\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 14)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00507\ \textcolor{preprocessor}{\#define\ \_LCD\_SYNCBUSY\_SEGD6H\_SHIFT\ \ \ \ \ \ \ \ \ 14\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00508\ \textcolor{preprocessor}{\#define\ \_LCD\_SYNCBUSY\_SEGD6H\_MASK\ \ \ \ \ \ \ \ \ \ 0x4000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00509\ \textcolor{preprocessor}{\#define\ \_LCD\_SYNCBUSY\_SEGD6H\_DEFAULT\ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00510\ \textcolor{preprocessor}{\#define\ LCD\_SYNCBUSY\_SEGD6H\_DEFAULT\ \ \ \ \ \ \ \ (\_LCD\_SYNCBUSY\_SEGD6H\_DEFAULT\ <<\ 14)\ }}
+\DoxyCodeLine{00511\ \textcolor{preprocessor}{\#define\ LCD\_SYNCBUSY\_SEGD7H\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 15)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00512\ \textcolor{preprocessor}{\#define\ \_LCD\_SYNCBUSY\_SEGD7H\_SHIFT\ \ \ \ \ \ \ \ \ 15\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00513\ \textcolor{preprocessor}{\#define\ \_LCD\_SYNCBUSY\_SEGD7H\_MASK\ \ \ \ \ \ \ \ \ \ 0x8000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00514\ \textcolor{preprocessor}{\#define\ \_LCD\_SYNCBUSY\_SEGD7H\_DEFAULT\ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00515\ \textcolor{preprocessor}{\#define\ LCD\_SYNCBUSY\_SEGD7H\_DEFAULT\ \ \ \ \ \ \ \ (\_LCD\_SYNCBUSY\_SEGD7H\_DEFAULT\ <<\ 15)\ }}
+\DoxyCodeLine{00516\ \textcolor{preprocessor}{\#define\ LCD\_SYNCBUSY\_SEGD4L\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 16)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00517\ \textcolor{preprocessor}{\#define\ \_LCD\_SYNCBUSY\_SEGD4L\_SHIFT\ \ \ \ \ \ \ \ \ 16\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00518\ \textcolor{preprocessor}{\#define\ \_LCD\_SYNCBUSY\_SEGD4L\_MASK\ \ \ \ \ \ \ \ \ \ 0x10000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00519\ \textcolor{preprocessor}{\#define\ \_LCD\_SYNCBUSY\_SEGD4L\_DEFAULT\ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00520\ \textcolor{preprocessor}{\#define\ LCD\_SYNCBUSY\_SEGD4L\_DEFAULT\ \ \ \ \ \ \ \ (\_LCD\_SYNCBUSY\_SEGD4L\_DEFAULT\ <<\ 16)\ }}
+\DoxyCodeLine{00521\ \textcolor{preprocessor}{\#define\ LCD\_SYNCBUSY\_SEGD5L\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 17)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00522\ \textcolor{preprocessor}{\#define\ \_LCD\_SYNCBUSY\_SEGD5L\_SHIFT\ \ \ \ \ \ \ \ \ 17\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00523\ \textcolor{preprocessor}{\#define\ \_LCD\_SYNCBUSY\_SEGD5L\_MASK\ \ \ \ \ \ \ \ \ \ 0x20000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00524\ \textcolor{preprocessor}{\#define\ \_LCD\_SYNCBUSY\_SEGD5L\_DEFAULT\ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00525\ \textcolor{preprocessor}{\#define\ LCD\_SYNCBUSY\_SEGD5L\_DEFAULT\ \ \ \ \ \ \ \ (\_LCD\_SYNCBUSY\_SEGD5L\_DEFAULT\ <<\ 17)\ }}
+\DoxyCodeLine{00526\ \textcolor{preprocessor}{\#define\ LCD\_SYNCBUSY\_SEGD6L\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 18)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00527\ \textcolor{preprocessor}{\#define\ \_LCD\_SYNCBUSY\_SEGD6L\_SHIFT\ \ \ \ \ \ \ \ \ 18\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00528\ \textcolor{preprocessor}{\#define\ \_LCD\_SYNCBUSY\_SEGD6L\_MASK\ \ \ \ \ \ \ \ \ \ 0x40000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00529\ \textcolor{preprocessor}{\#define\ \_LCD\_SYNCBUSY\_SEGD6L\_DEFAULT\ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00530\ \textcolor{preprocessor}{\#define\ LCD\_SYNCBUSY\_SEGD6L\_DEFAULT\ \ \ \ \ \ \ \ (\_LCD\_SYNCBUSY\_SEGD6L\_DEFAULT\ <<\ 18)\ }}
+\DoxyCodeLine{00531\ \textcolor{preprocessor}{\#define\ LCD\_SYNCBUSY\_SEGD7L\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 19)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00532\ \textcolor{preprocessor}{\#define\ \_LCD\_SYNCBUSY\_SEGD7L\_SHIFT\ \ \ \ \ \ \ \ \ 19\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00533\ \textcolor{preprocessor}{\#define\ \_LCD\_SYNCBUSY\_SEGD7L\_MASK\ \ \ \ \ \ \ \ \ \ 0x80000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00534\ \textcolor{preprocessor}{\#define\ \_LCD\_SYNCBUSY\_SEGD7L\_DEFAULT\ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00535\ \textcolor{preprocessor}{\#define\ LCD\_SYNCBUSY\_SEGD7L\_DEFAULT\ \ \ \ \ \ \ \ (\_LCD\_SYNCBUSY\_SEGD7L\_DEFAULT\ <<\ 19)\ }}
+\DoxyCodeLine{00537\ \textcolor{comment}{/*\ Bit\ fields\ for\ LCD\ SEGD4H\ */}}
+\DoxyCodeLine{00538\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD4H\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00539\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD4H\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x000000FFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00540\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD4H\_SEGD4H\_SHIFT\ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00541\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD4H\_SEGD4H\_MASK\ \ \ \ \ \ \ \ \ \ \ \ 0xFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00542\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD4H\_SEGD4H\_DEFAULT\ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00543\ \textcolor{preprocessor}{\#define\ LCD\_SEGD4H\_SEGD4H\_DEFAULT\ \ \ \ \ \ \ \ \ \ (\_LCD\_SEGD4H\_SEGD4H\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00545\ \textcolor{comment}{/*\ Bit\ fields\ for\ LCD\ SEGD5H\ */}}
+\DoxyCodeLine{00546\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD5H\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00547\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD5H\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x000000FFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00548\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD5H\_SEGD5H\_SHIFT\ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00549\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD5H\_SEGD5H\_MASK\ \ \ \ \ \ \ \ \ \ \ \ 0xFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00550\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD5H\_SEGD5H\_DEFAULT\ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00551\ \textcolor{preprocessor}{\#define\ LCD\_SEGD5H\_SEGD5H\_DEFAULT\ \ \ \ \ \ \ \ \ \ (\_LCD\_SEGD5H\_SEGD5H\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00553\ \textcolor{comment}{/*\ Bit\ fields\ for\ LCD\ SEGD6H\ */}}
+\DoxyCodeLine{00554\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD6H\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00555\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD6H\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x000000FFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00556\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD6H\_SEGD6H\_SHIFT\ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00557\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD6H\_SEGD6H\_MASK\ \ \ \ \ \ \ \ \ \ \ \ 0xFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00558\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD6H\_SEGD6H\_DEFAULT\ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00559\ \textcolor{preprocessor}{\#define\ LCD\_SEGD6H\_SEGD6H\_DEFAULT\ \ \ \ \ \ \ \ \ \ (\_LCD\_SEGD6H\_SEGD6H\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00561\ \textcolor{comment}{/*\ Bit\ fields\ for\ LCD\ SEGD7H\ */}}
+\DoxyCodeLine{00562\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD7H\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00563\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD7H\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x000000FFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00564\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD7H\_SEGD7H\_SHIFT\ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00565\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD7H\_SEGD7H\_MASK\ \ \ \ \ \ \ \ \ \ \ \ 0xFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00566\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD7H\_SEGD7H\_DEFAULT\ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00567\ \textcolor{preprocessor}{\#define\ LCD\_SEGD7H\_SEGD7H\_DEFAULT\ \ \ \ \ \ \ \ \ \ (\_LCD\_SEGD7H\_SEGD7H\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00569\ \textcolor{comment}{/*\ Bit\ fields\ for\ LCD\ SEGD4L\ */}}
+\DoxyCodeLine{00570\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD4L\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00571\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD4L\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFFFFFFFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00572\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD4L\_SEGD4L\_SHIFT\ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00573\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD4L\_SEGD4L\_MASK\ \ \ \ \ \ \ \ \ \ \ \ 0xFFFFFFFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00574\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD4L\_SEGD4L\_DEFAULT\ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00575\ \textcolor{preprocessor}{\#define\ LCD\_SEGD4L\_SEGD4L\_DEFAULT\ \ \ \ \ \ \ \ \ \ (\_LCD\_SEGD4L\_SEGD4L\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00577\ \textcolor{comment}{/*\ Bit\ fields\ for\ LCD\ SEGD5L\ */}}
+\DoxyCodeLine{00578\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD5L\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00579\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD5L\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFFFFFFFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00580\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD5L\_SEGD5L\_SHIFT\ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00581\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD5L\_SEGD5L\_MASK\ \ \ \ \ \ \ \ \ \ \ \ 0xFFFFFFFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00582\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD5L\_SEGD5L\_DEFAULT\ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00583\ \textcolor{preprocessor}{\#define\ LCD\_SEGD5L\_SEGD5L\_DEFAULT\ \ \ \ \ \ \ \ \ \ (\_LCD\_SEGD5L\_SEGD5L\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00585\ \textcolor{comment}{/*\ Bit\ fields\ for\ LCD\ SEGD6L\ */}}
+\DoxyCodeLine{00586\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD6L\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00587\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD6L\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFFFFFFFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00588\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD6L\_SEGD6L\_SHIFT\ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00589\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD6L\_SEGD6L\_MASK\ \ \ \ \ \ \ \ \ \ \ \ 0xFFFFFFFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00590\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD6L\_SEGD6L\_DEFAULT\ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00591\ \textcolor{preprocessor}{\#define\ LCD\_SEGD6L\_SEGD6L\_DEFAULT\ \ \ \ \ \ \ \ \ \ (\_LCD\_SEGD6L\_SEGD6L\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00593\ \textcolor{comment}{/*\ Bit\ fields\ for\ LCD\ SEGD7L\ */}}
+\DoxyCodeLine{00594\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD7L\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00595\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD7L\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFFFFFFFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00596\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD7L\_SEGD7L\_SHIFT\ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00597\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD7L\_SEGD7L\_MASK\ \ \ \ \ \ \ \ \ \ \ \ 0xFFFFFFFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00598\ \textcolor{preprocessor}{\#define\ \_LCD\_SEGD7L\_SEGD7L\_DEFAULT\ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00599\ \textcolor{preprocessor}{\#define\ LCD\_SEGD7L\_SEGD7L\_DEFAULT\ \ \ \ \ \ \ \ \ \ (\_LCD\_SEGD7L\_SEGD7L\_DEFAULT\ <<\ 0)\ }}
+
+\end{DoxyCode}

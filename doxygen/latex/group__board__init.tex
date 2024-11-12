@@ -1,0 +1,43 @@
+\doxysection{Board Init}
+\hypertarget{group__board__init}{}\label{group__board__init}\index{Board Init@{Board Init}}
+
+
+Initialization of Silicon Labs board features.  
+
+
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__board__init_gaab811ad372bc26f2cb66fc5d79c15b26}{sl\+\_\+board\+\_\+init}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize board. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__board__init_gadce5e43e7601017df9cbaa13baede6bc}{sl\+\_\+board\+\_\+preinit}} (void)
+\begin{DoxyCompactList}\small\item\em Initialize board features that are required at early boot. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Initialization of Silicon Labs board features. 
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{group__board__init_gaab811ad372bc26f2cb66fc5d79c15b26}\index{Board Init@{Board Init}!sl\_board\_init@{sl\_board\_init}}
+\index{sl\_board\_init@{sl\_board\_init}!Board Init@{Board Init}}
+\doxysubsubsection{\texorpdfstring{sl\_board\_init()}{sl\_board\_init()}}
+{\footnotesize\ttfamily \label{group__board__init_gaab811ad372bc26f2cb66fc5d79c15b26} 
+void sl\+\_\+board\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Initialize board. 
+
+Initialize a Silicon Labs board by enabling available and configured board features, in addition to performing necessary board errata fixes and setting default pin states. \Hypertarget{group__board__init_gadce5e43e7601017df9cbaa13baede6bc}\index{Board Init@{Board Init}!sl\_board\_preinit@{sl\_board\_preinit}}
+\index{sl\_board\_preinit@{sl\_board\_preinit}!Board Init@{Board Init}}
+\doxysubsubsection{\texorpdfstring{sl\_board\_preinit()}{sl\_board\_preinit()}}
+{\footnotesize\ttfamily \label{group__board__init_gadce5e43e7601017df9cbaa13baede6bc} 
+void sl\+\_\+board\+\_\+preinit (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+
+
+Initialize board features that are required at early boot. 
+
+Certain board features such as external oscillators may need to be powered before core device features, such as the clock tree, are configured. 

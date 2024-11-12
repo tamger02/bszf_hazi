@@ -1,0 +1,75 @@
+\doxysection{sl\+\_\+board\+\_\+control.\+h}
+\hypertarget{sl__board__control_8h_source}{}\label{sl__board__control_8h_source}\index{snake/gecko\_sdk\_4.4.4/hardware/board/inc/sl\_board\_control.h@{snake/gecko\_sdk\_4.4.4/hardware/board/inc/sl\_board\_control.h}}
+\mbox{\hyperlink{sl__board__control_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#ifndef\ SL\_BOARD\_CONTROL\_H}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ SL\_BOARD\_CONTROL\_H}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}sl\_status.h"{}}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ "{}sl\_enum.h"{}}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00037\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00047\ SL\_ENUM\_GENERIC(sl\_board\_sensor\_t,\ \textcolor{keywordtype}{int})\ \{}
+\DoxyCodeLine{00048\ \ \ SL\_BOARD\_SENSOR\_RHT\ \ \ \ \ \ \ \ \ \ \ =\ (1UL\ <<\ 0UL),\ \ \ \ \ }
+\DoxyCodeLine{00049\ \ \ SL\_BOARD\_SENSOR\_LIGHT\ \ \ \ \ \ \ \ \ =\ (1UL\ <<\ 1UL),\ \ \ \ \ }
+\DoxyCodeLine{00050\ \ \ SL\_BOARD\_SENSOR\_PRESSURE\ \ \ \ \ \ =\ (1UL\ <<\ 2UL),\ \ \ \ \ }
+\DoxyCodeLine{00051\ \ \ SL\_BOARD\_SENSOR\_HALL\ \ \ \ \ \ \ \ \ \ =\ (1UL\ <<\ 3UL),\ \ \ \ \ }
+\DoxyCodeLine{00052\ \ \ SL\_BOARD\_SENSOR\_GAS\ \ \ \ \ \ \ \ \ \ \ =\ (1UL\ <<\ 4UL),\ \ \ \ \ }
+\DoxyCodeLine{00053\ \ \ SL\_BOARD\_SENSOR\_IMU\ \ \ \ \ \ \ \ \ \ \ =\ (1UL\ <<\ 5UL),\ \ \ \ \ }
+\DoxyCodeLine{00054\ \ \ SL\_BOARD\_SENSOR\_MICROPHONE\ \ \ \ =\ (1UL\ <<\ 6UL),\ \ \ \ \ }
+\DoxyCodeLine{00055\ \};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00058\ SL\_ENUM\_GENERIC(sl\_board\_memory\_t,\ \textcolor{keywordtype}{int})\ \{}
+\DoxyCodeLine{00059\ \ \ SL\_BOARD\_MEMORY\_SDCARD\ \ \ \ \ \ \ \ =\ (1UL\ <<\ 0UL),\ \ \ \ \ }
+\DoxyCodeLine{00060\ \ \ SL\_BOARD\_MEMORY\_QSPI\ \ \ \ \ \ \ \ \ \ =\ (1UL\ <<\ 1UL),\ \ \ \ \ }
+\DoxyCodeLine{00061\ \};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00064\ SL\_ENUM\_GENERIC(sl\_board\_oscillator\_t,\ \textcolor{keywordtype}{int})\ \{}
+\DoxyCodeLine{00065\ \ \ SL\_BOARD\_OSCILLATOR\_TCXO\ \ \ \ \ \ =\ (1UL\ <<\ 0UL),\ \ \ \ \ }
+\DoxyCodeLine{00066\ \};}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00077\ sl\_status\_t\ \mbox{\hyperlink{group__board__control_ga1449a877d448ea9538321059991d3edf}{sl\_board\_configure\_vcom}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00087\ sl\_status\_t\ \mbox{\hyperlink{group__board__control_gae4c6a50b88571b5e145e60f7db014a6e}{sl\_board\_enable\_vcom}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00088\ }
+\DoxyCodeLine{00089\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00097\ sl\_status\_t\ \mbox{\hyperlink{group__board__control_ga5b0698ffd1d278a51a64572acf28be7c}{sl\_board\_disable\_vcom}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00120\ sl\_status\_t\ \mbox{\hyperlink{group__board__control_ga0ecbaaa53fdbf5ddcf9acae20d6ece8d}{sl\_board\_enable\_sensor}}(sl\_board\_sensor\_t\ sensor);}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00143\ sl\_status\_t\ \mbox{\hyperlink{group__board__control_gaf43bae7efacf1e6c673f193e6d9cbc6a}{sl\_board\_disable\_sensor}}(sl\_board\_sensor\_t\ sensor);}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00145\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00153\ sl\_status\_t\ \mbox{\hyperlink{group__board__control_ga923ec83eb72c91576f85f13de257e3b3}{sl\_board\_enable\_display}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00154\ }
+\DoxyCodeLine{00155\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00163\ sl\_status\_t\ \mbox{\hyperlink{group__board__control_ga984258a4ad1bd1b5de70fe24b07b2ab8}{sl\_board\_disable\_display}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00165\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00175\ sl\_status\_t\ \mbox{\hyperlink{group__board__control_ga02e07e545c7a3e7af8ee971eefcaedce}{sl\_board\_enable\_memory}}(sl\_board\_memory\_t\ memory);}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00177\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00187\ sl\_status\_t\ \mbox{\hyperlink{group__board__control_gaa30fa3a5498b7a608677f560fb498a1f}{sl\_board\_disable\_memory}}(sl\_board\_memory\_t\ memory);}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00189\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00199\ sl\_status\_t\ \mbox{\hyperlink{group__board__control_gaaaafad1a24f9352dbf522c01b1fe92a1}{sl\_board\_enable\_oscillator}}(sl\_board\_oscillator\_t\ oscillator);}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00201\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00211\ sl\_status\_t\ \mbox{\hyperlink{group__board__control_ga1a6cfe36e6f924fa998cb553b804e72e}{sl\_board\_disable\_oscillator}}(sl\_board\_oscillator\_t\ oscillator);}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00215\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00216\ \}}
+\DoxyCodeLine{00217\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \_\_cplusplus}}
+\DoxyCodeLine{00218\ }
+\DoxyCodeLine{00219\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ SL\_BOARD\_CONTROL\_H}}
+
+\end{DoxyCode}

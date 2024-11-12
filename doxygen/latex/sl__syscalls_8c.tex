@@ -1,0 +1,53 @@
+\doxysection{snake/gecko\+\_\+sdk\+\_\+4.4.4/platform/common/src/sl\+\_\+syscalls.c File Reference}
+\hypertarget{sl__syscalls_8c}{}\label{sl__syscalls_8c}\index{snake/gecko\_sdk\_4.4.4/platform/common/src/sl\_syscalls.c@{snake/gecko\_sdk\_4.4.4/platform/common/src/sl\_syscalls.c}}
+
+
+System\+Call API.  
+
+
+{\ttfamily \#include "{}cmsis\+\_\+compiler.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\+\_\+\+\_\+\+WEAK int {\bfseries \+\_\+close} (int file)
+\item 
+\+\_\+\+\_\+\+WEAK void {\bfseries \+\_\+exit} (int status)
+\item 
+\+\_\+\+\_\+\+WEAK int {\bfseries \+\_\+fstat} (int file, struct stat \texorpdfstring{$\ast$}{*}st)
+\item 
+\+\_\+\+\_\+\+WEAK int {\bfseries \+\_\+getpid} (void)
+\item 
+\+\_\+\+\_\+\+WEAK int {\bfseries \+\_\+isatty} (int file)
+\item 
+\+\_\+\+\_\+\+WEAK int {\bfseries \+\_\+kill} (int pid, int sig)
+\item 
+\+\_\+\+\_\+\+WEAK int {\bfseries \+\_\+lseek} (int file, int ptr, int dir)
+\item 
+\+\_\+\+\_\+\+WEAK int {\bfseries \+\_\+read} (int file, char \texorpdfstring{$\ast$}{*}ptr, int len)
+\item 
+\+\_\+\+\_\+\+WEAK int {\bfseries \+\_\+write} (int file, const char \texorpdfstring{$\ast$}{*}ptr, int len)
+\item 
+\+\_\+\+\_\+\+WEAK int {\bfseries \+\_\+gettimeofday} (struct timeval \texorpdfstring{$\ast$}{*}tv, struct timezone \texorpdfstring{$\ast$}{*}tz)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+System\+Call API. 
+
+\hypertarget{sl__syscalls_8c_autotoc_md16}{}\doxysubsection{\texorpdfstring{License}{License}}\label{sl__syscalls_8c_autotoc_md16}
+{\bfseries{Copyright 2023 Silicon Laboratories Inc. www.\+silabs.\+com}}
+
+SPDX-\/\+License-\/\+Identifier\+: Zlib
+
+The licensor of this software is Silicon Laboratories Inc.
+
+This software is provided \textquotesingle{}as-\/is\textquotesingle{}, without any express or implied warranty. In no event will the authors be held liable for any damages arising from the use of this software.
+
+Permission is granted to anyone to use this software for any purpose, including commercial applications, and to alter it and redistribute it freely, subject to the following restrictions\+:
+
+
+\begin{DoxyEnumerate}
+\item The origin of this software must not be misrepresented; you must not claim that you wrote the original software. If you use this software in a product, an acknowledgment in the product documentation would be appreciated but is not required.
+\item Altered source versions must be plainly marked as such, and must not be misrepresented as being the original software.
+\item This notice may not be removed or altered from any source distribution. 
+\end{DoxyEnumerate}

@@ -1,0 +1,74 @@
+\doxysection{efm32gg\+\_\+dmareq.\+h}
+\hypertarget{efm32gg__dmareq_8h_source}{}\label{efm32gg__dmareq_8h_source}\index{snake/gecko\_sdk\_4.4.4/platform/Device/SiliconLabs/EFM32GG/Include/efm32gg\_dmareq.h@{snake/gecko\_sdk\_4.4.4/platform/Device/SiliconLabs/EFM32GG/Include/efm32gg\_dmareq.h}}
+\mbox{\hyperlink{efm32gg__dmareq_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#if\ defined(\_\_ICCARM\_\_)}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#pragma\ system\_include\ \ \ \ \ \ \ }\textcolor{comment}{/*\ Treat\ file\ as\ system\ include\ file.\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#elif\ defined(\_\_ARMCC\_VERSION)\ \&\&\ (\_\_ARMCC\_VERSION\ >=\ 6010050)}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#pragma\ clang\ system\_header\ \ }\textcolor{comment}{/*\ Treat\ file\ as\ system\ include\ file.\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00042\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#define\ DMAREQ\_ADC0\_SINGLE\ \ \ \ \ \ \ \ \ \ \ \ ((8\ <<\ 16)\ +\ 0)\ \ }}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#define\ DMAREQ\_ADC0\_SCAN\ \ \ \ \ \ \ \ \ \ \ \ \ \ ((8\ <<\ 16)\ +\ 1)\ \ }}
+\DoxyCodeLine{00048\ \textcolor{preprocessor}{\#define\ DMAREQ\_DAC0\_CH0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((10\ <<\ 16)\ +\ 0)\ }}
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#define\ DMAREQ\_DAC0\_CH1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ((10\ <<\ 16)\ +\ 1)\ }}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ DMAREQ\_USART0\_RXDATAV\ \ \ \ \ \ \ \ \ ((12\ <<\ 16)\ +\ 0)\ }}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#define\ DMAREQ\_USART0\_TXBL\ \ \ \ \ \ \ \ \ \ \ \ ((12\ <<\ 16)\ +\ 1)\ }}
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#define\ DMAREQ\_USART0\_TXEMPTY\ \ \ \ \ \ \ \ \ ((12\ <<\ 16)\ +\ 2)\ }}
+\DoxyCodeLine{00053\ \textcolor{preprocessor}{\#define\ DMAREQ\_USART1\_RXDATAV\ \ \ \ \ \ \ \ \ ((13\ <<\ 16)\ +\ 0)\ }}
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ DMAREQ\_USART1\_TXBL\ \ \ \ \ \ \ \ \ \ \ \ ((13\ <<\ 16)\ +\ 1)\ }}
+\DoxyCodeLine{00055\ \textcolor{preprocessor}{\#define\ DMAREQ\_USART1\_TXEMPTY\ \ \ \ \ \ \ \ \ ((13\ <<\ 16)\ +\ 2)\ }}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#define\ DMAREQ\_USART1\_RXDATAVRIGHT\ \ \ \ ((13\ <<\ 16)\ +\ 3)\ }}
+\DoxyCodeLine{00057\ \textcolor{preprocessor}{\#define\ DMAREQ\_USART1\_TXBLRIGHT\ \ \ \ \ \ \ ((13\ <<\ 16)\ +\ 4)\ }}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#define\ DMAREQ\_USART2\_RXDATAV\ \ \ \ \ \ \ \ \ ((14\ <<\ 16)\ +\ 0)\ }}
+\DoxyCodeLine{00059\ \textcolor{preprocessor}{\#define\ DMAREQ\_USART2\_TXBL\ \ \ \ \ \ \ \ \ \ \ \ ((14\ <<\ 16)\ +\ 1)\ }}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#define\ DMAREQ\_USART2\_TXEMPTY\ \ \ \ \ \ \ \ \ ((14\ <<\ 16)\ +\ 2)\ }}
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#define\ DMAREQ\_USART2\_RXDATAVRIGHT\ \ \ \ ((14\ <<\ 16)\ +\ 3)\ }}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#define\ DMAREQ\_USART2\_TXBLRIGHT\ \ \ \ \ \ \ ((14\ <<\ 16)\ +\ 4)\ }}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#define\ DMAREQ\_LEUART0\_RXDATAV\ \ \ \ \ \ \ \ ((16\ <<\ 16)\ +\ 0)\ }}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#define\ DMAREQ\_LEUART0\_TXBL\ \ \ \ \ \ \ \ \ \ \ ((16\ <<\ 16)\ +\ 1)\ }}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#define\ DMAREQ\_LEUART0\_TXEMPTY\ \ \ \ \ \ \ \ ((16\ <<\ 16)\ +\ 2)\ }}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#define\ DMAREQ\_LEUART1\_RXDATAV\ \ \ \ \ \ \ \ ((17\ <<\ 16)\ +\ 0)\ }}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#define\ DMAREQ\_LEUART1\_TXBL\ \ \ \ \ \ \ \ \ \ \ ((17\ <<\ 16)\ +\ 1)\ }}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#define\ DMAREQ\_LEUART1\_TXEMPTY\ \ \ \ \ \ \ \ ((17\ <<\ 16)\ +\ 2)\ }}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#define\ DMAREQ\_I2C0\_RXDATAV\ \ \ \ \ \ \ \ \ \ \ ((20\ <<\ 16)\ +\ 0)\ }}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#define\ DMAREQ\_I2C0\_TXBL\ \ \ \ \ \ \ \ \ \ \ \ \ \ ((20\ <<\ 16)\ +\ 1)\ }}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#define\ DMAREQ\_I2C1\_RXDATAV\ \ \ \ \ \ \ \ \ \ \ ((21\ <<\ 16)\ +\ 0)\ }}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#define\ DMAREQ\_I2C1\_TXBL\ \ \ \ \ \ \ \ \ \ \ \ \ \ ((21\ <<\ 16)\ +\ 1)\ }}
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#define\ DMAREQ\_TIMER0\_UFOF\ \ \ \ \ \ \ \ \ \ \ \ ((24\ <<\ 16)\ +\ 0)\ }}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#define\ DMAREQ\_TIMER0\_CC0\ \ \ \ \ \ \ \ \ \ \ \ \ ((24\ <<\ 16)\ +\ 1)\ }}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#define\ DMAREQ\_TIMER0\_CC1\ \ \ \ \ \ \ \ \ \ \ \ \ ((24\ <<\ 16)\ +\ 2)\ }}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#define\ DMAREQ\_TIMER0\_CC2\ \ \ \ \ \ \ \ \ \ \ \ \ ((24\ <<\ 16)\ +\ 3)\ }}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#define\ DMAREQ\_TIMER1\_UFOF\ \ \ \ \ \ \ \ \ \ \ \ ((25\ <<\ 16)\ +\ 0)\ }}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#define\ DMAREQ\_TIMER1\_CC0\ \ \ \ \ \ \ \ \ \ \ \ \ ((25\ <<\ 16)\ +\ 1)\ }}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#define\ DMAREQ\_TIMER1\_CC1\ \ \ \ \ \ \ \ \ \ \ \ \ ((25\ <<\ 16)\ +\ 2)\ }}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#define\ DMAREQ\_TIMER1\_CC2\ \ \ \ \ \ \ \ \ \ \ \ \ ((25\ <<\ 16)\ +\ 3)\ }}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#define\ DMAREQ\_TIMER2\_UFOF\ \ \ \ \ \ \ \ \ \ \ \ ((26\ <<\ 16)\ +\ 0)\ }}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#define\ DMAREQ\_TIMER2\_CC0\ \ \ \ \ \ \ \ \ \ \ \ \ ((26\ <<\ 16)\ +\ 1)\ }}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#define\ DMAREQ\_TIMER2\_CC1\ \ \ \ \ \ \ \ \ \ \ \ \ ((26\ <<\ 16)\ +\ 2)\ }}
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#define\ DMAREQ\_TIMER2\_CC2\ \ \ \ \ \ \ \ \ \ \ \ \ ((26\ <<\ 16)\ +\ 3)\ }}
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#define\ DMAREQ\_TIMER3\_UFOF\ \ \ \ \ \ \ \ \ \ \ \ ((27\ <<\ 16)\ +\ 0)\ }}
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#define\ DMAREQ\_TIMER3\_CC0\ \ \ \ \ \ \ \ \ \ \ \ \ ((27\ <<\ 16)\ +\ 1)\ }}
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#define\ DMAREQ\_TIMER3\_CC1\ \ \ \ \ \ \ \ \ \ \ \ \ ((27\ <<\ 16)\ +\ 2)\ }}
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#define\ DMAREQ\_TIMER3\_CC2\ \ \ \ \ \ \ \ \ \ \ \ \ ((27\ <<\ 16)\ +\ 3)\ }}
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#define\ DMAREQ\_UART0\_RXDATAV\ \ \ \ \ \ \ \ \ \ ((44\ <<\ 16)\ +\ 0)\ }}
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#define\ DMAREQ\_UART0\_TXBL\ \ \ \ \ \ \ \ \ \ \ \ \ ((44\ <<\ 16)\ +\ 1)\ }}
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#define\ DMAREQ\_UART0\_TXEMPTY\ \ \ \ \ \ \ \ \ \ ((44\ <<\ 16)\ +\ 2)\ }}
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#define\ DMAREQ\_UART1\_RXDATAV\ \ \ \ \ \ \ \ \ \ ((45\ <<\ 16)\ +\ 0)\ }}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#define\ DMAREQ\_UART1\_TXBL\ \ \ \ \ \ \ \ \ \ \ \ \ ((45\ <<\ 16)\ +\ 1)\ }}
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\#define\ DMAREQ\_UART1\_TXEMPTY\ \ \ \ \ \ \ \ \ \ ((45\ <<\ 16)\ +\ 2)\ }}
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#define\ DMAREQ\_MSC\_WDATA\ \ \ \ \ \ \ \ \ \ \ \ \ \ ((48\ <<\ 16)\ +\ 0)\ }}
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\#define\ DMAREQ\_AES\_DATAWR\ \ \ \ \ \ \ \ \ \ \ \ \ ((49\ <<\ 16)\ +\ 0)\ }}
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\#define\ DMAREQ\_AES\_XORDATAWR\ \ \ \ \ \ \ \ \ \ ((49\ <<\ 16)\ +\ 1)\ }}
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\#define\ DMAREQ\_AES\_DATARD\ \ \ \ \ \ \ \ \ \ \ \ \ ((49\ <<\ 16)\ +\ 2)\ }}
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#define\ DMAREQ\_AES\_KEYWR\ \ \ \ \ \ \ \ \ \ \ \ \ \ ((49\ <<\ 16)\ +\ 3)\ }}
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#define\ DMAREQ\_LESENSE\_BUFDATAV\ \ \ \ \ \ \ ((50\ <<\ 16)\ +\ 0)\ }}
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#define\ DMAREQ\_EBI\_PXL0EMPTY\ \ \ \ \ \ \ \ \ \ ((51\ <<\ 16)\ +\ 0)\ }}
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#define\ DMAREQ\_EBI\_PXL1EMPTY\ \ \ \ \ \ \ \ \ \ ((51\ <<\ 16)\ +\ 1)\ }}
+\DoxyCodeLine{00103\ \textcolor{preprocessor}{\#define\ DMAREQ\_EBI\_PXLFULL\ \ \ \ \ \ \ \ \ \ \ \ ((51\ <<\ 16)\ +\ 2)\ }}
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#define\ DMAREQ\_EBI\_DDEMPTY\ \ \ \ \ \ \ \ \ \ \ \ ((51\ <<\ 16)\ +\ 3)\ }}
+
+\end{DoxyCode}

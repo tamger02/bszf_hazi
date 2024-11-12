@@ -1,0 +1,159 @@
+\doxysection{efm32gg\+\_\+vcmp.\+h}
+\hypertarget{efm32gg__vcmp_8h_source}{}\label{efm32gg__vcmp_8h_source}\index{snake/gecko\_sdk\_4.4.4/platform/Device/SiliconLabs/EFM32GG/Include/efm32gg\_vcmp.h@{snake/gecko\_sdk\_4.4.4/platform/Device/SiliconLabs/EFM32GG/Include/efm32gg\_vcmp.h}}
+\mbox{\hyperlink{efm32gg__vcmp_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#if\ defined(\_\_ICCARM\_\_)}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#pragma\ system\_include\ \ \ \ \ \ \ }\textcolor{comment}{/*\ Treat\ file\ as\ system\ include\ file.\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#elif\ defined(\_\_ARMCC\_VERSION)\ \&\&\ (\_\_ARMCC\_VERSION\ >=\ 6010050)}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#pragma\ clang\ system\_header\ \ }\textcolor{comment}{/*\ Treat\ file\ as\ system\ include\ file.\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00041\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00046\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00047\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_v_c_m_p___type_def_a45a7634352b6e1f9523bf114a02e9585}{CTRL}};\ \ \ \ \ }
+\DoxyCodeLine{00048\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_v_c_m_p___type_def_a60bb981bbdae914e308be658826d8e36}{INPUTSEL}};\ }
+\DoxyCodeLine{00049\ \ \ \_\_IM\ uint32\_t\ \ \mbox{\hyperlink{struct_v_c_m_p___type_def_afc7f7402bd25d85e7c6bd112b0d1c7e4}{STATUS}};\ \ \ }
+\DoxyCodeLine{00050\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_v_c_m_p___type_def_a36b0e2fc6fb112d1067700d838556795}{IEN}};\ \ \ \ \ \ }
+\DoxyCodeLine{00051\ \ \ \_\_IM\ uint32\_t\ \ \mbox{\hyperlink{struct_v_c_m_p___type_def_a1dd396e79fd79f03e5881c961ac89f4e}{IF}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00052\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_v_c_m_p___type_def_add68a7a46dc12e256b75ce98dd73ccde}{IFS}};\ \ \ \ \ \ }
+\DoxyCodeLine{00053\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_v_c_m_p___type_def_ae98ce5f34211dd302c7e764a0a47b777}{IFC}};\ \ \ \ \ \ }
+\DoxyCodeLine{00054\ \}\ \mbox{\hyperlink{struct_v_c_m_p___type_def}{VCMP\_TypeDef}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00056\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00061\ \textcolor{comment}{/*\ Bit\ fields\ for\ VCMP\ CTRL\ */}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#define\ \_VCMP\_CTRL\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x47000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#define\ \_VCMP\_CTRL\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x4F030715UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#define\ VCMP\_CTRL\_EN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#define\ \_VCMP\_CTRL\_EN\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#define\ \_VCMP\_CTRL\_EN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#define\ \_VCMP\_CTRL\_EN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#define\ VCMP\_CTRL\_EN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_VCMP\_CTRL\_EN\_DEFAULT\ <<\ 0)\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#define\ VCMP\_CTRL\_INACTVAL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 2)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#define\ \_VCMP\_CTRL\_INACTVAL\_SHIFT\ \ \ \ \ \ \ \ \ \ \ 2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#define\ \_VCMP\_CTRL\_INACTVAL\_MASK\ \ \ \ \ \ \ \ \ \ \ \ 0x4UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#define\ \_VCMP\_CTRL\_INACTVAL\_DEFAULT\ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#define\ VCMP\_CTRL\_INACTVAL\_DEFAULT\ \ \ \ \ \ \ \ \ \ (\_VCMP\_CTRL\_INACTVAL\_DEFAULT\ <<\ 2)\ \ \ }}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#define\ VCMP\_CTRL\_HYSTEN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 4)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#define\ \_VCMP\_CTRL\_HYSTEN\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ 4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#define\ \_VCMP\_CTRL\_HYSTEN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x10UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#define\ \_VCMP\_CTRL\_HYSTEN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#define\ VCMP\_CTRL\_HYSTEN\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ (\_VCMP\_CTRL\_HYSTEN\_DEFAULT\ <<\ 4)\ \ \ \ \ }}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#define\ \_VCMP\_CTRL\_WARMTIME\_SHIFT\ \ \ \ \ \ \ \ \ \ \ 8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#define\ \_VCMP\_CTRL\_WARMTIME\_MASK\ \ \ \ \ \ \ \ \ \ \ \ 0x700UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#define\ \_VCMP\_CTRL\_WARMTIME\_DEFAULT\ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#define\ \_VCMP\_CTRL\_WARMTIME\_4CYCLES\ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#define\ \_VCMP\_CTRL\_WARMTIME\_8CYCLES\ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#define\ \_VCMP\_CTRL\_WARMTIME\_16CYCLES\ \ \ \ \ \ \ \ 0x00000002UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#define\ \_VCMP\_CTRL\_WARMTIME\_32CYCLES\ \ \ \ \ \ \ \ 0x00000003UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#define\ \_VCMP\_CTRL\_WARMTIME\_64CYCLES\ \ \ \ \ \ \ \ 0x00000004UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#define\ \_VCMP\_CTRL\_WARMTIME\_128CYCLES\ \ \ \ \ \ \ 0x00000005UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#define\ \_VCMP\_CTRL\_WARMTIME\_256CYCLES\ \ \ \ \ \ \ 0x00000006UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#define\ \_VCMP\_CTRL\_WARMTIME\_512CYCLES\ \ \ \ \ \ \ 0x00000007UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#define\ VCMP\_CTRL\_WARMTIME\_DEFAULT\ \ \ \ \ \ \ \ \ \ (\_VCMP\_CTRL\_WARMTIME\_DEFAULT\ <<\ 8)\ \ \ }}
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#define\ VCMP\_CTRL\_WARMTIME\_4CYCLES\ \ \ \ \ \ \ \ \ \ (\_VCMP\_CTRL\_WARMTIME\_4CYCLES\ <<\ 8)\ \ \ }}
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#define\ VCMP\_CTRL\_WARMTIME\_8CYCLES\ \ \ \ \ \ \ \ \ \ (\_VCMP\_CTRL\_WARMTIME\_8CYCLES\ <<\ 8)\ \ \ }}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#define\ VCMP\_CTRL\_WARMTIME\_16CYCLES\ \ \ \ \ \ \ \ \ (\_VCMP\_CTRL\_WARMTIME\_16CYCLES\ <<\ 8)\ \ }}
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\#define\ VCMP\_CTRL\_WARMTIME\_32CYCLES\ \ \ \ \ \ \ \ \ (\_VCMP\_CTRL\_WARMTIME\_32CYCLES\ <<\ 8)\ \ }}
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#define\ VCMP\_CTRL\_WARMTIME\_64CYCLES\ \ \ \ \ \ \ \ \ (\_VCMP\_CTRL\_WARMTIME\_64CYCLES\ <<\ 8)\ \ }}
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\#define\ VCMP\_CTRL\_WARMTIME\_128CYCLES\ \ \ \ \ \ \ \ (\_VCMP\_CTRL\_WARMTIME\_128CYCLES\ <<\ 8)\ }}
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\#define\ VCMP\_CTRL\_WARMTIME\_256CYCLES\ \ \ \ \ \ \ \ (\_VCMP\_CTRL\_WARMTIME\_256CYCLES\ <<\ 8)\ }}
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\#define\ VCMP\_CTRL\_WARMTIME\_512CYCLES\ \ \ \ \ \ \ \ (\_VCMP\_CTRL\_WARMTIME\_512CYCLES\ <<\ 8)\ }}
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#define\ VCMP\_CTRL\_IRISE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 16)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#define\ \_VCMP\_CTRL\_IRISE\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 16\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#define\ \_VCMP\_CTRL\_IRISE\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x10000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#define\ \_VCMP\_CTRL\_IRISE\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00103\ \textcolor{preprocessor}{\#define\ VCMP\_CTRL\_IRISE\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ (\_VCMP\_CTRL\_IRISE\_DEFAULT\ <<\ 16)\ \ \ \ \ }}
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#define\ VCMP\_CTRL\_IFALL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 17)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#define\ \_VCMP\_CTRL\_IFALL\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 17\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\#define\ \_VCMP\_CTRL\_IFALL\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x20000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00107\ \textcolor{preprocessor}{\#define\ \_VCMP\_CTRL\_IFALL\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\#define\ VCMP\_CTRL\_IFALL\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ (\_VCMP\_CTRL\_IFALL\_DEFAULT\ <<\ 17)\ \ \ \ \ }}
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\#define\ \_VCMP\_CTRL\_BIASPROG\_SHIFT\ \ \ \ \ \ \ \ \ \ \ 24\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00110\ \textcolor{preprocessor}{\#define\ \_VCMP\_CTRL\_BIASPROG\_MASK\ \ \ \ \ \ \ \ \ \ \ \ 0xF000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\#define\ \_VCMP\_CTRL\_BIASPROG\_DEFAULT\ \ \ \ \ \ \ \ \ 0x00000007UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#define\ VCMP\_CTRL\_BIASPROG\_DEFAULT\ \ \ \ \ \ \ \ \ \ (\_VCMP\_CTRL\_BIASPROG\_DEFAULT\ <<\ 24)\ \ }}
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#define\ VCMP\_CTRL\_HALFBIAS\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 30)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#define\ \_VCMP\_CTRL\_HALFBIAS\_SHIFT\ \ \ \ \ \ \ \ \ \ \ 30\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\#define\ \_VCMP\_CTRL\_HALFBIAS\_MASK\ \ \ \ \ \ \ \ \ \ \ \ 0x40000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#define\ \_VCMP\_CTRL\_HALFBIAS\_DEFAULT\ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00117\ \textcolor{preprocessor}{\#define\ VCMP\_CTRL\_HALFBIAS\_DEFAULT\ \ \ \ \ \ \ \ \ \ (\_VCMP\_CTRL\_HALFBIAS\_DEFAULT\ <<\ 30)\ \ }}
+\DoxyCodeLine{00119\ \textcolor{comment}{/*\ Bit\ fields\ for\ VCMP\ INPUTSEL\ */}}
+\DoxyCodeLine{00120\ \textcolor{preprocessor}{\#define\ \_VCMP\_INPUTSEL\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\#define\ \_VCMP\_INPUTSEL\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0000013FUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00122\ \textcolor{preprocessor}{\#define\ \_VCMP\_INPUTSEL\_TRIGLEVEL\_SHIFT\ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\#define\ \_VCMP\_INPUTSEL\_TRIGLEVEL\_MASK\ \ \ \ \ \ \ 0x3FUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\#define\ \_VCMP\_INPUTSEL\_TRIGLEVEL\_DEFAULT\ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\#define\ VCMP\_INPUTSEL\_TRIGLEVEL\_DEFAULT\ \ \ \ \ (\_VCMP\_INPUTSEL\_TRIGLEVEL\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00126\ \textcolor{preprocessor}{\#define\ VCMP\_INPUTSEL\_LPREF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 8)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\#define\ \_VCMP\_INPUTSEL\_LPREF\_SHIFT\ \ \ \ \ \ \ \ \ \ 8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\#define\ \_VCMP\_INPUTSEL\_LPREF\_MASK\ \ \ \ \ \ \ \ \ \ \ 0x100UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{\#define\ \_VCMP\_INPUTSEL\_LPREF\_DEFAULT\ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00130\ \textcolor{preprocessor}{\#define\ VCMP\_INPUTSEL\_LPREF\_DEFAULT\ \ \ \ \ \ \ \ \ (\_VCMP\_INPUTSEL\_LPREF\_DEFAULT\ <<\ 8)\ \ \ \ \ }}
+\DoxyCodeLine{00132\ \textcolor{comment}{/*\ Bit\ fields\ for\ VCMP\ STATUS\ */}}
+\DoxyCodeLine{00133\ \textcolor{preprocessor}{\#define\ \_VCMP\_STATUS\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00134\ \textcolor{preprocessor}{\#define\ \_VCMP\_STATUS\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000003UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00135\ \textcolor{preprocessor}{\#define\ VCMP\_STATUS\_VCMPACT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00136\ \textcolor{preprocessor}{\#define\ \_VCMP\_STATUS\_VCMPACT\_SHIFT\ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\#define\ \_VCMP\_STATUS\_VCMPACT\_MASK\ \ \ \ \ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00138\ \textcolor{preprocessor}{\#define\ \_VCMP\_STATUS\_VCMPACT\_DEFAULT\ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00139\ \textcolor{preprocessor}{\#define\ VCMP\_STATUS\_VCMPACT\_DEFAULT\ \ \ \ \ \ \ \ \ (\_VCMP\_STATUS\_VCMPACT\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00140\ \textcolor{preprocessor}{\#define\ VCMP\_STATUS\_VCMPOUT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00141\ \textcolor{preprocessor}{\#define\ \_VCMP\_STATUS\_VCMPOUT\_SHIFT\ \ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00142\ \textcolor{preprocessor}{\#define\ \_VCMP\_STATUS\_VCMPOUT\_MASK\ \ \ \ \ \ \ \ \ \ \ 0x2UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00143\ \textcolor{preprocessor}{\#define\ \_VCMP\_STATUS\_VCMPOUT\_DEFAULT\ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00144\ \textcolor{preprocessor}{\#define\ VCMP\_STATUS\_VCMPOUT\_DEFAULT\ \ \ \ \ \ \ \ \ (\_VCMP\_STATUS\_VCMPOUT\_DEFAULT\ <<\ 1)\ }}
+\DoxyCodeLine{00146\ \textcolor{comment}{/*\ Bit\ fields\ for\ VCMP\ IEN\ */}}
+\DoxyCodeLine{00147\ \textcolor{preprocessor}{\#define\ \_VCMP\_IEN\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00148\ \textcolor{preprocessor}{\#define\ \_VCMP\_IEN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000003UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00149\ \textcolor{preprocessor}{\#define\ VCMP\_IEN\_EDGE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00150\ \textcolor{preprocessor}{\#define\ \_VCMP\_IEN\_EDGE\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00151\ \textcolor{preprocessor}{\#define\ \_VCMP\_IEN\_EDGE\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00152\ \textcolor{preprocessor}{\#define\ \_VCMP\_IEN\_EDGE\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00153\ \textcolor{preprocessor}{\#define\ VCMP\_IEN\_EDGE\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_VCMP\_IEN\_EDGE\_DEFAULT\ <<\ 0)\ \ \ }}
+\DoxyCodeLine{00154\ \textcolor{preprocessor}{\#define\ VCMP\_IEN\_WARMUP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00155\ \textcolor{preprocessor}{\#define\ \_VCMP\_IEN\_WARMUP\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00156\ \textcolor{preprocessor}{\#define\ \_VCMP\_IEN\_WARMUP\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x2UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00157\ \textcolor{preprocessor}{\#define\ \_VCMP\_IEN\_WARMUP\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00158\ \textcolor{preprocessor}{\#define\ VCMP\_IEN\_WARMUP\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ (\_VCMP\_IEN\_WARMUP\_DEFAULT\ <<\ 1)\ }}
+\DoxyCodeLine{00160\ \textcolor{comment}{/*\ Bit\ fields\ for\ VCMP\ IF\ */}}
+\DoxyCodeLine{00161\ \textcolor{preprocessor}{\#define\ \_VCMP\_IF\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00162\ \textcolor{preprocessor}{\#define\ \_VCMP\_IF\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000003UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00163\ \textcolor{preprocessor}{\#define\ VCMP\_IF\_EDGE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00164\ \textcolor{preprocessor}{\#define\ \_VCMP\_IF\_EDGE\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00165\ \textcolor{preprocessor}{\#define\ \_VCMP\_IF\_EDGE\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00166\ \textcolor{preprocessor}{\#define\ \_VCMP\_IF\_EDGE\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00167\ \textcolor{preprocessor}{\#define\ VCMP\_IF\_EDGE\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_VCMP\_IF\_EDGE\_DEFAULT\ <<\ 0)\ \ \ }}
+\DoxyCodeLine{00168\ \textcolor{preprocessor}{\#define\ VCMP\_IF\_WARMUP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00169\ \textcolor{preprocessor}{\#define\ \_VCMP\_IF\_WARMUP\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00170\ \textcolor{preprocessor}{\#define\ \_VCMP\_IF\_WARMUP\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x2UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00171\ \textcolor{preprocessor}{\#define\ \_VCMP\_IF\_WARMUP\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00172\ \textcolor{preprocessor}{\#define\ VCMP\_IF\_WARMUP\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_VCMP\_IF\_WARMUP\_DEFAULT\ <<\ 1)\ }}
+\DoxyCodeLine{00174\ \textcolor{comment}{/*\ Bit\ fields\ for\ VCMP\ IFS\ */}}
+\DoxyCodeLine{00175\ \textcolor{preprocessor}{\#define\ \_VCMP\_IFS\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00176\ \textcolor{preprocessor}{\#define\ \_VCMP\_IFS\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000003UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00177\ \textcolor{preprocessor}{\#define\ VCMP\_IFS\_EDGE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00178\ \textcolor{preprocessor}{\#define\ \_VCMP\_IFS\_EDGE\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00179\ \textcolor{preprocessor}{\#define\ \_VCMP\_IFS\_EDGE\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00180\ \textcolor{preprocessor}{\#define\ \_VCMP\_IFS\_EDGE\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00181\ \textcolor{preprocessor}{\#define\ VCMP\_IFS\_EDGE\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_VCMP\_IFS\_EDGE\_DEFAULT\ <<\ 0)\ \ \ }}
+\DoxyCodeLine{00182\ \textcolor{preprocessor}{\#define\ VCMP\_IFS\_WARMUP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00183\ \textcolor{preprocessor}{\#define\ \_VCMP\_IFS\_WARMUP\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00184\ \textcolor{preprocessor}{\#define\ \_VCMP\_IFS\_WARMUP\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x2UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00185\ \textcolor{preprocessor}{\#define\ \_VCMP\_IFS\_WARMUP\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00186\ \textcolor{preprocessor}{\#define\ VCMP\_IFS\_WARMUP\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ (\_VCMP\_IFS\_WARMUP\_DEFAULT\ <<\ 1)\ }}
+\DoxyCodeLine{00188\ \textcolor{comment}{/*\ Bit\ fields\ for\ VCMP\ IFC\ */}}
+\DoxyCodeLine{00189\ \textcolor{preprocessor}{\#define\ \_VCMP\_IFC\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00190\ \textcolor{preprocessor}{\#define\ \_VCMP\_IFC\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000003UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00191\ \textcolor{preprocessor}{\#define\ VCMP\_IFC\_EDGE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00192\ \textcolor{preprocessor}{\#define\ \_VCMP\_IFC\_EDGE\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00193\ \textcolor{preprocessor}{\#define\ \_VCMP\_IFC\_EDGE\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00194\ \textcolor{preprocessor}{\#define\ \_VCMP\_IFC\_EDGE\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00195\ \textcolor{preprocessor}{\#define\ VCMP\_IFC\_EDGE\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_VCMP\_IFC\_EDGE\_DEFAULT\ <<\ 0)\ \ \ }}
+\DoxyCodeLine{00196\ \textcolor{preprocessor}{\#define\ VCMP\_IFC\_WARMUP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00197\ \textcolor{preprocessor}{\#define\ \_VCMP\_IFC\_WARMUP\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00198\ \textcolor{preprocessor}{\#define\ \_VCMP\_IFC\_WARMUP\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x2UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00199\ \textcolor{preprocessor}{\#define\ \_VCMP\_IFC\_WARMUP\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00200\ \textcolor{preprocessor}{\#define\ VCMP\_IFC\_WARMUP\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ (\_VCMP\_IFC\_WARMUP\_DEFAULT\ <<\ 1)\ }}
+
+\end{DoxyCode}

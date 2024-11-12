@@ -1,0 +1,361 @@
+\doxysection{efm32gg\+\_\+letimer.\+h}
+\hypertarget{efm32gg__letimer_8h_source}{}\label{efm32gg__letimer_8h_source}\index{snake/gecko\_sdk\_4.4.4/platform/Device/SiliconLabs/EFM32GG/Include/efm32gg\_letimer.h@{snake/gecko\_sdk\_4.4.4/platform/Device/SiliconLabs/EFM32GG/Include/efm32gg\_letimer.h}}
+\mbox{\hyperlink{efm32gg__letimer_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#if\ defined(\_\_ICCARM\_\_)}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#pragma\ system\_include\ \ \ \ \ \ \ }\textcolor{comment}{/*\ Treat\ file\ as\ system\ include\ file.\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#elif\ defined(\_\_ARMCC\_VERSION)\ \&\&\ (\_\_ARMCC\_VERSION\ >=\ 6010050)}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#pragma\ clang\ system\_header\ \ }\textcolor{comment}{/*\ Treat\ file\ as\ system\ include\ file.\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00041\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00046\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00047\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_l_e_t_i_m_e_r___type_def_a926fe5f6b8e83a2023d9ca4111cb8397}{CTRL}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00048\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_l_e_t_i_m_e_r___type_def_ad704ac10e2baa16f7eaafac3ff636c44}{CMD}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00049\ \ \ \_\_IM\ uint32\_t\ \ \mbox{\hyperlink{struct_l_e_t_i_m_e_r___type_def_a901b92afb10335d72f3c5a700745bfd9}{STATUS}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00050\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_l_e_t_i_m_e_r___type_def_a3c05c7ca39b663d3e4f3f0c770dfce94}{CNT}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00051\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_l_e_t_i_m_e_r___type_def_a9ad2af9201f60245645d894abfa3d4a8}{COMP0}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00052\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_l_e_t_i_m_e_r___type_def_a721ef71fab1396b54355883108bc372a}{COMP1}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00053\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_l_e_t_i_m_e_r___type_def_a0dba6aae60606f5cb5ddb54293cc833e}{REP0}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00054\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_l_e_t_i_m_e_r___type_def_ad2214c3767000bd5bede4ad1fc40e2de}{REP1}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00055\ \ \ \_\_IM\ uint32\_t\ \ \mbox{\hyperlink{struct_l_e_t_i_m_e_r___type_def_aef93c5078794f231b2f88be5c0e811aa}{IF}};\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00056\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_l_e_t_i_m_e_r___type_def_a890a56b8a2eded96d3a39ce384999afb}{IFS}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00057\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_l_e_t_i_m_e_r___type_def_a3bbc2465ffe3bcade3f770f720ff69bd}{IFC}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00058\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_l_e_t_i_m_e_r___type_def_afa12565534843d03698363adcddbf4f7}{IEN}};\ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00060\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_l_e_t_i_m_e_r___type_def_a116d1f8d2d79edeee842f415387b96c5}{FREEZE}};\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00061\ \ \ \_\_IM\ uint32\_t\ \ \mbox{\hyperlink{struct_l_e_t_i_m_e_r___type_def_a26b162e7fead818f93f2242f3feac941}{SYNCBUSY}};\ \ \ \ \ \ }
+\DoxyCodeLine{00063\ \ \ uint32\_t\ \ \ \ \ \ \ RESERVED0[2U];\ }
+\DoxyCodeLine{00064\ \ \ \_\_IOM\ uint32\_t\ \mbox{\hyperlink{struct_l_e_t_i_m_e_r___type_def_a8557848cdf98f8ee951a058624868fd0}{ROUTE}};\ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00065\ \}\ \mbox{\hyperlink{struct_l_e_t_i_m_e_r___type_def}{LETIMER\_TypeDef}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00067\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00072\ \textcolor{comment}{/*\ Bit\ fields\ for\ LETIMER\ CTRL\ */}}
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#define\ \_LETIMER\_CTRL\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#define\ \_LETIMER\_CTRL\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00001FFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#define\ \_LETIMER\_CTRL\_REPMODE\_SHIFT\ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#define\ \_LETIMER\_CTRL\_REPMODE\_MASK\ \ \ \ \ \ \ \ \ \ \ 0x3UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#define\ \_LETIMER\_CTRL\_REPMODE\_DEFAULT\ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#define\ \_LETIMER\_CTRL\_REPMODE\_FREE\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#define\ \_LETIMER\_CTRL\_REPMODE\_ONESHOT\ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#define\ \_LETIMER\_CTRL\_REPMODE\_BUFFERED\ \ \ \ \ \ \ 0x00000002UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#define\ \_LETIMER\_CTRL\_REPMODE\_DOUBLE\ \ \ \ \ \ \ \ \ 0x00000003UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#define\ LETIMER\_CTRL\_REPMODE\_DEFAULT\ \ \ \ \ \ \ \ \ (\_LETIMER\_CTRL\_REPMODE\_DEFAULT\ <<\ 0)\ \ \ }}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#define\ LETIMER\_CTRL\_REPMODE\_FREE\ \ \ \ \ \ \ \ \ \ \ \ (\_LETIMER\_CTRL\_REPMODE\_FREE\ <<\ 0)\ \ \ \ \ \ }}
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#define\ LETIMER\_CTRL\_REPMODE\_ONESHOT\ \ \ \ \ \ \ \ \ (\_LETIMER\_CTRL\_REPMODE\_ONESHOT\ <<\ 0)\ \ \ }}
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#define\ LETIMER\_CTRL\_REPMODE\_BUFFERED\ \ \ \ \ \ \ \ (\_LETIMER\_CTRL\_REPMODE\_BUFFERED\ <<\ 0)\ \ }}
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#define\ LETIMER\_CTRL\_REPMODE\_DOUBLE\ \ \ \ \ \ \ \ \ \ (\_LETIMER\_CTRL\_REPMODE\_DOUBLE\ <<\ 0)\ \ \ \ }}
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#define\ \_LETIMER\_CTRL\_UFOA0\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ 2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#define\ \_LETIMER\_CTRL\_UFOA0\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ 0xCUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#define\ \_LETIMER\_CTRL\_UFOA0\_DEFAULT\ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#define\ \_LETIMER\_CTRL\_UFOA0\_NONE\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#define\ \_LETIMER\_CTRL\_UFOA0\_TOGGLE\ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#define\ \_LETIMER\_CTRL\_UFOA0\_PULSE\ \ \ \ \ \ \ \ \ \ \ \ 0x00000002UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#define\ \_LETIMER\_CTRL\_UFOA0\_PWM\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000003UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\#define\ LETIMER\_CTRL\_UFOA0\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ (\_LETIMER\_CTRL\_UFOA0\_DEFAULT\ <<\ 2)\ \ \ \ \ }}
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#define\ LETIMER\_CTRL\_UFOA0\_NONE\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_LETIMER\_CTRL\_UFOA0\_NONE\ <<\ 2)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\#define\ LETIMER\_CTRL\_UFOA0\_TOGGLE\ \ \ \ \ \ \ \ \ \ \ \ (\_LETIMER\_CTRL\_UFOA0\_TOGGLE\ <<\ 2)\ \ \ \ \ \ }}
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\#define\ LETIMER\_CTRL\_UFOA0\_PULSE\ \ \ \ \ \ \ \ \ \ \ \ \ (\_LETIMER\_CTRL\_UFOA0\_PULSE\ <<\ 2)\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\#define\ LETIMER\_CTRL\_UFOA0\_PWM\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_LETIMER\_CTRL\_UFOA0\_PWM\ <<\ 2)\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#define\ \_LETIMER\_CTRL\_UFOA1\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ 4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#define\ \_LETIMER\_CTRL\_UFOA1\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ 0x30UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#define\ \_LETIMER\_CTRL\_UFOA1\_DEFAULT\ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#define\ \_LETIMER\_CTRL\_UFOA1\_NONE\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00103\ \textcolor{preprocessor}{\#define\ \_LETIMER\_CTRL\_UFOA1\_TOGGLE\ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#define\ \_LETIMER\_CTRL\_UFOA1\_PULSE\ \ \ \ \ \ \ \ \ \ \ \ 0x00000002UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#define\ \_LETIMER\_CTRL\_UFOA1\_PWM\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000003UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\#define\ LETIMER\_CTRL\_UFOA1\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ (\_LETIMER\_CTRL\_UFOA1\_DEFAULT\ <<\ 4)\ \ \ \ \ }}
+\DoxyCodeLine{00107\ \textcolor{preprocessor}{\#define\ LETIMER\_CTRL\_UFOA1\_NONE\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_LETIMER\_CTRL\_UFOA1\_NONE\ <<\ 4)\ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\#define\ LETIMER\_CTRL\_UFOA1\_TOGGLE\ \ \ \ \ \ \ \ \ \ \ \ (\_LETIMER\_CTRL\_UFOA1\_TOGGLE\ <<\ 4)\ \ \ \ \ \ }}
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\#define\ LETIMER\_CTRL\_UFOA1\_PULSE\ \ \ \ \ \ \ \ \ \ \ \ \ (\_LETIMER\_CTRL\_UFOA1\_PULSE\ <<\ 4)\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00110\ \textcolor{preprocessor}{\#define\ LETIMER\_CTRL\_UFOA1\_PWM\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_LETIMER\_CTRL\_UFOA1\_PWM\ <<\ 4)\ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\#define\ LETIMER\_CTRL\_OPOL0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 6)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#define\ \_LETIMER\_CTRL\_OPOL0\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ 6\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#define\ \_LETIMER\_CTRL\_OPOL0\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ 0x40UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#define\ \_LETIMER\_CTRL\_OPOL0\_DEFAULT\ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\#define\ LETIMER\_CTRL\_OPOL0\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ (\_LETIMER\_CTRL\_OPOL0\_DEFAULT\ <<\ 6)\ \ \ \ \ }}
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#define\ LETIMER\_CTRL\_OPOL1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 7)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00117\ \textcolor{preprocessor}{\#define\ \_LETIMER\_CTRL\_OPOL1\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ 7\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00118\ \textcolor{preprocessor}{\#define\ \_LETIMER\_CTRL\_OPOL1\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ 0x80UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00119\ \textcolor{preprocessor}{\#define\ \_LETIMER\_CTRL\_OPOL1\_DEFAULT\ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00120\ \textcolor{preprocessor}{\#define\ LETIMER\_CTRL\_OPOL1\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ (\_LETIMER\_CTRL\_OPOL1\_DEFAULT\ <<\ 7)\ \ \ \ \ }}
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\#define\ LETIMER\_CTRL\_BUFTOP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 8)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00122\ \textcolor{preprocessor}{\#define\ \_LETIMER\_CTRL\_BUFTOP\_SHIFT\ \ \ \ \ \ \ \ \ \ \ 8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00123\ \textcolor{preprocessor}{\#define\ \_LETIMER\_CTRL\_BUFTOP\_MASK\ \ \ \ \ \ \ \ \ \ \ \ 0x100UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\#define\ \_LETIMER\_CTRL\_BUFTOP\_DEFAULT\ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\#define\ LETIMER\_CTRL\_BUFTOP\_DEFAULT\ \ \ \ \ \ \ \ \ \ (\_LETIMER\_CTRL\_BUFTOP\_DEFAULT\ <<\ 8)\ \ \ \ }}
+\DoxyCodeLine{00126\ \textcolor{preprocessor}{\#define\ LETIMER\_CTRL\_COMP0TOP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 9)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\#define\ \_LETIMER\_CTRL\_COMP0TOP\_SHIFT\ \ \ \ \ \ \ \ \ 9\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\#define\ \_LETIMER\_CTRL\_COMP0TOP\_MASK\ \ \ \ \ \ \ \ \ \ 0x200UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{\#define\ \_LETIMER\_CTRL\_COMP0TOP\_DEFAULT\ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00130\ \textcolor{preprocessor}{\#define\ LETIMER\_CTRL\_COMP0TOP\_DEFAULT\ \ \ \ \ \ \ \ (\_LETIMER\_CTRL\_COMP0TOP\_DEFAULT\ <<\ 9)\ \ }}
+\DoxyCodeLine{00131\ \textcolor{preprocessor}{\#define\ LETIMER\_CTRL\_RTCC0TEN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 10)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00132\ \textcolor{preprocessor}{\#define\ \_LETIMER\_CTRL\_RTCC0TEN\_SHIFT\ \ \ \ \ \ \ \ \ 10\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00133\ \textcolor{preprocessor}{\#define\ \_LETIMER\_CTRL\_RTCC0TEN\_MASK\ \ \ \ \ \ \ \ \ \ 0x400UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00134\ \textcolor{preprocessor}{\#define\ \_LETIMER\_CTRL\_RTCC0TEN\_DEFAULT\ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00135\ \textcolor{preprocessor}{\#define\ LETIMER\_CTRL\_RTCC0TEN\_DEFAULT\ \ \ \ \ \ \ \ (\_LETIMER\_CTRL\_RTCC0TEN\_DEFAULT\ <<\ 10)\ }}
+\DoxyCodeLine{00136\ \textcolor{preprocessor}{\#define\ LETIMER\_CTRL\_RTCC1TEN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 11)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\#define\ \_LETIMER\_CTRL\_RTCC1TEN\_SHIFT\ \ \ \ \ \ \ \ \ 11\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00138\ \textcolor{preprocessor}{\#define\ \_LETIMER\_CTRL\_RTCC1TEN\_MASK\ \ \ \ \ \ \ \ \ \ 0x800UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00139\ \textcolor{preprocessor}{\#define\ \_LETIMER\_CTRL\_RTCC1TEN\_DEFAULT\ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00140\ \textcolor{preprocessor}{\#define\ LETIMER\_CTRL\_RTCC1TEN\_DEFAULT\ \ \ \ \ \ \ \ (\_LETIMER\_CTRL\_RTCC1TEN\_DEFAULT\ <<\ 11)\ }}
+\DoxyCodeLine{00141\ \textcolor{preprocessor}{\#define\ LETIMER\_CTRL\_DEBUGRUN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 12)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00142\ \textcolor{preprocessor}{\#define\ \_LETIMER\_CTRL\_DEBUGRUN\_SHIFT\ \ \ \ \ \ \ \ \ 12\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00143\ \textcolor{preprocessor}{\#define\ \_LETIMER\_CTRL\_DEBUGRUN\_MASK\ \ \ \ \ \ \ \ \ \ 0x1000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00144\ \textcolor{preprocessor}{\#define\ \_LETIMER\_CTRL\_DEBUGRUN\_DEFAULT\ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00145\ \textcolor{preprocessor}{\#define\ LETIMER\_CTRL\_DEBUGRUN\_DEFAULT\ \ \ \ \ \ \ \ (\_LETIMER\_CTRL\_DEBUGRUN\_DEFAULT\ <<\ 12)\ }}
+\DoxyCodeLine{00147\ \textcolor{comment}{/*\ Bit\ fields\ for\ LETIMER\ CMD\ */}}
+\DoxyCodeLine{00148\ \textcolor{preprocessor}{\#define\ \_LETIMER\_CMD\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00149\ \textcolor{preprocessor}{\#define\ \_LETIMER\_CMD\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0000001FUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00150\ \textcolor{preprocessor}{\#define\ LETIMER\_CMD\_START\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00151\ \textcolor{preprocessor}{\#define\ \_LETIMER\_CMD\_START\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00152\ \textcolor{preprocessor}{\#define\ \_LETIMER\_CMD\_START\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00153\ \textcolor{preprocessor}{\#define\ \_LETIMER\_CMD\_START\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00154\ \textcolor{preprocessor}{\#define\ LETIMER\_CMD\_START\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ (\_LETIMER\_CMD\_START\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00155\ \textcolor{preprocessor}{\#define\ LETIMER\_CMD\_STOP\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00156\ \textcolor{preprocessor}{\#define\ \_LETIMER\_CMD\_STOP\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00157\ \textcolor{preprocessor}{\#define\ \_LETIMER\_CMD\_STOP\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x2UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00158\ \textcolor{preprocessor}{\#define\ \_LETIMER\_CMD\_STOP\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00159\ \textcolor{preprocessor}{\#define\ LETIMER\_CMD\_STOP\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ (\_LETIMER\_CMD\_STOP\_DEFAULT\ <<\ 1)\ \ }}
+\DoxyCodeLine{00160\ \textcolor{preprocessor}{\#define\ LETIMER\_CMD\_CLEAR\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 2)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00161\ \textcolor{preprocessor}{\#define\ \_LETIMER\_CMD\_CLEAR\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ 2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00162\ \textcolor{preprocessor}{\#define\ \_LETIMER\_CMD\_CLEAR\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x4UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00163\ \textcolor{preprocessor}{\#define\ \_LETIMER\_CMD\_CLEAR\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00164\ \textcolor{preprocessor}{\#define\ LETIMER\_CMD\_CLEAR\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ (\_LETIMER\_CMD\_CLEAR\_DEFAULT\ <<\ 2)\ }}
+\DoxyCodeLine{00165\ \textcolor{preprocessor}{\#define\ LETIMER\_CMD\_CTO0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 3)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00166\ \textcolor{preprocessor}{\#define\ \_LETIMER\_CMD\_CTO0\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00167\ \textcolor{preprocessor}{\#define\ \_LETIMER\_CMD\_CTO0\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x8UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00168\ \textcolor{preprocessor}{\#define\ \_LETIMER\_CMD\_CTO0\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00169\ \textcolor{preprocessor}{\#define\ LETIMER\_CMD\_CTO0\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ (\_LETIMER\_CMD\_CTO0\_DEFAULT\ <<\ 3)\ \ }}
+\DoxyCodeLine{00170\ \textcolor{preprocessor}{\#define\ LETIMER\_CMD\_CTO1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 4)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00171\ \textcolor{preprocessor}{\#define\ \_LETIMER\_CMD\_CTO1\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00172\ \textcolor{preprocessor}{\#define\ \_LETIMER\_CMD\_CTO1\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x10UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00173\ \textcolor{preprocessor}{\#define\ \_LETIMER\_CMD\_CTO1\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00174\ \textcolor{preprocessor}{\#define\ LETIMER\_CMD\_CTO1\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ (\_LETIMER\_CMD\_CTO1\_DEFAULT\ <<\ 4)\ \ }}
+\DoxyCodeLine{00176\ \textcolor{comment}{/*\ Bit\ fields\ for\ LETIMER\ STATUS\ */}}
+\DoxyCodeLine{00177\ \textcolor{preprocessor}{\#define\ \_LETIMER\_STATUS\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00178\ \textcolor{preprocessor}{\#define\ \_LETIMER\_STATUS\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00179\ \textcolor{preprocessor}{\#define\ LETIMER\_STATUS\_RUNNING\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00180\ \textcolor{preprocessor}{\#define\ \_LETIMER\_STATUS\_RUNNING\_SHIFT\ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00181\ \textcolor{preprocessor}{\#define\ \_LETIMER\_STATUS\_RUNNING\_MASK\ \ \ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00182\ \textcolor{preprocessor}{\#define\ \_LETIMER\_STATUS\_RUNNING\_DEFAULT\ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00183\ \textcolor{preprocessor}{\#define\ LETIMER\_STATUS\_RUNNING\_DEFAULT\ \ \ \ \ \ \ (\_LETIMER\_STATUS\_RUNNING\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00185\ \textcolor{comment}{/*\ Bit\ fields\ for\ LETIMER\ CNT\ */}}
+\DoxyCodeLine{00186\ \textcolor{preprocessor}{\#define\ \_LETIMER\_CNT\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00187\ \textcolor{preprocessor}{\#define\ \_LETIMER\_CNT\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0000FFFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00188\ \textcolor{preprocessor}{\#define\ \_LETIMER\_CNT\_CNT\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00189\ \textcolor{preprocessor}{\#define\ \_LETIMER\_CNT\_CNT\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFFFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00190\ \textcolor{preprocessor}{\#define\ \_LETIMER\_CNT\_CNT\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00191\ \textcolor{preprocessor}{\#define\ LETIMER\_CNT\_CNT\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_LETIMER\_CNT\_CNT\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00193\ \textcolor{comment}{/*\ Bit\ fields\ for\ LETIMER\ COMP0\ */}}
+\DoxyCodeLine{00194\ \textcolor{preprocessor}{\#define\ \_LETIMER\_COMP0\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00195\ \textcolor{preprocessor}{\#define\ \_LETIMER\_COMP0\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0000FFFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00196\ \textcolor{preprocessor}{\#define\ \_LETIMER\_COMP0\_COMP0\_SHIFT\ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00197\ \textcolor{preprocessor}{\#define\ \_LETIMER\_COMP0\_COMP0\_MASK\ \ \ \ \ \ \ \ \ \ \ \ 0xFFFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00198\ \textcolor{preprocessor}{\#define\ \_LETIMER\_COMP0\_COMP0\_DEFAULT\ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00199\ \textcolor{preprocessor}{\#define\ LETIMER\_COMP0\_COMP0\_DEFAULT\ \ \ \ \ \ \ \ \ \ (\_LETIMER\_COMP0\_COMP0\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00201\ \textcolor{comment}{/*\ Bit\ fields\ for\ LETIMER\ COMP1\ */}}
+\DoxyCodeLine{00202\ \textcolor{preprocessor}{\#define\ \_LETIMER\_COMP1\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00203\ \textcolor{preprocessor}{\#define\ \_LETIMER\_COMP1\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0000FFFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00204\ \textcolor{preprocessor}{\#define\ \_LETIMER\_COMP1\_COMP1\_SHIFT\ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00205\ \textcolor{preprocessor}{\#define\ \_LETIMER\_COMP1\_COMP1\_MASK\ \ \ \ \ \ \ \ \ \ \ \ 0xFFFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00206\ \textcolor{preprocessor}{\#define\ \_LETIMER\_COMP1\_COMP1\_DEFAULT\ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00207\ \textcolor{preprocessor}{\#define\ LETIMER\_COMP1\_COMP1\_DEFAULT\ \ \ \ \ \ \ \ \ \ (\_LETIMER\_COMP1\_COMP1\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00209\ \textcolor{comment}{/*\ Bit\ fields\ for\ LETIMER\ REP0\ */}}
+\DoxyCodeLine{00210\ \textcolor{preprocessor}{\#define\ \_LETIMER\_REP0\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00211\ \textcolor{preprocessor}{\#define\ \_LETIMER\_REP0\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x000000FFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00212\ \textcolor{preprocessor}{\#define\ \_LETIMER\_REP0\_REP0\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00213\ \textcolor{preprocessor}{\#define\ \_LETIMER\_REP0\_REP0\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00214\ \textcolor{preprocessor}{\#define\ \_LETIMER\_REP0\_REP0\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00215\ \textcolor{preprocessor}{\#define\ LETIMER\_REP0\_REP0\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ (\_LETIMER\_REP0\_REP0\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00217\ \textcolor{comment}{/*\ Bit\ fields\ for\ LETIMER\ REP1\ */}}
+\DoxyCodeLine{00218\ \textcolor{preprocessor}{\#define\ \_LETIMER\_REP1\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00219\ \textcolor{preprocessor}{\#define\ \_LETIMER\_REP1\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x000000FFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00220\ \textcolor{preprocessor}{\#define\ \_LETIMER\_REP1\_REP1\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00221\ \textcolor{preprocessor}{\#define\ \_LETIMER\_REP1\_REP1\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0xFFUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00222\ \textcolor{preprocessor}{\#define\ \_LETIMER\_REP1\_REP1\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00223\ \textcolor{preprocessor}{\#define\ LETIMER\_REP1\_REP1\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ (\_LETIMER\_REP1\_REP1\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00225\ \textcolor{comment}{/*\ Bit\ fields\ for\ LETIMER\ IF\ */}}
+\DoxyCodeLine{00226\ \textcolor{preprocessor}{\#define\ \_LETIMER\_IF\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00227\ \textcolor{preprocessor}{\#define\ \_LETIMER\_IF\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0000001FUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00228\ \textcolor{preprocessor}{\#define\ LETIMER\_IF\_COMP0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00229\ \textcolor{preprocessor}{\#define\ \_LETIMER\_IF\_COMP0\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00230\ \textcolor{preprocessor}{\#define\ \_LETIMER\_IF\_COMP0\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00231\ \textcolor{preprocessor}{\#define\ \_LETIMER\_IF\_COMP0\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00232\ \textcolor{preprocessor}{\#define\ LETIMER\_IF\_COMP0\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ (\_LETIMER\_IF\_COMP0\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00233\ \textcolor{preprocessor}{\#define\ LETIMER\_IF\_COMP1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00234\ \textcolor{preprocessor}{\#define\ \_LETIMER\_IF\_COMP1\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00235\ \textcolor{preprocessor}{\#define\ \_LETIMER\_IF\_COMP1\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x2UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00236\ \textcolor{preprocessor}{\#define\ \_LETIMER\_IF\_COMP1\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00237\ \textcolor{preprocessor}{\#define\ LETIMER\_IF\_COMP1\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ (\_LETIMER\_IF\_COMP1\_DEFAULT\ <<\ 1)\ }}
+\DoxyCodeLine{00238\ \textcolor{preprocessor}{\#define\ LETIMER\_IF\_UF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 2)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00239\ \textcolor{preprocessor}{\#define\ \_LETIMER\_IF\_UF\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00240\ \textcolor{preprocessor}{\#define\ \_LETIMER\_IF\_UF\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x4UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00241\ \textcolor{preprocessor}{\#define\ \_LETIMER\_IF\_UF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00242\ \textcolor{preprocessor}{\#define\ LETIMER\_IF\_UF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_LETIMER\_IF\_UF\_DEFAULT\ <<\ 2)\ \ \ \ }}
+\DoxyCodeLine{00243\ \textcolor{preprocessor}{\#define\ LETIMER\_IF\_REP0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 3)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00244\ \textcolor{preprocessor}{\#define\ \_LETIMER\_IF\_REP0\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00245\ \textcolor{preprocessor}{\#define\ \_LETIMER\_IF\_REP0\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x8UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00246\ \textcolor{preprocessor}{\#define\ \_LETIMER\_IF\_REP0\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00247\ \textcolor{preprocessor}{\#define\ LETIMER\_IF\_REP0\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_LETIMER\_IF\_REP0\_DEFAULT\ <<\ 3)\ \ }}
+\DoxyCodeLine{00248\ \textcolor{preprocessor}{\#define\ LETIMER\_IF\_REP1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 4)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00249\ \textcolor{preprocessor}{\#define\ \_LETIMER\_IF\_REP1\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00250\ \textcolor{preprocessor}{\#define\ \_LETIMER\_IF\_REP1\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x10UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00251\ \textcolor{preprocessor}{\#define\ \_LETIMER\_IF\_REP1\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00252\ \textcolor{preprocessor}{\#define\ LETIMER\_IF\_REP1\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_LETIMER\_IF\_REP1\_DEFAULT\ <<\ 4)\ \ }}
+\DoxyCodeLine{00254\ \textcolor{comment}{/*\ Bit\ fields\ for\ LETIMER\ IFS\ */}}
+\DoxyCodeLine{00255\ \textcolor{preprocessor}{\#define\ \_LETIMER\_IFS\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00256\ \textcolor{preprocessor}{\#define\ \_LETIMER\_IFS\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0000001FUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00257\ \textcolor{preprocessor}{\#define\ LETIMER\_IFS\_COMP0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00258\ \textcolor{preprocessor}{\#define\ \_LETIMER\_IFS\_COMP0\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00259\ \textcolor{preprocessor}{\#define\ \_LETIMER\_IFS\_COMP0\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00260\ \textcolor{preprocessor}{\#define\ \_LETIMER\_IFS\_COMP0\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00261\ \textcolor{preprocessor}{\#define\ LETIMER\_IFS\_COMP0\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ (\_LETIMER\_IFS\_COMP0\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00262\ \textcolor{preprocessor}{\#define\ LETIMER\_IFS\_COMP1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00263\ \textcolor{preprocessor}{\#define\ \_LETIMER\_IFS\_COMP1\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00264\ \textcolor{preprocessor}{\#define\ \_LETIMER\_IFS\_COMP1\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x2UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00265\ \textcolor{preprocessor}{\#define\ \_LETIMER\_IFS\_COMP1\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00266\ \textcolor{preprocessor}{\#define\ LETIMER\_IFS\_COMP1\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ (\_LETIMER\_IFS\_COMP1\_DEFAULT\ <<\ 1)\ }}
+\DoxyCodeLine{00267\ \textcolor{preprocessor}{\#define\ LETIMER\_IFS\_UF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 2)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00268\ \textcolor{preprocessor}{\#define\ \_LETIMER\_IFS\_UF\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00269\ \textcolor{preprocessor}{\#define\ \_LETIMER\_IFS\_UF\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x4UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00270\ \textcolor{preprocessor}{\#define\ \_LETIMER\_IFS\_UF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00271\ \textcolor{preprocessor}{\#define\ LETIMER\_IFS\_UF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_LETIMER\_IFS\_UF\_DEFAULT\ <<\ 2)\ \ \ \ }}
+\DoxyCodeLine{00272\ \textcolor{preprocessor}{\#define\ LETIMER\_IFS\_REP0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 3)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00273\ \textcolor{preprocessor}{\#define\ \_LETIMER\_IFS\_REP0\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00274\ \textcolor{preprocessor}{\#define\ \_LETIMER\_IFS\_REP0\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x8UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00275\ \textcolor{preprocessor}{\#define\ \_LETIMER\_IFS\_REP0\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00276\ \textcolor{preprocessor}{\#define\ LETIMER\_IFS\_REP0\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ (\_LETIMER\_IFS\_REP0\_DEFAULT\ <<\ 3)\ \ }}
+\DoxyCodeLine{00277\ \textcolor{preprocessor}{\#define\ LETIMER\_IFS\_REP1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 4)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00278\ \textcolor{preprocessor}{\#define\ \_LETIMER\_IFS\_REP1\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00279\ \textcolor{preprocessor}{\#define\ \_LETIMER\_IFS\_REP1\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x10UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00280\ \textcolor{preprocessor}{\#define\ \_LETIMER\_IFS\_REP1\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00281\ \textcolor{preprocessor}{\#define\ LETIMER\_IFS\_REP1\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ (\_LETIMER\_IFS\_REP1\_DEFAULT\ <<\ 4)\ \ }}
+\DoxyCodeLine{00283\ \textcolor{comment}{/*\ Bit\ fields\ for\ LETIMER\ IFC\ */}}
+\DoxyCodeLine{00284\ \textcolor{preprocessor}{\#define\ \_LETIMER\_IFC\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00285\ \textcolor{preprocessor}{\#define\ \_LETIMER\_IFC\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0000001FUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00286\ \textcolor{preprocessor}{\#define\ LETIMER\_IFC\_COMP0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00287\ \textcolor{preprocessor}{\#define\ \_LETIMER\_IFC\_COMP0\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00288\ \textcolor{preprocessor}{\#define\ \_LETIMER\_IFC\_COMP0\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00289\ \textcolor{preprocessor}{\#define\ \_LETIMER\_IFC\_COMP0\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00290\ \textcolor{preprocessor}{\#define\ LETIMER\_IFC\_COMP0\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ (\_LETIMER\_IFC\_COMP0\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00291\ \textcolor{preprocessor}{\#define\ LETIMER\_IFC\_COMP1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00292\ \textcolor{preprocessor}{\#define\ \_LETIMER\_IFC\_COMP1\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00293\ \textcolor{preprocessor}{\#define\ \_LETIMER\_IFC\_COMP1\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x2UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00294\ \textcolor{preprocessor}{\#define\ \_LETIMER\_IFC\_COMP1\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00295\ \textcolor{preprocessor}{\#define\ LETIMER\_IFC\_COMP1\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ (\_LETIMER\_IFC\_COMP1\_DEFAULT\ <<\ 1)\ }}
+\DoxyCodeLine{00296\ \textcolor{preprocessor}{\#define\ LETIMER\_IFC\_UF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 2)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00297\ \textcolor{preprocessor}{\#define\ \_LETIMER\_IFC\_UF\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00298\ \textcolor{preprocessor}{\#define\ \_LETIMER\_IFC\_UF\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x4UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00299\ \textcolor{preprocessor}{\#define\ \_LETIMER\_IFC\_UF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00300\ \textcolor{preprocessor}{\#define\ LETIMER\_IFC\_UF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_LETIMER\_IFC\_UF\_DEFAULT\ <<\ 2)\ \ \ \ }}
+\DoxyCodeLine{00301\ \textcolor{preprocessor}{\#define\ LETIMER\_IFC\_REP0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 3)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00302\ \textcolor{preprocessor}{\#define\ \_LETIMER\_IFC\_REP0\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00303\ \textcolor{preprocessor}{\#define\ \_LETIMER\_IFC\_REP0\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x8UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00304\ \textcolor{preprocessor}{\#define\ \_LETIMER\_IFC\_REP0\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00305\ \textcolor{preprocessor}{\#define\ LETIMER\_IFC\_REP0\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ (\_LETIMER\_IFC\_REP0\_DEFAULT\ <<\ 3)\ \ }}
+\DoxyCodeLine{00306\ \textcolor{preprocessor}{\#define\ LETIMER\_IFC\_REP1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 4)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00307\ \textcolor{preprocessor}{\#define\ \_LETIMER\_IFC\_REP1\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00308\ \textcolor{preprocessor}{\#define\ \_LETIMER\_IFC\_REP1\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x10UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00309\ \textcolor{preprocessor}{\#define\ \_LETIMER\_IFC\_REP1\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00310\ \textcolor{preprocessor}{\#define\ LETIMER\_IFC\_REP1\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ (\_LETIMER\_IFC\_REP1\_DEFAULT\ <<\ 4)\ \ }}
+\DoxyCodeLine{00312\ \textcolor{comment}{/*\ Bit\ fields\ for\ LETIMER\ IEN\ */}}
+\DoxyCodeLine{00313\ \textcolor{preprocessor}{\#define\ \_LETIMER\_IEN\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00314\ \textcolor{preprocessor}{\#define\ \_LETIMER\_IEN\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0000001FUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00315\ \textcolor{preprocessor}{\#define\ LETIMER\_IEN\_COMP0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00316\ \textcolor{preprocessor}{\#define\ \_LETIMER\_IEN\_COMP0\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00317\ \textcolor{preprocessor}{\#define\ \_LETIMER\_IEN\_COMP0\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00318\ \textcolor{preprocessor}{\#define\ \_LETIMER\_IEN\_COMP0\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00319\ \textcolor{preprocessor}{\#define\ LETIMER\_IEN\_COMP0\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ (\_LETIMER\_IEN\_COMP0\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00320\ \textcolor{preprocessor}{\#define\ LETIMER\_IEN\_COMP1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00321\ \textcolor{preprocessor}{\#define\ \_LETIMER\_IEN\_COMP1\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00322\ \textcolor{preprocessor}{\#define\ \_LETIMER\_IEN\_COMP1\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x2UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00323\ \textcolor{preprocessor}{\#define\ \_LETIMER\_IEN\_COMP1\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00324\ \textcolor{preprocessor}{\#define\ LETIMER\_IEN\_COMP1\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ (\_LETIMER\_IEN\_COMP1\_DEFAULT\ <<\ 1)\ }}
+\DoxyCodeLine{00325\ \textcolor{preprocessor}{\#define\ LETIMER\_IEN\_UF\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 2)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00326\ \textcolor{preprocessor}{\#define\ \_LETIMER\_IEN\_UF\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00327\ \textcolor{preprocessor}{\#define\ \_LETIMER\_IEN\_UF\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x4UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00328\ \textcolor{preprocessor}{\#define\ \_LETIMER\_IEN\_UF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00329\ \textcolor{preprocessor}{\#define\ LETIMER\_IEN\_UF\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (\_LETIMER\_IEN\_UF\_DEFAULT\ <<\ 2)\ \ \ \ }}
+\DoxyCodeLine{00330\ \textcolor{preprocessor}{\#define\ LETIMER\_IEN\_REP0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 3)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00331\ \textcolor{preprocessor}{\#define\ \_LETIMER\_IEN\_REP0\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00332\ \textcolor{preprocessor}{\#define\ \_LETIMER\_IEN\_REP0\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x8UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00333\ \textcolor{preprocessor}{\#define\ \_LETIMER\_IEN\_REP0\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00334\ \textcolor{preprocessor}{\#define\ LETIMER\_IEN\_REP0\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ (\_LETIMER\_IEN\_REP0\_DEFAULT\ <<\ 3)\ \ }}
+\DoxyCodeLine{00335\ \textcolor{preprocessor}{\#define\ LETIMER\_IEN\_REP1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 4)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00336\ \textcolor{preprocessor}{\#define\ \_LETIMER\_IEN\_REP1\_SHIFT\ \ \ \ \ \ \ \ \ \ \ \ \ \ 4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00337\ \textcolor{preprocessor}{\#define\ \_LETIMER\_IEN\_REP1\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x10UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00338\ \textcolor{preprocessor}{\#define\ \_LETIMER\_IEN\_REP1\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00339\ \textcolor{preprocessor}{\#define\ LETIMER\_IEN\_REP1\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \ \ (\_LETIMER\_IEN\_REP1\_DEFAULT\ <<\ 4)\ \ }}
+\DoxyCodeLine{00341\ \textcolor{comment}{/*\ Bit\ fields\ for\ LETIMER\ FREEZE\ */}}
+\DoxyCodeLine{00342\ \textcolor{preprocessor}{\#define\ \_LETIMER\_FREEZE\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00343\ \textcolor{preprocessor}{\#define\ \_LETIMER\_FREEZE\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00344\ \textcolor{preprocessor}{\#define\ LETIMER\_FREEZE\_REGFREEZE\ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00345\ \textcolor{preprocessor}{\#define\ \_LETIMER\_FREEZE\_REGFREEZE\_SHIFT\ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00346\ \textcolor{preprocessor}{\#define\ \_LETIMER\_FREEZE\_REGFREEZE\_MASK\ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00347\ \textcolor{preprocessor}{\#define\ \_LETIMER\_FREEZE\_REGFREEZE\_DEFAULT\ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00348\ \textcolor{preprocessor}{\#define\ \_LETIMER\_FREEZE\_REGFREEZE\_UPDATE\ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00349\ \textcolor{preprocessor}{\#define\ \_LETIMER\_FREEZE\_REGFREEZE\_FREEZE\ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00350\ \textcolor{preprocessor}{\#define\ LETIMER\_FREEZE\_REGFREEZE\_DEFAULT\ \ \ \ \ (\_LETIMER\_FREEZE\_REGFREEZE\_DEFAULT\ <<\ 0)\ }}
+\DoxyCodeLine{00351\ \textcolor{preprocessor}{\#define\ LETIMER\_FREEZE\_REGFREEZE\_UPDATE\ \ \ \ \ \ (\_LETIMER\_FREEZE\_REGFREEZE\_UPDATE\ <<\ 0)\ \ }}
+\DoxyCodeLine{00352\ \textcolor{preprocessor}{\#define\ LETIMER\_FREEZE\_REGFREEZE\_FREEZE\ \ \ \ \ \ (\_LETIMER\_FREEZE\_REGFREEZE\_FREEZE\ <<\ 0)\ \ }}
+\DoxyCodeLine{00354\ \textcolor{comment}{/*\ Bit\ fields\ for\ LETIMER\ SYNCBUSY\ */}}
+\DoxyCodeLine{00355\ \textcolor{preprocessor}{\#define\ \_LETIMER\_SYNCBUSY\_RESETVALUE\ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00356\ \textcolor{preprocessor}{\#define\ \_LETIMER\_SYNCBUSY\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x0000003FUL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00357\ \textcolor{preprocessor}{\#define\ LETIMER\_SYNCBUSY\_CTRL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00358\ \textcolor{preprocessor}{\#define\ \_LETIMER\_SYNCBUSY\_CTRL\_SHIFT\ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00359\ \textcolor{preprocessor}{\#define\ \_LETIMER\_SYNCBUSY\_CTRL\_MASK\ \ \ \ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00360\ \textcolor{preprocessor}{\#define\ \_LETIMER\_SYNCBUSY\_CTRL\_DEFAULT\ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00361\ \textcolor{preprocessor}{\#define\ LETIMER\_SYNCBUSY\_CTRL\_DEFAULT\ \ \ \ \ \ \ \ (\_LETIMER\_SYNCBUSY\_CTRL\_DEFAULT\ <<\ 0)\ \ }}
+\DoxyCodeLine{00362\ \textcolor{preprocessor}{\#define\ LETIMER\_SYNCBUSY\_CMD\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00363\ \textcolor{preprocessor}{\#define\ \_LETIMER\_SYNCBUSY\_CMD\_SHIFT\ \ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00364\ \textcolor{preprocessor}{\#define\ \_LETIMER\_SYNCBUSY\_CMD\_MASK\ \ \ \ \ \ \ \ \ \ \ 0x2UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00365\ \textcolor{preprocessor}{\#define\ \_LETIMER\_SYNCBUSY\_CMD\_DEFAULT\ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00366\ \textcolor{preprocessor}{\#define\ LETIMER\_SYNCBUSY\_CMD\_DEFAULT\ \ \ \ \ \ \ \ \ (\_LETIMER\_SYNCBUSY\_CMD\_DEFAULT\ <<\ 1)\ \ \ }}
+\DoxyCodeLine{00367\ \textcolor{preprocessor}{\#define\ LETIMER\_SYNCBUSY\_COMP0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 2)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00368\ \textcolor{preprocessor}{\#define\ \_LETIMER\_SYNCBUSY\_COMP0\_SHIFT\ \ \ \ \ \ \ \ 2\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00369\ \textcolor{preprocessor}{\#define\ \_LETIMER\_SYNCBUSY\_COMP0\_MASK\ \ \ \ \ \ \ \ \ 0x4UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00370\ \textcolor{preprocessor}{\#define\ \_LETIMER\_SYNCBUSY\_COMP0\_DEFAULT\ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00371\ \textcolor{preprocessor}{\#define\ LETIMER\_SYNCBUSY\_COMP0\_DEFAULT\ \ \ \ \ \ \ (\_LETIMER\_SYNCBUSY\_COMP0\_DEFAULT\ <<\ 2)\ }}
+\DoxyCodeLine{00372\ \textcolor{preprocessor}{\#define\ LETIMER\_SYNCBUSY\_COMP1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 3)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00373\ \textcolor{preprocessor}{\#define\ \_LETIMER\_SYNCBUSY\_COMP1\_SHIFT\ \ \ \ \ \ \ \ 3\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00374\ \textcolor{preprocessor}{\#define\ \_LETIMER\_SYNCBUSY\_COMP1\_MASK\ \ \ \ \ \ \ \ \ 0x8UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00375\ \textcolor{preprocessor}{\#define\ \_LETIMER\_SYNCBUSY\_COMP1\_DEFAULT\ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00376\ \textcolor{preprocessor}{\#define\ LETIMER\_SYNCBUSY\_COMP1\_DEFAULT\ \ \ \ \ \ \ (\_LETIMER\_SYNCBUSY\_COMP1\_DEFAULT\ <<\ 3)\ }}
+\DoxyCodeLine{00377\ \textcolor{preprocessor}{\#define\ LETIMER\_SYNCBUSY\_REP0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 4)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00378\ \textcolor{preprocessor}{\#define\ \_LETIMER\_SYNCBUSY\_REP0\_SHIFT\ \ \ \ \ \ \ \ \ 4\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00379\ \textcolor{preprocessor}{\#define\ \_LETIMER\_SYNCBUSY\_REP0\_MASK\ \ \ \ \ \ \ \ \ \ 0x10UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00380\ \textcolor{preprocessor}{\#define\ \_LETIMER\_SYNCBUSY\_REP0\_DEFAULT\ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00381\ \textcolor{preprocessor}{\#define\ LETIMER\_SYNCBUSY\_REP0\_DEFAULT\ \ \ \ \ \ \ \ (\_LETIMER\_SYNCBUSY\_REP0\_DEFAULT\ <<\ 4)\ \ }}
+\DoxyCodeLine{00382\ \textcolor{preprocessor}{\#define\ LETIMER\_SYNCBUSY\_REP1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 5)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00383\ \textcolor{preprocessor}{\#define\ \_LETIMER\_SYNCBUSY\_REP1\_SHIFT\ \ \ \ \ \ \ \ \ 5\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00384\ \textcolor{preprocessor}{\#define\ \_LETIMER\_SYNCBUSY\_REP1\_MASK\ \ \ \ \ \ \ \ \ \ 0x20UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00385\ \textcolor{preprocessor}{\#define\ \_LETIMER\_SYNCBUSY\_REP1\_DEFAULT\ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00386\ \textcolor{preprocessor}{\#define\ LETIMER\_SYNCBUSY\_REP1\_DEFAULT\ \ \ \ \ \ \ \ (\_LETIMER\_SYNCBUSY\_REP1\_DEFAULT\ <<\ 5)\ \ }}
+\DoxyCodeLine{00388\ \textcolor{comment}{/*\ Bit\ fields\ for\ LETIMER\ ROUTE\ */}}
+\DoxyCodeLine{00389\ \textcolor{preprocessor}{\#define\ \_LETIMER\_ROUTE\_RESETVALUE\ \ \ \ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00390\ \textcolor{preprocessor}{\#define\ \_LETIMER\_ROUTE\_MASK\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ 0x00000703UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00391\ \textcolor{preprocessor}{\#define\ LETIMER\_ROUTE\_OUT0PEN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 0)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00392\ \textcolor{preprocessor}{\#define\ \_LETIMER\_ROUTE\_OUT0PEN\_SHIFT\ \ \ \ \ \ \ \ \ 0\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00393\ \textcolor{preprocessor}{\#define\ \_LETIMER\_ROUTE\_OUT0PEN\_MASK\ \ \ \ \ \ \ \ \ \ 0x1UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00394\ \textcolor{preprocessor}{\#define\ \_LETIMER\_ROUTE\_OUT0PEN\_DEFAULT\ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00395\ \textcolor{preprocessor}{\#define\ LETIMER\_ROUTE\_OUT0PEN\_DEFAULT\ \ \ \ \ \ \ \ (\_LETIMER\_ROUTE\_OUT0PEN\_DEFAULT\ <<\ 0)\ \ }}
+\DoxyCodeLine{00396\ \textcolor{preprocessor}{\#define\ LETIMER\_ROUTE\_OUT1PEN\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (0x1UL\ <<\ 1)\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00397\ \textcolor{preprocessor}{\#define\ \_LETIMER\_ROUTE\_OUT1PEN\_SHIFT\ \ \ \ \ \ \ \ \ 1\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00398\ \textcolor{preprocessor}{\#define\ \_LETIMER\_ROUTE\_OUT1PEN\_MASK\ \ \ \ \ \ \ \ \ \ 0x2UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00399\ \textcolor{preprocessor}{\#define\ \_LETIMER\_ROUTE\_OUT1PEN\_DEFAULT\ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00400\ \textcolor{preprocessor}{\#define\ LETIMER\_ROUTE\_OUT1PEN\_DEFAULT\ \ \ \ \ \ \ \ (\_LETIMER\_ROUTE\_OUT1PEN\_DEFAULT\ <<\ 1)\ \ }}
+\DoxyCodeLine{00401\ \textcolor{preprocessor}{\#define\ \_LETIMER\_ROUTE\_LOCATION\_SHIFT\ \ \ \ \ \ \ \ 8\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00402\ \textcolor{preprocessor}{\#define\ \_LETIMER\_ROUTE\_LOCATION\_MASK\ \ \ \ \ \ \ \ \ 0x700UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00403\ \textcolor{preprocessor}{\#define\ \_LETIMER\_ROUTE\_LOCATION\_LOC0\ \ \ \ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00404\ \textcolor{preprocessor}{\#define\ \_LETIMER\_ROUTE\_LOCATION\_DEFAULT\ \ \ \ \ \ 0x00000000UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00405\ \textcolor{preprocessor}{\#define\ \_LETIMER\_ROUTE\_LOCATION\_LOC1\ \ \ \ \ \ \ \ \ 0x00000001UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00406\ \textcolor{preprocessor}{\#define\ \_LETIMER\_ROUTE\_LOCATION\_LOC2\ \ \ \ \ \ \ \ \ 0x00000002UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00407\ \textcolor{preprocessor}{\#define\ \_LETIMER\_ROUTE\_LOCATION\_LOC3\ \ \ \ \ \ \ \ \ 0x00000003UL\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }}
+\DoxyCodeLine{00408\ \textcolor{preprocessor}{\#define\ LETIMER\_ROUTE\_LOCATION\_LOC0\ \ \ \ \ \ \ \ \ \ (\_LETIMER\_ROUTE\_LOCATION\_LOC0\ <<\ 8)\ \ \ \ }}
+\DoxyCodeLine{00409\ \textcolor{preprocessor}{\#define\ LETIMER\_ROUTE\_LOCATION\_DEFAULT\ \ \ \ \ \ \ (\_LETIMER\_ROUTE\_LOCATION\_DEFAULT\ <<\ 8)\ }}
+\DoxyCodeLine{00410\ \textcolor{preprocessor}{\#define\ LETIMER\_ROUTE\_LOCATION\_LOC1\ \ \ \ \ \ \ \ \ \ (\_LETIMER\_ROUTE\_LOCATION\_LOC1\ <<\ 8)\ \ \ \ }}
+\DoxyCodeLine{00411\ \textcolor{preprocessor}{\#define\ LETIMER\_ROUTE\_LOCATION\_LOC2\ \ \ \ \ \ \ \ \ \ (\_LETIMER\_ROUTE\_LOCATION\_LOC2\ <<\ 8)\ \ \ \ }}
+\DoxyCodeLine{00412\ \textcolor{preprocessor}{\#define\ LETIMER\_ROUTE\_LOCATION\_LOC3\ \ \ \ \ \ \ \ \ \ (\_LETIMER\_ROUTE\_LOCATION\_LOC3\ <<\ 8)\ \ \ \ }}
+
+\end{DoxyCode}

@@ -1,0 +1,159 @@
+\doxysection{em\+\_\+core.\+h}
+\hypertarget{em__core_8h_source}{}\label{em__core_8h_source}\index{snake/gecko\_sdk\_4.4.4/platform/emlib/inc/em\_core.h@{snake/gecko\_sdk\_4.4.4/platform/emlib/inc/em\_core.h}}
+\mbox{\hyperlink{em__core_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#ifndef\ EM\_CORE\_H}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ EM\_CORE\_H}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{em__device_8h}{em\_device.h}}"{}}}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{em__core__generic_8h}{em\_core\_generic.h}}"{}}}
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{sl__common_8h}{sl\_common.h}}"{}}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#if\ defined(EMLIB\_USER\_CONFIG)}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ "{}emlib\_config.h"{}}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#if\ defined(SL\_COMPONENT\_CATALOG\_PRESENT)}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#include\ "{}sl\_component\_catalog.h"{}}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#if\ defined(SL\_CATALOG\_EMLIB\_CORE\_DEBUG\_CONFIG\_PRESENT)}}
+\DoxyCodeLine{00046\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{emlib__core__debug__config_8h}{emlib\_core\_debug\_config.h}}"{}}}
+\DoxyCodeLine{00047\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#if\ !defined(SL\_EMLIB\_CORE\_ENABLE\_INTERRUPT\_DISABLED\_TIMING)}}
+\DoxyCodeLine{00050\ \textcolor{preprocessor}{\#define\ SL\_EMLIB\_CORE\_ENABLE\_INTERRUPT\_DISABLED\_TIMING\ \ \ 0}}
+\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00053\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00058\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{00059\ \textcolor{comment}{\ *******************************\ \ \ DEFINES\ \ \ ***********************************}}
+\DoxyCodeLine{00060\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#define\ CORE\_NVIC\_REG\_WORDS\ \ \ ((EXT\_IRQ\_COUNT\ +\ 31)\ /\ 32)}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#define\ CORE\_DEFAULT\_VECTOR\_TABLE\_ENTRIES\ \ \ (EXT\_IRQ\_COUNT\ +\ 16)}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \textcolor{comment}{//\ Interrupt\ priorities\ based\ on\ processor\ architecture}}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#if\ defined(\_\_CM3\_REV)\ ||\ defined(\_\_CM4\_REV)\ ||\ defined(\_\_CM7\_REV)\ \(\backslash\)}}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\ \ ||\ defined(\_\_CM23\_REV)\ ||\ defined(\_\_CM33\_REV)}}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#define\ CORE\_INTERRUPT\_HIGHEST\_PRIORITY\ 0}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#define\ CORE\_INTERRUPT\_DEFAULT\_PRIORITY\ 5}}
+\DoxyCodeLine{00077\ }
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#define\ CORE\_INTERRUPT\_LOWEST\_PRIORITY\ 7}}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#define\ CORE\_ATOMIC\_METHOD\_DEFAULT\ \ CORE\_ATOMIC\_METHOD\_BASEPRI}}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#elif\ defined(\_\_CM0\_REV)\ ||\ defined(\_\_CM0PLUS\_REV)}}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#define\ CORE\_INTERRUPT\_HIGHEST\_PRIORITY\ 0}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#define\ CORE\_INTERRUPT\_DEFAULT\_PRIORITY\ 1}}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#define\ CORE\_INTERRUPT\_LOWEST\_PRIORITY\ 3}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#define\ CORE\_ATOMIC\_METHOD\_DEFAULT\ \ CORE\_ATOMIC\_METHOD\_PRIMASK}}
+\DoxyCodeLine{00096\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \textcolor{preprocessor}{\#if\ !defined(CORE\_ATOMIC\_METHOD)}}
+\DoxyCodeLine{00102\ \textcolor{preprocessor}{\#if\ !defined(SL\_CATALOG\_DEVICE\_INIT\_NVIC\_PRESENT)}}
+\DoxyCodeLine{00103\ \textcolor{preprocessor}{\#define\ CORE\_ATOMIC\_METHOD\ \ \ \ CORE\_ATOMIC\_METHOD\_PRIMASK}}
+\DoxyCodeLine{00104\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#define\ CORE\_ATOMIC\_METHOD\ \ \ CORE\_ATOMIC\_METHOD\_DEFAULT}}
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00107\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00108\ }
+\DoxyCodeLine{00109\ \textcolor{comment}{//\ Compile\ time\ sanity\ check.}}
+\DoxyCodeLine{00110\ \textcolor{preprocessor}{\#if\ (CORE\_NVIC\_REG\_WORDS\ >\ 3)}}
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\#error\ "{}em\_core:\ Unexpected\ NVIC\ external\ interrupt\ count."{}}}
+\DoxyCodeLine{00112\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00115\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{00119\ \textcolor{comment}{\ ************************\ \ \ MACRO\ API\ \ \ ***************************************}}
+\DoxyCodeLine{00120\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00122\ \textcolor{comment}{//}}
+\DoxyCodeLine{00123\ \textcolor{comment}{//\ \ NVIC\ mask\ section\ macro\ API.}}
+\DoxyCodeLine{00124\ \textcolor{comment}{//}}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\#define\ CORE\_DECLARE\_NVIC\_STATE\ \ \ \ \ \ \ CORE\_nvicMask\_t\ nvicState}}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00133\ \textcolor{preprocessor}{\#define\ CORE\_DECLARE\_NVIC\_MASK(x)\ \ \ \ \ CORE\_nvicMask\_t\ x}}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00138\ \textcolor{preprocessor}{\#define\ CORE\_DECLARE\_NVIC\_ZEROMASK(x)\ CORE\_nvicMask\_t\ x\ =\ \{\ \{\ 0\ \}\ \}}}
+\DoxyCodeLine{00139\ }
+\DoxyCodeLine{00143\ \textcolor{preprocessor}{\#define\ CORE\_NVIC\_DISABLE(mask)\ \ \ CORE\_NvicDisableMask(mask)}}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00148\ \textcolor{preprocessor}{\#define\ CORE\_NVIC\_ENABLE(mask)\ \ \ \ CORE\_NvicEnableMask(mask)}}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00155\ \textcolor{preprocessor}{\#define\ CORE\_NVIC\_SECTION(mask,\ yourcode)\ \(\backslash\)}}
+\DoxyCodeLine{00156\ \textcolor{preprocessor}{\ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00157\ \textcolor{preprocessor}{\ \ \ \ CORE\_DECLARE\_NVIC\_STATE;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00158\ \textcolor{preprocessor}{\ \ \ \ CORE\_ENTER\_NVIC(mask);\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00159\ \textcolor{preprocessor}{\ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00160\ \textcolor{preprocessor}{\ \ \ \ \ \ yourcode\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00161\ \textcolor{preprocessor}{\ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00162\ \textcolor{preprocessor}{\ \ \ \ CORE\_EXIT\_NVIC();\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00163\ \textcolor{preprocessor}{\ \ \}}}
+\DoxyCodeLine{00164\ }
+\DoxyCodeLine{00169\ \textcolor{preprocessor}{\#define\ CORE\_ENTER\_NVIC(disable)\ \ CORE\_EnterNvicMask(\&nvicState,\ disable)}}
+\DoxyCodeLine{00170\ }
+\DoxyCodeLine{00173\ \textcolor{preprocessor}{\#define\ CORE\_EXIT\_NVIC()\ \ \ \ \ \ \ \ \ \ CORE\_NvicEnableMask(\&nvicState)}}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00178\ \textcolor{preprocessor}{\#define\ CORE\_YIELD\_NVIC(enable)\ \ \ CORE\_YieldNvicMask(enable)}}
+\DoxyCodeLine{00179\ }
+\DoxyCodeLine{00180\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{00181\ \textcolor{comment}{\ *************************\ \ \ TYPEDEFS\ \ \ ****************************************}}
+\DoxyCodeLine{00182\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00183\ }
+\DoxyCodeLine{00185\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00186\ \ \ uint32\_t\ a[\mbox{\hyperlink{group__core_ga507bd4d5cc348a56722265d6b45994f2}{CORE\_NVIC\_REG\_WORDS}}];\ \ \ \ }
+\DoxyCodeLine{00187\ \}\ \mbox{\hyperlink{struct_c_o_r_e__nvic_mask__t}{CORE\_nvicMask\_t}};}
+\DoxyCodeLine{00188\ }
+\DoxyCodeLine{00189\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{00190\ \textcolor{comment}{\ *****************************\ \ \ PROTOTYPES\ \ \ **********************************}}
+\DoxyCodeLine{00191\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00193\ \textcolor{keywordtype}{bool}\ \ \mbox{\hyperlink{group__core_gafbb1265e4740eb07f50b8207c72e94f8}{CORE\_IrqIsBlocked}}(\mbox{\hyperlink{group___e_f_m32_g_g990_f1024_ga4a0206df9604302e0741c1aa4ca1ded3}{IRQn\_Type}}\ irqN);}
+\DoxyCodeLine{00194\ }
+\DoxyCodeLine{00195\ \textcolor{keywordtype}{void}\ \ \mbox{\hyperlink{group__core_gaaa32f111ee6cdd5e854b489a04a79b68}{CORE\_GetNvicEnabledMask}}(\mbox{\hyperlink{struct_c_o_r_e__nvic_mask__t}{CORE\_nvicMask\_t}}\ *mask);}
+\DoxyCodeLine{00196\ \textcolor{keywordtype}{bool}\ \ \mbox{\hyperlink{group__core_gaadb9b9a49a92a6857c600cffb4a8b384}{CORE\_GetNvicMaskDisableState}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_c_o_r_e__nvic_mask__t}{CORE\_nvicMask\_t}}\ *mask);}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00198\ \textcolor{keywordtype}{void}\ \ \mbox{\hyperlink{group__core_ga510268c9357cb2cffddd9dd75ddf7fab}{CORE\_EnterNvicMask}}(\mbox{\hyperlink{struct_c_o_r_e__nvic_mask__t}{CORE\_nvicMask\_t}}\ *nvicState,}
+\DoxyCodeLine{00199\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{struct_c_o_r_e__nvic_mask__t}{CORE\_nvicMask\_t}}\ *disable);}
+\DoxyCodeLine{00200\ \textcolor{keywordtype}{void}\ \ \mbox{\hyperlink{group__core_ga818266df617b6e900b124d30f4cf7db4}{CORE\_NvicDisableMask}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_c_o_r_e__nvic_mask__t}{CORE\_nvicMask\_t}}\ *disable);}
+\DoxyCodeLine{00201\ \textcolor{keywordtype}{void}\ \ \mbox{\hyperlink{group__core_gafd594b0671e10977a3655f289439af09}{CORE\_NvicEnableMask}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_c_o_r_e__nvic_mask__t}{CORE\_nvicMask\_t}}\ *enable);}
+\DoxyCodeLine{00202\ \textcolor{keywordtype}{void}\ \ \mbox{\hyperlink{group__core_ga3c84177a6c8922b997d9a0bb94ec0ff9}{CORE\_YieldNvicMask}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_c_o_r_e__nvic_mask__t}{CORE\_nvicMask\_t}}\ *enable);}
+\DoxyCodeLine{00203\ \textcolor{keywordtype}{void}\ \ \mbox{\hyperlink{group__core_ga74cc1f2c3a9c786f1108eba8305b4a02}{CORE\_NvicMaskSetIRQ}}(\mbox{\hyperlink{group___e_f_m32_g_g990_f1024_ga4a0206df9604302e0741c1aa4ca1ded3}{IRQn\_Type}}\ irqN,\ \mbox{\hyperlink{struct_c_o_r_e__nvic_mask__t}{CORE\_nvicMask\_t}}\ *mask);}
+\DoxyCodeLine{00204\ \textcolor{keywordtype}{void}\ \ \mbox{\hyperlink{group__core_ga9cf82cce035328e4558db771ecfe8720}{CORE\_NvicMaskClearIRQ}}(\mbox{\hyperlink{group___e_f_m32_g_g990_f1024_ga4a0206df9604302e0741c1aa4ca1ded3}{IRQn\_Type}}\ irqN,\ \mbox{\hyperlink{struct_c_o_r_e__nvic_mask__t}{CORE\_nvicMask\_t}}\ *mask);}
+\DoxyCodeLine{00205\ \textcolor{keywordtype}{bool}\ \ \mbox{\hyperlink{group__core_ga788fc3ea8bf0a931e5b3c9266a543c25}{CORE\_NvicIRQDisabled}}(\mbox{\hyperlink{group___e_f_m32_g_g990_f1024_ga4a0206df9604302e0741c1aa4ca1ded3}{IRQn\_Type}}\ irqN);}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00207\ \textcolor{keywordtype}{void}\ *\mbox{\hyperlink{group__core_ga68c6a016bb6c8b59618aa256a718e8f0}{CORE\_GetNvicRamTableHandler}}(\mbox{\hyperlink{group___e_f_m32_g_g990_f1024_ga4a0206df9604302e0741c1aa4ca1ded3}{IRQn\_Type}}\ irqN);}
+\DoxyCodeLine{00208\ \textcolor{keywordtype}{void}\ \ \mbox{\hyperlink{group__core_gaff18df16b51922db178fed08846f2814}{CORE\_SetNvicRamTableHandler}}(\mbox{\hyperlink{group___e_f_m32_g_g990_f1024_ga4a0206df9604302e0741c1aa4ca1ded3}{IRQn\_Type}}\ irqN,\ \textcolor{keywordtype}{void}\ *handler);}
+\DoxyCodeLine{00209\ \textcolor{keywordtype}{void}\ \ \mbox{\hyperlink{group__core_gaea8eb75f2f2a86503a47bf96c76ae332}{CORE\_InitNvicVectorTable}}(uint32\_t\ *sourceTable,}
+\DoxyCodeLine{00210\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ sourceSize,}
+\DoxyCodeLine{00211\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ *targetTable,}
+\DoxyCodeLine{00212\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ uint32\_t\ targetSize,}
+\DoxyCodeLine{00213\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ *defaultHandler,}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ overwriteActive);}
+\DoxyCodeLine{00215\ }
+\DoxyCodeLine{00216\ \textcolor{preprocessor}{\#if\ (SL\_EMLIB\_CORE\_ENABLE\_INTERRUPT\_DISABLED\_TIMING\ ==\ 1)}}
+\DoxyCodeLine{00217\ uint32\_t\ CORE\_get\_max\_time\_critical\_section(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00218\ uint32\_t\ CORE\_get\_max\_time\_atomic\_section(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00219\ \textcolor{keywordtype}{void}\ CORE\_clear\_max\_time\_critical\_section(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00220\ \textcolor{keywordtype}{void}\ CORE\_clear\_max\_time\_atomic\_section(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00221\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00222\ }
+\DoxyCodeLine{00223\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00224\ \}}
+\DoxyCodeLine{00225\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00226\ }
+\DoxyCodeLine{00229\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ EM\_CORE\_H\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

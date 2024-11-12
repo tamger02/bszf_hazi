@@ -1,0 +1,37 @@
+\doxysection{sl\+\_\+assert.\+h}
+\hypertarget{sl__assert_8h_source}{}\label{sl__assert_8h_source}\index{snake/gecko\_sdk\_4.4.4/platform/common/inc/sl\_assert.h@{snake/gecko\_sdk\_4.4.4/platform/common/inc/sl\_assert.h}}
+\mbox{\hyperlink{sl__assert_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#ifndef\ SL\_ASSERT\_H}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ SL\_ASSERT\_H}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00035\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#if\ defined(DOXY\_DOC\_ONLY)}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ DEBUG\_EFM}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{preprocessor}{\#if\ defined(DEBUG\_EFM)\ ||\ defined(DEBUG\_EFM\_USER)}}
+\DoxyCodeLine{00046\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00073\ \textcolor{comment}{/*\ Due\ to\ footprint\ considerations,\ we\ only\ pass\ file\ name\ and\ line\ number,\ */}}
+\DoxyCodeLine{00074\ \textcolor{comment}{/*\ not\ the\ assert\ expression\ (nor\ function\ name\ (C99))\ */}}
+\DoxyCodeLine{00075\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00082\ \textcolor{keywordtype}{void}\ assertEFM(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *file,\ \textcolor{keywordtype}{int}\ line);}
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#define\ EFM\_ASSERT(expr)\ \ \ \ ((expr)\ ?\ ((void)0)\ :\ assertEFM(\_\_FILE\_\_,\ \_\_LINE\_\_))}}
+\DoxyCodeLine{00085\ }
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#define\ EFM\_ASSERT(expr)\ \ \ \ ((void)(expr))}}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ defined(DEBUG\_EFM)\ ||\ defined(DEBUG\_EFM\_USER)\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00096\ \}}
+\DoxyCodeLine{00097\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ SL\_ASSERT\_H\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}
