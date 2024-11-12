@@ -28,8 +28,8 @@ void app_init(void);
  ******************************************************************************/
 void app_process_action(void);
 
-kigyo snake; kigyo peldanyositasa
-uint16_t score;
-alma apple;
+//int snake; int peldanyositasa;
+//uint16_t score;
+//alma apple;
 
 #endif  // APP_H

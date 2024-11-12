@@ -14,5 +14,8 @@ Feladat:
 
 # TODO:
 
-- UART for keys 'b' and 'j'
+- UART init [x]
+- keys 'b' and 'j' []
+- LCD init []
+- Game mech []
 - 

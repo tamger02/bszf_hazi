@@ -18,6 +18,7 @@ C_DEPS :=
 SUBDIRS := \
 . \
 autogen \
+gecko_sdk_4.4.4 \
 gecko_sdk_4.4.4/hardware/board/src \
 gecko_sdk_4.4.4/platform/Device/SiliconLabs/EFM32GG/Source \
 gecko_sdk_4.4.4/platform/common/src \
