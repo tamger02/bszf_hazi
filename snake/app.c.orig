@@ -20,8 +20,10 @@
  ******************************************************************************/
 void app_init(void)
 {
-  //Inicializalasok:
+<<<<<<< HEAD
   //UART_init();
+=======
+  //Inicializalasok:
 
   //Peldanyositott kigyo inicializalasa
   snake.hossz=1; //Kigyo kezdo hossza 1
@@ -53,6 +55,7 @@ void AppleIsEated()
 {
 
   score += 1;
+>>>>>>> domi
 }
 
 /***************************************************************************//**
@@ -60,6 +63,8 @@ void AppleIsEated()
  ******************************************************************************/
 void app_process_action(void)
 {
+<<<<<<< HEAD
+=======
   //A jatek itt egy teljesen statikus allapotbol indul
   //*Kigyonak van kiterjedese
   //*Kigyonak van iranya
@@ -76,5 +81,6 @@ void app_process_action(void)
   MoveSnake();
   //Alma talalat ellenorzese
   AppleIsEated();
+>>>>>>> domi
 
 }

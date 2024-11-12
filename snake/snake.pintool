@@ -2,6 +2,8 @@
 <device:XMLDevice xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:device="http://www.silabs.com/ss/hwconfig/document/device.ecore" name="pin_tool.EFM32GG990F1024" partId="mcu.arm.efm32.gg.efm32gg990f1024" contextId="com.silabs.sdk.stack.super:4.4.4._1225866187">
   <mode name="DefaultMode">
     <property object="DefaultMode" propertyId="mode.diagramLocation" value="100, 100"/>
+    <property object="PF7" propertyId="ABModule.selectedRequirement" value="gpio%T%SL_BOARD_ENABLE_VCOM%T%sl_board_control_config.h"/>
+    <property object="PF7" propertyId="pin.reserve" value="Reserved"/>
   </mode>
   <modeTransition>
     <property object="RESET &#x2192; DefaultMode" propertyId="modeTransition.source" value="RESET"/>
