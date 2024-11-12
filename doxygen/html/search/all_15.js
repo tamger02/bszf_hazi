@@ -5,7 +5,7 @@ var searchData=
   ['u8_2',['u8',['../group___c_m_s_i_s__core___debug_functions.html#gae773bf9f9dac64e6c28b14aa39f74275',1,'ITM_Type::u8'],['../group___c_m_s_i_s__core___debug_functions.html#ga19715ce0fd48d4015c27db6d0a41d49a',1,'ITM_Type::@4::u8']]],
   ['uart0_3',['UART0',['../group___e_f_m32_g_g990_f1024___peripheral___declaration.html#ga0508661f121639ffdee7de2353a0def2',1,'efm32gg990f1024.h']]],
   ['uart0_5fbase_4',['UART0_BASE',['../group___e_f_m32_g_g990_f1024___peripheral___base.html#ga7a07348b4332ff6b88abf6092347deba',1,'efm32gg990f1024.h']]],
-  ['uart0_5frx_5firqhandler_5',['UART0_RX_IRQHandler',['../group___e_f_m32_g_g.html#ga3f216427c6df5e45eb0cceccee1aa5ba',1,'system_efm32gg.h']]],
+  ['uart0_5frx_5firqhandler_5',['UART0_RX_IRQHandler',['../group___e_f_m32_g_g.html#ga3f216427c6df5e45eb0cceccee1aa5ba',1,'UART0_RX_IRQHandler(void):&#160;init_uart.c'],['../group___e_f_m32_g_g.html#ga3f216427c6df5e45eb0cceccee1aa5ba',1,'UART0_RX_IRQHandler(void):&#160;init_uart.c'],['../group___e_f_m32_g_g.html#ga3f216427c6df5e45eb0cceccee1aa5ba',1,'UART0_RX_IRQHandler(void):&#160;init_uart.c']]],
   ['uart0_5frx_5firqn_6',['UART0_RX_IRQn',['../group___e_f_m32_g_g990_f1024.html#gga666eb0caeb12ec0e281415592ae89083a6b5bf0af26d59bbfaf59f89a021b2dbe',1,'efm32gg990f1024.h']]],
   ['uart0_5ftx_5firqhandler_7',['UART0_TX_IRQHandler',['../group___e_f_m32_g_g.html#ga999dab3845c0a90fdc8f0a3974b17e26',1,'system_efm32gg.h']]],
   ['uart0_5ftx_5firqn_8',['UART0_TX_IRQn',['../group___e_f_m32_g_g990_f1024.html#gga666eb0caeb12ec0e281415592ae89083a7281308a299dd030cd5a4f04c9dfda5b',1,'efm32gg990f1024.h']]],
