@@ -18,7 +18,7 @@ var searchData=
   ['memmanage_5fhandler_15',['MemManage_Handler',['../group___e_f_m32_g_g.html#ga3150f74512510287a942624aa9b44cc5',1,'system_efm32gg.h']]],
   ['memory_20map_16',['EFM32GG990F1024 Peripheral Memory Map',['../group___e_f_m32_g_g990_f1024___peripheral___base.html',1,'']]],
   ['memorymanagement_5firqn_17',['MemoryManagement_IRQn',['../group___e_f_m32_g_g990_f1024.html#gga666eb0caeb12ec0e281415592ae89083a33ff1cf7098de65d61b6354fee6cd5aa',1,'efm32gg990f1024.h']]],
-  ['menete_18',['A játék menete',['../index.html#autotoc_md119',1,'']]],
+  ['menete_18',['A játék menete',['../index.html#autotoc_md126',1,'']]],
   ['minor_19',['minor',['../struct_s_y_s_t_e_m___chip_revision___type_def.html#a4c191c69987d7029a7f2ec9510a99898',1,'SYSTEM_ChipRevision_TypeDef']]],
   ['misra_20c_3a2004_20compliance_20exceptions_20',['MISRA-C:2004 Compliance Exceptions',['../_c_m_s_i_s__m_i_s_r_a__exceptions.html',1,'']]],
   ['mmfar_21',['MMFAR',['../group___c_m_s_i_s__core___debug_functions.html#ga2d03d0b7cec2254f39eb1c46c7445e80',1,'SCB_Type']]],

@@ -1,0 +1,51 @@
+\doxysection{Lower\+\_\+\+Type\+Def Struct Reference}
+\hypertarget{struct_lower___type_def}{}\label{struct_lower___type_def}\index{Lower\_TypeDef@{Lower\_TypeDef}}
+
+
+Defines each text symbol\textquotesingle{}s segment in terms of COM and BIT numbers, in a way that we can enumerate each bit for each text segment in the following bit pattern\+:  
+
+
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{struct_lower___type_def_a89ff4cc1d71ec235c3c0708700840e28}{com}} \mbox{[}14\mbox{]}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{struct_lower___type_def_ac2c2c3d8c6709bb44caba8cbb5d28a25}{bit}} \mbox{[}14\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines each text symbol\textquotesingle{}s segment in terms of COM and BIT numbers, in a way that we can enumerate each bit for each text segment in the following bit pattern\+: 
+
+\begin{DoxyVerb}*  -------0------
+*
+* |   \7  |8  /9 |
+* |5   \  |  /   |1
+*
+*  --6---  ---10--
+*
+* |    /  |  \11 |
+* |4  /13 |12 \  |2
+*
+*  -------3------
+* \end{DoxyVerb}
+ E.\+g.\+: First text character bit pattern \#3 (above) is Segment 1D for Display Location COM 3, BIT 0 
+
+\doxysubsection{Field Documentation}
+\Hypertarget{struct_lower___type_def_ac2c2c3d8c6709bb44caba8cbb5d28a25}\index{Lower\_TypeDef@{Lower\_TypeDef}!bit@{bit}}
+\index{bit@{bit}!Lower\_TypeDef@{Lower\_TypeDef}}
+\doxysubsubsection{\texorpdfstring{bit}{bit}}
+{\footnotesize\ttfamily \label{struct_lower___type_def_ac2c2c3d8c6709bb44caba8cbb5d28a25} 
+uint8\+\_\+t Lower\+\_\+\+Type\+Def\+::bit\mbox{[}14\mbox{]}}
+
+LCD bit number \Hypertarget{struct_lower___type_def_a89ff4cc1d71ec235c3c0708700840e28}\index{Lower\_TypeDef@{Lower\_TypeDef}!com@{com}}
+\index{com@{com}!Lower\_TypeDef@{Lower\_TypeDef}}
+\doxysubsubsection{\texorpdfstring{com}{com}}
+{\footnotesize\ttfamily \label{struct_lower___type_def_a89ff4cc1d71ec235c3c0708700840e28} 
+uint8\+\_\+t Lower\+\_\+\+Type\+Def\+::com\mbox{[}14\mbox{]}}
+
+LCD COM line (for multiplexing) 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+snake/segmentlcd\+\_\+individual.\+c\end{DoxyCompactItemize}

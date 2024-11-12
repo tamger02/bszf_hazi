@@ -4,10 +4,15 @@ Here are the data structures with brief descriptions\+:\begin{DoxyCompactList}
 \item\contentsline{section}{\mbox{\hyperlink{struct_a_d_c___type_def}{ADC\+\_\+\+Type\+Def}} }{\pageref{struct_a_d_c___type_def}}{}
 \item\contentsline{section}{\mbox{\hyperlink{struct_a_e_s___type_def}{AES\+\_\+\+Type\+Def}} }{\pageref{struct_a_e_s___type_def}}{}
 \item\contentsline{section}{\mbox{\hyperlink{union_a_p_s_r___type}{APSR\+\_\+\+Type}} \\*Union type to access the Application Program Status Register (APSR) }{\pageref{union_a_p_s_r___type}}{}
+\item\contentsline{section}{\mbox{\hyperlink{struct_a_r_i_n_g___type_def}{ARING\+\_\+\+Type\+Def}} \\*Defines segment COM and BIT fields for A-\/wheel (suited for Anim) }{\pageref{struct_a_r_i_n_g___type_def}}{}
 \item\contentsline{section}{\mbox{\hyperlink{struct_a_r_m___m_p_u___region__t}{ARM\+\_\+\+MPU\+\_\+\+Region\+\_\+t}} }{\pageref{struct_a_r_m___m_p_u___region__t}}{}
+\item\contentsline{section}{\mbox{\hyperlink{struct_a_r_r_a_y___type_def}{ARRAY\+\_\+\+Type\+Def}} \\*Defines segment COM and BIT fields for array }{\pageref{struct_a_r_r_a_y___type_def}}{}
+\item\contentsline{section}{\mbox{\hyperlink{struct_b_a_t_t_e_r_y___type_def}{BATTERY\+\_\+\+Type\+Def}} \\*Defines segment COM and BIT fields for Battery (suited for Anim) }{\pageref{struct_b_a_t_t_e_r_y___type_def}}{}
+\item\contentsline{section}{\mbox{\hyperlink{struct_block___type_def}{Block\+\_\+\+Type\+Def}} \\*Defines segment COM and BIT fields for top and bottom row blocks. The bit pattern shown above for characters can be split into upper and lower portions for animation purposes. There are separate COM and BIT numbers which together represent a set of stacked blocks which can be shown on two rows in the segmented LCD screen }{\pageref{struct_block___type_def}}{}
 \item\contentsline{section}{\mbox{\hyperlink{struct_b_u_r_t_c___r_e_t___type_def}{BURTC\+\_\+\+RET\+\_\+\+Type\+Def}} \\*BURTC\+\_\+\+RET EFM32\+GG BURTC RET }{\pageref{struct_b_u_r_t_c___r_e_t___type_def}}{}
 \item\contentsline{section}{\mbox{\hyperlink{struct_b_u_r_t_c___type_def}{BURTC\+\_\+\+Type\+Def}} }{\pageref{struct_b_u_r_t_c___type_def}}{}
 \item\contentsline{section}{\mbox{\hyperlink{struct_c_a_l_i_b_r_a_t_e___type_def}{CALIBRATE\+\_\+\+Type\+Def}} }{\pageref{struct_c_a_l_i_b_r_a_t_e___type_def}}{}
+\item\contentsline{section}{\mbox{\hyperlink{struct_c_h_a_r___type_def}{CHAR\+\_\+\+Type\+Def}} \\*Defines each text symbol\textquotesingle{}s segment in terms of COM and BIT numbers, in a way that we can enumerate each bit for each text segment in the following bit pattern\+: }{\pageref{struct_c_h_a_r___type_def}}{}
 \item\contentsline{section}{\mbox{\hyperlink{struct_c_m_u___type_def}{CMU\+\_\+\+Type\+Def}} }{\pageref{struct_c_m_u___type_def}}{}
 \item\contentsline{section}{\mbox{\hyperlink{union_c_o_n_t_r_o_l___type}{CONTROL\+\_\+\+Type}} \\*Union type to access the Control Registers (CONTROL) }{\pageref{union_c_o_n_t_r_o_l___type}}{}
 \item\contentsline{section}{\mbox{\hyperlink{struct_c_o_r_e__nvic_mask__t}{CORE\+\_\+nvic\+Mask\+\_\+t}} }{\pageref{struct_c_o_r_e__nvic_mask__t}}{}
@@ -20,6 +25,7 @@ Here are the data structures with brief descriptions\+:\begin{DoxyCompactList}
 \item\contentsline{section}{\mbox{\hyperlink{structdwt__cycle__counter__handle__t}{dwt\+\_\+cycle\+\_\+counter\+\_\+handle\+\_\+t}} }{\pageref{structdwt__cycle__counter__handle__t}}{}
 \item\contentsline{section}{\mbox{\hyperlink{struct_d_w_t___type}{DWT\+\_\+\+Type}} \\*Structure type to access the Data Watchpoint and Trace Register (DWT) }{\pageref{struct_d_w_t___type}}{}
 \item\contentsline{section}{\mbox{\hyperlink{struct_e_b_i___type_def}{EBI\+\_\+\+Type\+Def}} }{\pageref{struct_e_b_i___type_def}}{}
+\item\contentsline{section}{\mbox{\hyperlink{struct_e_m___type_def}{EM\+\_\+\+Type\+Def}} \\*Defines segment COM and BIT fields for Energy Modes on display }{\pageref{struct_e_m___type_def}}{}
 \item\contentsline{section}{\mbox{\hyperlink{struct_e_m_u___type_def}{EMU\+\_\+\+Type\+Def}} }{\pageref{struct_e_m_u___type_def}}{}
 \item\contentsline{section}{\mbox{\hyperlink{struct_e_t_m___type_def}{ETM\+\_\+\+Type\+Def}} }{\pageref{struct_e_t_m___type_def}}{}
 \item\contentsline{section}{\mbox{\hyperlink{struct_g_p_i_o___p___type_def}{GPIO\+\_\+\+P\+\_\+\+Type\+Def}} \\*GPIO\+\_\+P EFM32\+GG GPIO P }{\pageref{struct_g_p_i_o___p___type_def}}{}
@@ -34,7 +40,9 @@ Here are the data structures with brief descriptions\+:\begin{DoxyCompactList}
 \item\contentsline{section}{\mbox{\hyperlink{struct_l_e_s_e_n_s_e___type_def}{LESENSE\+\_\+\+Type\+Def}} }{\pageref{struct_l_e_s_e_n_s_e___type_def}}{}
 \item\contentsline{section}{\mbox{\hyperlink{struct_l_e_t_i_m_e_r___type_def}{LETIMER\+\_\+\+Type\+Def}} }{\pageref{struct_l_e_t_i_m_e_r___type_def}}{}
 \item\contentsline{section}{\mbox{\hyperlink{struct_l_e_u_a_r_t___type_def}{LEUART\+\_\+\+Type\+Def}} }{\pageref{struct_l_e_u_a_r_t___type_def}}{}
+\item\contentsline{section}{\mbox{\hyperlink{struct_lower___type_def}{Lower\+\_\+\+Type\+Def}} \\*Defines each text symbol\textquotesingle{}s segment in terms of COM and BIT numbers, in a way that we can enumerate each bit for each text segment in the following bit pattern\+: }{\pageref{struct_lower___type_def}}{}
 \item\contentsline{section}{\mbox{\hyperlink{struct_m_s_c___type_def}{MSC\+\_\+\+Type\+Def}} }{\pageref{struct_m_s_c___type_def}}{}
+\item\contentsline{section}{\mbox{\hyperlink{struct_n_u_m_b_e_r___type_def}{NUMBER\+\_\+\+Type\+Def}} \\*Defines segment COM and BIT fields numeric display }{\pageref{struct_n_u_m_b_e_r___type_def}}{}
 \item\contentsline{section}{\mbox{\hyperlink{struct_n_v_i_c___type}{NVIC\+\_\+\+Type}} \\*Structure type to access the Nested Vectored Interrupt Controller (NVIC) }{\pageref{struct_n_v_i_c___type}}{}
 \item\contentsline{section}{\mbox{\hyperlink{struct_p_c_n_t___type_def}{PCNT\+\_\+\+Type\+Def}} }{\pageref{struct_p_c_n_t___type_def}}{}
 \item\contentsline{section}{\mbox{\hyperlink{struct_p_r_s___c_h___type_def}{PRS\+\_\+\+CH\+\_\+\+Type\+Def}} \\*PRS\+\_\+\+CH EFM32\+GG PRS CH }{\pageref{struct_p_r_s___c_h___type_def}}{}
@@ -44,6 +52,8 @@ Here are the data structures with brief descriptions\+:\begin{DoxyCompactList}
 \item\contentsline{section}{\mbox{\hyperlink{struct_r_t_c___type_def}{RTC\+\_\+\+Type\+Def}} }{\pageref{struct_r_t_c___type_def}}{}
 \item\contentsline{section}{\mbox{\hyperlink{struct_s_c_b___type}{SCB\+\_\+\+Type}} \\*Structure type to access the System Control Block (SCB) }{\pageref{struct_s_c_b___type}}{}
 \item\contentsline{section}{\mbox{\hyperlink{struct_s_cn_s_c_b___type}{SCn\+SCB\+\_\+\+Type}} \\*Structure type to access the System Control and ID Register not in the SCB }{\pageref{struct_s_cn_s_c_b___type}}{}
+\item\contentsline{section}{\mbox{\hyperlink{union_segment_l_c_d___lower_char_segments___type_def}{Segment\+LCD\+\_\+\+Lower\+Char\+Segments\+\_\+\+Type\+Def}} \\*Typedef to store the segment data of a 14-\/segment alphanumeric character }{\pageref{union_segment_l_c_d___lower_char_segments___type_def}}{}
+\item\contentsline{section}{\mbox{\hyperlink{union_segment_l_c_d___upper_char_segments___type_def}{Segment\+LCD\+\_\+\+Upper\+Char\+Segments\+\_\+\+Type\+Def}} \\*Typedef to store the segment data of a 7-\/segment digit }{\pageref{union_segment_l_c_d___upper_char_segments___type_def}}{}
 \item\contentsline{section}{\mbox{\hyperlink{structsl__memory__region__t}{sl\+\_\+memory\+\_\+region\+\_\+t}} }{\pageref{structsl__memory__region__t}}{}
 \item\contentsline{section}{\mbox{\hyperlink{struct_s_y_s_t_e_m___cal_addr_val___type_def}{SYSTEM\+\_\+\+Cal\+Addr\+Val\+\_\+\+Type\+Def}} }{\pageref{struct_s_y_s_t_e_m___cal_addr_val___type_def}}{}
 \item\contentsline{section}{\mbox{\hyperlink{struct_s_y_s_t_e_m___chip_revision___type_def}{SYSTEM\+\_\+\+Chip\+Revision\+\_\+\+Type\+Def}} }{\pageref{struct_s_y_s_t_e_m___chip_revision___type_def}}{}
@@ -52,6 +62,7 @@ Here are the data structures with brief descriptions\+:\begin{DoxyCompactList}
 \item\contentsline{section}{\mbox{\hyperlink{struct_t_i_m_e_r___type_def}{TIMER\+\_\+\+Type\+Def}} }{\pageref{struct_t_i_m_e_r___type_def}}{}
 \item\contentsline{section}{\mbox{\hyperlink{struct_t_p_i___type}{TPI\+\_\+\+Type}} \\*Structure type to access the Trace Port Interface Register (TPI) }{\pageref{struct_t_p_i___type}}{}
 \item\contentsline{section}{\mbox{\hyperlink{uniont_vector_entry}{t\+Vector\+Entry}} }{\pageref{uniont_vector_entry}}{}
+\item\contentsline{section}{\mbox{\hyperlink{struct_upper___type_def}{Upper\+\_\+\+Type\+Def}} \\*Defines segment COM and BIT fields numeric display }{\pageref{struct_upper___type_def}}{}
 \item\contentsline{section}{\mbox{\hyperlink{struct_u_s_a_r_t___type_def}{USART\+\_\+\+Type\+Def}} }{\pageref{struct_u_s_a_r_t___type_def}}{}
 \item\contentsline{section}{\mbox{\hyperlink{struct_u_s_b___d_i_e_p___type_def}{USB\+\_\+\+DIEP\+\_\+\+Type\+Def}} \\*USB\+\_\+\+DIEP EFM32\+GG USB DIEP }{\pageref{struct_u_s_b___d_i_e_p___type_def}}{}
 \item\contentsline{section}{\mbox{\hyperlink{struct_u_s_b___d_o_e_p___type_def}{USB\+\_\+\+DOEP\+\_\+\+Type\+Def}} \\*USB\+\_\+\+DOEP EFM32\+GG USB DOEP }{\pageref{struct_u_s_b___d_o_e_p___type_def}}{}

@@ -1,0 +1,321 @@
+\doxysubsection{Segment\+Lcd}
+\hypertarget{group___segment_lcd}{}\label{group___segment_lcd}\index{SegmentLcd@{SegmentLcd}}
+
+
+Segment LCD driver.  
+
+
+\doxysubsubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_c_h_a_r___type_def}{CHAR\+\_\+\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em Defines each text symbol\textquotesingle{}s segment in terms of COM and BIT numbers, in a way that we can enumerate each bit for each text segment in the following bit pattern\+: \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_n_u_m_b_e_r___type_def}{NUMBER\+\_\+\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em Defines segment COM and BIT fields numeric display. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_e_m___type_def}{EM\+\_\+\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em Defines segment COM and BIT fields for Energy Modes on display. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_a_r_i_n_g___type_def}{ARING\+\_\+\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em Defines segment COM and BIT fields for A-\/wheel (suited for Anim) \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_b_a_t_t_e_r_y___type_def}{BATTERY\+\_\+\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em Defines segment COM and BIT fields for Battery (suited for Anim) \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_a_r_r_a_y___type_def}{ARRAY\+\_\+\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em Defines segment COM and BIT fields for array. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{struct_block___type_def}{Block\+\_\+\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em Defines segment COM and BIT fields for top and bottom row blocks. The bit pattern shown above for characters can be split into upper and lower portions for animation purposes. There are separate COM and BIT numbers which together represent a set of stacked blocks which can be shown on two rows in the segmented LCD screen. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{group___segment_lcd_ga0b79fa1bdb1363440df485691386a74c}\label{group___segment_lcd_ga0b79fa1bdb1363440df485691386a74c} 
+\#define {\bfseries NUM\+\_\+\+DIGITS}~4
+\item 
+\Hypertarget{group___segment_lcd_ga1fe45ee748c90b606ff29328b06c5dfd}\label{group___segment_lcd_ga1fe45ee748c90b606ff29328b06c5dfd} 
+\#define {\bfseries NUM\+\_\+\+VAL\+\_\+\+MAX}~9999
+\item 
+\Hypertarget{group___segment_lcd_ga02903efa0a0d75ef99a256544d3e56de}\label{group___segment_lcd_ga02903efa0a0d75ef99a256544d3e56de} 
+\#define {\bfseries NUM\+\_\+\+VAL\+\_\+\+MIN}~-\/999
+\item 
+\Hypertarget{group___segment_lcd_ga3c13228c041911d571562c533d71012d}\label{group___segment_lcd_ga3c13228c041911d571562c533d71012d} 
+\#define {\bfseries NUM\+\_\+\+VAL\+\_\+\+MAX\+\_\+\+HEX}~0x\+FFFF
+\item 
+\Hypertarget{group___segment_lcd_ga761a3a9ff1c2165081b1435e1f13e319}\label{group___segment_lcd_ga761a3a9ff1c2165081b1435e1f13e319} 
+\#define {\bfseries ALPHA\+\_\+\+DIGITS}~7
+\item 
+\Hypertarget{group___segment_lcd_gac8386f310d7c77884d2b0f825bb7f34d}\label{group___segment_lcd_gac8386f310d7c77884d2b0f825bb7f34d} 
+\#define {\bfseries ALPHA\+\_\+\+VAL\+\_\+\+MAX}~9999999
+\item 
+\Hypertarget{group___segment_lcd_ga85baf46a96351bed33ab444e2f2ef140}\label{group___segment_lcd_ga85baf46a96351bed33ab444e2f2ef140} 
+\#define {\bfseries ALPHA\+\_\+\+VAL\+\_\+\+MIN}~-\/9999999
+\item 
+\Hypertarget{group___segment_lcd_ga9e2098391becad37898c0916ed180fa4}\label{group___segment_lcd_ga9e2098391becad37898c0916ed180fa4} 
+\#define {\bfseries SEGMENT\+\_\+\+LCD\+\_\+\+BLOCK\+\_\+\+MODE\+\_\+\+BLANK}~0
+\item 
+\Hypertarget{group___segment_lcd_ga6bf39df39a7021324a4ddde3b9b189fd}\label{group___segment_lcd_ga6bf39df39a7021324a4ddde3b9b189fd} 
+\#define {\bfseries SEGMENT\+\_\+\+LCD\+\_\+\+BLOCK\+\_\+\+MODE\+\_\+\+FILL}~1
+\item 
+\Hypertarget{group___segment_lcd_ga02b93c2748b9be74e5ef9bcf09723800}\label{group___segment_lcd_ga02b93c2748b9be74e5ef9bcf09723800} 
+\#define {\bfseries SEGMENT\+\_\+\+LCD\+\_\+\+BLOCK\+\_\+\+MODE\+\_\+\+OUTLINE}~2
+\item 
+\Hypertarget{group___segment_lcd_ga900a3879d98f3595ac89274130bdc5e9}\label{group___segment_lcd_ga900a3879d98f3595ac89274130bdc5e9} 
+\#define {\bfseries SEGMENT\+\_\+\+LCD\+\_\+\+BLOCK\+\_\+\+MODE\+\_\+\+OUTLINE\+\_\+\+FILL}~3
+\item 
+\Hypertarget{group___segment_lcd_gaa9328a76f8a42b446c142e5ea7342113}\label{group___segment_lcd_gaa9328a76f8a42b446c142e5ea7342113} 
+\#define {\bfseries SEGMENT\+\_\+\+LCD\+\_\+\+NUM\+\_\+\+BLOCK\+\_\+\+COLUMNS}~7
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{group___segment_lcd_gafbcfe27efe1304334520446550824d87}{Segment\+LCD\+\_\+\+Block\+Mode\+\_\+\+Type\+Def}} \{ \mbox{\hyperlink{group___segment_lcd_ggafbcfe27efe1304334520446550824d87ad70c39af2cb278c150921cbbd7f56210}{segment\+LCDBlock\+Mode\+Blank}} = SEGMENT\+\_\+\+LCD\+\_\+\+BLOCK\+\_\+\+MODE\+\_\+\+BLANK
+, \mbox{\hyperlink{group___segment_lcd_ggafbcfe27efe1304334520446550824d87acca3f6a670a8172783bb95e64eccbc0a}{segment\+LCDBlock\+Mode\+Fill}} = SEGMENT\+\_\+\+LCD\+\_\+\+BLOCK\+\_\+\+MODE\+\_\+\+FILL
+, \mbox{\hyperlink{group___segment_lcd_ggafbcfe27efe1304334520446550824d87a4d5db2a24c4eac104c3d50f8a2900014}{segment\+LCDBlock\+Mode\+Outline}} = SEGMENT\+\_\+\+LCD\+\_\+\+BLOCK\+\_\+\+MODE\+\_\+\+OUTLINE
+, \mbox{\hyperlink{group___segment_lcd_ggafbcfe27efe1304334520446550824d87a81cb5a22827018014e8e6133daf3d5ae}{segment\+LCDBlock\+Mode\+Outline\+Fill}} = SEGMENT\+\_\+\+LCD\+\_\+\+BLOCK\+\_\+\+MODE\+\_\+\+OUTLINE\+\_\+\+FILL
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{group___segment_lcd_ga67d05be8d95aca955843805bdcc286fa}\label{group___segment_lcd_ga67d05be8d95aca955843805bdcc286fa} 
+void {\bfseries Segment\+LCD\+\_\+\+All\+Off} (void)
+\begin{DoxyCompactList}\small\item\em Disable all segments. \end{DoxyCompactList}\item 
+\Hypertarget{group___segment_lcd_gaa901f5ce7dbfd2416c3a15383f234b10}\label{group___segment_lcd_gaa901f5ce7dbfd2416c3a15383f234b10} 
+void {\bfseries Segment\+LCD\+\_\+\+All\+On} (void)
+\begin{DoxyCompactList}\small\item\em Enable all segments. \end{DoxyCompactList}\item 
+\Hypertarget{group___segment_lcd_ga19fe655661c0ffdba952864c9e28cb0c}\label{group___segment_lcd_ga19fe655661c0ffdba952864c9e28cb0c} 
+void {\bfseries Segment\+LCD\+\_\+\+Alpha\+Number\+Off} (void)
+\begin{DoxyCompactList}\small\item\em Turn all segments on alpha characters in display off. \end{DoxyCompactList}\item 
+\Hypertarget{group___segment_lcd_ga5b56b03013069ab4ebc73a3c230f925f}\label{group___segment_lcd_ga5b56b03013069ab4ebc73a3c230f925f} 
+void {\bfseries Segment\+LCD\+\_\+\+Block} (\mbox{\hyperlink{group___segment_lcd_gafbcfe27efe1304334520446550824d87}{Segment\+LCD\+\_\+\+Block\+Mode\+\_\+\+Type\+Def}} top\+Mode\mbox{[}SEGMENT\+\_\+\+LCD\+\_\+\+NUM\+\_\+\+BLOCK\+\_\+\+COLUMNS\mbox{]}, \mbox{\hyperlink{group___segment_lcd_gafbcfe27efe1304334520446550824d87}{Segment\+LCD\+\_\+\+Block\+Mode\+\_\+\+Type\+Def}} bot\+Mode\mbox{[}SEGMENT\+\_\+\+LCD\+\_\+\+NUM\+\_\+\+BLOCK\+\_\+\+COLUMNS\mbox{]})
+\item 
+\Hypertarget{group___segment_lcd_gaa6396568a708435511368037db1a39a5}\label{group___segment_lcd_gaa6396568a708435511368037db1a39a5} 
+void {\bfseries Segment\+LCD\+\_\+\+Disable} (void)
+\begin{DoxyCompactList}\small\item\em Disables LCD controller. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___segment_lcd_ga0818c866cead74ab3902753a770eb4c4}{Segment\+LCD\+\_\+\+Init}} (bool use\+Boost)
+\begin{DoxyCompactList}\small\item\em Segment LCD Initialization routine for EFM32 STK display. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___segment_lcd_ga245fe077c9db4b869d98144d58a94656}{Segment\+LCD\+\_\+\+Lower\+Hex}} (uint32\+\_\+t num)
+\begin{DoxyCompactList}\small\item\em Write a hexadecimal number on lower alphanumeric part of Segment LCD display. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___segment_lcd_gaa77f1f04af621a6ffe0d3ce40d67ab8a}{Segment\+LCD\+\_\+\+Lower\+Number}} (int num)
+\begin{DoxyCompactList}\small\item\em Write number on lower alphanumeric part of Segment LCD display. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___segment_lcd_gab0279981a6246cd3e6b375b4c90a704b}{Segment\+LCD\+\_\+\+Number}} (int value)
+\begin{DoxyCompactList}\small\item\em Write number on numeric part on Segment LCD display. \end{DoxyCompactList}\item 
+\Hypertarget{group___segment_lcd_gae01d6e9804544e78b4362a7ed04f3895}\label{group___segment_lcd_gae01d6e9804544e78b4362a7ed04f3895} 
+void {\bfseries Segment\+LCD\+\_\+\+Number\+Off} (void)
+\begin{DoxyCompactList}\small\item\em Turn all segments on numeric digits in display off. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___segment_lcd_ga9c02dec45dfa5339da028c046b7e1a36}{Segment\+LCD\+\_\+\+Symbol}} (\mbox{\hyperlink{segmentlcdconfig_8h_ac2c9c608938ac875edfcfec5c75737e4}{lcd\+Symbol}} s, int on)
+\begin{DoxyCompactList}\small\item\em Light up or shut off various symbols on Segment LCD. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___segment_lcd_gaa3bc2f2e951ca4fa0363ceac3f3c3ec3}{Segment\+LCD\+\_\+\+Unsigned\+Hex}} (uint32\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Write hexadecimal number on numeric part on Segment LCD display. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___segment_lcd_gad22a3c06bcbb0ed501b6343c0cd62f86}{Segment\+LCD\+\_\+\+Write}} (const char \texorpdfstring{$\ast$}{*}string)
+\begin{DoxyCompactList}\small\item\em Write text on LCD display. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{group___segment_lcd_ga9a34495c59ae21eb2ccec4fc9ac376a5}{Segment\+LCD\+\_\+seg\+Cnt}} (unsigned int segdl, unsigned int segdh)
+\begin{DoxyCompactList}\small\item\em Counting the number of active segments in a single common line. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___segment_lcd_ga7c4b35ea06dab845d3733f6a118e2206}{Segment\+LCD\+\_\+\+ARing}} (int anum, int on)
+\begin{DoxyCompactList}\small\item\em Light up or shut off Ring of Indicators. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___segment_lcd_ga8e10bb9c31d3b8efe0273940a507e889}{Segment\+LCD\+\_\+\+Battery}} (int battery\+Level)
+\begin{DoxyCompactList}\small\item\em Light up or shut off Battery Indicator. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group___segment_lcd_ga7849f40616f3c310576a083d2956410a}{Segment\+LCD\+\_\+\+Energy\+Mode}} (int em, int on)
+\begin{DoxyCompactList}\small\item\em Light up or shut off Energy Mode indicator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsubsection{Detailed Description}
+Segment LCD driver. 
+
+This driver implements symbol and string write support for EFM32 kits with segment LCD.
+
+\doxysubsubsection{Enumeration Type Documentation}
+\Hypertarget{group___segment_lcd_gafbcfe27efe1304334520446550824d87}\index{SegmentLcd@{SegmentLcd}!SegmentLCD\_BlockMode\_TypeDef@{SegmentLCD\_BlockMode\_TypeDef}}
+\index{SegmentLCD\_BlockMode\_TypeDef@{SegmentLCD\_BlockMode\_TypeDef}!SegmentLcd@{SegmentLcd}}
+\doxysubsubsubsection{\texorpdfstring{SegmentLCD\_BlockMode\_TypeDef}{SegmentLCD\_BlockMode\_TypeDef}}
+{\footnotesize\ttfamily \label{group___segment_lcd_gafbcfe27efe1304334520446550824d87} 
+enum \mbox{\hyperlink{group___segment_lcd_gafbcfe27efe1304334520446550824d87}{Segment\+LCD\+\_\+\+Block\+Mode\+\_\+\+Type\+Def}}}
+
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{segmentLCDBlockModeBlank@{segmentLCDBlockModeBlank}!SegmentLcd@{SegmentLcd}}\index{SegmentLcd@{SegmentLcd}!segmentLCDBlockModeBlank@{segmentLCDBlockModeBlank}}}\Hypertarget{group___segment_lcd_ggafbcfe27efe1304334520446550824d87ad70c39af2cb278c150921cbbd7f56210}\label{group___segment_lcd_gafbcfe27efe1304334520446550824d87} 
+segment\+LCDBlock\+Mode\+Blank&Blank \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{segmentLCDBlockModeFill@{segmentLCDBlockModeFill}!SegmentLcd@{SegmentLcd}}\index{SegmentLcd@{SegmentLcd}!segmentLCDBlockModeFill@{segmentLCDBlockModeFill}}}\Hypertarget{group___segment_lcd_ggafbcfe27efe1304334520446550824d87acca3f6a670a8172783bb95e64eccbc0a}\label{group___segment_lcd_gafbcfe27efe1304334520446550824d87} 
+segment\+LCDBlock\+Mode\+Fill&Fill \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{segmentLCDBlockModeOutline@{segmentLCDBlockModeOutline}!SegmentLcd@{SegmentLcd}}\index{SegmentLcd@{SegmentLcd}!segmentLCDBlockModeOutline@{segmentLCDBlockModeOutline}}}\Hypertarget{group___segment_lcd_ggafbcfe27efe1304334520446550824d87a4d5db2a24c4eac104c3d50f8a2900014}\label{group___segment_lcd_gafbcfe27efe1304334520446550824d87} 
+segment\+LCDBlock\+Mode\+Outline&Outline \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{segmentLCDBlockModeOutlineFill@{segmentLCDBlockModeOutlineFill}!SegmentLcd@{SegmentLcd}}\index{SegmentLcd@{SegmentLcd}!segmentLCDBlockModeOutlineFill@{segmentLCDBlockModeOutlineFill}}}\Hypertarget{group___segment_lcd_ggafbcfe27efe1304334520446550824d87a81cb5a22827018014e8e6133daf3d5ae}\label{group___segment_lcd_gafbcfe27efe1304334520446550824d87} 
+segment\+LCDBlock\+Mode\+Outline\+Fill&Outline and fill \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsubsection{Function Documentation}
+\Hypertarget{group___segment_lcd_ga7c4b35ea06dab845d3733f6a118e2206}\index{SegmentLcd@{SegmentLcd}!SegmentLCD\_ARing@{SegmentLCD\_ARing}}
+\index{SegmentLCD\_ARing@{SegmentLCD\_ARing}!SegmentLcd@{SegmentLcd}}
+\doxysubsubsubsection{\texorpdfstring{SegmentLCD\_ARing()}{SegmentLCD\_ARing()}}
+{\footnotesize\ttfamily \label{group___segment_lcd_ga7c4b35ea06dab845d3733f6a118e2206} 
+void Segment\+LCD\+\_\+\+ARing (\begin{DoxyParamCaption}\item[{int}]{anum}{, }\item[{int}]{on}{}\end{DoxyParamCaption})}
+
+
+
+Light up or shut off Ring of Indicators. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em anum} & "{}\+Segment number"{} on "{}\+Ring"{}, range 0 -\/ 7 \\
+\hline
+{\em on} & Zero is off, non-\/zero is on \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group___segment_lcd_ga8e10bb9c31d3b8efe0273940a507e889}\index{SegmentLcd@{SegmentLcd}!SegmentLCD\_Battery@{SegmentLCD\_Battery}}
+\index{SegmentLCD\_Battery@{SegmentLCD\_Battery}!SegmentLcd@{SegmentLcd}}
+\doxysubsubsubsection{\texorpdfstring{SegmentLCD\_Battery()}{SegmentLCD\_Battery()}}
+{\footnotesize\ttfamily \label{group___segment_lcd_ga8e10bb9c31d3b8efe0273940a507e889} 
+void Segment\+LCD\+\_\+\+Battery (\begin{DoxyParamCaption}\item[{int}]{battery\+Level}{}\end{DoxyParamCaption})}
+
+
+
+Light up or shut off Battery Indicator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em battery\+Level} & Battery Level, 0 to 4 (0 turns all off) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group___segment_lcd_ga7849f40616f3c310576a083d2956410a}\index{SegmentLcd@{SegmentLcd}!SegmentLCD\_EnergyMode@{SegmentLCD\_EnergyMode}}
+\index{SegmentLCD\_EnergyMode@{SegmentLCD\_EnergyMode}!SegmentLcd@{SegmentLcd}}
+\doxysubsubsubsection{\texorpdfstring{SegmentLCD\_EnergyMode()}{SegmentLCD\_EnergyMode()}}
+{\footnotesize\ttfamily \label{group___segment_lcd_ga7849f40616f3c310576a083d2956410a} 
+void Segment\+LCD\+\_\+\+Energy\+Mode (\begin{DoxyParamCaption}\item[{int}]{em}{, }\item[{int}]{on}{}\end{DoxyParamCaption})}
+
+
+
+Light up or shut off Energy Mode indicator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em em} & Energy Mode numer 0 to 4 \\
+\hline
+{\em on} & Zero is off, non-\/zero is on \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group___segment_lcd_ga0818c866cead74ab3902753a770eb4c4}\index{SegmentLcd@{SegmentLcd}!SegmentLCD\_Init@{SegmentLCD\_Init}}
+\index{SegmentLCD\_Init@{SegmentLCD\_Init}!SegmentLcd@{SegmentLcd}}
+\doxysubsubsubsection{\texorpdfstring{SegmentLCD\_Init()}{SegmentLCD\_Init()}}
+{\footnotesize\ttfamily \label{group___segment_lcd_ga0818c866cead74ab3902753a770eb4c4} 
+void Segment\+LCD\+\_\+\+Init (\begin{DoxyParamCaption}\item[{bool}]{use\+Boost}{}\end{DoxyParamCaption})}
+
+
+
+Segment LCD Initialization routine for EFM32 STK display. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em use\+Boost} & Set to use voltage boost \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group___segment_lcd_ga245fe077c9db4b869d98144d58a94656}\index{SegmentLcd@{SegmentLcd}!SegmentLCD\_LowerHex@{SegmentLCD\_LowerHex}}
+\index{SegmentLCD\_LowerHex@{SegmentLCD\_LowerHex}!SegmentLcd@{SegmentLcd}}
+\doxysubsubsubsection{\texorpdfstring{SegmentLCD\_LowerHex()}{SegmentLCD\_LowerHex()}}
+{\footnotesize\ttfamily \label{group___segment_lcd_ga245fe077c9db4b869d98144d58a94656} 
+void Segment\+LCD\+\_\+\+Lower\+Hex (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{num}{}\end{DoxyParamCaption})}
+
+
+
+Write a hexadecimal number on lower alphanumeric part of Segment LCD display. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num} & Hexadecimal number value to put on display, in range 0 to 0x0\+FFFFFFF \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group___segment_lcd_gaa77f1f04af621a6ffe0d3ce40d67ab8a}\index{SegmentLcd@{SegmentLcd}!SegmentLCD\_LowerNumber@{SegmentLCD\_LowerNumber}}
+\index{SegmentLCD\_LowerNumber@{SegmentLCD\_LowerNumber}!SegmentLcd@{SegmentLcd}}
+\doxysubsubsubsection{\texorpdfstring{SegmentLCD\_LowerNumber()}{SegmentLCD\_LowerNumber()}}
+{\footnotesize\ttfamily \label{group___segment_lcd_gaa77f1f04af621a6ffe0d3ce40d67ab8a} 
+void Segment\+LCD\+\_\+\+Lower\+Number (\begin{DoxyParamCaption}\item[{int}]{num}{}\end{DoxyParamCaption})}
+
+
+
+Write number on lower alphanumeric part of Segment LCD display. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num} & Numeric value to put on display, in range -\/9999999 to +9999999 \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group___segment_lcd_gab0279981a6246cd3e6b375b4c90a704b}\index{SegmentLcd@{SegmentLcd}!SegmentLCD\_Number@{SegmentLCD\_Number}}
+\index{SegmentLCD\_Number@{SegmentLCD\_Number}!SegmentLcd@{SegmentLcd}}
+\doxysubsubsubsection{\texorpdfstring{SegmentLCD\_Number()}{SegmentLCD\_Number()}}
+{\footnotesize\ttfamily \label{group___segment_lcd_gab0279981a6246cd3e6b375b4c90a704b} 
+void Segment\+LCD\+\_\+\+Number (\begin{DoxyParamCaption}\item[{int}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Write number on numeric part on Segment LCD display. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Numeric value to put on display, in range -\/999 to +9999 \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group___segment_lcd_ga9a34495c59ae21eb2ccec4fc9ac376a5}\index{SegmentLcd@{SegmentLcd}!SegmentLCD\_segCnt@{SegmentLCD\_segCnt}}
+\index{SegmentLCD\_segCnt@{SegmentLCD\_segCnt}!SegmentLcd@{SegmentLcd}}
+\doxysubsubsubsection{\texorpdfstring{SegmentLCD\_segCnt()}{SegmentLCD\_segCnt()}}
+{\footnotesize\ttfamily \label{group___segment_lcd_ga9a34495c59ae21eb2ccec4fc9ac376a5} 
+unsigned int Segment\+LCD\+\_\+seg\+Cnt (\begin{DoxyParamCaption}\item[{unsigned int}]{segdl}{, }\item[{unsigned int}]{segdh}{}\end{DoxyParamCaption})}
+
+
+
+Counting the number of active segments in a single common line. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & in registers LCD\+\_\+\+SEGDnL and LCD\+\_\+\+SEGDnH (n = common line number) \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group___segment_lcd_ga9c02dec45dfa5339da028c046b7e1a36}\index{SegmentLcd@{SegmentLcd}!SegmentLCD\_Symbol@{SegmentLCD\_Symbol}}
+\index{SegmentLCD\_Symbol@{SegmentLCD\_Symbol}!SegmentLcd@{SegmentLcd}}
+\doxysubsubsubsection{\texorpdfstring{SegmentLCD\_Symbol()}{SegmentLCD\_Symbol()}}
+{\footnotesize\ttfamily \label{group___segment_lcd_ga9c02dec45dfa5339da028c046b7e1a36} 
+void Segment\+LCD\+\_\+\+Symbol (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{segmentlcdconfig_8h_ac2c9c608938ac875edfcfec5c75737e4}{lcd\+Symbol}}}]{s}{, }\item[{int}]{on}{}\end{DoxyParamCaption})}
+
+
+
+Light up or shut off various symbols on Segment LCD. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & Which symbol to turn on or off \\
+\hline
+{\em on} & Zero is off, non-\/zero is on \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group___segment_lcd_gaa3bc2f2e951ca4fa0363ceac3f3c3ec3}\index{SegmentLcd@{SegmentLcd}!SegmentLCD\_UnsignedHex@{SegmentLCD\_UnsignedHex}}
+\index{SegmentLCD\_UnsignedHex@{SegmentLCD\_UnsignedHex}!SegmentLcd@{SegmentLcd}}
+\doxysubsubsubsection{\texorpdfstring{SegmentLCD\_UnsignedHex()}{SegmentLCD\_UnsignedHex()}}
+{\footnotesize\ttfamily \label{group___segment_lcd_gaa3bc2f2e951ca4fa0363ceac3f3c3ec3} 
+void Segment\+LCD\+\_\+\+Unsigned\+Hex (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Write hexadecimal number on numeric part on Segment LCD display. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Numeric value to put on display \\
+\hline
+\end{DoxyParams}
+\Hypertarget{group___segment_lcd_gad22a3c06bcbb0ed501b6343c0cd62f86}\index{SegmentLcd@{SegmentLcd}!SegmentLCD\_Write@{SegmentLCD\_Write}}
+\index{SegmentLCD\_Write@{SegmentLCD\_Write}!SegmentLcd@{SegmentLcd}}
+\doxysubsubsubsection{\texorpdfstring{SegmentLCD\_Write()}{SegmentLCD\_Write()}}
+{\footnotesize\ttfamily \label{group___segment_lcd_gad22a3c06bcbb0ed501b6343c0cd62f86} 
+void Segment\+LCD\+\_\+\+Write (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{string}{}\end{DoxyParamCaption})}
+
+
+
+Write text on LCD display. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & Text string to show on display \\
+\hline
+\end{DoxyParams}

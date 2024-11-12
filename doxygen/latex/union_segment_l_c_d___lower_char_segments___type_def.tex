@@ -1,0 +1,66 @@
+\doxysection{Segment\+LCD\+\_\+\+Lower\+Char\+Segments\+\_\+\+Type\+Def Union Reference}
+\hypertarget{union_segment_l_c_d___lower_char_segments___type_def}{}\label{union_segment_l_c_d___lower_char_segments___type_def}\index{SegmentLCD\_LowerCharSegments\_TypeDef@{SegmentLCD\_LowerCharSegments\_TypeDef}}
+
+
+Typedef to store the segment data of a 14-\/segment alphanumeric character.  
+
+
+
+
+{\ttfamily \#include $<$segmentlcd\+\_\+individual.\+h$>$}
+
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{union_segment_l_c_d___lower_char_segments___type_def_a4a04bdcf3a39be998919bfdca463d48b}\label{union_segment_l_c_d___lower_char_segments___type_def_a4a04bdcf3a39be998919bfdca463d48b} 
+uint16\+\_\+t {\bfseries raw}
+\item 
+\Hypertarget{union_segment_l_c_d___lower_char_segments___type_def_a13d2263fe143d2a17b96a9abc331b879}\label{union_segment_l_c_d___lower_char_segments___type_def_a13d2263fe143d2a17b96a9abc331b879} 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>uint16\_t {\bfseries a}: 1\\
+\>uint16\_t {\bfseries b}: 1\\
+\>uint16\_t {\bfseries c}: 1\\
+\>uint16\_t {\bfseries d}: 1\\
+\>uint16\_t {\bfseries e}: 1\\
+\>uint16\_t {\bfseries f}: 1\\
+\>uint16\_t {\bfseries g}: 1\\
+\>uint16\_t {\bfseries h}: 1\\
+\>uint16\_t {\bfseries j}: 1\\
+\>uint16\_t {\bfseries k}: 1\\
+\>uint16\_t {\bfseries m}: 1\\
+\>uint16\_t {\bfseries n}: 1\\
+\>uint16\_t {\bfseries p}: 1\\
+\>uint16\_t {\bfseries q}: 1\\
+\}; \\
+
+\end{tabbing}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Typedef to store the segment data of a 14-\/segment alphanumeric character. 
+
+The typedef uses a 16 bit integer to store the data. As we need only 14 segments, the upper two bits are unused. The bits are mapped to the segments in the following way\+:
+
+-\/-\/-\/-\/-\/-\/--- 0,a -\/-\/-\/-\/-\/---
+
+\texorpdfstring{$\vert$}{|} \textbackslash{}7,h \texorpdfstring{$\vert$}{|}8,j / \texorpdfstring{$\vert$}{|} \texorpdfstring{$\vert$}{|}5,f \textbackslash{} \texorpdfstring{$\vert$}{|} /9,k \texorpdfstring{$\vert$}{|}1,b \texorpdfstring{$\vert$}{|} \textbackslash{} \texorpdfstring{$\vert$}{|} / \texorpdfstring{$\vert$}{|}
+
+--- 6,g -- -- 10,m --
+
+\texorpdfstring{$\vert$}{|} / \texorpdfstring{$\vert$}{|} \textbackslash{}11,n \texorpdfstring{$\vert$}{|} \texorpdfstring{$\vert$}{|}4,e /13,q \texorpdfstring{$\vert$}{|}12,p \textbackslash{} \texorpdfstring{$\vert$}{|}2,c \texorpdfstring{$\vert$}{|} / \texorpdfstring{$\vert$}{|} \textbackslash{} \texorpdfstring{$\vert$}{|}
+
+-\/-\/-\/-\/-\/-\/--- 3,d -\/-\/-\/-\/-\/---
+
+The bits can be accessed in two ways\+:
+
+
+\begin{DoxyEnumerate}
+\item Using a single, 16 bit value (raw).
+\item Accessing individual bits using bit fields (a..q). 
+\end{DoxyEnumerate}
+
+The documentation for this union was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+snake/\mbox{\hyperlink{segmentlcd__individual_8h}{segmentlcd\+\_\+individual.\+h}}\end{DoxyCompactItemize}

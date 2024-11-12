@@ -1,0 +1,679 @@
+\doxysection{em\+\_\+lcd.\+h}
+\hypertarget{em__lcd_8h_source}{}\label{em__lcd_8h_source}\index{snake/gecko\_sdk\_4.4.4/platform/emlib/inc/em\_lcd.h@{snake/gecko\_sdk\_4.4.4/platform/emlib/inc/em\_lcd.h}}
+\mbox{\hyperlink{em__lcd_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#ifndef\ EM\_LCD\_H}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ EM\_LCD\_H}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{em__device_8h}{em\_device.h}}"{}}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#if\ defined(LCD\_COUNT)\ \&\&\ (LCD\_COUNT\ >\ 0)}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00041\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00049\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{00050\ \textcolor{comment}{\ ********************************\ \ \ DEFINES\ \ \ **********************************}}
+\DoxyCodeLine{00051\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00052\ }
+\DoxyCodeLine{00054\ \textcolor{preprocessor}{\#define\ LCD\_DEFAULT\_CLOCK\_PRESCALER\ 64}}
+\DoxyCodeLine{00056\ \textcolor{preprocessor}{\#define\ LCD\_DEFAULT\_FRAME\_RATE\_DIV\ \ 4}}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#define\ LCD\_DEFAULT\_CONTRAST\ \ \ \ \ \ \ \ 15}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#if\ defined(\_SILICON\_LABS\_32B\_SERIES\_2)}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#if\ defined(LCD\_OCTAPLEX)\ \&\&\ (LCD\_OCTAPLEX\ ==\ 1)}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#define\ LCD\_COM\_LINES\_MAX\ \ \ \ \ \ \ \ \ \ \ (LCD\_COM\_NUM\ +\ LCD\_SEGASCOM\_NUM)}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#define\ LCD\_COM\_LINES\_MAX\ \ \ \ \ \ \ \ \ \ \ LCD\_COM\_NUM}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#define\ LCD\_SEGMENT\_LINES\_MAX\ \ \ \ \ \ \ LCD\_SEG\_NUM}}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{00072\ \textcolor{comment}{\ ********************************\ \ \ ENUMS\ \ \ ************************************}}
+\DoxyCodeLine{00073\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00076\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00078\ \ \ lcdMuxStatic\ \ \ \ \ =\ \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaee8c2c62c4a46003335a6c17c087629c}{LCD\_DISPCTRL\_MUX\_STATIC}},}
+\DoxyCodeLine{00080\ \ \ lcdMuxDuplex\ \ \ \ \ =\ \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gab5645858938d8d3ec0587d26a7cd07a8}{LCD\_DISPCTRL\_MUX\_DUPLEX}},}
+\DoxyCodeLine{00082\ \ \ lcdMuxTriplex\ \ \ \ =\ \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga92c09f088c2820611c5b25e3910315f8}{LCD\_DISPCTRL\_MUX\_TRIPLEX}},}
+\DoxyCodeLine{00084\ \ \ lcdMuxQuadruplex\ =\ \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga0d3c1d7bde5a207ffb0608076210e15e}{LCD\_DISPCTRL\_MUX\_QUADRUPLEX}},}
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#if\ defined(LCD\_DISPCTRL\_MUXE\_MUXE)}}
+\DoxyCodeLine{00087\ \ \ lcdMuxSextaplex\ \ =\ \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaf15365eac026ab7904cb9be8768e7010}{LCD\_DISPCTRL\_MUXE\_MUXE}}\ |\ \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gab5645858938d8d3ec0587d26a7cd07a8}{LCD\_DISPCTRL\_MUX\_DUPLEX}},}
+\DoxyCodeLine{00089\ \ \ lcdMuxOctaplex\ \ \ =\ \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaf15365eac026ab7904cb9be8768e7010}{LCD\_DISPCTRL\_MUXE\_MUXE}}\ |\ \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga0d3c1d7bde5a207ffb0608076210e15e}{LCD\_DISPCTRL\_MUX\_QUADRUPLEX}}}
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#elif\ defined(LCD\_DISPCTRL\_MUX\_SEXTAPLEX)}}
+\DoxyCodeLine{00092\ \ \ lcdMuxSextaplex\ \ =\ LCD\_DISPCTRL\_MUX\_SEXTAPLEX,}
+\DoxyCodeLine{00094\ \ \ lcdMuxOctaplex\ \ \ =\ LCD\_DISPCTRL\_MUX\_OCTAPLEX,}
+\DoxyCodeLine{00095\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00096\ \}\ LCD\_Mux\_TypeDef;}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00099\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#if\ defined(\_SILICON\_LABS\_32B\_SERIES\_2)}}
+\DoxyCodeLine{00102\ \ \ lcdWaveLowPower\ =\ LCD\_DISPCTRL\_WAVE\_TYPEB,}
+\DoxyCodeLine{00104\ \ \ lcdWaveNormal\ \ \ =\ LCD\_DISPCTRL\_WAVE\_TYPEA}
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00107\ \ \ lcdWaveLowPower\ =\ \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga35bd071eb1a97ab8800030b5ddcc7312}{LCD\_DISPCTRL\_WAVE\_LOWPOWER}},}
+\DoxyCodeLine{00109\ \ \ lcdWaveNormal\ \ \ =\ \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga62d049a4b7253c3cf20824f32f9e7318}{LCD\_DISPCTRL\_WAVE\_NORMAL}}}
+\DoxyCodeLine{00110\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00111\ \}\ LCD\_Wave\_TypeDef;}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00114\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00116\ \ \ lcdBiasStatic\ \ \ \ =\ \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga588959516d2fb24b12184f4869419e5c}{LCD\_DISPCTRL\_BIAS\_STATIC}},}
+\DoxyCodeLine{00118\ \ \ lcdBiasOneHalf\ \ \ =\ \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga3acf7a4dff9a95a529d1113b13a3cc8b}{LCD\_DISPCTRL\_BIAS\_ONEHALF}},}
+\DoxyCodeLine{00120\ \ \ lcdBiasOneThird\ \ =\ \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga3fdaa9d9b9eeabe2f8869189b5c43c81}{LCD\_DISPCTRL\_BIAS\_ONETHIRD}},}
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\#if\ defined(LCD\_DISPCTRL\_BIAS\_ONEFOURTH)}}
+\DoxyCodeLine{00123\ \ \ lcdBiasOneFourth\ =\ \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga99e952b2a1366858364bca7366c18121}{LCD\_DISPCTRL\_BIAS\_ONEFOURTH}},}
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00125\ \}\ LCD\_Bias\_TypeDef;}
+\DoxyCodeLine{00126\ }
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\#if\ defined(\_SILICON\_LABS\_32B\_SERIES\_0)}}
+\DoxyCodeLine{00129\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00131\ \ \ lcdVLCDSelVDD\ \ \ \ \ \ \ =\ \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gad1fa9d75fab334c26709667ba912498c}{LCD\_DISPCTRL\_VLCDSEL\_VDD}},}
+\DoxyCodeLine{00133\ \ \ lcdVLCDSelVExtBoost\ =\ \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga716e9c89ef8635cd20533751e4edfbb6}{LCD\_DISPCTRL\_VLCDSEL\_VEXTBOOST}}}
+\DoxyCodeLine{00134\ \}\ LCD\_VLCDSel\_TypeDef;}
+\DoxyCodeLine{00135\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00136\ }
+\DoxyCodeLine{00138\ \textcolor{preprocessor}{\#if\ defined(\_SILICON\_LABS\_32B\_SERIES\_0)}}
+\DoxyCodeLine{00139\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00141\ \ \ lcdConConfVLCD\ =\ \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga9c8b8a433f23583f84ab7d72a4d79503}{LCD\_DISPCTRL\_CONCONF\_VLCD}},}
+\DoxyCodeLine{00143\ \ \ lcdConConfGND\ \ =\ \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga2a082e775dc696844546549169a00d61}{LCD\_DISPCTRL\_CONCONF\_GND}}}
+\DoxyCodeLine{00144\ \}\ LCD\_ConConf\_TypeDef;}
+\DoxyCodeLine{00145\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00146\ }
+\DoxyCodeLine{00147\ \textcolor{preprocessor}{\#if\ defined(\_SILICON\_LABS\_32B\_SERIES\_0)}}
+\DoxyCodeLine{00149\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00150\ \ \ lcdVBoostLevel0\ =\ \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaffd547b2a5bfee5ede9cd35a44b2cc4f}{LCD\_DISPCTRL\_VBLEV\_LEVEL0}},\ }
+\DoxyCodeLine{00151\ \ \ lcdVBoostLevel1\ =\ \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga09ad8846de68e2d35119ffd4bae0cb4b}{LCD\_DISPCTRL\_VBLEV\_LEVEL1}},\ }
+\DoxyCodeLine{00152\ \ \ lcdVBoostLevel2\ =\ \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga711747230c0fda357655f6ed5abd8abe}{LCD\_DISPCTRL\_VBLEV\_LEVEL2}},\ }
+\DoxyCodeLine{00153\ \ \ lcdVBoostLevel3\ =\ \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga71685f3046372118bd7f7ecfc9dcc01f}{LCD\_DISPCTRL\_VBLEV\_LEVEL3}},\ }
+\DoxyCodeLine{00154\ \ \ lcdVBoostLevel4\ =\ \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gadbf686646d8f114d07a19a32d8a49a4f}{LCD\_DISPCTRL\_VBLEV\_LEVEL4}},\ }
+\DoxyCodeLine{00155\ \ \ lcdVBoostLevel5\ =\ \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga3ab0ad9cabb0a28ccb53730abd2ac06c}{LCD\_DISPCTRL\_VBLEV\_LEVEL5}},\ }
+\DoxyCodeLine{00156\ \ \ lcdVBoostLevel6\ =\ \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga048ccca5d4d378ee35bc5b6a25a57b84}{LCD\_DISPCTRL\_VBLEV\_LEVEL6}},\ }
+\DoxyCodeLine{00157\ \ \ lcdVBoostLevel7\ =\ \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gade7c93a90443cd948ed6441217edcf5c}{LCD\_DISPCTRL\_VBLEV\_LEVEL7}}\ \ }
+\DoxyCodeLine{00158\ \}\ LCD\_VBoostLevel\_TypeDef;}
+\DoxyCodeLine{00159\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00161\ \textcolor{preprocessor}{\#if\ defined(\_SILICON\_LABS\_32B\_SERIES\_1)\ ||\ defined(\_SILICON\_LABS\_32B\_SERIES\_2)}}
+\DoxyCodeLine{00163\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00164\ \textcolor{preprocessor}{\#if\ defined(\_SILICON\_LABS\_32B\_SERIES\_1)}}
+\DoxyCodeLine{00165\ \ \ lcdModeNoExtCap\ =\ LCD\_DISPCTRL\_MODE\_NOEXTCAP,\ }
+\DoxyCodeLine{00166\ \ \ lcdModeStepDown\ =\ LCD\_DISPCTRL\_MODE\_STEPDOWN,\ }
+\DoxyCodeLine{00167\ \ \ lcdModeCpIntOsc\ =\ LCD\_DISPCTRL\_MODE\_CPINTOSC,\ }
+\DoxyCodeLine{00168\ \textcolor{preprocessor}{\#elif\ defined(\_SILICON\_LABS\_32B\_SERIES\_2)}}
+\DoxyCodeLine{00169\ \ \ lcdModeStepDown\ \ \ =\ LCD\_BIASCTRL\_MODE\_STEPDOWN,\ \ \ }
+\DoxyCodeLine{00170\ \ \ lcdModeChargePump\ =\ LCD\_BIASCTRL\_MODE\_CHARGEPUMP,\ }
+\DoxyCodeLine{00171\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00172\ \}\ LCD\_Mode\_Typedef;}
+\DoxyCodeLine{00173\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00174\ }
+\DoxyCodeLine{00176\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00177\ \textcolor{preprocessor}{\#if\ defined(\_SILICON\_LABS\_32B\_SERIES\_2)}}
+\DoxyCodeLine{00179\ \ \ lcdFCPrescDiv1\ =\ LCD\_BACFG\_FCPRESC\_DIV1,}
+\DoxyCodeLine{00181\ \ \ lcdFCPrescDiv2\ =\ LCD\_BACFG\_FCPRESC\_DIV2,}
+\DoxyCodeLine{00183\ \ \ lcdFCPrescDiv4\ =\ LCD\_BACFG\_FCPRESC\_DIV4,}
+\DoxyCodeLine{00185\ \ \ lcdFCPrescDiv8\ =\ LCD\_BACFG\_FCPRESC\_DIV8}
+\DoxyCodeLine{00186\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00188\ \ \ lcdFCPrescDiv1\ =\ \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaad7699a92c900f110c56466f426d6ca6}{LCD\_BACTRL\_FCPRESC\_DIV1}},}
+\DoxyCodeLine{00190\ \ \ lcdFCPrescDiv2\ =\ \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gaf93f8cff74cfca9b3522444fa5dac430}{LCD\_BACTRL\_FCPRESC\_DIV2}},}
+\DoxyCodeLine{00192\ \ \ lcdFCPrescDiv4\ =\ \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga4dca7ee710b67c7d766af03d8fe147dc}{LCD\_BACTRL\_FCPRESC\_DIV4}},}
+\DoxyCodeLine{00194\ \ \ lcdFCPrescDiv8\ =\ \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga0f614f3dea8e317279b998575b78ab5d}{LCD\_BACTRL\_FCPRESC\_DIV8}}}
+\DoxyCodeLine{00195\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00196\ \}\ LCD\_FCPreScale\_TypeDef;}
+\DoxyCodeLine{00197\ }
+\DoxyCodeLine{00198\ \textcolor{preprocessor}{\#if\ defined(\_SILICON\_LABS\_32B\_SERIES\_0)}}
+\DoxyCodeLine{00200\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00202\ \ \ lcdSegment0\_3\ \ \ =\ (1\ <<\ 0),}
+\DoxyCodeLine{00204\ \ \ lcdSegment4\_7\ \ \ =\ (1\ <<\ 1),}
+\DoxyCodeLine{00206\ \ \ lcdSegment8\_11\ \ =\ (1\ <<\ 2),}
+\DoxyCodeLine{00208\ \ \ lcdSegment12\_15\ =\ (1\ <<\ 3),}
+\DoxyCodeLine{00210\ \ \ lcdSegment16\_19\ =\ (1\ <<\ 4),}
+\DoxyCodeLine{00212\ \ \ lcdSegment20\_23\ =\ (1\ <<\ 5),}
+\DoxyCodeLine{00213\ \textcolor{preprocessor}{\#if\ defined(\_LCD\_SEGD0L\_MASK)\ \&\&\ (\_LCD\_SEGD0L\_MASK\ ==\ 0x00FFFFFFUL)}}
+\DoxyCodeLine{00215\ \ \ lcdSegmentAll\ \ \ =\ (0x003f)}
+\DoxyCodeLine{00216\ \#elif\ defined(\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga635c59afd0b320b73342b550b835542c}{\_LCD\_SEGD0H\_MASK}})\ \&\&\ (\mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga635c59afd0b320b73342b550b835542c}{\_LCD\_SEGD0H\_MASK}}\ ==\ 0x000000FFUL)}
+\DoxyCodeLine{00218\ \ \ lcdSegment24\_27\ =\ (1\ <<\ 6),}
+\DoxyCodeLine{00220\ \ \ lcdSegment28\_31\ =\ (1\ <<\ 7),}
+\DoxyCodeLine{00222\ \ \ lcdSegment32\_35\ =\ (1\ <<\ 8),}
+\DoxyCodeLine{00224\ \ \ lcdSegment36\_39\ =\ (1\ <<\ 9),}
+\DoxyCodeLine{00226\ \ \ lcdSegmentAll\ \ \ =\ (0x03ff)}
+\DoxyCodeLine{00227\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00228\ \}\ LCD\_SegmentRange\_TypeDef;}
+\DoxyCodeLine{00229\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00230\ }
+\DoxyCodeLine{00232\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00234\ \ \ lcdUpdateCtrlRegular\ \ \ \ \ \ =\ \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga073bbc6cb5098a15bb8cbede6e7f82cd}{LCD\_CTRL\_UDCTRL\_REGULAR}},}
+\DoxyCodeLine{00236\ \ \ lcdUpdateCtrlFCEvent\ \ \ \ \ \ =\ \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga0a290a7030ea3937addb47ff39b4d988}{LCD\_CTRL\_UDCTRL\_FCEVENT}},}
+\DoxyCodeLine{00238\ \ \ lcdUpdateCtrlFrameStart\ \ \ =\ \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga59509398ebc6abe189a47cf618173e94}{LCD\_CTRL\_UDCTRL\_FRAMESTART}},}
+\DoxyCodeLine{00239\ \textcolor{preprocessor}{\#if\ defined(\_SILICON\_LABS\_32B\_SERIES\_2)}}
+\DoxyCodeLine{00241\ \ \ lcdUpdateCtrlDisplayEvent\ =\ LCD\_CTRL\_UDCTRL\_DISPLAYEVENT}
+\DoxyCodeLine{00242\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00243\ \}\ LCD\_UpdateCtrl\_TypeDef;}
+\DoxyCodeLine{00244\ }
+\DoxyCodeLine{00245\ \textcolor{preprocessor}{\#if\ defined(\_SILICON\_LABS\_32B\_SERIES\_2)}}
+\DoxyCodeLine{00247\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00249\ \ \ lcdLoadAddrNone\ \ \ =\ 0,}
+\DoxyCodeLine{00251\ \ \ lcdLoadAddrBactrl\ =\ LCD\_UPDATECTRL\_LOADADDR\_BACTRLWR,}
+\DoxyCodeLine{00253\ \ \ lcdLoadAddrAregA\ \ =\ LCD\_UPDATECTRL\_LOADADDR\_AREGAWR,}
+\DoxyCodeLine{00255\ \ \ lcdLoadAddrAregB\ \ =\ LCD\_UPDATECTRL\_LOADADDR\_AREGBWR,}
+\DoxyCodeLine{00257\ \ \ lcdLoadAddrSegd0\ \ =\ LCD\_UPDATECTRL\_LOADADDR\_SEGD0WR,}
+\DoxyCodeLine{00259\ \ \ lcdLoadAddrSegd1\ \ =\ LCD\_UPDATECTRL\_LOADADDR\_SEGD1WR,}
+\DoxyCodeLine{00261\ \ \ lcdLoadAddrSegd2\ \ =\ LCD\_UPDATECTRL\_LOADADDR\_SEGD2WR,}
+\DoxyCodeLine{00263\ \ \ lcdLoadAddrSegd3\ \ =\ LCD\_UPDATECTRL\_LOADADDR\_SEGD3WR,}
+\DoxyCodeLine{00264\ \textcolor{preprocessor}{\#if\ defined(LCD\_UPDATECTRL\_LOADADDR\_SEGD4WR)}}
+\DoxyCodeLine{00266\ \ \ lcdLoadAddrSegd4\ \ =\ LCD\_UPDATECTRL\_LOADADDR\_SEGD4WR,}
+\DoxyCodeLine{00267\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00268\ \textcolor{preprocessor}{\#if\ defined(LCD\_UPDATECTRL\_LOADADDR\_SEGD5WR)}}
+\DoxyCodeLine{00270\ \ \ lcdLoadAddrSegd5\ \ =\ LCD\_UPDATECTRL\_LOADADDR\_SEGD5WR,}
+\DoxyCodeLine{00271\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00272\ \textcolor{preprocessor}{\#if\ defined(LCD\_UPDATECTRL\_LOADADDR\_SEGD6WR)}}
+\DoxyCodeLine{00274\ \ \ lcdLoadAddrSegd6\ \ =\ LCD\_UPDATECTRL\_LOADADDR\_SEGD6WR,}
+\DoxyCodeLine{00275\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00276\ \textcolor{preprocessor}{\#if\ defined(LCD\_UPDATECTRL\_LOADADDR\_SEGD7WR)}}
+\DoxyCodeLine{00278\ \ \ lcdLoadAddrSegd7\ \ =\ LCD\_UPDATECTRL\_LOADADDR\_SEGD7WR,}
+\DoxyCodeLine{00279\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00280\ \}\ LCD\_LoadAddr\_TypeDef;}
+\DoxyCodeLine{00281\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00282\ }
+\DoxyCodeLine{00284\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00286\ \ \ lcdAnimShiftNone\ \ =\ \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga3a5053148a3a32119bdf08e7f2933d34}{\_LCD\_BACTRL\_AREGASC\_NOSHIFT}},}
+\DoxyCodeLine{00288\ \ \ lcdAnimShiftLeft\ \ =\ \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga0a5a90f5e56614d367189da35590494e}{\_LCD\_BACTRL\_AREGASC\_SHIFTLEFT}},}
+\DoxyCodeLine{00290\ \ \ lcdAnimShiftRight\ =\ \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga05246ec575151d2776d3663e94e934ea}{\_LCD\_BACTRL\_AREGASC\_SHIFTRIGHT}}}
+\DoxyCodeLine{00291\ \}\ LCD\_AnimShift\_TypeDef;}
+\DoxyCodeLine{00292\ }
+\DoxyCodeLine{00294\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00296\ \ \ lcdAnimLogicAnd\ =\ \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga8fc9c7ab21f18164db2b2aca96227c78}{LCD\_BACTRL\_ALOGSEL\_AND}},}
+\DoxyCodeLine{00298\ \ \ lcdAnimLogicOr\ \ =\ \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga1e5d8a3bea08817e8a2f540243730eaa}{LCD\_BACTRL\_ALOGSEL\_OR}}}
+\DoxyCodeLine{00299\ \}\ LCD\_AnimLogic\_TypeDef;}
+\DoxyCodeLine{00300\ }
+\DoxyCodeLine{00301\ \textcolor{preprocessor}{\#if\ defined(\_LCD\_BACTRL\_ALOC\_MASK)}}
+\DoxyCodeLine{00303\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00305\ \ \ lcdAnimLocSeg0To7\ \ =\ \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga4e869c30c9d893e20fd5b5a5102966a9}{LCD\_BACTRL\_ALOC\_SEG0TO7}},}
+\DoxyCodeLine{00307\ \ \ lcdAnimLocSeg8To15\ =\ \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga2b96ff5b4f9cc964184af81fe145da85}{LCD\_BACTRL\_ALOC\_SEG8TO15}}}
+\DoxyCodeLine{00308\ \}\ LCD\_AnimLoc\_TypeDef;}
+\DoxyCodeLine{00309\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00310\ }
+\DoxyCodeLine{00311\ \textcolor{preprocessor}{\#if\ defined(\_LCD\_DISPCTRL\_CHGRDST\_MASK)}}
+\DoxyCodeLine{00313\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00315\ \ \ lcdChargeRedistributionDisable\ \ \ \ =\ LCD\_DISPCTRL\_CHGRDST\_DISABLE,}
+\DoxyCodeLine{00317\ \ \ lcdChargeRedistributionEnable\ \ \ \ \ =\ LCD\_DISPCTRL\_CHGRDST\_ONE,}
+\DoxyCodeLine{00319\ \ \ lcdChargeRedistributionTwoCycle\ \ \ =\ LCD\_DISPCTRL\_CHGRDST\_TWO,}
+\DoxyCodeLine{00321\ \ \ lcdChargeRedistributionThreeCycle\ =\ LCD\_DISPCTRL\_CHGRDST\_THREE,}
+\DoxyCodeLine{00323\ \ \ lcdChargeRedistributionFourCycle\ \ =\ LCD\_DISPCTRL\_CHGRDST\_FOUR}
+\DoxyCodeLine{00324\ \}\ LCD\_ChargeRedistribution\_TypeDef;}
+\DoxyCodeLine{00325\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00326\ }
+\DoxyCodeLine{00327\ \textcolor{preprocessor}{\#if\ defined(\_SILICON\_LABS\_32B\_SERIES\_2)}}
+\DoxyCodeLine{00329\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00330\ \ \ lcdDmaModeDisable\ \ \ \ \ \ =\ LCD\_BIASCTRL\_DMAMODE\_DMADISABLE,\ \ \ }
+\DoxyCodeLine{00331\ \ \ lcdDmaModeFrameCounterEvent\ \ \ =\ LCD\_BIASCTRL\_DMAMODE\_DMAFC,\ }
+\DoxyCodeLine{00332\ \ \ lcdDmaModeDisplayEvent\ =\ LCD\_BIASCTRL\_DMAMODE\_DMADISPLAY\ \ \ \ }
+\DoxyCodeLine{00333\ \}\ LCD\_DmaMode\_Typedef;}
+\DoxyCodeLine{00334\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00335\ }
+\DoxyCodeLine{00336\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{00337\ \textcolor{comment}{\ *******************************\ \ \ STRUCTS\ \ \ ***********************************}}
+\DoxyCodeLine{00338\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00339\ }
+\DoxyCodeLine{00341\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00343\ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ enable;}
+\DoxyCodeLine{00345\ \ \ uint32\_t\ \ \ \ \ \ \ \ \ \ \ \ \ \ AReg;}
+\DoxyCodeLine{00347\ \ \ LCD\_AnimShift\_TypeDef\ AShift;}
+\DoxyCodeLine{00349\ \ \ uint32\_t\ \ \ \ \ \ \ \ \ \ \ \ \ \ BReg;}
+\DoxyCodeLine{00351\ \ \ LCD\_AnimShift\_TypeDef\ BShift;}
+\DoxyCodeLine{00353\ \ \ LCD\_AnimLogic\_TypeDef\ animLogic;}
+\DoxyCodeLine{00354\ \textcolor{preprocessor}{\#if\ defined(\_LCD\_BACTRL\_ALOC\_MASK)}}
+\DoxyCodeLine{00356\ \ \ LCD\_AnimLoc\_TypeDef\ \ \ startSeg;}
+\DoxyCodeLine{00357\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00358\ \}\ LCD\_AnimInit\_TypeDef;}
+\DoxyCodeLine{00359\ }
+\DoxyCodeLine{00361\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00363\ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ enable;}
+\DoxyCodeLine{00365\ \ \ uint32\_t\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ top;}
+\DoxyCodeLine{00367\ \ \ LCD\_FCPreScale\_TypeDef\ prescale;}
+\DoxyCodeLine{00368\ \}\ LCD\_FrameCountInit\_TypeDef;}
+\DoxyCodeLine{00369\ }
+\DoxyCodeLine{00371\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\{}
+\DoxyCodeLine{00373\ \ \ \textcolor{keywordtype}{bool}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ enable;}
+\DoxyCodeLine{00375\ \ \ LCD\_Mux\_TypeDef\ \ \ \ \ mux;}
+\DoxyCodeLine{00377\ \ \ LCD\_Bias\_TypeDef\ \ \ \ bias;}
+\DoxyCodeLine{00379\ \ \ LCD\_Wave\_TypeDef\ \ \ \ wave;}
+\DoxyCodeLine{00380\ \textcolor{preprocessor}{\#if\ defined(\_SILICON\_LABS\_32B\_SERIES\_0)}}
+\DoxyCodeLine{00382\ \ \ LCD\_VLCDSel\_TypeDef\ vlcd;}
+\DoxyCodeLine{00384\ \ \ LCD\_ConConf\_TypeDef\ contrast;}
+\DoxyCodeLine{00385\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00386\ \textcolor{preprocessor}{\#if\ defined(\_SILICON\_LABS\_32B\_SERIES\_1)\ ||\ defined(\_SILICON\_LABS\_32B\_SERIES\_2)}}
+\DoxyCodeLine{00388\ \ \ LCD\_Mode\_Typedef\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ mode;}
+\DoxyCodeLine{00390\ \ \ LCD\_ChargeRedistribution\_TypeDef\ \ \ \ \ \ chargeRedistribution;}
+\DoxyCodeLine{00392\ \ \ uint8\_t\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ frameRateDivider;}
+\DoxyCodeLine{00394\ \ \ \textcolor{keywordtype}{int}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ contrastLevel;}
+\DoxyCodeLine{00395\ \textcolor{preprocessor}{\#if\ defined(\_SILICON\_LABS\_32B\_SERIES\_2)}}
+\DoxyCodeLine{00397\ \ \ uint32\_t\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ clockPrescaler;}
+\DoxyCodeLine{00398\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00399\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00400\ \}\ LCD\_Init\_TypeDef;}
+\DoxyCodeLine{00401\ }
+\DoxyCodeLine{00403\ \textcolor{preprocessor}{\#if\ defined(\_SILICON\_LABS\_32B\_SERIES\_0)}}
+\DoxyCodeLine{00404\ \textcolor{preprocessor}{\#define\ LCD\_INIT\_DEFAULT\ \(\backslash\)}}
+\DoxyCodeLine{00405\ \textcolor{preprocessor}{\ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00406\ \textcolor{preprocessor}{\ \ \ \ true,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00407\ \textcolor{preprocessor}{\ \ \ \ lcdMuxQuadruplex,\ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00408\ \textcolor{preprocessor}{\ \ \ \ lcdBiasOneThird,\ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00409\ \textcolor{preprocessor}{\ \ \ \ lcdWaveLowPower,\ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00410\ \textcolor{preprocessor}{\ \ \ \ lcdVLCDSelVDD,\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00411\ \textcolor{preprocessor}{\ \ \ \ lcdConConfVLCD,\ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00412\ \textcolor{preprocessor}{\ \ \}}}
+\DoxyCodeLine{00413\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00414\ }
+\DoxyCodeLine{00415\ \textcolor{preprocessor}{\#if\ defined(\_SILICON\_LABS\_32B\_SERIES\_1)}}
+\DoxyCodeLine{00416\ \textcolor{preprocessor}{\#define\ LCD\_INIT\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00417\ \textcolor{preprocessor}{\ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00418\ \textcolor{preprocessor}{\ \ \ \ true,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00419\ \textcolor{preprocessor}{\ \ \ \ lcdMuxOctaplex,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00420\ \textcolor{preprocessor}{\ \ \ \ lcdBiasOneFourth,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00421\ \textcolor{preprocessor}{\ \ \ \ lcdWaveLowPower,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00422\ \textcolor{preprocessor}{\ \ \ \ lcdModeNoExtCap,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00423\ \textcolor{preprocessor}{\ \ \ \ lcdChargeRedistributionEnable,\ \(\backslash\)}}
+\DoxyCodeLine{00424\ \textcolor{preprocessor}{\ \ \ \ LCD\_DEFAULT\_FRAME\_RATE\_DIV,\ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00425\ \textcolor{preprocessor}{\ \ \ \ LCD\_DEFAULT\_CONTRAST\ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00426\ \textcolor{preprocessor}{\ \ \}}}
+\DoxyCodeLine{00427\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00428\ }
+\DoxyCodeLine{00429\ \textcolor{preprocessor}{\#if\ defined(\_SILICON\_LABS\_32B\_SERIES\_2)}}
+\DoxyCodeLine{00430\ \textcolor{preprocessor}{\#define\ LCD\_INIT\_DEFAULT\ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00431\ \textcolor{preprocessor}{\ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00432\ \textcolor{preprocessor}{\ \ \ \ true,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00433\ \textcolor{preprocessor}{\ \ \ \ lcdMuxQuadruplex,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00434\ \textcolor{preprocessor}{\ \ \ \ lcdBiasOneFourth,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00435\ \textcolor{preprocessor}{\ \ \ \ lcdWaveLowPower,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00436\ \textcolor{preprocessor}{\ \ \ \ lcdModeStepDown,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00437\ \textcolor{preprocessor}{\ \ \ \ lcdChargeRedistributionEnable,\ \(\backslash\)}}
+\DoxyCodeLine{00438\ \textcolor{preprocessor}{\ \ \ \ LCD\_DEFAULT\_FRAME\_RATE\_DIV,\ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00439\ \textcolor{preprocessor}{\ \ \ \ LCD\_DEFAULT\_CONTRAST,\ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00440\ \textcolor{preprocessor}{\ \ \ \ LCD\_DEFAULT\_CLOCK\_PRESCALER\ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00441\ \textcolor{preprocessor}{\ \ \}}}
+\DoxyCodeLine{00442\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00443\ }
+\DoxyCodeLine{00444\ \textcolor{comment}{/*******************************************************************************}}
+\DoxyCodeLine{00445\ \textcolor{comment}{\ *****************************\ \ \ PROTOTYPES\ \ \ **********************************}}
+\DoxyCodeLine{00446\ \textcolor{comment}{\ ******************************************************************************/}}
+\DoxyCodeLine{00447\ }
+\DoxyCodeLine{00448\ \textcolor{keywordtype}{void}\ LCD\_Init(\textcolor{keyword}{const}\ LCD\_Init\_TypeDef\ *lcdInit);}
+\DoxyCodeLine{00449\ \textcolor{preprocessor}{\#if\ defined(\_SILICON\_LABS\_32B\_SERIES\_0)}}
+\DoxyCodeLine{00450\ \textcolor{keywordtype}{void}\ LCD\_VLCDSelect(LCD\_VLCDSel\_TypeDef\ vlcd);}
+\DoxyCodeLine{00451\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00452\ \textcolor{keywordtype}{void}\ LCD\_UpdateCtrl(LCD\_UpdateCtrl\_TypeDef\ ud);}
+\DoxyCodeLine{00453\ \textcolor{keywordtype}{void}\ LCD\_FrameCountInit(\textcolor{keyword}{const}\ LCD\_FrameCountInit\_TypeDef\ *fcInit);}
+\DoxyCodeLine{00454\ \textcolor{keywordtype}{void}\ LCD\_AnimInit(\textcolor{keyword}{const}\ LCD\_AnimInit\_TypeDef\ *animInit);}
+\DoxyCodeLine{00455\ }
+\DoxyCodeLine{00456\ \textcolor{preprocessor}{\#if\ defined(\_SILICON\_LABS\_32B\_SERIES\_0)}}
+\DoxyCodeLine{00457\ \textcolor{keywordtype}{void}\ LCD\_SegmentRangeEnable(LCD\_SegmentRange\_TypeDef\ segment,\ \textcolor{keywordtype}{bool}\ enable);}
+\DoxyCodeLine{00458\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00459\ \textcolor{preprocessor}{\#if\ defined(\_SILICON\_LABS\_32B\_SERIES\_2)}}
+\DoxyCodeLine{00460\ \textcolor{keywordtype}{void}\ LCD\_SegmentEnable(uint32\_t\ seg\_nbr,\ \textcolor{keywordtype}{bool}\ enable);}
+\DoxyCodeLine{00461\ \textcolor{keywordtype}{void}\ LCD\_ComEnable(uint8\_t\ com,\ \textcolor{keywordtype}{bool}\ enable);}
+\DoxyCodeLine{00462\ \textcolor{keywordtype}{void}\ LCD\_DmaModeSet(LCD\_DmaMode\_Typedef\ mode);}
+\DoxyCodeLine{00463\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00464\ \textcolor{keywordtype}{void}\ LCD\_SegmentSet(\textcolor{keywordtype}{int}\ com,\ \textcolor{keywordtype}{int}\ bit,\ \textcolor{keywordtype}{bool}\ enable);}
+\DoxyCodeLine{00465\ \textcolor{keywordtype}{void}\ LCD\_SegmentSetLow(\textcolor{keywordtype}{int}\ com,\ uint32\_t\ mask,\ uint32\_t\ bits);}
+\DoxyCodeLine{00466\ \textcolor{preprocessor}{\#if\ defined(\_LCD\_SEGD0H\_MASK)}}
+\DoxyCodeLine{00467\ \textcolor{keywordtype}{void}\ LCD\_SegmentSetHigh(\textcolor{keywordtype}{int}\ com,\ uint32\_t\ mask,\ uint32\_t\ bits);}
+\DoxyCodeLine{00468\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00469\ \textcolor{keywordtype}{void}\ LCD\_ContrastSet(\textcolor{keywordtype}{int}\ level);}
+\DoxyCodeLine{00470\ \textcolor{keywordtype}{void}\ LCD\_BiasSet(LCD\_Bias\_TypeDef\ bias);}
+\DoxyCodeLine{00471\ \textcolor{preprocessor}{\#if\ defined(\_SILICON\_LABS\_32B\_SERIES\_0)}}
+\DoxyCodeLine{00472\ \textcolor{keywordtype}{void}\ LCD\_VBoostSet(LCD\_VBoostLevel\_TypeDef\ vboost);}
+\DoxyCodeLine{00473\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00474\ \textcolor{preprocessor}{\#if\ defined(LCD\_CTRL\_DSC)}}
+\DoxyCodeLine{00475\ \textcolor{keywordtype}{void}\ LCD\_BiasSegmentSet(\textcolor{keywordtype}{int}\ segment,\ \textcolor{keywordtype}{int}\ biasLevel);}
+\DoxyCodeLine{00476\ \textcolor{keywordtype}{void}\ LCD\_BiasComSet(\textcolor{keywordtype}{int}\ com,\ \textcolor{keywordtype}{int}\ biasLevel);}
+\DoxyCodeLine{00477\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00478\ \textcolor{preprocessor}{\#if\ defined(\_SILICON\_LABS\_32B\_SERIES\_1)\ ||\ defined(\_SILICON\_LABS\_32B\_SERIES\_2)}}
+\DoxyCodeLine{00479\ \textcolor{keywordtype}{void}\ LCD\_ModeSet(LCD\_Mode\_Typedef\ mode);}
+\DoxyCodeLine{00480\ \textcolor{keywordtype}{void}\ LCD\_ChargeRedistributionCyclesSet(uint8\_t\ cycles);}
+\DoxyCodeLine{00481\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00482\ }
+\DoxyCodeLine{00483\ \textcolor{preprocessor}{\#if\ defined(\_SILICON\_LABS\_32B\_SERIES\_2)}}
+\DoxyCodeLine{00484\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00492\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LCD\_LoadBusyWait(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00493\ \{}
+\DoxyCodeLine{00494\ \ \ \textcolor{keywordflow}{while}\ (\mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_gabf2d80992dcfabfd1668184c3dff2733}{LCD}}-\/>STATUS\ \&\ \_LCD\_STATUS\_LOADBUSY\_MASK)\ ;}
+\DoxyCodeLine{00495\ \}}
+\DoxyCodeLine{00496\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00497\ }
+\DoxyCodeLine{00498\ \textcolor{preprocessor}{\#if\ defined(\_SILICON\_LABS\_32B\_SERIES\_2)}}
+\DoxyCodeLine{00499\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00503\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LCD\_ReadyWait(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00504\ \{}
+\DoxyCodeLine{00505\ \ \ \textcolor{keywordflow}{while}\ ((\mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_gabf2d80992dcfabfd1668184c3dff2733}{LCD}}-\/>SWRST\ \&\ \_LCD\_SWRST\_RESETTING\_MASK)}
+\DoxyCodeLine{00506\ \ \ \ \ \ \ \ \ \ ||\ (\mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_gabf2d80992dcfabfd1668184c3dff2733}{LCD}}-\/>EN\ \&\ \_LCD\_EN\_DISABLING\_MASK)}
+\DoxyCodeLine{00507\ \ \ \ \ \ \ \ \ \ ||\ (\mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_gabf2d80992dcfabfd1668184c3dff2733}{LCD}}-\/>STATUS\ \&\ \_LCD\_STATUS\_LOADBUSY\_MASK))\ \{}
+\DoxyCodeLine{00508\ \ \ \ \ \textcolor{comment}{//\ Wait\ for\ all\ synchronizations\ to\ finish}}
+\DoxyCodeLine{00509\ \ \ \}}
+\DoxyCodeLine{00510\ \}}
+\DoxyCodeLine{00511\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00512\ }
+\DoxyCodeLine{00513\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00522\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LCD\_Enable(\textcolor{keywordtype}{bool}\ enable)}
+\DoxyCodeLine{00523\ \{}
+\DoxyCodeLine{00524\ \textcolor{preprocessor}{\#if\ defined(\_SILICON\_LABS\_32B\_SERIES\_2)}}
+\DoxyCodeLine{00525\ \ \ \textcolor{keywordflow}{if}\ (enable)\ \{}
+\DoxyCodeLine{00526\ \ \ \ \ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_gabf2d80992dcfabfd1668184c3dff2733}{LCD}}-\/>EN\_SET\ =\ LCD\_EN\_EN;}
+\DoxyCodeLine{00527\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00528\ \ \ \ \ \textcolor{comment}{/*\ Wait\ for\ internal\ synchronization\ completion.\ */}}
+\DoxyCodeLine{00529\ \ \ \ \ LCD\_LoadBusyWait();}
+\DoxyCodeLine{00530\ }
+\DoxyCodeLine{00531\ \ \ \ \ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_gabf2d80992dcfabfd1668184c3dff2733}{LCD}}-\/>EN\_CLR\ =\ LCD\_EN\_EN;}
+\DoxyCodeLine{00532\ \ \ \ \ \textcolor{keywordflow}{while}\ (\mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_gabf2d80992dcfabfd1668184c3dff2733}{LCD}}-\/>EN\ \&\ \_LCD\_EN\_DISABLING\_MASK)\ \{}
+\DoxyCodeLine{00533\ \ \ \ \ \}}
+\DoxyCodeLine{00534\ \ \ \}}
+\DoxyCodeLine{00535\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00536\ }
+\DoxyCodeLine{00537\ \textcolor{preprocessor}{\#if\ defined(LCD\_HAS\_SET\_CLEAR)}}
+\DoxyCodeLine{00538\ \ \ \textcolor{keywordflow}{if}\ (enable)\ \{}
+\DoxyCodeLine{00539\ \ \ \ \ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_gabf2d80992dcfabfd1668184c3dff2733}{LCD}}-\/>CTRL\_SET\ =\ \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga0bc84f1368274ab6c2f77beb1fb9984b}{LCD\_CTRL\_EN}};}
+\DoxyCodeLine{00540\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00541\ \ \ \ \ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_gabf2d80992dcfabfd1668184c3dff2733}{LCD}}-\/>CTRL\_CLR\ =\ \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga0bc84f1368274ab6c2f77beb1fb9984b}{LCD\_CTRL\_EN}};}
+\DoxyCodeLine{00542\ \ \ \}}
+\DoxyCodeLine{00543\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00544\ \ \ \textcolor{keywordflow}{if}\ (enable)\ \{}
+\DoxyCodeLine{00545\ \ \ \ \ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_gabf2d80992dcfabfd1668184c3dff2733}{LCD}}-\/>CTRL\ |=\ \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga0bc84f1368274ab6c2f77beb1fb9984b}{LCD\_CTRL\_EN}};}
+\DoxyCodeLine{00546\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00547\ \ \ \ \ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_gabf2d80992dcfabfd1668184c3dff2733}{LCD}}-\/>CTRL\ \&=\ \string~LCD\_CTRL\_EN;}
+\DoxyCodeLine{00548\ \ \ \}}
+\DoxyCodeLine{00549\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ LCD\_HAS\_SET\_CLEAR}}
+\DoxyCodeLine{00550\ }
+\DoxyCodeLine{00551\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ \_SILICON\_LABS\_32B\_SERIES\_2}}
+\DoxyCodeLine{00552\ \}}
+\DoxyCodeLine{00553\ }
+\DoxyCodeLine{00554\ \textcolor{preprocessor}{\#if\ defined(\_SILICON\_LABS\_32B\_SERIES\_2)}}
+\DoxyCodeLine{00555\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00559\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LCD\_Reset(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00560\ \{}
+\DoxyCodeLine{00561\ \ \ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_gabf2d80992dcfabfd1668184c3dff2733}{LCD}}-\/>SWRST\_SET\ =\ LCD\_SWRST\_SWRST;}
+\DoxyCodeLine{00562\ }
+\DoxyCodeLine{00563\ \ \ \textcolor{comment}{/*\ Wait\ for\ reset\ to\ complete.\ */}}
+\DoxyCodeLine{00564\ \ \ \textcolor{keywordflow}{while}\ ((\mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_gabf2d80992dcfabfd1668184c3dff2733}{LCD}}-\/>SWRST\ \&\ \_LCD\_SWRST\_RESETTING\_MASK))\ \{}
+\DoxyCodeLine{00565\ \ \ \}}
+\DoxyCodeLine{00566\ \}}
+\DoxyCodeLine{00567\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00568\ }
+\DoxyCodeLine{00569\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00576\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LCD\_AnimEnable(\textcolor{keywordtype}{bool}\ enable)}
+\DoxyCodeLine{00577\ \{}
+\DoxyCodeLine{00578\ \textcolor{preprocessor}{\#if\ defined(LCD\_HAS\_SET\_CLEAR)}}
+\DoxyCodeLine{00579\ \ \ \textcolor{keywordflow}{if}\ (enable)\ \{}
+\DoxyCodeLine{00580\ \ \ \ \ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_gabf2d80992dcfabfd1668184c3dff2733}{LCD}}-\/>BACTRL\_SET\ =\ \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gad8d3b962d8106bffcc00be3bc6740fbf}{LCD\_BACTRL\_AEN}};}
+\DoxyCodeLine{00581\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00582\ \ \ \ \ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_gabf2d80992dcfabfd1668184c3dff2733}{LCD}}-\/>BACTRL\_CLR\ =\ \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gad8d3b962d8106bffcc00be3bc6740fbf}{LCD\_BACTRL\_AEN}};}
+\DoxyCodeLine{00583\ \ \ \}}
+\DoxyCodeLine{00584\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00585\ \ \ \textcolor{keywordflow}{if}\ (enable)\ \{}
+\DoxyCodeLine{00586\ \ \ \ \ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_gabf2d80992dcfabfd1668184c3dff2733}{LCD}}-\/>BACTRL\ |=\ \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gad8d3b962d8106bffcc00be3bc6740fbf}{LCD\_BACTRL\_AEN}};}
+\DoxyCodeLine{00587\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00588\ \ \ \ \ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_gabf2d80992dcfabfd1668184c3dff2733}{LCD}}-\/>BACTRL\ \&=\ \string~LCD\_BACTRL\_AEN;}
+\DoxyCodeLine{00589\ \ \ \}}
+\DoxyCodeLine{00590\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00591\ \}}
+\DoxyCodeLine{00592\ }
+\DoxyCodeLine{00593\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00600\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LCD\_BlinkEnable(\textcolor{keywordtype}{bool}\ enable)}
+\DoxyCodeLine{00601\ \{}
+\DoxyCodeLine{00602\ \textcolor{preprocessor}{\#if\ defined(LCD\_HAS\_SET\_CLEAR)}}
+\DoxyCodeLine{00603\ \ \ \textcolor{keywordflow}{if}\ (enable)\ \{}
+\DoxyCodeLine{00604\ \ \ \ \ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_gabf2d80992dcfabfd1668184c3dff2733}{LCD}}-\/>BACTRL\_SET\ =\ \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga139ea4c8fe6eab392705d8be2b3c1f2e}{LCD\_BACTRL\_BLINKEN}};}
+\DoxyCodeLine{00605\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00606\ \ \ \ \ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_gabf2d80992dcfabfd1668184c3dff2733}{LCD}}-\/>BACTRL\_CLR\ =\ \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga139ea4c8fe6eab392705d8be2b3c1f2e}{LCD\_BACTRL\_BLINKEN}};}
+\DoxyCodeLine{00607\ \ \ \}}
+\DoxyCodeLine{00608\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00609\ \ \ \textcolor{keywordflow}{if}\ (enable)\ \{}
+\DoxyCodeLine{00610\ \ \ \ \ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_gabf2d80992dcfabfd1668184c3dff2733}{LCD}}-\/>BACTRL\ |=\ \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga139ea4c8fe6eab392705d8be2b3c1f2e}{LCD\_BACTRL\_BLINKEN}};}
+\DoxyCodeLine{00611\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00612\ \ \ \ \ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_gabf2d80992dcfabfd1668184c3dff2733}{LCD}}-\/>BACTRL\ \&=\ \string~LCD\_BACTRL\_BLINKEN;}
+\DoxyCodeLine{00613\ \ \ \}}
+\DoxyCodeLine{00614\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00615\ \}}
+\DoxyCodeLine{00616\ }
+\DoxyCodeLine{00617\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00624\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LCD\_BlankEnable(\textcolor{keywordtype}{bool}\ enable)}
+\DoxyCodeLine{00625\ \{}
+\DoxyCodeLine{00626\ \textcolor{preprocessor}{\#if\ defined(LCD\_HAS\_SET\_CLEAR)}}
+\DoxyCodeLine{00627\ \ \ \textcolor{keywordflow}{if}\ (enable)\ \{}
+\DoxyCodeLine{00628\ \ \ \ \ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_gabf2d80992dcfabfd1668184c3dff2733}{LCD}}-\/>BACTRL\_SET\ =\ \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga05345fc2345397479044ba69e23282bd}{LCD\_BACTRL\_BLANK}};}
+\DoxyCodeLine{00629\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00630\ \ \ \ \ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_gabf2d80992dcfabfd1668184c3dff2733}{LCD}}-\/>BACTRL\_CLR\ =\ \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga05345fc2345397479044ba69e23282bd}{LCD\_BACTRL\_BLANK}};}
+\DoxyCodeLine{00631\ \ \ \}}
+\DoxyCodeLine{00632\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00633\ \ \ \textcolor{keywordflow}{if}\ (enable)\ \{}
+\DoxyCodeLine{00634\ \ \ \ \ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_gabf2d80992dcfabfd1668184c3dff2733}{LCD}}-\/>BACTRL\ |=\ \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga05345fc2345397479044ba69e23282bd}{LCD\_BACTRL\_BLANK}};}
+\DoxyCodeLine{00635\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00636\ \ \ \ \ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_gabf2d80992dcfabfd1668184c3dff2733}{LCD}}-\/>BACTRL\ \&=\ \string~LCD\_BACTRL\_BLANK;}
+\DoxyCodeLine{00637\ \ \ \}}
+\DoxyCodeLine{00638\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00639\ \}}
+\DoxyCodeLine{00640\ }
+\DoxyCodeLine{00641\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00648\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LCD\_FrameCountEnable(\textcolor{keywordtype}{bool}\ enable)}
+\DoxyCodeLine{00649\ \{}
+\DoxyCodeLine{00650\ \textcolor{preprocessor}{\#if\ defined(\_SILICON\_LABS\_32B\_SERIES\_2)}}
+\DoxyCodeLine{00651\ \ \ \textcolor{comment}{/*\ Ensure\ no\ internal\ sync\ is\ in\ progress.\ */}}
+\DoxyCodeLine{00652\ \ \ LCD\_LoadBusyWait();}
+\DoxyCodeLine{00653\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00654\ }
+\DoxyCodeLine{00655\ \textcolor{preprocessor}{\#if\ defined(LCD\_HAS\_SET\_CLEAR)}}
+\DoxyCodeLine{00656\ \ \ \textcolor{keywordflow}{if}\ (enable)\ \{}
+\DoxyCodeLine{00657\ \ \ \ \ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_gabf2d80992dcfabfd1668184c3dff2733}{LCD}}-\/>BACTRL\_SET\ =\ \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga94507c02b4944e4369d5ee5cfb90850f}{LCD\_BACTRL\_FCEN}};}
+\DoxyCodeLine{00658\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00659\ \ \ \ \ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_gabf2d80992dcfabfd1668184c3dff2733}{LCD}}-\/>BACTRL\_CLR\ =\ \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga94507c02b4944e4369d5ee5cfb90850f}{LCD\_BACTRL\_FCEN}};}
+\DoxyCodeLine{00660\ \ \ \}}
+\DoxyCodeLine{00661\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00662\ \ \ \textcolor{keywordflow}{if}\ (enable)\ \{}
+\DoxyCodeLine{00663\ \ \ \ \ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_gabf2d80992dcfabfd1668184c3dff2733}{LCD}}-\/>BACTRL\ |=\ \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga94507c02b4944e4369d5ee5cfb90850f}{LCD\_BACTRL\_FCEN}};}
+\DoxyCodeLine{00664\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00665\ \ \ \ \ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_gabf2d80992dcfabfd1668184c3dff2733}{LCD}}-\/>BACTRL\ \&=\ \string~LCD\_BACTRL\_FCEN;}
+\DoxyCodeLine{00666\ \ \ \}}
+\DoxyCodeLine{00667\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00668\ \}}
+\DoxyCodeLine{00669\ }
+\DoxyCodeLine{00670\ \textcolor{preprocessor}{\#if\ defined(\_SILICON\_LABS\_32B\_SERIES\_2)}}
+\DoxyCodeLine{00671\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00678\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LCD\_DisplayCountEnable(\textcolor{keywordtype}{bool}\ enable)}
+\DoxyCodeLine{00679\ \{}
+\DoxyCodeLine{00680\ \ \ \textcolor{comment}{/*\ Ensure\ no\ internal\ sync\ is\ in\ progress.\ */}}
+\DoxyCodeLine{00681\ \ \ LCD\_LoadBusyWait();}
+\DoxyCodeLine{00682\ }
+\DoxyCodeLine{00683\ \ \ \textcolor{keywordflow}{if}\ (enable)\ \{}
+\DoxyCodeLine{00684\ \ \ \ \ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_gabf2d80992dcfabfd1668184c3dff2733}{LCD}}-\/>BACTRL\_SET\ =\ LCD\_BACTRL\_DISPLAYCNTEN;}
+\DoxyCodeLine{00685\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00686\ \ \ \ \ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_gabf2d80992dcfabfd1668184c3dff2733}{LCD}}-\/>BACTRL\_CLR\ =\ LCD\_BACTRL\_DISPLAYCNTEN;}
+\DoxyCodeLine{00687\ \ \ \}}
+\DoxyCodeLine{00688\ \}}
+\DoxyCodeLine{00689\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00690\ }
+\DoxyCodeLine{00691\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00698\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{int}\ LCD\_AnimState(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00699\ \{}
+\DoxyCodeLine{00700\ \ \ \textcolor{keywordflow}{return}\ (\textcolor{keywordtype}{int})(\mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_gabf2d80992dcfabfd1668184c3dff2733}{LCD}}-\/>STATUS\ \&\ \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga5477eb5d3226a99e17ea67615841f0ef}{\_LCD\_STATUS\_ASTATE\_MASK}})\ >>\ \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga496da33b9c1bfd72db319219fca838c7}{\_LCD\_STATUS\_ASTATE\_SHIFT}};}
+\DoxyCodeLine{00701\ \}}
+\DoxyCodeLine{00702\ }
+\DoxyCodeLine{00703\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00710\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{int}\ LCD\_BlinkState(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00711\ \{}
+\DoxyCodeLine{00712\ \ \ \textcolor{keywordflow}{return}\ (\textcolor{keywordtype}{int})(\mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_gabf2d80992dcfabfd1668184c3dff2733}{LCD}}-\/>STATUS\ \&\ \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga929b15a22fca621e02cd35a5e51c935f}{\_LCD\_STATUS\_BLINK\_MASK}})\ >>\ \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gae9548fcf07e819d6f8669ebdcab69b35}{\_LCD\_STATUS\_BLINK\_SHIFT}};}
+\DoxyCodeLine{00713\ \}}
+\DoxyCodeLine{00714\ }
+\DoxyCodeLine{00715\ \textcolor{preprocessor}{\#if\ defined(\_SILICON\_LABS\_32B\_SERIES\_0)\ ||\ defined(\_SILICON\_LABS\_32B\_SERIES\_1)}}
+\DoxyCodeLine{00716\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00724\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LCD\_FreezeEnable(\textcolor{keywordtype}{bool}\ enable)}
+\DoxyCodeLine{00725\ \{}
+\DoxyCodeLine{00726\ \ \ \textcolor{keywordflow}{if}\ (enable)\ \{}
+\DoxyCodeLine{00727\ \ \ \ \ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_gabf2d80992dcfabfd1668184c3dff2733}{LCD}}-\/>FREEZE\ =\ \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_gabbbeb6962e92edb0e73890d295357578}{LCD\_FREEZE\_REGFREEZE\_FREEZE}};}
+\DoxyCodeLine{00728\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00729\ \ \ \ \ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_gabf2d80992dcfabfd1668184c3dff2733}{LCD}}-\/>FREEZE\ =\ \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga646e3a1cc35c927d47f8d61282d92476}{LCD\_FREEZE\_REGFREEZE\_UPDATE}};}
+\DoxyCodeLine{00730\ \ \ \}}
+\DoxyCodeLine{00731\ \}}
+\DoxyCodeLine{00732\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00733\ }
+\DoxyCodeLine{00734\ \textcolor{preprocessor}{\#if\ defined(\_SILICON\_LABS\_32B\_SERIES\_0)\ ||\ defined(\_SILICON\_LABS\_32B\_SERIES\_1)}}
+\DoxyCodeLine{00735\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00742\ \_\_STATIC\_INLINE\ uint32\_t\ LCD\_SyncBusyGet(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00743\ \{}
+\DoxyCodeLine{00744\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_gabf2d80992dcfabfd1668184c3dff2733}{LCD}}-\/>SYNCBUSY;}
+\DoxyCodeLine{00745\ \}}
+\DoxyCodeLine{00746\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00747\ }
+\DoxyCodeLine{00748\ \textcolor{preprocessor}{\#if\ defined(\_SILICON\_LABS\_32B\_SERIES\_0)\ ||\ defined(\_SILICON\_LABS\_32B\_SERIES\_1)}}
+\DoxyCodeLine{00749\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00756\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LCD\_SyncBusyDelay(uint32\_t\ flags)}
+\DoxyCodeLine{00757\ \{}
+\DoxyCodeLine{00758\ \ \ \textcolor{keywordflow}{while}\ (\mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_gabf2d80992dcfabfd1668184c3dff2733}{LCD}}-\/>SYNCBUSY\ \&\ flags)\ ;}
+\DoxyCodeLine{00759\ \}}
+\DoxyCodeLine{00760\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00761\ }
+\DoxyCodeLine{00762\ \textcolor{preprocessor}{\#if\ defined(\_SILICON\_LABS\_32B\_SERIES\_2)}}
+\DoxyCodeLine{00763\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00777\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LCD\_SyncStart(\textcolor{keywordtype}{bool}\ autoload,\ LCD\_LoadAddr\_TypeDef\ load\_addr)}
+\DoxyCodeLine{00778\ \{}
+\DoxyCodeLine{00779\ \ \ \textcolor{comment}{/*\ Ensure\ no\ synchronization\ in\ progress.\ */}}
+\DoxyCodeLine{00780\ \ \ LCD\_LoadBusyWait();}
+\DoxyCodeLine{00781\ }
+\DoxyCodeLine{00782\ \ \ \textcolor{keywordflow}{if}\ (autoload)\ \{}
+\DoxyCodeLine{00783\ \ \ \ \ LCD\_Enable(\textcolor{keyword}{false});\ \textcolor{comment}{/*\ Ensure\ LCD\ disabled\ before\ writing\ WSTATIC\ fields.\ */}}
+\DoxyCodeLine{00784\ \ \ \ \ LCD\_ReadyWait();}
+\DoxyCodeLine{00785\ \ \ \ \ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_gabf2d80992dcfabfd1668184c3dff2733}{LCD}}-\/>UPDATECTRL\_CLR\ =\ \_LCD\_UPDATECTRL\_LOADADDR\_MASK;}
+\DoxyCodeLine{00786\ \ \ \ \ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_gabf2d80992dcfabfd1668184c3dff2733}{LCD}}-\/>UPDATECTRL\ |=\ load\_addr;}
+\DoxyCodeLine{00787\ \ \ \ \ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_gabf2d80992dcfabfd1668184c3dff2733}{LCD}}-\/>UPDATECTRL\_SET\ =\ LCD\_UPDATECTRL\_AUTOLOAD;}
+\DoxyCodeLine{00788\ \ \ \ \ LCD\_Enable(\textcolor{keyword}{true});}
+\DoxyCodeLine{00789\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00790\ \ \ \ \ \textcolor{comment}{/*\ Start\ synchronization\ from\ HV\ registers\ to\ CLK\_PER\ domain.\ */}}
+\DoxyCodeLine{00791\ \ \ \ \ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_gabf2d80992dcfabfd1668184c3dff2733}{LCD}}-\/>CMD\ =\ LCD\_CMD\_LOAD;}
+\DoxyCodeLine{00792\ \ \ \}}
+\DoxyCodeLine{00793\ \}}
+\DoxyCodeLine{00794\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00795\ }
+\DoxyCodeLine{00796\ \textcolor{preprocessor}{\#if\ defined(\_SILICON\_LABS\_32B\_SERIES\_2)}}
+\DoxyCodeLine{00797\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00805\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LCD\_SyncStop(\textcolor{keywordtype}{bool}\ autoload)}
+\DoxyCodeLine{00806\ \{}
+\DoxyCodeLine{00807\ \ \ \textcolor{keywordflow}{if}\ (autoload)\ \{}
+\DoxyCodeLine{00808\ \ \ \ \ \textcolor{comment}{/*\ Autoload\ cannot\ be\ disabled\ if\ synchronization\ in\ progress.\ */}}
+\DoxyCodeLine{00809\ \ \ \ \ LCD\_LoadBusyWait();}
+\DoxyCodeLine{00810\ }
+\DoxyCodeLine{00811\ \ \ \ \ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_gabf2d80992dcfabfd1668184c3dff2733}{LCD}}-\/>UPDATECTRL\_CLR\ =\ LCD\_UPDATECTRL\_AUTOLOAD;}
+\DoxyCodeLine{00812\ \ \ \ \ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_gabf2d80992dcfabfd1668184c3dff2733}{LCD}}-\/>UPDATECTRL\_CLR\ =\ \_LCD\_UPDATECTRL\_LOADADDR\_MASK;}
+\DoxyCodeLine{00813\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00814\ \ \ \ \ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_gabf2d80992dcfabfd1668184c3dff2733}{LCD}}-\/>CMD\ =\ LCD\_CMD\_CLEAR;}
+\DoxyCodeLine{00815\ \ \ \}}
+\DoxyCodeLine{00816\ \}}
+\DoxyCodeLine{00817\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00818\ }
+\DoxyCodeLine{00819\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00827\ \_\_STATIC\_INLINE\ uint32\_t\ LCD\_IntGet(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00828\ \{}
+\DoxyCodeLine{00829\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_gabf2d80992dcfabfd1668184c3dff2733}{LCD}}-\/>IF;}
+\DoxyCodeLine{00830\ \}}
+\DoxyCodeLine{00831\ }
+\DoxyCodeLine{00832\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00850\ \_\_STATIC\_INLINE\ uint32\_t\ LCD\_IntGetEnabled(\textcolor{keywordtype}{void})}
+\DoxyCodeLine{00851\ \{}
+\DoxyCodeLine{00852\ \ \ uint32\_t\ ien;}
+\DoxyCodeLine{00853\ }
+\DoxyCodeLine{00854\ \ \ \textcolor{comment}{/*\ Store\ the\ LCD-\/>IEN\ in\ temporary\ variable\ to\ define\ the\ explicit\ order}}
+\DoxyCodeLine{00855\ \textcolor{comment}{\ \ \ *\ of\ volatile\ accesses.\ */}}
+\DoxyCodeLine{00856\ \ \ ien\ =\ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_gabf2d80992dcfabfd1668184c3dff2733}{LCD}}-\/>IEN;}
+\DoxyCodeLine{00857\ }
+\DoxyCodeLine{00858\ \ \ \textcolor{comment}{/*\ Bitwise\ AND\ of\ pending\ and\ enabled\ interrupts\ */}}
+\DoxyCodeLine{00859\ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_gabf2d80992dcfabfd1668184c3dff2733}{LCD}}-\/>IF\ \&\ ien;}
+\DoxyCodeLine{00860\ \}}
+\DoxyCodeLine{00861\ }
+\DoxyCodeLine{00862\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00871\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LCD\_IntSet(uint32\_t\ flags)}
+\DoxyCodeLine{00872\ \{}
+\DoxyCodeLine{00873\ \textcolor{preprocessor}{\#if\ defined(\_SILICON\_LABS\_32B\_SERIES\_2)}}
+\DoxyCodeLine{00874\ \textcolor{preprocessor}{\#if\ defined(LCD\_HAS\_SET\_CLEAR)}}
+\DoxyCodeLine{00875\ \ \ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_gabf2d80992dcfabfd1668184c3dff2733}{LCD}}-\/>IF\_SET\ =\ flags;}
+\DoxyCodeLine{00876\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00877\ \ \ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_gabf2d80992dcfabfd1668184c3dff2733}{LCD}}-\/>IF\ |=\ flags;}
+\DoxyCodeLine{00878\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ LCD\_HAS\_SET\_CLEAR}}
+\DoxyCodeLine{00879\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00880\ \ \ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_gabf2d80992dcfabfd1668184c3dff2733}{LCD}}-\/>IFS\ =\ flags;}
+\DoxyCodeLine{00881\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00882\ \}}
+\DoxyCodeLine{00883\ }
+\DoxyCodeLine{00884\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00893\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LCD\_IntEnable(uint32\_t\ flags)}
+\DoxyCodeLine{00894\ \{}
+\DoxyCodeLine{00895\ \textcolor{preprocessor}{\#if\ defined(LCD\_HAS\_SET\_CLEAR)}}
+\DoxyCodeLine{00896\ \ \ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_gabf2d80992dcfabfd1668184c3dff2733}{LCD}}-\/>IEN\_SET\ =\ flags;}
+\DoxyCodeLine{00897\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00898\ \ \ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_gabf2d80992dcfabfd1668184c3dff2733}{LCD}}-\/>IEN\ |=\ flags;}
+\DoxyCodeLine{00899\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00900\ \}}
+\DoxyCodeLine{00901\ }
+\DoxyCodeLine{00902\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00911\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LCD\_IntDisable(uint32\_t\ flags)}
+\DoxyCodeLine{00912\ \{}
+\DoxyCodeLine{00913\ \textcolor{preprocessor}{\#if\ defined(LCD\_HAS\_SET\_CLEAR)}}
+\DoxyCodeLine{00914\ \ \ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_gabf2d80992dcfabfd1668184c3dff2733}{LCD}}-\/>IEN\_CLR\ =\ flags;}
+\DoxyCodeLine{00915\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00916\ \ \ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_gabf2d80992dcfabfd1668184c3dff2733}{LCD}}-\/>IEN\ \&=\ \string~flags;}
+\DoxyCodeLine{00917\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00918\ \}}
+\DoxyCodeLine{00919\ }
+\DoxyCodeLine{00920\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00929\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LCD\_IntClear(uint32\_t\ flags)}
+\DoxyCodeLine{00930\ \{}
+\DoxyCodeLine{00931\ \textcolor{preprocessor}{\#if\ defined(\_SILICON\_LABS\_32B\_SERIES\_2)}}
+\DoxyCodeLine{00932\ \textcolor{preprocessor}{\#if\ defined(LCD\_HAS\_SET\_CLEAR)}}
+\DoxyCodeLine{00933\ \ \ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_gabf2d80992dcfabfd1668184c3dff2733}{LCD}}-\/>IF\_CLR\ =\ flags;}
+\DoxyCodeLine{00934\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00935\ \ \ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_gabf2d80992dcfabfd1668184c3dff2733}{LCD}}-\/>IF\ \&=\ \string~flags;}
+\DoxyCodeLine{00936\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ LCD\_HAS\_SET\_CLEAR}}
+\DoxyCodeLine{00937\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00938\ \ \ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_gabf2d80992dcfabfd1668184c3dff2733}{LCD}}-\/>IFC\ =\ flags;}
+\DoxyCodeLine{00939\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00940\ \}}
+\DoxyCodeLine{00941\ }
+\DoxyCodeLine{00942\ \textcolor{preprocessor}{\#if\ defined(LCD\_CTRL\_DSC)}}
+\DoxyCodeLine{00943\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00952\ \_\_STATIC\_INLINE\ \textcolor{keywordtype}{void}\ LCD\_DSCEnable(\textcolor{keywordtype}{bool}\ enable)}
+\DoxyCodeLine{00953\ \{}
+\DoxyCodeLine{00954\ \textcolor{preprocessor}{\#if\ defined(\_SILICON\_LABS\_32B\_SERIES\_2)}}
+\DoxyCodeLine{00955\ \ \ LCD\_Enable(\textcolor{keyword}{false});\ \textcolor{comment}{/*\ Ensure\ LCD\ disabled\ before\ writing\ WSTATIC\ fields.\ */}}
+\DoxyCodeLine{00956\ \ \ LCD\_ReadyWait();}
+\DoxyCodeLine{00957\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00958\ }
+\DoxyCodeLine{00959\ \textcolor{preprocessor}{\#if\ defined(LCD\_HAS\_SET\_CLEAR)}}
+\DoxyCodeLine{00960\ \ \ \textcolor{keywordflow}{if}\ (enable)\ \{}
+\DoxyCodeLine{00961\ \ \ \ \ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_gabf2d80992dcfabfd1668184c3dff2733}{LCD}}-\/>CTRL\_SET\ =\ \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga776ca4c36968d1376df2ff61a9a6b09c}{LCD\_CTRL\_DSC}};}
+\DoxyCodeLine{00962\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00963\ \ \ \ \ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_gabf2d80992dcfabfd1668184c3dff2733}{LCD}}-\/>CTRL\_CLR\ =\ \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga776ca4c36968d1376df2ff61a9a6b09c}{LCD\_CTRL\_DSC}};}
+\DoxyCodeLine{00964\ \ \ \}}
+\DoxyCodeLine{00965\ \textcolor{preprocessor}{\#else}}
+\DoxyCodeLine{00966\ \ \ \textcolor{keywordflow}{if}\ (enable)\ \{}
+\DoxyCodeLine{00967\ \ \ \ \ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_gabf2d80992dcfabfd1668184c3dff2733}{LCD}}-\/>CTRL\ |=\ \mbox{\hyperlink{group___e_f_m32_g_g___l_c_d___bit_fields_ga776ca4c36968d1376df2ff61a9a6b09c}{LCD\_CTRL\_DSC}};}
+\DoxyCodeLine{00968\ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{00969\ \ \ \ \ \mbox{\hyperlink{group___e_f_m32_g_g990_f1024___peripheral___declaration_gabf2d80992dcfabfd1668184c3dff2733}{LCD}}-\/>CTRL\ \&=\ \string~LCD\_CTRL\_DSC;}
+\DoxyCodeLine{00970\ \ \ \}}
+\DoxyCodeLine{00971\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00972\ }
+\DoxyCodeLine{00973\ \textcolor{preprocessor}{\#if\ defined(\_SILICON\_LABS\_32B\_SERIES\_2)}}
+\DoxyCodeLine{00974\ \ \ LCD\_Enable(\textcolor{keyword}{true});}
+\DoxyCodeLine{00975\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00976\ \}}
+\DoxyCodeLine{00977\ }
+\DoxyCodeLine{00978\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00979\ }
+\DoxyCodeLine{00982\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00983\ \}}
+\DoxyCodeLine{00984\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00985\ }
+\DoxyCodeLine{00986\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ defined(LCD\_COUNT)\ \&\&\ (LCD\_COUNT\ >\ 0)\ */}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00987\ }
+\DoxyCodeLine{00988\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ EM\_LCD\_H\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

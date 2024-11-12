@@ -1,6 +1,11 @@
 var searchData=
 [
-  ['unlock_20codes_0',['EFM32GG990F1024 Unlock Codes',['../group___e_f_m32_g_g990_f1024___u_n_l_o_c_k.html',1,'']]],
-  ['utilities_1',['COMMON - Common Utilities',['../group__common.html',1,'']]],
-  ['utils_2',['SYSTEM - System Utils',['../group__system.html',1,'']]]
+  ['tick_20timer_20systick_0',['System Tick Timer (SysTick)',['../group___c_m_s_i_s___sys_tick.html',1,'']]],
+  ['timer_20systick_1',['System Tick Timer (SysTick)',['../group___c_m_s_i_s___sys_tick.html',1,'']]],
+  ['tpi_2',['Trace Port Interface (TPI)',['../group___c_m_s_i_s___t_p_i.html',1,'']]],
+  ['trace_20dwt_3',['Data Watchpoint and Trace (DWT)',['../group___c_m_s_i_s___d_w_t.html',1,'']]],
+  ['trace_20macrocell_20itm_4',['Instrumentation Trace Macrocell (ITM)',['../group___c_m_s_i_s___i_t_m.html',1,'']]],
+  ['trace_20port_20interface_20tpi_5',['Trace Port Interface (TPI)',['../group___c_m_s_i_s___t_p_i.html',1,'']]],
+  ['type_20definitions_6',['Defines and Type Definitions',['../group___c_m_s_i_s__core__register.html',1,'']]],
+  ['typedefs_7',['EFM32GG990F1024 Peripheral TypeDefs',['../group___e_f_m32_g_g990_f1024___peripheral___type_defs.html',1,'']]]
 ];

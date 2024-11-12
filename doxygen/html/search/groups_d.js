@@ -1,11 +1,9 @@
 var searchData=
 [
-  ['ram_20function_20support_0',['RAMFUNC - RAM Function Support',['../group__ramfunc.html',1,'']]],
-  ['ramfunc_20ram_20function_20support_1',['RAMFUNC - RAM Function Support',['../group__ramfunc.html',1,'']]],
-  ['read_20write_2',['BUS - Bitfield Read/Write',['../group__bus.html',1,'']]],
-  ['reference_3',['Functions and Instructions Reference',['../group___c_m_s_i_s___core___function_interface.html',1,'']]],
-  ['register_20access_20functions_4',['CMSIS Core Register Access Functions',['../group___c_m_s_i_s___core___reg_acc_functions.html',1,'']]],
-  ['register_20bit_20field_20macros_5',['Core register bit field macros',['../group___c_m_s_i_s__core__bitfield.html',1,'']]],
-  ['registers_6',['Status and Control Registers',['../group___c_m_s_i_s___c_o_r_e.html',1,'']]],
-  ['registers_20coredebug_7',['Core Debug Registers (CoreDebug)',['../group___c_m_s_i_s___core_debug.html',1,'']]]
+  ['part_0',['EFM32GG990F1024 Part',['../group___e_f_m32_g_g990_f1024___part.html',1,'']]],
+  ['parts_1',['Parts',['../group___parts.html',1,'']]],
+  ['peripheral_20declarations_2',['EFM32GG990F1024 Peripheral Declarations',['../group___e_f_m32_g_g990_f1024___peripheral___declaration.html',1,'']]],
+  ['peripheral_20memory_20map_3',['EFM32GG990F1024 Peripheral Memory Map',['../group___e_f_m32_g_g990_f1024___peripheral___base.html',1,'']]],
+  ['peripheral_20typedefs_4',['EFM32GG990F1024 Peripheral TypeDefs',['../group___e_f_m32_g_g990_f1024___peripheral___type_defs.html',1,'']]],
+  ['port_20interface_20tpi_5',['Trace Port Interface (TPI)',['../group___c_m_s_i_s___t_p_i.html',1,'']]]
 ];

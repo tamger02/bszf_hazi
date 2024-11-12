@@ -19,7 +19,7 @@ var searchData=
   ['hfxo_20initialization_16',['HFXO Initialization',['../group__device__init__hfxo.html',1,'']]],
   ['hfxtal_5fcount_17',['HFXTAL_COUNT',['../group___e_f_m32_g_g990_f1024___part.html#ga3fd3e0f0e39a688de364c2447ea92528',1,'efm32gg990f1024.h']]],
   ['hfxtal_5fpresent_18',['HFXTAL_PRESENT',['../group___e_f_m32_g_g990_f1024___part.html#ga8dd3da46a007a3c2ba90614fcd012252',1,'efm32gg990f1024.h']]],
-  ['high_20frequency_20clocks_19',['High Frequency Clocks',['../group__device__init__clocks.html#autotoc_md97',1,'']]],
+  ['high_20frequency_20clocks_19',['High Frequency Clocks',['../group__device__init__clocks.html#autotoc_md101',1,'']]],
   ['hprt_20',['HPRT',['../struct_u_s_b___type_def.html#a24b11cf29f68e42370cf4bf36101a486',1,'USB_TypeDef']]],
   ['hptxfsiz_21',['HPTXFSIZ',['../struct_u_s_b___type_def.html#ade59d6df511521b71b72cb9d1c8f2e15',1,'USB_TypeDef']]],
   ['hptxsts_22',['HPTXSTS',['../struct_u_s_b___type_def.html#adaf9c2d697e407f95fb30355bc34a8cc',1,'USB_TypeDef']]]

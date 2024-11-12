@@ -1,0 +1,389 @@
+\doxysection{segmentlcdconfig.\+h}
+\hypertarget{segmentlcdconfig_8h_source}{}\label{segmentlcdconfig_8h_source}\index{snake/segmentlcdconfig.h@{snake/segmentlcdconfig.h}}
+\mbox{\hyperlink{segmentlcdconfig_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/***************************************************************************/}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#ifndef\ \_\_SEGMENTLCDCONFIG\_H}}
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#define\ \_\_SEGMENTLCDCONFIG\_H}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{em__lcd_8h}{em\_lcd.h}}"{}}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00037\ \textcolor{keyword}{extern}\ \textcolor{stringliteral}{"{}C"{}}\ \{}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00042\ \ \ LCD\_SYMBOL\_GECKO,}
+\DoxyCodeLine{00043\ \ \ LCD\_SYMBOL\_ANT,}
+\DoxyCodeLine{00044\ \ \ LCD\_SYMBOL\_PAD0,}
+\DoxyCodeLine{00045\ \ \ LCD\_SYMBOL\_PAD1,}
+\DoxyCodeLine{00046\ \ \ LCD\_SYMBOL\_EFM32,}
+\DoxyCodeLine{00047\ \ \ LCD\_SYMBOL\_MINUS,}
+\DoxyCodeLine{00048\ \ \ LCD\_SYMBOL\_COL3,}
+\DoxyCodeLine{00049\ \ \ LCD\_SYMBOL\_COL5,}
+\DoxyCodeLine{00050\ \ \ LCD\_SYMBOL\_COL10,}
+\DoxyCodeLine{00051\ \ \ LCD\_SYMBOL\_DEGC,}
+\DoxyCodeLine{00052\ \ \ LCD\_SYMBOL\_DEGF,}
+\DoxyCodeLine{00053\ \ \ LCD\_SYMBOL\_DP2,}
+\DoxyCodeLine{00054\ \ \ LCD\_SYMBOL\_DP3,}
+\DoxyCodeLine{00055\ \ \ LCD\_SYMBOL\_DP4,}
+\DoxyCodeLine{00056\ \ \ LCD\_SYMBOL\_DP5,}
+\DoxyCodeLine{00057\ \ \ LCD\_SYMBOL\_DP6,}
+\DoxyCodeLine{00058\ \ \ LCD\_SYMBOL\_DP10,}
+\DoxyCodeLine{00059\ \}\ \mbox{\hyperlink{segmentlcdconfig_8h_ac2c9c608938ac875edfcfec5c75737e4}{lcdSymbol}};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \textcolor{preprocessor}{\#define\ LCD\_SYMBOL\_GECKO\_COM\ \ \ \ 1}}
+\DoxyCodeLine{00062\ \textcolor{preprocessor}{\#define\ LCD\_SYMBOL\_GECKO\_SEG\ \ \ \ 12}}
+\DoxyCodeLine{00063\ \textcolor{preprocessor}{\#define\ LCD\_SYMBOL\_ANT\_COM\ \ \ \ \ \ 0}}
+\DoxyCodeLine{00064\ \textcolor{preprocessor}{\#define\ LCD\_SYMBOL\_ANT\_SEG\ \ \ \ \ \ 32}}
+\DoxyCodeLine{00065\ \textcolor{preprocessor}{\#define\ LCD\_SYMBOL\_PAD0\_COM\ \ \ \ \ 3}}
+\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#define\ LCD\_SYMBOL\_PAD0\_SEG\ \ \ \ \ 39}}
+\DoxyCodeLine{00067\ \textcolor{preprocessor}{\#define\ LCD\_SYMBOL\_PAD1\_COM\ \ \ \ \ 2}}
+\DoxyCodeLine{00068\ \textcolor{preprocessor}{\#define\ LCD\_SYMBOL\_PAD1\_SEG\ \ \ \ \ 12}}
+\DoxyCodeLine{00069\ \textcolor{preprocessor}{\#define\ LCD\_SYMBOL\_EFM32\_COM\ \ \ \ 0}}
+\DoxyCodeLine{00070\ \textcolor{preprocessor}{\#define\ LCD\_SYMBOL\_EFM32\_SEG\ \ \ \ 28}}
+\DoxyCodeLine{00071\ \textcolor{preprocessor}{\#define\ LCD\_SYMBOL\_MINUS\_COM\ \ \ \ 3}}
+\DoxyCodeLine{00072\ \textcolor{preprocessor}{\#define\ LCD\_SYMBOL\_MINUS\_SEG\ \ \ \ 12}}
+\DoxyCodeLine{00073\ \textcolor{preprocessor}{\#define\ LCD\_SYMBOL\_COL3\_COM\ \ \ \ \ 4}}
+\DoxyCodeLine{00074\ \textcolor{preprocessor}{\#define\ LCD\_SYMBOL\_COL3\_SEG\ \ \ \ \ 12}}
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#define\ LCD\_SYMBOL\_COL5\_COM\ \ \ \ \ 0}}
+\DoxyCodeLine{00076\ \textcolor{preprocessor}{\#define\ LCD\_SYMBOL\_COL5\_SEG\ \ \ \ \ 30}}
+\DoxyCodeLine{00077\ \textcolor{preprocessor}{\#define\ LCD\_SYMBOL\_COL10\_COM\ \ \ \ 5}}
+\DoxyCodeLine{00078\ \textcolor{preprocessor}{\#define\ LCD\_SYMBOL\_COL10\_SEG\ \ \ \ 39}}
+\DoxyCodeLine{00079\ \textcolor{preprocessor}{\#define\ LCD\_SYMBOL\_DEGC\_COM\ \ \ \ \ 0}}
+\DoxyCodeLine{00080\ \textcolor{preprocessor}{\#define\ LCD\_SYMBOL\_DEGC\_SEG\ \ \ \ \ 34}}
+\DoxyCodeLine{00081\ \textcolor{preprocessor}{\#define\ LCD\_SYMBOL\_DEGF\_COM\ \ \ \ \ 0}}
+\DoxyCodeLine{00082\ \textcolor{preprocessor}{\#define\ LCD\_SYMBOL\_DEGF\_SEG\ \ \ \ \ 35}}
+\DoxyCodeLine{00083\ \textcolor{preprocessor}{\#define\ LCD\_SYMBOL\_DP2\_COM\ \ \ \ \ \ 7}}
+\DoxyCodeLine{00084\ \textcolor{preprocessor}{\#define\ LCD\_SYMBOL\_DP2\_SEG\ \ \ \ \ \ 12}}
+\DoxyCodeLine{00085\ \textcolor{preprocessor}{\#define\ LCD\_SYMBOL\_DP3\_COM\ \ \ \ \ \ 5}}
+\DoxyCodeLine{00086\ \textcolor{preprocessor}{\#define\ LCD\_SYMBOL\_DP3\_SEG\ \ \ \ \ \ 12}}
+\DoxyCodeLine{00087\ \textcolor{preprocessor}{\#define\ LCD\_SYMBOL\_DP4\_COM\ \ \ \ \ \ 6}}
+\DoxyCodeLine{00088\ \textcolor{preprocessor}{\#define\ LCD\_SYMBOL\_DP4\_SEG\ \ \ \ \ \ 12}}
+\DoxyCodeLine{00089\ \textcolor{preprocessor}{\#define\ LCD\_SYMBOL\_DP5\_COM\ \ \ \ \ \ 7}}
+\DoxyCodeLine{00090\ \textcolor{preprocessor}{\#define\ LCD\_SYMBOL\_DP5\_SEG\ \ \ \ \ \ 29}}
+\DoxyCodeLine{00091\ \textcolor{preprocessor}{\#define\ LCD\_SYMBOL\_DP6\_COM\ \ \ \ \ \ 7}}
+\DoxyCodeLine{00092\ \textcolor{preprocessor}{\#define\ LCD\_SYMBOL\_DP6\_SEG\ \ \ \ \ \ 31}}
+\DoxyCodeLine{00093\ \textcolor{preprocessor}{\#define\ LCD\_SYMBOL\_DP10\_COM\ \ \ \ \ 4}}
+\DoxyCodeLine{00094\ \textcolor{preprocessor}{\#define\ LCD\_SYMBOL\_DP10\_SEG\ \ \ \ \ 39}}
+\DoxyCodeLine{00095\ }
+\DoxyCodeLine{00096\ \textcolor{comment}{/*\ LCD\ Controller\ Prescaler\ (divide\ LFACLK\ /\ 64)\ */}}
+\DoxyCodeLine{00097\ \textcolor{comment}{/*\ LFACLK\_LCDpre\ =\ 512\ Hz\ */}}
+\DoxyCodeLine{00098\ \textcolor{comment}{/*\ Set\ FDIV=0,\ means\ 512/1\ =\ 512\ Hz\ */}}
+\DoxyCodeLine{00099\ \textcolor{comment}{/*\ With\ octaplex\ mode,\ 512/16\ =>\ 32\ Hz\ Frame\ Rate\ */}}
+\DoxyCodeLine{00100\ \textcolor{preprocessor}{\#define\ LCD\_CMU\_CLK\_PRE\ \ \ \ \ \ \ \ \ cmuClkDiv\_64}}
+\DoxyCodeLine{00101\ \textcolor{preprocessor}{\#define\ LCD\_CMU\_CLK\_DIV\ \ \ \ \ \ \ \ \ cmuClkDiv\_1}}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \textcolor{preprocessor}{\#define\ LCD\_BOOST\_LEVEL\ \ \ \ \ \ \ \ \ lcdVBoostLevel3}}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \textcolor{preprocessor}{\#define\ LCD\_INIT\_DEF\ \ \(\backslash\)}}
+\DoxyCodeLine{00106\ \textcolor{preprocessor}{\ \ \{\ true,\ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00107\ \textcolor{preprocessor}{\ \ \ \ lcdMuxOctaplex,\ \ \ \(\backslash\)}}
+\DoxyCodeLine{00108\ \textcolor{preprocessor}{\ \ \ \ lcdBiasOneFourth,\ \(\backslash\)}}
+\DoxyCodeLine{00109\ \textcolor{preprocessor}{\ \ \ \ lcdWaveLowPower,\ \ \(\backslash\)}}
+\DoxyCodeLine{00110\ \textcolor{preprocessor}{\ \ \ \ lcdVLCDSelVDD,\ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00111\ \textcolor{preprocessor}{\ \ \ \ lcdConConfVLCD\ \}}}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \textcolor{preprocessor}{\#define\ LCD\_NUMBER\_OFF()\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\ \ do\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00115\ \textcolor{preprocessor}{\ \ \ \ LCD\_SegmentSetHigh(1,\ 0x00000078,\ 0x00000000);\ \(\backslash\)}}
+\DoxyCodeLine{00116\ \textcolor{preprocessor}{\ \ \ \ LCD\_SegmentSetHigh(2,\ 0x00000078,\ 0x00000000);\ \(\backslash\)}}
+\DoxyCodeLine{00117\ \textcolor{preprocessor}{\ \ \ \ LCD\_SegmentSetHigh(3,\ 0x00000078,\ 0x00000000);\ \(\backslash\)}}
+\DoxyCodeLine{00118\ \textcolor{preprocessor}{\ \ \ \ LCD\_SegmentSetHigh(4,\ 0x00000078,\ 0x00000000);\ \(\backslash\)}}
+\DoxyCodeLine{00119\ \textcolor{preprocessor}{\ \ \ \ LCD\_SegmentSetHigh(5,\ 0x00000078,\ 0x00000000);\ \(\backslash\)}}
+\DoxyCodeLine{00120\ \textcolor{preprocessor}{\ \ \ \ LCD\_SegmentSetHigh(6,\ 0x00000078,\ 0x00000000);\ \(\backslash\)}}
+\DoxyCodeLine{00121\ \textcolor{preprocessor}{\ \ \ \ LCD\_SegmentSetHigh(7,\ 0x00000078,\ 0x00000000);\ \(\backslash\)}}
+\DoxyCodeLine{00122\ \textcolor{preprocessor}{\ \ \}\ while\ (0)}}
+\DoxyCodeLine{00123\ }
+\DoxyCodeLine{00124\ \textcolor{preprocessor}{\#define\ LCD\_ALPHA\_NUMBER\_OFF()\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00125\ \textcolor{preprocessor}{\ \ do\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00126\ \textcolor{preprocessor}{\ \ \ \ LCD\_SegmentSetLow(7,\ 0x500FE000,\ 0x00000000);\ \ \(\backslash\)}}
+\DoxyCodeLine{00127\ \textcolor{preprocessor}{\ \ \ \ LCD\_SegmentSetLow(6,\ 0xF00FE000,\ 0x00000000);\ \ \(\backslash\)}}
+\DoxyCodeLine{00128\ \textcolor{preprocessor}{\ \ \ \ LCD\_SegmentSetLow(5,\ 0xF00FE000,\ 0x00000000);\ \ \(\backslash\)}}
+\DoxyCodeLine{00129\ \textcolor{preprocessor}{\ \ \ \ LCD\_SegmentSetLow(4,\ 0xF00FE000,\ 0x00000000);\ \ \(\backslash\)}}
+\DoxyCodeLine{00130\ \textcolor{preprocessor}{\ \ \ \ LCD\_SegmentSetLow(3,\ 0xF00FE000,\ 0x00000000);\ \ \(\backslash\)}}
+\DoxyCodeLine{00131\ \textcolor{preprocessor}{\ \ \ \ LCD\_SegmentSetLow(2,\ 0xF00FE000,\ 0x00000000);\ \ \(\backslash\)}}
+\DoxyCodeLine{00132\ \textcolor{preprocessor}{\ \ \ \ LCD\_SegmentSetLow(1,\ 0xF00FE000,\ 0x00000000);\ \ \(\backslash\)}}
+\DoxyCodeLine{00133\ \textcolor{preprocessor}{\ \ \ \ LCD\_SegmentSetLow(0,\ 0xA0000000,\ 0x00000000);\ \ \(\backslash\)}}
+\DoxyCodeLine{00134\ \textcolor{preprocessor}{\ \ \ \ LCD\_SegmentSetHigh(7,\ 0x00000007,\ 0x00000000);\ \(\backslash\)}}
+\DoxyCodeLine{00135\ \textcolor{preprocessor}{\ \ \ \ LCD\_SegmentSetHigh(6,\ 0x00000007,\ 0x00000000);\ \(\backslash\)}}
+\DoxyCodeLine{00136\ \textcolor{preprocessor}{\ \ \ \ LCD\_SegmentSetHigh(5,\ 0x00000007,\ 0x00000000);\ \(\backslash\)}}
+\DoxyCodeLine{00137\ \textcolor{preprocessor}{\ \ \ \ LCD\_SegmentSetHigh(4,\ 0x00000007,\ 0x00000000);\ \(\backslash\)}}
+\DoxyCodeLine{00138\ \textcolor{preprocessor}{\ \ \ \ LCD\_SegmentSetHigh(3,\ 0x00000007,\ 0x00000000);\ \(\backslash\)}}
+\DoxyCodeLine{00139\ \textcolor{preprocessor}{\ \ \ \ LCD\_SegmentSetHigh(2,\ 0x00000007,\ 0x00000000);\ \(\backslash\)}}
+\DoxyCodeLine{00140\ \textcolor{preprocessor}{\ \ \ \ LCD\_SegmentSetHigh(1,\ 0x00000007,\ 0x00000000);\ \(\backslash\)}}
+\DoxyCodeLine{00141\ \textcolor{preprocessor}{\ \ \}\ while\ (0)}}
+\DoxyCodeLine{00142\ }
+\DoxyCodeLine{00143\ \textcolor{preprocessor}{\#define\ LCD\_ALL\_SEGMENTS\_OFF()\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00144\ \textcolor{preprocessor}{\ \ do\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00145\ \textcolor{preprocessor}{\ \ \ \ LCD\_SegmentSetLow(0,\ 0xF00FF000,\ 0x00000000);\ \ \(\backslash\)}}
+\DoxyCodeLine{00146\ \textcolor{preprocessor}{\ \ \ \ LCD\_SegmentSetLow(1,\ 0xF00FF000,\ 0x00000000);\ \ \(\backslash\)}}
+\DoxyCodeLine{00147\ \textcolor{preprocessor}{\ \ \ \ LCD\_SegmentSetLow(2,\ 0xF00FF000,\ 0x00000000);\ \ \(\backslash\)}}
+\DoxyCodeLine{00148\ \textcolor{preprocessor}{\ \ \ \ LCD\_SegmentSetLow(3,\ 0xF00FF000,\ 0x00000000);\ \ \(\backslash\)}}
+\DoxyCodeLine{00149\ \textcolor{preprocessor}{\ \ \ \ LCD\_SegmentSetLow(4,\ 0xF00FF000,\ 0x00000000);\ \ \(\backslash\)}}
+\DoxyCodeLine{00150\ \textcolor{preprocessor}{\ \ \ \ LCD\_SegmentSetLow(5,\ 0xF00FF000,\ 0x00000000);\ \ \(\backslash\)}}
+\DoxyCodeLine{00151\ \textcolor{preprocessor}{\ \ \ \ LCD\_SegmentSetLow(6,\ 0xF00FF000,\ 0x00000000);\ \ \(\backslash\)}}
+\DoxyCodeLine{00152\ \textcolor{preprocessor}{\ \ \ \ LCD\_SegmentSetLow(7,\ 0xF00FF000,\ 0x00000000);\ \ \(\backslash\)}}
+\DoxyCodeLine{00153\ \textcolor{preprocessor}{\ \ \ \ LCD\_SegmentSetHigh(0,\ 0x000000FF,\ 0x00000000);\ \(\backslash\)}}
+\DoxyCodeLine{00154\ \textcolor{preprocessor}{\ \ \ \ LCD\_SegmentSetHigh(1,\ 0x000000FF,\ 0x00000000);\ \(\backslash\)}}
+\DoxyCodeLine{00155\ \textcolor{preprocessor}{\ \ \ \ LCD\_SegmentSetHigh(2,\ 0x000000FF,\ 0x00000000);\ \(\backslash\)}}
+\DoxyCodeLine{00156\ \textcolor{preprocessor}{\ \ \ \ LCD\_SegmentSetHigh(3,\ 0x000000FF,\ 0x00000000);\ \(\backslash\)}}
+\DoxyCodeLine{00157\ \textcolor{preprocessor}{\ \ \ \ LCD\_SegmentSetHigh(4,\ 0x000000FF,\ 0x00000000);\ \(\backslash\)}}
+\DoxyCodeLine{00158\ \textcolor{preprocessor}{\ \ \ \ LCD\_SegmentSetHigh(5,\ 0x000000FF,\ 0x00000000);\ \(\backslash\)}}
+\DoxyCodeLine{00159\ \textcolor{preprocessor}{\ \ \ \ LCD\_SegmentSetHigh(6,\ 0x000000FF,\ 0x00000000);\ \(\backslash\)}}
+\DoxyCodeLine{00160\ \textcolor{preprocessor}{\ \ \ \ LCD\_SegmentSetHigh(7,\ 0x000000FF,\ 0x00000000);\ \(\backslash\)}}
+\DoxyCodeLine{00161\ \textcolor{preprocessor}{\ \ \}\ while\ (0)}}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \textcolor{preprocessor}{\#define\ LCD\_ALL\_SEGMENTS\_ON()\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00164\ \textcolor{preprocessor}{\ \ do\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00165\ \textcolor{preprocessor}{\ \ \ \ LCD\_SegmentSetLow(0,\ 0xF00FF000,\ 0xFFFFFFFF);\ \ \(\backslash\)}}
+\DoxyCodeLine{00166\ \textcolor{preprocessor}{\ \ \ \ LCD\_SegmentSetLow(1,\ 0xF00FF000,\ 0xFFFFFFFF);\ \ \(\backslash\)}}
+\DoxyCodeLine{00167\ \textcolor{preprocessor}{\ \ \ \ LCD\_SegmentSetLow(2,\ 0xF00FF000,\ 0xFFFFFFFF);\ \ \(\backslash\)}}
+\DoxyCodeLine{00168\ \textcolor{preprocessor}{\ \ \ \ LCD\_SegmentSetLow(3,\ 0xF00FF000,\ 0xFFFFFFFF);\ \ \(\backslash\)}}
+\DoxyCodeLine{00169\ \textcolor{preprocessor}{\ \ \ \ LCD\_SegmentSetLow(4,\ 0xF00FF000,\ 0xFFFFFFFF);\ \ \(\backslash\)}}
+\DoxyCodeLine{00170\ \textcolor{preprocessor}{\ \ \ \ LCD\_SegmentSetLow(5,\ 0xF00FF000,\ 0xFFFFFFFF);\ \ \(\backslash\)}}
+\DoxyCodeLine{00171\ \textcolor{preprocessor}{\ \ \ \ LCD\_SegmentSetLow(6,\ 0xF00FF000,\ 0xFFFFFFFF);\ \ \(\backslash\)}}
+\DoxyCodeLine{00172\ \textcolor{preprocessor}{\ \ \ \ LCD\_SegmentSetLow(7,\ 0xF00FF000,\ 0xFFFFFFFF);\ \ \(\backslash\)}}
+\DoxyCodeLine{00173\ \textcolor{preprocessor}{\ \ \ \ LCD\_SegmentSetHigh(0,\ 0x000000FF,\ 0xFFFFFFFF);\ \(\backslash\)}}
+\DoxyCodeLine{00174\ \textcolor{preprocessor}{\ \ \ \ LCD\_SegmentSetHigh(1,\ 0x000000FF,\ 0xFFFFFFFF);\ \(\backslash\)}}
+\DoxyCodeLine{00175\ \textcolor{preprocessor}{\ \ \ \ LCD\_SegmentSetHigh(2,\ 0x000000FF,\ 0xFFFFFFFF);\ \(\backslash\)}}
+\DoxyCodeLine{00176\ \textcolor{preprocessor}{\ \ \ \ LCD\_SegmentSetHigh(3,\ 0x000000FF,\ 0xFFFFFFFF);\ \(\backslash\)}}
+\DoxyCodeLine{00177\ \textcolor{preprocessor}{\ \ \ \ LCD\_SegmentSetHigh(4,\ 0x000000FF,\ 0xFFFFFFFF);\ \(\backslash\)}}
+\DoxyCodeLine{00178\ \textcolor{preprocessor}{\ \ \ \ LCD\_SegmentSetHigh(5,\ 0x000000FF,\ 0xFFFFFFFF);\ \(\backslash\)}}
+\DoxyCodeLine{00179\ \textcolor{preprocessor}{\ \ \ \ LCD\_SegmentSetHigh(6,\ 0x000000FF,\ 0xFFFFFFFF);\ \(\backslash\)}}
+\DoxyCodeLine{00180\ \textcolor{preprocessor}{\ \ \ \ LCD\_SegmentSetHigh(7,\ 0x000000FF,\ 0xFFFFFFFF);\ \(\backslash\)}}
+\DoxyCodeLine{00181\ \textcolor{preprocessor}{\ \ \}\ while\ (0)}}
+\DoxyCodeLine{00182\ }
+\DoxyCodeLine{00183\ \textcolor{preprocessor}{\#define\ LCD\_SEGMENTS\_ENABLE()\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00184\ \textcolor{preprocessor}{\ \ do\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00185\ \textcolor{preprocessor}{\ \ \ \ LCD\_SegmentRangeEnable(lcdSegment12\_15,\ true);\ \(\backslash\)}}
+\DoxyCodeLine{00186\ \textcolor{preprocessor}{\ \ \ \ LCD\_SegmentRangeEnable(lcdSegment16\_19,\ true);\ \(\backslash\)}}
+\DoxyCodeLine{00187\ \textcolor{preprocessor}{\ \ \ \ LCD\_SegmentRangeEnable(lcdSegment28\_31,\ true);\ \(\backslash\)}}
+\DoxyCodeLine{00188\ \textcolor{preprocessor}{\ \ \ \ LCD\_SegmentRangeEnable(lcdSegment32\_35,\ true);\ \(\backslash\)}}
+\DoxyCodeLine{00189\ \textcolor{preprocessor}{\ \ \ \ LCD\_SegmentRangeEnable(lcdSegment36\_39,\ true);\ \(\backslash\)}}
+\DoxyCodeLine{00190\ \textcolor{preprocessor}{\ \ \}\ while\ (0)}}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00192\ \textcolor{preprocessor}{\#define\ LCD\_DISPLAY\_ENABLE()\ \(\backslash\)}}
+\DoxyCodeLine{00193\ \textcolor{preprocessor}{\ \ do\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00194\ \textcolor{preprocessor}{\ \ \ \ ;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00195\ \textcolor{preprocessor}{\ \ \}\ while\ (0)}}
+\DoxyCodeLine{00196\ }
+\DoxyCodeLine{00197\ \textcolor{preprocessor}{\#define\ EFM\_DISPLAY\_DEF\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00198\ \textcolor{preprocessor}{\ \ \ \ .Text\ \ \ \ \ \ \ \ =\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00199\ \textcolor{preprocessor}{\ \ \ \ \ \ \{\ }\textcolor{comment}{/*\ 1\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00200\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .com[0]\ =\ 1,\ .com[1]\ =\ 1,\ .com[2]\ =\ 5,\ .com[3]\ =\ 7,\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00201\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .bit[0]\ =\ 13,\ .bit[1]\ =\ 14,\ .bit[2]\ =\ 14,\ .bit[3]\ =\ 14,\ \ \ \(\backslash\)}}
+\DoxyCodeLine{00202\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .com[4]\ =\ 7,\ .com[5]\ =\ 3,\ .com[6]\ =\ 4,\ .com[7]\ =\ 2,\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00203\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .bit[4]\ =\ 13,\ .bit[5]\ =\ 13,\ .bit[6]\ =\ 13,\ .bit[7]\ =\ 13,\ \ \ \(\backslash\)}}
+\DoxyCodeLine{00204\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .com[8]\ =\ 3,\ .com[9]\ =\ 2,\ .com[10]\ =\ 4,\ .com[11]\ =\ 6,\ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00205\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .bit[8]\ =\ 14,\ .bit[9]\ =\ 14,\ .bit[10]\ =\ 14,\ .bit[11]\ =\ 14,\ \(\backslash\)}}
+\DoxyCodeLine{00206\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .com[12]\ =\ 5,\ .com[13]\ =\ 6,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00207\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .bit[12]\ =\ 13,\ .bit[13]\ =\ 13\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00208\ \textcolor{preprocessor}{\ \ \ \ \ \ \},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00209\ \textcolor{preprocessor}{\ \ \ \ \ \ \{\ }\textcolor{comment}{/*\ 2\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00210\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .com[0]\ =\ 1,\ .com[1]\ =\ 1,\ .com[2]\ =\ 5,\ .com[3]\ =\ 7,\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00211\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .bit[0]\ =\ 15,\ .bit[1]\ =\ 16,\ .bit[2]\ =\ 16,\ .bit[3]\ =\ 16,\ \ \ \(\backslash\)}}
+\DoxyCodeLine{00212\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .com[4]\ =\ 7,\ .com[5]\ =\ 3,\ .com[6]\ =\ 4,\ .com[7]\ =\ 2,\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00213\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .bit[4]\ =\ 15,\ .bit[5]\ =\ 15,\ .bit[6]\ =\ 15,\ .bit[7]\ =\ 15,\ \ \ \(\backslash\)}}
+\DoxyCodeLine{00214\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .com[8]\ =\ 3,\ .com[9]\ =\ 2,\ .com[10]\ =\ 4,\ .com[11]\ =\ 6,\ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00215\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .bit[8]\ =\ 16,\ .bit[9]\ =\ 16,\ .bit[10]\ =\ 16,\ .bit[11]\ =\ 16,\ \(\backslash\)}}
+\DoxyCodeLine{00216\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .com[12]\ =\ 5,\ .com[13]\ =\ 6,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00217\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .bit[12]\ =\ 15,\ .bit[13]\ =\ 15\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00218\ \textcolor{preprocessor}{\ \ \ \ \ \ \},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00219\ \textcolor{preprocessor}{\ \ \ \ \ \ \{\ }\textcolor{comment}{/*\ 3\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00220\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .com[0]\ =\ 1,\ .com[1]\ =\ 1,\ .com[2]\ =\ 5,\ .com[3]\ =\ 7,\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00221\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .bit[0]\ =\ 17,\ .bit[1]\ =\ 18,\ .bit[2]\ =\ 18,\ .bit[3]\ =\ 18,\ \ \ \(\backslash\)}}
+\DoxyCodeLine{00222\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .com[4]\ =\ 7,\ .com[5]\ =\ 3,\ .com[6]\ =\ 4,\ .com[7]\ =\ 2,\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00223\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .bit[4]\ =\ 17,\ .bit[5]\ =\ 17,\ .bit[6]\ =\ 17,\ .bit[7]\ =\ 17,\ \ \ \(\backslash\)}}
+\DoxyCodeLine{00224\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .com[8]\ =\ 3,\ .com[9]\ =\ 2,\ .com[10]\ =\ 4,\ .com[11]\ =\ 6,\ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00225\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .bit[8]\ =\ 18,\ .bit[9]\ =\ 18,\ .bit[10]\ =\ 18,\ .bit[11]\ =\ 18,\ \(\backslash\)}}
+\DoxyCodeLine{00226\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .com[12]\ =\ 5,\ .com[13]\ =\ 6,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00227\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .bit[12]\ =\ 17,\ .bit[13]\ =\ 17\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00228\ \textcolor{preprocessor}{\ \ \ \ \ \ \},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00229\ \textcolor{preprocessor}{\ \ \ \ \ \ \{\ }\textcolor{comment}{/*\ 4\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00230\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .com[0]\ =\ 1,\ .com[1]\ =\ 1,\ .com[2]\ =\ 5,\ .com[3]\ =\ 7,\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00231\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .bit[0]\ =\ 19,\ .bit[1]\ =\ 28,\ .bit[2]\ =\ 28,\ .bit[3]\ =\ 28,\ \ \ \(\backslash\)}}
+\DoxyCodeLine{00232\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .com[4]\ =\ 7,\ .com[5]\ =\ 3,\ .com[6]\ =\ 4,\ .com[7]\ =\ 2,\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00233\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .bit[4]\ =\ 19,\ .bit[5]\ =\ 19,\ .bit[6]\ =\ 19,\ .bit[7]\ =\ 19,\ \ \ \(\backslash\)}}
+\DoxyCodeLine{00234\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .com[8]\ =\ 3,\ .com[9]\ =\ 2,\ .com[10]\ =\ 4,\ .com[11]\ =\ 6,\ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00235\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .bit[8]\ =\ 28,\ .bit[9]\ =\ 28,\ .bit[10]\ =\ 28,\ .bit[11]\ =\ 28,\ \(\backslash\)}}
+\DoxyCodeLine{00236\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .com[12]\ =\ 5,\ .com[13]\ =\ 6,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00237\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .bit[12]\ =\ 19,\ .bit[13]\ =\ 19\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00238\ \textcolor{preprocessor}{\ \ \ \ \ \ \},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00239\ \textcolor{preprocessor}{\ \ \ \ \ \ \{\ }\textcolor{comment}{/*\ 5\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00240\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .com[0]\ =\ 0,\ .com[1]\ =\ 1,\ .com[2]\ =\ 5,\ .com[3]\ =\ 7,\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00241\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .bit[0]\ =\ 29,\ .bit[1]\ =\ 30,\ .bit[2]\ =\ 30,\ .bit[3]\ =\ 30,\ \ \ \(\backslash\)}}
+\DoxyCodeLine{00242\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .com[4]\ =\ 6,\ .com[5]\ =\ 2,\ .com[6]\ =\ 3,\ .com[7]\ =\ 1,\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00243\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .bit[4]\ =\ 29,\ .bit[5]\ =\ 29,\ .bit[6]\ =\ 29,\ .bit[7]\ =\ 29,\ \ \ \(\backslash\)}}
+\DoxyCodeLine{00244\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .com[8]\ =\ 3,\ .com[9]\ =\ 2,\ .com[10]\ =\ 4,\ .com[11]\ =\ 6,\ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00245\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .bit[8]\ =\ 30,\ .bit[9]\ =\ 30,\ .bit[10]\ =\ 30,\ .bit[11]\ =\ 30,\ \(\backslash\)}}
+\DoxyCodeLine{00246\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .com[12]\ =\ 4,\ .com[13]\ =\ 5,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00247\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .bit[12]\ =\ 29,\ .bit[13]\ =\ 29\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00248\ \textcolor{preprocessor}{\ \ \ \ \ \ \},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00249\ \textcolor{preprocessor}{\ \ \ \ \ \ \{\ }\textcolor{comment}{/*\ 6\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00250\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .com[0]\ =\ 0,\ .com[1]\ =\ 1,\ .com[2]\ =\ 5,\ .com[3]\ =\ 7,\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00251\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .bit[0]\ =\ 31,\ .bit[1]\ =\ 32,\ .bit[2]\ =\ 32,\ .bit[3]\ =\ 32,\ \ \ \(\backslash\)}}
+\DoxyCodeLine{00252\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .com[4]\ =\ 6,\ .com[5]\ =\ 2,\ .com[6]\ =\ 3,\ .com[7]\ =\ 1,\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00253\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .bit[4]\ =\ 31,\ .bit[5]\ =\ 31,\ .bit[6]\ =\ 31,\ .bit[7]\ =\ 31,\ \ \ \(\backslash\)}}
+\DoxyCodeLine{00254\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .com[8]\ =\ 3,\ .com[9]\ =\ 2,\ .com[10]\ =\ 4,\ .com[11]\ =\ 6,\ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00255\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .bit[8]\ =\ 32,\ .bit[9]\ =\ 32,\ .bit[10]\ =\ 32,\ .bit[11]\ =\ 32,\ \(\backslash\)}}
+\DoxyCodeLine{00256\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .com[12]\ =\ 4,\ .com[13]\ =\ 5,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00257\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .bit[12]\ =\ 31,\ .bit[13]\ =\ 31\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00258\ \textcolor{preprocessor}{\ \ \ \ \ \ \},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00259\ \textcolor{preprocessor}{\ \ \ \ \ \ \{\ }\textcolor{comment}{/*\ 7\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00260\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .com[0]\ =\ 1,\ .com[1]\ =\ 1,\ .com[2]\ =\ 5,\ .com[3]\ =\ 7,\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00261\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .bit[0]\ =\ 33,\ .bit[1]\ =\ 34,\ .bit[2]\ =\ 34,\ .bit[3]\ =\ 34,\ \ \ \(\backslash\)}}
+\DoxyCodeLine{00262\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .com[4]\ =\ 7,\ .com[5]\ =\ 3,\ .com[6]\ =\ 4,\ .com[7]\ =\ 2,\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00263\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .bit[4]\ =\ 33,\ .bit[5]\ =\ 33,\ .bit[6]\ =\ 33,\ .bit[7]\ =\ 33,\ \ \ \(\backslash\)}}
+\DoxyCodeLine{00264\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .com[8]\ =\ 3,\ .com[9]\ =\ 2,\ .com[10]\ =\ 4,\ .com[11]\ =\ 6,\ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00265\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .bit[8]\ =\ 34,\ .bit[9]\ =\ 34,\ .bit[10]\ =\ 34,\ .bit[11]\ =\ 34,\ \(\backslash\)}}
+\DoxyCodeLine{00266\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .com[12]\ =\ 5,\ .com[13]\ =\ 6,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00267\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .bit[12]\ =\ 33,\ .bit[13]\ =\ 33\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00268\ \textcolor{preprocessor}{\ \ \ \ \ \ \},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00269\ \textcolor{preprocessor}{\ \ \ \ \},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00270\ \textcolor{preprocessor}{\ \ \ \ .Number\ \ \ \ \ \ =\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00271\ \textcolor{preprocessor}{\ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00272\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .com[0]\ =\ 7,\ .com[1]\ =\ 5,\ .com[2]\ =\ 2,\ .com[3]\ =\ 1,\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00273\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .bit[0]\ =\ 35,\ .bit[1]\ =\ 35,\ .bit[2]\ =\ 35,\ .bit[3]\ =\ 35,\ \ \ \(\backslash\)}}
+\DoxyCodeLine{00274\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .com[4]\ =\ 3,\ .com[5]\ =\ 6,\ .com[6]\ =\ 4,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00275\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .bit[4]\ =\ 35,\ .bit[5]\ =\ 35,\ .bit[6]\ =\ 35,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00276\ \textcolor{preprocessor}{\ \ \ \ \ \ \},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00277\ \textcolor{preprocessor}{\ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00278\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .com[0]\ =\ 7,\ .com[1]\ =\ 5,\ .com[2]\ =\ 2,\ .com[3]\ =\ 1,\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00279\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .bit[0]\ =\ 36,\ .bit[1]\ =\ 36,\ .bit[2]\ =\ 36,\ .bit[3]\ =\ 36,\ \ \ \(\backslash\)}}
+\DoxyCodeLine{00280\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .com[4]\ =\ 3,\ .com[5]\ =\ 6,\ .com[6]\ =\ 4,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00281\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .bit[4]\ =\ 36,\ .bit[5]\ =\ 36,\ .bit[6]\ =\ 36,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00282\ \textcolor{preprocessor}{\ \ \ \ \ \ \},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00283\ \textcolor{preprocessor}{\ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00284\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .com[0]\ =\ 7,\ .com[1]\ =\ 5,\ .com[2]\ =\ 2,\ .com[3]\ =\ 1,\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00285\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .bit[0]\ =\ 37,\ .bit[1]\ =\ 37,\ .bit[2]\ =\ 37,\ .bit[3]\ =\ 37,\ \ \ \(\backslash\)}}
+\DoxyCodeLine{00286\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .com[4]\ =\ 3,\ .com[5]\ =\ 6,\ .com[6]\ =\ 4,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00287\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .bit[4]\ =\ 37,\ .bit[5]\ =\ 37,\ .bit[6]\ =\ 37,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00288\ \textcolor{preprocessor}{\ \ \ \ \ \ \},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00289\ \textcolor{preprocessor}{\ \ \ \ \ \ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00290\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .com[0]\ =\ 7,\ .com[1]\ =\ 5,\ .com[2]\ =\ 2,\ .com[3]\ =\ 1,\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00291\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .bit[0]\ =\ 38,\ .bit[1]\ =\ 38,\ .bit[2]\ =\ 38,\ .bit[3]\ =\ 38,\ \ \ \(\backslash\)}}
+\DoxyCodeLine{00292\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .com[4]\ =\ 3,\ .com[5]\ =\ 6,\ .com[6]\ =\ 4,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00293\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .bit[4]\ =\ 38,\ .bit[5]\ =\ 38,\ .bit[6]\ =\ 38,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00294\ \textcolor{preprocessor}{\ \ \ \ \ \ \},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00295\ \textcolor{preprocessor}{\ \ \ \ \},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00296\ \textcolor{preprocessor}{\ \ \ \ .EMode\ \ \ \ \ \ \ =\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00297\ \textcolor{preprocessor}{\ \ \ \ \ \ .com[0]\ =\ 0,\ .bit[0]\ =\ 39,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00298\ \textcolor{preprocessor}{\ \ \ \ \ \ .com[1]\ =\ 1,\ .bit[1]\ =\ 39,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00299\ \textcolor{preprocessor}{\ \ \ \ \ \ .com[2]\ =\ 7,\ .bit[2]\ =\ 39,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00300\ \textcolor{preprocessor}{\ \ \ \ \ \ .com[3]\ =\ 2,\ .bit[3]\ =\ 39,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00301\ \textcolor{preprocessor}{\ \ \ \ \ \ .com[4]\ =\ 6,\ .bit[4]\ =\ 39,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00302\ \textcolor{preprocessor}{\ \ \ \ \},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00303\ \textcolor{preprocessor}{\ \ \ \ .ARing\ \ \ \ \ \ \ =\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00304\ \textcolor{preprocessor}{\ \ \ \ \ \ .com[0]\ =\ 0,\ .bit[0]\ =\ 19,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00305\ \textcolor{preprocessor}{\ \ \ \ \ \ .com[1]\ =\ 0,\ .bit[1]\ =\ 18,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00306\ \textcolor{preprocessor}{\ \ \ \ \ \ .com[2]\ =\ 0,\ .bit[2]\ =\ 17,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00307\ \textcolor{preprocessor}{\ \ \ \ \ \ .com[3]\ =\ 0,\ .bit[3]\ =\ 16,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00308\ \textcolor{preprocessor}{\ \ \ \ \ \ .com[4]\ =\ 0,\ .bit[4]\ =\ 15,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00309\ \textcolor{preprocessor}{\ \ \ \ \ \ .com[5]\ =\ 0,\ .bit[5]\ =\ 14,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00310\ \textcolor{preprocessor}{\ \ \ \ \ \ .com[6]\ =\ 0,\ .bit[6]\ =\ 13,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00311\ \textcolor{preprocessor}{\ \ \ \ \ \ .com[7]\ =\ 0,\ .bit[7]\ =\ 12,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00312\ \textcolor{preprocessor}{\ \ \ \ \},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00313\ \textcolor{preprocessor}{\ \ \ \ .Battery\ \ \ \ \ =\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00314\ \textcolor{preprocessor}{\ \ \ \ \ \ .com[0]\ =\ 0,\ .bit[0]\ =\ 33,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00315\ \textcolor{preprocessor}{\ \ \ \ \ \ .com[1]\ =\ 0,\ .bit[1]\ =\ 37,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00316\ \textcolor{preprocessor}{\ \ \ \ \ \ .com[2]\ =\ 0,\ .bit[2]\ =\ 36,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00317\ \textcolor{preprocessor}{\ \ \ \ \ \ .com[3]\ =\ 0,\ .bit[3]\ =\ 38,\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00318\ \textcolor{preprocessor}{\ \ \ \ \},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00319\ \textcolor{preprocessor}{\ \ \ \ .TopBlocks\ \ \ =\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00320\ \textcolor{preprocessor}{\ \ \ \ \ \ \{\ }\textcolor{comment}{/*\ 1\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00321\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .com[0]\ =\ 1,\ .com[1]\ =\ 1,\ .com[2]\ =\ 3,\ .com[3]\ =\ 4,\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00322\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .bit[0]\ =\ 13,\ .bit[1]\ =\ 14,\ .bit[2]\ =\ 13,\ .bit[3]\ =\ 13,\ \ \ \(\backslash\)}}
+\DoxyCodeLine{00323\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .com[4]\ =\ 4,\ .com[5]\ =\ 2,\ .com[6]\ =\ 3,\ .com[7]\ =\ 2,\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00324\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .bit[4]\ =\ 14,\ .bit[5]\ =\ 13,\ .bit[6]\ =\ 14,\ .bit[7]\ =\ 14\ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00325\ \textcolor{preprocessor}{\ \ \ \ \ \ \},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00326\ \textcolor{preprocessor}{\ \ \ \ \ \ \{\ }\textcolor{comment}{/*\ 2\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00327\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .com[0]\ =\ 1,\ .com[1]\ =\ 1,\ .com[2]\ =\ 3,\ .com[3]\ =\ 4,\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00328\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .bit[0]\ =\ 15,\ .bit[1]\ =\ 16,\ .bit[2]\ =\ 15,\ .bit[3]\ =\ 15,\ \ \ \(\backslash\)}}
+\DoxyCodeLine{00329\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .com[4]\ =\ 4,\ .com[5]\ =\ 2,\ .com[6]\ =\ 3,\ .com[7]\ =\ 2,\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00330\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .bit[4]\ =\ 16,\ .bit[5]\ =\ 15,\ .bit[6]\ =\ 16,\ .bit[7]\ =\ 16\ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00331\ \textcolor{preprocessor}{\ \ \ \ \ \ \},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00332\ \textcolor{preprocessor}{\ \ \ \ \ \ \{\ }\textcolor{comment}{/*\ 3\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00333\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .com[0]\ =\ 1,\ .com[1]\ =\ 1,\ .com[2]\ =\ 3,\ .com[3]\ =\ 4,\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00334\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .bit[0]\ =\ 17,\ .bit[1]\ =\ 18,\ .bit[2]\ =\ 17,\ .bit[3]\ =\ 17,\ \ \ \(\backslash\)}}
+\DoxyCodeLine{00335\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .com[4]\ =\ 4,\ .com[5]\ =\ 2,\ .com[6]\ =\ 3,\ .com[7]\ =\ 2,\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00336\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .bit[4]\ =\ 18,\ .bit[5]\ =\ 17,\ .bit[6]\ =\ 18,\ .bit[7]\ =\ 18\ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00337\ \textcolor{preprocessor}{\ \ \ \ \ \ \},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00338\ \textcolor{preprocessor}{\ \ \ \ \ \ \{\ }\textcolor{comment}{/*\ 4\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00339\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .com[0]\ =\ 1,\ .com[1]\ =\ 1,\ .com[2]\ =\ 3,\ .com[3]\ =\ 4,\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00340\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .bit[0]\ =\ 19,\ .bit[1]\ =\ 28,\ .bit[2]\ =\ 19,\ .bit[3]\ =\ 19,\ \ \ \(\backslash\)}}
+\DoxyCodeLine{00341\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .com[4]\ =\ 4,\ .com[5]\ =\ 2,\ .com[6]\ =\ 3,\ .com[7]\ =\ 2,\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00342\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .bit[4]\ =\ 28,\ .bit[5]\ =\ 19,\ .bit[6]\ =\ 28,\ .bit[7]\ =\ 28\ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00343\ \textcolor{preprocessor}{\ \ \ \ \ \ \},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00344\ \textcolor{preprocessor}{\ \ \ \ \ \ \{\ }\textcolor{comment}{/*\ 5\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00345\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .com[0]\ =\ 0,\ .com[1]\ =\ 1,\ .com[2]\ =\ 2,\ .com[3]\ =\ 3,\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00346\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .bit[0]\ =\ 29,\ .bit[1]\ =\ 30,\ .bit[2]\ =\ 29,\ .bit[3]\ =\ 29,\ \ \ \(\backslash\)}}
+\DoxyCodeLine{00347\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .com[4]\ =\ 4,\ .com[5]\ =\ 1,\ .com[6]\ =\ 3,\ .com[7]\ =\ 2,\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00348\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .bit[4]\ =\ 30,\ .bit[5]\ =\ 29,\ .bit[6]\ =\ 30,\ .bit[7]\ =\ 30\ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00349\ \textcolor{preprocessor}{\ \ \ \ \ \ \},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00350\ \textcolor{preprocessor}{\ \ \ \ \ \ \{\ }\textcolor{comment}{/*\ 6\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00351\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .com[0]\ =\ 0,\ .com[1]\ =\ 1,\ .com[2]\ =\ 2,\ .com[3]\ =\ 3,\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00352\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .bit[0]\ =\ 31,\ .bit[1]\ =\ 32,\ .bit[2]\ =\ 31,\ .bit[3]\ =\ 31,\ \ \ \(\backslash\)}}
+\DoxyCodeLine{00353\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .com[4]\ =\ 4,\ .com[5]\ =\ 1,\ .com[6]\ =\ 3,\ .com[7]\ =\ 2,\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00354\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .bit[4]\ =\ 32,\ .bit[5]\ =\ 31,\ .bit[6]\ =\ 32,\ .bit[7]\ =\ 32\ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00355\ \textcolor{preprocessor}{\ \ \ \ \ \ \},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00356\ \textcolor{preprocessor}{\ \ \ \ \ \ \{\ }\textcolor{comment}{/*\ 7\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00357\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .com[0]\ =\ 1,\ .com[1]\ =\ 1,\ .com[2]\ =\ 3,\ .com[3]\ =\ 4,\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00358\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .bit[0]\ =\ 33,\ .bit[1]\ =\ 34,\ .bit[2]\ =\ 33,\ .bit[3]\ =\ 33,\ \ \ \(\backslash\)}}
+\DoxyCodeLine{00359\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .com[4]\ =\ 4,\ .com[5]\ =\ 2,\ .com[6]\ =\ 3,\ .com[7]\ =\ 2,\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00360\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .bit[4]\ =\ 34,\ .bit[5]\ =\ 33,\ .bit[6]\ =\ 34,\ .bit[7]\ =\ 34\ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00361\ \textcolor{preprocessor}{\ \ \ \ \ \ \},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00362\ \textcolor{preprocessor}{\ \ \ \ \},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00363\ \textcolor{preprocessor}{\ \ \ \ .BotBlocks\ \ \ =\ \{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00364\ \textcolor{preprocessor}{\ \ \ \ \ \ \{\ }\textcolor{comment}{/*\ 1\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00365\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .com[0]\ =\ 5,\ .com[1]\ =\ 7,\ .com[2]\ =\ 7,\ .com[3]\ =\ 4,\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00366\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .bit[0]\ =\ 14,\ .bit[1]\ =\ 14,\ .bit[2]\ =\ 13,\ .bit[3]\ =\ 13,\ \ \ \(\backslash\)}}
+\DoxyCodeLine{00367\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .com[4]\ =\ 4,\ .com[5]\ =\ 6,\ .com[6]\ =\ 5,\ .com[7]\ =\ 6,\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00368\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .bit[4]\ =\ 14,\ .bit[5]\ =\ 14,\ .bit[6]\ =\ 13,\ .bit[7]\ =\ 13\ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00369\ \textcolor{preprocessor}{\ \ \ \ \ \ \},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00370\ \textcolor{preprocessor}{\ \ \ \ \ \ \{\ }\textcolor{comment}{/*\ 2\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00371\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .com[0]\ =\ 5,\ .com[1]\ =\ 7,\ .com[2]\ =\ 7,\ .com[3]\ =\ 4,\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00372\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .bit[0]\ =\ 16,\ .bit[1]\ =\ 16,\ .bit[2]\ =\ 15,\ .bit[3]\ =\ 15,\ \ \ \(\backslash\)}}
+\DoxyCodeLine{00373\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .com[4]\ =\ 4,\ .com[5]\ =\ 6,\ .com[6]\ =\ 5,\ .com[7]\ =\ 6,\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00374\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .bit[4]\ =\ 16,\ .bit[5]\ =\ 16,\ .bit[6]\ =\ 15,\ .bit[7]\ =\ 15\ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00375\ \textcolor{preprocessor}{\ \ \ \ \ \ \},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00376\ \textcolor{preprocessor}{\ \ \ \ \ \ \{\ }\textcolor{comment}{/*\ 3\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00377\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .com[0]\ =\ 5,\ .com[1]\ =\ 7,\ .com[2]\ =\ 7,\ .com[3]\ =\ 4,\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00378\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .bit[0]\ =\ 18,\ .bit[1]\ =\ 18,\ .bit[2]\ =\ 17,\ .bit[3]\ =\ 17,\ \ \ \(\backslash\)}}
+\DoxyCodeLine{00379\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .com[4]\ =\ 4,\ .com[5]\ =\ 6,\ .com[6]\ =\ 5,\ .com[7]\ =\ 6,\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00380\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .bit[4]\ =\ 18,\ .bit[5]\ =\ 18,\ .bit[6]\ =\ 17,\ .bit[7]\ =\ 17\ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00381\ \textcolor{preprocessor}{\ \ \ \ \ \ \},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00382\ \textcolor{preprocessor}{\ \ \ \ \ \ \{\ }\textcolor{comment}{/*\ 4\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00383\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .com[0]\ =\ 5,\ .com[1]\ =\ 7,\ .com[2]\ =\ 7,\ .com[3]\ =\ 4,\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00384\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .bit[0]\ =\ 28,\ .bit[1]\ =\ 28,\ .bit[2]\ =\ 19,\ .bit[3]\ =\ 19,\ \ \ \(\backslash\)}}
+\DoxyCodeLine{00385\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .com[4]\ =\ 4,\ .com[5]\ =\ 6,\ .com[6]\ =\ 5,\ .com[7]\ =\ 6,\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00386\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .bit[4]\ =\ 28,\ .bit[5]\ =\ 28,\ .bit[6]\ =\ 19,\ .bit[7]\ =\ 19\ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00387\ \textcolor{preprocessor}{\ \ \ \ \ \ \},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00388\ \textcolor{preprocessor}{\ \ \ \ \ \ \{\ }\textcolor{comment}{/*\ 5\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00389\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .com[0]\ =\ 5,\ .com[1]\ =\ 7,\ .com[2]\ =\ 6,\ .com[3]\ =\ 3,\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00390\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .bit[0]\ =\ 30,\ .bit[1]\ =\ 30,\ .bit[2]\ =\ 29,\ .bit[3]\ =\ 29,\ \ \ \(\backslash\)}}
+\DoxyCodeLine{00391\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .com[4]\ =\ 4,\ .com[5]\ =\ 6,\ .com[6]\ =\ 4,\ .com[7]\ =\ 5,\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00392\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .bit[4]\ =\ 30,\ .bit[5]\ =\ 30,\ .bit[6]\ =\ 29,\ .bit[7]\ =\ 29\ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00393\ \textcolor{preprocessor}{\ \ \ \ \ \ \},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00394\ \textcolor{preprocessor}{\ \ \ \ \ \ \{\ }\textcolor{comment}{/*\ 6\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00395\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .com[0]\ =\ 5,\ .com[1]\ =\ 7,\ .com[2]\ =\ 6,\ .com[3]\ =\ 3,\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00396\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .bit[0]\ =\ 32,\ .bit[1]\ =\ 32,\ .bit[2]\ =\ 31,\ .bit[3]\ =\ 31,\ \ \ \(\backslash\)}}
+\DoxyCodeLine{00397\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .com[4]\ =\ 4,\ .com[5]\ =\ 6,\ .com[6]\ =\ 4,\ .com[7]\ =\ 5,\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00398\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .bit[4]\ =\ 32,\ .bit[5]\ =\ 32,\ .bit[6]\ =\ 31,\ .bit[7]\ =\ 31\ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00399\ \textcolor{preprocessor}{\ \ \ \ \ \ \},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00400\ \textcolor{preprocessor}{\ \ \ \ \ \ \{\ }\textcolor{comment}{/*\ 7\ */}\textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00401\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .com[0]\ =\ 5,\ .com[1]\ =\ 7,\ .com[2]\ =\ 7,\ .com[3]\ =\ 4,\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00402\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .bit[0]\ =\ 34,\ .bit[1]\ =\ 34,\ .bit[2]\ =\ 33,\ .bit[3]\ =\ 33,\ \ \ \(\backslash\)}}
+\DoxyCodeLine{00403\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .com[4]\ =\ 4,\ .com[5]\ =\ 6,\ .com[6]\ =\ 5,\ .com[7]\ =\ 6,\ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00404\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ .bit[4]\ =\ 34,\ .bit[5]\ =\ 34,\ .bit[6]\ =\ 33,\ .bit[7]\ =\ 33\ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00405\ \textcolor{preprocessor}{\ \ \ \ \ \ \},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00406\ \textcolor{preprocessor}{\ \ \ \ \}\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \(\backslash\)}}
+\DoxyCodeLine{00407\ \textcolor{preprocessor}{\}}}
+\DoxyCodeLine{00408\ }
+\DoxyCodeLine{00409\ \textcolor{preprocessor}{\#ifdef\ \_\_cplusplus}}
+\DoxyCodeLine{00410\ \}}
+\DoxyCodeLine{00411\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00412\ }
+\DoxyCodeLine{00413\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

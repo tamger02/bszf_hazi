@@ -101,10 +101,10 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Initialize the clock tree. </p>
 <p>Automatically configures the clock tree to use the appropriate high- and low-frequency clock sources depending on which other device initialization components are present.</p>
-<h3><a class="anchor" id="autotoc_md97"></a>
+<h3><a class="anchor" id="autotoc_md101"></a>
 High Frequency Clocks</h3>
 <p>If the <b>DPLL</b> or <b>HFRCO</b> device init components are present, the <b>HFRCO</b> oscillator is used as the clock source for high frequency clock trees. Otherwise, if the <b>HFXO</b> device init component is present, the <b>HFXO</b> oscillator is used. If no high frequency oscillator device init component is present, the <b>HFRCO</b> oscillator is used with its default settings.</p>
-<h3><a class="anchor" id="autotoc_md98"></a>
+<h3><a class="anchor" id="autotoc_md102"></a>
 Low Frequency Clocks</h3>
 <p>If the <b>LFXO</b> device init component is present, the <b>LFXO</b> oscillator is used as the clock source for low frequency clock trees. Otherwise, the <b>LFRCO</b> oscillator is used.</p>
 <dl class="section note"><dt>Note</dt><dd>This module has a limited configurability. Users can override the code based on the project ask. </dd></dl>

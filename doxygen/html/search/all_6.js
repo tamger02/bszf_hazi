@@ -1,7 +1,7 @@
 var searchData=
 [
   ['family_0',['family',['../struct_s_y_s_t_e_m___chip_revision___type_def.html#a47b64ea4d787f0fd06b2e218a16cac1c',1,'SYSTEM_ChipRevision_TypeDef']]],
-  ['feladat_3a_1',['Feladat:',['../index.html#autotoc_md116',1,'']]],
+  ['feladat_3a_1',['Feladat:',['../index.html#autotoc_md123',1,'']]],
   ['ffcr_2',['FFCR',['../group___c_m_s_i_s__core___debug_functions.html#ga3f68b6e73561b4849ebf953a894df8d2',1,'TPI_Type']]],
   ['ffsr_3',['FFSR',['../group___c_m_s_i_s__core___debug_functions.html#ga6c47a0b4c7ffc66093ef993d36bb441c',1,'TPI_Type']]],
   ['field_20macros_4',['Core register bit field macros',['../group___c_m_s_i_s__core__bitfield.html',1,'']]],
@@ -34,7 +34,7 @@ var searchData=
   ['fpu_20functions_31',['FPU Functions',['../group___c_m_s_i_s___core___fpu_functions.html',1,'']]],
   ['frame_32',['FRAME',['../struct_u_s_a_r_t___type_def.html#aee268331bd9160617e9e8af8bcb2e9aa',1,'USART_TypeDef']]],
   ['freeze_33',['FREEZE',['../struct_b_u_r_t_c___type_def.html#a7228e573a2ce57d9e7992817373bc0b1',1,'BURTC_TypeDef::FREEZE'],['../struct_c_m_u___type_def.html#aa13a1df1b11d01777f4fc21c6af8f325',1,'CMU_TypeDef::FREEZE'],['../struct_l_c_d___type_def.html#a2f60b6c928c3181cfa649645d81ddabd',1,'LCD_TypeDef::FREEZE'],['../struct_l_e_t_i_m_e_r___type_def.html#a116d1f8d2d79edeee842f415387b96c5',1,'LETIMER_TypeDef::FREEZE'],['../struct_l_e_u_a_r_t___type_def.html#a17a60e378828360ba195cc01d502d3b1',1,'LEUART_TypeDef::FREEZE'],['../struct_p_c_n_t___type_def.html#ab98543b829fd95630d0892dd4c59f26e',1,'PCNT_TypeDef::FREEZE'],['../struct_r_t_c___type_def.html#af6a142013a1065f53fe06c840829af5a',1,'RTC_TypeDef::FREEZE']]],
-  ['frequency_20clocks_34',['Frequency Clocks',['../group__device__init__clocks.html#autotoc_md97',1,'High Frequency Clocks'],['../group__device__init__clocks.html#autotoc_md98',1,'Low Frequency Clocks']]],
+  ['frequency_20clocks_34',['Frequency Clocks',['../group__device__init__clocks.html#autotoc_md101',1,'High Frequency Clocks'],['../group__device__init__clocks.html#autotoc_md102',1,'Low Frequency Clocks']]],
   ['from_20em_5fint_35',['Porting from em_int',['../em__core_8c.html#core_porting',1,'']]],
   ['fscr_36',['FSCR',['../group___c_m_s_i_s__core___debug_functions.html#gad6901bfd8a0089ca7e8a20475cf494a8',1,'TPI_Type']]],
   ['function_37',['EFM32GG990F1024 Alternate Function',['../group___e_f_m32_g_g990_f1024___alternate___function.html',1,'']]],

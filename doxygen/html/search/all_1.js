@@ -1,7 +1,7 @@
 var searchData=
 [
   ['a_0',['a',['../struct_c_o_r_e__nvic_mask__t.html#a4cccf12e99e45609625447624e39a22b',1,'CORE_nvicMask_t']]],
-  ['a_20játék_20menete_1',['A játék menete',['../index.html#autotoc_md119',1,'']]],
+  ['a_20játék_20menete_1',['A játék menete',['../index.html#autotoc_md126',1,'']]],
   ['access_20functions_2',['CMSIS Core Register Access Functions',['../group___c_m_s_i_s___core___reg_acc_functions.html',1,'']]],
   ['acmp0_3',['ACMP0',['../group___e_f_m32_g_g990_f1024___peripheral___declaration.html#ga07af77bdc71801553e581ddc858d7656',1,'efm32gg990f1024.h']]],
   ['acmp0_5fbase_4',['ACMP0_BASE',['../group___e_f_m32_g_g990_f1024___peripheral___base.html#ga5e3f07f21dd6ab0682363834112ce5b5',1,'efm32gg990f1024.h']]],
@@ -116,7 +116,7 @@ var searchData=
   ['acmp_5fstatus_5facmpout_5fdefault_113',['ACMP_STATUS_ACMPOUT_DEFAULT',['../group___e_f_m32_g_g___a_c_m_p___bit_fields.html#gad448f5602a2f32b0d5ca140696199c6c',1,'efm32gg_acmp.h']]],
   ['acmp_5ftypedef_114',['ACMP_TypeDef',['../struct_a_c_m_p___type_def.html',1,'']]],
   ['acpr_115',['ACPR',['../group___c_m_s_i_s__core___debug_functions.html#ga9e5e4421ef9c3d5b7ff8b24abd4e99b3',1,'TPI_Type']]],
-  ['action_116',['System Process Action',['../group__system.html#autotoc_md110',1,'']]],
+  ['action_116',['System Process Action',['../group__system.html#autotoc_md114',1,'']]],
   ['adc0_117',['ADC0',['../group___e_f_m32_g_g990_f1024___peripheral___declaration.html#ga0d2ea0f4a8dd17bf08e69d05deacbcb5',1,'efm32gg990f1024.h']]],
   ['adc0_5fbase_118',['ADC0_BASE',['../group___e_f_m32_g_g990_f1024___peripheral___base.html#ga0aa6c0c068af7a61c770bc6d4322d63e',1,'efm32gg990f1024.h']]],
   ['adc0_5firqhandler_119',['ADC0_IRQHandler',['../group___e_f_m32_g_g.html#ga3611206d185a38b740457a748712c457',1,'system_efm32gg.h']]],
@@ -769,11 +769,13 @@ var searchData=
   ['apsr_5fz_5fpos_766',['APSR_Z_Pos',['../group___c_m_s_i_s___c_o_r_e.html#ga3661286d108b1aca308d7445685eae3a',1,'core_cm3.h']]],
   ['arega_767',['AREGA',['../struct_l_c_d___type_def.html#aa22bc2db3dc5f9b72e255a3859c2de53',1,'LCD_TypeDef']]],
   ['aregb_768',['AREGB',['../struct_l_c_d___type_def.html#a5c4d837a4c404d55fe6eb2ee79ac29c6',1,'LCD_TypeDef']]],
-  ['arm_5fmpu_5fregion_5ft_769',['ARM_MPU_Region_t',['../struct_a_r_m___m_p_u___region__t.html',1,'']]],
-  ['assert_770',['Assert',['../group__assert.html',1,'']]],
-  ['auxcnt_771',['AUXCNT',['../struct_p_c_n_t___type_def.html#a9163bb0783a8a9c456dd6829bd28ab2a',1,'PCNT_TypeDef']]],
-  ['auxctrl_772',['AUXCTRL',['../struct_e_m_u___type_def.html#a0c1a606cd607620ab7d1ad57e60703ea',1,'EMU_TypeDef']]],
-  ['auxhfrcocal0_773',['AUXHFRCOCAL0',['../struct_d_e_v_i_n_f_o___type_def.html#a54673cb8ff83d8a428688f92e17838dc',1,'DEVINFO_TypeDef']]],
-  ['auxhfrcocal1_774',['AUXHFRCOCAL1',['../struct_d_e_v_i_n_f_o___type_def.html#ac14a86482616b4a9859427d0e3794057',1,'DEVINFO_TypeDef']]],
-  ['auxhfrcoctrl_775',['AUXHFRCOCTRL',['../struct_c_m_u___type_def.html#adf09a4cef9ab835b0a5e1fef6394880a',1,'CMU_TypeDef']]]
+  ['aring_5ftypedef_769',['ARING_TypeDef',['../struct_a_r_i_n_g___type_def.html',1,'']]],
+  ['arm_5fmpu_5fregion_5ft_770',['ARM_MPU_Region_t',['../struct_a_r_m___m_p_u___region__t.html',1,'']]],
+  ['array_5ftypedef_771',['ARRAY_TypeDef',['../struct_a_r_r_a_y___type_def.html',1,'']]],
+  ['assert_772',['Assert',['../group__assert.html',1,'']]],
+  ['auxcnt_773',['AUXCNT',['../struct_p_c_n_t___type_def.html#a9163bb0783a8a9c456dd6829bd28ab2a',1,'PCNT_TypeDef']]],
+  ['auxctrl_774',['AUXCTRL',['../struct_e_m_u___type_def.html#a0c1a606cd607620ab7d1ad57e60703ea',1,'EMU_TypeDef']]],
+  ['auxhfrcocal0_775',['AUXHFRCOCAL0',['../struct_d_e_v_i_n_f_o___type_def.html#a54673cb8ff83d8a428688f92e17838dc',1,'DEVINFO_TypeDef']]],
+  ['auxhfrcocal1_776',['AUXHFRCOCAL1',['../struct_d_e_v_i_n_f_o___type_def.html#ac14a86482616b4a9859427d0e3794057',1,'DEVINFO_TypeDef']]],
+  ['auxhfrcoctrl_777',['AUXHFRCOCTRL',['../struct_c_m_u___type_def.html#adf09a4cef9ab835b0a5e1fef6394880a',1,'CMU_TypeDef']]]
 ];

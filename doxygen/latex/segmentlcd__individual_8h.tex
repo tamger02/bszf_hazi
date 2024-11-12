@@ -1,0 +1,87 @@
+\doxysection{snake/segmentlcd\+\_\+individual.h File Reference}
+\hypertarget{segmentlcd__individual_8h}{}\label{segmentlcd__individual_8h}\index{snake/segmentlcd\_individual.h@{snake/segmentlcd\_individual.h}}
+
+
+EFM32 Segment LCD Display driver extension.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+union \mbox{\hyperlink{union_segment_l_c_d___upper_char_segments___type_def}{Segment\+LCD\+\_\+\+Upper\+Char\+Segments\+\_\+\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em Typedef to store the segment data of a 7-\/segment digit. \end{DoxyCompactList}\item 
+union \mbox{\hyperlink{union_segment_l_c_d___lower_char_segments___type_def}{Segment\+LCD\+\_\+\+Lower\+Char\+Segments\+\_\+\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em Typedef to store the segment data of a 14-\/segment alphanumeric character. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{segmentlcd__individual_8h_a96eff7fac342abef2ef54f473ed36471}\label{segmentlcd__individual_8h_a96eff7fac342abef2ef54f473ed36471} 
+\#define {\bfseries SEGMENT\+\_\+\+LCD\+\_\+\+NUM\+\_\+\+OF\+\_\+\+UPPER\+\_\+\+CHARS}~4
+\begin{DoxyCompactList}\small\item\em Defines the number of seven-\/segment digits located in the upper part of the LCD. \end{DoxyCompactList}\item 
+\Hypertarget{segmentlcd__individual_8h_a29896aab68558ec5cae32b5e5b4ee6a6}\label{segmentlcd__individual_8h_a29896aab68558ec5cae32b5e5b4ee6a6} 
+\#define {\bfseries SEGMENT\+\_\+\+LCD\+\_\+\+NUM\+\_\+\+OF\+\_\+\+LOWER\+\_\+\+CHARS}~7
+\begin{DoxyCompactList}\small\item\em Defines the number of 14-\/segment alphanumeric characters located in the lower part of the LCD. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{segmentlcd__individual_8h_ac047cda42eefaba5c0fbd5ac57d0727b}{Segment\+LCD\+\_\+\+Upper\+Segments}} (\mbox{\hyperlink{union_segment_l_c_d___upper_char_segments___type_def}{Segment\+LCD\+\_\+\+Upper\+Char\+Segments\+\_\+\+Type\+Def}} upper\+Char\+Segments\mbox{[}\mbox{\hyperlink{segmentlcd__individual_8h_a96eff7fac342abef2ef54f473ed36471}{SEGMENT\+\_\+\+LCD\+\_\+\+NUM\+\_\+\+OF\+\_\+\+UPPER\+\_\+\+CHARS}}\mbox{]})
+\begin{DoxyCompactList}\small\item\em Update the upper (four, seven-\/segment digits) part of the LCD using segment data passed as a parameter. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{segmentlcd__individual_8h_a8ba60d720e9ba38639831e190c903514}{Segment\+LCD\+\_\+\+Lower\+Segments}} (\mbox{\hyperlink{union_segment_l_c_d___lower_char_segments___type_def}{Segment\+LCD\+\_\+\+Lower\+Char\+Segments\+\_\+\+Type\+Def}} lower\+Char\+Segments\mbox{[}\mbox{\hyperlink{segmentlcd__individual_8h_a29896aab68558ec5cae32b5e5b4ee6a6}{SEGMENT\+\_\+\+LCD\+\_\+\+NUM\+\_\+\+OF\+\_\+\+LOWER\+\_\+\+CHARS}}\mbox{]})
+\begin{DoxyCompactList}\small\item\em Update the lower (seven, 14-\/segment alphanumeric characters) part of the LCD using segment data passed as a parameter. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+EFM32 Segment LCD Display driver extension. 
+
+EFM32 Segment LCD Display driver extension, header file.
+
+The extension makes it possible to turn on or off segments individually on the lower (7 alphanumeric characters) and on the upper (4 seven-\/segment digits) part of the LCD.
+
+Modified on\+: 2020. nov. 03. Fixed an array over indexing error in \doxylink{segmentlcd__individual_8h_ac047cda42eefaba5c0fbd5ac57d0727b}{Segment\+LCD\+\_\+\+Upper\+Segments()} reported by MIHALIK Mark
+
+Created on\+: 2018. oct. 15.
+
+Author\+: NASZALY Gabor \href{mailto:naszaly@mit.bme.hu}{\texttt{ naszaly@mit.\+bme.\+hu}} Based on\+: Earlier implementation by SCHERER Balazs \href{mailto:scherer@mit.bme.hu}{\texttt{ scherer@mit.\+bme.\+hu}}
+
+The extension makes it possible to turn on or off segments individually on the lower (7 alphanumeric characters) and on the upper (4 seven-\/segment digits) part of the LCD.
+
+Created on\+: 2018. oct. 15. Author\+: NASZALY Gabor \href{mailto:naszaly@mit.bme.hu}{\texttt{ naszaly@mit.\+bme.\+hu}} Based on\+: Earlier implementation by SCHERER Balazs \href{mailto:scherer@mit.bme.hu}{\texttt{ scherer@mit.\+bme.\+hu}} 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{segmentlcd__individual_8h_a8ba60d720e9ba38639831e190c903514}\index{segmentlcd\_individual.h@{segmentlcd\_individual.h}!SegmentLCD\_LowerSegments@{SegmentLCD\_LowerSegments}}
+\index{SegmentLCD\_LowerSegments@{SegmentLCD\_LowerSegments}!segmentlcd\_individual.h@{segmentlcd\_individual.h}}
+\doxysubsubsection{\texorpdfstring{SegmentLCD\_LowerSegments()}{SegmentLCD\_LowerSegments()}}
+{\footnotesize\ttfamily \label{segmentlcd__individual_8h_a8ba60d720e9ba38639831e190c903514} 
+void Segment\+LCD\+\_\+\+Lower\+Segments (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{union_segment_l_c_d___lower_char_segments___type_def}{Segment\+LCD\+\_\+\+Lower\+Char\+Segments\+\_\+\+Type\+Def}}}]{lower\+Char\+Segments}{\mbox{[}\+SEGMENT\+\_\+\+LCD\+\_\+\+NUM\+\_\+\+OF\+\_\+\+LOWER\+\_\+\+CHARS\mbox{]}}\end{DoxyParamCaption})}
+
+
+
+Update the lower (seven, 14-\/segment alphanumeric characters) part of the LCD using segment data passed as a parameter. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em lower\+Char\+Segments} & A pointer to an array of \doxylink{union_segment_l_c_d___lower_char_segments___type_def}{Segment\+LCD\+\_\+\+Lower\+Char\+Segments\+\_\+\+Type\+Def} elements. The size of the array should be SEGMENT\+\_\+\+LCD\+\_\+\+NUM\+\_\+\+OF\+\_\+\+LOWER\+\_\+\+CHARS! Each element in this array holds the segment data of a character. Each bit in the segment data corresponds to a segment in the given character (1\+: turn on, 0\+: turn off).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None. 
+\end{DoxyReturn}
+\Hypertarget{segmentlcd__individual_8h_ac047cda42eefaba5c0fbd5ac57d0727b}\index{segmentlcd\_individual.h@{segmentlcd\_individual.h}!SegmentLCD\_UpperSegments@{SegmentLCD\_UpperSegments}}
+\index{SegmentLCD\_UpperSegments@{SegmentLCD\_UpperSegments}!segmentlcd\_individual.h@{segmentlcd\_individual.h}}
+\doxysubsubsection{\texorpdfstring{SegmentLCD\_UpperSegments()}{SegmentLCD\_UpperSegments()}}
+{\footnotesize\ttfamily \label{segmentlcd__individual_8h_ac047cda42eefaba5c0fbd5ac57d0727b} 
+void Segment\+LCD\+\_\+\+Upper\+Segments (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{union_segment_l_c_d___upper_char_segments___type_def}{Segment\+LCD\+\_\+\+Upper\+Char\+Segments\+\_\+\+Type\+Def}}}]{upper\+Char\+Segments}{\mbox{[}\+SEGMENT\+\_\+\+LCD\+\_\+\+NUM\+\_\+\+OF\+\_\+\+UPPER\+\_\+\+CHARS\mbox{]}}\end{DoxyParamCaption})}
+
+
+
+Update the upper (four, seven-\/segment digits) part of the LCD using segment data passed as a parameter. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em upper\+Char\+Segments} & A pointer to an array of \doxylink{union_segment_l_c_d___upper_char_segments___type_def}{Segment\+LCD\+\_\+\+Upper\+Char\+Segments\+\_\+\+Type\+Def} elements. The size of the array should be SEGMENT\+\_\+\+LCD\+\_\+\+NUM\+\_\+\+OF\+\_\+\+UPPER\+\_\+\+CHARS! Each element in this array holds the segment data of a digit. Each bit in the segment data corresponds to a segment in the given digit (1\+: turn on, 0\+: turn off).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+None. 
+\end{DoxyReturn}

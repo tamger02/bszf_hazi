@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['lfxo_20initialization_0',['LFXO Initialization',['../group__device__init__lfxo.html',1,'']]],
-  ['linker_1',['Linker',['../group__linker.html',1,'']]]
+  ['kitdrv_0',['Kitdrv',['../group__kitdrv.html',1,'']]]
 ];

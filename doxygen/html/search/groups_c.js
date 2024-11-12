@@ -1,9 +1,8 @@
 var searchData=
 [
-  ['part_0',['EFM32GG990F1024 Part',['../group___e_f_m32_g_g990_f1024___part.html',1,'']]],
-  ['parts_1',['Parts',['../group___parts.html',1,'']]],
-  ['peripheral_20declarations_2',['EFM32GG990F1024 Peripheral Declarations',['../group___e_f_m32_g_g990_f1024___peripheral___declaration.html',1,'']]],
-  ['peripheral_20memory_20map_3',['EFM32GG990F1024 Peripheral Memory Map',['../group___e_f_m32_g_g990_f1024___peripheral___base.html',1,'']]],
-  ['peripheral_20typedefs_4',['EFM32GG990F1024 Peripheral TypeDefs',['../group___e_f_m32_g_g990_f1024___peripheral___type_defs.html',1,'']]],
-  ['port_20interface_20tpi_5',['Trace Port Interface (TPI)',['../group___c_m_s_i_s___t_p_i.html',1,'']]]
+  ['nested_20vectored_20interrupt_20controller_20nvic_0',['Nested Vectored Interrupt Controller (NVIC)',['../group___c_m_s_i_s___n_v_i_c.html',1,'']]],
+  ['not_20in_20scb_20scnscb_1',['System Controls not in SCB (SCnSCB)',['../group___c_m_s_i_s___s_cn_s_c_b.html',1,'']]],
+  ['nvic_2',['Nested Vectored Interrupt Controller (NVIC)',['../group___c_m_s_i_s___n_v_i_c.html',1,'']]],
+  ['nvic_20functions_3',['NVIC Functions',['../group___c_m_s_i_s___core___n_v_i_c_functions.html',1,'']]],
+  ['nvic_20initialization_4',['NVIC Initialization',['../group__device__init__nvic.html',1,'']]]
 ];
