@@ -15,3 +15,4 @@ Feladat:
 # TODO:
 
 - UART for keys 'b' and 'j'
+- 

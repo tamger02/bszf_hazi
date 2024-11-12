@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="ASCII"?>
 <model:MDescriptors xmlns:model="http://www.silabs.com/ss/Studio.ecore">
   <descriptors name="snake">
-    <properties key="projectCommon.sdkId" value="com.silabs.sdk.stack.super:4.4.4._-1474823738"/>
-    <properties key="universalConfig.relativeWorkspacePath" value="..\snake.slcw"/>
+    <properties key="projectCommon.sdkId" value="com.silabs.sdk.stack.super:4.4.4._1225866187"/>
+    <properties key="universalConfig.relativeWorkspacePath" value="../snake.slcw"/>
     <properties key="universalConfig.generationDirectory" value=""/>
     <properties key="universalConfig.toolchainCompatibility" value="iar gcc"/>
     <properties key="projectCommon.boardIds" value="brd2200a:0.0.0.A03"/>
@@ -13,4 +13,4 @@
     <properties key="projectCommon.importModeId" value="COPY"/>
     <properties key="universalConfig.compSelProjInstanceId" value="1731419970614"/>
   </descriptors>
-</model:MDescriptors>
+</model:MDescriptors>
