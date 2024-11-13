@@ -20,10 +20,18 @@ void MoveSnake()
       snake.koordinatak[i]=snake.koordinatak[i-1]; //Mindegyik testresz az elotte levo helyet veszi at
   }
   //Kigyo fejenek iranyvaltasa
+<<<<<<< HEAD
+//  switch(snake.irany)
+//  case RIGHT: snake.koordinatak[0].x += 1 ; //Ha jobbra megy, akkor a fej x koordinatajat növeljuk eggyel
+//  case LEFT: snake.koordinatak[0].x -= 1;//Ha balra megy, akkor a fej x koordinatajat csökkentjük eggyel
+//  case DOWN: snake.koordinatak[0].y -= 1;//Ha lefele megy, akkor a fej y koordinatajat csökkentjük eggyel
+//  case UP: snake.koordinatak[0].y += 1;//Ha jobbra megy, akkor a fej y koordinatajat növeljuk eggyel
+//  default: break;
+=======
   switch(snake.elozoirany)
   case RIGHT:
   {
-//  case DOWN: snake.koordinatak[0].y -= 1;//Ha lefele megy, akkor a fej y koordinatajat csökkentjük eggyel
+  switch(snake.irany)
     case RIGHT:
      {
        if(snake.koordinatak[0].x == 6)
@@ -208,6 +216,7 @@ void MoveSnake()
     default: break;
    };
    default: break;
+>>>>>>> domiszerda
 }
 
 void NewApplePosition()

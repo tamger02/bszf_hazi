@@ -24,9 +24,9 @@ typedef enum irany
 
 typedef struct{
   irany irany; // Kigyo fejenek iranya
+  irany elozoirany;
   koordinatak koordinatak[50]; //0. a fej
   int hossz; //Kigyo hossza
-  //Elozo irany?
 }kigyo;
 
 typedef struct{

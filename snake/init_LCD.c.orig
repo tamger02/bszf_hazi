@@ -47,7 +47,9 @@
 
 SegmentLCD_LowerCharSegments_TypeDef lowerCharSegments[SEGMENT_LCD_NUM_OF_LOWER_CHARS];
 
+<<<<<<< HEAD
 void testLCD(void)
+{
   kigyo snake1;
   alma apple1;
   snake1.koordinatak[0].x = 0;
@@ -57,6 +59,7 @@ void testLCD(void)
   snake1.hossz=2;
   apple1.x = 3;
   apple1.y = 2;
+
   refreshSnake(snake1, apple1);
 }
 
@@ -91,6 +94,10 @@ void refreshSnake(kigyo snake, alma apple)
         }
 
   SegmentLCD_LowerSegments(lowerCharSegments);
+}
+
+=======
+>>>>>>> domiszerda
 void demoSegments(void)
 {
   for (uint8_t p = 0; p < SEGMENT_LCD_NUM_OF_LOWER_CHARS; p++) {
