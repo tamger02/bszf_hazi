@@ -9,7 +9,6 @@
 #define GAME_H_
 #include "Objects.h"
 
-kigyo snake; //kigyo peldanyositasa;
-alma apple;
+
 
 #endif /* GAME_H_ */

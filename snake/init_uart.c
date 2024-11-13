@@ -70,6 +70,8 @@ void UART0_RX_IRQHandler(void){
   UARTflag = true;
   UARTvalue = USART_RxDataGet(UART0);
 
+
+
   USART_IntClear(UART0, _USART_IFC_MASK);
 }
 

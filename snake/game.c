@@ -12,211 +12,270 @@
 #include "init_LCD.h"
 #include "stdlib.h"
 
-void MoveSnake()
+void MoveSnake(kigyo* snake)
 {
   //Kigyo osszes szegmensenek mozgatasa
-  for(int i=1; i<snake.hossz; i++) //i=1-tol kezdodik, mert a fejet (0.) külön kezeljük
+  for(int i=1; i<(*snake).hossz; i++) //i=1-tol kezdodik, mert a fejet (0.) külön kezeljük
   {
-      snake.koordinatak[i]=snake.koordinatak[i-1]; //Mindegyik testresz az elotte levo helyet veszi at
+      (*snake).koordinatak[i]=(*snake).koordinatak[i-1]; //Mindegyik testresz az elotte levo helyet veszi at
   }
   //Kigyo fejenek iranyvaltasa
-  switch(snake.elozoirany)
+  switch(*((*snake).elozoirany))
   {
   case RIGHT:
   {
-    switch(snake.irany)
+    switch(*((*snake).irany))
     {
       case RIGHT:
         {
-          if(snake.koordinatak[0].x == 6)
-            {
-              snake.koordinatak[0].x = 0;
-            }
+          if((*snake).koordinatak[0].x == 6)
+          {
+              (*snake).koordinatak[0].x = 0;
+          }
           else
-            snake.koordinatak[0].x +=1;
+          {
+            (*snake).koordinatak[0].x +=1;
+          }
         }break;
       case DOWN:
         {
-          if(snake.koordinatak[0].x==6)
+          if((*snake).koordinatak[0].x==6)
             {
-              if(snake.koordinatak[0].y == 0 || snake.koordinatak[0].y == 4)
-                snake.koordinatak[0].y=5;
+              if((*snake).koordinatak[0].y == 0 || (*snake).koordinatak[0].y == 4)
+                {
+                  (*snake).koordinatak[0].y=5;
+                }
               else
-                snake.koordinatak[0].y=6;
+                {
+                  (*snake).koordinatak[0].y=6;
+                }
             }
           else
-            snake.koordinatak[0].x +=1;
-          if(snake.koordinatak[0].y == 4)
-            snake.koordinatak[0].y = 1;
+            {
+              (*snake).koordinatak[0].x +=1;
+            }
+          if((*snake).koordinatak[0].y == 4)
+            {
+              (*snake).koordinatak[0].y = 1;
+            }
           else
-            snake.koordinatak[0].y += 1;
+            {
+              (*snake).koordinatak[0].y += 1;
+            }
         }break;
       case UP:
         {
-          if(snake.koordinatak[0].x==6)
+          if((*snake).koordinatak[0].x==6)
             {
-              if(snake.koordinatak[0].y == 0 || snake.koordinatak[0].y == 4)
-                snake.koordinatak[0].y=6;
+              if((*snake).koordinatak[0].y == 0 || (*snake).koordinatak[0].y == 4)
+                {
+                  (*snake).koordinatak[0].y=6;
+                }
               else
-                snake.koordinatak[0].y = 5;
+                {
+                  (*snake).koordinatak[0].y = 5;
+                }
             }
           else
-            snake.koordinatak[0].x +=1;
-          if(snake.koordinatak[0].y == 0)
-            snake.koordinatak[0].y = 3;
+            {
+              (*snake).koordinatak[0].x +=1;
+            }
+          if((*snake).koordinatak[0].y == 0)
+            {
+              (*snake).koordinatak[0].y = 3;
+            }
           else
-            snake.koordinatak[0].y -= 1;
+            {
+              (*snake).koordinatak[0].y -= 1;
+            }
         }break;
     default: break;
-   }
+   }break;
    case LEFT:
    {
-      switch(snake.irany)
+      switch(*((*snake).irany))
       {
       case LEFT:
         {
-          if(snake.koordinatak[0].x == 0)
+          if((*snake).koordinatak[0].x == 0)
             {
-              snake.koordinatak[0].x = 6;
+              (*snake).koordinatak[0].x = 6;
             }
           else
-          snake.koordinatak[0].x -= 1;
+          {
+              (*snake).koordinatak[0].x -= 1;
+          }
         }break;
       case DOWN:
         {
-          if(snake.koordinatak[0].y == 4)
-            snake.koordinatak[0].y = 1;
+          if((*snake).koordinatak[0].y == 4)
+            {
+              (*snake).koordinatak[0].y = 1;
+            }
           else
-            snake.koordinatak[0].y += 1;
+            {
+              (*snake).koordinatak[0].y += 1;
+            }
         }break;
       case UP:
         {
-          if(snake.koordinatak[0].y == 0)
-            snake.koordinatak[0].y = 3;
+          if((*snake).koordinatak[0].y == 0)
+            {
+              (*snake).koordinatak[0].y = 3;
+            }
           else
-            snake.koordinatak[0].y -= 1;
+            {
+              (*snake).koordinatak[0].y -= 1;
+            }
         }break;
       default: break;}
-   }
+   } break;
    case DOWN:
    {
-      switch(snake.irany)
+      switch(*((*snake).irany))
       {
       case RIGHT:
         {
-          if(snake.koordinatak[0].x == 6 && snake.koordinatak[0].y == 5)
+          if((*snake).koordinatak[0].x == 6 && (*snake).koordinatak[0].y == 5)
           {
-            snake.koordinatak[0].x = 0;
-            snake.koordinatak[0].y = 2;
+            (*snake).koordinatak[0].x = 0;
+            (*snake).koordinatak[0].y = 2;
           }
-          else if(snake.koordinatak[0].x == 6 && snake.koordinatak[0].y == 6)
+          else if((*snake).koordinatak[0].x == 6 && (*snake).koordinatak[0].y == 6)
           {
-                snake.koordinatak[0].x = 0;
-                snake.koordinatak[0].y = 4;
+                (*snake).koordinatak[0].x = 0;
+                (*snake).koordinatak[0].y = 4;
           }
           else
-            snake.koordinatak[0].y += 1;
+            {
+              (*snake).koordinatak[0].y += 1;
+            }
         }break;
       case LEFT:
         {
-          if(snake.koordinatak[0].x == 0 && snake.koordinatak[0].y == 1)
+          if((*snake).koordinatak[0].x == 0 && (*snake).koordinatak[0].y == 1)
           {
-            snake.koordinatak[0].x=6;
-            snake.koordinatak[0].y=2;
+            (*snake).koordinatak[0].x=6;
+            (*snake).koordinatak[0].y=2;
           }
-          else if(snake.koordinatak[0].x == 0 && snake.koordinatak[0].y == 3)
+          else if((*snake).koordinatak[0].x == 0 && (*snake).koordinatak[0].y == 3)
           {
-            snake.koordinatak[0].x=6;
-            snake.koordinatak[0].y=4;
+            (*snake).koordinatak[0].x=6;
+            (*snake).koordinatak[0].y=4;
           }
           else
-            snake.koordinatak[0].x -=1;
-            snake.koordinatak[0].y +=1;
+          {
+            (*snake).koordinatak[0].x -=1;
+            (*snake).koordinatak[0].y +=1;
+          }
         }break;
        case DOWN:
          {
-           if(snake.koordinatak[0].x == 6)
+           if((*snake).koordinatak[0].x == 6)
              {
-               if(snake.koordinatak[0].y == 5)
-                 snake.koordinatak[0].y = 6;
-               else if(snake.koordinatak[0].y == 6)
-                 snake.koordinatak[0].y = 5;
-               else
-                 if(snake.koordinatak[0].y == 1)
-                   snake.koordinatak[0].y = 3;
+               if((*snake).koordinatak[0].y == 5)
+                 (*snake).koordinatak[0].y = 6;
+               else if((*snake).koordinatak[0].y == 6)
+                 (*snake).koordinatak[0].y = 5;
+               else //!!!!
+                 {
+                 if((*snake).koordinatak[0].y == 1)
+                   (*snake).koordinatak[0].y = 3;
                  else
-                   snake.koordinatak[0].y = 1;
+                   (*snake).koordinatak[0].y = 1;
+                 }
              }
            else
-             if(snake.koordinatak[0].y == 1)
-               snake.koordinatak[0].y = 3;
+             if((*snake).koordinatak[0].y == 1)
+               {
+                 (*snake).koordinatak[0].y = 3;
+               }
              else
-               snake.koordinatak[0].y = 1;
+               {
+                 (*snake).koordinatak[0].y = 1;
+               }
          }break ;
     default: break;}
-   };
+   }break;
    case UP:
    {
-      switch(snake.irany)
+      switch(*((*snake).irany))
       {
         case RIGHT:
           {
-            if(snake.koordinatak[0].x == 6 && snake.koordinatak[0].y == 5)
+            if((*snake).koordinatak[0].x == 6 && (*snake).koordinatak[0].y == 5)
               {
-                snake.koordinatak[0].x = 0;
-                snake.koordinatak[0].y = 0;
+                (*snake).koordinatak[0].x = 0;
+                (*snake).koordinatak[0].y = 0;
               }
-            else if(snake.koordinatak[0].x == 6 && snake.koordinatak[0].y == 6)
+            else if((*snake).koordinatak[0].x == 6 && (*snake).koordinatak[0].y == 6)
               {
-                snake.koordinatak[0].x = 0;
-                snake.koordinatak[0].y = 2;
+                (*snake).koordinatak[0].x = 0;
+                (*snake).koordinatak[0].y = 2;
               }
             else
-              snake.koordinatak[0].y -= 1;
+              {
+                (*snake).koordinatak[0].y -= 1;
+              }
           }break;
         case LEFT:
           {
-            if(snake.koordinatak[0].x == 0 && snake.koordinatak[0].y == 1)
+            if((*snake).koordinatak[0].x == 0 && (*snake).koordinatak[0].y == 1)
               {
-                snake.koordinatak[0].x = 6;
-                snake.koordinatak[0].y = 0;
+                (*snake).koordinatak[0].x = 6;
+                (*snake).koordinatak[0].y = 0;
               }
-            else if(snake.koordinatak[0].x == 0 && snake.koordinatak[0].y == 3)
+            else if((*snake).koordinatak[0].x == 0 && (*snake).koordinatak[0].y == 3)
               {
-                snake.koordinatak[0].x=6;
-                snake.koordinatak[0].y =2;
+                (*snake).koordinatak[0].x=6;
+                (*snake).koordinatak[0].y =2;
               }
             else
-              snake.koordinatak[0].x -= 1;
-              snake.koordinatak[0].y -= 1;
+              {
+                (*snake).koordinatak[0].x -= 1;
+                (*snake).koordinatak[0].y -= 1;
+              }
           }break;
         case UP:
           {
-            if(snake.koordinatak[0].x == 6)
+            if((*snake).koordinatak[0].x == 6)
               {
-                if(snake.koordinatak[0].y == 6)
-                  snake.koordinatak[0].y = 5;
-                else if(snake.koordinatak[0].y == 5)
-                  snake.koordinatak[0].y = 6;
+                if((*snake).koordinatak[0].y == 6)
+                  {
+                    (*snake).koordinatak[0].y = 5;
+                  }
+                else if((*snake).koordinatak[0].y == 5)
+                  {
+                    (*snake).koordinatak[0].y = 6;
+                  }
                 else
-                  if(snake.koordinatak[0].y == 1)
-                      snake.koordinatak[0].y = 3;
+                  if((*snake).koordinatak[0].y == 1)
+                      {
+                      (*snake).koordinatak[0].y = 3;
+                      }
                   else
-                      snake.koordinatak[0].y = 1;
+                      {
+                      (*snake).koordinatak[0].y = 1;
+                      }
               }
             else
-              if(snake.koordinatak[0].y == 1)
-                snake.koordinatak[0].y = 3;
+              if((*snake).koordinatak[0].y == 1)
+                {
+                  (*snake).koordinatak[0].y = 3;
+                }
               else
-                snake.koordinatak[0].y = 1;
+                {
+                  (*snake).koordinatak[0].y = 1;
+                }
           }break;
          default: break;}
-   };
+   }break;
    default: break;
-    }
+    }break;
   }
+  refreshSnake(*snake);
 }
-void NewApplePosition()
+void NewApplePosition(alma apple, kigyo snake)
 {
   //Random szam generalas
   int newx;
@@ -232,28 +291,28 @@ void NewApplePosition()
       {
         if(snake.koordinatak[i].x==apple.x && snake.koordinatak[i].y==apple.y)
           {
-            NewApplePosition();
+            //NewApplePosition();
           }
         if((snake.koordinatak[i].x+1)==apple.x && (snake.koordinatak[i].y+1)==apple.y)
                   {
-                    NewApplePosition();
+                    //NewApplePosition();
                   }
       }
 
 }
 
-void AppleIsEated()
+void AppleIsEated(alma apple, kigyo snake)
 {
   for(int i=0; i<=snake.hossz; i++)
     {
       if(snake.koordinatak[i].x==apple.x && snake.koordinatak[i].y==apple.y)
         {
-          NewApplePosition();
+          //NewApplePosition();
         }
     }
 }
 
-void HitDetect()
+void HitDetect(alma apple, kigyo snake)
 {
   for(int i = 1; i<snake.hossz; i++)
     {
@@ -266,22 +325,28 @@ void HitDetect()
     }
 }
 
-void gameInit()
+void gameInit(irany* irany, kigyo* snake)
 {
     //Inicializalasok:
-
+    for (int i = 0; i < 50; i++)
+      {
+        snake->koordinatak[i].x=0;
+        snake->koordinatak[i].y=0;
+      }
     //Peldanyositott kigyo inicializalasa
-    snake.hossz=1; //Kigyo kezdo hossza 1
-    snake.irany = RIGHT; //Kigyo kezdo iranya jobbra
-    snake.koordinatak[0].x=0; //Kigyo kezdo x koordinataja 0
-    snake.koordinatak[0].y=0; //Kigyo kezdo y koordinataja 0
+    snake->hossz=1; //Kigyo kezdo hossza 1
+    //snake->irany = &irany; //Kigyo kezdo iranya jobbra
+
+    snake->koordinatak[0].x=0; //Kigyo kezdo x koordinataja 0
+    snake->koordinatak[0].y=2; //Kigyo kezdo y koordinataja 0
     //score = 0; //Jatekos kezdo pontszama 0
 
     //Kijelzo tisztitasa
-    SegmentLCD_Init(false);
+    //SegmentLCD_Init(false);
+    refreshSnake(*snake);
 }
 
-void game()
+void game(kigyo* snake)
 {
   //A jatek itt egy teljesen statikus allapotbol indul
     //*Kigyonak van kiterjedese
@@ -291,9 +356,14 @@ void game()
     //Ezeket mind frissiteni kell
 
     //Kigyo mozgatasa az aktualis irany szerint, ami ha nem erkezett uj adat, akkor a regi irany
-      MoveSnake();
+      MoveSnake(&snake);
       //Talalat erzekelese
-      HitDetect();
+      //HitDetect();
       //Alma talalat ellenorzese
-      AppleIsEated();
+      //AppleIsEated();
 }
+
+void delaygeci()
+{
+  sl_udelay_wait(2000000);
+  }

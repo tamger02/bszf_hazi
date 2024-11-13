@@ -36,11 +36,11 @@ void app_init(void)
 //  score = 0; //Jatekos kezdo pontszama 0
 
   //Kijelzo tisztitasa
-  SegmentLCD_Init(false);
+  //SegmentLCD_Init(false);
 
   //demoSegments();
   //demoFasz();
-  testLCD();
+  //testLCD();
 
 }
 
