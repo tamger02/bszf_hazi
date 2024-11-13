@@ -9,6 +9,6 @@
 #define GAME_H_
 #include "Objects.h"
 
-
+int JustAte = 0;
 
 #endif /* GAME_H_ */
