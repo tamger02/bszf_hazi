@@ -59,18 +59,19 @@ void AppleIsEated()
     }
 }
 
-void gameInit(){
+void gameInit(irany* irany){
     //Inicializalasok:
 
     //Peldanyositott kigyo inicializalasa
     snake.hossz=1; //Kigyo kezdo hossza 1
-    snake.irany = RIGHT; //Kigyo kezdo iranya jobbra
+    snake.irany = *irany; //Kigyo kezdo iranya jobbra
     snake.koordinatak[0].x=0; //Kigyo kezdo x koordinataja 0
     snake.koordinatak[0].y=0; //Kigyo kezdo y koordinataja 0
     //score = 0; //Jatekos kezdo pontszama 0
 
     //Kijelzo tisztitasa
-    SegmentLCD_Init(false);
+    //SegmentLCD_Init(false);
+    refreshSnake(snake);
 
     //demoSegments();
     //demoFasz();
@@ -92,6 +93,5 @@ void game(){
       MoveSnake();
       //Alma talalat ellenorzese
       AppleIsEated();
-      //Kijelzo frissitese az uj adatokkal
-      LcdUpdate(snake);
+
 }
