@@ -32,7 +32,7 @@ void MoveSnake(kigyo* snake)
           {
               (*snake).koordinatak[0].x = 0;
           }
-          else
+          else if((*snake).koordinatak[0].y != 1 || (*snake).koordinatak[0].y != 3 || (*snake).koordinatak[0].y != 5 || (*snake).koordinatak[0].y != 6)
           {
             (*snake).koordinatak[0].x +=1;
           }
@@ -41,9 +41,13 @@ void MoveSnake(kigyo* snake)
         {
           if((*snake).koordinatak[0].x==6)
             {
-              if((*snake).koordinatak[0].y == 0 || (*snake).koordinatak[0].y == 4)
+              if((*snake).koordinatak[0].y == 0)
                 {
                   (*snake).koordinatak[0].y=5;
+                }
+              else if((*snake).koordinatak[0].y == 4)
+                {
+                (*snake).koordinatak[0].y=5;
                 }
               else
                 {
@@ -58,7 +62,7 @@ void MoveSnake(kigyo* snake)
             {
               (*snake).koordinatak[0].y = 1;
             }
-          else
+          else if((*snake).koordinatak[0].x!=6)
             {
               (*snake).koordinatak[0].y += 1;
             }
@@ -101,7 +105,7 @@ void MoveSnake(kigyo* snake)
             {
               (*snake).koordinatak[0].x = 6;
             }
-          else
+          else if((*snake).koordinatak[0].y != 1 || (*snake).koordinatak[0].y != 3 || (*snake).koordinatak[0].y != 5 || (*snake).koordinatak[0].y != 6)
           {
               (*snake).koordinatak[0].x -= 1;
           }
@@ -162,6 +166,14 @@ void MoveSnake(kigyo* snake)
           {
             (*snake).koordinatak[0].x=6;
             (*snake).koordinatak[0].y=4;
+          }
+          else if((*snake).koordinatak[0].x == 6 && (*snake).koordinatak[0].y == 6)
+          {
+              (*snake).koordinatak[0].y=4;
+          }
+          else if((*snake).koordinatak[0].x == 6 && (*snake).koordinatak[0].y == 5)
+          {
+              (*snake).koordinatak[0].y=2;
           }
           else
           {
@@ -316,7 +328,7 @@ void HitDetect(alma apple, kigyo snake)
 {
   for(int i = 1; i<snake.hossz; i++)
     {
-//      if(snake.koordinatak[i] == snake.koordinatak[0])
+//      if(snake.koordinatak[i].x == snake.koordinatak[0].x && snake.koordinatak[i]. == snake.koordinatak[0].y)
 //        {
 //          //HIT!
 //          //Pontok villogtatasa + felso kijelzon hossz kiirasa
