@@ -344,6 +344,7 @@ void gameInit(irany* irany, kigyo* snake)
     //Kijelzo tisztitasa
     //SegmentLCD_Init(false);
     refreshSnake(*snake);
+    delaygeci();
 }
 
 void game(kigyo* snake)

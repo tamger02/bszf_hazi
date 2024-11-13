@@ -47,7 +47,8 @@
 
 SegmentLCD_LowerCharSegments_TypeDef lowerCharSegments[SEGMENT_LCD_NUM_OF_LOWER_CHARS];
 
-void testLCD(void){
+void testLCD(void)    // Tester, legacy
+{
   kigyo snake1;
   alma apple1;
   snake1.koordinatak[0].x = 0;
@@ -60,14 +61,14 @@ void testLCD(void){
   refreshSnake(snake1, apple1);
 }
 
-void refreshSnake(kigyo snake, alma apple)
+void refreshSnake(kigyo snake, alma apple)        // prints the snake and the apples on LCD
 {
-  clearLCD();
+  clearLCD();   // clear all data from LCD
 
-  for (uint8_t i = 0; i < snake.hossz; i++)
+  for (uint8_t i = 0; i < snake.hossz; i++)     // iterate the whole snake
     {
       uint8_t p = snake.koordinatak[i].x;
-      switch (snake.koordinatak[i].y)
+      switch (snake.koordinatak[i].y)     // turn on segments for snake
       {
         case 0: { lowerCharSegments[p].a = 1; } break;
         case 1: { lowerCharSegments[p].f = 1; } break;
@@ -78,21 +79,20 @@ void refreshSnake(kigyo snake, alma apple)
         case 6: { lowerCharSegments[p].c = 1; } break;
       }
     }
-  uint8_t q = apple.x;
-  switch (apple.y)
+  switch (apple.y)                        // turn on segments for apple
         {
-          case 0: { lowerCharSegments[q].a = 1; } break;
-          case 1: { lowerCharSegments[q].f = 1; } break;
-          case 2: { lowerCharSegments[q].g = 1; lowerCharSegments[q].m = 1;} break;
-          case 3: { lowerCharSegments[q].e = 1; } break;
-          case 4: { lowerCharSegments[q].d = 1; } break;
-          case 5: { lowerCharSegments[q].b = 1; } break;
-          case 6: { lowerCharSegments[q].c = 1; } break;
+          case 0: { lowerCharSegments[apple.x].a = 1; } break;
+          case 1: { lowerCharSegments[apple.x].f = 1; } break;
+          case 2: { lowerCharSegments[apple.x].g = 1; lowerCharSegments[apple.x].m = 1;} break;
+          case 3: { lowerCharSegments[apple.x].e = 1; } break;
+          case 4: { lowerCharSegments[apple.x].d = 1; } break;
+          case 5: { lowerCharSegments[apple.x].b = 1; } break;
+          case 6: { lowerCharSegments[apple.x].c = 1; } break;
         }
 
-  SegmentLCD_LowerSegments(lowerCharSegments);
+  SegmentLCD_LowerSegments(lowerCharSegments);    // refresh lower segments
 }
-void demoSegments(void)
+void demoSegments(void)	    // LCD tester function
 {
   for (uint8_t p = 0; p < SEGMENT_LCD_NUM_OF_LOWER_CHARS; p++) {
         lowerCharSegments[p].a = 1;
@@ -159,54 +159,7 @@ void demoSegments(void)
    }
 }
 
-void demoFasz(void)
-{
-  lowerCharSegments[0].a = 1;
-  lowerCharSegments[0].f = 1;
-  lowerCharSegments[0].g = 1;
-  lowerCharSegments[0].m = 1;
-  lowerCharSegments[0].e = 1;
-
-  lowerCharSegments[1].a = 1;
-  lowerCharSegments[1].f = 1;
-  lowerCharSegments[1].g = 1;
-  lowerCharSegments[1].m = 1;
-  lowerCharSegments[1].e = 1;
-  lowerCharSegments[1].b = 1;
-  lowerCharSegments[1].c = 1;
-
-  lowerCharSegments[2].a = 1;
-  lowerCharSegments[2].f = 1;
-  lowerCharSegments[2].g = 1;
-  lowerCharSegments[2].m = 1;
-  lowerCharSegments[2].c = 1;
-  lowerCharSegments[2].d = 1;
-
-  lowerCharSegments[3].a = 1;
-  lowerCharSegments[3].k = 1;
-  lowerCharSegments[3].q = 1;
-  lowerCharSegments[3].d = 1;
-
-  lowerCharSegments[4].a = 1;
-  lowerCharSegments[4].b = 1;
-  lowerCharSegments[4].c = 1;
-  lowerCharSegments[4].d = 1;
-  lowerCharSegments[4].e = 1;
-  lowerCharSegments[4].f = 1;
-
-  lowerCharSegments[5].h = 1;
-  lowerCharSegments[5].k = 1;
-  lowerCharSegments[5].b = 1;
-  lowerCharSegments[5].f = 1;
-  lowerCharSegments[5].e = 1;
-  lowerCharSegments[5].c = 1;
-
-
-
-  SegmentLCD_LowerSegments(lowerCharSegments);
-}
-
-void clearLCD(void)
+void clearLCD(void)         // Clears all the segments
 {
   for (uint8_t p = 0; p < SEGMENT_LCD_NUM_OF_LOWER_CHARS; p++) {
         lowerCharSegments[p].raw = 0;
