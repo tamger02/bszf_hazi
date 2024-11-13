@@ -67,17 +67,9 @@ int main(void)
 
 
     UART_switchdir(dir_ptr, prev_dir_ptr);
-
-
-//            //UART_switchdir(&dir);
-            MoveSnake(&snake);
-            refreshSnake(snake);
-            delaygeci();
-            //sl_udelay_wait(200000);
-//            //UART_switchdir(&dir);
-
-
-    //UART_test1();
+    MoveSnake(&snake);
+    refreshSnake(snake);
+    delaygeci();
 
 //#if defined(SL_CATALOG_POWER_MANAGER_PRESENT)
 //    // Let the CPU go to sleep if the system allows it.
