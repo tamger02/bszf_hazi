@@ -5,6 +5,9 @@
 */
 
 #include "init_uart.h"
+#include "objects.h"
+#include "sl_component_catalog.h"
+#include "sl_system_init.h"
 
 volatile int UARTflag = false;
 volatile int UARTvalue;
@@ -80,4 +83,46 @@ void UART_test1()
 
       }
 }
+
+void UART_switchdir(irany* dir, irany* prev_dir)
+{
+  *prev_dir = *dir;
+  if (UARTflag){
+          UARTflag = false;
+          if (UARTvalue == 'j'){
+              switch (*dir) {
+                case UP: {*dir = RIGHT; USART_Tx(UART0, 'r');} break;
+                case RIGHT: {*dir = DOWN; USART_Tx(UART0, 'd');} break;
+                case DOWN: {*dir = LEFT; USART_Tx(UART0, 'l');} break;
+                case LEFT: {*dir = UP; USART_Tx(UART0, 'u');} break;
+              }
+              //UARTvalue = dir;
+              //USART_Tx(UART0, *dir);
+              //printf("cock");
+          }
+          if (UARTvalue == 'b'){
+              switch (*dir) {
+                case UP: {*dir = LEFT;USART_Tx(UART0, 'l');} break;
+                case RIGHT: {*dir = UP;USART_Tx(UART0, 'u');} break;
+                case DOWN: {*dir = RIGHT;USART_Tx(UART0, 'r');} break;
+                case LEFT: {*dir = DOWN;USART_Tx(UART0, 'd');} break;
+              }
+
+              //UARTvalue = dir;
+              //USART_Tx(UART0, *dir);
+              //printf("cock");
+          }
+          //printf("cock");
+      }
+}
+
+int _write(int file, char *data, int len) {
+    int ww;
+    for (ww=0; ww<len; ww++){
+    USART_Tx(UART0, data[ww]);
+    }
+    return len;
+}
+
+
 

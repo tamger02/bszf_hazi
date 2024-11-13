@@ -72,6 +72,7 @@ main.o: ../main.c \
  /Users/gergelytamasy/Documents/bszf_hazi/snake/gecko_sdk_4.4.4/platform/emlib/inc/sli_em_cmu.h \
  /Users/gergelytamasy/Documents/bszf_hazi/snake/gecko_sdk_4.4.4/platform/emlib/inc/em_usart.h \
  /Users/gergelytamasy/Documents/bszf_hazi/snake/gecko_sdk_4.4.4/platform/emlib/inc/em_gpio.h \
+ ../objects.h \
  /Users/gergelytamasy/Documents/bszf_hazi/snake/gecko_sdk_4.4.4/platform/service/system/inc/sl_system_init.h \
  ../app.h \
  /Users/gergelytamasy/Documents/bszf_hazi/snake/gecko_sdk_4.4.4/platform/service/system/inc/sl_system_process_action.h
@@ -148,6 +149,7 @@ main.o: ../main.c \
 /Users/gergelytamasy/Documents/bszf_hazi/snake/gecko_sdk_4.4.4/platform/emlib/inc/sli_em_cmu.h:
 /Users/gergelytamasy/Documents/bszf_hazi/snake/gecko_sdk_4.4.4/platform/emlib/inc/em_usart.h:
 /Users/gergelytamasy/Documents/bszf_hazi/snake/gecko_sdk_4.4.4/platform/emlib/inc/em_gpio.h:
+../objects.h:
 /Users/gergelytamasy/Documents/bszf_hazi/snake/gecko_sdk_4.4.4/platform/service/system/inc/sl_system_init.h:
 ../app.h:
 /Users/gergelytamasy/Documents/bszf_hazi/snake/gecko_sdk_4.4.4/platform/service/system/inc/sl_system_process_action.h:

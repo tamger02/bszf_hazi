@@ -5,8 +5,8 @@
  *      Author: dbura
  */
 
-#include "game.h";
-#include "Objects.h";
+#include "game.h"
+#include "Objects.h"
 #include "em_device.h"
 #include "em_cmu.h"
 #include "init_LCD.h"
@@ -20,12 +20,12 @@ void MoveSnake()
       snake.koordinatak[i]=snake.koordinatak[i-1]; //Mindegyik testresz az elotte levo helyet veszi at
   }
   //Kigyo fejenek iranyvaltasa
-  switch(snake.irany)
-  case RIGHT: snake.koordinatak[0].x += 1 ; //Ha jobbra megy, akkor a fej x koordinatajat növeljuk eggyel
-  case LEFT: snake.koordinatak[0].x -= 1;//Ha balra megy, akkor a fej x koordinatajat csökkentjük eggyel
-  case DOWN: snake.koordinatak[0].y -= 1;//Ha lefele megy, akkor a fej y koordinatajat csökkentjük eggyel
-  case UP: snake.koordinatak[0].y += 1;//Ha jobbra megy, akkor a fej y koordinatajat növeljuk eggyel
-  default: break;
+//  switch(snake.irany)
+//  case RIGHT: snake.koordinatak[0].x += 1 ; //Ha jobbra megy, akkor a fej x koordinatajat növeljuk eggyel
+//  case LEFT: snake.koordinatak[0].x -= 1;//Ha balra megy, akkor a fej x koordinatajat csökkentjük eggyel
+//  case DOWN: snake.koordinatak[0].y -= 1;//Ha lefele megy, akkor a fej y koordinatajat csökkentjük eggyel
+//  case UP: snake.koordinatak[0].y += 1;//Ha jobbra megy, akkor a fej y koordinatajat növeljuk eggyel
+//  default: break;
 }
 
 void NewApplePosition()
@@ -53,7 +53,7 @@ void AppleIsEated()
     {
       if(snake.koordinatak[i].x==apple.x && snake.koordinatak[i].y==apple.y)
         {
-          score += 1;
+          //score += 1;
           NewApplePosition();
         }
     }
@@ -67,13 +67,13 @@ void gameInit(){
     snake.irany = RIGHT; //Kigyo kezdo iranya jobbra
     snake.koordinatak[0].x=0; //Kigyo kezdo x koordinataja 0
     snake.koordinatak[0].y=0; //Kigyo kezdo y koordinataja 0
-    score = 0; //Jatekos kezdo pontszama 0
+    //score = 0; //Jatekos kezdo pontszama 0
 
     //Kijelzo tisztitasa
     SegmentLCD_Init(false);
 
     //demoSegments();
-    demoFasz();
+    //demoFasz();
 
 }
 void game(){

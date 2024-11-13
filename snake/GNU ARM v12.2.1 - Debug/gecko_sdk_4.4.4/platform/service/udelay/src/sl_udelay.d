@@ -1,8 +1,7 @@
-init_LCD.o: ../init_LCD.c \
+gecko_sdk_4.4.4/platform/service/udelay/src/sl_udelay.o: \
+ ../gecko_sdk_4.4.4/platform/service/udelay/src/sl_udelay.c \
  /Users/gergelytamasy/Documents/bszf_hazi/snake/gecko_sdk_4.4.4/platform/common/toolchain/inc/sl_gcc_preinclude.h \
- ../init_LCD.h ../segmentlcd_individual.h ../segmentlcd.h \
- ../segmentlcdconfig.h \
- /Users/gergelytamasy/Documents/bszf_hazi/snake/gecko_sdk_4.4.4/platform/emlib/inc/em_lcd.h \
+ /Users/gergelytamasy/Documents/bszf_hazi/snake/gecko_sdk_4.4.4/platform/service/udelay/inc/sl_udelay.h \
  /Users/gergelytamasy/Documents/bszf_hazi/snake/gecko_sdk_4.4.4/platform/Device/SiliconLabs/EFM32GG/Include/em_device.h \
  /Users/gergelytamasy/Documents/bszf_hazi/snake/gecko_sdk_4.4.4/platform/Device/SiliconLabs/EFM32GG/Include/efm32gg990f1024.h \
  /Users/gergelytamasy/Documents/bszf_hazi/snake/gecko_sdk_4.4.4/platform/CMSIS/Core/Include/core_cm3.h \
@@ -58,14 +57,9 @@ init_LCD.o: ../init_LCD.c \
  /Users/gergelytamasy/Documents/bszf_hazi/snake/gecko_sdk_4.4.4/platform/Device/SiliconLabs/EFM32GG/Include/efm32gg_uart.h \
  /Users/gergelytamasy/Documents/bszf_hazi/snake/gecko_sdk_4.4.4/platform/Device/SiliconLabs/EFM32GG/Include/efm32gg_af_ports.h \
  /Users/gergelytamasy/Documents/bszf_hazi/snake/gecko_sdk_4.4.4/platform/Device/SiliconLabs/EFM32GG/Include/efm32gg_af_pins.h \
- /Users/gergelytamasy/Documents/bszf_hazi/snake/gecko_sdk_4.4.4/platform/service/udelay/inc/sl_udelay.h \
- ../objects.h
+ /Users/gergelytamasy/Documents/bszf_hazi/snake/gecko_sdk_4.4.4/platform/common/inc/sl_assert.h
 /Users/gergelytamasy/Documents/bszf_hazi/snake/gecko_sdk_4.4.4/platform/common/toolchain/inc/sl_gcc_preinclude.h:
-../init_LCD.h:
-../segmentlcd_individual.h:
-../segmentlcd.h:
-../segmentlcdconfig.h:
-/Users/gergelytamasy/Documents/bszf_hazi/snake/gecko_sdk_4.4.4/platform/emlib/inc/em_lcd.h:
+/Users/gergelytamasy/Documents/bszf_hazi/snake/gecko_sdk_4.4.4/platform/service/udelay/inc/sl_udelay.h:
 /Users/gergelytamasy/Documents/bszf_hazi/snake/gecko_sdk_4.4.4/platform/Device/SiliconLabs/EFM32GG/Include/em_device.h:
 /Users/gergelytamasy/Documents/bszf_hazi/snake/gecko_sdk_4.4.4/platform/Device/SiliconLabs/EFM32GG/Include/efm32gg990f1024.h:
 /Users/gergelytamasy/Documents/bszf_hazi/snake/gecko_sdk_4.4.4/platform/CMSIS/Core/Include/core_cm3.h:
@@ -121,5 +115,4 @@ init_LCD.o: ../init_LCD.c \
 /Users/gergelytamasy/Documents/bszf_hazi/snake/gecko_sdk_4.4.4/platform/Device/SiliconLabs/EFM32GG/Include/efm32gg_uart.h:
 /Users/gergelytamasy/Documents/bszf_hazi/snake/gecko_sdk_4.4.4/platform/Device/SiliconLabs/EFM32GG/Include/efm32gg_af_ports.h:
 /Users/gergelytamasy/Documents/bszf_hazi/snake/gecko_sdk_4.4.4/platform/Device/SiliconLabs/EFM32GG/Include/efm32gg_af_pins.h:
-/Users/gergelytamasy/Documents/bszf_hazi/snake/gecko_sdk_4.4.4/platform/service/udelay/inc/sl_udelay.h:
-../objects.h:
+/Users/gergelytamasy/Documents/bszf_hazi/snake/gecko_sdk_4.4.4/platform/common/inc/sl_assert.h:

@@ -41,14 +41,58 @@
  *
  *****************************************************************************/
 #include "init_LCD.h"
-//#include <sl_udelay.h>
+#include <sl_udelay.h>
+#include "objects.h"
 
 
 SegmentLCD_LowerCharSegments_TypeDef lowerCharSegments[SEGMENT_LCD_NUM_OF_LOWER_CHARS];
 
-void refreshSnake(kigyo snake)
+void testLCD(void)
 {
+  kigyo snake1;
+  alma apple1;
+  snake1.koordinatak[0].x = 0;
+  snake1.koordinatak[0].y = 0;
+  snake1.koordinatak[1].x = 0;
+  snake1.koordinatak[1].y = 1;
+  snake1.hossz=2;
+  apple1.x = 3;
+  apple1.y = 2;
 
+  refreshSnake(snake1, apple1);
+}
+
+void refreshSnake(kigyo snake, alma apple)
+{
+  clearLCD();
+
+  for (uint8_t i = 0; i < snake.hossz; i++)
+    {
+      uint8_t p = snake.koordinatak[i].x;
+      switch (snake.koordinatak[i].y)
+      {
+        case 0: { lowerCharSegments[p].a = 1; } break;
+        case 1: { lowerCharSegments[p].f = 1; } break;
+        case 2: { lowerCharSegments[p].g = 1; lowerCharSegments[p].m = 1;} break;
+        case 3: { lowerCharSegments[p].e = 1; } break;
+        case 4: { lowerCharSegments[p].d = 1; } break;
+        case 5: { lowerCharSegments[p].b = 1; } break;
+        case 6: { lowerCharSegments[p].c = 1; } break;
+      }
+    }
+  uint8_t q = apple.x;
+  switch (apple.y)
+        {
+          case 0: { lowerCharSegments[q].a = 1; } break;
+          case 1: { lowerCharSegments[q].f = 1; } break;
+          case 2: { lowerCharSegments[q].g = 1; lowerCharSegments[q].m = 1;} break;
+          case 3: { lowerCharSegments[q].e = 1; } break;
+          case 4: { lowerCharSegments[q].d = 1; } break;
+          case 5: { lowerCharSegments[q].b = 1; } break;
+          case 6: { lowerCharSegments[q].c = 1; } break;
+        }
+
+  SegmentLCD_LowerSegments(lowerCharSegments);
 }
 
 void demoSegments(void)
@@ -165,3 +209,10 @@ void demoFasz(void)
   SegmentLCD_LowerSegments(lowerCharSegments);
 }
 
+void clearLCD(void)
+{
+  for (uint8_t p = 0; p < SEGMENT_LCD_NUM_OF_LOWER_CHARS; p++) {
+        lowerCharSegments[p].raw = 0;
+        SegmentLCD_LowerSegments(lowerCharSegments);
+     }
+}

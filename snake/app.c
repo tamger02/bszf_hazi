@@ -39,7 +39,8 @@ void app_init(void)
   SegmentLCD_Init(false);
 
   //demoSegments();
-  demoFasz();
+  //demoFasz();
+  testLCD();
 
 }
 

@@ -15,6 +15,8 @@
  *
  ******************************************************************************/
 #include "init_uart.h"
+#include "objects.h"
+
 
 #include "sl_component_catalog.h"
 #include "sl_system_init.h"
@@ -39,6 +41,7 @@ int main(void)
   // task(s) if the kernel is present.
   app_init();
   UART_init();
+  irany dir = UP;
 
 #if defined(SL_CATALOG_KERNEL_PRESENT)
   // Start the kernel. Task(s) created in app_init() will start running.
@@ -52,7 +55,8 @@ int main(void)
     // Application process.
     app_process_action();
 
-    UART_test1();
+    UART_switchdir(&dir);
+    //UART_test1();
 
 #if defined(SL_CATALOG_POWER_MANAGER_PRESENT)
     // Let the CPU go to sleep if the system allows it.
