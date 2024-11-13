@@ -40,12 +40,35 @@
  * SegmentLCD_LowerSegments(lowerCharSegments);
  *
  *****************************************************************************/
+/**************************************************************************//**
+ * @brief
+ * Defines each text symbol's segment in terms of COM and BIT numbers,
+ * in a way that we can enumerate each bit for each text segment in the
+ * following bit pattern:
+ * @verbatim
+ *  -------0------
+ *
+ * |   \7  |8  /9 |
+ * |5   \  |  /   |1
+ *
+ *  --6---  ---10--
+ *
+ * |    /  |  \11 |
+ * |4  /13 |12 \  |2
+ *
+ *  -------3------
+ * @endverbatim
+ * E.g.: First text character bit pattern #3 (above) is
+ * Segment 1D for Display
+ * Location COM 3, BIT 0
+ *****************************************************************************/
 #include "init_LCD.h"
 #include <sl_udelay.h>
 #include "objects.h"
 
 
 SegmentLCD_LowerCharSegments_TypeDef lowerCharSegments[SEGMENT_LCD_NUM_OF_LOWER_CHARS];
+SegmentLCD_UpperCharSegments_TypeDef upperCharSegments[SEGMENT_LCD_NUM_OF_UPPER_CHARS];
 
 void testLCD(void)    // Tester, legacy
 {
@@ -59,6 +82,11 @@ void testLCD(void)    // Tester, legacy
   apple1.x = 3;
   apple1.y = 2;
   refreshSnake(snake1, apple1);
+}
+
+void refreshPoints(kigyo snake)
+{
+  SegmentLCD_Number(snake.hossz);
 }
 
 void refreshSnake(kigyo snake, alma apple)        // prints the snake and the apples on LCD
@@ -156,6 +184,58 @@ void demoSegments(void)	    // LCD tester function
    for (uint8_t p = 0; p < SEGMENT_LCD_NUM_OF_LOWER_CHARS; p++) {
       lowerCharSegments[p].raw = 0;
       SegmentLCD_LowerSegments(lowerCharSegments);
+   }
+}
+
+void demoUpperSegments() {
+   // Turn on all segments one-by-one
+   // Only one segment is turned on at any given time
+   // Using 7 bit binary (raw) value
+   for (uint8_t p = 0; p < SEGMENT_LCD_NUM_OF_UPPER_CHARS; p++) {
+      for (uint8_t s = 0; s < 8; s++) {
+         upperCharSegments[p].raw = 1 << s;
+         SegmentLCD_UpperSegments(upperCharSegments);
+         sl_udelay_wait(100000);
+      }
+   }
+
+   // Turn on all segments one-by-one
+   // All the previous segments are left turned on
+   // Using dedicated (bit field) values
+   for (uint8_t p = 0; p < SEGMENT_LCD_NUM_OF_UPPER_CHARS; p++) {
+      upperCharSegments[p].a = 1;
+      SegmentLCD_UpperSegments(upperCharSegments);
+      sl_udelay_wait(100000);
+
+      upperCharSegments[p].b = 1;
+      SegmentLCD_UpperSegments(upperCharSegments);
+      sl_udelay_wait(100000);
+
+      upperCharSegments[p].c = 1;
+      SegmentLCD_UpperSegments(upperCharSegments);
+      sl_udelay_wait(100000);
+
+      upperCharSegments[p].d = 1;
+      SegmentLCD_UpperSegments(upperCharSegments);
+      sl_udelay_wait(100000);
+
+      upperCharSegments[p].e = 1;
+      SegmentLCD_UpperSegments(upperCharSegments);
+      sl_udelay_wait(100000);
+
+      upperCharSegments[p].f = 1;
+      SegmentLCD_UpperSegments(upperCharSegments);
+      sl_udelay_wait(100000);
+
+      upperCharSegments[p].g = 1;
+      SegmentLCD_UpperSegments(upperCharSegments);
+      sl_udelay_wait(100000);
+   }
+
+   // Clear all segments
+   for (uint8_t p = 0; p < SEGMENT_LCD_NUM_OF_UPPER_CHARS; p++) {
+      upperCharSegments[p].raw = 0;
+      SegmentLCD_UpperSegments(upperCharSegments);
    }
 }
 

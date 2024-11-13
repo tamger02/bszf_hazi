@@ -48,8 +48,13 @@ int main(void)
   kigyo snake;
   snake.irany = dir_ptr;
   snake.elozoirany = prev_dir_ptr;
+
+  alma apple;
+  alma* apple_ptr;
+
+
   SegmentLCD_Init(false);
-  gameInit(&dir, &snake);
+  gameInit(&dir, &snake, &apple);
   //demoSegments();
 
 
@@ -68,7 +73,9 @@ int main(void)
 
     UART_switchdir(dir_ptr, prev_dir_ptr);
     MoveSnake(&snake);
-    refreshSnake(snake);
+    refreshSnake(snake, apple);
+    //AppleIsEated()
+    refreshPoints(snake);
     delaygeci();
 
 //#if defined(SL_CATALOG_POWER_MANAGER_PRESENT)

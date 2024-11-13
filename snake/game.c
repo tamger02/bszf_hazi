@@ -11,6 +11,7 @@
 #include "em_cmu.h"
 #include "init_LCD.h"
 #include "stdlib.h"
+#include "time.h"
 
 void MoveSnake(kigyo* snake)
 {
@@ -287,27 +288,28 @@ void MoveSnake(kigyo* snake)
   }
   refreshSnake(*snake);
 }
-void NewApplePosition(alma apple, kigyo snake)
+void NewApplePosition(alma* apple, kigyo* snake)
 {
   //Random szam generalas
   int newx;
   int newy;
   int xmax = 6;
   int ymax = 6;
-  newx = rand() % (xmax+1);
-  newy = rand() % (ymax +1);
-  apple.x=newx;
-  apple.y=newy;
+  srand(time(NULL));
+  newx = rand() % ymax;
+  newy = rand() % ymax;
+  apple->x=newx;
+  apple->y=newy;
   //Megnezzuk hogy a random szam az a kigyora esik-e, vagy a kigyo feje elott van-e, ha igen, akkor uj szam generalasa
-  for(int i=0; i<=snake.hossz; i++)
+  for(int i=0; i<=snake->hossz; i++)
       {
-        if(snake.koordinatak[i].x==apple.x && snake.koordinatak[i].y==apple.y)
+        if(snake->koordinatak[i].x==apple->x && snake->koordinatak[i].y==apple->y)
           {
-            //NewApplePosition();
+            NewApplePosition(apple, snake);
           }
-        if((snake.koordinatak[i].x+1)==apple.x && (snake.koordinatak[i].y+1)==apple.y)
+        if((snake->koordinatak[i].x+1)==apple->x && (snake->koordinatak[i].y+1)==apple->y)
                   {
-                    //NewApplePosition();
+                    NewApplePosition(apple, snake);
                   }
       }
 
@@ -319,7 +321,7 @@ void AppleIsEated(alma apple, kigyo snake)
     {
       if(snake.koordinatak[i].x==apple.x && snake.koordinatak[i].y==apple.y)
         {
-          //NewApplePosition();
+          //NewApplePosition(apple, snake);
         }
     }
 }
@@ -337,10 +339,10 @@ void HitDetect(alma apple, kigyo snake)
     }
 }
 
-void gameInit(irany* irany, kigyo* snake)
+void gameInit(irany* irany, kigyo* snake, alma* apple)
 {
     //Inicializalasok:
-    for (int i = 0; i < 50; i++)
+    for (int i = 0; i < 2; i++)
       {
         snake->koordinatak[i].x=0;
         snake->koordinatak[i].y=0;
@@ -355,7 +357,10 @@ void gameInit(irany* irany, kigyo* snake)
 
     //Kijelzo tisztitasa
     //SegmentLCD_Init(false);
-    refreshSnake(*snake);
+    NewApplePosition(apple, snake);
+
+    refreshSnake(*snake, *apple);
+    refreshPoints(*snake);
     delaygeci();
 }
 
