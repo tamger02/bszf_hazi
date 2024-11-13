@@ -74,10 +74,8 @@ void UART_test1()
 {
   if (UARTflag){
           UARTflag = false;
-          if (UARTvalue == 'j' || UARTvalue == 'b'){
-              USART_Tx(UART0, UARTvalue);
-          }
 
+          USART_Tx(UART0, UARTvalue);
       }
 }
 

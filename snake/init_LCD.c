@@ -46,11 +46,6 @@
 
 SegmentLCD_LowerCharSegments_TypeDef lowerCharSegments[SEGMENT_LCD_NUM_OF_LOWER_CHARS];
 
-void refreshSnake(kigyo snake)
-{
-
-}
-
 void demoSegments(void)
 {
   for (uint8_t p = 0; p < SEGMENT_LCD_NUM_OF_LOWER_CHARS; p++) {

@@ -10,7 +10,7 @@
 #include "em_device.h"
 #include "em_cmu.h"
 #include "init_LCD.h"
-#include "math.h"
+#include "stdlib.h"
 
 void MoveSnake()
 {
@@ -20,12 +20,194 @@ void MoveSnake()
       snake.koordinatak[i]=snake.koordinatak[i-1]; //Mindegyik testresz az elotte levo helyet veszi at
   }
   //Kigyo fejenek iranyvaltasa
+  switch(snake.elozoirany)
+  case RIGHT:
+  {
   switch(snake.irany)
-  case RIGHT: snake.koordinatak[0].x += 1 ; //Ha jobbra megy, akkor a fej x koordinatajat növeljuk eggyel
-  case LEFT: snake.koordinatak[0].x -= 1;//Ha balra megy, akkor a fej x koordinatajat csökkentjük eggyel
-  case DOWN: snake.koordinatak[0].y -= 1;//Ha lefele megy, akkor a fej y koordinatajat csökkentjük eggyel
-  case UP: snake.koordinatak[0].y += 1;//Ha jobbra megy, akkor a fej y koordinatajat növeljuk eggyel
-  default: break;
+    case RIGHT:
+     {
+       if(snake.koordinatak[0].x == 6)
+         {
+           snake.koordinatak[0].x = 0;
+         }
+       else
+        snake.koordinatak[0].x +=1;
+     } break;
+    case DOWN:
+      {
+        if(snake.koordinatak[0].x==6)
+          {
+            if(snake.koordinatak[0].y == 0 || snake.koordinatak[0].y == 4)
+              snake.koordinatak[0].y=5;
+            else
+              snake.koordinatak[0].y=6;
+          }
+        else
+        snake.koordinatak[0].x +=1;
+        if(snake.koordinatak[0].y == 4)
+          snake.koordinatak[0].y = 1;
+        else
+          snake.koordinatak[0].y += 1;
+      } break;
+    case UP:
+      {
+        if(snake.koordinatak[0].x==6)
+        {
+            if(snake.koordinatak[0].y == 0 || snake.koordinatak[0].y == 4)
+              snake.koordinatak[0].y=6;
+            else
+              snake.koordinatak[0].y = 5;
+        }
+        else
+        snake.koordinatak[0].x +=1;
+        if(snake.koordinatak[0].y == 0)
+          snake.koordinatak[0].y = 3;
+        else
+          snake.koordinatak[0].y -= 1;
+      } break;
+    default: break;
+   };
+   case LEFT:
+   {
+      switch(snake.irany)
+      case LEFT:
+        {
+          if(snake.koordinatak[0].x == 0)
+            {
+              snake.koordinatak[0].x = 6;
+            }
+          else
+          snake.koordinatak[0].x -= 1;
+        } break;
+      case DOWN:
+        {
+          if(snake.koordinatak[0].y == 4)
+            snake.koordinatak[0].y = 1;
+          else
+            snake.koordinatak[0].y += 1;
+         } break;
+      case UP:
+        {
+          if(snake.koordinatak[0].y == 0)
+            snake.koordinatak[0].y = 3;
+          else
+            snake.koordinatak[0].y -= 1;
+        } break;
+      default: break;
+   };
+   case DOWN:
+   {
+    switch(snake.irany)
+    case RIGHT:
+      {
+        if(snake.koordinatak[0].x == 6 && snake.koordinatak[0].y == 5)
+          {
+            snake.koordinatak[0].x = 0;
+            snake.koordinatak[0].y = 2;
+          }
+        else if(snake.koordinatak[0].x == 6 && snake.koordinatak[0].y == 6)
+          {
+                snake.koordinatak[0].x = 0;
+                snake.koordinatak[0].y = 4;
+          }
+        else
+        snake.koordinatak[0].y += 1;
+      }break;
+    case LEFT:
+      {
+        if(snake.koordinatak[0].x == 0 && snake.koordinatak[0].y == 1)
+          {
+            snake.koordinatak[0].x=6;
+            snake.koordinatak[0].y=2;
+          }
+        else if(snake.koordinatak[0].x == 0 && snake.koordinatak[0].y == 3)
+          {
+            snake.koordinatak[0].x=6;
+            snake.koordinatak[0].y=4;
+          }
+        else
+        snake.koordinatak[0].x -=1;
+        snake.koordinatak[0].y +=1;
+      }break;
+    case DOWN:
+      {
+        if(snake.koordinatak[0].x == 6)
+          {
+            if(snake.koordinatak[0].y == 5)
+              snake.koordinatak[0].y = 6;
+            else if(snake.koordinatak[0].y == 6)
+              snake.koordinatak.y = 5;
+            else
+              if(snake.koordinatak[0].y == 1)
+                snake.koordinatak[0].y = 3;
+              else
+                snake.koordinatak[0].y = 1;
+          }
+        else
+        if(snake.koordinatak[0].y == 1)
+          snake.koordinatak[0].y = 3;
+        else
+          snake.koordinatak[0].y = 1;
+      }break ;
+    default: break;
+   };
+   case UP:
+   {
+    switch(snake.irany)
+    case RIGHT:
+      {
+        if(snake.koordinatak[0].x == 6 && snake.koordinatak[0].y == 5)
+          {
+            snake.koordinatak[0].x = 0;
+            snake.koordinatak[0].y = 0;
+          }
+        else if(snake.koordinatak[0].x == 6 && snake.koordinatak[0].y == 6)
+          {
+            snake.koordinatak[0].x = 0;
+            snake.koordinatak[0].y = 2;
+          }
+        else
+        snake.koordinatak[0].y -= 1;
+      }break;
+      case LEFT:
+      {
+        if(snake.koordinatak[0].x == 0 && snake.koordinatak[0].y == 1)
+          {
+            snake.koordinatak[0].x = 6;
+            snake.koordinatak[0].y = 0;
+          }
+        else if(snake.koordinatak[0].x == 0 && snake.koordinatak[0].y == 3)
+          {
+            snake.koordinatak[0].x=6;
+            snake.koordinatak[0].y =2;
+          }
+        else
+        snake.koordinatak[0].x -= 1;
+        snake.koordinatak[0].y -= 1;
+      }break;
+      case UP:
+      {
+        if(snake.koordinatak[0].x == 6)
+          {
+            if(snake.koordinatak[0].y == 6)
+              snake.koordinatak[0].y = 5;
+            else if(snake.koordinatak[0].y == 5)
+              snake.koordinatak[0].y = 6;
+            else
+            if(snake.koordinatak[0].y == 1)
+                      snake.koordinatak[0].y = 3;
+                    else
+                      snake.koordinatak[0].y = 1;
+          }
+        else
+        if(snake.koordinatak[0].y == 1)
+          snake.koordinatak[0].y = 3;
+        else
+          snake.koordinatak[0].y = 1;
+      }break;
+    default: break;
+   };
+   default: break;
 }
 
 void NewApplePosition()
@@ -33,7 +215,10 @@ void NewApplePosition()
   //Random szam generalas
   int newx;
   int newy;
-
+  int xmax = 6;
+  int ymax = 6;
+  newx = rand() % (xmax+1);
+  newy = rand() % (ymax +1);
   apple.x=newx;
   apple.y=newy;
   //Megnezzuk hogy a random szam az a kigyora esik-e, vagy a kigyo feje elott van-e, ha igen, akkor uj szam generalasa
@@ -43,6 +228,10 @@ void NewApplePosition()
           {
             NewApplePosition();
           }
+        if((snake.koordinatak[i].x+1)==apple.x && (snake.koordinatak[i].y+1)==apple.y)
+                  {
+                    NewApplePosition();
+                  }
       }
 
 }
