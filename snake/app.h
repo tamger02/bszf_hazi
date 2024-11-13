@@ -28,8 +28,6 @@ void app_init(void);
  ******************************************************************************/
 void app_process_action(void);
 
-//int snake; int peldanyositasa;
-//uint16_t score;
-//alma apple;
+
 
 #endif  // APP_H

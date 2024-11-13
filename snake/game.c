@@ -21,9 +21,11 @@ void MoveSnake()
   }
   //Kigyo fejenek iranyvaltasa
   switch(snake.elozoirany)
+  {
   case RIGHT:
   {
-//  case DOWN: snake.koordinatak[0].y -= 1;//Ha lefele megy, akkor a fej y koordinatajat csökkentjük eggyel
+    switch(snake.irany)
+    {
     case RIGHT:
      {
        if(snake.koordinatak[0].x == 6)
@@ -66,10 +68,11 @@ void MoveSnake()
           snake.koordinatak[0].y -= 1;
       } break;
     default: break;
-   };
+   }
    case LEFT:
    {
-      switch(snake.irany){
+      switch(snake.irany)
+      {
       case LEFT:
         {
           if(snake.koordinatak[0].x == 0)
@@ -94,10 +97,11 @@ void MoveSnake()
             snake.koordinatak[0].y -= 1;
         } break;
       default: break;}
-   };
+   }
    case DOWN:
    {
-    switch(snake.irany){
+    switch(snake.irany)
+    {
     case RIGHT:
       {
         if(snake.koordinatak[0].x == 6 && snake.koordinatak[0].y == 5)
@@ -208,8 +212,9 @@ void MoveSnake()
     default: break;}
    };
    default: break;
+ }
 }
-
+}
 void NewApplePosition()
 {
   //Random szam generalas
@@ -265,7 +270,8 @@ void gameInit(){
     //demoFasz();
 
 }
-void game(){
+void game()
+{
   //A jatek itt egy teljesen statikus allapotbol indul
     //*Kigyonak van kiterjedese
     //*Kigyonak van iranya
