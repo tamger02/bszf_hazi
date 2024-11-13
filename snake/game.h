@@ -10,7 +10,6 @@
 #include "Objects.h"
 
 kigyo snake; //kigyo peldanyositasa;
-uint16_t score;
 alma apple;
 
 #endif /* GAME_H_ */
