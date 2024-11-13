@@ -47,7 +47,7 @@
 
 SegmentLCD_LowerCharSegments_TypeDef lowerCharSegments[SEGMENT_LCD_NUM_OF_LOWER_CHARS];
 
-void testLCD(void)
+void testLCD(void){
   kigyo snake1;
   alma apple1;
   snake1.koordinatak[0].x = 0;
@@ -211,4 +211,4 @@ void clearLCD(void)
         lowerCharSegments[p].raw = 0;
         SegmentLCD_LowerSegments(lowerCharSegments);
      }
-}
+}}

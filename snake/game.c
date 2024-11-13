@@ -69,7 +69,7 @@ void MoveSnake()
    };
    case LEFT:
    {
-      switch(snake.irany)
+      switch(snake.irany){
       case LEFT:
         {
           if(snake.koordinatak[0].x == 0)
@@ -93,11 +93,11 @@ void MoveSnake()
           else
             snake.koordinatak[0].y -= 1;
         } break;
-      default: break;
+      default: break;}
    };
    case DOWN:
    {
-    switch(snake.irany)
+    switch(snake.irany){
     case RIGHT:
       {
         if(snake.koordinatak[0].x == 6 && snake.koordinatak[0].y == 5)
@@ -136,7 +136,7 @@ void MoveSnake()
             if(snake.koordinatak[0].y == 5)
               snake.koordinatak[0].y = 6;
             else if(snake.koordinatak[0].y == 6)
-              snake.koordinatak.y = 5;
+              snake.koordinatak[0].y = 5;
             else
               if(snake.koordinatak[0].y == 1)
                 snake.koordinatak[0].y = 3;
@@ -149,11 +149,11 @@ void MoveSnake()
         else
           snake.koordinatak[0].y = 1;
       }break ;
-    default: break;
+    default: break;}
    };
    case UP:
    {
-    switch(snake.irany)
+    switch(snake.irany){
     case RIGHT:
       {
         if(snake.koordinatak[0].x == 6 && snake.koordinatak[0].y == 5)
@@ -205,7 +205,7 @@ void MoveSnake()
         else
           snake.koordinatak[0].y = 1;
       }break;
-    default: break;
+    default: break;}
    };
    default: break;
 }
