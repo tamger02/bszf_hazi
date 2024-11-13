@@ -91,6 +91,7 @@ void refreshSnake(kigyo snake, alma apple)
         }
 
   SegmentLCD_LowerSegments(lowerCharSegments);
+}
 void demoSegments(void)
 {
   for (uint8_t p = 0; p < SEGMENT_LCD_NUM_OF_LOWER_CHARS; p++) {
@@ -211,4 +212,4 @@ void clearLCD(void)
         lowerCharSegments[p].raw = 0;
         SegmentLCD_LowerSegments(lowerCharSegments);
      }
-}}
+}

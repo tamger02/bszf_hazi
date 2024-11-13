@@ -41,7 +41,7 @@ int main(void)
   // task(s) if the kernel is present.
   app_init();
   UART_init();
-  irany dir = RIGHT;
+  irany dir = UP;
 
   gameInit(&dir);
 

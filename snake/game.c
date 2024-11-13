@@ -257,12 +257,12 @@ void HitDetect()
 {
   for(int i = 1; i<snake.hossz; i++)
     {
-      if(snake.koordinatak[i] == snake.koordinatak[0])
-        {
-          //HIT!
-          //Pontok villogtatasa + felso kijelzon hossz kiirasa
-          //Itt mar nem is ter vissza a program a fo menetebe
-        }
+//      if(snake.koordinatak[i] == snake.koordinatak[0])
+//        {
+//          //HIT!
+//          //Pontok villogtatasa + felso kijelzon hossz kiirasa
+//          //Itt mar nem is ter vissza a program a fo menetebe
+//        }
     }
 }
 
