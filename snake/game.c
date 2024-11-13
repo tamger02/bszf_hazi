@@ -16,10 +16,14 @@
 void MoveSnake(kigyo* snake)
 {
   //Kigyo osszes szegmensenek mozgatasa
-  for(int i=1; i<(*snake).hossz; i++) //i=1-tol kezdodik, mert a fejet (0.) külön kezeljük
+  if(!JustAte)
   {
-      (*snake).koordinatak[i]=(*snake).koordinatak[i-1]; //Mindegyik testresz az elotte levo helyet veszi at
+      for(int i=1; i<(*snake).hossz; i++) //i=1-tol kezdodik, mert a fejet (0.) külön kezeljük
+      {
+          (*snake).koordinatak[i]=(*snake).koordinatak[i-1]; //Mindegyik testresz az elotte levo helyet veszi at
+      }
   }
+  JustAte = 0;
   //Kigyo fejenek iranyvaltasa
   switch(*((*snake).elozoirany))
   {
@@ -89,7 +93,7 @@ void MoveSnake(kigyo* snake)
             {
               (*snake).koordinatak[0].y = 3;
             }
-          else
+          else if((*snake).koordinatak[0].x!=6)
             {
               (*snake).koordinatak[0].y -= 1;
             }
@@ -243,6 +247,16 @@ void MoveSnake(kigyo* snake)
                 (*snake).koordinatak[0].x=6;
                 (*snake).koordinatak[0].y =2;
               }
+            else if((*snake).koordinatak[0].x == 6 && (*snake).koordinatak[0].y == 5)
+              {
+                (*snake).koordinatak[0].x = 6;
+                (*snake).koordinatak[0].y = 0;
+              }
+            else if((*snake).koordinatak[0].x == 6 && (*snake).koordinatak[0].y == 6)
+              {
+                            (*snake).koordinatak[0].x = 6;
+                            (*snake).koordinatak[0].y = 2;
+              }
             else
               {
                 (*snake).koordinatak[0].x -= 1;
@@ -284,7 +298,7 @@ void MoveSnake(kigyo* snake)
          default: break;}
    }break;
    default: break;
-    }break;
+   }break;
   }
   refreshSnake(*snake);
 }
@@ -321,28 +335,123 @@ void AppleIsEated(alma apple, kigyo snake)
     {
       if(snake.koordinatak[i].x==apple.x && snake.koordinatak[i].y==apple.y)
         {
-          //NewApplePosition(apple, snake);
+          JustAte = 1;
+          NewApplePosition(apple, snake);
         }
     }
 }
 
-void HitDetect(alma apple, kigyo snake)
+void HitDetect(alma apple, kigyo* snake)
 {
-  for(int i = 1; i<snake.hossz; i++)
+  for(int i = 1; i<(*snake).hossz; i++)
     {
-//      if(snake.koordinatak[i].x == snake.koordinatak[0].x && snake.koordinatak[i]. == snake.koordinatak[0].y)
-//        {
-//          //HIT!
-//          //Pontok villogtatasa + felso kijelzon hossz kiirasa
-//          //Itt mar nem is ter vissza a program a fo menetebe
-//        }
+
+      if(((*snake).koordinatak[i].x == (*snake).koordinatak[0].x) && ((*snake).koordinatak[i].y == (*snake).koordinatak[0].y))
+        {
+          //HIT!
+          //Pontok villogtatasa + felso kijelzon hossz kiirasa
+          //Itt mar nem is ter vissza a program a fo menetebe
+        }
+      else
+        {
+          for(int i = 1; i<(*snake).hossz; i++)
+            {
+              switch(*((*snake).irany))
+              {
+                case UP:
+                  {
+                    if(((* snake).koordinatak[i - 1].y==(* snake).koordinatak[i].y)&&(((* snake).koordinatak[i - 1].x==(* snake).koordinatak[0].x)||((* snake).koordinatak[i].x==(* snake).koordinatak[0].x)))
+                    {
+
+                        //HIT!
+                        //Pontok villogtatasa + felso kijelzon hossz kiirasa
+                        //Itt mar nem is ter vissza a program a fo menetebe
+                    }
+                    else if(((*snake).koordinatak[i-1].x == 6 && (*snake).koordinatak[i].x==0)||(*snake).koordinatak[i-1].x == 0 && (*snake).koordinatak[i].x==6)
+                    {
+                        if(((*snake).koordinatak[i].y==0||(*snake).koordinatak[i].y==4) && (*snake).koordinatak[0].y==5)
+                          {
+                            //HIT!
+                            //Pontok villogtatasa + felso kijelzon hossz kiirasa
+                            //Itt mar nem is ter vissza a program a fo menetebe
+                          }
+                        else if((*snake).koordinatak[i].y==2 && (*snake).koordinatak[0].y==6)
+                          {
+                            //HIT!
+                            //Pontok villogtatasa + felso kijelzon hossz kiirasa
+                            //Itt mar nem is ter vissza a program a fo menetebe
+                          }
+                   }
+
+
+                  }break;
+                case DOWN:
+                  {
+                    if(((* snake).koordinatak[i - 1].y==(* snake).koordinatak[i].y)&&(((* snake).koordinatak[i - 1].x==(* snake).koordinatak[0].x)||((* snake).koordinatak[i].x==(* snake).koordinatak[0].x)))
+                    {
+                        //HIT!
+                        //Pontok villogtatasa + felso kijelzon hossz kiirasa
+                        //Itt mar nem is ter vissza a program a fo menetebe
+                        //itt ha a szelen van akkor nem erzekeli
+                    }
+                    else if(((*snake).koordinatak[i-1].x == 6 && (*snake).koordinatak[i].x==0)||(*snake).koordinatak[i-1].x == 0 && (*snake).koordinatak[i].x==6)
+                    {
+                    if((*snake).koordinatak[i].y==0 && (*snake).koordinatak[0].y==5)
+                    {
+                        //HIT!
+                        //Pontok villogtatasa + felso kijelzon hossz kiirasa
+                        //Itt mar nem is ter vissza a program a fo menetebe
+                    }
+                    else if((*snake).koordinatak[i].y==2 && (*snake).koordinatak[0].y==6)
+                    {
+                        //HIT!
+                        //Pontok villogtatasa + felso kijelzon hossz kiirasa
+                        //Itt mar nem is ter vissza a program a fo menetebe
+                    }
+                    }
+
+                  }break;
+                case LEFT:
+                  {
+                    if(((* snake).koordinatak[0].y==2)) //Ha kozepen van, amugy szelen amugy is belemegy a kigyoba
+                      {
+                        if((* snake).koordinatak[i - 1].x==(* snake).koordinatak[i].x) //Ha egy szegmenshataron fuggolegesen
+                            {
+                               if(((* snake).koordinatak[i - 1].x==1 && (* snake).koordinatak[i].x==3)||((* snake).koordinatak[i - 1].x==3 && (* snake).koordinatak[i].x==1))
+                                 {
+                                   //HIT!
+                                   //Pontok villogtatasa + felso kijelzon hossz kiirasa
+                                   //Itt mar nem is ter vissza a program a fo menetebe
+                                 }
+                       }
+                     }
+                  }break;
+                case RIGHT:
+                  {
+                    if(((* snake).koordinatak[0].y==2)) //Ha kozepen van, amugy szelen amugy is belemegy a kigyoba
+                      {
+                         if((* snake).koordinatak[i - 1].x==(* snake).koordinatak[i].x) //Ha egy szegmenshataron fuggolegesen
+                         {
+                             if(((* snake).koordinatak[i - 1].x==1 && (* snake).koordinatak[i].x==3)||((* snake).koordinatak[i - 1].x==3 && (* snake).koordinatak[i].x==1))
+                               {
+                                 //HIT!
+                                 //Pontok villogtatasa + felso kijelzon hossz kiirasa
+                                 //Itt mar nem is ter vissza a program a fo menetebe
+                               }
+                         }
+                      }
+                  }break;
+                default: break;
+              }break;
+            }
+        }
     }
 }
 
 void gameInit(irany* irany, kigyo* snake, alma* apple)
 {
     //Inicializalasok:
-    for (int i = 0; i < 2; i++)
+    for (int i = 0; i < 50; i++)
       {
         snake->koordinatak[i].x=0;
         snake->koordinatak[i].y=0;
