@@ -72,7 +72,8 @@ game.o: ../game.c \
  /Users/gergelytamasy/Documents/bszf_hazi/snake/gecko_sdk_4.4.4/platform/emlib/inc/sli_em_cmu.h \
  ../init_LCD.h ../segmentlcd_individual.h ../segmentlcd.h \
  ../segmentlcdconfig.h \
- /Users/gergelytamasy/Documents/bszf_hazi/snake/gecko_sdk_4.4.4/platform/emlib/inc/em_lcd.h
+ /Users/gergelytamasy/Documents/bszf_hazi/snake/gecko_sdk_4.4.4/platform/emlib/inc/em_lcd.h \
+ ../randomnumbers.h
 /Users/gergelytamasy/Documents/bszf_hazi/snake/gecko_sdk_4.4.4/platform/common/toolchain/inc/sl_gcc_preinclude.h:
 ../game.h:
 ../Objects.h:
@@ -150,3 +151,4 @@ game.o: ../game.c \
 ../segmentlcd.h:
 ../segmentlcdconfig.h:
 /Users/gergelytamasy/Documents/bszf_hazi/snake/gecko_sdk_4.4.4/platform/emlib/inc/em_lcd.h:
+../randomnumbers.h:
