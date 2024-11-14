@@ -9,6 +9,7 @@
 #define GAME_H_
 #include "Objects.h"
 
-int JustAte = 0;
+int JustAte;
+int iterate;
 
 #endif /* GAME_H_ */

@@ -11,11 +11,16 @@
 #include "em_cmu.h"
 #include "init_LCD.h"
 #include "stdlib.h"
+#include "math.h"
+#include "stdio.h"
 #include "time.h"
+#include "randomnumbers.h"
 
 void MoveSnake(kigyo* snake)
 {
   //Kigyo osszes szegmensenek mozgatasa
+  if(JustAte)
+    (*snake).hossz += 1;
   if(!JustAte)
   {
       for(int i=1; i<(*snake).hossz; i++) //i=1-tol kezdodik, mert a fejet (0.) külön kezeljük
@@ -302,16 +307,26 @@ void MoveSnake(kigyo* snake)
   }
   refreshSnake(*snake);
 }
+
+
 void NewApplePosition(alma* apple, kigyo* snake)
 {
+
   //Random szam generalas
   int newx;
   int newy;
-  int xmax = 6;
-  int ymax = 6;
-  srand(time(NULL));
-  newx = rand() % ymax;
-  newy = rand() % ymax;
+  if(iterate == 49)
+    {
+      iterate=0;
+    }
+  newx = randomnumbers[iterate];
+  iterate += 1;
+      if(iterate == 49)
+          {
+            iterate=0;
+          }
+  newy = randomnumbers[iterate];
+  iterate +=1;
   apple->x=newx;
   apple->y=newy;
   //Megnezzuk hogy a random szam az a kigyora esik-e, vagy a kigyo feje elott van-e, ha igen, akkor uj szam generalasa
@@ -329,14 +344,14 @@ void NewApplePosition(alma* apple, kigyo* snake)
 
 }
 
-void AppleIsEated(alma apple, kigyo snake)
+void AppleIsEated(kigyo snake, alma apple)
 {
-  for(int i=0; i<=snake.hossz; i++)
+  for(int i=0; i<snake.hossz; i++)
     {
       if(snake.koordinatak[i].x==apple.x && snake.koordinatak[i].y==apple.y)
         {
           JustAte = 1;
-          NewApplePosition(apple, snake);
+          NewApplePosition(&apple, &snake);
         }
     }
 }
@@ -352,6 +367,7 @@ void HitDetect(alma apple, kigyo* snake)
           //Pontok villogtatasa + felso kijelzon hossz kiirasa
           //Itt mar nem is ter vissza a program a fo menetebe
         }
+      /*
       else
         {
           for(int i = 1; i<(*snake).hossz; i++)
@@ -444,9 +460,66 @@ void HitDetect(alma apple, kigyo* snake)
                 default: break;
               }break;
             }
-        }
+        }*/
     }
+
 }
+
+void initrandomnumbers()
+{
+  randomnumbers[0] = 5;
+  randomnumbers[1] = 1;
+  randomnumbers[2] = 4;
+  randomnumbers[3] = 6;
+  randomnumbers[4] = 3;
+  randomnumbers[5] = 2;
+  randomnumbers[6] = 0;
+  randomnumbers[7] = 1;
+  randomnumbers[8] = 4;
+  randomnumbers[9] = 5;
+  randomnumbers[10] = 6;
+  randomnumbers[11] = 0;
+  randomnumbers[12] = 2;
+  randomnumbers[13] = 3;
+  randomnumbers[14] = 4;
+  randomnumbers[15] = 1;
+  randomnumbers[16] = 5;
+  randomnumbers[17] = 2;
+  randomnumbers[18] = 3;
+  randomnumbers[19] = 0;
+  randomnumbers[20] = 6;
+  randomnumbers[21] = 4;
+  randomnumbers[22] = 1;
+  randomnumbers[23] = 2;
+  randomnumbers[24] = 5;
+  randomnumbers[25] = 0;
+  randomnumbers[26] = 3;
+  randomnumbers[27] = 6;
+  randomnumbers[28] = 4;
+  randomnumbers[29] = 1;
+  randomnumbers[30] = 5;
+  randomnumbers[31] = 3;
+  randomnumbers[32] = 2;
+  randomnumbers[33] = 0;
+  randomnumbers[34] = 6;
+  randomnumbers[35] = 1;
+  randomnumbers[36] = 5;
+  randomnumbers[37] = 2;
+  randomnumbers[38] = 4;
+  randomnumbers[39] = 3;
+  randomnumbers[40] = 6;
+  randomnumbers[41] = 1;
+  randomnumbers[42] = 0;
+  randomnumbers[43] = 5;
+  randomnumbers[44] = 4;
+  randomnumbers[45] = 3;
+  randomnumbers[46] = 2;
+  randomnumbers[47] = 0;
+  randomnumbers[48] = 6;
+  randomnumbers[49] = 5;
+
+}
+
 
 void gameInit(irany* irany, kigyo* snake, alma* apple)
 {

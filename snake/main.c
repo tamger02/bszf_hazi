@@ -48,6 +48,7 @@ int main(void)
   kigyo snake;
   snake.irany = dir_ptr;
   snake.elozoirany = prev_dir_ptr;
+  initrandomnumbers();
 
   alma apple;
   alma* apple_ptr;
@@ -73,8 +74,8 @@ int main(void)
 
     UART_switchdir(dir_ptr, prev_dir_ptr);
     MoveSnake(&snake);
+    AppleIsEated(snake, apple);
     refreshSnake(snake, apple);
-    //AppleIsEated()
     refreshPoints(snake);
     delaygeci();
 
