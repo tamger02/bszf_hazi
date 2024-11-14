@@ -1770,39 +1770,39 @@ LOAD linker stubs
  .debug_ranges  0x00000000000010a8       0x10 ./gecko_sdk_4.4.4/platform/service/system/src/sl_system_process_action.o
  .debug_ranges  0x00000000000010b8       0x10 ./gecko_sdk_4.4.4/platform/service/udelay/src/sl_udelay.o
 
-.debug_line     0x0000000000000000     0xac44
+.debug_line     0x0000000000000000     0xac45
  .debug_line    0x0000000000000000       0x4c ./app.o
  .debug_line    0x000000000000004c      0x739 ./game.o
  .debug_line    0x0000000000000785      0x89e ./init_LCD.o
- .debug_line    0x0000000000001023      0x5be ./init_uart.o
- .debug_line    0x00000000000015e1      0x175 ./main.o
- .debug_line    0x0000000000001756      0xc5e ./segmentlcd.o
- .debug_line    0x00000000000023b4      0x40f ./segmentlcd_individual.o
- .debug_line    0x00000000000027c3       0x55 ./autogen/sl_board_default_init.o
- .debug_line    0x0000000000002818      0x2e6 ./autogen/sl_device_init_clocks.o
- .debug_line    0x0000000000002afe      0x50e ./autogen/sl_event_handler.o
- .debug_line    0x000000000000300c      0x480 ./gecko_sdk_4.4.4/hardware/board/src/sl_board_control_gpio.o
- .debug_line    0x000000000000348c      0x208 ./gecko_sdk_4.4.4/hardware/board/src/sl_board_init.o
- .debug_line    0x0000000000003694      0x313 ./gecko_sdk_4.4.4/platform/Device/SiliconLabs/EFM32GG/Source/startup_efm32gg.o
- .debug_line    0x00000000000039a7      0x484 ./gecko_sdk_4.4.4/platform/Device/SiliconLabs/EFM32GG/Source/system_efm32gg.o
- .debug_line    0x0000000000003e2b       0x85 ./gecko_sdk_4.4.4/platform/common/src/sl_assert.o
- .debug_line    0x0000000000003eb0      0x185 ./gecko_sdk_4.4.4/platform/common/src/sl_syscalls.o
- .debug_line    0x0000000000004035      0x314 ./gecko_sdk_4.4.4/platform/common/toolchain/src/sl_memory.o
- .debug_line    0x0000000000004349     0x1db6 ./gecko_sdk_4.4.4/platform/emlib/src/em_cmu.o
- .debug_line    0x00000000000060ff      0xaa1 ./gecko_sdk_4.4.4/platform/emlib/src/em_core.o
- .debug_line    0x0000000000006ba0      0xc58 ./gecko_sdk_4.4.4/platform/emlib/src/em_emu.o
- .debug_line    0x00000000000077f8      0x74b ./gecko_sdk_4.4.4/platform/emlib/src/em_gpio.o
- .debug_line    0x0000000000007f43      0xbd4 ./gecko_sdk_4.4.4/platform/emlib/src/em_lcd.o
- .debug_line    0x0000000000008b17      0x519 ./gecko_sdk_4.4.4/platform/emlib/src/em_system.o
- .debug_line    0x0000000000009030      0xbe3 ./gecko_sdk_4.4.4/platform/emlib/src/em_usart.o
- .debug_line    0x0000000000009c13      0x272 ./gecko_sdk_4.4.4/platform/service/device_init/src/sl_device_init_emu_s0.o
- .debug_line    0x0000000000009e85      0x2f0 ./gecko_sdk_4.4.4/platform/service/device_init/src/sl_device_init_hfxo_s0.o
- .debug_line    0x000000000000a175      0x279 ./gecko_sdk_4.4.4/platform/service/device_init/src/sl_device_init_lfxo_s0.o
- .debug_line    0x000000000000a3ee      0x365 ./gecko_sdk_4.4.4/platform/service/device_init/src/sl_device_init_nvic.o
- .debug_line    0x000000000000a753       0xcc ./gecko_sdk_4.4.4/platform/service/system/src/sl_system_init.o
- .debug_line    0x000000000000a81f       0xd5 ./gecko_sdk_4.4.4/platform/service/system/src/sl_system_process_action.o
- .debug_line    0x000000000000a8f4      0x2d8 ./gecko_sdk_4.4.4/platform/service/udelay/src/sl_udelay.o
- .debug_line    0x000000000000abcc       0x78 ./gecko_sdk_4.4.4/platform/service/udelay/src/sl_udelay_armv6m_gcc.o
+ .debug_line    0x0000000000001023      0x5bf ./init_uart.o
+ .debug_line    0x00000000000015e2      0x175 ./main.o
+ .debug_line    0x0000000000001757      0xc5e ./segmentlcd.o
+ .debug_line    0x00000000000023b5      0x40f ./segmentlcd_individual.o
+ .debug_line    0x00000000000027c4       0x55 ./autogen/sl_board_default_init.o
+ .debug_line    0x0000000000002819      0x2e6 ./autogen/sl_device_init_clocks.o
+ .debug_line    0x0000000000002aff      0x50e ./autogen/sl_event_handler.o
+ .debug_line    0x000000000000300d      0x480 ./gecko_sdk_4.4.4/hardware/board/src/sl_board_control_gpio.o
+ .debug_line    0x000000000000348d      0x208 ./gecko_sdk_4.4.4/hardware/board/src/sl_board_init.o
+ .debug_line    0x0000000000003695      0x313 ./gecko_sdk_4.4.4/platform/Device/SiliconLabs/EFM32GG/Source/startup_efm32gg.o
+ .debug_line    0x00000000000039a8      0x484 ./gecko_sdk_4.4.4/platform/Device/SiliconLabs/EFM32GG/Source/system_efm32gg.o
+ .debug_line    0x0000000000003e2c       0x85 ./gecko_sdk_4.4.4/platform/common/src/sl_assert.o
+ .debug_line    0x0000000000003eb1      0x185 ./gecko_sdk_4.4.4/platform/common/src/sl_syscalls.o
+ .debug_line    0x0000000000004036      0x314 ./gecko_sdk_4.4.4/platform/common/toolchain/src/sl_memory.o
+ .debug_line    0x000000000000434a     0x1db6 ./gecko_sdk_4.4.4/platform/emlib/src/em_cmu.o
+ .debug_line    0x0000000000006100      0xaa1 ./gecko_sdk_4.4.4/platform/emlib/src/em_core.o
+ .debug_line    0x0000000000006ba1      0xc58 ./gecko_sdk_4.4.4/platform/emlib/src/em_emu.o
+ .debug_line    0x00000000000077f9      0x74b ./gecko_sdk_4.4.4/platform/emlib/src/em_gpio.o
+ .debug_line    0x0000000000007f44      0xbd4 ./gecko_sdk_4.4.4/platform/emlib/src/em_lcd.o
+ .debug_line    0x0000000000008b18      0x519 ./gecko_sdk_4.4.4/platform/emlib/src/em_system.o
+ .debug_line    0x0000000000009031      0xbe3 ./gecko_sdk_4.4.4/platform/emlib/src/em_usart.o
+ .debug_line    0x0000000000009c14      0x272 ./gecko_sdk_4.4.4/platform/service/device_init/src/sl_device_init_emu_s0.o
+ .debug_line    0x0000000000009e86      0x2f0 ./gecko_sdk_4.4.4/platform/service/device_init/src/sl_device_init_hfxo_s0.o
+ .debug_line    0x000000000000a176      0x279 ./gecko_sdk_4.4.4/platform/service/device_init/src/sl_device_init_lfxo_s0.o
+ .debug_line    0x000000000000a3ef      0x365 ./gecko_sdk_4.4.4/platform/service/device_init/src/sl_device_init_nvic.o
+ .debug_line    0x000000000000a754       0xcc ./gecko_sdk_4.4.4/platform/service/system/src/sl_system_init.o
+ .debug_line    0x000000000000a820       0xd5 ./gecko_sdk_4.4.4/platform/service/system/src/sl_system_process_action.o
+ .debug_line    0x000000000000a8f5      0x2d8 ./gecko_sdk_4.4.4/platform/service/udelay/src/sl_udelay.o
+ .debug_line    0x000000000000abcd       0x78 ./gecko_sdk_4.4.4/platform/service/udelay/src/sl_udelay_armv6m_gcc.o
 
 .debug_str      0x0000000000000000     0x45d5
  .debug_str     0x0000000000000000      0x166 ./app.o

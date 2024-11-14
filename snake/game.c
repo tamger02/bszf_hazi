@@ -570,5 +570,5 @@ void gameInit(irany* irany, kigyo* snake, alma* apple)
 
 void delaysome()
 {
-  sl_udelay_wait(1000000);
+  sl_udelay_wait(600000);
   }
