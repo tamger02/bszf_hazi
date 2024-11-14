@@ -1,3 +1,10 @@
+/*
+ * init_UART.c
+ *
+ *  Created on: 12 Nov 2024
+ *      Author: gergelytamasy
+ */
+
 /** 
 @file init_UART.c
 @brief initialising UART
