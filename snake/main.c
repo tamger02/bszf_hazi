@@ -48,6 +48,7 @@ int main(void)
   kigyo snake;
   snake.irany = dir_ptr;
   snake.elozoirany = prev_dir_ptr;
+  initrandomnumbers();
 
   alma apple;
   alma* apple_ptr;
@@ -73,10 +74,11 @@ int main(void)
 
     UART_switchdir(dir_ptr, prev_dir_ptr);
     MoveSnake(&snake);
+    HitDetect(apple, &snake);
+    AppleIsEated(&snake, &apple);
     refreshSnake(snake, apple);
-    //AppleIsEated()
     refreshPoints(snake);
-    delaygeci();
+    delaysome();
 
 //#if defined(SL_CATALOG_POWER_MANAGER_PRESENT)
 //    // Let the CPU go to sleep if the system allows it.
