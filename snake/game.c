@@ -73,15 +73,17 @@ void MoveSnake(kigyo* snake)
             }
           else
             {
-              (*snake).koordinatak[0].x +=1;
-            }
-          if((*snake).koordinatak[0].y == 4)
-            {
-              (*snake).koordinatak[0].y = 1;
-            }
-          else if((*snake).koordinatak[0].x!=6)
-            {
-              (*snake).koordinatak[0].y += 1;
+            if((*snake).koordinatak[0].y == 4 ||(*snake).koordinatak[0].y ==0)
+              {
+                (*snake).koordinatak[0].y = 1;
+              }
+            else if((*snake).koordinatak[0].y == 2)
+              {
+                (*snake).koordinatak[0].y = 3;
+              }
+
+            (*snake).koordinatak[0].x +=1;
+
             }
         }break;
       case UP:
@@ -382,8 +384,14 @@ void HitDetect(alma apple, kigyo* snake)
               SegmentLCD_Symbol(LCD_SYMBOL_DP4,1);
               SegmentLCD_Symbol(LCD_SYMBOL_DP5,1);
               SegmentLCD_Symbol(LCD_SYMBOL_DP6,1);
-              sl_udelay_wait(1000000);
-              clearLCD();
+              sl_udelay_wait(500000);
+              SegmentLCD_Symbol(LCD_SYMBOL_DP2,0);
+              SegmentLCD_Symbol(LCD_SYMBOL_DP3,0);
+              SegmentLCD_Symbol(LCD_SYMBOL_DP4,0);
+              SegmentLCD_Symbol(LCD_SYMBOL_DP5,0);
+              SegmentLCD_Symbol(LCD_SYMBOL_DP6,0);
+              sl_udelay_wait(500000);
+
             }
         }
      }
