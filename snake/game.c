@@ -503,8 +503,8 @@ void initrandomnumbers()
   randomnumbers[5] = 1;
   randomnumbers[6] = 3;
   randomnumbers[7] = 2;
-  randomnumbers[8] = 6;
-  randomnumbers[9] = 5;
+  randomnumbers[8] = 2;
+  randomnumbers[9] = 4;
   randomnumbers[10] = 6;
   randomnumbers[11] = 0;
   randomnumbers[12] = 2;
@@ -515,36 +515,36 @@ void initrandomnumbers()
   randomnumbers[17] = 2;
   randomnumbers[18] = 3;
   randomnumbers[19] = 0;
-  randomnumbers[20] = 6;
+  randomnumbers[20] = 4;
   randomnumbers[21] = 4;
   randomnumbers[22] = 1;
   randomnumbers[23] = 2;
-  randomnumbers[24] = 5;
+  randomnumbers[24] = 2;
   randomnumbers[25] = 0;
   randomnumbers[26] = 3;
-  randomnumbers[27] = 6;
+  randomnumbers[27] = 3;
   randomnumbers[28] = 4;
   randomnumbers[29] = 1;
-  randomnumbers[30] = 5;
+  randomnumbers[30] = 2;
   randomnumbers[31] = 3;
   randomnumbers[32] = 2;
   randomnumbers[33] = 0;
-  randomnumbers[34] = 6;
+  randomnumbers[34] = 0;
   randomnumbers[35] = 1;
-  randomnumbers[36] = 5;
+  randomnumbers[36] = 0;
   randomnumbers[37] = 2;
   randomnumbers[38] = 4;
   randomnumbers[39] = 3;
-  randomnumbers[40] = 6;
+  randomnumbers[40] = 3;
   randomnumbers[41] = 1;
   randomnumbers[42] = 0;
-  randomnumbers[43] = 5;
+  randomnumbers[43] = 4;
   randomnumbers[44] = 4;
   randomnumbers[45] = 3;
   randomnumbers[46] = 2;
   randomnumbers[47] = 0;
-  randomnumbers[48] = 6;
-  randomnumbers[49] = 5;
+  randomnumbers[48] = 0;
+  randomnumbers[49] = 0;
 
 }
 
@@ -552,6 +552,7 @@ void initrandomnumbers()
 void gameInit(irany* irany, kigyo* snake, alma* apple)
 {
     //Inicializalasok:
+    //Kigyo osszes testresztarolojanak kiuritese
     for (int i = 0; i < 50; i++)
       {
         snake->koordinatak[i].x=0;
@@ -559,39 +560,15 @@ void gameInit(irany* irany, kigyo* snake, alma* apple)
       }
     //Peldanyositott kigyo inicializalasa
     snake->hossz=1; //Kigyo kezdo hossza 1
-    //snake->irany = &irany; //Kigyo kezdo iranya jobbra
-
     snake->koordinatak[0].x=0; //Kigyo kezdo x koordinataja 0
     snake->koordinatak[0].y=2; //Kigyo kezdo y koordinataja 0
-    //score = 0; //Jatekos kezdo pontszama 0
-
-    //Kijelzo tisztitasa
-    //SegmentLCD_Init(false);
     NewApplePosition(apple, snake);
-
     refreshSnake(*snake, *apple);
     refreshPoints(*snake);
-    delaygeci();
+    delaysome();
 }
 
-void game(kigyo* snake)
-{
-  //A jatek itt egy teljesen statikus allapotbol indul
-    //*Kigyonak van kiterjedese
-    //*Kigyonak van iranya
-    //Almanak van helye
-    //*Jatekosnak van egy pontszama
-    //Ezeket mind frissiteni kell
-
-    //Kigyo mozgatasa az aktualis irany szerint, ami ha nem erkezett uj adat, akkor a regi irany
-      MoveSnake(&snake);
-      //Talalat erzekelese
-      //HitDetect();
-      //Alma talalat ellenorzese
-      //AppleIsEated();
-}
-
-void delaygeci()
+void delaysome()
 {
   sl_udelay_wait(1000000);
   }

@@ -78,7 +78,7 @@ int main(void)
     AppleIsEated(&snake, &apple);
     refreshSnake(snake, apple);
     refreshPoints(snake);
-    delaygeci();
+    delaysome();
 
 //#if defined(SL_CATALOG_POWER_MANAGER_PRESENT)
 //    // Let the CPU go to sleep if the system allows it.

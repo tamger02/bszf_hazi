@@ -11,9 +11,4 @@
 
 int randomnumbers[50];
 
-
-
-
-
-
 #endif /* RANDOMNUMBERS_H_ */
