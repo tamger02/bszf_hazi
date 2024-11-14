@@ -97,18 +97,19 @@ void MoveSnake(kigyo* snake)
                   (*snake).koordinatak[0].y = 5;
                 }
             }
-          else
-            {
+            else
+              {
+              if((*snake).koordinatak[0].y == 0 ||(*snake).koordinatak[0].y == 4)
+                {
+                  (*snake).koordinatak[0].y = 3;
+                }
+              else if((*snake).koordinatak[0].y == 2)
+                {
+                  (*snake).koordinatak[0].y = 1;
+                }
+
               (*snake).koordinatak[0].x +=1;
-            }
-          if((*snake).koordinatak[0].y == 0)
-            {
-              (*snake).koordinatak[0].y = 3;
-            }
-          else if((*snake).koordinatak[0].x!=6)
-            {
-              (*snake).koordinatak[0].y -= 1;
-            }
+              }
         }break;
     default: break;
    }break;
@@ -373,7 +374,19 @@ void HitDetect(alma apple, kigyo* snake)
           //HIT!
           //Pontok villogtatasa + felso kijelzon hossz kiirasa
           //Itt mar nem is ter vissza a program a fo menetebe
+          while(1)
+            {
+              clearLCD();
+              SegmentLCD_Symbol(LCD_SYMBOL_DP2,1);
+              SegmentLCD_Symbol(LCD_SYMBOL_DP3,1);
+              SegmentLCD_Symbol(LCD_SYMBOL_DP4,1);
+              SegmentLCD_Symbol(LCD_SYMBOL_DP5,1);
+              SegmentLCD_Symbol(LCD_SYMBOL_DP6,1);
+              sl_udelay_wait(1000000);
+              clearLCD();
+            }
         }
+     }
       /*
       else
         {
@@ -468,7 +481,7 @@ void HitDetect(alma apple, kigyo* snake)
               }break;
             }
         }*/
-    }
+
 
 }
 
@@ -572,5 +585,5 @@ void game(kigyo* snake)
 
 void delaygeci()
 {
-  sl_udelay_wait(2000000);
+  sl_udelay_wait(1000000);
   }
