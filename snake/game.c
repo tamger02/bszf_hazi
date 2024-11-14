@@ -20,13 +20,20 @@ void MoveSnake(kigyo* snake)
 {
   //Kigyo osszes szegmensenek mozgatasa
   if(JustAte)
-    (*snake).hossz += 1;
+    {
+      (*snake).hossz += 1;
+      for(int i=(*snake).hossz; i>0; i--) //i=1-tol kezdodik, mert a fejet (0.) külön kezeljük
+            {
+                (*snake).koordinatak[i]=(*snake).koordinatak[i-1]; //Mindegyik testresz az elotte levo helyet veszi at
+            }
+    }
+
   if(!JustAte)
   {
-      for(int i=1; i<(*snake).hossz; i++) //i=1-tol kezdodik, mert a fejet (0.) külön kezeljük
-      {
-          (*snake).koordinatak[i]=(*snake).koordinatak[i-1]; //Mindegyik testresz az elotte levo helyet veszi at
-      }
+      for(int i=(*snake).hossz; i>0; i--) //i=1-tol kezdodik, mert a fejet (0.) külön kezeljük
+                  {
+                      (*snake).koordinatak[i]=(*snake).koordinatak[i-1]; //Mindegyik testresz az elotte levo helyet veszi at
+                  }
   }
   JustAte = 0;
   //Kigyo fejenek iranyvaltasa
@@ -341,17 +348,17 @@ void NewApplePosition(alma* apple, kigyo* snake)
                     NewApplePosition(apple, snake);
                   }
       }
-
 }
 
-void AppleIsEated(kigyo snake, alma apple)
+void AppleIsEated(kigyo* snake, alma* apple)
 {
-  for(int i=0; i<snake.hossz; i++)
+  for(int i=0; i<(*snake).hossz; i++)
     {
-      if(snake.koordinatak[i].x==apple.x && snake.koordinatak[i].y==apple.y)
+      if((*snake).koordinatak[i].x==(*apple).x && (*snake).koordinatak[i].y==apple->y)
         {
           JustAte = 1;
-          NewApplePosition(&apple, &snake);
+          NewApplePosition(apple, snake);
+          refreshSnake(snake, apple);
         }
     }
 }
@@ -467,15 +474,15 @@ void HitDetect(alma apple, kigyo* snake)
 
 void initrandomnumbers()
 {
-  randomnumbers[0] = 5;
-  randomnumbers[1] = 1;
-  randomnumbers[2] = 4;
-  randomnumbers[3] = 6;
-  randomnumbers[4] = 3;
-  randomnumbers[5] = 2;
-  randomnumbers[6] = 0;
-  randomnumbers[7] = 1;
-  randomnumbers[8] = 4;
+  randomnumbers[0] = 2;
+  randomnumbers[1] = 2;
+  randomnumbers[2] = 5;
+  randomnumbers[3] = 0;
+  randomnumbers[4] = 0;
+  randomnumbers[5] = 1;
+  randomnumbers[6] = 3;
+  randomnumbers[7] = 2;
+  randomnumbers[8] = 6;
   randomnumbers[9] = 5;
   randomnumbers[10] = 6;
   randomnumbers[11] = 0;

@@ -73,8 +73,9 @@ int main(void)
 
 
     UART_switchdir(dir_ptr, prev_dir_ptr);
+    refreshSnake(snake, apple);
     MoveSnake(&snake);
-    AppleIsEated(snake, apple);
+    AppleIsEated(&snake, &apple);
     refreshSnake(snake, apple);
     refreshPoints(snake);
     delaygeci();
